@@ -19,11 +19,21 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://plzen-prehledne.vercel.app"),
   title: "Plzeň přehledně — od ODS",
   description:
     "Uzavírky, rozhodnutí zastupitelstva, stavby a komunitní informace pro všech 10 plzeňských obvodů na jednom místě.",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "Plzeň přehledně" },
+  openGraph: {
+    title: "Plzeň přehledně — od ODS",
+    description:
+      "Uzavírky, zastupitelstvo, stavby a komunita pro všech 10 plzeňských obvodů na jednom místě.",
+    siteName: "Plzeň přehledně",
+    locale: "cs_CZ",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
