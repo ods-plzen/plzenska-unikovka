@@ -84,21 +84,28 @@ def street_geom(name):
     return [w for w in ws if len(w)>=2]
 
 def dist(a,b): return (a[0]-b[0])**2+((a[1]-b[1])*math.cos(math.radians(a[0])))**2
-def nidx(path,cp):
-    best=(1e9,0)
+
+def shared_node(path, cross):
+    # Skutečná křižovatka = sdílený OSM uzel (stejná souřadnice) mezi ulicí a příčnou ulicí.
+    cs=set((round(p[0],6),round(p[1],6)) for p in cross)
     for i,p in enumerate(path):
-        dm=min(dist(p,c) for c in cp)
+        if (round(p[0],6),round(p[1],6)) in cs: return i
+    # fallback: nejbližší bod, ale jen když je opravdu blízko (~25 m)
+    best=(2.5e-7,None)
+    for i,p in enumerate(path):
+        dm=min(dist(p,c) for c in cross)
         if dm<best[0]: best=(dm,i)
     return best[1]
 
 def clip_usek(path, akce):
-    # "v úseku X, Y" → ořež mezi křižovatkami
+    # "v úseku X, Y" → ořež jen když najdeme PŘESNÉ křižovatky (sdílené uzly) pro oba konce.
     m=re.search(r'úseku\s+([^,)]+),\s*([^,)]+)', akce)
     if not m: return path
     a=street_geom(m.group(1).strip()); b=street_geom(m.group(2).strip())
     if not a or not b: return path
     fa=[p for w in a for p in w]; fb=[p for w in b for p in w]
-    i1=nidx(path,fa); i2=nidx(path,fb)
+    i1=shared_node(path,fa); i2=shared_node(path,fb)
+    if i1 is None or i2 is None: return path  # nelze přesně → ukaž celou ulici
     lo,hi=min(i1,i2),max(i1,i2)
     return path[lo:hi+1] or path
 
@@ -120,29 +127,70 @@ def slug(name):
     s=re.sub(r'[^a-z0-9]+','-',s).strip('-')[:28]
     return s
 
+def feature_center(name):
+    # Střed bodového prvku (náměstí) přes Nominatim search — vrací centroid plochy,
+    # spolehlivější než Overpass out center (ten padá na okolní vozovku).
+    try:
+        q=urllib.parse.urlencode({'q':f'{name}, Plzeň','format':'json','limit':1})
+        r=json.loads(urllib.request.urlopen(urllib.request.Request('https://nominatim.openstreetmap.org/search?'+q, headers=UA), timeout=30).read())
+        if r: return (round(float(r[0]['lat']),6), round(float(r[0]['lon']),6))
+    except Exception:
+        pass
+    # fallback: Overpass out center
+    d=overpass(f'[out:json];area["name"="Plzeň"]["admin_level"="8"]->.p;(way(area.p)["name"="{name}"];relation(area.p)["name"="{name}"];);out center;')
+    for el in d.get('elements',[]):
+        c=el.get('center') or ({'lat':el['lat'],'lon':el['lon']} if 'lat' in el else None)
+        if c: return (round(c['lat'],6),round(c['lon'],6))
+    return None
+
+def is_point_feature(name, akce):
+    t=(name+' '+akce).lower()
+    if re.search(r'náměstí|nám\.', t): return 'square'
+    if re.search(r'lávk|nový most|stavba mostu', t): return 'bridge'
+    return None
+
 def main():
     print("· tabulka uzavírek…"); rows=scrape_closures(); print(f"  {len(rows)} uzavírek")
     print("· obvodové hranice…"); polys=load_districts(); print(f"  {len(polys)} obvodů")
     closures=[]; seen={}
     for r in rows:
         try:
+            kind=is_point_feature(r['ulice'], r['akce'])
             ws=street_geom(r['ulice'])
-            if not ws: print(f"  ⚠ bez geometrie: {r['ulice']}"); continue
-            path=chain(ws)
-            path=clip_usek(path, r['akce'])
-            mid=path[len(path)//2]
+            point=False; approx=False
+            if kind=='square':
+                c=feature_center(r['ulice']) or (chain(ws)[0] if ws else None)
+                if not c: print(f"  ⚠ bez polohy: {r['ulice']}"); continue
+                ways=[[ [round(c[0],5),round(c[1],5)] ]]; mid=c; point=True
+            elif kind=='bridge':
+                # lávka/most = bodová stavba; přesná poloha není v datech → střed dané ulice, označeno přibližně
+                if not ws: print(f"  ⚠ bez polohy: {r['ulice']}"); continue
+                allp=[p for w in ws for p in w]; mid=allp[len(allp)//2]
+                ways=[[ [round(mid[0],5),round(mid[1],5)] ]]; point=True; approx=True
+            else:
+                if not ws: print(f"  ⚠ bez geometrie: {r['ulice']}"); continue
+                path=chain(ws); clipped=clip_usek(path, r['akce'])
+                if len(clipped)<len(path):
+                    ways=[simplify(clipped)]              # přesný ořez na úsek
+                else:
+                    ways=[simplify(w) for w in ws]        # celá ulice (všechny segmenty)
+                allp=[p for w in ways for p in w]; mid=allp[len(allp)//2]
             obv=district_of(mid[0],mid[1],polys) or '—'
             st,color,label=status_of(r['akce'], r['termin'])
             cid=slug(r['ulice'])
             if cid in seen: seen[cid]+=1; cid=f"{cid}-{seen[cid]}"
             else: seen[cid]=1
-            closures.append({
+            rec={
                 'id':cid,
                 'name':r['ulice'], 'akce':r['akce'], 'state':label, 'status':st,
                 'color':color, 'oblast':obv, 'termin':r['termin'],
-                'ways':[simplify(path)]
-            })
-            print(f"  ✓ {r['ulice']} → {obv} [{label}]")
+                'ways':ways
+            }
+            if point: rec['point']=True
+            if approx: rec['approx']=True
+            closures.append(rec)
+            tag='•bod' if point else ''
+            print(f"  ✓ {r['ulice']} → {obv} [{label}] {tag}{' ~přibližně' if approx else ''}")
             time.sleep(1)
         except Exception as e:
             print(f"  ✗ {r['ulice']}: {e}")

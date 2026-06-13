@@ -12,6 +12,8 @@ export interface Closure {
   oblast: string;
   termin: string;
   ways: [number, number][][];
+  point?: boolean; // bodový prvek (náměstí, lávka) → marker místo čáry
+  approx?: boolean; // přibližná poloha
 }
 
 export type Phase = [label: string, when: string, state: "done" | "now" | ""];
