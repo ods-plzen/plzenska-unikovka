@@ -36,7 +36,7 @@ export function HomeView() {
       href: "/zastupitelstvo",
       n: votes.length,
       label: "Rozhodnutí",
-      hint: "jak hlasoval Lukáš",
+      hint: "rozhodnutí radnice",
       color: "var(--ods-sky)",
     },
     {
