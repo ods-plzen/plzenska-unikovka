@@ -60,6 +60,8 @@ Data, která se nescrapují, se editují přímo v `src/data/`:
 - **Zastupitelstvo** — `src/data/votes.json` (hlasování) a `src/data/chapters.ts`
   (kapitoly záznamu jednání).
 - **Stavby** — `src/data/projects.ts` (accountability timeline).
+- **Digest „Co je nového"** — `src/data/updates.ts`: přidej položku s `date`
+  (ISO), `display`, `kind`, `title`, `href`. Řadí se samo (nejnovější první).
 
 Pravidlo: u převzatého obsahu vždy vyplň `source`/`srcUrl` a krať na fakta.
 

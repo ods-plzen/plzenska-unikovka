@@ -8,6 +8,7 @@ import { community } from "@/lib/data";
 import { inArea, areaByeId } from "@/data/areas";
 import { useArea } from "@/components/AreaProvider";
 import { ClosureCard } from "@/components/ClosureCard";
+import { UpdatesFeed } from "@/components/UpdatesFeed";
 
 export function HomeView() {
   const { area } = useArea();
@@ -89,6 +90,8 @@ export function HomeView() {
           </Link>
         ))}
       </section>
+
+      <UpdatesFeed />
 
       {cl.length > 0 && (
         <section>
