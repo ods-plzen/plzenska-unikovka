@@ -33,6 +33,24 @@ export const projects: Project[] = [
       "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/plzen-vyuzije-predkupni-pravo-na-odkup-objektu-rozhledny-chlum/",
   },
   {
+    id: "kostel-sv-jiri",
+    title: "Revitalizace okolí kostela sv. Jiří",
+    oblast: "Plzeň 4",
+    promise:
+      "Proměnit okolí kostela sv. Jiří v Doubravce podle potřeb lidí — zapojení obyvatel přes pocitovou mapu.",
+    status:
+      "Hotová analýza pocitové mapy: 129 respondentů, téměř 1 600 bodů, 67 % z obvodu Plzeň 4.",
+    statusKind: "now",
+    phases: [
+      ["Pocitová mapa — sběr od obyvatel", "2026", "done"],
+      ["Analýza území (silná a slabá místa)", "2026", "now"],
+      ["Návrh revitalizace", "v přípravě", ""],
+    ],
+    src: "ÚMO Plzeň 4 / Magistrát města Plzně — aktuality",
+    srcUrl:
+      "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/ctyrka-planuje-promenu-okoli-kostela-sv-jiri-obyvatele-pomohli-pres-pocitovou-mapu/",
+  },
+  {
     id: "masarykova",
     title: "Rekonstrukce Masarykovy třídy",
     oblast: "Plzeň 4",
@@ -58,6 +76,8 @@ export const projects: Project[] = [
       ["Stavební úpravy", "dokončení 11. 8. 2026", "now"],
       ["Rozhodnutí o režimu", "září 2026", ""],
     ],
-    src: "NÁM T/1 · plzen.eu/doprava",
+    src: "Magistrát města Plzně — aktuality (rekonstrukce Americké)",
+    srcUrl:
+      "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/rekonstrukce-americke-vstoupi-od-22-cervna-do-2-etapy-rozsiri-se-dopravni-opatreni/",
   },
 ];

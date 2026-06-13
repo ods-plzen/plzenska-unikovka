@@ -4,25 +4,30 @@
   "role": "zastupitel města Plzně",
   "av": "LH",
   "stmt": "Hlasoval PRO koupi rozhledny Chlum městem.",
-  "tags": [
-   "majetek",
-   "Doubravka"
-  ],
+  "tags": ["majetek", "Doubravka"],
   "pro": 28,
   "proti": 0,
   "zdr": 0,
-  "src": "Usnesení MAJ/8",
+  "src": "Magistrát města Plzně — využití předkupního práva",
+  "srcUrl": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/plzen-vyuzije-predkupni-pravo-na-odkup-objektu-rozhledny-chlum/",
   "rec": "Záznam: rozprava k bodu 44"
  },
  {
   "who": "Zastupitelstvo",
   "role": "přijaté usnesení",
   "av": "ZMP",
+  "stmt": "Posílení rozpočtu na záchranu kulturního domu Peklo — vypsána soutěž na 1. etapu (velký sál, šatny, haly).",
+  "tags": ["rozpočet", "kultura"],
+  "src": "Magistrát města Plzně — aktuality",
+  "srcUrl": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/plzen-posili-rozpocet-na-zachranu-kulturniho-domu-peklo-rekonstrukce-bude-zahajena-sanaci-casti-objektu-jehoz-soucasti-je-spolecensky-sal/",
+  "note": "cíl zahájit práce ještě v roce 2026"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "přijaté usnesení",
+  "av": "ZMP",
   "stmt": "Schválen rozpočet 2026 — investice 5,2 mld Kč.",
-  "tags": [
-   "rozpočet",
-   "investice"
-  ],
+  "tags": ["rozpočet", "investice"],
   "src": "Usnesení ŘEÚ/3",
   "note": "klub ODS se zdržel"
  },
@@ -31,10 +36,7 @@
   "role": "bod stažen",
   "av": "ZMP",
   "stmt": "Změna režimu na Americké — bod stažen, vrátí se v září.",
-  "tags": [
-   "doprava",
-   "centrum"
-  ],
+  "tags": ["doprava", "centrum"],
   "src": "NÁM T/1",
   "rec": "Záznam: 4h debata"
  }
