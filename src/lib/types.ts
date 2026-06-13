@@ -39,6 +39,7 @@ export interface Vote {
   proti?: number;
   zdr?: number;
   src: string;
+  srcUrl?: string;
   rec?: string;
   note?: string;
 }

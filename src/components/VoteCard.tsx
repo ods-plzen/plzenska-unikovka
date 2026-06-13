@@ -40,7 +40,18 @@ export function VoteCard({ v }: { v: Vote }) {
             #{t}
           </span>
         ))}
-        <span className="ml-auto font-medium text-blue">Zdroj: {v.src}</span>
+        {v.srcUrl ? (
+          <a
+            href={v.srcUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-auto font-medium text-blue hover:underline"
+          >
+            Zdroj: {v.src}
+          </a>
+        ) : (
+          <span className="ml-auto font-medium text-blue">Zdroj: {v.src}</span>
+        )}
       </div>
       {v.rec && <div className="mt-1.5 text-xs text-muted">{v.rec}</div>}
     </article>
