@@ -62,6 +62,7 @@ export interface EventItem {
 }
 
 export interface Community {
+  updated?: string;
   lost: LostItem[];
   events: EventItem[];
 }

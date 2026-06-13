@@ -2,6 +2,7 @@
 
 import { votes } from "@/lib/data";
 import { VoteCard } from "@/components/VoteCard";
+import { SessionChapters } from "@/components/SessionChapters";
 
 export function ZastupitelstvoView() {
   return (
@@ -19,6 +20,8 @@ export function ZastupitelstvoView() {
           <VoteCard key={i} v={v} />
         ))}
       </div>
+
+      <SessionChapters />
 
       <p className="rounded-lg bg-sky/5 p-3 text-xs text-muted">
         ℹ️ Přepis do srozumitelného jazyka připravujeme ručně z veřejných
