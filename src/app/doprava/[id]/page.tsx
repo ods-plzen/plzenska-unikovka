@@ -190,7 +190,7 @@ export default async function Page({
           </div>
           {extra?.source && (
             <p className="mt-3 text-xs text-muted">
-              Objízdné trasy a MHD převzaty z oficiálního zdroje a ručně
+              Informace o uzavírce převzaty z oficiálního zdroje a ručně
               ověřeny.
             </p>
           )}
