@@ -9,6 +9,7 @@ export interface Project {
   statusKind: "now" | "plan" | "done";
   phases: Phase[];
   src: string;
+  srcUrl?: string; // odkaz na oficiální zdroj
 }
 
 // Accountability timeline — slíbeno → stav → termín. Jen ověřená fakta.
@@ -27,7 +28,9 @@ export const projects: Project[] = [
       ["Převod a zpřístupnění", "2026", "now"],
       ["Studie Chlum — záměr území", "v přípravě", ""],
     ],
-    src: "Usnesení MAJ/8 · záznam ZMP, bod 44",
+    src: "Magistrát města Plzně — využití předkupního práva (usnesení ZMP)",
+    srcUrl:
+      "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/plzen-vyuzije-predkupni-pravo-na-odkup-objektu-rozhledny-chlum/",
   },
   {
     id: "masarykova",
