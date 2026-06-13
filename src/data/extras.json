@@ -3,26 +3,10 @@
   "title": "Rekonstrukce Masarykovy třídy",
   "sub": "1. etapa: úsek Rokycanská – Na Dlouhých · objízdné trasy platí od 29. 6.",
   "phases": [
-   [
-    "Příprava",
-    "do 6/2026",
-    "done"
-   ],
-   [
-    "1. etapa",
-    "léto 2026",
-    "now"
-   ],
-   [
-    "2. etapa",
-    "podzim",
-    ""
-   ],
-   [
-    "Dokončení",
-    "2027",
-    ""
-   ]
+   ["Příprava", "do 6/2026", "done"],
+   ["1. etapa", "léto 2026", "now"],
+   ["2. etapa", "podzim", ""],
+   ["Dokončení", "2027", ""]
   ],
   "means": [
    "<b>Řidiči:</b> úsek uzavřen, objížďka ulicí Na Dlouhých",
@@ -33,5 +17,29 @@
  "americka": {
   "title": "Rekonstrukce Americké třídy",
   "sub": "úsek Prokopova – Klatovská · sdílená zóna 20 km/h · dokončení 11. 8."
+ },
+ "28-rijna": {
+  "title": "Rekonstrukce ulice 28. října (Bílá Hora)",
+  "sub": "Úplná uzavírka silnice II/231 · 4. 5. – 20. 12. 2026 · ve dvou etapách",
+  "phases": [
+   ["1. etapa — úsek po křižovatku Nad Řekou", "od 4. 5. 2026", "now"],
+   ["2. etapa — Nad Řekou → Zručská cesta", "navazuje", ""],
+   ["Dokončení", "20. 12. 2026", ""]
+  ],
+  "objizdka": [
+   "<b>Rezidenti Bílé Hory (1. etapa):</b> obousměrně přes Zručskou cestu.",
+   "<b>Rezidenti (2. etapa):</b> přes ulici Nad Řekou; Zručská cesta obousměrně vyblokována až ke křižovatce s 28. října.",
+   "<b>Ostatní i nákladní doprava:</b> z Jateční přes Chrásteckou, Mohylovou a Masarykovu po II/233 na Chrást a dál po II/180 přes Dolany do Zruče-Sence."
+  ],
+  "mhd": [
+   "Provoz autobusů zachován; průjezd autobusů a IZS uzavírkou umožněn.",
+   "Točna Bílá Hora dočasně přesunuta do ulice Nad Řekou.",
+   "Objízdné trasy autobusů dočasně přes ulice Senecká a Nad Řekou.",
+   "Pro chodce vyznačeny bezpečné koridory podél stavby."
+  ],
+  "source": {
+   "label": "Magistrát města Plzně — aktuality",
+   "url": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/v-kvetnu-odstartuje-dalsi-etapa-opravy-silnice-na-bile-hore-uplna-uzavirka-zrychli-prace-o-dva-mesice/"
+  }
  }
 }
