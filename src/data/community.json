@@ -1,0 +1,36 @@
+{
+ "lost": [
+  {
+   "icon": "🐕",
+   "state": "Ztracen",
+   "b": "Pejsek border kólie „Aston“",
+   "meta": "naposledy u Bukovce · pátek odpoledne · 777 ***",
+   "lat": 49.7505,
+   "lon": 13.418
+  },
+  {
+   "icon": "🔑",
+   "state": "Nalezeno",
+   "b": "Svazek klíčů u zastávky Masarykova",
+   "meta": "ve schránce trafiky · proti popisu",
+   "lat": 49.749,
+   "lon": 13.406
+  }
+ ],
+ "events": [
+  {
+   "d": "SO 14. 6. · 15:00",
+   "h": "Sousedský piknik",
+   "s": "park u sv. Jiří · zdarma",
+   "lat": 49.752,
+   "lon": 13.41
+  },
+  {
+   "d": "NE 22. 6. · 10:00",
+   "h": "Úklid Chlumu",
+   "s": "sraz u rozhledny · pytle zajištěny",
+   "lat": 49.754,
+   "lon": 13.423
+  }
+ ]
+}

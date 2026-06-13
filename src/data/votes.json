@@ -1,0 +1,41 @@
+[
+ {
+  "who": "Lukáš Hegner",
+  "role": "zastupitel města Plzně",
+  "av": "LH",
+  "stmt": "Hlasoval PRO koupi rozhledny Chlum městem.",
+  "tags": [
+   "majetek",
+   "Doubravka"
+  ],
+  "pro": 28,
+  "proti": 0,
+  "zdr": 0,
+  "src": "Usnesení MAJ/8",
+  "rec": "Záznam: rozprava k bodu 44"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "přijaté usnesení",
+  "av": "ZMP",
+  "stmt": "Schválen rozpočet 2026 — investice 5,2 mld Kč.",
+  "tags": [
+   "rozpočet",
+   "investice"
+  ],
+  "src": "Usnesení ŘEÚ/3",
+  "note": "klub ODS se zdržel"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "bod stažen",
+  "av": "ZMP",
+  "stmt": "Změna režimu na Americké — bod stažen, vrátí se v září.",
+  "tags": [
+   "doprava",
+   "centrum"
+  ],
+  "src": "NÁM T/1",
+  "rec": "Záznam: 4h debata"
+ }
+]

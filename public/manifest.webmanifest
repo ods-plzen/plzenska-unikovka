@@ -1,0 +1,18 @@
+{
+  "name": "Plzeň přehledně — od ODS",
+  "short_name": "Plzeň přehledně",
+  "description": "Uzavírky, zastupitelstvo, stavby a komunita pro všech 10 plzeňských obvodů.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#153d8a",
+  "lang": "cs",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
