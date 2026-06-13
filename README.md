@@ -65,6 +65,18 @@ Data, která se nescrapují, se editují přímo v `src/data/`:
 
 Pravidlo: u převzatého obsahu vždy vyplň `source`/`srcUrl` a krať na fakta.
 
+### WhatsApp napojení Komunity
+
+V `src/data/contact.ts` doplň:
+
+- `WHATSAPP_PHONE` — číslo pro click-to-chat (formát wa.me, jen číslice
+  s předvolbou, např. `420777123456`). Když je vyplněné, ve formuláři se objeví
+  tlačítko **Odeslat přes WhatsApp** (předvyplní strukturovanou zprávu).
+- `WHATSAPP_GROUP` — odkaz na pozvánku do skupiny (`https://chat.whatsapp.com/…`).
+  Když je vyplněný, na stránce Komunita se zobrazí blok **WhatsApp skupina**.
+
+Prázdné hodnoty se prostě skryjí — formulář mezitím funguje přes „Zkopírovat text“.
+
 ## Nasazení
 
 Vercel: import repozitáře → framework Next.js se detekuje sám. Žádné env

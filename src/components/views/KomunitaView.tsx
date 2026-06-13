@@ -1,6 +1,8 @@
 "use client";
 
 import { community } from "@/lib/data";
+import { CommunityReport } from "@/components/CommunityReport";
+import { WHATSAPP_GROUP } from "@/data/contact";
 
 export function KomunitaView() {
   return (
@@ -14,6 +16,27 @@ export function KomunitaView() {
           )}
         </p>
       </header>
+
+      {WHATSAPP_GROUP && (
+        <a
+          href={WHATSAPP_GROUP}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between gap-3 rounded-xl border border-green/40 bg-green/5 p-4 hover:border-green"
+        >
+          <span>
+            <span className="block font-semibold text-ink">
+              💬 WhatsApp skupina sousedů
+            </span>
+            <span className="block text-sm text-muted">
+              Rychlé info, ztráty a nálezy přímo v telefonu
+            </span>
+          </span>
+          <span className="rounded-md bg-green px-3 py-1.5 text-sm font-semibold text-white">
+            Připojit se
+          </span>
+        </a>
+      )}
 
       <section>
         <h2 className="head mb-3 text-lg font-semibold text-blue">
@@ -67,11 +90,7 @@ export function KomunitaView() {
         </div>
       </section>
 
-      <p className="rounded-lg bg-sky/5 p-3 text-xs text-muted">
-        Komunita slouží k nálezům, ztrátám a sousedským akcím — ne k řešení
-        bezpečnosti či sousedských sporů. Každý příspěvek prochází kontrolou před
-        zveřejněním.
-      </p>
+      <CommunityReport />
     </div>
   );
 }
