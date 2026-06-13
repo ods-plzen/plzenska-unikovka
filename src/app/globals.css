@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
+/* ===== ODS design tokens ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ods-blue: #153d8a; /* tmavě modrá */
+  --ods-sky: #009fe3; /* světle modrá */
+  --ods-red: #c0392b;
+  --ods-amber: #cf8a12;
+  --ods-green: #1f8a5b;
+  --ink: #0f172a;
+  --muted: #5b6473;
+  --line: #e6e9ef;
+  --bg: #f4f6fb;
+  --card: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-blue: var(--ods-blue);
+  --color-sky: var(--ods-sky);
+  --color-red: var(--ods-red);
+  --color-amber: var(--ods-amber);
+  --color-green: var(--ods-green);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --font-sans: var(--font-inter);
+  --font-head: var(--font-oswald);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.head {
+  font-family: var(--font-oswald), var(--font-inter), sans-serif;
+  letter-spacing: 0.01em;
+}
+
+/* ODS chip — světle modrý, lehce pootočený */
+.ods-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--ods-sky);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  padding: 0.18rem 0.55rem;
+  transform: rotate(-1.5deg);
+}
+
+/* Leaflet potřebuje výšku a vlastní z-index pod headerem */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #eef2f7;
+  font-family: var(--font-inter), sans-serif;
+}
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 0 !important;
 }

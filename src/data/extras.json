@@ -1,0 +1,37 @@
+{
+ "masarykova": {
+  "title": "Rekonstrukce Masarykovy třídy",
+  "sub": "1. etapa: úsek Rokycanská – Na Dlouhých · objízdné trasy platí od 29. 6.",
+  "phases": [
+   [
+    "Příprava",
+    "do 6/2026",
+    "done"
+   ],
+   [
+    "1. etapa",
+    "léto 2026",
+    "now"
+   ],
+   [
+    "2. etapa",
+    "podzim",
+    ""
+   ],
+   [
+    "Dokončení",
+    "2027",
+    ""
+   ]
+  ],
+  "means": [
+   "<b>Řidiči:</b> úsek uzavřen, objížďka ulicí Na Dlouhých",
+   "<b>MHD:</b> zastávky se přesouvají, linky jedou odklonem",
+   "<b>Pěší a residenti:</b> přístup k domům zachován"
+  ]
+ },
+ "americka": {
+  "title": "Rekonstrukce Americké třídy",
+  "sub": "úsek Prokopova – Klatovská · sdílená zóna 20 km/h · dokončení 11. 8."
+ }
+}

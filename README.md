@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plzeň přehledně — od ODS
 
-## Getting Started
+Uzavírky, rozhodnutí zastupitelstva, stavby a komunitní informace pro všech 10
+plzeňských obvodů na jednom místě. Data z veřejných zdrojů (radnice, MHD,
+OpenStreetMap), aktualizovaná automaticky každý den.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) + **TypeScript** + **Tailwind v4**
+- **Leaflet / react-leaflet** + CARTO light dlaždice (bez API klíče)
+- ODS design systém (Oswald, modrá `#153D8A` / světlá `#009FE3`)
+- Statická data v `src/data/*.json`, plněná Python scraperem
+
+## Vývoj
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # produkční build + typecheck
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Struktura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/                  Routy: / · /doprava · /doprava/[id] · /zastupitelstvo · /stavby · /komunita
+  components/           Header, Footer, karty, mapa, timeline, views
+  components/map/       Leaflet (jen klient, dynamic import bez SSR)
+  data/                 closures.json (scraper) · votes/community/extras.json · areas.ts · projects.ts
+  lib/                  types.ts · data.ts (načítání a třídění)
+scripts/scraper.py      plzen.eu/doprava + Overpass geometrie + přiřazení obvodu
+.github/workflows/      denní cron, commit src/data/closures.json
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Data pipeline
 
-## Learn More
+`scripts/scraper.py` stáhne tabulku uzavírek z plzen.eu/doprava, ke každé ulici
+dotáhne reálnou geometrii z OpenStreetMap (Overpass), ořízne ji na uvedený úsek,
+přiřadí městský obvod (point-in-polygon) a zapíše `src/data/closures.json`.
+Editorial overlay (fáze, „co to znamená") je v `src/data/extras.json` a scraper
+se ho nedotýká.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+python scripts/scraper.py   # přepíše src/data/closures.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Nasazení
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Vercel: import repozitáře → framework Next.js se detekuje sám. Žádné env
+proměnné nejsou potřeba.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Provozuje Lukáš Hegner (ODS Plzeň). Agregovaný a strojově zpracovaný obsah je
+takto označen — nejde o vlastní zpravodajství. Zdroje jsou uvedeny u každé
+položky.

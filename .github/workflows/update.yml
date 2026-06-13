@@ -1,0 +1,34 @@
+name: Aktualizace uzavírek
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # každý den v 5:00 UTC (7:00 / 6:00 Plzeň)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Stáhni uzavírky a geometrii
+        run: python scripts/scraper.py
+
+      - name: Commitni změny dat
+        run: |
+          git config user.name "plzen-prehledne-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add src/data/closures.json
+          if git diff --cached --quiet; then
+            echo "Bez změn."
+          else
+            git commit -m "data: aktualizace uzavírek $(date -u +%F)"
+            git push
+          fi
