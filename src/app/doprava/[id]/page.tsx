@@ -57,6 +57,12 @@ export default async function Page({
           <h1 className="head mt-2 text-3xl font-bold text-ink">{c.name}</h1>
           <p className="mt-1 text-muted">{extra?.title ?? c.akce}</p>
           {extra?.sub && <p className="mt-1 text-sm text-ink/80">{extra.sub}</p>}
+          {c.approx && (
+            <p className="mt-1 text-xs text-amber">
+              ≈ Poloha na mapě je přibližná (bodová stavba bez přesných
+              souřadnic v datech).
+            </p>
+          )}
         </div>
         <WatchButton id={c.id} />
       </header>
