@@ -24,13 +24,20 @@ def slug(name):
 
 
 def find_article(street):
-    # Fulltext na plzen.eu; vrať první odkaz do aktualit, který zmiňuje ulici.
+    # Fulltext na plzen.eu; vrať článek, jehož slug souvisí s danou ulicí.
     try:
         h = get("https://plzen.eu/?s=" + urllib.parse.quote(street))
     except Exception:
         return None
-    for href in re.findall(r'href="(https://plzen\.eu/o-meste/aktuality/[^"]+)"', h):
-        return href
+    # jen reálné články (hlubší slug), ne index aktualit
+    arts = re.findall(r'href="(https://plzen\.eu/o-meste/aktuality/aktuality-z-mesta/[a-z0-9-]{8,}/)"', h)
+    arts = list(dict.fromkeys(arts))  # uniq, zachovej pořadí
+    stem = slug(street.split()[0])[:6]  # např. "domazl", "americ"
+    # jen článek, jehož slug opravdu obsahuje název ulice (žádný keyword fallback —
+    # ten by chytal cizí stavby a tvrdil objížďku tam, kde není).
+    for u in arts:
+        if stem and stem in u:
+            return u
     return None
 
 

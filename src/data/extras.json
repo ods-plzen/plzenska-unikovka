@@ -16,7 +16,37 @@
  },
  "americka": {
   "title": "Rekonstrukce Americké třídy",
-  "sub": "úsek Prokopova – Klatovská · sdílená zóna 20 km/h · dokončení 11. 8."
+  "sub": "Rekonstrukce po etapách · 1. etapa probíhá, 2. etapa od 22. 6. 2026",
+  "phases": [
+   ["1. etapa — Goethova–Jungmannova (úplná uzavírka)", "od 11. 5. 2026", "now"],
+   ["2. etapa — Goethova–V Šipce (úplná), V Šipce–Klatovská (jednosměr)", "od 22. 6. 2026", ""],
+   ["3. etapa — Anglické nábřeží–V Šipce + okružní křižovatka", "od 23. 7. 2026", ""]
+  ],
+  "objizdka": [
+   "<b>1. etapa:</b> osobní doprava od Klatovské průjezdná do ulic Škroupova a Jungmannova; okružní křižovatka zůstává průjezdná.",
+   "<b>2. etapa (od 22. 6.):</b> pro osobní dopravu uzavřen úsek Klatovská – Škroupova, umožněn jen průjezd z ulice V Šipce ke Klatovské.",
+   "<b>3. etapa (od 23. 7.):</b> úplná uzavírka okružní křižovatky Americká – Goethova – Prokopova."
+  ],
+  "mhd": [
+   "1.–2. etapa: část MHD vedena přes Anglické nábřeží, Kopeckého a Smetanovy sady, část ulicemi Prokopova a U Trati.",
+   "3. etapa: část MHD pojede ulicemi Mikulášská a U Trati."
+  ],
+  "source": {
+   "label": "Magistrát města Plzně — aktuality",
+   "url": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/rekonstrukce-americke-vstoupi-od-22-cervna-do-2-etapy-rozsiri-se-dopravni-opatreni/"
+  }
+ },
+ "domazlicka": {
+  "title": "Oprava Domažlické ulice (ŘSD)",
+  "sub": "Oprava čtyřproudé silnice · během letních prázdnin 2026 · po etapách",
+  "means": [
+   "<b>Řidiči:</b> částečná uzavírka — provoz sveden do protisměrného pruhu, práce po navazujících etapách.",
+   "<b>MHD a chodci:</b> součástí jsou úpravy autobusových zastávek a chodníků."
+  ],
+  "source": {
+   "label": "Magistrát města Plzně — aktuality",
+   "url": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/reditelstvi-silnic-a-dalnic-behem-letnich-prazdnin-opravi-usek-domazlicke-ulice-v-plzni/"
+  }
  },
  "28-rijna": {
   "title": "Rekonstrukce ulice 28. října (Bílá Hora)",
