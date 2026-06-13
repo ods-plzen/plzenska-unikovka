@@ -86,6 +86,47 @@ export default async function Page({
           </section>
         )}
 
+        {extra?.objizdka && (
+          <section className="rounded-xl border border-line bg-card p-5">
+            <h2 className="head mb-3 text-lg font-semibold text-blue">
+              🔀 Objízdné trasy
+            </h2>
+            <ul className="space-y-2 text-sm text-ink">
+              {extra.objizdka.map((m, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-sky">•</span>
+                  <span dangerouslySetInnerHTML={{ __html: m }} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {extra?.mhd && (
+          <section className="rounded-xl border border-line bg-card p-5">
+            <h2 className="head mb-3 text-lg font-semibold text-blue">
+              🚌 MHD
+            </h2>
+            <ul className="space-y-2 text-sm text-ink">
+              {extra.mhd.map((m, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-sky">•</span>
+                  <span dangerouslySetInnerHTML={{ __html: m }} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {extra?.parkovani && (
+          <section className="rounded-xl border border-line bg-card p-5">
+            <h2 className="head mb-3 text-lg font-semibold text-blue">
+              🅿️ Parkování
+            </h2>
+            <p className="text-sm text-ink">{extra.parkovani}</p>
+          </section>
+        )}
+
         {extra?.phases && (
           <section className="rounded-xl border border-line bg-card p-5">
             <h2 className="head mb-3 text-lg font-semibold text-blue">
@@ -131,14 +172,28 @@ export default async function Page({
               </a>
             )}
             <a
-              href="https://plzen.eu/doprava/"
+              href={extra?.source?.url ?? "https://plzen.eu/doprava/"}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md border border-line px-3 py-1.5 text-sm font-medium text-blue hover:border-sky"
             >
-              Oficiální zdroj
+              {extra?.source?.label ?? "Detail na plzen.eu"}
+            </a>
+            <a
+              href="https://www.pmdp.cz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md border border-line px-3 py-1.5 text-sm font-medium text-blue hover:border-sky"
+            >
+              MHD a výluky (PMDP)
             </a>
           </div>
+          {extra?.source && (
+            <p className="mt-3 text-xs text-muted">
+              Objízdné trasy a MHD převzaty z oficiálního zdroje a ručně
+              ověřeny.
+            </p>
+          )}
         </section>
       </div>
     </div>

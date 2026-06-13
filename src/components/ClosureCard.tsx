@@ -28,6 +28,11 @@ export function ClosureCard({ c }: { c: Closure }) {
       <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted">
         <span className="ods-chip not-italic">{c.oblast}</span>
         {c.termin && <span>· {c.termin}</span>}
+        {(extra?.objizdka || extra?.mhd) && (
+          <span className="rounded bg-green/10 px-1.5 py-0.5 font-medium text-green">
+            objížďka + MHD
+          </span>
+        )}
         <span className="ml-auto font-medium text-blue group-hover:underline">
           Detail →
         </span>

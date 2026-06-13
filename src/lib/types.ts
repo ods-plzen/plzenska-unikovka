@@ -23,6 +23,10 @@ export interface ClosureExtra {
   sub: string;
   phases?: Phase[];
   means?: string[];
+  objizdka?: string[]; // objízdné trasy
+  mhd?: string[]; // MHD — odklony linek, zastávky
+  parkovani?: string;
+  source?: { label: string; url: string };
 }
 
 export interface Vote {
