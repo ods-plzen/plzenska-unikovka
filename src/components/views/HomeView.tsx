@@ -9,6 +9,7 @@ import { inArea, areaByeId } from "@/data/areas";
 import { useArea } from "@/components/AreaProvider";
 import { ClosureCard } from "@/components/ClosureCard";
 import { UpdatesFeed } from "@/components/UpdatesFeed";
+import { DataSources } from "@/components/DataSources";
 
 export function HomeView() {
   const { area } = useArea();
@@ -113,6 +114,8 @@ export function HomeView() {
           </div>
         </section>
       )}
+
+      <DataSources />
     </div>
   );
 }
