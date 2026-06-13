@@ -17,15 +17,18 @@ export function DopravaView() {
 
   return (
     <div className="space-y-6">
-      <header className="flex flex-wrap items-end justify-between gap-2">
+      <header className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="head text-2xl font-bold text-ink">Doprava a uzavírky</h1>
-          <p className="text-sm text-muted">
+          <span className="kicker">Doprava · živá mapa</span>
+          <h1 className="head mt-1 text-3xl font-bold uppercase tracking-tight text-ink sm:text-4xl">
+            Uzavírky a omezení
+          </h1>
+          <p className="mt-1 text-sm text-muted">
             {areaLabel} · {list.length}{" "}
             {list.length === 1 ? "uzavírka" : "uzavírek"} · data z plzen.eu
           </p>
         </div>
-        <span className="ods-chip not-italic">Aktualizováno denně</span>
+        <span className="ods-chip">Aktualizováno denně</span>
       </header>
 
       <ClosureMap closures={list} />

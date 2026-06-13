@@ -8,10 +8,13 @@ export function ZastupitelstvoView() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="head text-2xl font-bold text-ink">Ze zastupitelstva</h1>
-        <p className="text-sm text-muted">
-          Rozhodnutí lidskou řečí — co se schválilo a jak hlasoval Lukáš Hegner.
-          Vždy s odkazem na usnesení.
+        <span className="kicker">Z radnice · lidskou řečí</span>
+        <h1 className="head mt-1 text-3xl font-bold uppercase tracking-tight text-ink sm:text-4xl">
+          Ze zastupitelstva
+        </h1>
+        <p className="mt-1 text-sm text-muted">
+          Co se schválilo a jak hlasoval Lukáš Hegner — vždy s odkazem na
+          usnesení a záznam.
         </p>
       </header>
 

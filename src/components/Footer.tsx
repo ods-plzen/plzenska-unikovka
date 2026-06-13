@@ -1,31 +1,58 @@
+import Link from "next/link";
+
+const NAV = [
+  { href: "/doprava", label: "Doprava" },
+  { href: "/zastupitelstvo", label: "Zastupitelstvo" },
+  { href: "/stavby", label: "Stavby" },
+  { href: "/komunita", label: "Komunita" },
+];
+
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-line bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-muted">
-        <div className="flex flex-wrap items-start justify-between gap-6">
-          <div className="max-w-md">
-            <div className="head text-base font-bold uppercase text-blue">
+    <footer className="mt-16 bg-blue-deep text-white">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <div className="grid gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ods-logo.svg" alt="ODS" className="h-7 w-auto" />
+            <div className="head mt-3 text-xl font-bold uppercase tracking-tight">
               Plzeň přehledně
             </div>
-            <p className="mt-1.5 leading-relaxed">
-              Uzavírky, rozhodnutí zastupitelstva, stavby a komunitní info pro
-              všech 10 plzeňských obvodů na jednom místě. Data z veřejných
-              zdrojů — radnice, MHD, OpenStreetMap.
+            <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/65">
+              Uzavírky, rozhodnutí zastupitelstva, stavby a komunita pro všech 10
+              plzeňských obvodů na jednom místě. Data jen z veřejných a
+              oficiálních zdrojů.
             </p>
           </div>
-          <div className="text-sm">
-            <div className="font-semibold text-ink">Provozuje</div>
-            <p className="mt-1.5 leading-relaxed">
+
+          <div>
+            <div className="kicker">Sekce</div>
+            <ul className="mt-3 space-y-1.5 text-sm text-white/75">
+              {NAV.map((n) => (
+                <li key={n.href}>
+                  <Link href={n.href} className="hover:text-sky">
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <div className="kicker">Provozuje</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/75">
               Lukáš Hegner, zastupitel za ODS Plzeň.
-              <br />
-              Agregovaný a strojově zpracovaný obsah je takto označen — nejde o
-              vlastní zpravodajství.
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-white/45">
+              Agregovaný a strojově zpracovaný obsah je vždy takto označen —
+              nejde o vlastní zpravodajství.
             </p>
           </div>
         </div>
-        <div className="mt-6 border-t border-line pt-4 text-xs text-muted">
-          © {new Date().getFullYear()} Plzeň přehledně · Zdroje uvedeny u každé
-          položky · Nezávislá služba pro Plzeňany
+
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5 text-xs text-white/45">
+          <span>© {new Date().getFullYear()} Plzeň přehledně</span>
+          <span>Nezávislá služba pro Plzeňany · zdroje u každé položky</span>
         </div>
       </div>
     </footer>

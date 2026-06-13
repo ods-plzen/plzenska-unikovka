@@ -8,8 +8,11 @@ export function KomunitaView() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="head text-2xl font-bold text-ink">Komunita</h1>
-        <p className="text-sm text-muted">
+        <span className="kicker">Sousedé · bez algoritmu</span>
+        <h1 className="head mt-1 text-3xl font-bold uppercase tracking-tight text-ink sm:text-4xl">
+          Komunita
+        </h1>
+        <p className="mt-1 text-sm text-muted">
           Ztráty a nálezy, sousedské akce. Bez algoritmu, jen ověřené příspěvky.
           {community.updated && (
             <span className="ml-1">· aktualizováno {community.updated}</span>

@@ -18,8 +18,11 @@ export function StavbyView() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="head text-2xl font-bold text-ink">Stavby a sliby</h1>
-        <p className="text-sm text-muted">
+        <span className="kicker">Accountability · slíbeno → stav</span>
+        <h1 className="head mt-1 text-3xl font-bold uppercase tracking-tight text-ink sm:text-4xl">
+          Stavby a sliby
+        </h1>
+        <p className="mt-1 text-sm text-muted">
           {areaLabel} · co bylo slíbeno, kde to stojí a do kdy
         </p>
       </header>

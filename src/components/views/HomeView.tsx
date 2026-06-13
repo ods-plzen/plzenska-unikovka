@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { closures, votes, sortedClosures } from "@/lib/data";
+import { closures, votes, sortedClosures, community } from "@/lib/data";
 import { projects } from "@/data/projects";
-import { community } from "@/lib/data";
 import { inArea, areaByeId } from "@/data/areas";
 import { useArea } from "@/components/AreaProvider";
 import { ClosureCard } from "@/components/ClosureCard";
@@ -25,86 +24,121 @@ export function HomeView() {
   );
   const running = cl.filter((c) => c.status === "now").length;
 
-  const tiles = [
+  const stats = [
     {
       href: "/doprava",
-      label: "Doprava",
       n: cl.length,
-      unit: "uzavírek",
+      label: "Uzavírky",
       hint: `${running} právě probíhá`,
       color: "var(--ods-red)",
     },
     {
       href: "/zastupitelstvo",
-      label: "Zastupitelstvo",
       n: votes.length,
-      unit: "rozhodnutí",
+      label: "Rozhodnutí",
       hint: "jak hlasoval Lukáš",
-      color: "var(--ods-blue)",
+      color: "var(--ods-sky)",
     },
     {
       href: "/stavby",
-      label: "Stavby a sliby",
       n: proj.length,
-      unit: "projektů",
+      label: "Stavby",
       hint: "slíbeno → stav",
       color: "var(--ods-amber)",
     },
     {
       href: "/komunita",
-      label: "Komunita",
       n: community.lost.length + community.events.length,
-      unit: "příspěvků",
+      label: "Komunita",
       hint: "ztráty, akce",
       color: "var(--ods-green)",
     },
   ];
 
   return (
-    <div className="space-y-8">
-      <section className="overflow-hidden rounded-2xl bg-blue p-6 text-white sm:p-8">
-        <span className="ods-chip not-italic">{areaLabel}</span>
-        <h1 className="head mt-3 max-w-2xl text-3xl font-bold leading-tight sm:text-4xl">
-          Co se právě děje ve vašem obvodu — bez hledání po deseti webech.
-        </h1>
-        <p className="mt-2 max-w-xl text-white/80">
-          Uzavírky, rozhodnutí radnice, stavby a sousedské info na jednom místě.
-          Data z veřejných zdrojů, aktualizovaná každý den.
-        </p>
+    <div className="space-y-12">
+      {/* ---------- HERO ---------- */}
+      <section
+        className="reveal relative overflow-hidden rounded-3xl px-7 py-12 text-white sm:px-12 sm:py-16"
+        style={{ background: "var(--hero)" }}
+      >
+        <div className="hero-grid absolute inset-0 opacity-60" />
+        <div
+          className="absolute -right-20 -top-24 h-80 w-80 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(0,159,227,0.55), transparent 65%)",
+          }}
+        />
+        <div className="relative max-w-2xl">
+          <span className="kicker reveal d1 text-sky">
+            {areaLabel} · živý přehled
+          </span>
+          <h1 className="reveal d2 head mt-3 text-[2.6rem] font-bold uppercase leading-[0.92] sm:text-6xl">
+            Co se právě
+            <br />
+            děje u vás
+          </h1>
+          <p className="lead reveal d3 mt-5 max-w-xl text-xl italic leading-snug text-white/80">
+            Uzavírky, rozhodnutí radnice, stavby a sousedské info — bez hledání
+            po deseti webech. Data jen z oficiálních zdrojů.
+          </p>
+          <div className="reveal d4 mt-7 flex flex-wrap gap-3">
+            <Link
+              href="/doprava"
+              className="head rounded-full bg-sky px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5"
+            >
+              Zobrazit na mapě
+            </Link>
+            <Link
+              href="/zastupitelstvo"
+              className="head rounded-full border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:border-white"
+            >
+              Z radnice
+            </Link>
+          </div>
+        </div>
       </section>
 
-      <section className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {tiles.map((t) => (
+      {/* ---------- BROADSHEET STATY ---------- */}
+      <section className="reveal d2 grid grid-cols-2 divide-line overflow-hidden rounded-2xl border border-line bg-card sm:grid-cols-4 sm:divide-x">
+        {stats.map((s) => (
           <Link
-            key={t.href}
-            href={t.href}
-            className="rounded-xl border border-line bg-card p-4 transition-shadow hover:shadow-md"
+            key={s.href}
+            href={s.href}
+            className="group p-5 transition-colors hover:bg-paper sm:p-6"
           >
             <div
-              className="head text-3xl font-bold"
-              style={{ color: t.color }}
+              className="stat text-5xl sm:text-6xl"
+              style={{ color: s.color }}
             >
-              {t.n}
+              {s.n}
             </div>
-            <div className="text-sm font-semibold text-ink">{t.label}</div>
-            <div className="text-xs text-muted">{t.hint}</div>
+            <div className="head mt-2 text-sm font-semibold uppercase tracking-wide text-ink">
+              {s.label}
+            </div>
+            <div className="text-xs text-muted">{s.hint}</div>
           </Link>
         ))}
       </section>
 
-      <UpdatesFeed />
+      {/* ---------- CO JE NOVÉHO ---------- */}
+      <section className="reveal d3">
+        <UpdatesFeed />
+      </section>
 
+      {/* ---------- AKTUÁLNÍ UZAVÍRKY ---------- */}
       {cl.length > 0 && (
-        <section>
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="head text-xl font-bold text-ink">
+        <section className="reveal d4">
+          <div className="section-rule mb-4">
+            <h2 className="head text-2xl font-bold uppercase tracking-tight text-ink">
               Aktuální uzavírky
             </h2>
             <Link
               href="/doprava"
-              className="text-sm font-medium text-blue hover:underline"
+              className="kicker shrink-0 hover:text-blue"
             >
-              Všechny na mapě →
+              Vše na mapě →
             </Link>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -115,7 +149,10 @@ export function HomeView() {
         </section>
       )}
 
-      <DataSources />
+      {/* ---------- ZDROJE ---------- */}
+      <section className="reveal d5">
+        <DataSources />
+      </section>
     </div>
   );
 }
