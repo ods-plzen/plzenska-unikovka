@@ -45,6 +45,24 @@ se ho nedotýká.
 python scripts/scraper.py   # přepíše src/data/closures.json
 ```
 
+## Ruční editace obsahu
+
+Data, která se nescrapují, se editují přímo v `src/data/`:
+
+- **Komunita** — `src/data/community.json`: pole `lost` (ztráty/nálezy) a `events`
+  (akce). Každá položka má `lat`/`lon` (pro mapu) a `updated` na úrovni souboru
+  posuň při každé změně. Nový příspěvek = přidej objekt do pole, commit, deploy
+  se spustí sám.
+- **Objízdky a MHD u uzavírek** — `src/data/extras.json`, klíč = `id` uzavírky
+  (např. `28-rijna`). Pole `objizdka`, `mhd`, `parkovani`, `phases`, `source`.
+  Návrh textu vygeneruje `python3 scripts/enrich.py "<ulice>"` z článku města —
+  vždy ručně zkrať a ověř před vložením.
+- **Zastupitelstvo** — `src/data/votes.json` (hlasování) a `src/data/chapters.ts`
+  (kapitoly záznamu jednání).
+- **Stavby** — `src/data/projects.ts` (accountability timeline).
+
+Pravidlo: u převzatého obsahu vždy vyplň `source`/`srcUrl` a krať na fakta.
+
 ## Nasazení
 
 Vercel: import repozitáře → framework Next.js se detekuje sám. Žádné env

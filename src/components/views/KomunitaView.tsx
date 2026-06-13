@@ -9,6 +9,9 @@ export function KomunitaView() {
         <h1 className="head text-2xl font-bold text-ink">Komunita</h1>
         <p className="text-sm text-muted">
           Ztráty a nálezy, sousedské akce. Bez algoritmu, jen ověřené příspěvky.
+          {community.updated && (
+            <span className="ml-1">· aktualizováno {community.updated}</span>
+          )}
         </p>
       </header>
 

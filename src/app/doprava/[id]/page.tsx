@@ -180,7 +180,7 @@ export default async function Page({
               {extra?.source?.label ?? "Detail na plzen.eu"}
             </a>
             <a
-              href="https://www.pmdp.cz/"
+              href="https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md border border-line px-3 py-1.5 text-sm font-medium text-blue hover:border-sky"
