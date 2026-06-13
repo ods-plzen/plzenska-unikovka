@@ -59,7 +59,19 @@ export function StavbyView() {
               </div>
 
               <div className="mt-3 border-t border-line pt-2 text-xs text-muted">
-                Zdroj: {p.src}
+                Zdroj:{" "}
+                {p.srcUrl ? (
+                  <a
+                    href={p.srcUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-blue hover:underline"
+                  >
+                    {p.src}
+                  </a>
+                ) : (
+                  p.src
+                )}
               </div>
             </article>
           ))}
