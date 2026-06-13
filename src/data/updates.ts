@@ -46,6 +46,20 @@ export const updates: Update[] = [
   {
     date: "2026-06-11",
     display: "11. 6. 2026",
+    kind: "zastupitelstvo",
+    title: "Světovar A1–A4: dotace až 90 mil. na 68 nájemních bytů",
+    href: "/zastupitelstvo",
+  },
+  {
+    date: "2026-06-11",
+    display: "11. 6. 2026",
+    kind: "zastupitelstvo",
+    title: "Posílení rozpočtu o 20 mil. na obnovu Jiráskova náměstí (Slovany)",
+    href: "/zastupitelstvo",
+  },
+  {
+    date: "2026-06-11",
+    display: "11. 6. 2026",
     kind: "doprava",
     title: "Americká: bod o změně dopravního režimu stažen, vrátí se na podzim",
     href: "/doprava/americka",

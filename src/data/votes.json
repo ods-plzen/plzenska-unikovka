@@ -1,9 +1,9 @@
 [
  {
   "who": "Lukáš Hegner",
-  "role": "zastupitel města Plzně",
+  "role": "zastupitel města Plzně (ODS)",
   "av": "LH",
-  "stmt": "Hlasoval PRO koupi rozhledny Chlum městem.",
+  "stmt": "Hlasoval PRO koupi rozhledny Chlum městem — 4,52 mil. Kč za objekt z elektronické aukce, město využije předkupní právo.",
   "tags": ["majetek", "Doubravka"],
   "pro": 28,
   "proti": 0,
@@ -14,31 +14,83 @@
  },
  {
   "who": "Zastupitelstvo",
-  "role": "přijaté usnesení",
+  "role": "přijaté usnesení · 11. 6. 2026",
   "av": "ZMP",
-  "stmt": "Posílení rozpočtu na záchranu kulturního domu Peklo — vypsána soutěž na 1. etapu (velký sál, šatny, haly).",
-  "tags": ["rozpočet", "kultura"],
+  "stmt": "Posílení rozpočtu o 20 mil. Kč na obnovu Jiráskova náměstí a Klášterní zahrady na Slovanech. Realizace 2026–2029, dosud zajištěno 406 mil. Kč.",
+  "tags": ["rozpočet", "Slovany"],
+  "src": "Informace z jednání ZMP · 11. 6. 2026",
+  "srcUrl": "https://www.plzen.eu/o-meste/aktuality/pro-media/informace-ze-zastupitelstva/informace-z-jednani-zastupitelstva-mesta-plzne.aspx"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "přijaté usnesení · 11. 6. 2026",
+  "av": "ZMP",
+  "stmt": "Schválena smlouva na dotaci ze Státního fondu podpory investic na bytové domy Světovar A1–A4 — 68 nájemních bytů, dotace až 90 mil. Kč, celkem ~542 mil.",
+  "tags": ["bydlení", "dotace"],
+  "src": "Informace z jednání ZMP · 11. 6. 2026",
+  "srcUrl": "https://www.plzen.eu/o-meste/aktuality/pro-media/informace-ze-zastupitelstva/informace-z-jednani-zastupitelstva-mesta-plzne.aspx"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "přijaté usnesení · 11. 6. 2026",
+  "av": "ZMP",
+  "stmt": "Navýšení rozpočtu na záchranu kulturního domu Peklo o 100 mil. Kč (k alokovaným 738 mil.). Vypsána soutěž na 1. etapu, cíl zahájit ještě v roce 2026.",
+  "tags": ["kultura", "rozpočet"],
   "src": "Magistrát města Plzně — aktuality",
-  "srcUrl": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/plzen-posili-rozpocet-na-zachranu-kulturniho-domu-peklo-rekonstrukce-bude-zahajena-sanaci-casti-objektu-jehoz-soucasti-je-spolecensky-sal/",
-  "note": "cíl zahájit práce ještě v roce 2026"
+  "srcUrl": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/plzen-posili-rozpocet-na-zachranu-kulturniho-domu-peklo-rekonstrukce-bude-zahajena-sanaci-casti-objektu-jehoz-soucasti-je-spolecensky-sal/"
  },
  {
   "who": "Zastupitelstvo",
-  "role": "přijaté usnesení",
+  "role": "přijaté usnesení · 11. 6. 2026",
   "av": "ZMP",
-  "stmt": "Schválen rozpočet 2026 — investice 5,2 mld Kč.",
-  "tags": ["rozpočet", "investice"],
-  "src": "Rozpočet města Plzně (interaktivní portál)",
-  "srcUrl": "https://rozpocetmesta.plzen.eu/",
-  "note": "klub ODS se zdržel"
+  "stmt": "Schválen návrh zadání 5. změny Územního plánu Plzeň — reaguje na nejčastější náměty veřejnosti (stavební parcely v krajině, pravidla v rekreačních oblastech).",
+  "tags": ["územní plán"],
+  "src": "Informace z jednání ZMP · 11. 6. 2026",
+  "srcUrl": "https://www.plzen.eu/o-meste/aktuality/pro-media/informace-ze-zastupitelstva/informace-z-jednani-zastupitelstva-mesta-plzne.aspx"
  },
  {
   "who": "Zastupitelstvo",
-  "role": "bod stažen",
+  "role": "přijaté usnesení · 11. 6. 2026",
   "av": "ZMP",
-  "stmt": "Změna režimu na Americké — bod stažen, vrátí se v září.",
-  "tags": ["doprava", "centrum"],
-  "src": "NÁM T/1",
-  "rec": "Záznam: 4h debata"
+  "stmt": "Schválen záměr otevřené sochařské soutěže na podobu sochy generála Pattona pro nové muzeum na Klatovské 19. Náklady ~3 mil. Kč.",
+  "tags": ["kultura"],
+  "src": "Informace z jednání ZMP · 11. 6. 2026",
+  "srcUrl": "https://www.plzen.eu/o-meste/aktuality/pro-media/informace-ze-zastupitelstva/informace-z-jednani-zastupitelstva-mesta-plzne.aspx"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "přijaté usnesení · 11. 6. 2026",
+  "av": "ZMP",
+  "stmt": "Schválen přesun Festivalu na ulici do areálu DEPO2015 (kvůli rekonstrukci náměstí Republiky) + dotace 250 tis. Kč pořadateli. Festival 14.–22. 8.",
+  "tags": ["kultura", "akce"],
+  "src": "Informace z jednání ZMP · 11. 6. 2026",
+  "srcUrl": "https://www.plzen.eu/o-meste/aktuality/pro-media/informace-ze-zastupitelstva/informace-z-jednani-zastupitelstva-mesta-plzne.aspx"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "přijaté usnesení · 11. 6. 2026",
+  "av": "ZMP",
+  "stmt": "Schváleno přejmenování Ústavu Plzeň 2015 na DEPO2015, z. ú. — sjednocení názvu organizace s její značkou a hlavní činností.",
+  "tags": ["kultura"],
+  "src": "Informace z jednání ZMP · 11. 6. 2026",
+  "srcUrl": "https://www.plzen.eu/o-meste/aktuality/pro-media/informace-ze-zastupitelstva/informace-z-jednani-zastupitelstva-mesta-plzne.aspx"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "přijaté usnesení · 11. 6. 2026",
+  "av": "ZMP",
+  "stmt": "Schváleny dotace 5,2 mil. Kč majitelům nemovitých kulturních památek na opravy a obnovu (program Zachování a obnova kulturní památky).",
+  "tags": ["památky", "dotace"],
+  "src": "Informace z jednání ZMP · 11. 6. 2026",
+  "srcUrl": "https://www.plzen.eu/o-meste/aktuality/pro-media/informace-ze-zastupitelstva/informace-z-jednani-zastupitelstva-mesta-plzne.aspx"
+ },
+ {
+  "who": "Zastupitelstvo",
+  "role": "přijaté usnesení · 11. 6. 2026",
+  "av": "ZMP",
+  "stmt": "Schváleny individuální dotace 5,54 mil. Kč kulturním institucím — DEPO2015 (4 mil.), Plzeňská filharmonie (1,5 mil.) a Galerie města Plzně.",
+  "tags": ["kultura", "dotace"],
+  "src": "Informace z jednání ZMP · 11. 6. 2026",
+  "srcUrl": "https://www.plzen.eu/o-meste/aktuality/pro-media/informace-ze-zastupitelstva/informace-z-jednani-zastupitelstva-mesta-plzne.aspx"
  }
 ]
