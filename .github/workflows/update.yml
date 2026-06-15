@@ -1,4 +1,4 @@
-name: Aktualizace uzavírek
+name: Aktualizace uzavírek + PMDP
 
 on:
   schedule:
@@ -18,17 +18,23 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Stáhni uzavírky a geometrii
+      - name: Stáhni uzavírky a geometrii (plzen.eu)
         run: python scripts/scraper.py
+
+      - name: Stáhni PMDP změny v dopravě
+        # PMDP scraper potřebuje aktuální closures.json kvůli matchování,
+        # proto běží AŽ po scrapper.py.
+        run: python scripts/pmdp.py
+        continue-on-error: true
 
       - name: Commitni změny dat
         run: |
           git config user.name "plzen-prehledne-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add src/data/closures.json
+          git add src/data/closures.json src/data/pmdp.json
           if git diff --cached --quiet; then
             echo "Bez změn."
           else
-            git commit -m "data: aktualizace uzavírek $(date -u +%F)"
+            git commit -m "data: aktualizace uzavírek a PMDP $(date -u +%F)"
             git push
           fi
