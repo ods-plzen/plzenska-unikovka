@@ -24,13 +24,13 @@ export function Header() {
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
           <Link href="/" className="flex shrink-0 items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/ods-logo.svg" alt="ODS" className="h-7 w-auto" />
+            <img src="/icon.svg" alt="" className="h-9 w-9" />
             <span className="leading-none">
               <span className="head block text-[1.35rem] font-bold uppercase leading-none tracking-tight">
-                Plzeň přehledně
+                Plzeňská únikovka
               </span>
               <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.25em] text-sky">
-                Občanský přehled · od ODS
+                Mapa uzavírek · zastupitelstvo · stavby
               </span>
             </span>
           </Link>

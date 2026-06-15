@@ -67,6 +67,29 @@
    "Objízdné trasy autobusů dočasně přes ulice Senecká a Nad Řekou.",
    "Pro chodce vyznačeny bezpečné koridory podél stavby."
   ],
+  "mhdInfo": {
+   "summary": "Bus zachován · točna přesunuta · objížďka pro autobusy",
+   "reroutes": [
+    {
+     "mode": "bus",
+     "via": "Senecká → Nad Řekou",
+     "note": "dočasná objízdná trasa autobusů"
+    }
+   ],
+   "tempStops": [
+    {
+     "name": "Bílá Hora (točna)",
+     "where": "ulice Nad Řekou",
+     "note": "dočasné přesunutí točny"
+    }
+   ],
+   "notes": [
+    "Průjezd autobusů a vozidel IZS uzavírkou je umožněn.",
+    "Pro chodce jsou vyznačeny bezpečné koridory podél stavby."
+   ],
+   "sourceUrl": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
+   "sourceLabel": "PMDP — Změny v dopravě"
+  },
   "source": {
    "label": "Magistrát města Plzně — aktuality",
    "url": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/v-kvetnu-odstartuje-dalsi-etapa-opravy-silnice-na-bile-hore-uplna-uzavirka-zrychli-prace-o-dva-mesice/"

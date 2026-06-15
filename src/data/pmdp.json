@@ -1,0 +1,484 @@
+{
+ "snapshot": "2026-06-15T15:33:22+00:00",
+ "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
+ "entries": [
+  {
+   "id": "zajisteni-odvozu-divaku-z-kulturni-akce-noc-s-operou-25-27-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4275/zajisteni-odvozu-divaku-z-kulturni-akce-noc-s-operou-25-27-6-2026/",
+   "title": "Zajištění odvozu diváků z kulturní akce Noc s operou 25. - 27. 6. 2026",
+   "lines": [
+    "25",
+    "27",
+    "6",
+    "202"
+   ],
+   "startDate": null,
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "preruseni-linky-76-k-zoologicke-zahrade-21-a-27-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4280/preruseni-linky-76-k-zoologicke-zahrade-21-a-27-6-2026/",
+   "title": "Přerušení linky 76 k zoologické zahradě 21. a 27. 6. 2026",
+   "lines": [
+    "76",
+    "21",
+    "27",
+    "6",
+    "202"
+   ],
+   "startDate": null,
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
+   "title": "Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 2026",
+   "lines": [
+    "29",
+    "30",
+    "N3",
+    "N6"
+   ],
+   "startDate": "2026-06-29",
+   "endDate": null,
+   "matchedClosure": "masarykova",
+   "detail": {
+    "summary": "Od 29. 6. 2026 bude zahájena dlouhodobá rekonstrukce Masarykovy ulice, a to v úseku mezi ulicemi Těšínská a Rokycanská. Z tohoto důvodu dojde k odklonu linek 29, 30, N3, N6. Spoje všech těchto linek budou obousměrně odkloněny ulicemi Rokycanská, Jateční Těšínská. V uzavřeném úseku Masarykovy ulice se nenachází žádná zastávka, a proto spoje uvedených linek pojedou po objížďce přímo, bez zastavování.",
+    "lineGroups": [
+     {
+      "lines": [
+       "29",
+       "30",
+       "N3",
+       "N6"
+      ],
+      "via": "Rokycanská, Jateční Těšínská"
+     }
+    ],
+    "stopsAffected": [],
+    "notes": []
+   }
+  },
+  {
+   "id": "docasna-zmena-trasy-linek-33-40-v-centru-od-29-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4278/docasna-zmena-trasy-linek-33-40-v-centru-od-29-6-2026/",
+   "title": "Dočasná změna trasy linek 33, 40 v centru od 29. 6. 2026",
+   "lines": [
+    "33",
+    "40"
+   ],
+   "startDate": "2026-06-29",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "celotydenni-provoz-linky-76-k-zoologicke-zahrade-od-27-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4277/celotydenni-provoz-linky-76-k-zoologicke-zahrade-od-27-6-2026/",
+   "title": "Celotýdenní provoz linky 76 k zoologické zahradě od 27. 6. 2026",
+   "lines": [
+    "76"
+   ],
+   "startDate": "2026-06-27",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "zahajeni-prazdninoveho-provozu-od-29-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4276/zahajeni-prazdninoveho-provozu-od-29-6-2026/",
+   "title": "Zahájení prázdninového provozu od 29. 6. 2026",
+   "lines": [
+    "29",
+    "6",
+    "202"
+   ],
+   "startDate": "2026-06-29",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "obnoveni-zajizdeni-linky-51-do-sedlce-od-13-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4274/obnoveni-zajizdeni-linky-51-do-sedlce-od-13-6-2026/",
+   "title": "Obnovení zajíždění linky 51 do Sedlce od 13. 6. 2026",
+   "lines": [
+    "51"
+   ],
+   "startDate": "2026-06-13",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "vyluka-kosutka-dne-28-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4273/vyluka-kosutka-dne-28-6-2026/",
+   "title": "Výluka Košutka dne 28. 6. 2026",
+   "lines": [
+    "28",
+    "6",
+    "202"
+   ],
+   "startDate": null,
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "vyluka-bolevec-kosutka-dne-27-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4272/vyluka-bolevec-kosutka-dne-27-6-2026/",
+   "title": "Výluka Bolevec, Košutka dne 27. 6. 2026",
+   "lines": [
+    "27",
+    "6",
+    "202"
+   ],
+   "startDate": null,
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "zahajeni-provozu-linky-76-k-zoologicke-zahrade-od-13-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4271/zahajeni-provozu-linky-76-k-zoologicke-zahrade-od-13-6-2026/",
+   "title": "Zahájení provozu linky 76 k zoologické zahradě od 13. 6. 2026",
+   "lines": [
+    "76"
+   ],
+   "startDate": "2026-06-13",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "odklon-a-zmeny-zastavek-linky-11-na-ustrednim-hrbitove-od-6-6-2026-do-26-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4270/odklon-a-zmeny-zastavek-linky-11-na-ustrednim-hrbitove-od-6-6-2026-do-26-6-2026/",
+   "title": "Odklon a změny zastávek linky 11 na Ústředním hřbitově od 6. 6. 2026 do 26. 6. 2026",
+   "lines": [
+    "11"
+   ],
+   "startDate": "2026-06-06",
+   "endDate": "2026-06-26",
+   "matchedClosure": null
+  },
+  {
+   "id": "docasne-omezeni-spoju-do-letkova-na-lince-12-a-zmeny-na-lince-19-od-1-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4267/docasne-omezeni-spoju-do-letkova-na-lince-12-a-zmeny-na-lince-19-od-1-6-2026/",
+   "title": "Dočasné omezení spojů do Letkova na lince 12 a změny na lince 19 od 1. 6. 2026",
+   "lines": [
+    "12",
+    "19"
+   ],
+   "startDate": "2026-06-01",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12",
+   "url": "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
+   "title": "Uzavírka Americké ulice od 11. 5. 2026 - změny linek 20, 27, 34, N1 - N6, N11, N12",
+   "lines": [
+    "11",
+    "5",
+    "202",
+    "6",
+    "20",
+    "27",
+    "34",
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5",
+    "N6",
+    "N11",
+    "N12"
+   ],
+   "startDate": "2026-05-11",
+   "endDate": null,
+   "matchedClosure": "americka",
+   "detail": {
+    "summary": "S platností od zahájení denního provozu 11. 5. 2026 dojde k odklonu denních autobusových linek 20, 27, 34 a všech nočních autobusových linek z Americké ulice do Kopeckého a Smetanových sadů. Zastávky Mrakodrap, U Práce budou zrušeny a nahrazeny zastávkami Muzeum a Smetanovy sady. Další změny zastávek jsou uvedeny u každé z linek.",
+    "lineGroups": [
+     {
+      "lines": [
+       "27"
+      ],
+      "via": "rondelu z Karlovarské ulice do ulice Otýlie Beníškové a v trase totožné s linkami 33, 40 pojedou až na konec Františkánské ulice"
+     },
+     {
+      "lines": [
+       "N1",
+       "N4"
+      ],
+      "via": "Smetanových sadů, Kopeckého sadů, na Anglické nábřeží a do Pražské ulice"
+     },
+     {
+      "lines": [
+       "N2",
+       "N5"
+      ],
+      "via": "Anglické nábřeží, do Kopeckého sadů, Smetanových sadů, Husovy a Koperníkovy ulice"
+     },
+     {
+      "lines": [
+       "N3",
+       "N6"
+      ],
+      "via": "Anglické nábřeží, do Kopeckého sadů a Smetanových sadů"
+     }
+    ],
+    "stopsAffected": [
+     "Sady Pětatřicátníků",
+     "U Práce",
+     "Mrakodrap",
+     "Muzeum – počáteční zastávka"
+    ],
+    "notes": []
+   }
+  },
+  {
+   "id": "uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu",
+   "url": "https://www.pmdp.cz/systransport/63/6/4259/uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu/",
+   "title": "Uzavírka Americké ulice od 11. 5. 2026 - změny v trolejbusovém provozu",
+   "lines": [
+    "11",
+    "5",
+    "202",
+    "6"
+   ],
+   "startDate": "2026-05-11",
+   "endDate": null,
+   "matchedClosure": "americka",
+   "detail": {
+    "summary": "Od 11. 5. 2026 bude zahájena rekonstrukce Americké ulice, respektive její přestavba na sdílenou zónu.",
+    "lineGroups": [
+     {
+      "lines": [
+       "10"
+      ],
+      "via": "Belánku a ukončena v zastávce CAN Husova"
+     },
+     {
+      "lines": [
+       "11"
+      ],
+      "via": "Smetanovy sady a Husovu ulici"
+     },
+     {
+      "lines": [
+       "12"
+      ],
+      "via": "ulici U Trati"
+     },
+     {
+      "lines": [
+       "15",
+       "17"
+      ],
+      "via": "ulici U Trati"
+     },
+     {
+      "lines": [
+       "16"
+      ],
+      "via": "Smetanovy sady a Husovu ulici"
+     },
+     {
+      "lines": [
+       "N7"
+      ],
+      "via": "Smetanovy sady a Husovu ulici a ukončena v zastávce \"Muzeum\""
+     }
+    ],
+    "stopsAffected": [],
+    "notes": [
+     "Od 11. 5. 2026 bude zahájena rekonstrukce Americké ulice, respektive její přestavba na sdílenou zónu.",
+     "Zrušené zastávky linky 10: Tylova (v Tylově ulici); U Práce; Mrakodrap; Prokopova",
+     "Zrušené zastávky linky 11: CAN Tylova (směr Ústřední hřbitov); Tylova; U Práce; Mrakodrap"
+    ]
+   }
+  },
+  {
+   "id": "prelozeni-zastavek-linek-20-58-u-kondru-od-7-5-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4256/prelozeni-zastavek-linek-20-58-u-kondru-od-7-5-2026/",
+   "title": "Přeložení zastávek linek 20, 58 U Kondrů od 7. 5. 2026",
+   "lines": [
+    "20",
+    "58"
+   ],
+   "startDate": "2026-05-07",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "prelozeni-zastavky-linek-26-42-lasitov-od-23-4-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4247/prelozeni-zastavky-linek-26-42-lasitov-od-23-4-2026/",
+   "title": "Přeložení zastávky linek 26, 42 Lašitov od 23. 4. 2026",
+   "lines": [
+    "26",
+    "42"
+   ],
+   "startDate": "2026-04-23",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "prelozeni-zastavek-malesice-pro-linky-11-35-37-n5-od-7-4-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4243/prelozeni-zastavek-malesice-pro-linky-11-35-37-n5-od-7-4-2026/",
+   "title": "Přeložení zastávek \"Malesice\" pro linky 11, 35, 37, N5 od 7. 4. 2026",
+   "lines": [
+    "11",
+    "35",
+    "37",
+    "N5"
+   ],
+   "startDate": "2026-04-07",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "prelozeni-zastavek-letna-oba-smery-od-16-3-2026-do-ukonceni-praci-vystavba-lavky",
+   "url": "https://www.pmdp.cz/systransport/63/6/4234/prelozeni-zastavek-letna-oba-smery-od-16-3-2026-do-ukonceni-praci-vystavba-lavky/",
+   "title": "Přeložení zastávek \"Letná\" (oba směry) od 16. 3. 2026 do ukončení prací - výstavba lávky",
+   "lines": [
+    "16",
+    "3",
+    "202",
+    "6"
+   ],
+   "startDate": "2026-03-16",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "vyluka-letkov-zmeny-na-linkach-12-a-n11-od-19-1-2026-do-ukonceni-praci",
+   "url": "https://www.pmdp.cz/systransport/63/6/4222/vyluka-letkov-zmeny-na-linkach-12-a-n11-od-19-1-2026-do-ukonceni-praci/",
+   "title": "Výluka Letkov - změny na linkách 12 a N11 od 19. 1. 2026 do ukončení prací",
+   "lines": [
+    "12",
+    "N11"
+   ],
+   "startDate": "2026-01-19",
+   "endDate": null,
+   "matchedClosure": null
+  }
+ ],
+ "perClosure": {
+  "americka": {
+   "reroutes": [
+    {
+     "lines": [
+      "27"
+     ],
+     "via": "rondelu z Karlovarské ulice do ulice Otýlie Beníškové a v trase totožné s linkami 33, 40 pojedou až na konec Františkánské ulice"
+    },
+    {
+     "lines": [
+      "N1",
+      "N4"
+     ],
+     "via": "Smetanových sadů, Kopeckého sadů, na Anglické nábřeží a do Pražské ulice"
+    },
+    {
+     "lines": [
+      "N2",
+      "N5"
+     ],
+     "via": "Anglické nábřeží, do Kopeckého sadů, Smetanových sadů, Husovy a Koperníkovy ulice"
+    },
+    {
+     "lines": [
+      "N3",
+      "N6"
+     ],
+     "via": "Anglické nábřeží, do Kopeckého sadů a Smetanových sadů"
+    },
+    {
+     "lines": [
+      "10"
+     ],
+     "via": "Belánku a ukončena v zastávce CAN Husova"
+    },
+    {
+     "lines": [
+      "11"
+     ],
+     "via": "Smetanovy sady a Husovu ulici"
+    },
+    {
+     "lines": [
+      "12"
+     ],
+     "via": "ulici U Trati"
+    },
+    {
+     "lines": [
+      "15",
+      "17"
+     ],
+     "via": "ulici U Trati"
+    },
+    {
+     "lines": [
+      "16"
+     ],
+     "via": "Smetanovy sady a Husovu ulici"
+    },
+    {
+     "lines": [
+      "N7"
+     ],
+     "via": "Smetanovy sady a Husovu ulici a ukončena v zastávce \"Muzeum\""
+    }
+   ],
+   "tempStops": [
+    {
+     "name": "Sady Pětatřicátníků",
+     "where": "viz PMDP",
+     "note": ""
+    },
+    {
+     "name": "U Práce",
+     "where": "viz PMDP",
+     "note": ""
+    },
+    {
+     "name": "Mrakodrap",
+     "where": "viz PMDP",
+     "note": ""
+    },
+    {
+     "name": "Muzeum – počáteční zastávka",
+     "where": "viz PMDP",
+     "note": ""
+    }
+   ],
+   "notes": [
+    "Od 11. 5. 2026 bude zahájena rekonstrukce Americké ulice, respektive její přestavba na sdílenou zónu.",
+    "Zrušené zastávky linky 10: Tylova (v Tylově ulici); U Práce; Mrakodrap; Prokopova"
+   ],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
+   "sourceLabel": "PMDP — Uzavírka Americké ulice od 11. 5. 2026 - změny linek 20, 27, 34, N1 - N6, N11, N",
+   "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
+    "https://www.pmdp.cz/systransport/63/6/4259/uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu/"
+   ]
+  },
+  "masarykova": {
+   "reroutes": [
+    {
+     "lines": [
+      "29",
+      "30",
+      "N3",
+      "N6"
+     ],
+     "via": "Rokycanská, Jateční Těšínská"
+    }
+   ],
+   "tempStops": [],
+   "notes": [],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
+   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
+   "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
+   ]
+  }
+ }
+}
