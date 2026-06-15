@@ -16,14 +16,23 @@ import html
 import json
 import os
 import re
+import socket
 import sys
 import time
+import urllib.error
 import urllib.request
 from typing import Iterable
 
-UA = {"User-Agent": "PlzenPrehledne/1.0 (+https://plzen-prehledne.vercel.app)"}
+UA = {"User-Agent": "PlzenPrehledne/1.0 (+https://plzenskaunikovka.cz)"}
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 LIST_URL = "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/"
+
+# pmdp.cz má IPv6 záznam, ale GitHub Actions runner k němu nemá routing
+# (urlopen padá s "Network is unreachable"). Vynutíme IPv4-only.
+_orig_getaddrinfo = socket.getaddrinfo
+def _ipv4_only(host, *args, **kwargs):
+    return [info for info in _orig_getaddrinfo(host, *args, **kwargs) if info[0] == socket.AF_INET]
+socket.getaddrinfo = _ipv4_only
 
 _TR = str.maketrans(
     {"á": "a", "č": "c", "ď": "d", "é": "e", "ě": "e", "í": "i", "ň": "n",
@@ -35,10 +44,18 @@ def ascii_lower(s: str) -> str:
     return s.lower().translate(_TR)
 
 
-def get(url: str) -> str:
+def get(url: str, retries: int = 3) -> str:
     req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return r.read().decode("utf-8", "ignore")
+    last_exc: Exception | None = None
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read().decode("utf-8", "ignore")
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last_exc = e
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+    raise last_exc if last_exc else RuntimeError(f"failed to fetch {url}")
 
 
 def strip_tags(s: str) -> str:
