@@ -28,7 +28,7 @@ const newsreader = Newsreader({
 const SITE_URL = "https://plzenskaunikovka.cz";
 const SITE_NAME = "Plzeňská únikovka";
 const SITE_DESCRIPTION =
-  "Únikovka z plzeňského dopravního chaosu. Uzavírky, hlasy ze zastupitelstva, stavby a komunitní informace pro všech 10 plzeňských obvodů na jednom místě.";
+  "Únikovka z plzeňského dopravního chaosu. Mapa uzavírek, MHD odklony a dočasné zastávky pro všech 10 plzeňských obvodů. Data z plzen.eu a PMDP aktualizovaná denně.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
