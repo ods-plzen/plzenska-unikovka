@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { closures, closureById, extraFor } from "@/lib/data";
+import { closures, closureById, extraFor, mhdInfoFor } from "@/lib/data";
 import { ClosureMap } from "@/components/map/ClosureMap";
 import { PhaseTimeline } from "@/components/PhaseTimeline";
 import { StatusBadge } from "@/components/StatusBadge";
 import { WatchButton } from "@/components/WatchButton";
+import { MhdBlock } from "@/components/MhdBlock";
 
 export function generateStaticParams() {
   return closures.map((c) => ({ id: c.id }));
@@ -18,7 +19,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const c = closureById(id);
-  return { title: c ? `${c.name} — Plzeň přehledně` : "Uzavírka" };
+  if (!c) return { title: "Uzavírka" };
+  return {
+    title: `${c.name} (uzavírka, ${c.oblast})`,
+    description: `${c.akce}. Termín: ${c.termin || "viz detail"}. MHD, objízdné trasy a zdroje.`,
+  };
 }
 
 function midpoint(c: NonNullable<ReturnType<typeof closureById>>) {
@@ -37,6 +42,7 @@ export default async function Page({
   if (!c) notFound();
 
   const extra = extraFor(c.id);
+  const mhd = mhdInfoFor(c.id);
   const mid = midpoint(c);
   const navUrl = mid
     ? `https://www.google.com/maps/search/?api=1&query=${mid[0]},${mid[1]}`
@@ -102,7 +108,9 @@ export default async function Page({
           </section>
         )}
 
-        {extra?.mhd && (
+        {mhd ? (
+          <MhdBlock info={mhd} />
+        ) : extra?.mhd ? (
           <section className="rounded-xl border border-line bg-card p-5">
             <h2 className="head mb-3 text-lg font-semibold text-blue">
               🚌 MHD
@@ -116,7 +124,7 @@ export default async function Page({
               ))}
             </ul>
           </section>
-        )}
+        ) : null}
 
         {extra?.parkovani && (
           <section className="rounded-xl border border-line bg-card p-5">

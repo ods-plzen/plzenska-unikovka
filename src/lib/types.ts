@@ -24,9 +24,34 @@ export interface ClosureExtra {
   phases?: Phase[];
   means?: string[];
   objizdka?: string[]; // objízdné trasy
-  mhd?: string[]; // MHD — odklony linek, zastávky
+  mhd?: string[]; // legacy MHD bullety (fallback, když chybí mhdInfo)
+  mhdInfo?: MhdInfo; // strukturovaná MHD data — preferováno
   parkovani?: string;
   source?: { label: string; url: string };
+}
+
+export type MhdMode = "tram" | "bus" | "trolley" | "night";
+
+export interface MhdReroute {
+  lines?: string[]; // ["22", "32"] — pouze ověřená čísla z PMDP, jinak vynechat
+  mode?: MhdMode; // typ provozu, ovlivní barvu badge
+  via: string; // popis odklonu, např. "přes Anglické nábřeží → Kopeckého → Smetanovy sady"
+  note?: string;
+}
+
+export interface MhdTempStop {
+  name: string; // název původní/dotčené zastávky
+  where: string; // kam je dočasně přesunuta
+  note?: string;
+}
+
+export interface MhdInfo {
+  summary?: string; // krátké shrnutí, např. "Bus zachován, točna přesunuta"
+  reroutes?: MhdReroute[];
+  tempStops?: MhdTempStop[];
+  notes?: string[]; // doplňující informace bez vlastní sekce
+  sourceUrl?: string;
+  sourceLabel?: string;
 }
 
 export interface Vote {

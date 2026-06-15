@@ -1,6 +1,7 @@
-import type { Closure, ClosureExtra, Vote, Community } from "@/lib/types";
+import type { Closure, ClosureExtra, MhdInfo, Vote, Community } from "@/lib/types";
 import closuresRaw from "@/data/closures.json";
 import extrasRaw from "@/data/extras.json";
+import pmdpRaw from "@/data/pmdp.json";
 import votesRaw from "@/data/votes.json";
 import communityRaw from "@/data/community.json";
 
@@ -11,9 +12,44 @@ export const extras = extrasRaw as unknown as Record<string, ClosureExtra>;
 export const votes = votesRaw as unknown as Vote[];
 export const community = communityRaw as unknown as Community;
 
+interface PmdpSnapshot {
+  snapshot: string;
+  source: string;
+  perClosure: Record<string, MhdInfo & { sourceUrlsAll?: string[] }>;
+}
+
+export const pmdp = pmdpRaw as unknown as PmdpSnapshot;
+
 // Editorial overlay (fáze, „co to znamená") se přiloží k naškrábané uzavírce podle id.
 export function extraFor(id: string): ClosureExtra | undefined {
   return extras[id];
+}
+
+// Sjednocené MHD info: PMDP (auto, denní) + extras.mhdInfo (human, override).
+// Pravidlo: pokud má extras.mhdInfo neprázdné pole, vyhrává nad PMDP. Jinak se použije PMDP.
+export function mhdInfoFor(closureId: string): MhdInfo | undefined {
+  const fromPmdp = pmdp?.perClosure?.[closureId];
+  const fromExtras = extras[closureId]?.mhdInfo;
+  if (!fromPmdp && !fromExtras) return undefined;
+  if (!fromPmdp) return fromExtras;
+  if (!fromExtras) return fromPmdp;
+  return {
+    summary: fromExtras.summary ?? fromPmdp.summary,
+    reroutes:
+      fromExtras.reroutes && fromExtras.reroutes.length > 0
+        ? fromExtras.reroutes
+        : fromPmdp.reroutes,
+    tempStops:
+      fromExtras.tempStops && fromExtras.tempStops.length > 0
+        ? fromExtras.tempStops
+        : fromPmdp.tempStops,
+    notes:
+      fromExtras.notes && fromExtras.notes.length > 0
+        ? fromExtras.notes
+        : fromPmdp.notes,
+    sourceUrl: fromExtras.sourceUrl ?? fromPmdp.sourceUrl,
+    sourceLabel: fromExtras.sourceLabel ?? fromPmdp.sourceLabel,
+  };
 }
 
 export function closureById(id: string): Closure | undefined {
