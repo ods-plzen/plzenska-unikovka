@@ -1,5 +1,5 @@
-import { HomeView } from "@/components/views/HomeView";
+import { DopravaView } from "@/components/views/DopravaView";
 
 export default function Page() {
-  return <HomeView />;
+  return <DopravaView />;
 }

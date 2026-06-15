@@ -1,17 +1,10 @@
 import Link from "next/link";
 
-const NAV = [
-  { href: "/doprava", label: "Doprava" },
-  { href: "/zastupitelstvo", label: "Zastupitelstvo" },
-  { href: "/stavby", label: "Stavby" },
-  { href: "/komunita", label: "Komunita" },
-];
-
 export function Footer() {
   return (
     <footer className="mt-16 bg-blue-deep text-white">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="grid gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-8 md:grid-cols-[1.4fr_1fr]">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/icon.svg" alt="" className="h-9 w-9" />
@@ -19,23 +12,10 @@ export function Footer() {
               Plzeňská únikovka
             </div>
             <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/65">
-              Únikovka z plzeňského dopravního chaosu. Uzavírky, hlasy ze
-              zastupitelstva, stavby a komunita pro všech 10 obvodů na jednom
-              místě. Data jen z veřejných a oficiálních zdrojů.
+              Únikovka z plzeňského dopravního chaosu. Mapa uzavírek, MHD
+              odklonů a dočasných zastávek pro všech 10 plzeňských obvodů.
+              Data jen z veřejných a oficiálních zdrojů (plzen.eu, PMDP).
             </p>
-          </div>
-
-          <div>
-            <div className="kicker">Sekce</div>
-            <ul className="mt-3 space-y-1.5 text-sm text-white/75">
-              {NAV.map((n) => (
-                <li key={n.href}>
-                  <Link href={n.href} className="hover:text-sky">
-                    {n.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>
