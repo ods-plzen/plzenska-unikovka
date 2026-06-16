@@ -23,7 +23,14 @@ import urllib.error
 import urllib.request
 from typing import Iterable
 
-UA = {"User-Agent": "PlzenPrehledne/1.0 (+https://plzenskaunikovka.cz)"}
+UA = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "cs-CZ,cs;q=0.9,en;q=0.5",
+}
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 LIST_URL = "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/"
 
