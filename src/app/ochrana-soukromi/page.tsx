@@ -36,8 +36,24 @@ export default function Page() {
           Rady (EU) 2016/679 („GDPR") je:
         </p>
         <div className="rounded-xl border border-line bg-card p-4 text-sm">
-          <div className="font-semibold">Uhumdrum s.r.o.</div>
-          <div>Koželužská 3034/1, 301 00 Plzeň</div>
+          <div className="font-semibold">Občanská demokratická strana</div>
+          <div>Truhlářská 1106/9, 110 00 Praha 1</div>
+          <div>IČ: 16192656</div>
+          <div>
+            Politická strana zapsaná v Rejstříku politických stran
+            a politických hnutí.
+          </div>
+        </div>
+        <p>
+          Web provozuje <strong>oblastní sdružení ODS Plzeň-město</strong>
+          v rámci právní subjektivity Občanské demokratické strany. Web je
+          stranická komunikační platforma; není to oficiální stránka města
+          Plzně ani Plzeňských městských dopravních podniků.
+        </p>
+        <p>
+          Kontaktní osoba ve věcech ochrany osobních údajů:
+        </p>
+        <div className="rounded-xl border border-line bg-card p-4 text-sm">
           <div>
             E-mail:{" "}
             <a href={`mailto:${CONTACT}`} className="text-blue hover:underline">
@@ -45,18 +61,6 @@ export default function Page() {
             </a>
           </div>
         </div>
-        <p>
-          Web je nezávislá informační služba pro občany Plzně, kterou Uhumdrum
-          provozuje ve spolupráci s <strong>oblastním sdružením ODS Plzeň-město</strong>.
-          ODS Plzeň-město dodává redakční obsah (zápisy ze Zastupitelstva města
-          Plzně, citace zastupitelů, politické kontexty) a je v tomto rozsahu
-          samostatným správcem osobních údajů; Uhumdrum zajišťuje provoz Webu
-          (hosting, scrapery, vývoj, údržba).
-        </p>
-        <p>
-          Web není oficiální stránka města Plzně ani Plzeňských městských
-          dopravních podniků.
-        </p>
       </section>
 
       <section className="space-y-3">
@@ -180,6 +184,13 @@ export default function Page() {
               <tr>
                 <td className="px-3 py-2">Wedos a.s.</td>
                 <td className="px-3 py-2">registrace domény + DNS</td>
+                <td className="px-3 py-2">ČR</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2">Uhumdrum s.r.o.</td>
+                <td className="px-3 py-2">
+                  provoz, vývoj a údržba (dle smlouvy o zpracování os. údajů)
+                </td>
                 <td className="px-3 py-2">ČR</td>
               </tr>
             </tbody>
