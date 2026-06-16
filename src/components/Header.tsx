@@ -21,7 +21,18 @@ export function Header() {
             </span>
           </Link>
 
-          <div className="ml-auto">
+          <div className="ml-auto flex items-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-2">
+              <span className="hidden text-[9px] font-semibold uppercase tracking-[0.3em] text-white/55 sm:inline">
+                Provozuje
+              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ods-logo.svg"
+                alt="ODS"
+                className="h-5 w-auto sm:h-6"
+              />
+            </div>
             <AreaSelect />
           </div>
         </div>

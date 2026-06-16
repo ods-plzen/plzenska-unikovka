@@ -243,7 +243,7 @@ export function HomeView() {
         >
           {top5.length === 0
             ? "Dnes je klid — žádné velké uzavírky."
-            : "Pětka, kterou nezapomeňte objet:"}
+            : "Top 5 v Plzni dnes:"}
         </p>
 
         {focusedObvod && (
@@ -271,7 +271,7 @@ export function HomeView() {
             style={HEAD_FONT}
             className="text-sm font-normal text-ink/70"
           >
-            Klik → pětka jen z vašeho obvodu.
+            Vyberte obvod a uvidíte uzavírky jen u vás.
           </p>
         </div>
 
@@ -299,8 +299,8 @@ export function HomeView() {
           className="mb-4 text-xs font-bold uppercase tracking-[0.4em] text-ink/70 sm:mb-5"
         >
           {focusedObvod
-            ? `Pětka v ${focusedObvod.short}`
-            : "Pětka v celé Plzni"}
+            ? `Top 5 v ${focusedObvod.short}`
+            : "Top 5 v Plzni"}
         </h2>
         {top5.length === 0 ? (
           <div className="rounded-3xl border-2 border-dashed border-ink/30 bg-white p-8 text-center sm:p-10">
@@ -308,7 +308,7 @@ export function HomeView() {
               style={HEAD_FONT}
               className="text-xl font-bold uppercase text-ink/60 sm:text-2xl"
             >
-              V tomto filtru nic. 🎉
+              Žádné uzavírky. 🎉
             </p>
           </div>
         ) : (
@@ -335,15 +335,9 @@ export function HomeView() {
       <section className="ods-board rounded-3xl p-5 sm:p-8 md:p-12">
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-8">
-            <div
-              style={HEAD_FONT}
-              className="text-[11px] font-bold uppercase tracking-[0.5em] text-sky"
-            >
-              Chcete víc?
-            </div>
             <h2
               style={HEAD_FONT}
-              className="mt-2 text-3xl font-bold uppercase leading-[0.95] text-white sm:mt-3 sm:text-4xl md:text-5xl"
+              className="text-3xl font-bold uppercase leading-[0.95] text-white sm:text-4xl md:text-5xl"
             >
               Celá mapa Plzně.
             </h2>
@@ -351,8 +345,8 @@ export function HomeView() {
               style={HEAD_FONT}
               className="mt-4 max-w-xl text-sm font-normal text-white/80 sm:mt-5 sm:text-base"
             >
-              Všech {visibleAll.length} uzavírek najednou. Pro dispečery,
-              řidiče autobusů a kohokoliv, kdo plánuje cestu na celý týden.
+              Všech {visibleAll.length} uzavírek na jedné mapě. Pro každého,
+              kdo si plánuje cestu na delší dobu.
             </p>
             <Link
               href={
@@ -385,7 +379,7 @@ export function HomeView() {
               <li>PMDP · MHD odklony a zastávky</li>
             </ul>
             <p className="mt-4 text-xs text-white/55">
-              Aktualizováno denně v 7:00 ráno.
+              Aktualizujeme denně v 7:00.
             </p>
           </div>
         </div>
