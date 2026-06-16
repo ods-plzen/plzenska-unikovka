@@ -23,8 +23,14 @@ export function Footer() {
 
           <div>
             <div className="kicker">Provozuje</div>
-            <p className="mt-3 text-sm leading-relaxed text-white/75">
-              ODS Plzeň-město.
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/ods-logo.svg"
+              alt="ODS"
+              className="mt-3 h-10 w-auto"
+            />
+            <p className="mt-3 text-sm font-semibold leading-relaxed text-white">
+              ODS Plzeň-město
             </p>
             <p className="mt-2 text-xs leading-relaxed text-white/45">
               Agregovaný a strojově zpracovaný obsah je vždy takto označen —
