@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-06-16T12:27:28+00:00",
+ "snapshot": "2026-06-16T12:45:09+00:00",
  "source": "https://ags.plzen.eu/arcgis/rest/services/GIS_Doprava/GIS_Doprava_Uzavirky/MapServer/11/query",
  "roads": [
   {

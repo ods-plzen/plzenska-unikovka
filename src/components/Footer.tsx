@@ -40,7 +40,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5 text-xs text-white/45">
+        <nav className="mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/10 pt-5 text-xs text-white/70">
+          <Link href="/" className="hover:text-sky">
+            Úvod
+          </Link>
+          <Link href="/mapa" className="hover:text-sky">
+            Mapa
+          </Link>
+          <Link href="/seznam" className="hover:text-sky">
+            Seznam všech uzavírek
+          </Link>
+          <Link href="/ochrana-soukromi" className="hover:text-sky">
+            Ochrana soukromí
+          </Link>
+        </nav>
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs text-white/45">
           <span>© {new Date().getFullYear()} Plzeňská únikovka</span>
           <span>Nezávislá služba pro Plzeňany · zdroje u každé položky</span>
         </div>
