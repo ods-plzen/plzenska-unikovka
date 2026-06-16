@@ -122,6 +122,34 @@ def ts_to_cz(ms: int | None) -> str | None:
         return None
 
 
+def ts_to_iso(ms: int | None) -> str | None:
+    if ms is None:
+        return None
+    try:
+        return dt.datetime.fromtimestamp(ms / 1000, tz=dt.timezone.utc).date().isoformat()
+    except (OSError, ValueError):
+        return None
+
+
+HLAVNI_TAHY = {
+    "Americká", "Klatovská", "Klatovská třída", "Rokycanská", "Domažlická",
+    "Karlovarská", "28. října", "Lochotínská", "Masarykova", "Folmavská",
+    "Borská", "Tylova", "Jateční", "Mikulášská", "Na Roudné",
+}
+
+
+def classify_severity(name: str, akce: str, popis: str) -> str:
+    text = (akce + " " + popis).lower()
+    is_state = bool(re.search(r"\b(i|ii|iii)\s*/\s*\d+", text, re.I))
+    has_closure = bool(re.search(r"\buzavřen|\buzavírk", text))
+    on_hlavni = name in HLAVNI_TAHY
+    if has_closure and (is_state or on_hlavni):
+        return "major"
+    if re.search(r"jednosměr|kyvadlov|protisměr|omezení|sveden|jeden\s+jízdní", text):
+        return "medium"
+    return "minor"
+
+
 def format_termin(od: int | None, do: int | None) -> str:
     a = ts_to_cz(od)
     b = ts_to_cz(do)
@@ -181,6 +209,7 @@ def main() -> int:
         ways = [[[round(y, 5), round(x, 5)]]]
         termin = format_termin(a.get("Od"), a.get("Do"))
 
+        popis = nazev[:500]
         rec: dict = {
             "id": cid,
             "name": street,
@@ -192,12 +221,15 @@ def main() -> int:
             "termin": termin,
             "ways": ways,
             "point": True,
-            "popis": nazev[:500],
+            "popis": popis,
             "typ": a.get("Typ") or "",
             "subtyp": a.get("Subtyp") or "",
             "zdroj": a.get("Zdroj") or "JSDI",
             "jsdiId": a.get("JSDI_ID") or None,
             "superdioId": a.get("Superdio_ID") or None,
+            "od": ts_to_iso(a.get("Od")),
+            "do": ts_to_iso(a.get("Do")),
+            "severity": classify_severity(street, akce, popis),
         }
         closures.append(rec)
 

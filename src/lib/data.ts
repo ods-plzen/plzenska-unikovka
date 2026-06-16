@@ -1,16 +1,12 @@
-import type { Closure, ClosureExtra, MhdInfo, Vote, Community } from "@/lib/types";
+import type { Closure, ClosureExtra, MhdInfo } from "@/lib/types";
 import closuresRaw from "@/data/closures.json";
 import extrasRaw from "@/data/extras.json";
 import pmdpRaw from "@/data/pmdp.json";
-import votesRaw from "@/data/votes.json";
-import communityRaw from "@/data/community.json";
 
 // JSON přichází se širšími typy (string místo union, number[] místo n-tic),
 // proto převádíme přes unknown na naše doménové typy.
 export const closures = closuresRaw as unknown as Closure[];
 export const extras = extrasRaw as unknown as Record<string, ClosureExtra>;
-export const votes = votesRaw as unknown as Vote[];
-export const community = communityRaw as unknown as Community;
 
 interface PmdpSnapshot {
   snapshot: string;

@@ -1,5 +1,11 @@
-import { DopravaView } from "@/components/views/DopravaView";
+import { Suspense } from "react";
+import { MapView } from "@/components/views/MapView";
 
 export default function Page() {
-  return <DopravaView />;
+  // MapView používá useSearchParams → musí být v Suspense.
+  return (
+    <Suspense fallback={<div className="text-sm text-muted">Načítám…</div>}>
+      <MapView />
+    </Suspense>
+  );
 }

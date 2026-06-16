@@ -21,6 +21,10 @@ export interface Closure {
   zdroj?: string; // "JSDI" | "SUPERDIO" | "RIA"
   jsdiId?: string | null;
   superdioId?: number | null;
+  // Phase 1 mapy: severity klasifikace + ISO data, pre-computed v jsdi.py
+  severity?: import("./severity").Severity;
+  od?: string; // ISO date YYYY-MM-DD — kdy uzavírka začíná
+  do?: string; // ISO date — kdy uzavírka končí
 }
 
 export type Phase = [label: string, when: string, state: "done" | "now" | ""];
@@ -59,44 +63,6 @@ export interface MhdInfo {
   notes?: string[]; // doplňující informace bez vlastní sekce
   sourceUrl?: string;
   sourceLabel?: string;
-}
-
-export interface Vote {
-  who: string;
-  role: string;
-  av: string;
-  stmt: string;
-  tags: string[];
-  pro?: number;
-  proti?: number;
-  zdr?: number;
-  src: string;
-  srcUrl?: string;
-  rec?: string;
-  note?: string;
-}
-
-export interface LostItem {
-  icon: string;
-  state: string;
-  b: string;
-  meta: string;
-  lat: number;
-  lon: number;
-}
-
-export interface EventItem {
-  d: string;
-  h: string;
-  s: string;
-  lat: number;
-  lon: number;
-}
-
-export interface Community {
-  updated?: string;
-  lost: LostItem[];
-  events: EventItem[];
 }
 
 export interface Area {
