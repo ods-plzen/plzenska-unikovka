@@ -8,6 +8,7 @@ import { closures, closureById } from "@/lib/data";
 import { AREAS, inArea } from "@/data/areas";
 import { useArea } from "@/components/AreaProvider";
 import { ClosurePanel } from "@/components/ClosurePanel";
+import { MiniMap } from "@/components/map/MiniMap";
 import { TimeFilterChips } from "@/components/TimeFilterChips";
 import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
 import { SEVERITY_RANK } from "@/lib/severity";
@@ -137,17 +138,40 @@ export function HomeView() {
       </div>
 
       {/* ────────────────  HERO  ──────────────── */}
-      <section className="grid gap-10 lg:grid-cols-12">
-        <div className="reveal d1 lg:col-span-7">
+      <section className="relative grid gap-10 lg:grid-cols-12">
+        {/* watermark dekorace za hero textem */}
+        <div className="pointer-events-none absolute inset-0 -z-0 overflow-hidden">
           <div
-            style={HEAD_FONT}
-            className="text-[11px] font-semibold uppercase tracking-[0.5em] text-red"
+            style={{
+              ...HEAD_FONT,
+              transform: "rotate(-6deg)",
+              color: "var(--ods-red)",
+              opacity: 0.04,
+            }}
+            className="absolute -left-10 top-0 select-none text-[280px] font-bold uppercase leading-none sm:text-[420px]"
+            aria-hidden
           >
-            Právě teď v Plzni
+            ÚNIKOVKA
           </div>
+        </div>
+
+        <div className="reveal d1 relative lg:col-span-7">
+          {/* stamp postmark */}
+          <div
+            className="mb-5 inline-flex items-center gap-2 border-2 border-red px-3 py-1"
+            style={{ ...HEAD_FONT, transform: "rotate(-2deg)" }}
+            aria-hidden
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-red" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-red">
+              Aktivní · {today.date}
+            </span>
+            <span className="h-1.5 w-1.5 rounded-full bg-red" />
+          </div>
+
           <h1
             style={HEAD_FONT}
-            className="mt-5 text-[64px] font-bold uppercase leading-[0.88] text-ink sm:text-[88px] lg:text-[104px]"
+            className="text-[64px] font-bold uppercase leading-[0.88] text-ink sm:text-[88px] lg:text-[104px]"
           >
             {focusedObvod ? <>{focusedObvod.short}:</> : <>5 míst,</>}
             <br />
@@ -365,6 +389,17 @@ export function HomeView() {
 
 /* ──────────────  RankCard  ────────────── */
 
+function getCenter(c: Closure): [number, number] | null {
+  const pt = c.ways?.[0]?.[0];
+  if (!pt || pt.length < 2) return null;
+  return [pt[0], pt[1]];
+}
+
+const TAPE_STYLE: React.CSSProperties = {
+  background:
+    "repeating-linear-gradient(45deg, #c0392b 0 14px, #ffd400 14px 28px)",
+};
+
 function RankCard({
   c,
   rank,
@@ -383,11 +418,12 @@ function RankCard({
     sev === "major" ? "text-red" : sev === "medium" ? "text-blue" : "text-muted";
   const sevLabel = SEVERITY_LABEL[sev];
   const date = fmtDateRange(c);
+  const center = getCenter(c);
 
   const baseShadow =
-    "shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[6px_6px_0_0_var(--ods-red)]";
+    "shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[8px_8px_0_0_var(--ods-red)]";
   const selShadow = selected
-    ? " shadow-[6px_6px_0_0_var(--ods-red)] bg-card"
+    ? " shadow-[8px_8px_0_0_var(--ods-red)] bg-card"
     : "";
 
   if (variant === "hero") {
@@ -396,19 +432,35 @@ function RankCard({
         type="button"
         onClick={onClick}
         className={
-          "group relative col-span-1 overflow-hidden rounded-3xl border-2 border-ink bg-white p-7 text-left transition-all duration-150 sm:p-10 lg:col-span-12 " +
+          "group relative col-span-1 grid cursor-pointer grid-cols-1 overflow-hidden rounded-3xl border-2 border-ink bg-white text-left transition-all duration-150 md:grid-cols-12 lg:col-span-12 " +
           baseShadow +
           selShadow
         }
       >
-        <div
-          style={HEAD_FONT}
-          className="stat absolute -left-1 -top-3 text-[200px] leading-none text-red sm:text-[260px]"
-          aria-hidden
-        >
-          {rank}.
+        {/* obrázek: mini-mapa */}
+        <div className="relative h-[200px] overflow-hidden border-b-2 border-ink md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
+          {center ? (
+            <MiniMap center={center} severity={sev} height={360} zoom={15} />
+          ) : (
+            <div className="h-full w-full bg-line" />
+          )}
+          {/* construction tape pruh */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-2"
+            style={TAPE_STYLE}
+            aria-hidden
+          />
+          {/* obrovský rank watermark na mapě */}
+          <div
+            style={HEAD_FONT}
+            className="pointer-events-none absolute -bottom-12 -right-4 select-none text-[260px] font-bold leading-none text-white drop-shadow-[3px_3px_0_var(--ods-red)] sm:text-[320px]"
+            aria-hidden
+          >
+            {rank}
+          </div>
         </div>
-        <div className="relative ml-0 sm:ml-[180px] lg:ml-[260px]">
+        {/* tělo */}
+        <div className="relative p-7 sm:p-9 md:col-span-7">
           <div className="flex items-start justify-between gap-3">
             <div
               style={HEAD_FONT}
@@ -422,23 +474,28 @@ function RankCard({
           </div>
           <div
             style={HEAD_FONT}
-            className="mt-5 text-[44px] font-bold uppercase leading-[0.9] text-ink sm:text-6xl lg:text-7xl"
+            className="mt-4 text-[40px] font-bold uppercase leading-[0.92] text-ink sm:text-5xl lg:text-6xl"
           >
             {c.name}
           </div>
           <p
             style={SERIF_FONT}
-            className="mt-4 max-w-xl text-xl italic leading-snug text-ink/75"
+            className="mt-3 max-w-xl text-lg italic leading-snug text-ink/75"
           >
             {c.akce}
           </p>
           <div
             style={HEAD_FONT}
-            className="mt-6 flex flex-wrap items-baseline gap-4 text-xs font-semibold uppercase tracking-[0.25em] text-ink/60"
+            className="mt-6 flex flex-wrap items-baseline gap-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-ink/60"
           >
             <span>{date}</span>
-            <span aria-hidden>·</span>
-            <span className="text-red">Klik pro detail →</span>
+          </div>
+          <div
+            style={HEAD_FONT}
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-red px-5 py-2 text-[11px] font-bold uppercase tracking-[0.3em] text-white group-hover:bg-ink"
+          >
+            Otevři detail
+            <span aria-hidden className="text-base">→</span>
           </div>
         </div>
       </button>
@@ -450,20 +507,34 @@ function RankCard({
       type="button"
       onClick={onClick}
       className={
-        "group relative col-span-1 flex h-full flex-col overflow-hidden rounded-3xl border-2 border-ink bg-white p-6 text-left transition-all duration-150 lg:col-span-6 " +
+        "group relative col-span-1 flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border-2 border-ink bg-white text-left transition-all duration-150 lg:col-span-6 " +
         baseShadow +
         selShadow
       }
     >
-      <div className="flex items-start justify-between gap-3">
+      {/* obrázek mini-mapa */}
+      <div className="relative h-[150px] overflow-hidden border-b-2 border-ink">
+        {center ? (
+          <MiniMap center={center} severity={sev} height={150} zoom={14} />
+        ) : (
+          <div className="h-full w-full bg-line" />
+        )}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-1.5"
+          style={TAPE_STYLE}
+          aria-hidden
+        />
+        {/* rank watermark */}
         <div
           style={HEAD_FONT}
-          className="stat text-[88px] leading-none text-red"
+          className="pointer-events-none absolute -bottom-6 right-2 select-none text-[140px] font-bold leading-none text-white drop-shadow-[2px_2px_0_var(--ods-red)]"
           aria-hidden
         >
-          {rank}.
+          {rank}
         </div>
-        <div className="text-right">
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-start justify-between gap-3">
           <div
             style={HEAD_FONT}
             className={
@@ -472,26 +543,29 @@ function RankCard({
           >
             {sevLabel}
           </div>
-          <span className="ods-chip mt-2 inline-flex">{c.oblast}</span>
+          <span className="ods-chip">{c.oblast}</span>
         </div>
-      </div>
-      <div
-        style={HEAD_FONT}
-        className="mt-5 text-3xl font-bold uppercase leading-[0.95] text-ink sm:text-4xl"
-      >
-        {c.name}
-      </div>
-      <p
-        style={SERIF_FONT}
-        className="mt-2 text-base italic leading-snug text-ink/75"
-      >
-        {c.akce}
-      </p>
-      <div
-        style={HEAD_FONT}
-        className="mt-auto pt-5 text-[11px] font-semibold uppercase tracking-[0.25em] text-ink/60"
-      >
-        {date} <span className="px-1 text-red">›</span>
+        <div
+          style={HEAD_FONT}
+          className="mt-4 text-2xl font-bold uppercase leading-[0.95] text-ink sm:text-3xl"
+        >
+          {c.name}
+        </div>
+        <p
+          style={SERIF_FONT}
+          className="mt-2 text-base italic leading-snug text-ink/75"
+        >
+          {c.akce}
+        </p>
+        <div
+          style={HEAD_FONT}
+          className="mt-auto flex items-center justify-between gap-2 pt-5 text-[10px] font-semibold uppercase tracking-[0.25em] text-ink/60"
+        >
+          <span>{date}</span>
+          <span className="text-red group-hover:text-ink">
+            Klik →
+          </span>
+        </div>
       </div>
     </button>
   );
@@ -544,12 +618,20 @@ function ObvodTile({
       onClick={onClick}
       aria-pressed={active}
       className={
-        "group relative flex aspect-square flex-col justify-between rounded-3xl border-2 p-4 text-left transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--ods-blue)] " +
+        "group relative flex aspect-square cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border-2 p-4 text-left transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_var(--ods-blue)] " +
         styles[intensity] +
         activeRing
       }
     >
-      <div className="flex items-start justify-between gap-2">
+      {/* obří watermark číslo pozadí */}
+      <div
+        style={HEAD_FONT}
+        className="pointer-events-none absolute -bottom-8 -right-4 select-none text-[180px] font-bold leading-none opacity-[0.08]"
+        aria-hidden
+      >
+        {num}
+      </div>
+      <div className="relative flex items-start justify-between gap-2">
         <div
           style={HEAD_FONT}
           className="text-[10px] font-semibold uppercase tracking-[0.3em] opacity-90"
@@ -565,18 +647,25 @@ function ObvodTile({
       </div>
       <div
         style={HEAD_FONT}
-        className="stat text-[80px] leading-none sm:text-[96px]"
+        className="relative stat text-[72px] leading-none sm:text-[88px]"
       >
         {num}
       </div>
-      <div className="text-[10px] uppercase tracking-[0.15em] leading-tight opacity-80">
+      <div className="relative text-[10px] uppercase tracking-[0.15em] leading-tight opacity-80">
         {localityLine}
       </div>
       <div
         style={HEAD_FONT}
-        className="absolute right-3 top-3 text-[10px] font-semibold uppercase tracking-[0.15em]"
+        className="absolute right-3 top-3 rounded-full border border-current/30 bg-paper/60 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.15em]"
       >
         {count} {count === 1 ? "uzavírka" : count < 5 ? "uzavírky" : "uzavírek"}
+      </div>
+      {/* hover prompt */}
+      <div
+        style={HEAD_FONT}
+        className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-[0.2em] opacity-0 transition-opacity group-hover:opacity-100"
+      >
+        Klik →
       </div>
     </button>
   );
