@@ -15,7 +15,8 @@ import type { Severity } from "@/lib/severity";
 
 const PLZEN_CENTER: [number, number] = [49.7475, 13.3776];
 
-// ODS manuál: jen tmavá modrá + světlá modrá + neutrální šedá pro nezvýrazněné.
+// Dopravní semafor: alert červená (stop) → modrá (pozor) → šedá (drobné).
+const ALERT_RED = "#c0392b";
 const ODS_BLUE_DARK = "#153d8a";
 const ODS_BLUE_LIGHT = "#009fe3";
 const GRAY = "#94a3b8";
@@ -23,7 +24,7 @@ const GRAY = "#94a3b8";
 const STYLE: Record<Severity, { radius: number; pathOptions: PathOptions }> = {
   major: {
     radius: 12,
-    pathOptions: { color: "#fff", weight: 3, fillColor: ODS_BLUE_DARK, fillOpacity: 1 },
+    pathOptions: { color: "#fff", weight: 3, fillColor: ALERT_RED, fillOpacity: 1 },
   },
   medium: {
     radius: 7,
@@ -80,13 +81,13 @@ export default function ClosureMapInner({
         url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
       />
       {/* Background: silnice s aktuálním omezením (z layer 11 JSDI sekce).
-          Renderují se PRVNÍ → leží pod markery. ODS tmavá modrá. */}
+          Renderují se PRVNÍ → leží pod markery. Alert červená = silnice s omezením. */}
       {restrictedRoads?.flatMap((r) =>
         r.ways.map((way, i) => (
           <Polyline
             key={`r-${r.messageId}-${i}`}
             positions={way}
-            pathOptions={{ color: ODS_BLUE_DARK, weight: 5, opacity: 0.55 }}
+            pathOptions={{ color: ALERT_RED, weight: 5, opacity: 0.6 }}
           />
         )),
       )}

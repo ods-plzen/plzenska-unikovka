@@ -47,8 +47,9 @@ function todayPretty(): string {
 
 const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
 
-const ODS_BLUE = "#153d8a";
+const ALERT_RED = "#c0392b";
 const ODS_SKY = "#009fe3";
+const NEUTRAL_GRAY = "#94a3b8";
 
 export function HomeView() {
   const router = useRouter();
@@ -389,6 +390,14 @@ function getCenter(c: Closure): [number, number] | null {
   return [pt[0], pt[1]];
 }
 
+function getWays(c: Closure): [number, number][][] | undefined {
+  if (c.point) return undefined;
+  const polylines = c.ways.filter((w) => w.length >= 2);
+  return polylines.length > 0
+    ? (polylines as [number, number][][])
+    : undefined;
+}
+
 function BoardCard({
   c,
   rank,
@@ -406,8 +415,11 @@ function BoardCard({
   const sevLabel = SEVERITY_LABEL[sev];
   const date = fmtDateRange(c);
   const center = getCenter(c);
+  const ways = getWays(c);
   const sevBadgeBg =
-    sev === "major" ? ODS_BLUE : sev === "medium" ? ODS_SKY : "#94a3b8";
+    sev === "major" ? ALERT_RED : sev === "medium" ? ODS_SKY : NEUTRAL_GRAY;
+  const rankColor =
+    sev === "major" ? "text-[#c0392b]" : sev === "medium" ? "text-sky" : "text-ink/30";
 
   if (variant === "hero") {
     return (
@@ -421,10 +433,16 @@ function BoardCard({
             : "shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[8px_8px_0_0_var(--ods-sky)]")
         }
       >
-        {/* mini-mapa = location image (light_all with street names) */}
-        <div className="relative h-[260px] overflow-hidden border-b-2 border-ink/90 md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
+        {/* mini-mapa = location image s ulicemi a polyline (pokud existuje) */}
+        <div className="relative h-[280px] overflow-hidden border-b-2 border-ink/90 md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
           {center ? (
-            <MiniMap center={center} severity={sev} height={420} zoom={15} />
+            <MiniMap
+              center={center}
+              ways={ways}
+              severity={sev}
+              height={460}
+              zoom={15}
+            />
           ) : (
             <div className="h-full w-full bg-line" />
           )}
@@ -435,20 +453,21 @@ function BoardCard({
           >
             {sevLabel}
           </span>
-          {/* rank number watermark — white na blue map */}
-          <div
-            style={HEAD_FONT}
-            className="pointer-events-none absolute -bottom-10 -right-2 select-none text-[260px] font-bold leading-none text-white drop-shadow-[3px_3px_0_var(--ods-blue)] sm:text-[320px]"
-            aria-hidden
-          >
-            {rank}
-          </div>
         </div>
 
-        {/* body — bílá s tmavým textem */}
+        {/* body — bílá s tmavým textem, rank "1." velký vlevo nahoře */}
         <div className="relative flex flex-col justify-between p-7 sm:p-10 md:col-span-7">
           <div>
-            <div className="flex items-start justify-between gap-3">
+            <div
+              style={HEAD_FONT}
+              className={
+                "stat text-[140px] leading-[0.85] sm:text-[180px] " + rankColor
+              }
+              aria-hidden
+            >
+              {rank}.
+            </div>
+            <div className="mt-4 flex items-baseline justify-between gap-3">
               <span
                 style={HEAD_FONT}
                 className="text-[11px] font-bold uppercase tracking-[0.4em] text-ink/70"
@@ -464,7 +483,7 @@ function BoardCard({
             </div>
             <div
               style={HEAD_FONT}
-              className="mt-5 text-[44px] font-bold uppercase leading-[0.9] text-ink sm:text-6xl lg:text-7xl"
+              className="mt-3 text-[44px] font-bold uppercase leading-[0.9] text-ink sm:text-5xl lg:text-6xl"
             >
               {c.name}
             </div>
@@ -500,7 +519,13 @@ function BoardCard({
     >
       <div className="relative h-[180px] overflow-hidden border-b-2 border-ink/90">
         {center ? (
-          <MiniMap center={center} severity={sev} height={180} zoom={15} />
+          <MiniMap
+            center={center}
+            ways={ways}
+            severity={sev}
+            height={180}
+            zoom={15}
+          />
         ) : (
           <div className="h-full w-full bg-line" />
         )}
@@ -510,16 +535,16 @@ function BoardCard({
         >
           {sevLabel}
         </span>
+      </div>
+      <div className="relative flex flex-1 flex-col p-5">
         <div
           style={HEAD_FONT}
-          className="pointer-events-none absolute -bottom-6 right-2 select-none text-[140px] font-bold leading-none text-white drop-shadow-[2px_2px_0_var(--ods-blue)]"
+          className={"stat text-[88px] leading-[0.85] " + rankColor}
           aria-hidden
         >
-          {rank}
+          {rank}.
         </div>
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-baseline justify-between gap-3">
+        <div className="mt-3 flex items-baseline justify-between gap-3">
           <span
             style={HEAD_FONT}
             className="text-[10px] font-bold uppercase tracking-[0.35em] text-ink/70"
@@ -535,7 +560,7 @@ function BoardCard({
         </div>
         <div
           style={HEAD_FONT}
-          className="mt-3 text-2xl font-bold uppercase leading-[0.95] text-ink sm:text-3xl"
+          className="mt-2 text-2xl font-bold uppercase leading-[0.95] text-ink sm:text-3xl"
         >
           {c.name}
         </div>

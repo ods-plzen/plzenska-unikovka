@@ -12,9 +12,13 @@
   --ods-blue: #153d8a;
   --ods-blue-deep: #0e2a63;
   --ods-sky: #009fe3;
-  --ods-red: #009fe3; /* alias na sky — viz výše */
-  --ods-amber: #009fe3; /* alias na sky */
-  --ods-green: #153d8a; /* alias na blue */
+  /* Alert červená — signální barva pro úplnou uzavírku.
+     ODS manuál ji nepovoluje pro kampaň, ale pro informační utility
+     o dopravě potřebujeme dopravní semafor (stop/pozor/ok). */
+  --ods-alert: #c0392b;
+  --ods-red: #c0392b; /* alias na alert pro Tailwind text-red/bg-red zpětnou kompatibilitu */
+  --ods-amber: #c0392b;
+  --ods-green: #153d8a;
 
   /* plochy a text */
   --ink: #000000;
