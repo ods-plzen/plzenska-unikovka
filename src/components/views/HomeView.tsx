@@ -58,14 +58,6 @@ function isActiveNow(c: Closure): boolean {
   return start <= now && now <= end;
 }
 
-function isWithinWeek(c: Closure): boolean {
-  if (c.status === "plan") return false;
-  if (!c.od) return false;
-  const start = new Date(c.od).getTime();
-  const now = Date.now();
-  return start > now && start <= now + 7 * 86_400_000;
-}
-
 function daysLeftIfSoon(c: Closure): number | null {
   if (!c.do) return null;
   const end = new Date(c.do).getTime();
@@ -109,7 +101,6 @@ export function HomeView() {
   }, [obvodParam]);
 
   const nowList = useMemo(() => visible.filter(isActiveNow), [visible]);
-  const weekList = useMemo(() => visible.filter(isWithinWeek), [visible]);
   const planList = useMemo(
     () => visible.filter((c) => c.status === "plan"),
     [visible],
@@ -177,38 +168,56 @@ export function HomeView() {
 
       {/* ────────  HERO COUNTER  ──────── */}
       <section className="border-y-[3px] border-ink py-5 sm:py-7">
-        <div className="flex items-end justify-between gap-3">
-          <div
-            style={HEAD_FONT}
-            className="flex items-baseline gap-2 text-5xl font-bold leading-[0.85] text-ink sm:gap-3 sm:text-7xl md:text-[7rem]"
-          >
-            <span>{nowList.length}</span>
-            <span className="text-ink/20">/</span>
-            <span>{weekList.length}</span>
-            <span className="text-ink/20">/</span>
-            <span>{planList.length}</span>
+        <div
+          style={HEAD_FONT}
+          className="grid grid-cols-[1fr_auto_1fr_auto] items-end gap-3 sm:gap-5"
+        >
+          <div>
+            <div
+              className="text-6xl font-bold leading-[0.85] sm:text-[6rem] md:text-[8rem]"
+              style={{ color: ALERT_RED }}
+            >
+              {nowList.length}
+            </div>
+            <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/65 sm:mt-3 sm:text-[11px]">
+              probíhá teď
+            </div>
           </div>
-          <div
-            style={HEAD_FONT}
-            className="text-right text-[10px] font-bold uppercase tracking-[0.25em] text-ink/65 sm:text-[11px]"
-          >
-            <div>{focusedObvod ? focusedObvod.short : "Plzeň"}</div>
+          <div className="self-center text-5xl font-light leading-none text-ink/15 sm:text-7xl md:text-[6rem]">
+            /
+          </div>
+          <div>
+            <div className="text-6xl font-bold leading-[0.85] text-blue sm:text-[6rem] md:text-[8rem]">
+              {planList.length}
+            </div>
+            <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/65 sm:mt-3 sm:text-[11px]">
+              plánuje se
+            </div>
+          </div>
+          <div className="self-start text-right text-[10px] font-bold uppercase tracking-[0.25em] text-ink/65 sm:text-[11px]">
+            <div className="text-blue">
+              {focusedObvod ? focusedObvod.short : "Plzeň"}
+            </div>
             <div className="mt-1 text-ink/45">{todayPretty()}</div>
           </div>
         </div>
         <div
           style={HEAD_FONT}
-          className="mt-3 grid grid-cols-3 gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/55 sm:mt-4 sm:text-[11px]"
+          className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t-2 border-ink/10 pt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/55"
         >
-          <span>aktuálně</span>
-          <span>do týdne</span>
-          <span>plánováno</span>
+          <span>Zdroj:</span>
+          <span>SITmP</span>
+          <span className="text-ink/25">·</span>
+          <span>JSDI ŘSD</span>
+          <span className="text-ink/25">·</span>
+          <span>plzen.eu</span>
+          <span className="ml-auto text-ink/45">Aktualizace denně 7:00</span>
         </div>
       </section>
 
       {/* ────────  TEĎ  ──────── */}
       {topActive.length > 0 ? (
-        <Section title="Teď" count={nowList.length}>
+        <Section title="Teď" count={nowList.length} accent="red">
           {topActive.map((c, i) => (
             <Row key={c.id} c={c} rank={i + 1} variant="now" />
           ))}
@@ -223,7 +232,7 @@ export function HomeView() {
           )}
         </Section>
       ) : (
-        <Section title="Teď" count={0}>
+        <Section title="Teď" count={0} accent="red">
           <div
             style={HEAD_FONT}
             className="py-8 text-center text-base font-bold uppercase text-ink/55 sm:text-lg"
@@ -236,9 +245,9 @@ export function HomeView() {
       {/* ────────  PLÁN LÉTO 2026  ──────── */}
       {planSooner.length > 0 && (
         <Section
-          title="Plán · léto 2026"
+          title="V plánu na rok 2026"
           count={planSooner.length}
-          note="Z plzen.eu — termín startu ještě není v JSDI"
+          note="Velké projekty, které město oznámilo, ale ještě nemají přesný start"
         >
           {planSooner.map((c, i) => (
             <Row key={c.id} c={c} rank={i + 1} variant="plan" />
@@ -249,7 +258,7 @@ export function HomeView() {
       {/* ────────  PLÁN 2027+  ──────── */}
       {planLater.length > 0 && (
         <Section
-          title="Plán · 2027 a dál"
+          title="V plánu na 2027 a dál"
           count={planLater.length}
           note="Velké projekty s víceletým horizontem"
         >
@@ -285,19 +294,24 @@ function Section({
   title,
   count,
   note,
+  accent = "blue",
   children,
 }: {
   title: string;
   count: number;
   note?: string;
+  accent?: "blue" | "red";
   children: React.ReactNode;
 }) {
   return (
     <section>
       <div className="flex items-baseline justify-between gap-3 border-b-[3px] border-ink pb-2 sm:pb-3">
         <h2
-          style={HEAD_FONT}
-          className="text-2xl font-bold uppercase tracking-tight text-ink sm:text-3xl md:text-4xl"
+          style={{ ...HEAD_FONT, color: accent === "red" ? ALERT_RED : undefined }}
+          className={
+            "text-2xl font-bold uppercase tracking-tight sm:text-3xl md:text-4xl " +
+            (accent === "blue" ? "text-blue" : "")
+          }
         >
           {title}
         </h2>
@@ -312,7 +326,7 @@ function Section({
       {note && (
         <div
           style={HEAD_FONT}
-          className="border-b-2 border-ink/15 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-ink/45"
+          className="border-b-2 border-ink/15 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/55 sm:text-[11px]"
         >
           {note}
         </div>
