@@ -319,6 +319,140 @@ def find_nearby_paths(
     return matching
 
 
+_RE_USEK_OD_PO = re.compile(
+    r"v\s+úseku\s+od\s+([^,]+?)\s+(?:až\s+(?:za|po|ke?)|po|do|ke?)\s+"
+    r"(?:křižovatk[ay]\s+s\s+)?(?:ulicí?\s+)?([^,]+?)"
+    r"(?=\s+(?:z\s+důvodu|Vydal|,|$))",
+    re.I,
+)
+_RE_USEK_DASH = re.compile(
+    r"v\s+úseku\s+(?:ulicí?\s+)?([^,–\-—]+?)\s*[–\-—]\s*(?:ulicí?\s+)?([^,]+?)"
+    r"(?=\s+(?:z\s+důvodu|Vydal|,|$))",
+    re.I,
+)
+_RE_GENERIC_LANDMARK = re.compile(
+    r"^(?:kruhov[ého]+\s+objezdu|centr[au]\s+města|nábřeží|mostu|obce\s+\w+)$",
+    re.I,
+)
+
+
+def parse_usek(text: str) -> tuple[str, str] | None:
+    """Vrátí (X, Y) — názvy okrajových ulic úseku z popisu, nebo None."""
+    m = _RE_USEK_OD_PO.search(text)
+    if m:
+        return _clean_endpoint(m.group(1)), _clean_endpoint(m.group(2))
+    m = _RE_USEK_DASH.search(text)
+    if m:
+        return _clean_endpoint(m.group(1)), _clean_endpoint(m.group(2))
+    return None
+
+
+def _clean_endpoint(s: str) -> str:
+    return s.strip().rstrip(".,;:").strip()
+
+
+def _normalize_osm_key(name: str) -> str:
+    n = name.lower().strip()
+    n = re.sub(r"^(ulicí?|ulice|silnice|na)\s+", "", n)
+    return n
+
+
+def _nearest_idx_on_path(
+    path: list[list[float]], target: tuple[float, float]
+) -> tuple[int, float]:
+    tlat, tlon = target
+    best_d = float("inf")
+    best_i = -1
+    for i, pt in enumerate(path):
+        dlat = pt[0] - tlat
+        dlon = (pt[1] - tlon) * 0.65
+        d = dlat * dlat + dlon * dlon
+        if d < best_d:
+            best_d = d
+            best_i = i
+    return best_i, best_d
+
+
+def _nearest_intersection(
+    main_path: list[list[float]], cross_paths: list[list[list[float]]]
+) -> tuple[float, float] | None:
+    """Najdi bod na main_path, který je nejblíže k jakémukoliv bodu cross_paths."""
+    best_d = float("inf")
+    best_pt: tuple[float, float] | None = None
+    for pt in main_path:
+        plat, plon = pt[0], pt[1]
+        for path in cross_paths:
+            for opt in path:
+                dlat = plat - opt[0]
+                dlon = (plon - opt[1]) * 0.65
+                d = dlat * dlat + dlon * dlon
+                if d < best_d:
+                    best_d = d
+                    best_pt = (plat, plon)
+    # Maximální vzdálenost ~50m, jinak to není opravdový "křížení"
+    if best_d > (50 / 111_000) ** 2:
+        return None
+    return best_pt
+
+
+def precise_clip_from_text(
+    nazev: str,
+    closure_pt: tuple[float, float],
+    main_paths: list[list[list[float]]],
+    osm_streets: dict[str, list[list[list[float]]]],
+) -> list[list[list[float]]] | None:
+    """Pokus o přesný úsek z textu 'v úseku X po Y'. Vrátí None pokud
+    parser selže nebo nelze najít křižovatky obou krajních ulic."""
+    parsed = parse_usek(nazev)
+    if not parsed:
+        return None
+    x_name, y_name = parsed
+    x_key = _normalize_osm_key(x_name)
+    y_key = _normalize_osm_key(y_name)
+    # Generické landmarky (kruhový objezd, centrum, …) → nelze najít v OSM
+    x_paths = (
+        []
+        if _RE_GENERIC_LANDMARK.match(x_key)
+        else lookup_osm_street(x_key, osm_streets)
+    )
+    y_paths = (
+        []
+        if _RE_GENERIC_LANDMARK.match(y_key)
+        else lookup_osm_street(y_key, osm_streets)
+    )
+    if not x_paths and not y_paths:
+        return None
+
+    out: list[list[list[float]]] = []
+    for main in main_paths:
+        if x_paths and y_paths:
+            x_pt = _nearest_intersection(main, x_paths)
+            y_pt = _nearest_intersection(main, y_paths)
+            if not x_pt or not y_pt:
+                continue
+            a_i, _ = _nearest_idx_on_path(main, x_pt)
+            b_i, _ = _nearest_idx_on_path(main, y_pt)
+        elif y_paths:
+            y_pt = _nearest_intersection(main, y_paths)
+            if not y_pt:
+                continue
+            a_i, _ = _nearest_idx_on_path(main, closure_pt)
+            b_i, _ = _nearest_idx_on_path(main, y_pt)
+        else:  # only x_paths
+            x_pt = _nearest_intersection(main, x_paths)
+            if not x_pt:
+                continue
+            a_i, _ = _nearest_idx_on_path(main, x_pt)
+            b_i, _ = _nearest_idx_on_path(main, closure_pt)
+        if a_i < 0 or b_i < 0:
+            continue
+        lo, hi = min(a_i, b_i), max(a_i, b_i) + 1
+        clipped = main[lo:hi]
+        if len(clipped) >= 2:
+            out.append(clipped)
+    return out if out else None
+
+
 def clip_paths_to_radius(
     point_latlon: tuple[float, float],
     paths: list[list[list[float]]],
@@ -407,20 +541,34 @@ def main() -> int:
             skipped_geom += 1
             continue
 
-        # Polyline geometry — kaskádové fallbacky:
-        # 1) JSDI_ID match v layer 11 (= explicitní propojení, full polyline)
-        # 2) Spatial proximity 150m k layer 11 segmentům (full polyline)
-        # 3) OSM name match — clipped na 300m radius okolo bodu uzavírky,
-        #    protože OSM má často celou ulici (= 2 km) a skutečná uzavírka
-        #    je krátký úsek
+        # Polyline geometry — 5 tierů přesnosti:
+        # 1 = JSDI_ID match v layer 11 (= explicitní SITmP polyline)
+        # 2 = Spatial proximity 150m k layer 11 segmentům
+        # 3 = OSM main + JSDI text "v úseku X po Y" → klip mezi křižovatkami
+        # 4 = OSM main + 300m radius okolo bodu uzavírky (heuristika)
+        # 5 = bod (state route bez OSM jména)
+        geom_tier = 5
         jsdi_id = a.get("JSDI_ID")
         polylines = polylines_by_id.get(jsdi_id) if jsdi_id else None
-        if not polylines:
-            polylines = find_nearby_paths((y, x), all_polylines, max_dist_m=150)
+        if polylines:
+            geom_tier = 1
+        else:
+            t2 = find_nearby_paths((y, x), all_polylines, max_dist_m=150)
+            if t2:
+                polylines = t2
+                geom_tier = 2
         if not polylines and osm_streets:
             osm_paths = lookup_osm_street(street, osm_streets)
             if osm_paths:
-                polylines = clip_paths_to_radius((y, x), osm_paths, max_dist_m=300)
+                # Tier 3: pokus o přesný klip mezi křižovatkami z popisu
+                precise = precise_clip_from_text(nazev, (y, x), osm_paths, osm_streets)
+                if precise:
+                    polylines = precise
+                    geom_tier = 3
+                else:
+                    polylines = clip_paths_to_radius((y, x), osm_paths, max_dist_m=300)
+                    if polylines:
+                        geom_tier = 4
 
         base = slug(street)
         cid = base
@@ -466,6 +614,7 @@ def main() -> int:
             "od": ts_to_iso(a.get("Od")),
             "do": ts_to_iso(a.get("Do")),
             "severity": classify_severity(street, akce, popis),
+            "geomTier": geom_tier,
         }
         closures.append(rec)
 
