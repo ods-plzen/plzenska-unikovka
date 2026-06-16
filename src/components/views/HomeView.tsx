@@ -6,16 +6,16 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import type { Closure } from "@/lib/types";
 import { closures } from "@/lib/data";
 import { AREAS, inArea } from "@/data/areas";
-import { useArea } from "@/components/AreaProvider";
-import { MiniMap } from "@/components/map/MiniMap";
-import { TimeFilterChips } from "@/components/TimeFilterChips";
-import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
 import { HLAVNI_TAHY, SEVERITY_RANK } from "@/lib/severity";
 
+const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
+
+const ALERT_RED = "#c0392b";
+
 const SEVERITY_LABEL: Record<string, string> = {
-  major: "Úplná uzavírka",
-  medium: "Omezení provozu",
-  minor: "Drobné omezení",
+  major: "úplná uzavírka",
+  medium: "omezení provozu",
+  minor: "drobné omezení",
 };
 
 const MONTHS_CZ = [
@@ -23,7 +23,7 @@ const MONTHS_CZ = [
   "července", "srpna", "září", "října", "listopadu", "prosince",
 ];
 
-function fmtCzDate(iso?: string): string | null {
+function fmtCzDate(iso?: string | null): string | null {
   if (!iso) return null;
   const [y, m, d] = iso.split("-").map((n) => parseInt(n, 10));
   if (!y || !m || !d) return null;
@@ -39,675 +39,397 @@ function fmtDateRange(c: Closure): string {
   return c.termin;
 }
 
-interface Progress {
-  pct: number;
-  daysElapsed: number;
-  daysLeft: number;
-  daysTotal: number;
-  notStarted: boolean;
-}
-
-function computeProgress(c: Closure): Progress | null {
-  if (!c.od || !c.do) return null;
-  const start = new Date(c.od).getTime();
-  const end = new Date(c.do).getTime();
-  const now = Date.now();
-  const total = end - start;
-  if (total <= 0 || isNaN(total)) return null;
-  const dayMs = 86_400_000;
-  if (now < start) {
-    return {
-      pct: 0,
-      daysElapsed: 0,
-      daysLeft: Math.max(1, Math.ceil((end - now) / dayMs)),
-      daysTotal: Math.ceil(total / dayMs),
-      notStarted: true,
-    };
-  }
-  const elapsed = Math.min(total, now - start);
-  return {
-    pct: Math.round((elapsed / total) * 100),
-    daysElapsed: Math.floor(elapsed / dayMs),
-    daysLeft: Math.max(0, Math.ceil((end - now) / dayMs)),
-    daysTotal: Math.ceil(total / dayMs),
-    notStarted: false,
-  };
-}
-
-function ProgressBar({ p, dense }: { p: Progress; dense?: boolean }) {
-  const urgent = p.daysLeft <= 7 && !p.notStarted;
-  const barColor = urgent
-    ? "bg-red"
-    : p.notStarted
-      ? "bg-ink/30"
-      : "bg-blue";
-  return (
-    <div className={dense ? "" : ""}>
-      <div
-        className={
-          "flex items-baseline justify-between text-[10px] font-bold uppercase tracking-[0.2em] " +
-          (urgent ? "text-red" : "text-ink/60")
-        }
-        style={HEAD_FONT}
-      >
-        <span>
-          {p.notStarted
-            ? `Začíná za ${p.daysLeft} ${p.daysLeft === 1 ? "den" : p.daysLeft < 5 ? "dny" : "dní"}`
-            : `${p.daysLeft} ${p.daysLeft === 1 ? "den" : p.daysLeft < 5 ? "dny" : "dní"} zbývá`}
-        </span>
-        <span className="text-ink/40">
-          {p.daysElapsed}/{p.daysTotal}
-        </span>
-      </div>
-      <div
-        className={
-          "mt-1 w-full overflow-hidden rounded-full bg-ink/10 " +
-          (dense ? "h-1.5" : "h-2")
-        }
-      >
-        <div
-          className={"h-full rounded-full transition-all " + barColor}
-          style={{ width: `${p.pct}%` }}
-        />
-      </div>
-    </div>
-  );
-}
-
 function todayPretty(): string {
   const d = new Date();
   return `${d.getDate()}. ${MONTHS_CZ[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
+function planYear(c: Closure): number {
+  const m = c.termin.match(/20\d{2}/);
+  return m ? parseInt(m[0], 10) : 2026;
+}
 
-const ALERT_RED = "#c0392b";
-const ODS_SKY = "#009fe3";
-const NEUTRAL_GRAY = "#94a3b8";
+function isActiveNow(c: Closure): boolean {
+  if (c.status === "plan") return false;
+  if (!c.od) return c.status === "now";
+  const start = new Date(c.od).getTime();
+  const end = c.do ? new Date(c.do).getTime() : Infinity;
+  const now = Date.now();
+  return start <= now && now <= end;
+}
+
+function isWithinWeek(c: Closure): boolean {
+  if (c.status === "plan") return false;
+  if (!c.od) return false;
+  const start = new Date(c.od).getTime();
+  const now = Date.now();
+  return start > now && start <= now + 7 * 86_400_000;
+}
+
+function daysLeftIfSoon(c: Closure): number | null {
+  if (!c.do) return null;
+  const end = new Date(c.do).getTime();
+  const now = Date.now();
+  if (end < now) return null;
+  const days = Math.ceil((end - now) / 86_400_000);
+  return days <= 14 ? days : null;
+}
+
+function impactScore(c: Closure): number {
+  return (
+    SEVERITY_RANK[c.severity ?? "minor"] * 2 +
+    (HLAVNI_TAHY.has(c.name) ? 0 : 1)
+  );
+}
 
 export function HomeView() {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
-  const filter: TimeFilter = parseFilter(params.get("f"));
   const obvodParam = params.get("o");
-  const { setArea } = useArea();
 
-  function pushParams(next: { f?: TimeFilter; o?: string | null }) {
+  function setObvod(o: string | null) {
     const sp = new URLSearchParams(params.toString());
-    if (next.f !== undefined) {
-      if (next.f === "now") sp.delete("f");
-      else sp.set("f", next.f);
-    }
-    if (next.o !== undefined) {
-      if (next.o) sp.set("o", next.o);
-      else sp.delete("o");
-    }
+    if (o) sp.set("o", o);
+    else sp.delete("o");
     const q = sp.toString();
     router.replace(q ? `${pathname}?${q}` : pathname, { scroll: false });
   }
 
-  const visibleAll = useMemo(() => {
-    // JSDI občas vrátí pro 1 fyzickou uzavírku víc záznamů (různé směry
-    // / etapy). Dedupujem podle (name + oblast + od + do) — vizuálně i pro
-    // počet uzavírek je to "1 uzavírka", ne 3.
-    const filtered = closures.filter((c) => isInFilter(c, filter));
+  const visible = useMemo(() => {
     const seen = new Set<string>();
-    return filtered.filter((c) => {
-      const key = `${c.name}|${c.oblast}|${c.od ?? ""}|${c.do ?? ""}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-  }, [filter]);
+    return closures
+      .filter((c) => !obvodParam || inArea(c.oblast, obvodParam))
+      .filter((c) => {
+        const key = `${c.name}|${c.oblast}|${c.od ?? ""}|${c.do ?? ""}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+  }, [obvodParam]);
 
-  const visible = useMemo(
-    () =>
-      obvodParam
-        ? visibleAll.filter((c) => inArea(c.oblast, obvodParam))
-        : visibleAll,
-    [visibleAll, obvodParam],
+  const nowList = useMemo(() => visible.filter(isActiveNow), [visible]);
+  const weekList = useMemo(() => visible.filter(isWithinWeek), [visible]);
+  const planList = useMemo(
+    () => visible.filter((c) => c.status === "plan"),
+    [visible],
   );
 
-  const top5 = useMemo(() => {
-    // Impact score: severity má větší váhu, hlavní průtah = bonus.
-    // Major + Americká < Major + Dobřanská (= Američanka jde dřív)
-    const score = (c: Closure) =>
-      SEVERITY_RANK[c.severity ?? "minor"] * 2 +
-      (HLAVNI_TAHY.has(c.name) ? 0 : 1);
-    return [...visible]
-      .sort((a, b) => {
-        const sa = score(a);
-        const sb = score(b);
-        if (sa !== sb) return sa - sb;
-        // tie-break: delší trvání = větší impact (Americká 6 týdnů > Lochotín 2 dny)
-        const aLen =
-          a.od && a.do
-            ? new Date(a.do).getTime() - new Date(a.od).getTime()
-            : 0;
-        const bLen =
-          b.od && b.do
-            ? new Date(b.do).getTime() - new Date(b.od).getTime()
-            : 0;
-        return bLen - aLen;
-      })
-      .slice(0, 5);
-  }, [visible]);
+  const topActive = useMemo(
+    () =>
+      [...nowList]
+        .sort((a, b) => {
+          const sa = impactScore(a);
+          const sb = impactScore(b);
+          if (sa !== sb) return sa - sb;
+          const aLen =
+            a.od && a.do
+              ? new Date(a.do).getTime() - new Date(a.od).getTime()
+              : 0;
+          const bLen =
+            b.od && b.do
+              ? new Date(b.do).getTime() - new Date(b.od).getTime()
+              : 0;
+          return bLen - aLen;
+        })
+        .slice(0, 7),
+    [nowList],
+  );
 
-  const obvodCounts = useMemo(() => {
-    const c: Record<string, number> = {};
-    for (const x of visibleAll) c[x.oblast] = (c[x.oblast] ?? 0) + 1;
-    return c;
-  }, [visibleAll]);
+  const planSooner = useMemo(
+    () =>
+      planList
+        .filter((p) => planYear(p) <= 2026)
+        .sort((a, b) => (a.od ?? "9").localeCompare(b.od ?? "9")),
+    [planList],
+  );
+  const planLater = useMemo(
+    () =>
+      planList
+        .filter((p) => planYear(p) >= 2027)
+        .sort((a, b) => planYear(a) - planYear(b)),
+    [planList],
+  );
 
   const obvody = AREAS.filter((a) => a.id !== "all");
   const focusedObvod = obvodParam
     ? AREAS.find((a) => a.id === obvodParam)
     : null;
 
-  const placeLabel = focusedObvod ? focusedObvod.short : "Plzeň";
-
   return (
-    <div className="space-y-6 pb-8 md:space-y-10 md:pb-10">
-      {/* ──────────────  COMPACT HEADER — datum + filter ────────────── */}
-      <div className="flex flex-col gap-3 border-b-2 border-ink/90 pb-3 sm:flex-row sm:items-center sm:justify-between">
-        <div
-          style={HEAD_FONT}
-          className="text-[10px] font-semibold uppercase tracking-[0.4em] text-ink/70"
-        >
-          {placeLabel} · {todayPretty()}
-        </div>
-        <TimeFilterChips
-          value={filter}
-          onChange={(f) => pushParams({ f })}
+    <div className="space-y-7 pb-12 sm:space-y-9">
+      {/* ────────  OBVOD CHIPS  ──────── */}
+      <div className="-mx-3 flex gap-1.5 overflow-x-auto px-3 pb-1 sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0">
+        <ObvodChip
+          label="vše"
+          active={!obvodParam}
+          onClick={() => setObvod(null)}
         />
+        {obvody.map((a) => (
+          <ObvodChip
+            key={a.id}
+            label={a.short.replace("Plzeň ", "P")}
+            active={a.id === obvodParam}
+            onClick={() => setObvod(a.id === obvodParam ? null : a.id)}
+          />
+        ))}
       </div>
 
-      {/* ──────────────  VALUE STATEMENT ────────────── */}
-      <section className="space-y-3">
-        <h1
-          style={HEAD_FONT}
-          className="text-3xl font-bold uppercase leading-[0.95] text-ink sm:text-4xl md:text-5xl"
-        >
-          <span className="text-blue">{visible.length}</span>{" "}
-          {visible.length === 1
-            ? "uzavírka"
-            : visible.length < 5
-              ? "uzavírky"
-              : "uzavírek"}{" "}
-          {focusedObvod ? `v ${focusedObvod.short}` : "v Plzni"}
-          {filter === "all" ? "" : filter === "now" ? " dnes" : ""}.
-        </h1>
-        <p
-          style={HEAD_FONT}
-          className="text-base font-normal leading-snug text-ink/70 sm:text-lg"
-        >
-          {top5.length === 0
-            ? "Dnes je klid — žádné velké uzavírky."
-            : "Top 5 v Plzni dnes:"}
-        </p>
-
-        {focusedObvod && (
-          <button
-            type="button"
-            onClick={() => pushParams({ o: null })}
+      {/* ────────  HERO COUNTER  ──────── */}
+      <section className="border-y-[3px] border-ink py-5 sm:py-7">
+        <div className="flex items-end justify-between gap-3">
+          <div
             style={HEAD_FONT}
-            className="inline-flex min-h-[40px] items-center gap-1 rounded-full border border-ink/30 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-ink/70 hover:border-blue hover:text-blue"
+            className="flex items-baseline gap-2 text-5xl font-bold leading-[0.85] text-ink sm:gap-3 sm:text-7xl md:text-[7rem]"
           >
-            ← Celá Plzeň
-          </button>
-        )}
+            <span>{nowList.length}</span>
+            <span className="text-ink/20">/</span>
+            <span>{weekList.length}</span>
+            <span className="text-ink/20">/</span>
+            <span>{planList.length}</span>
+          </div>
+          <div
+            style={HEAD_FONT}
+            className="text-right text-[10px] font-bold uppercase tracking-[0.25em] text-ink/65 sm:text-[11px]"
+          >
+            <div>{focusedObvod ? focusedObvod.short : "Plzeň"}</div>
+            <div className="mt-1 text-ink/45">{todayPretty()}</div>
+          </div>
+        </div>
+        <div
+          style={HEAD_FONT}
+          className="mt-3 grid grid-cols-3 gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/55 sm:mt-4 sm:text-[11px]"
+        >
+          <span>aktuálně</span>
+          <span>do týdne</span>
+          <span>plánováno</span>
+        </div>
       </section>
 
-      {/* ──────────────  10 OBVODŮ — picker nahoře, ať si Plzeňák hned vybere ────────────── */}
-      <section>
-        <div className="mb-4 flex flex-col gap-2 sm:mb-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-          <h2
-            style={HEAD_FONT}
-            className="text-xl font-bold uppercase leading-[0.95] text-ink sm:text-2xl md:text-3xl"
-          >
-            Najděte svůj obvod
-          </h2>
-          <p
-            style={HEAD_FONT}
-            className="text-sm font-normal text-ink/70"
-          >
-            Vyberte obvod a uvidíte uzavírky jen u vás.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
-          {obvody.map((a) => (
-            <ObvodTile
-              key={a.id}
-              areaShort={a.short}
-              areaLabel={a.label}
-              count={obvodCounts[a.id] ?? 0}
-              active={a.id === obvodParam}
-              onClick={() =>
-                pushParams({ o: a.id === obvodParam ? null : a.id })
-              }
-            />
+      {/* ────────  TEĎ  ──────── */}
+      {topActive.length > 0 ? (
+        <Section title="Teď" count={nowList.length}>
+          {topActive.map((c, i) => (
+            <Row key={c.id} c={c} rank={i + 1} variant="now" />
           ))}
-        </div>
-      </section>
+          {nowList.length > topActive.length && (
+            <Link
+              href={obvodParam ? `/seznam?o=${obvodParam}` : "/seznam"}
+              style={HEAD_FONT}
+              className="block py-3 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-blue hover:underline sm:text-[11px]"
+            >
+              + dalších {nowList.length - topActive.length} v seznamu →
+            </Link>
+          )}
+        </Section>
+      ) : (
+        <Section title="Teď" count={0}>
+          <div
+            style={HEAD_FONT}
+            className="py-8 text-center text-base font-bold uppercase text-ink/55 sm:text-lg"
+          >
+            Klid. Žádná aktivní uzavírka.
+          </div>
+        </Section>
+      )}
 
-      {/* ──────────────  TOP 5 KARET ────────────── */}
-      <section className="border-t-2 border-ink/90 pt-6 md:pt-10">
-        <h2
-          style={HEAD_FONT}
-          className="mb-4 text-xs font-bold uppercase tracking-[0.4em] text-ink/70 sm:mb-5"
+      {/* ────────  PLÁN LÉTO 2026  ──────── */}
+      {planSooner.length > 0 && (
+        <Section
+          title="Plán · léto 2026"
+          count={planSooner.length}
+          note="Z plzen.eu — termín startu ještě není v JSDI"
         >
-          {focusedObvod
-            ? `Top 5 v ${focusedObvod.short}`
-            : "Top 5 v Plzni"}
-        </h2>
-        {top5.length === 0 ? (
-          <div className="rounded-3xl border-2 border-dashed border-ink/30 bg-white p-8 text-center sm:p-10">
-            <p
-              style={HEAD_FONT}
-              className="text-xl font-bold uppercase text-ink/60 sm:text-2xl"
-            >
-              Žádné uzavírky. 🎉
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-12">
-            {top5.map((c, idx) => (
-              <BoardCard
-                key={c.id}
-                c={c}
-                rank={idx + 1}
-                variant={idx === 0 ? "hero" : "medium"}
-              />
-            ))}
-          </div>
-        )}
-        <p
-          style={HEAD_FONT}
-          className="mt-3 text-right text-[10px] font-semibold uppercase tracking-[0.3em] text-ink/50"
-        >
-          zdroj SITmP / JSDI ŘSD
-        </p>
-      </section>
+          {planSooner.map((c, i) => (
+            <Row key={c.id} c={c} rank={i + 1} variant="plan" />
+          ))}
+        </Section>
+      )}
 
-      {/* ──────────────  CTA → /mapa ────────────── */}
-      <section className="ods-board rounded-3xl p-5 sm:p-8 md:p-12">
-        <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-8">
-            <h2
-              style={HEAD_FONT}
-              className="text-3xl font-bold uppercase leading-[0.95] text-white sm:text-4xl md:text-5xl"
-            >
-              Celá mapa Plzně.
-            </h2>
-            <p
-              style={HEAD_FONT}
-              className="mt-4 max-w-xl text-sm font-normal text-white/80 sm:mt-5 sm:text-base"
-            >
-              Všech {visibleAll.length} uzavírek na jedné mapě. Pro každého,
-              kdo si plánuje cestu na delší dobu.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:items-center sm:gap-4">
-              <Link
-                href={
-                  obvodParam
-                    ? `/mapa?o=${encodeURIComponent(obvodParam)}`
-                    : "/mapa"
-                }
-                onClick={() => obvodParam && setArea(obvodParam)}
-                style={HEAD_FONT}
-                className="inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-[0.25em] text-blue transition-colors hover:bg-sky hover:text-white sm:w-auto sm:px-7"
-              >
-                Otevřít mapu
-                <span aria-hidden>→</span>
-              </Link>
-              <Link
-                href={
-                  obvodParam
-                    ? `/seznam?o=${encodeURIComponent(obvodParam)}`
-                    : "/seznam"
-                }
-                style={HEAD_FONT}
-                className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border-2 border-white/40 px-6 py-3 text-sm font-bold uppercase tracking-[0.25em] text-white transition-colors hover:border-white hover:bg-white/10 sm:w-auto sm:px-7"
-              >
-                A–Z seznam
-              </Link>
-            </div>
-          </div>
-          <div className="lg:col-span-4">
-            <div
-              style={HEAD_FONT}
-              className="text-[10px] font-bold uppercase tracking-[0.4em] text-sky"
-            >
-              Data tečou odkud
-            </div>
-            <ul
-              style={HEAD_FONT}
-              className="mt-3 space-y-2 text-base font-normal text-white/85"
-            >
-              <li>SITmP · agp.plzen.eu</li>
-              <li>JSDI ŘSD · státní dopravní info</li>
-              <li>SUPERDIO · městská evidence staveb</li>
-              <li>PMDP · MHD odklony a zastávky</li>
-            </ul>
-            <p className="mt-4 text-xs text-white/55">
-              Aktualizujeme denně v 7:00.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* ────────  PLÁN 2027+  ──────── */}
+      {planLater.length > 0 && (
+        <Section
+          title="Plán · 2027 a dál"
+          count={planLater.length}
+          note="Velké projekty s víceletým horizontem"
+        >
+          {planLater.map((c, i) => (
+            <Row key={c.id} c={c} rank={i + 1} variant="plan" />
+          ))}
+        </Section>
+      )}
+
+      {/* ────────  FOOTER MODE LINKS  ──────── */}
+      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-none border-2 border-ink bg-ink/90">
+        <Link
+          href={obvodParam ? `/mapa?o=${obvodParam}` : "/mapa"}
+          style={HEAD_FONT}
+          className="flex min-h-[64px] items-center justify-center bg-paper px-4 py-4 text-sm font-bold uppercase tracking-[0.3em] text-ink transition-colors hover:bg-blue hover:text-paper sm:text-base"
+        >
+          Mapa →
+        </Link>
+        <Link
+          href={obvodParam ? `/seznam?o=${obvodParam}` : "/seznam"}
+          style={HEAD_FONT}
+          className="flex min-h-[64px] items-center justify-center bg-paper px-4 py-4 text-sm font-bold uppercase tracking-[0.3em] text-ink transition-colors hover:bg-blue hover:text-paper sm:text-base"
+        >
+          A–Z seznam →
+        </Link>
+      </div>
     </div>
   );
 }
 
-/* ──────────────  BoardCard — ODS billboard style ────────────── */
-
-function getCenter(c: Closure): [number, number] | null {
-  const pt = c.ways?.[0]?.[0];
-  if (!pt || pt.length < 2) return null;
-  return [pt[0], pt[1]];
+/* ────────  SECTION  ──────── */
+function Section({
+  title,
+  count,
+  note,
+  children,
+}: {
+  title: string;
+  count: number;
+  note?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section>
+      <div className="flex items-baseline justify-between gap-3 border-b-[3px] border-ink pb-2 sm:pb-3">
+        <h2
+          style={HEAD_FONT}
+          className="text-2xl font-bold uppercase tracking-tight text-ink sm:text-3xl md:text-4xl"
+        >
+          {title}
+        </h2>
+        <span
+          style={HEAD_FONT}
+          className="shrink-0 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/55 sm:text-[11px]"
+        >
+          {count}{" "}
+          {count === 1 ? "uzavírka" : count < 5 ? "uzavírky" : "uzavírek"}
+        </span>
+      </div>
+      {note && (
+        <div
+          style={HEAD_FONT}
+          className="border-b-2 border-ink/15 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-ink/45"
+        >
+          {note}
+        </div>
+      )}
+      <div>{children}</div>
+    </section>
+  );
 }
 
-function getWays(c: Closure): [number, number][][] | undefined {
-  if (c.point) return undefined;
-  const polylines = c.ways.filter((w) => w.length >= 2);
-  return polylines.length > 0
-    ? (polylines as [number, number][][])
-    : undefined;
-}
-
-const TIER_LABELS: Record<number, { label: string; tone: "ok" | "approx" | "rough" }> = {
-  1: { label: "Geometrie ze SITmP", tone: "ok" },
-  2: { label: "Geometrie ze SITmP", tone: "ok" },
-  3: { label: "Úsek z popisu", tone: "ok" },
-  4: { label: "Přibližný úsek (~300 m)", tone: "approx" },
-  5: { label: "Pouze bod", tone: "rough" },
-};
-
-const TIER_TOOLTIPS: Record<number, string> = {
-  1: "Polyline přímo z SITmP / JSDI ŘSD — přesná hranice úseku.",
-  2: "Polyline ze SITmP nalezená podle blízkosti — vysoká spolehlivost.",
-  3: 'Úsek určen z JSDI popisu („v úseku X po Y") a oklipnutý mezi OSM křižovatkami.',
-  4: "Geometrie z OpenStreetMap, oklipnutá na 300 m okolo bodu uzavírky. Skutečný úsek může být kratší/delší — viz textový popis v detailu.",
-  5: "Pro tuto uzavírku máme jen bod — typicky státní silnice s číselným označením, bez názvu v OSM.",
-};
-
-function BoardCard({
+/* ────────  ROW  ──────── */
+function Row({
   c,
   rank,
   variant,
 }: {
   c: Closure;
   rank: number;
-  variant: "hero" | "medium";
+  variant: "now" | "plan";
 }) {
   const sev = c.severity ?? "minor";
   const sevLabel = SEVERITY_LABEL[sev];
-  const date = fmtDateRange(c);
-  const center = getCenter(c);
-  const ways = getWays(c);
-  const hasPolyline = !!ways && ways.length > 0;
-  const progress = computeProgress(c);
-  const sevBadgeBg =
-    sev === "major" ? ALERT_RED : sev === "medium" ? ODS_SKY : NEUTRAL_GRAY;
-  const rankColor =
-    sev === "major" ? "text-[#c0392b]" : sev === "medium" ? "text-sky" : "text-ink/30";
-
-  if (variant === "hero") {
-    return (
-      <Link
-        href={`/doprava/${c.id}`}
-        className="group relative col-span-1 grid cursor-pointer grid-cols-1 overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[8px_8px_0_0_var(--ods-sky)] md:grid-cols-12 lg:col-span-12"
-      >
-        {/* mini-mapa = location image s ulicemi a polyline (pokud existuje) */}
-        <div className="relative h-[180px] overflow-hidden border-b-2 border-ink/90 sm:h-[240px] md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
-          {center ? (
-            <MiniMap
-              center={center}
-              ways={ways}
-              severity={sev}
-              height={460}
-              zoom={15}
-            />
-          ) : (
-            <div className="h-full w-full bg-line" />
-          )}
-          {/* top-left ribbon */}
-          <span
-            className="ods-ribbon absolute left-3 top-3 sm:left-4 sm:top-4"
-            style={{ background: sevBadgeBg }}
-          >
-            {sevLabel}
-          </span>
-          {/* tier badge: konkrétní přesnost geometrie */}
-          {hasPolyline && c.geomTier && (
-            <div
-              style={HEAD_FONT}
-              title={TIER_TOOLTIPS[c.geomTier]}
-              className={
-                "absolute bottom-0 left-0 right-0 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] backdrop-blur " +
-                (TIER_LABELS[c.geomTier].tone === "ok"
-                  ? "bg-blue/85 text-white"
-                  : TIER_LABELS[c.geomTier].tone === "approx"
-                    ? "bg-ink/85 text-white"
-                    : "bg-muted/80 text-white")
-              }
-            >
-              {TIER_LABELS[c.geomTier].label}
-            </div>
-          )}
-        </div>
-
-        {/* body — bílá s tmavým textem, rank "1." velký vlevo nahoře */}
-        <div className="relative flex flex-col justify-between p-5 sm:p-7 md:col-span-7 md:p-10">
-          <div>
-            <div
-              style={HEAD_FONT}
-              className={
-                "stat text-[88px] leading-[0.82] sm:text-[120px] md:text-[160px] lg:text-[180px] " +
-                rankColor
-              }
-              aria-hidden
-            >
-              {rank}.
-            </div>
-            <div className="mt-3 flex items-baseline justify-between gap-3 sm:mt-4">
-              <span
-                style={HEAD_FONT}
-                className="text-[10px] font-bold uppercase tracking-[0.35em] text-ink/70 sm:text-[11px]"
-              >
-                {c.oblast}
-              </span>
-              <span
-                style={HEAD_FONT}
-                className="text-[10px] font-bold uppercase tracking-[0.35em] text-blue sm:text-[11px]"
-              >
-                {date}
-              </span>
-            </div>
-            <div
-              style={HEAD_FONT}
-              className="mt-2 text-3xl font-bold uppercase leading-[0.9] text-ink sm:mt-3 sm:text-5xl lg:text-6xl"
-            >
-              {c.name}
-            </div>
-            <p
-              style={HEAD_FONT}
-              className="mt-2 max-w-xl text-base font-normal leading-snug text-ink/75 sm:mt-3 sm:text-lg"
-            >
-              {c.akce}
-            </p>
-            {progress && (
-              <div className="mt-5">
-                <ProgressBar p={progress} />
-              </div>
-            )}
-          </div>
-          <div
-            style={HEAD_FONT}
-            className="mt-6 inline-flex min-h-[44px] w-fit items-center gap-2 rounded-full bg-blue px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.3em] text-white group-hover:bg-sky sm:mt-8"
-          >
-            Co se tam děje
-            <span aria-hidden className="text-base">→</span>
-          </div>
-        </div>
-      </Link>
-    );
-  }
+  const isMajor = sev === "major";
+  const dateRange = fmtDateRange(c);
+  const dLeft = daysLeftIfSoon(c);
+  const isVirtualOrPlanNoData = variant === "plan" && !c.od;
 
   return (
     <Link
       href={`/doprava/${c.id}`}
-      className="group relative col-span-1 flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[6px_6px_0_0_var(--ods-sky)] lg:col-span-6"
+      className="group flex items-start gap-3 border-b-2 border-ink/12 py-4 transition-colors last:border-b-0 hover:bg-blue/[0.04] sm:gap-5 sm:py-5"
     >
-      <div className="relative h-[160px] overflow-hidden border-b-2 border-ink/90 sm:h-[180px]">
-        {center ? (
-          <MiniMap
-            center={center}
-            ways={ways}
-            severity={sev}
-            height={180}
-            zoom={15}
-          />
-        ) : (
-          <div className="h-full w-full bg-line" />
-        )}
-        <span
-          className="ods-ribbon absolute left-3 top-3"
-          style={{ background: sevBadgeBg }}
-        >
-          {sevLabel}
-        </span>
-        {hasPolyline && c.geomTier && (
-          <div
-            style={HEAD_FONT}
-            title={TIER_TOOLTIPS[c.geomTier]}
-            className={
-              "absolute bottom-0 left-0 right-0 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.2em] backdrop-blur " +
-              (TIER_LABELS[c.geomTier].tone === "ok"
-                ? "bg-blue/85 text-white"
-                : TIER_LABELS[c.geomTier].tone === "approx"
-                  ? "bg-ink/85 text-white"
-                  : "bg-muted/80 text-white")
-            }
-          >
-            {TIER_LABELS[c.geomTier].label}
-          </div>
-        )}
+      <div
+        style={HEAD_FONT}
+        className={
+          "stat shrink-0 text-3xl font-bold leading-none transition-colors group-hover:text-blue sm:text-4xl md:text-5xl " +
+          (variant === "plan" ? "text-ink/25" : "text-ink/30")
+        }
+        aria-hidden
+      >
+        {rank}.
       </div>
-      <div className="relative flex flex-1 flex-col p-4 sm:p-5">
+      <div className="min-w-0 flex-1">
         <div
           style={HEAD_FONT}
-          className={
-            "stat text-[64px] leading-[0.82] sm:text-[88px] " + rankColor
-          }
-          aria-hidden
-        >
-          {rank}.
-        </div>
-        <div className="mt-2 flex items-baseline justify-between gap-3 sm:mt-3">
-          <span
-            style={HEAD_FONT}
-            className="text-[10px] font-bold uppercase tracking-[0.35em] text-ink/70"
-          >
-            {c.oblast}
-          </span>
-          <span
-            style={HEAD_FONT}
-            className="text-[10px] font-bold uppercase tracking-[0.35em] text-blue"
-          >
-            {date}
-          </span>
-        </div>
-        <div
-          style={HEAD_FONT}
-          className="mt-2 text-xl font-bold uppercase leading-[0.95] text-ink sm:text-2xl md:text-3xl"
+          className="text-xl font-bold uppercase leading-tight text-ink sm:text-2xl md:text-[1.75rem]"
         >
           {c.name}
         </div>
-        <p
-          style={HEAD_FONT}
-          className="mt-2 text-sm font-normal leading-snug text-ink/75 sm:text-base"
-        >
-          {c.akce}
-        </p>
-        {progress && (
-          <div className="mt-4">
-            <ProgressBar p={progress} dense />
+        <div className="mt-1 text-sm leading-snug text-ink/65 sm:text-[15px]">
+          {variant === "plan" ? (
+            <span>{c.akce}</span>
+          ) : (
+            <>
+              <span
+                className={isMajor ? "font-semibold" : ""}
+                style={isMajor ? { color: ALERT_RED } : undefined}
+              >
+                {sevLabel}
+              </span>
+              {" · "}
+              <span className="text-ink/55">{c.akce.toLowerCase()}</span>
+            </>
+          )}
+        </div>
+      </div>
+      <div
+        style={HEAD_FONT}
+        className="shrink-0 text-right"
+      >
+        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue sm:text-[11px]">
+          {c.oblast}
+        </div>
+        <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-ink/65 sm:text-[11px]">
+          {dateRange}
+        </div>
+        {variant === "now" && dLeft !== null && (
+          <div
+            className="mt-1 text-[10px] font-bold uppercase tracking-[0.15em] sm:text-[11px]"
+            style={{ color: ALERT_RED }}
+          >
+            {dLeft} {dLeft === 1 ? "den" : dLeft < 5 ? "dny" : "dní"} zbývá
           </div>
         )}
-        <div
-          style={HEAD_FONT}
-          className="mt-auto pt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-blue group-hover:text-sky sm:pt-5"
-        >
-          Co se tam děje →
-        </div>
+        {isVirtualOrPlanNoData && (
+          <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.15em] text-ink/45 sm:text-[11px]">
+            Datum neznámé
+          </div>
+        )}
       </div>
     </Link>
   );
 }
 
-/* ──────────────  ObvodTile — kandidátka pattern (modré dlaždice) ────────────── */
-
-function ObvodTile({
-  areaShort,
-  areaLabel,
-  count,
+/* ────────  OBVOD CHIP  ──────── */
+function ObvodChip({
+  label,
   active,
   onClick,
 }: {
-  areaShort: string;
-  areaLabel: string;
-  count: number;
+  label: string;
   active: boolean;
   onClick: () => void;
 }) {
-  const num = areaShort.replace("Plzeň ", "");
-  const tier =
-    count === 0
-      ? "empty"
-      : count <= 3
-        ? "light"
-        : count <= 6
-          ? "mid"
-          : "heavy";
-  const styles: Record<string, string> = {
-    empty: "bg-white text-ink/45 border-ink/20",
-    light: "bg-white text-ink border-ink/80",
-    mid: "bg-sky text-white border-ink",
-    heavy: "bg-blue text-white border-ink",
-  };
-  const activeRing = active
-    ? " ring-2 ring-sky ring-offset-1 ring-offset-paper"
-    : "";
-
   return (
     <button
       type="button"
       onClick={onClick}
+      style={HEAD_FONT}
       aria-pressed={active}
-      title={areaLabel}
       className={
-        "group flex h-14 cursor-pointer flex-col items-center justify-center gap-0.5 rounded-xl border-2 px-1 transition-all duration-150 hover:-translate-y-0.5 hover:border-sky sm:h-16 " +
-        styles[tier] +
-        activeRing
+        "min-h-[36px] shrink-0 border-2 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors sm:text-[11px] " +
+        (active
+          ? "border-ink bg-ink text-paper"
+          : "border-ink/25 bg-paper text-ink hover:border-ink")
       }
     >
-      <div
-        style={HEAD_FONT}
-        className="text-xl font-bold leading-none sm:text-2xl"
-      >
-        {num}
-      </div>
-      <div
-        style={HEAD_FONT}
-        className="text-[9px] font-semibold uppercase leading-none tracking-[0.1em] opacity-75"
-      >
-        {count === 0
-          ? "klid"
-          : `${count} ${count === 1 ? "uz." : "uz."}`}
-      </div>
+      {label}
     </button>
   );
 }
