@@ -32,10 +32,6 @@ export function Footer() {
             <p className="mt-3 text-sm font-semibold leading-relaxed text-white">
               ODS Plzeň-město
             </p>
-            <p className="mt-2 text-xs leading-relaxed text-white/45">
-              Agregovaný a strojově zpracovaný obsah je vždy takto označen —
-              nejde o vlastní zpravodajství.
-            </p>
             <p className="mt-3 text-xs leading-relaxed text-white/45">
               <Link href="/ochrana-soukromi" className="hover:text-sky">
                 Ochrana soukromí
