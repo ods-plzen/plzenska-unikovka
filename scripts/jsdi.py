@@ -33,6 +33,10 @@ SERVICE = (
     "https://ags.plzen.eu/arcgis/rest/services/"
     "GIS_Doprava/GIS_Doprava_Uzavirky/MapServer/0/query"
 )
+ROAD_LAYER = (
+    "https://ags.plzen.eu/arcgis/rest/services/"
+    "GIS_Doprava/GIS_Doprava_Uzavirky/MapServer/11/query"
+)
 
 # Pro GH Actions runner: služba má IPv6 record, ale routing často padá.
 _orig_getaddrinfo = socket.getaddrinfo
@@ -162,9 +166,66 @@ def format_termin(od: int | None, do: int | None) -> str:
     return ""
 
 
+# -------------- layer 11 polyline join --------------
+
+def fetch_polylines_by_jsdi_id() -> dict[str, list[list[list[float]]]]:
+    """Z layer 11 (silniční síť CEDA + JSDI sekce) vrátí polyline geometrii
+    sgroupovanou podle JSDI message_id. Klíč = JSDI_ID (UUID), hodnota =
+    list polylines (každá polyline = list [lat, lon] bodů)."""
+    params = (
+        "where=GIS_AG.AGS.DOPRAVA_JSDI_SEKCE.active%3D1"
+        "&outFields=GIS_AG.AGS.DOPRAVA_JSDI_SEKCE.message_id"
+        "&returnGeometry=true&f=json&outSR=4326&resultRecordCount=2000"
+    )
+    url = f"{ROAD_LAYER}?{params}"
+    print(f"· stahuji silniční sekce: {url[:80]}…")
+    data = get(url)
+    feats = data.get("features", [])
+    print(f"  → {len(feats)} aktivních segmentů")
+
+    by_id: dict[str, list[list[list[float]]]] = {}
+    for f in feats:
+        mid = (f.get("attributes") or {}).get(
+            "GIS_AG.AGS.DOPRAVA_JSDI_SEKCE.message_id"
+        )
+        if not mid:
+            continue
+        paths = (f.get("geometry") or {}).get("paths") or []
+        for path in paths:
+            # path = [[lon, lat], …] (ArcGIS pořadí); chceme [lat, lon]
+            pts = [[round(p[1], 5), round(p[0], 5)] for p in path if len(p) >= 2]
+            if len(pts) >= 2:
+                by_id.setdefault(mid, []).append(pts)
+    print(f"  → {len(by_id)} unikátních JSDI message_id má polyline")
+    return by_id
+
+
 # -------------- main --------------
 
 def main() -> int:
+    polylines_by_id = fetch_polylines_by_jsdi_id()
+
+    # Bonus output: všechny aktivní silniční segmenty (i ty, co nemají match
+    # na konkrétní uzavírku) → renderuje se jako červený overlay „silnice
+    # s aktuálním omezením".
+    restrictions = [
+        {"messageId": mid, "ways": paths}
+        for mid, paths in polylines_by_id.items()
+    ]
+    restr_path = os.path.join(ROOT, "src", "data", "restricted-roads.json")
+    with open(restr_path, "w", encoding="utf-8") as f:
+        json.dump(
+            {
+                "snapshot": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+                "source": ROAD_LAYER,
+                "roads": restrictions,
+            },
+            f,
+            ensure_ascii=False,
+            indent=1,
+        )
+    print(f"· zapsáno {len(restrictions)} silničních segmentů do {restr_path}")
+
     params = "where=Aktivni%3D1&outFields=*&returnGeometry=true&f=json&outSR=4326"
     url = f"{SERVICE}?{params}"
     print(f"· stahuji JSDI/SITmP: {url}")
@@ -195,6 +256,11 @@ def main() -> int:
             skipped_geom += 1
             continue
 
+        # Upgrade na polyline geometry, pokud JSDI message_id najde match
+        # v layer 11. Jinak fallback na point marker.
+        jsdi_id = a.get("JSDI_ID")
+        polylines = polylines_by_id.get(jsdi_id) if jsdi_id else None
+
         base = slug(street)
         cid = base
         if cid in seen_ids:
@@ -210,7 +276,12 @@ def main() -> int:
         akce = (subtyp_field or reason or "Uzavírka")[:80].strip()
         akce = akce[:1].upper() + akce[1:] if akce else "Uzavírka"
 
-        ways = [[[round(y, 5), round(x, 5)]]]
+        if polylines:
+            ways = polylines
+            is_point = False
+        else:
+            ways = [[[round(y, 5), round(x, 5)]]]
+            is_point = True
         termin = format_termin(a.get("Od"), a.get("Do"))
 
         popis = nazev[:500]
@@ -224,7 +295,7 @@ def main() -> int:
             "oblast": obvod,
             "termin": termin,
             "ways": ways,
-            "point": True,
+            "point": is_point,
             "popis": popis,
             "typ": a.get("Typ") or "",
             "subtyp": a.get("Subtyp") or "",

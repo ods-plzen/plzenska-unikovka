@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { closures, closureById } from "@/lib/data";
+import { closures, closureById, restrictedRoads } from "@/lib/data";
 import { inArea, areaByeId } from "@/data/areas";
 import { useArea } from "@/components/AreaProvider";
 import { ClosureMap } from "@/components/map/ClosureMap";
@@ -70,6 +70,7 @@ export function MapView() {
         <div className="rounded-xl overflow-hidden border border-line">
           <ClosureMap
             closures={visible}
+            restrictedRoads={restrictedRoads.roads}
             height={520}
             selectedId={selectedId}
             onSelect={(id) => pushParams({ sel: id })}

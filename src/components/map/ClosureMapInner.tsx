@@ -10,7 +10,7 @@ import {
 } from "react-leaflet";
 import { useEffect } from "react";
 import type { LatLngBoundsExpression, PathOptions } from "leaflet";
-import type { Closure } from "@/lib/types";
+import type { Closure, RestrictedRoad } from "@/lib/types";
 import type { Severity } from "@/lib/severity";
 
 const PLZEN_CENTER: [number, number] = [49.7475, 13.3776];
@@ -56,11 +56,13 @@ function FitBounds({ closures }: { closures: Closure[] }) {
 
 export default function ClosureMapInner({
   closures,
+  restrictedRoads,
   height = 420,
   selectedId,
   onSelect,
 }: {
   closures: Closure[];
+  restrictedRoads?: RestrictedRoad[];
   height?: number;
   selectedId?: string | null;
   onSelect?: (id: string) => void;
@@ -76,6 +78,17 @@ export default function ClosureMapInner({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · &copy; <a href="https://carto.com/">CARTO</a> · zdroj uzavírek SITmP / JSDI ŘSD'
         url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
       />
+      {/* Background: silnice s aktuálním omezením (z layer 11 JSDI sekce).
+          Renderují se PRVNÍ → leží pod markery. */}
+      {restrictedRoads?.flatMap((r) =>
+        r.ways.map((way, i) => (
+          <Polyline
+            key={`r-${r.messageId}-${i}`}
+            positions={way}
+            pathOptions={{ color: ODS_RED, weight: 5, opacity: 0.55 }}
+          />
+        )),
+      )}
       {/* Major markers nahoře (renderují se poslední → leží navrch) */}
       {(["minor", "medium", "major"] as Severity[]).flatMap((sev) =>
         closures
