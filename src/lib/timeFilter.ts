@@ -21,6 +21,10 @@ export function isInFilter(
   today: Date = new Date(),
 ): boolean {
   if (filter === "all") return true;
+  // Plánované projekty bez konkrétního data startu (např. Masarykova
+  // z plzen.eu = "termín bude oznámen") nemají co dělat v "teď / týden /
+  // měsíc" — vidí je jen filter "Vše".
+  if (c.status === "plan" && !c.od) return false;
   if (!c.od) return filter === "now";
   const start = new Date(c.od);
   const end = c.do ? new Date(c.do) : null;
