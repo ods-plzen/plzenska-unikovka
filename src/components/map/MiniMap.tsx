@@ -16,16 +16,24 @@ const Inner = dynamic(() => import("./MiniMapInner"), {
 
 export function MiniMap({
   center,
+  ways,
   severity,
   height,
   zoom,
 }: {
   center: [number, number];
+  ways?: [number, number][][];
   severity?: Severity;
   height?: number;
   zoom?: number;
 }) {
   return (
-    <Inner center={center} severity={severity} height={height} zoom={zoom} />
+    <Inner
+      center={center}
+      ways={ways}
+      severity={severity}
+      height={height}
+      zoom={zoom}
+    />
   );
 }

@@ -1,29 +1,35 @@
 "use client";
 
-import { MapContainer, TileLayer, CircleMarker } from "react-leaflet";
+import { MapContainer, TileLayer, CircleMarker, Polyline } from "react-leaflet";
 import type { Severity } from "@/lib/severity";
 
 const SEVERITY_FILL: Record<Severity, string> = {
-  major: "#153d8a", // ODS modrá tmavá
-  medium: "#009fe3", // ODS modrá světlá
-  minor: "#94a3b8", // neutrální šedá (mimo ODS paletu — pro nezvýrazněné položky)
+  major: "#c0392b", // alert červená — úplná uzavírka (dopravní stop)
+  medium: "#009fe3", // ODS modrá světlá — omezení provozu
+  minor: "#94a3b8", // neutrální šedá — drobné omezení
 };
 
 export default function MiniMapInner({
   center,
+  ways,
   severity = "minor",
   height = 160,
   zoom = 15,
 }: {
   center: [number, number];
+  ways?: [number, number][][]; // pokud má closure polyline geometrii, nakreslíme ji
   severity?: Severity;
   height?: number;
   zoom?: number;
 }) {
+  const color = SEVERITY_FILL[severity];
+  const polylines = (ways ?? []).filter((w) => w.length >= 2);
+  const hasPolyline = polylines.length > 0;
+
   return (
     <MapContainer
       center={center}
-      zoom={zoom}
+      zoom={hasPolyline ? zoom - 1 : zoom}
       zoomControl={false}
       dragging={false}
       scrollWheelZoom={false}
@@ -33,15 +39,43 @@ export default function MiniMapInner({
       attributionControl={false}
       style={{ height, width: "100%" }}
     >
-      {/* light_all má názvy ulic — důležité pro user "vidět, kde to je" */}
+      {/* light_all má názvy ulic — důležité pro "vidět, kde to je" */}
       <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
+
+      {hasPolyline ? (
+        polylines.map((way, i) => (
+          <Polyline
+            key={i}
+            positions={way}
+            pathOptions={{
+              color: "#ffffff",
+              weight: 10,
+              opacity: 1,
+            }}
+          />
+        ))
+      ) : null}
+      {hasPolyline ? (
+        polylines.map((way, i) => (
+          <Polyline
+            key={`top-${i}`}
+            positions={way}
+            pathOptions={{
+              color,
+              weight: 7,
+              opacity: 1,
+            }}
+          />
+        ))
+      ) : null}
+
       <CircleMarker
         center={center}
-        radius={severity === "major" ? 16 : severity === "medium" ? 12 : 8}
+        radius={severity === "major" ? 14 : severity === "medium" ? 10 : 7}
         pathOptions={{
           color: "#ffffff",
           weight: 4,
-          fillColor: SEVERITY_FILL[severity],
+          fillColor: color,
           fillOpacity: 1,
         }}
       />
