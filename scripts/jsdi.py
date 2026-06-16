@@ -21,7 +21,9 @@ import os
 import re
 import socket
 import sys
+import time
 import urllib.error
+import urllib.parse
 import urllib.request
 
 UA = {
@@ -317,6 +319,37 @@ def find_nearby_paths(
     return matching
 
 
+def clip_paths_to_radius(
+    point_latlon: tuple[float, float],
+    paths: list[list[list[float]]],
+    max_dist_m: float = 300,
+) -> list[list[list[float]]]:
+    """OSM ulice jsou často dlouhé (Na Roudné = 2 km). Pro každý segment
+    najdi jen vertices ≤ max_dist_m od bodu uzavírky a vrať contiguous range
+    od první do poslední blízké. Pokud segment není nikde blízko, vyhoď."""
+    plat, plon = point_latlon
+    max_deg = max_dist_m / 111_000
+    lon_corr = 0.65
+    out: list[list[list[float]]] = []
+    for path in paths:
+        near_idx: list[int] = []
+        for i, pt in enumerate(path):
+            lat, lon = pt[0], pt[1]
+            dlat = lat - plat
+            dlon = (lon - plon) * lon_corr
+            if (dlat * dlat + dlon * dlon) ** 0.5 < max_deg:
+                near_idx.append(i)
+        if not near_idx:
+            continue
+        # Mírně rozšíříme range o 1 vertex na každou stranu pro plynulý kraj
+        lo = max(0, near_idx[0] - 1)
+        hi = min(len(path), near_idx[-1] + 2)
+        clipped = path[lo:hi]
+        if len(clipped) >= 2:
+            out.append(clipped)
+    return out
+
+
 # -------------- main --------------
 
 def main() -> int:
@@ -375,15 +408,19 @@ def main() -> int:
             continue
 
         # Polyline geometry — kaskádové fallbacky:
-        # 1) JSDI_ID match v layer 11 (= explicitní propojení)
-        # 2) Spatial proximity 150m k layer 11 segmentům
-        # 3) OSM name match (= ulice z OSM via Overpass, cached)
+        # 1) JSDI_ID match v layer 11 (= explicitní propojení, full polyline)
+        # 2) Spatial proximity 150m k layer 11 segmentům (full polyline)
+        # 3) OSM name match — clipped na 300m radius okolo bodu uzavírky,
+        #    protože OSM má často celou ulici (= 2 km) a skutečná uzavírka
+        #    je krátký úsek
         jsdi_id = a.get("JSDI_ID")
         polylines = polylines_by_id.get(jsdi_id) if jsdi_id else None
         if not polylines:
             polylines = find_nearby_paths((y, x), all_polylines, max_dist_m=150)
         if not polylines and osm_streets:
-            polylines = lookup_osm_street(street, osm_streets)
+            osm_paths = lookup_osm_street(street, osm_streets)
+            if osm_paths:
+                polylines = clip_paths_to_radius((y, x), osm_paths, max_dist_m=300)
 
         base = slug(street)
         cid = base
