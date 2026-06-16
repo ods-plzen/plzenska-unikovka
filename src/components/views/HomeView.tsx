@@ -303,7 +303,7 @@ export function HomeView() {
               count={obvodCounts[a.id] ?? 0}
               active={a.id === obvodParam}
               onClick={() =>
-                pushParams({ o: a.id === obvodParam ? null : a.id, sel: null })
+                pushParams({ o: a.id === obvodParam ? null : a.id })
               }
             />
           ))}
@@ -400,7 +400,7 @@ const TIER_LABELS: Record<number, { label: string; tone: "ok" | "approx" | "roug
 const TIER_TOOLTIPS: Record<number, string> = {
   1: "Polyline přímo z SITmP / JSDI ŘSD — přesná hranice úseku.",
   2: "Polyline ze SITmP nalezená podle blízkosti — vysoká spolehlivost.",
-  3: "Úsek určen z JSDI popisu („v úseku X po Y") a oklipnutý mezi OSM křižovatkami.",
+  3: 'Úsek určen z JSDI popisu („v úseku X po Y") a oklipnutý mezi OSM křižovatkami.',
   4: "Geometrie z OpenStreetMap, oklipnutá na 300 m okolo bodu uzavírky. Skutečný úsek může být kratší/delší — viz textový popis v detailu.",
   5: "Pro tuto uzavírku máme jen bod — typicky státní silnice s číselným označením, bez názvu v OSM.",
 };
