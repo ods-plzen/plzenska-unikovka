@@ -4,16 +4,16 @@ import { MapContainer, TileLayer, CircleMarker } from "react-leaflet";
 import type { Severity } from "@/lib/severity";
 
 const SEVERITY_FILL: Record<Severity, string> = {
-  major: "#c0392b",
-  medium: "#153d8a",
-  minor: "#6b7280",
+  major: "#153d8a", // ODS modrá tmavá
+  medium: "#009fe3", // ODS modrá světlá
+  minor: "#94a3b8", // neutrální šedá (mimo ODS paletu — pro nezvýrazněné položky)
 };
 
 export default function MiniMapInner({
   center,
   severity = "minor",
   height = 160,
-  zoom = 14,
+  zoom = 15,
 }: {
   center: [number, number];
   severity?: Severity;
@@ -33,13 +33,14 @@ export default function MiniMapInner({
       attributionControl={false}
       style={{ height, width: "100%" }}
     >
-      <TileLayer url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png" />
+      {/* light_all má názvy ulic — důležité pro user "vidět, kde to je" */}
+      <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
       <CircleMarker
         center={center}
-        radius={severity === "major" ? 14 : severity === "medium" ? 10 : 7}
+        radius={severity === "major" ? 16 : severity === "medium" ? 12 : 8}
         pathOptions={{
           color: "#ffffff",
-          weight: 3,
+          weight: 4,
           fillColor: SEVERITY_FILL[severity],
           fillOpacity: 1,
         }}
