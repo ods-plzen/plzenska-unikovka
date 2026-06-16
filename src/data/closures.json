@@ -59,7 +59,8 @@
   "superdioId": null,
   "od": "2025-12-01",
   "do": "2026-10-31",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 1
  },
  {
   "id": "za-vodarnou",
@@ -88,24 +89,6 @@
      49.71939,
      13.40333
     ]
-   ],
-   [
-    [
-     49.71939,
-     13.40333
-    ],
-    [
-     49.71938,
-     13.40327
-    ],
-    [
-     49.71928,
-     13.40185
-    ],
-    [
-     49.71927,
-     13.40172
-    ]
    ]
   ],
   "point": false,
@@ -117,7 +100,8 @@
   "superdioId": null,
   "od": "2026-05-04",
   "do": "2026-08-31",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 3
  },
  {
   "id": "zamecnicka",
@@ -193,7 +177,8 @@
   "superdioId": null,
   "od": "2026-04-20",
   "do": "2026-07-31",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "lochotinska",
@@ -241,7 +226,8 @@
   "superdioId": null,
   "od": "2026-04-28",
   "do": "2026-09-30",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "kvetna",
@@ -315,7 +301,8 @@
   "superdioId": null,
   "od": "2026-05-06",
   "do": "2026-12-18",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "jatecni",
@@ -423,7 +410,8 @@
   "superdioId": null,
   "od": "2026-02-23",
   "do": "2026-06-30",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "kostincova",
@@ -497,7 +485,8 @@
   "superdioId": null,
   "od": "2026-03-02",
   "do": "2026-06-30",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "kostincova-2",
@@ -571,7 +560,8 @@
   "superdioId": null,
   "od": "2026-03-02",
   "do": "2026-06-30",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "hluboka",
@@ -749,7 +739,8 @@
   "superdioId": null,
   "od": "2026-02-23",
   "do": "2026-06-30",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "hluboka-2",
@@ -965,7 +956,8 @@
   "superdioId": null,
   "od": "2026-02-23",
   "do": "2026-06-30",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "kvetna-2",
@@ -1073,7 +1065,8 @@
   "superdioId": null,
   "od": "2026-05-28",
   "do": "2026-12-18",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "motyli",
@@ -1199,7 +1192,8 @@
   "superdioId": null,
   "od": "2026-05-28",
   "do": "2026-12-18",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "kastanova",
@@ -1315,7 +1309,8 @@
   "superdioId": null,
   "od": "2026-05-28",
   "do": "2026-12-18",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "kvetna-3",
@@ -1389,7 +1384,8 @@
   "superdioId": null,
   "od": "2026-05-28",
   "do": "2026-12-18",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "kvetna-4",
@@ -1463,7 +1459,8 @@
   "superdioId": null,
   "od": "2026-05-28",
   "do": "2026-12-18",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "klatovska-trida",
@@ -1499,7 +1496,8 @@
   "superdioId": null,
   "od": "2026-01-01",
   "do": "2026-06-30",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 1
  },
  {
   "id": "28-rijna",
@@ -1663,7 +1661,8 @@
   "superdioId": null,
   "od": "2026-05-04",
   "do": "2026-12-20",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "na-roudne",
@@ -1967,7 +1966,8 @@
   "superdioId": null,
   "od": "2026-05-04",
   "do": "2026-12-20",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "americka",
@@ -2305,7 +2305,8 @@
   "superdioId": null,
   "od": "2026-05-11",
   "do": "2026-06-21",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "i-27",
@@ -2333,7 +2334,8 @@
   "superdioId": null,
   "od": "2026-05-12",
   "do": "2026-06-28",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 5
  },
  {
   "id": "i-27-2",
@@ -2393,7 +2395,8 @@
   "superdioId": null,
   "od": "2026-05-12",
   "do": "2026-06-28",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 2
  },
  {
   "id": "i-27-3",
@@ -2421,7 +2424,8 @@
   "superdioId": null,
   "od": "2026-05-13",
   "do": "2026-06-28",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 5
  },
  {
   "id": "jakuba-jana-ryby",
@@ -2489,7 +2493,8 @@
   "superdioId": null,
   "od": "2026-05-19",
   "do": "2026-06-19",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "dobranska",
@@ -2589,7 +2594,8 @@
   "superdioId": null,
   "od": "2025-07-21",
   "do": "2026-12-20",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 1
  },
  {
   "id": "stikova",
@@ -2633,7 +2639,8 @@
   "superdioId": null,
   "od": "2026-03-16",
   "do": "2026-09-30",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "kaprova",
@@ -2685,7 +2692,8 @@
   "superdioId": null,
   "od": "2026-03-16",
   "do": "2026-09-30",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "k-prokopavce",
@@ -2757,7 +2765,8 @@
   "superdioId": null,
   "od": "2026-03-16",
   "do": "2026-09-30",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "rokycanska",
@@ -3047,7 +3056,8 @@
   "superdioId": null,
   "od": "2026-03-16",
   "do": "2026-09-01",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "rokycanska-2",
@@ -3291,7 +3301,8 @@
   "superdioId": null,
   "od": "2026-03-16",
   "do": "2026-09-01",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "pod-strazi",
@@ -3429,7 +3440,8 @@
   "superdioId": null,
   "od": "2026-04-07",
   "do": "2026-06-19",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "pod-strazi-2",
@@ -3517,7 +3529,8 @@
   "superdioId": null,
   "od": "2026-04-07",
   "do": "2026-06-19",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "uzavirka",
@@ -3545,7 +3558,8 @@
   "superdioId": null,
   "od": "2026-04-07",
   "do": "2026-08-31",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 5
  },
  {
   "id": "i-27-4",
@@ -3573,7 +3587,8 @@
   "superdioId": null,
   "od": "2026-04-07",
   "do": "2026-06-28",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 5
  },
  {
   "id": "rokycanska-3",
@@ -3817,7 +3832,8 @@
   "superdioId": null,
   "od": "2026-06-06",
   "do": "2026-07-03",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "pod-mikulkou",
@@ -3989,7 +4005,8 @@
   "superdioId": null,
   "od": "2026-06-05",
   "do": "2026-06-19",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "unesovska-mistni-komunikace",
@@ -4065,7 +4082,8 @@
   "superdioId": null,
   "od": "2026-06-09",
   "do": "2026-06-19",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "i-26",
@@ -4093,7 +4111,8 @@
   "superdioId": null,
   "od": "2026-06-06",
   "do": "2026-07-03",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 5
  },
  {
   "id": "rokycanska-4",
@@ -4281,7 +4300,8 @@
   "superdioId": null,
   "od": "2026-06-06",
   "do": "2026-07-03",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "vyhlidkova",
@@ -4369,7 +4389,8 @@
   "superdioId": null,
   "od": "2026-06-06",
   "do": "2026-07-03",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "rokycanska-5",
@@ -4613,7 +4634,8 @@
   "superdioId": null,
   "od": "2026-06-06",
   "do": "2026-07-03",
-  "severity": "major"
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "jablonskeho",
@@ -4717,7 +4739,8 @@
   "superdioId": null,
   "od": "2026-06-15",
   "do": "2026-07-15",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "malesicka-naves",
@@ -4929,7 +4952,8 @@
   "superdioId": null,
   "od": "2026-06-15",
   "do": "2026-06-30",
-  "severity": "medium"
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "u-reky",
@@ -4961,7 +4985,8 @@
   "superdioId": null,
   "od": "2026-06-15",
   "do": "2026-07-15",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "podebradova",
@@ -5059,6 +5084,7 @@
   "superdioId": null,
   "od": "2026-06-15",
   "do": "2026-07-31",
-  "severity": "minor"
+  "severity": "minor",
+  "geomTier": 4
  }
 ]

@@ -394,6 +394,22 @@ function getWays(c: Closure): [number, number][][] | undefined {
     : undefined;
 }
 
+const TIER_LABELS: Record<number, { label: string; tone: "ok" | "approx" | "rough" }> = {
+  1: { label: "Geometrie ze SITmP", tone: "ok" },
+  2: { label: "Geometrie ze SITmP", tone: "ok" },
+  3: { label: "Úsek z popisu", tone: "ok" },
+  4: { label: "Přibližný úsek (~300 m)", tone: "approx" },
+  5: { label: "Pouze bod", tone: "rough" },
+};
+
+const TIER_TOOLTIPS: Record<number, string> = {
+  1: "Polyline přímo z SITmP / JSDI ŘSD — přesná hranice úseku.",
+  2: "Polyline ze SITmP nalezená podle blízkosti — vysoká spolehlivost.",
+  3: "Úsek určen z JSDI popisu („v úseku X po Y") a oklipnutý mezi OSM křižovatkami.",
+  4: "Geometrie z OpenStreetMap, oklipnutá na 300 m okolo bodu uzavírky. Skutečný úsek může být kratší/delší — viz textový popis v detailu.",
+  5: "Pro tuto uzavírku máme jen bod — typicky státní silnice s číselným označením, bez názvu v OSM.",
+};
+
 function BoardCard({
   c,
   rank,
@@ -440,13 +456,21 @@ function BoardCard({
           >
             {sevLabel}
           </span>
-          {/* honesty footer: polyline je vodítko, ne přesný úsek */}
-          {hasPolyline && (
+          {/* tier badge: konkrétní přesnost geometrie */}
+          {hasPolyline && c.geomTier && (
             <div
               style={HEAD_FONT}
-              className="absolute bottom-0 left-0 right-0 bg-ink/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/90 backdrop-blur"
+              title={TIER_TOOLTIPS[c.geomTier]}
+              className={
+                "absolute bottom-0 left-0 right-0 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] backdrop-blur " +
+                (TIER_LABELS[c.geomTier].tone === "ok"
+                  ? "bg-blue/85 text-white"
+                  : TIER_LABELS[c.geomTier].tone === "approx"
+                    ? "bg-ink/85 text-white"
+                    : "bg-muted/80 text-white")
+              }
             >
-              Přibližná oblast · přesný úsek v detailu
+              {TIER_LABELS[c.geomTier].label}
             </div>
           )}
         </div>
@@ -525,12 +549,20 @@ function BoardCard({
         >
           {sevLabel}
         </span>
-        {hasPolyline && (
+        {hasPolyline && c.geomTier && (
           <div
             style={HEAD_FONT}
-            className="absolute bottom-0 left-0 right-0 bg-ink/80 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-white/90"
+            title={TIER_TOOLTIPS[c.geomTier]}
+            className={
+              "absolute bottom-0 left-0 right-0 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.2em] backdrop-blur " +
+              (TIER_LABELS[c.geomTier].tone === "ok"
+                ? "bg-blue/85 text-white"
+                : TIER_LABELS[c.geomTier].tone === "approx"
+                  ? "bg-ink/85 text-white"
+                  : "bg-muted/80 text-white")
+            }
           >
-            Přibližná oblast · detail
+            {TIER_LABELS[c.geomTier].label}
           </div>
         )}
       </div>

@@ -25,6 +25,13 @@ export interface Closure {
   severity?: import("./severity").Severity;
   od?: string; // ISO date YYYY-MM-DD — kdy uzavírka začíná
   do?: string; // ISO date — kdy uzavírka končí
+  // Tier přesnosti geometrie:
+  // 1 = SITmP authoritative (JSDI_ID match v layer 11)
+  // 2 = spatial proximity k layer 11 (high confidence)
+  // 3 = OSM + úsek z popisu (přesné křižovatky)
+  // 4 = OSM + 300m radius (přibližný úsek)
+  // 5 = pouze bod (státní silnice bez OSM jména)
+  geomTier?: 1 | 2 | 3 | 4 | 5;
 }
 
 export type Phase = [label: string, when: string, state: "done" | "now" | ""];
