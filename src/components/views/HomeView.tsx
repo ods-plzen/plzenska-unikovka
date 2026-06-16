@@ -267,10 +267,6 @@ export function HomeView() {
                 c={c}
                 rank={idx + 1}
                 variant={idx === 0 ? "hero" : "medium"}
-                onClick={() =>
-                  pushParams({ sel: c.id === selectedId ? null : c.id })
-                }
-                selected={c.id === selectedId}
               />
             ))}
           </div>
@@ -402,20 +398,17 @@ function BoardCard({
   c,
   rank,
   variant,
-  onClick,
-  selected,
 }: {
   c: Closure;
   rank: number;
   variant: "hero" | "medium";
-  onClick: () => void;
-  selected: boolean;
 }) {
   const sev = c.severity ?? "minor";
   const sevLabel = SEVERITY_LABEL[sev];
   const date = fmtDateRange(c);
   const center = getCenter(c);
   const ways = getWays(c);
+  const hasPolyline = !!ways && ways.length > 0;
   const sevBadgeBg =
     sev === "major" ? ALERT_RED : sev === "medium" ? ODS_SKY : NEUTRAL_GRAY;
   const rankColor =
@@ -423,15 +416,9 @@ function BoardCard({
 
   if (variant === "hero") {
     return (
-      <button
-        type="button"
-        onClick={onClick}
-        className={
-          "group relative col-span-1 grid cursor-pointer grid-cols-1 overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 md:grid-cols-12 lg:col-span-12 " +
-          (selected
-            ? "shadow-[8px_8px_0_0_var(--ods-sky)]"
-            : "shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[8px_8px_0_0_var(--ods-sky)]")
-        }
+      <Link
+        href={`/doprava/${c.id}`}
+        className="group relative col-span-1 grid cursor-pointer grid-cols-1 overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[8px_8px_0_0_var(--ods-sky)] md:grid-cols-12 lg:col-span-12"
       >
         {/* mini-mapa = location image s ulicemi a polyline (pokud existuje) */}
         <div className="relative h-[280px] overflow-hidden border-b-2 border-ink/90 md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
@@ -453,6 +440,15 @@ function BoardCard({
           >
             {sevLabel}
           </span>
+          {/* honesty footer: polyline je vodítko, ne přesný úsek */}
+          {hasPolyline && (
+            <div
+              style={HEAD_FONT}
+              className="absolute bottom-0 left-0 right-0 bg-ink/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/90 backdrop-blur"
+            >
+              Přibližná oblast · přesný úsek v detailu
+            </div>
+          )}
         </div>
 
         {/* body — bílá s tmavým textem, rank "1." velký vlevo nahoře */}
@@ -502,20 +498,14 @@ function BoardCard({
             <span aria-hidden className="text-base">→</span>
           </div>
         </div>
-      </button>
+      </Link>
     );
   }
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={
-        "group relative col-span-1 flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 lg:col-span-6 " +
-        (selected
-          ? "shadow-[6px_6px_0_0_var(--ods-sky)]"
-          : "shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[6px_6px_0_0_var(--ods-sky)]")
-      }
+    <Link
+      href={`/doprava/${c.id}`}
+      className="group relative col-span-1 flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[6px_6px_0_0_var(--ods-sky)] lg:col-span-6"
     >
       <div className="relative h-[180px] overflow-hidden border-b-2 border-ink/90">
         {center ? (
@@ -535,6 +525,14 @@ function BoardCard({
         >
           {sevLabel}
         </span>
+        {hasPolyline && (
+          <div
+            style={HEAD_FONT}
+            className="absolute bottom-0 left-0 right-0 bg-ink/80 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-white/90"
+          >
+            Přibližná oblast · detail
+          </div>
+        )}
       </div>
       <div className="relative flex flex-1 flex-col p-5">
         <div
@@ -577,7 +575,7 @@ function BoardCard({
           Otevři detail →
         </div>
       </div>
-    </button>
+    </Link>
   );
 }
 
