@@ -37,6 +37,8 @@ ROAD_LAYER = (
     "https://ags.plzen.eu/arcgis/rest/services/"
     "GIS_Doprava/GIS_Doprava_Uzavirky/MapServer/11/query"
 )
+OVERPASS = "https://overpass-api.de/api/interpreter"
+OSM_CACHE_DAYS = 30
 
 # Pro GH Actions runner: služba má IPv6 record, ale routing často padá.
 _orig_getaddrinfo = socket.getaddrinfo
@@ -168,10 +170,14 @@ def format_termin(od: int | None, do: int | None) -> str:
 
 # -------------- layer 11 polyline join --------------
 
-def fetch_polylines_by_jsdi_id() -> dict[str, list[list[list[float]]]]:
-    """Z layer 11 (silniční síť CEDA + JSDI sekce) vrátí polyline geometrii
-    sgroupovanou podle JSDI message_id. Klíč = JSDI_ID (UUID), hodnota =
-    list polylines (každá polyline = list [lat, lon] bodů)."""
+def fetch_polylines_by_jsdi_id() -> tuple[
+    dict[str, list[list[list[float]]]],
+    list[list[list[float]]],
+]:
+    """Z layer 11 (silniční síť CEDA + JSDI sekce) vrátí dva pohledy:
+    - by_id: polyline geometrie sgrupovaná podle JSDI message_id
+    - all_paths: flat list všech polyline segmentů pro spatial proximity match
+    Každá polyline = list [lat, lon] bodů."""
     params = (
         "where=GIS_AG.AGS.DOPRAVA_JSDI_SEKCE.active%3D1"
         "&outFields=GIS_AG.AGS.DOPRAVA_JSDI_SEKCE.message_id"
@@ -184,26 +190,138 @@ def fetch_polylines_by_jsdi_id() -> dict[str, list[list[list[float]]]]:
     print(f"  → {len(feats)} aktivních segmentů")
 
     by_id: dict[str, list[list[list[float]]]] = {}
+    all_paths: list[list[list[float]]] = []
     for f in feats:
         mid = (f.get("attributes") or {}).get(
             "GIS_AG.AGS.DOPRAVA_JSDI_SEKCE.message_id"
         )
-        if not mid:
-            continue
         paths = (f.get("geometry") or {}).get("paths") or []
         for path in paths:
             # path = [[lon, lat], …] (ArcGIS pořadí); chceme [lat, lon]
             pts = [[round(p[1], 5), round(p[0], 5)] for p in path if len(p) >= 2]
-            if len(pts) >= 2:
+            if len(pts) < 2:
+                continue
+            all_paths.append(pts)
+            if mid:
                 by_id.setdefault(mid, []).append(pts)
-    print(f"  → {len(by_id)} unikátních JSDI message_id má polyline")
-    return by_id
+    print(f"  → {len(by_id)} JSDI message_id má polyline · {len(all_paths)} segmentů celkem")
+    return by_id, all_paths
+
+
+def fetch_plzen_streets() -> dict[str, list[list[list[float]]]]:
+    """Stáhne přes Overpass všechny pojmenované ulice v Plzni. Cache TTL 30 dní
+    v scripts/cache/plzen-streets.json (commitnutá do repa). Klíč = lowercase
+    název ulice (bez diakritiky pro fuzzy match), hodnota = list polylines."""
+    cache_path = os.path.join(ROOT, "scripts", "cache", "plzen-streets.json")
+    if os.path.exists(cache_path):
+        if os.path.getmtime(cache_path) > time.time() - OSM_CACHE_DAYS * 86400:
+            try:
+                with open(cache_path, encoding="utf-8") as f:
+                    print(f"· OSM streets cache hit: {cache_path}")
+                    return json.load(f)
+            except (OSError, json.JSONDecodeError):
+                pass
+
+    print(f"· stahuji OSM ulice Plzně přes Overpass…")
+    q = (
+        '[out:json][timeout:120];'
+        'area["name"="Plzeň"]["admin_level"="8"]->.p;'
+        'way(area.p)["highway"]["name"];'
+        'out geom;'
+    )
+    try:
+        body = urllib.parse.urlencode({"data": q}).encode()
+        req = urllib.request.Request(
+            OVERPASS, data=body, headers={**UA, "Accept": "application/json"}, method="POST"
+        )
+        last_exc: Exception | None = None
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=180) as r:
+                    parsed = json.loads(r.read())
+                break
+            except (urllib.error.URLError, TimeoutError, OSError) as e:
+                last_exc = e
+                if attempt < 2:
+                    time.sleep(5 * (attempt + 1))
+                else:
+                    raise
+    except Exception as e:
+        print(f"  ⚠ Overpass selhal ({e}); pokračuji bez OSM streetů")
+        return {}
+
+    out: dict[str, list[list[list[float]]]] = {}
+    for el in parsed.get("elements", []):
+        if el.get("type") != "way":
+            continue
+        name = (el.get("tags", {}).get("name") or "").lower().strip()
+        if not name:
+            continue
+        path = [
+            [round(p["lat"], 5), round(p["lon"], 5)]
+            for p in el.get("geometry", [])
+            if "lat" in p and "lon" in p
+        ]
+        if len(path) >= 2:
+            out.setdefault(name, []).append(path)
+    print(f"  → {len(out)} unikátních ulic, {sum(len(v) for v in out.values())} segmentů")
+
+    os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+    try:
+        with open(cache_path, "w", encoding="utf-8") as f:
+            json.dump(out, f, ensure_ascii=False)
+    except OSError as e:
+        print(f"  ⚠ Cache write failed: {e}")
+    return out
+
+
+def lookup_osm_street(
+    name: str, osm_streets: dict[str, list[list[list[float]]]]
+) -> list[list[list[float]]]:
+    """Najdi polyline geometrii ulice v OSM. Zkusí: přesný match, lowercase,
+    substring (pro varianty jako Klatovská vs Klatovská třída)."""
+    key = name.lower().strip()
+    if not key:
+        return []
+    if key in osm_streets:
+        return osm_streets[key]
+    # substring matches (Klatovská → Klatovská třída)
+    matches: list[list[list[float]]] = []
+    for osm_name, paths in osm_streets.items():
+        if key in osm_name or osm_name in key:
+            matches.extend(paths)
+    return matches
+
+
+def find_nearby_paths(
+    point_latlon: tuple[float, float],
+    all_paths: list[list[list[float]]],
+    max_dist_m: float = 150,
+) -> list[list[list[float]]]:
+    """Spatial match: vrátí všechny polyline segmenty, jejichž nějaký bod
+    je do max_dist_m metrů od daného bodu. Hrubá euklidovská aproximace
+    v stupních (postačuje pro malé vzdálenosti v Plzni)."""
+    plat, plon = point_latlon
+    # 1° lat ≈ 111 km, 1° lon na 49.7° ≈ 72 km. Použijeme korekci.
+    max_deg = max_dist_m / 111_000
+    lon_corr = 0.65  # cos(49.7°)
+    matching: list[list[list[float]]] = []
+    for path in all_paths:
+        for pt in path:
+            lat, lon = pt[0], pt[1]
+            dlat = lat - plat
+            dlon = (lon - plon) * lon_corr
+            if (dlat * dlat + dlon * dlon) ** 0.5 < max_deg:
+                matching.append(path)
+                break
+    return matching
 
 
 # -------------- main --------------
 
 def main() -> int:
-    polylines_by_id = fetch_polylines_by_jsdi_id()
+    polylines_by_id, all_polylines = fetch_polylines_by_jsdi_id()
+    osm_streets = fetch_plzen_streets()
 
     # Bonus output: všechny aktivní silniční segmenty (i ty, co nemají match
     # na konkrétní uzavírku) → renderuje se jako červený overlay „silnice
@@ -256,10 +374,16 @@ def main() -> int:
             skipped_geom += 1
             continue
 
-        # Upgrade na polyline geometry, pokud JSDI message_id najde match
-        # v layer 11. Jinak fallback na point marker.
+        # Polyline geometry — kaskádové fallbacky:
+        # 1) JSDI_ID match v layer 11 (= explicitní propojení)
+        # 2) Spatial proximity 150m k layer 11 segmentům
+        # 3) OSM name match (= ulice z OSM via Overpass, cached)
         jsdi_id = a.get("JSDI_ID")
         polylines = polylines_by_id.get(jsdi_id) if jsdi_id else None
+        if not polylines:
+            polylines = find_nearby_paths((y, x), all_polylines, max_dist_m=150)
+        if not polylines and osm_streets:
+            polylines = lookup_osm_street(street, osm_streets)
 
         base = slug(street)
         cid = base
