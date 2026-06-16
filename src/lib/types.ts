@@ -14,6 +14,13 @@ export interface Closure {
   ways: [number, number][][];
   point?: boolean; // bodový prvek (náměstí, lávka) → marker místo čáry
   approx?: boolean; // přibližná poloha
+  // JSDI / SUPERDIO metadata (z agp.plzen.eu ArcGIS REST API)
+  popis?: string; // úplný Nazev z JSDI s vším info (ulice, obvod, důvod, datum, vydal…)
+  typ?: string;
+  subtyp?: string;
+  zdroj?: string; // "JSDI" | "SUPERDIO" | "RIA"
+  jsdiId?: string | null;
+  superdioId?: number | null;
 }
 
 export type Phase = [label: string, when: string, state: "done" | "now" | ""];

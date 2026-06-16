@@ -18,12 +18,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Stáhni uzavírky a geometrii (plzen.eu)
-        run: python scripts/scraper.py
+      - name: Stáhni uzavírky z JSDI/SITmP (agp.plzen.eu)
+        run: python scripts/jsdi.py
 
       - name: Stáhni PMDP změny v dopravě
         # PMDP scraper potřebuje aktuální closures.json kvůli matchování,
-        # proto běží AŽ po scrapper.py.
+        # proto běží AŽ po jsdi.py.
+        # continue-on-error: PMDP občas blokuje cloud IPs, ať to neshazuje cron.
         run: python scripts/pmdp.py
         continue-on-error: true
 
