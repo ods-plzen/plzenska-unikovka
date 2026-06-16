@@ -275,11 +275,10 @@ export function HomeView() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 md:grid-cols-5">
+        <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
           {obvody.map((a) => (
             <ObvodTile
               key={a.id}
-              areaId={a.id}
               areaShort={a.short}
               areaLabel={a.label}
               count={obvodCounts[a.id] ?? 0}
@@ -638,14 +637,12 @@ function BoardCard({
 /* ──────────────  ObvodTile — kandidátka pattern (modré dlaždice) ────────────── */
 
 function ObvodTile({
-  areaId,
   areaShort,
   areaLabel,
   count,
   active,
   onClick,
 }: {
-  areaId: string;
   areaShort: string;
   areaLabel: string;
   count: number;
@@ -653,7 +650,6 @@ function ObvodTile({
   onClick: () => void;
 }) {
   const num = areaShort.replace("Plzeň ", "");
-  // Modré tóny pouze: tmavá modrá / světlá modrá / bílá karta s černým textem
   const tier =
     count === 0
       ? "empty"
@@ -663,20 +659,13 @@ function ObvodTile({
           ? "mid"
           : "heavy";
   const styles: Record<string, string> = {
-    empty: "bg-white text-ink/55 border-ink/30",
-    light: "bg-white text-ink border-ink",
+    empty: "bg-white text-ink/45 border-ink/20",
+    light: "bg-white text-ink border-ink/80",
     mid: "bg-sky text-white border-ink",
     heavy: "bg-blue text-white border-ink",
   };
-  const dotStyles: Record<string, string> = {
-    empty: "bg-ink/20",
-    light: "bg-sky",
-    mid: "bg-white",
-    heavy: "bg-white",
-  };
-  const localityLine = areaLabel.replace(/^Plzeň\s+\d+\s+—\s+/, "");
   const activeRing = active
-    ? " ring-4 ring-sky ring-offset-2 ring-offset-paper"
+    ? " ring-2 ring-sky ring-offset-1 ring-offset-paper"
     : "";
 
   return (
@@ -684,49 +673,26 @@ function ObvodTile({
       type="button"
       onClick={onClick}
       aria-pressed={active}
+      title={areaLabel}
       className={
-        "group relative flex aspect-square cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border-2 p-4 text-left transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_var(--ods-sky)] " +
+        "group flex h-14 cursor-pointer flex-col items-center justify-center gap-0.5 rounded-xl border-2 px-1 transition-all duration-150 hover:-translate-y-0.5 hover:border-sky sm:h-16 " +
         styles[tier] +
         activeRing
       }
     >
-      {/* big watermark číslo na pozadí */}
       <div
         style={HEAD_FONT}
-        className="pointer-events-none absolute -bottom-8 -right-4 select-none text-[180px] font-bold leading-none opacity-[0.12]"
-        aria-hidden
-      >
-        {num}
-      </div>
-      <div className="relative flex items-start justify-between gap-2">
-        <div
-          style={HEAD_FONT}
-          className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-90"
-        >
-          Plzeň
-        </div>
-        <span
-          className={"h-2 w-2 rounded-full " + dotStyles[tier]}
-          aria-hidden
-        />
-      </div>
-      <div
-        style={HEAD_FONT}
-        className="stat relative text-[56px] font-bold leading-none sm:text-[72px] md:text-[88px]"
+        className="text-xl font-bold leading-none sm:text-2xl"
       >
         {num}
       </div>
       <div
         style={HEAD_FONT}
-        className="relative text-[10px] font-normal uppercase tracking-[0.15em] leading-tight opacity-80"
+        className="text-[9px] font-semibold uppercase leading-none tracking-[0.1em] opacity-75"
       >
-        {localityLine}
-      </div>
-      <div
-        style={HEAD_FONT}
-        className="absolute right-3 top-3 rounded-full bg-paper/60 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-ink"
-      >
-        {count} {count === 1 ? "uzavírka" : count < 5 ? "uzavírky" : "uzavírek"}
+        {count === 0
+          ? "klid"
+          : `${count} ${count === 1 ? "uz." : "uz."}`}
       </div>
     </button>
   );
