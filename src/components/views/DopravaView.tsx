@@ -25,7 +25,7 @@ export function DopravaView() {
           </h1>
           <p className="mt-1 text-sm text-muted">
             {areaLabel} · {list.length}{" "}
-            {list.length === 1 ? "uzavírka" : "uzavírek"} · data z plzen.eu
+            {list.length === 1 ? "uzavírka" : "uzavírek"} · zdroj SITmP / JSDI ŘSD
           </p>
         </div>
         <span className="ods-chip">Aktualizováno denně</span>
