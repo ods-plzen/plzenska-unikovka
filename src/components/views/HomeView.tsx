@@ -147,10 +147,19 @@ export function HomeView() {
     router.replace(q ? `${pathname}?${q}` : pathname, { scroll: false });
   }
 
-  const visibleAll = useMemo(
-    () => closures.filter((c) => isInFilter(c, filter)),
-    [filter],
-  );
+  const visibleAll = useMemo(() => {
+    // JSDI občas vrátí pro 1 fyzickou uzavírku víc záznamů (různé směry
+    // / etapy). Dedupujem podle (name + oblast + od + do) — vizuálně i pro
+    // počet uzavírek je to "1 uzavírka", ne 3.
+    const filtered = closures.filter((c) => isInFilter(c, filter));
+    const seen = new Set<string>();
+    return filtered.filter((c) => {
+      const key = `${c.name}|${c.oblast}|${c.od ?? ""}|${c.do ?? ""}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }, [filter]);
 
   const visible = useMemo(
     () =>
