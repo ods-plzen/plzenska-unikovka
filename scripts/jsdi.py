@@ -42,6 +42,23 @@ ROAD_LAYER = (
 OVERPASS = "https://overpass-api.de/api/interpreter"
 OSM_CACHE_DAYS = 30
 
+# Plánované velké projekty města Plzně. Tabulka „Aktuální dopravní akce"
+# obsahuje rok dokončení + odkazy na detail, ale ne přesné datumy startu —
+# tu si v JSDI město aktualizuje až dva měsíce před začátkem.
+PLZEN_DOPRAVA_URL = "https://plzen.eu/obcan/doprava/"
+
+# Mapování názvu ulice → obvod pro plánované projekty. Když plzen.eu
+# nepíše obvod, dáme to ručně, jinak fallback "Plzeň".
+PLAN_OBLAST: dict[str, str] = {
+    "masarykova": "Plzeň 4",
+    "domažlická": "Plzeň 3",
+    "rokycanská": "Plzeň 4",
+    "americká": "Plzeň 3",
+    "28. října": "Plzeň 1",
+    "sady pětatřicátníků": "Plzeň 3",
+    "náměstí republiky": "Plzeň 3",
+}
+
 # Pro GH Actions runner: služba má IPv6 record, ale routing často padá.
 _orig_getaddrinfo = socket.getaddrinfo
 def _ipv4_only(host, *args, **kwargs):
@@ -484,6 +501,124 @@ def clip_paths_to_radius(
     return out
 
 
+# -------------- plzen.eu/doprava plánované projekty --------------
+
+def _strip_html(s: str) -> str:
+    s = re.sub(r"<[^>]+>", " ", s)
+    s = s.replace("&nbsp;", " ").replace("\xa0", " ")
+    s = s.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def fetch_plzen_doprava_table() -> list[dict]:
+    """Stáhne tabulku „Aktuální dopravní akce" z plzen.eu/obcan/doprava/.
+    Vrací list dictů: {ulice, akce, termin, url}.
+
+    Pozn.: plzen.eu redirectne na www → https, urllib follow defaultně OK
+    pro http→https sub-domain redirecty (na non-www path) v Pythonu 3.13.
+    """
+    req = urllib.request.Request(
+        PLZEN_DOPRAVA_URL,
+        headers={
+            "User-Agent": UA["User-Agent"],
+            "Accept": "text/html,application/xhtml+xml",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            html = r.read().decode("utf-8", errors="replace")
+    except (urllib.error.URLError, TimeoutError, OSError) as e:
+        print(f"  ⚠ plzen.eu/doprava scrape selhal: {e}")
+        return []
+
+    table_m = re.search(r"<table[^>]*>.*?</table>", html, re.S)
+    if not table_m:
+        print("  ⚠ plzen.eu/doprava: tabulka nenalezena")
+        return []
+
+    items: list[dict] = []
+    for row in re.findall(r"<tr[^>]*>.*?</tr>", table_m.group(0), re.S):
+        cells = re.findall(r"<t[hd][^>]*>(.*?)</t[hd]>", row, re.S)
+        if len(cells) != 4:
+            continue
+        ulice = _strip_html(cells[0])
+        akce = _strip_html(cells[1])
+        termin = _strip_html(cells[2])
+        href_m = re.search(r'href="([^"]+)"', cells[3])
+        url = href_m.group(1) if href_m else None
+        if not ulice or ulice.lower() == "ulice":
+            continue  # header
+        items.append({"ulice": ulice, "akce": akce, "termin": termin, "url": url})
+    return items
+
+
+def build_plan_records(
+    existing: list[dict],
+    osm_streets: dict[str, list[list[list[float]]]],
+) -> list[dict]:
+    """Z plzen.eu tabulky vyrobí closure-shaped records pro plánované akce,
+    které ještě nejsou v JSDI feedu (= nemají match podle slug ulice mezi
+    existujícími closures). Geometrie z OSM cache (celá ulice).
+    """
+    table = fetch_plzen_doprava_table()
+    if not table:
+        return []
+
+    existing_slugs = {c["id"] for c in existing}
+    out: list[dict] = []
+    for row in table:
+        street = row["ulice"]
+        s = slug(street)
+        if s in existing_slugs:
+            continue  # JSDI je primární zdroj pravdy
+        paths = lookup_osm_street(street, osm_streets)
+        if paths:
+            ways = paths
+            is_point = False
+            geom_tier = 4  # celá ulice z OSM = přibližný úsek
+        else:
+            ways = [[[49.74, 13.38]]]  # fallback Plzeň centrum
+            is_point = True
+            geom_tier = 5
+
+        akce = (row["akce"] or "Plánovaná rekonstrukce")[:120]
+        termin_year = row["termin"] or "termín bude oznámen"
+        popis_parts = [row["akce"]]
+        if row["termin"]:
+            popis_parts.append(f"Plánováno {row['termin']}")
+        if row["url"]:
+            popis_parts.append(f"Detail: {row['url']}")
+        popis = ". ".join([p for p in popis_parts if p])
+
+        rec = {
+            "id": s,
+            "name": street,
+            "akce": akce,
+            "state": "Plánováno",
+            "status": "plan",
+            "color": "#009fe3",  # ODS sky (modrá, ne červená — není to active uzavírka)
+            "oblast": PLAN_OBLAST.get(street.lower(), "Plzeň"),
+            "termin": f"Plánováno {termin_year}",
+            "ways": ways,
+            "point": is_point,
+            "popis": popis[:500],
+            "typ": "Plánovaná akce",
+            "subtyp": "rekonstrukce",
+            "zdroj": "plzen.eu",
+            "jsdiId": None,
+            "superdioId": None,
+            "od": None,
+            "do": None,
+            "severity": "major",
+            "geomTier": geom_tier,
+        }
+        # Uložit URL pro klikatelný detail (mhdInfo.sourceUrl ho přečte)
+        if row["url"]:
+            rec["sourceUrl"] = row["url"]
+        out.append(rec)
+    return out
+
+
 # -------------- main --------------
 
 def main() -> int:
@@ -618,11 +753,17 @@ def main() -> int:
         }
         closures.append(rec)
 
-    print(f"  → {len(closures)} uzavírek v Plzni")
+    print(f"  → {len(closures)} uzavírek v Plzni (JSDI / SITmP)")
     if skipped_outside:
         print(f"  ↷ {skipped_outside} mimo plzeňské obvody")
     if skipped_geom:
         print(f"  ⚠ {skipped_geom} bez geometrie")
+
+    print("· plzen.eu/doprava — plánované velké projekty")
+    plan_records = build_plan_records(closures, osm_streets)
+    if plan_records:
+        print(f"  + {len(plan_records)} plánovaných (nepřekrývajících se s JSDI)")
+        closures.extend(plan_records)
 
     out_path = os.path.join(ROOT, "src", "data", "closures.json")
     with open(out_path, "w", encoding="utf-8") as f:
