@@ -24,7 +24,7 @@ export function Footer() {
           <div>
             <div className="kicker">Provozuje</div>
             <p className="mt-3 text-sm leading-relaxed text-white/75">
-              Uhumdrum s.r.o. ve spolupráci s ODS Plzeň-město.
+              ODS Plzeň-město.
             </p>
             <p className="mt-2 text-xs leading-relaxed text-white/45">
               Agregovaný a strojově zpracovaný obsah je vždy takto označen —
