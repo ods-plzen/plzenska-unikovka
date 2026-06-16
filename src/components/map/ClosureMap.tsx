@@ -20,9 +20,20 @@ const Inner = dynamic(() => import("./ClosureMapInner"), {
 export function ClosureMap({
   closures,
   height,
+  selectedId,
+  onSelect,
 }: {
   closures: Closure[];
   height?: number;
+  selectedId?: string | null;
+  onSelect?: (id: string) => void;
 }) {
-  return <Inner closures={closures} height={height} />;
+  return (
+    <Inner
+      closures={closures}
+      height={height}
+      selectedId={selectedId}
+      onSelect={onSelect}
+    />
+  );
 }
