@@ -91,21 +91,16 @@ export default function ClosureMapInner({
 
             const tip = (
               <Tooltip
-                permanent={sev === "major"}
                 direction="top"
                 offset={[0, -radius]}
                 opacity={0.92}
-                className="closure-tip"
+                sticky
               >
                 <strong>{c.name}</strong>
-                {sev !== "major" && (
-                  <>
-                    <br />
-                    <span style={{ fontSize: "0.85em", opacity: 0.8 }}>
-                      {c.oblast}
-                    </span>
-                  </>
-                )}
+                <br />
+                <span style={{ fontSize: "0.85em", opacity: 0.8 }}>
+                  {c.oblast}
+                </span>
               </Tooltip>
             );
 

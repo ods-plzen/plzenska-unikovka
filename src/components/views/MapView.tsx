@@ -95,14 +95,7 @@ export function MapView() {
         ) : (
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {top5.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => pushParams({ sel: c.id })}
-                className="text-left"
-              >
-                <ClosureCard c={c} />
-              </button>
+              <ClosureCard key={c.id} c={c} />
             ))}
           </div>
         )}

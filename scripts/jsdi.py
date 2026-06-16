@@ -203,8 +203,12 @@ def main() -> int:
         else:
             seen_ids[base] = 1
 
+        # Subtyp je čistý enum z JSDI (uzavřená silnice / kyvadlová doprava /
+        # oprava povrchu / jednosměrná uzavírka / …). Preferujeme ho.
+        subtyp_field = (a.get("Subtyp") or "").strip()
         reason = parse_reason(nazev)
-        akce = reason or (a.get("Subtyp") or "Uzavírka").capitalize()
+        akce = (subtyp_field or reason or "Uzavírka")[:80].strip()
+        akce = akce[:1].upper() + akce[1:] if akce else "Uzavírka"
 
         ways = [[[round(y, 5), round(x, 5)]]]
         termin = format_termin(a.get("Od"), a.get("Do"))
