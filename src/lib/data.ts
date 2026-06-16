@@ -1,7 +1,13 @@
-import type { Closure, ClosureExtra, MhdInfo } from "@/lib/types";
+import type {
+  Closure,
+  ClosureExtra,
+  MhdInfo,
+  RestrictedRoadsSnapshot,
+} from "@/lib/types";
 import closuresRaw from "@/data/closures.json";
 import extrasRaw from "@/data/extras.json";
 import pmdpRaw from "@/data/pmdp.json";
+import restrictedRoadsRaw from "@/data/restricted-roads.json";
 
 // JSON přichází se širšími typy (string místo union, number[] místo n-tic),
 // proto převádíme přes unknown na naše doménové typy.
@@ -15,6 +21,8 @@ interface PmdpSnapshot {
 }
 
 export const pmdp = pmdpRaw as unknown as PmdpSnapshot;
+export const restrictedRoads =
+  restrictedRoadsRaw as unknown as RestrictedRoadsSnapshot;
 
 // Editorial overlay (fáze, „co to znamená") se přiloží k naškrábané uzavírce podle id.
 export function extraFor(id: string): ClosureExtra | undefined {

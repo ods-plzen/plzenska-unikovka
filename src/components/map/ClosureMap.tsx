@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
-import type { Closure } from "@/lib/types";
+import type { Closure, RestrictedRoad } from "@/lib/types";
 
 // Leaflet sahá na window → jen na klientu, bez SSR.
 const Inner = dynamic(() => import("./ClosureMapInner"), {
@@ -19,11 +19,13 @@ const Inner = dynamic(() => import("./ClosureMapInner"), {
 
 export function ClosureMap({
   closures,
+  restrictedRoads,
   height,
   selectedId,
   onSelect,
 }: {
   closures: Closure[];
+  restrictedRoads?: RestrictedRoad[];
   height?: number;
   selectedId?: string | null;
   onSelect?: (id: string) => void;
@@ -31,6 +33,7 @@ export function ClosureMap({
   return (
     <Inner
       closures={closures}
+      restrictedRoads={restrictedRoads}
       height={height}
       selectedId={selectedId}
       onSelect={onSelect}

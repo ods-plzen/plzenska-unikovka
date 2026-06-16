@@ -123,12 +123,46 @@
   "ways": [
    [
     [
+     49.74679,
+     13.34603
+    ],
+    [
+     49.74679,
+     13.34633
+    ]
+   ],
+   [
+    [
+     49.74679,
+     13.34575
+    ],
+    [
+     49.74679,
+     13.34603
+    ]
+   ],
+   [
+    [
+     49.7468,
+     13.3454
+    ],
+    [
      49.74682,
-     13.3442
+     13.3441
+    ]
+   ],
+   [
+    [
+     49.7468,
+     13.3454
+    ],
+    [
+     49.74679,
+     13.34575
     ]
    ]
   ],
-  "point": true,
+  "point": false,
   "popis": "ulice Na Okraji, Plzeň 3, uzavřeno, stavební práce, Od 01.12.2025 00:00 Do 31.10.2026 23:59, zjednosměrnění provozu v úseku od ulice Křimická k ulici Touškovská \n, jednosměrná uzavírka, Vydal: ÚMO Plzeň 03",
   "typ": "Uzavírka a omezení",
   "subtyp": "uzavřená silnice",
@@ -347,12 +381,84 @@
   "ways": [
    [
     [
-     49.70818,
-     13.3314
+     49.70341,
+     13.32854
+    ],
+    [
+     49.70334,
+     13.3285
+    ]
+   ],
+   [
+    [
+     49.70334,
+     13.3285
+    ],
+    [
+     49.70219,
+     13.32782
+    ]
+   ],
+   [
+    [
+     49.70823,
+     13.33143
+    ],
+    [
+     49.70777,
+     13.33116
+    ]
+   ],
+   [
+    [
+     49.70341,
+     13.32854
+    ],
+    [
+     49.70418,
+     13.329
+    ],
+    [
+     49.70443,
+     13.32915
+    ]
+   ],
+   [
+    [
+     49.70736,
+     13.3309
+    ],
+    [
+     49.70607,
+     13.33013
+    ]
+   ],
+   [
+    [
+     49.70777,
+     13.33116
+    ],
+    [
+     49.70736,
+     13.3309
+    ]
+   ],
+   [
+    [
+     49.70443,
+     13.32915
+    ],
+    [
+     49.70546,
+     13.32977
+    ],
+    [
+     49.70607,
+     13.33013
     ]
    ]
   ],
-  "point": true,
+  "point": false,
   "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 21.07.2025 00:01 Do 20.12.2026 23:59, částečná uzavírka v úseku od kruhového objezdu až za křižovatku s ulicí U Čertovy díry z důvodu akce \"Dešťová kanalizace a komunikace\", Vydal: Magistrát města Plzně",
   "typ": "Uzavírka a omezení",
   "subtyp": "stavební práce",
@@ -655,12 +761,20 @@
   "ways": [
    [
     [
-     49.74308,
-     13.37218
+     49.74283,
+     13.37211
+    ],
+    [
+     49.74333,
+     13.37226
+    ],
+    [
+     49.74402,
+     13.37249
     ]
    ]
   ],
-  "point": true,
+  "point": false,
   "popis": "silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, stavební práce, pravý jízdní pruh uzavřen, Od 01.01.2026 00:00 Do 30.06.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská) v Plzni,  – oprava objektu č. p. 289/19, které si vyžádají zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr do centra města (Bory-Lochotín) v rámci  akce „Rekonstrukce Klatovská 19 Plzeň“, , Objížďka - bez rozlišení: silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, Vydal: Krajský úřa",
   "typ": "Uzavírka a omezení",
   "subtyp": "stavební práce",

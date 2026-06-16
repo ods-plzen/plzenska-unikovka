@@ -65,6 +65,17 @@ export interface MhdInfo {
   sourceLabel?: string;
 }
 
+export interface RestrictedRoad {
+  messageId: string;
+  ways: [number, number][][];
+}
+
+export interface RestrictedRoadsSnapshot {
+  snapshot: string;
+  source: string;
+  roads: RestrictedRoad[];
+}
+
 export interface Area {
   id: string;
   label: string;
