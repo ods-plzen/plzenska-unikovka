@@ -39,6 +39,81 @@ function fmtDateRange(c: Closure): string {
   return c.termin;
 }
 
+interface Progress {
+  pct: number;
+  daysElapsed: number;
+  daysLeft: number;
+  daysTotal: number;
+  notStarted: boolean;
+}
+
+function computeProgress(c: Closure): Progress | null {
+  if (!c.od || !c.do) return null;
+  const start = new Date(c.od).getTime();
+  const end = new Date(c.do).getTime();
+  const now = Date.now();
+  const total = end - start;
+  if (total <= 0 || isNaN(total)) return null;
+  const dayMs = 86_400_000;
+  if (now < start) {
+    return {
+      pct: 0,
+      daysElapsed: 0,
+      daysLeft: Math.max(1, Math.ceil((end - now) / dayMs)),
+      daysTotal: Math.ceil(total / dayMs),
+      notStarted: true,
+    };
+  }
+  const elapsed = Math.min(total, now - start);
+  return {
+    pct: Math.round((elapsed / total) * 100),
+    daysElapsed: Math.floor(elapsed / dayMs),
+    daysLeft: Math.max(0, Math.ceil((end - now) / dayMs)),
+    daysTotal: Math.ceil(total / dayMs),
+    notStarted: false,
+  };
+}
+
+function ProgressBar({ p, dense }: { p: Progress; dense?: boolean }) {
+  const urgent = p.daysLeft <= 7 && !p.notStarted;
+  const barColor = urgent
+    ? "bg-red"
+    : p.notStarted
+      ? "bg-ink/30"
+      : "bg-blue";
+  return (
+    <div className={dense ? "" : ""}>
+      <div
+        className={
+          "flex items-baseline justify-between text-[10px] font-bold uppercase tracking-[0.2em] " +
+          (urgent ? "text-red" : "text-ink/60")
+        }
+        style={HEAD_FONT}
+      >
+        <span>
+          {p.notStarted
+            ? `Začíná za ${p.daysLeft} ${p.daysLeft === 1 ? "den" : p.daysLeft < 5 ? "dny" : "dní"}`
+            : `${p.daysLeft} ${p.daysLeft === 1 ? "den" : p.daysLeft < 5 ? "dny" : "dní"} zbývá`}
+        </span>
+        <span className="text-ink/40">
+          {p.daysElapsed}/{p.daysTotal}
+        </span>
+      </div>
+      <div
+        className={
+          "mt-1 w-full overflow-hidden rounded-full bg-ink/10 " +
+          (dense ? "h-1.5" : "h-2")
+        }
+      >
+        <div
+          className={"h-full rounded-full transition-all " + barColor}
+          style={{ width: `${p.pct}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
 function todayPretty(): string {
   const d = new Date();
   return `${d.getDate()}. ${MONTHS_CZ[d.getMonth()]} ${d.getFullYear()}`;
@@ -127,44 +202,28 @@ export function HomeView() {
         />
       </div>
 
-      {/* ──────────────  VALUE STATEMENT — 1 řádek ────────────── */}
+      {/* ──────────────  VALUE STATEMENT ────────────── */}
       <section className="space-y-3">
         <h1
           style={HEAD_FONT}
-          className="text-2xl font-bold uppercase leading-tight text-ink sm:text-3xl md:text-4xl"
+          className="text-3xl font-bold uppercase leading-[0.95] text-ink sm:text-4xl md:text-5xl"
         >
-          {focusedObvod ? (
-            <>
-              V <span className="text-blue">{focusedObvod.short}</span> je{" "}
-              <span className="text-blue">{visible.length}</span> aktivních
-              uzavírek.
-              <br />
-              {top5.length === 0 ? (
-                <span className="text-ink/50">Žádná zásadní.</span>
-              ) : (
-                <>
-                  Pětka, co ti zasáhne cestu{" "}
-                  <span className="text-blue">nejvíc</span>:
-                </>
-              )}
-            </>
-          ) : (
-            <>
-              Dnes je v Plzni{" "}
-              <span className="text-blue">{visible.length}</span> aktivních
-              uzavírek.
-              <br />
-              {top5.length === 0 ? (
-                <span className="text-ink/50">Žádná zásadní.</span>
-              ) : (
-                <>
-                  Pětka, co ti zasáhne cestu{" "}
-                  <span className="text-blue">nejvíc</span>:
-                </>
-              )}
-            </>
-          )}
+          <span className="text-blue">{visible.length}</span>{" "}
+          {visible.length === 1
+            ? "uzavírka"
+            : visible.length < 5
+              ? "uzavírky"
+              : "uzavírek"}{" "}
+          {focusedObvod ? `v ${focusedObvod.short}` : "v Plzni"} dnes.
         </h1>
+        <p
+          style={HEAD_FONT}
+          className="text-base font-normal leading-snug text-ink/70 sm:text-lg"
+        >
+          {top5.length === 0
+            ? "Dnes je klid — žádné velké uzavírky."
+            : "Pětka, kterou nezapomeňte objet:"}
+        </p>
 
         {focusedObvod && (
           <button
@@ -209,7 +268,7 @@ export function HomeView() {
         </p>
       </section>
 
-      {/* ──────────────  10 OBVODŮ — kandidátka grid ────────────── */}
+      {/* ──────────────  10 OBVODŮ ────────────── */}
       <section className="border-t-2 border-ink/90 pt-6 md:pt-10">
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-4">
           <div>
@@ -217,20 +276,20 @@ export function HomeView() {
               style={HEAD_FONT}
               className="text-[11px] font-bold uppercase tracking-[0.5em] text-sky"
             >
-              Tvůj obvod
+              Bydlíte jinde?
             </div>
             <h2
               style={HEAD_FONT}
               className="mt-2 text-3xl font-bold uppercase leading-[0.95] sm:mt-3 sm:text-4xl md:text-5xl"
             >
-              Vyber, kde bydlíš.
+              Najděte svůj obvod.
             </h2>
           </div>
           <p
             style={HEAD_FONT}
             className="max-w-xs text-sm font-normal text-ink/70"
           >
-            Klik na obvod → top 5 jen tady u tebe. Mapa zůstává celá Plzeň.
+            Klik → pětka jen z vašeho obvodu.
           </p>
         </div>
 
@@ -259,20 +318,20 @@ export function HomeView() {
               style={HEAD_FONT}
               className="text-[11px] font-bold uppercase tracking-[0.5em] text-sky"
             >
-              Pro otrlé
+              Chcete víc?
             </div>
             <h2
               style={HEAD_FONT}
               className="mt-2 text-3xl font-bold uppercase leading-[0.95] text-white sm:mt-3 sm:text-4xl md:text-5xl"
             >
-              Chceš všech {visibleAll.length} na mapě?
+              Celá mapa Plzně.
             </h2>
             <p
               style={HEAD_FONT}
               className="mt-4 max-w-xl text-sm font-normal text-white/80 sm:mt-5 sm:text-base"
             >
-              Velká mapa se všema modrými puntíky, čárami a obvody. Pro
-              dispečery, řidiče autobusů a nás, co kontrolujeme každý detail.
+              Všech {visibleAll.length} uzavírek najednou. Pro dispečery,
+              řidiče autobusů a kohokoliv, kdo plánuje cestu na celý týden.
             </p>
             <Link
               href={
@@ -284,7 +343,7 @@ export function HomeView() {
               style={HEAD_FONT}
               className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-[0.25em] text-blue transition-colors hover:bg-sky hover:text-white sm:mt-7 sm:w-auto sm:px-7"
             >
-              Otevři velkou mapu
+              Otevřít mapu
               <span aria-hidden>→</span>
             </Link>
           </div>
@@ -361,6 +420,7 @@ function BoardCard({
   const center = getCenter(c);
   const ways = getWays(c);
   const hasPolyline = !!ways && ways.length > 0;
+  const progress = computeProgress(c);
   const sevBadgeBg =
     sev === "major" ? ALERT_RED : sev === "medium" ? ODS_SKY : NEUTRAL_GRAY;
   const rankColor =
@@ -450,12 +510,17 @@ function BoardCard({
             >
               {c.akce}
             </p>
+            {progress && (
+              <div className="mt-5">
+                <ProgressBar p={progress} />
+              </div>
+            )}
           </div>
           <div
             style={HEAD_FONT}
             className="mt-6 inline-flex min-h-[44px] w-fit items-center gap-2 rounded-full bg-blue px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.3em] text-white group-hover:bg-sky sm:mt-8"
           >
-            Otevři detail
+            Co se tam děje
             <span aria-hidden className="text-base">→</span>
           </div>
         </div>
@@ -539,11 +604,16 @@ function BoardCard({
         >
           {c.akce}
         </p>
+        {progress && (
+          <div className="mt-4">
+            <ProgressBar p={progress} dense />
+          </div>
+        )}
         <div
           style={HEAD_FONT}
           className="mt-auto pt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-blue group-hover:text-sky sm:pt-5"
         >
-          Otevři detail →
+          Co se tam děje →
         </div>
       </div>
     </Link>
