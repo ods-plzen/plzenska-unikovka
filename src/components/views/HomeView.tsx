@@ -7,6 +7,7 @@ import type { Closure } from "@/lib/types";
 import { closures } from "@/lib/data";
 import { AREAS, inArea } from "@/data/areas";
 import { HLAVNI_TAHY, SEVERITY_RANK } from "@/lib/severity";
+import { MiniMap } from "@/components/map/MiniMap";
 
 const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
 
@@ -337,6 +338,20 @@ function Section({
 }
 
 /* ────────  ROW  ──────── */
+function getCenter(c: Closure): [number, number] | null {
+  const pt = c.ways?.[0]?.[0];
+  if (!pt || pt.length < 2) return null;
+  return [pt[0], pt[1]];
+}
+
+function getWays(c: Closure): [number, number][][] | undefined {
+  if (c.point) return undefined;
+  const polylines = c.ways.filter((w) => w.length >= 2);
+  return polylines.length > 0
+    ? (polylines as [number, number][][])
+    : undefined;
+}
+
 function Row({
   c,
   rank,
@@ -352,21 +367,42 @@ function Row({
   const dateRange = fmtDateRange(c);
   const dLeft = daysLeftIfSoon(c);
   const isVirtualOrPlanNoData = variant === "plan" && !c.od;
+  const center = getCenter(c);
+  const ways = getWays(c);
 
   return (
     <Link
       href={`/doprava/${c.id}`}
-      className="group flex items-start gap-3 border-b-2 border-ink/12 py-4 transition-colors last:border-b-0 hover:bg-blue/[0.04] sm:gap-5 sm:py-5"
+      className="group flex items-start gap-3 border-b-2 border-ink/12 py-4 transition-colors last:border-b-0 hover:bg-blue/[0.04] sm:gap-4 sm:py-5"
     >
-      <div
-        style={HEAD_FONT}
-        className={
-          "stat shrink-0 text-3xl font-bold leading-none transition-colors group-hover:text-blue sm:text-4xl md:text-5xl " +
-          (variant === "plan" ? "text-ink/25" : "text-ink/30")
-        }
-        aria-hidden
-      >
-        {rank}.
+      <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <div
+          style={HEAD_FONT}
+          className={
+            "stat text-2xl font-bold leading-none transition-colors group-hover:text-blue sm:text-3xl md:text-4xl " +
+            (variant === "plan" ? "text-ink/25" : "text-ink/30")
+          }
+          aria-hidden
+        >
+          {rank}.
+        </div>
+        {center && (
+          <div
+            className={
+              "relative h-14 w-14 shrink-0 overflow-hidden rounded-md border-2 border-ink/15 bg-line sm:h-[72px] sm:w-[72px] " +
+              (variant === "plan" ? "opacity-70 grayscale-[35%]" : "")
+            }
+            aria-hidden
+          >
+            <MiniMap
+              center={center}
+              ways={ways}
+              severity={sev}
+              height={72}
+              zoom={14}
+            />
+          </div>
+        )}
       </div>
       <div className="min-w-0 flex-1">
         <div
