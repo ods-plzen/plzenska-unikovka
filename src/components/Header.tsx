@@ -4,7 +4,7 @@ const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-ink text-paper">
+    <header className="sticky top-0 z-50 bg-blue-deep text-paper">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-3 py-2.5 sm:gap-4 sm:px-6 sm:py-3">
         <Link
           href="/"
