@@ -4,10 +4,9 @@ import { useMemo } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import type { Closure } from "@/lib/types";
-import { closures, closureById } from "@/lib/data";
+import { closures } from "@/lib/data";
 import { AREAS, inArea } from "@/data/areas";
 import { useArea } from "@/components/AreaProvider";
-import { ClosurePanel } from "@/components/ClosurePanel";
 import { MiniMap } from "@/components/map/MiniMap";
 import { TimeFilterChips } from "@/components/TimeFilterChips";
 import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
@@ -56,20 +55,14 @@ export function HomeView() {
   const pathname = usePathname();
   const params = useSearchParams();
   const filter: TimeFilter = parseFilter(params.get("f"));
-  const selectedId = params.get("sel") ?? null;
   const obvodParam = params.get("o");
-  const selected = selectedId ? closureById(selectedId) : null;
   const { setArea } = useArea();
 
-  function pushParams(next: { f?: TimeFilter; sel?: string | null; o?: string | null }) {
+  function pushParams(next: { f?: TimeFilter; o?: string | null }) {
     const sp = new URLSearchParams(params.toString());
     if (next.f !== undefined) {
       if (next.f === "now") sp.delete("f");
       else sp.set("f", next.f);
-    }
-    if (next.sel !== undefined) {
-      if (next.sel) sp.set("sel", next.sel);
-      else sp.delete("sel");
     }
     if (next.o !== undefined) {
       if (next.o) sp.set("o", next.o);
@@ -116,15 +109,17 @@ export function HomeView() {
     ? AREAS.find((a) => a.id === obvodParam)
     : null;
 
+  const placeLabel = focusedObvod ? focusedObvod.short : "Plzeň";
+
   return (
-    <div className="space-y-8 pb-8 md:space-y-12 md:pb-10">
-      {/* ──────────────  TOP STRIP — filter ────────────── */}
+    <div className="space-y-6 pb-8 md:space-y-10 md:pb-10">
+      {/* ──────────────  COMPACT HEADER — datum + filter ────────────── */}
       <div className="flex flex-col gap-3 border-b-2 border-ink/90 pb-3 sm:flex-row sm:items-center sm:justify-between">
         <div
           style={HEAD_FONT}
           className="text-[10px] font-semibold uppercase tracking-[0.4em] text-ink/70"
         >
-          Plzeň · {todayPretty()}
+          {placeLabel} · {todayPretty()}
         </div>
         <TimeFilterChips
           value={filter}
@@ -132,124 +127,59 @@ export function HomeView() {
         />
       </div>
 
-      {/* ──────────────  HERO — ODS billboard pattern ────────────── */}
-      <section className="relative grid gap-5 lg:grid-cols-12">
-        <div
-          className="relative overflow-hidden rounded-3xl p-5 text-white sm:p-8 lg:col-span-7 lg:p-12"
-          style={{
-            background: "var(--hero)",
-          }}
+      {/* ──────────────  VALUE STATEMENT — 1 řádek ────────────── */}
+      <section className="space-y-3">
+        <h1
+          style={HEAD_FONT}
+          className="text-2xl font-bold uppercase leading-tight text-ink sm:text-3xl md:text-4xl"
         >
-          {/* ODS ribbon top-left */}
-          <span className="ods-ribbon absolute left-4 top-4 sm:left-6 sm:top-6 lg:left-8 lg:top-8">
-            Plzeňská únikovka · {todayPretty()}
-          </span>
-
-          <h1
-            style={HEAD_FONT}
-            className="mt-14 text-[40px] font-bold uppercase leading-[0.9] sm:mt-16 sm:text-[64px] lg:text-[96px]"
-          >
-            {focusedObvod ? <>{focusedObvod.short}:</> : <>5 míst,</>}
-            <br />
-            která tě teď
-            <br />
-            <span className="text-sky">nepustí.</span>
-          </h1>
-
-          <p
-            style={HEAD_FONT}
-            className="mt-5 max-w-md text-sm font-normal leading-snug text-white/85 sm:mt-7 sm:text-base"
-          >
-            Pět největších uzavírek
-            {focusedObvod ? ` v ${focusedObvod.short}` : " v Plzni"} teď. Auto,
-            MHD, kolo — všechno cítí. Klikni a uvidíš proč a kudy jinudy.
-          </p>
-
-          {focusedObvod && (
-            <button
-              type="button"
-              onClick={() => pushParams({ o: null })}
-              style={HEAD_FONT}
-              className="mt-5 inline-flex min-h-[44px] items-center gap-1 rounded-full bg-white/20 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.25em] backdrop-blur hover:bg-white/30"
-            >
-              ← Zpět na celou Plzeň
-            </button>
-          )}
-
-          {/* ODS logo bottom-right */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/ods-logo.svg"
-            alt="ODS"
-            className="absolute bottom-4 right-4 h-8 w-auto sm:bottom-6 sm:right-6 sm:h-10 lg:bottom-8 lg:right-8 lg:h-12"
-          />
-        </div>
-
-        <div className="lg:col-span-5">
-          {selected ? (
-            <ClosurePanel
-              c={selected}
-              onClose={() => pushParams({ sel: null })}
-            />
+          {focusedObvod ? (
+            <>
+              V <span className="text-blue">{focusedObvod.short}</span> je{" "}
+              <span className="text-blue">{visible.length}</span> aktivních
+              uzavírek.
+              <br />
+              {top5.length === 0 ? (
+                <span className="text-ink/50">Žádná zásadní.</span>
+              ) : (
+                <>
+                  Pětka, co ti zasáhne cestu{" "}
+                  <span className="text-blue">nejvíc</span>:
+                </>
+              )}
+            </>
           ) : (
-            <div className="ods-board flex h-full flex-col justify-between rounded-3xl p-5 sm:p-7">
-              <div>
-                <div
-                  style={HEAD_FONT}
-                  className="text-[10px] font-bold uppercase tracking-[0.4em] text-sky"
-                >
-                  Jak to číst
-                </div>
-                <h3
-                  style={HEAD_FONT}
-                  className="mt-2 text-2xl font-bold uppercase leading-tight sm:text-3xl"
-                >
-                  Karty
-                  <br />
-                  podle síly
-                  <br />
-                  zásahu.
-                </h3>
-                <p
-                  style={HEAD_FONT}
-                  className="mt-3 text-sm font-normal leading-snug text-white/80 sm:mt-4"
-                >
-                  Od úplných zákazů průjezdu, přes kyvadlovou dopravu, po menší
-                  zúžení. Klikni na kartu → otevře se detail. Klik na obvod →
-                  filtruje jen na tvoje místo.
-                </p>
-              </div>
-              <div
-                style={HEAD_FONT}
-                className="mt-5 flex items-baseline gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-sky sm:mt-6"
-              >
-                <span className="inline-block h-2 w-2 rounded-full bg-sky" />
-                {visible.length} aktivních
-              </div>
-            </div>
+            <>
+              Dnes je v Plzni{" "}
+              <span className="text-blue">{visible.length}</span> aktivních
+              uzavírek.
+              <br />
+              {top5.length === 0 ? (
+                <span className="text-ink/50">Žádná zásadní.</span>
+              ) : (
+                <>
+                  Pětka, co ti zasáhne cestu{" "}
+                  <span className="text-blue">nejvíc</span>:
+                </>
+              )}
+            </>
           )}
-        </div>
+        </h1>
+
+        {focusedObvod && (
+          <button
+            type="button"
+            onClick={() => pushParams({ o: null })}
+            style={HEAD_FONT}
+            className="inline-flex min-h-[40px] items-center gap-1 rounded-full border border-ink/30 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-ink/70 hover:border-blue hover:text-blue"
+          >
+            ← Celá Plzeň
+          </button>
+        )}
       </section>
 
-      {/* ──────────────  TOP 5 KARET — ODS billboard cards ────────────── */}
+      {/* ──────────────  TOP 5 KARET — value vrcholí tady ────────────── */}
       <section>
-        <div className="mb-4 flex flex-col items-start gap-2 sm:mb-5 sm:flex-row sm:items-baseline sm:justify-between">
-          <h2
-            style={HEAD_FONT}
-            className="text-[11px] font-bold uppercase tracking-[0.4em] text-ink/70"
-          >
-            {focusedObvod
-              ? `Top ${Math.min(top5.length, 5)} · ${focusedObvod.short}`
-              : "Top 5 · celá Plzeň"}
-          </h2>
-          <span
-            style={HEAD_FONT}
-            className="text-[10px] font-semibold uppercase tracking-[0.3em] text-ink/50"
-          >
-            zdroj SITmP / JSDI ŘSD
-          </span>
-        </div>
-
         {top5.length === 0 ? (
           <div className="rounded-3xl border-2 border-dashed border-ink/30 bg-white p-8 text-center sm:p-10">
             <p
@@ -271,6 +201,12 @@ export function HomeView() {
             ))}
           </div>
         )}
+        <p
+          style={HEAD_FONT}
+          className="mt-3 text-right text-[10px] font-semibold uppercase tracking-[0.3em] text-ink/50"
+        >
+          zdroj SITmP / JSDI ŘSD
+        </p>
       </section>
 
       {/* ──────────────  10 OBVODŮ — kandidátka grid ────────────── */}
