@@ -135,6 +135,21 @@ export default async function Page({
           </section>
         )}
 
+        {!extra && c.popis && (
+          <section className="rounded-xl border border-line bg-card p-5 md:col-span-2">
+            <h2 className="head mb-3 text-lg font-semibold text-blue">
+              Co JSDI hlásí
+            </h2>
+            <p className="text-sm leading-relaxed text-ink whitespace-pre-line">
+              {c.popis}
+            </p>
+            <p className="mt-3 text-xs text-muted">
+              Zdroj: {c.zdroj || "JSDI"}
+              {c.subtyp ? ` · ${c.subtyp}` : ""}
+            </p>
+          </section>
+        )}
+
         {extra?.phases && (
           <section className="rounded-xl border border-line bg-card p-5">
             <h2 className="head mb-3 text-lg font-semibold text-blue">
@@ -180,12 +195,12 @@ export default async function Page({
               </a>
             )}
             <a
-              href={extra?.source?.url ?? "https://plzen.eu/doprava/"}
+              href={extra?.source?.url ?? "https://agp.plzen.eu/app/uzavirky/"}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md border border-line px-3 py-1.5 text-sm font-medium text-blue hover:border-sky"
             >
-              {extra?.source?.label ?? "Detail na plzen.eu"}
+              {extra?.source?.label ?? "Detail na mapě SITmP"}
             </a>
             <a
               href="https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/"
@@ -196,12 +211,11 @@ export default async function Page({
               MHD a výluky (PMDP)
             </a>
           </div>
-          {extra?.source && (
-            <p className="mt-3 text-xs text-muted">
-              Informace o uzavírce převzaty z oficiálního zdroje a ručně
-              ověřeny.
-            </p>
-          )}
+          <p className="mt-3 text-xs text-muted">
+            {extra?.source
+              ? "Informace o uzavírce převzaty z oficiálního zdroje a ručně ověřeny."
+              : `Zdroj: ${c.zdroj || "JSDI"} přes SITmP Mapu uzavírek (agp.plzen.eu).`}
+          </p>
         </section>
       </div>
     </div>

@@ -14,7 +14,10 @@ export function Footer() {
             <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/65">
               Únikovka z plzeňského dopravního chaosu. Mapa uzavírek, MHD
               odklonů a dočasných zastávek pro všech 10 plzeňských obvodů.
-              Data jen z veřejných a oficiálních zdrojů (plzen.eu, PMDP).
+            </p>
+            <p className="mt-3 max-w-sm text-xs leading-relaxed text-white/45">
+              Zdroje dat: SITmP (agp.plzen.eu), JSDI ŘSD, SUPERDIO,
+              Plzeňské městské dopravní podniky (PMDP). Aktualizováno denně.
             </p>
           </div>
 
