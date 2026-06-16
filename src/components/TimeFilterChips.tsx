@@ -10,7 +10,7 @@ export function TimeFilterChips({
   onChange: (v: TimeFilter) => void;
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex gap-2">
       {TIME_FILTERS.map((f) => {
         const active = f.id === value;
         return (
@@ -20,7 +20,7 @@ export function TimeFilterChips({
             onClick={() => onChange(f.id)}
             aria-pressed={active}
             className={
-              "rounded-full px-4 py-1.5 text-sm font-semibold uppercase tracking-wide transition-colors " +
+              "min-h-[44px] flex-1 rounded-full px-3 py-2 text-sm font-semibold uppercase tracking-wide transition-colors sm:flex-initial sm:px-4 " +
               (active
                 ? "bg-blue text-white"
                 : "border border-line bg-card text-blue hover:border-blue")

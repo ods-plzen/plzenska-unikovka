@@ -117,9 +117,9 @@ export function HomeView() {
     : null;
 
   return (
-    <div className="space-y-10 pb-10">
+    <div className="space-y-8 pb-8 md:space-y-12 md:pb-10">
       {/* ──────────────  TOP STRIP — filter ────────────── */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-ink/90 pb-3">
+      <div className="flex flex-col gap-3 border-b-2 border-ink/90 pb-3 sm:flex-row sm:items-center sm:justify-between">
         <div
           style={HEAD_FONT}
           className="text-[10px] font-semibold uppercase tracking-[0.4em] text-ink/70"
@@ -133,21 +133,21 @@ export function HomeView() {
       </div>
 
       {/* ──────────────  HERO — ODS billboard pattern ────────────── */}
-      <section className="relative grid gap-6 lg:grid-cols-12">
+      <section className="relative grid gap-5 lg:grid-cols-12">
         <div
-          className="relative overflow-hidden rounded-3xl p-8 text-white sm:p-12 lg:col-span-7"
+          className="relative overflow-hidden rounded-3xl p-5 text-white sm:p-8 lg:col-span-7 lg:p-12"
           style={{
             background: "var(--hero)",
           }}
         >
           {/* ODS ribbon top-left */}
-          <span className="ods-ribbon absolute left-6 top-6 sm:left-8 sm:top-8">
+          <span className="ods-ribbon absolute left-4 top-4 sm:left-6 sm:top-6 lg:left-8 lg:top-8">
             Plzeňská únikovka · {todayPretty()}
           </span>
 
           <h1
             style={HEAD_FONT}
-            className="mt-16 text-[56px] font-bold uppercase leading-[0.9] sm:text-[80px] lg:text-[96px]"
+            className="mt-14 text-[40px] font-bold uppercase leading-[0.9] sm:mt-16 sm:text-[64px] lg:text-[96px]"
           >
             {focusedObvod ? <>{focusedObvod.short}:</> : <>5 míst,</>}
             <br />
@@ -158,7 +158,7 @@ export function HomeView() {
 
           <p
             style={HEAD_FONT}
-            className="mt-8 max-w-md text-base font-normal leading-snug text-white/85"
+            className="mt-5 max-w-md text-sm font-normal leading-snug text-white/85 sm:mt-7 sm:text-base"
           >
             Pět největších uzavírek
             {focusedObvod ? ` v ${focusedObvod.short}` : " v Plzni"} teď. Auto,
@@ -170,7 +170,7 @@ export function HomeView() {
               type="button"
               onClick={() => pushParams({ o: null })}
               style={HEAD_FONT}
-              className="mt-6 inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] backdrop-blur hover:bg-white/30"
+              className="mt-5 inline-flex min-h-[44px] items-center gap-1 rounded-full bg-white/20 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.25em] backdrop-blur hover:bg-white/30"
             >
               ← Zpět na celou Plzeň
             </button>
@@ -181,7 +181,7 @@ export function HomeView() {
           <img
             src="/ods-logo.svg"
             alt="ODS"
-            className="absolute bottom-6 right-6 h-10 w-auto sm:bottom-8 sm:right-8 sm:h-12"
+            className="absolute bottom-4 right-4 h-8 w-auto sm:bottom-6 sm:right-6 sm:h-10 lg:bottom-8 lg:right-8 lg:h-12"
           />
         </div>
 
@@ -192,7 +192,7 @@ export function HomeView() {
               onClose={() => pushParams({ sel: null })}
             />
           ) : (
-            <div className="ods-board flex h-full flex-col justify-between rounded-3xl p-7">
+            <div className="ods-board flex h-full flex-col justify-between rounded-3xl p-5 sm:p-7">
               <div>
                 <div
                   style={HEAD_FONT}
@@ -202,7 +202,7 @@ export function HomeView() {
                 </div>
                 <h3
                   style={HEAD_FONT}
-                  className="mt-2 text-3xl font-bold uppercase leading-tight"
+                  className="mt-2 text-2xl font-bold uppercase leading-tight sm:text-3xl"
                 >
                   Karty
                   <br />
@@ -212,16 +212,16 @@ export function HomeView() {
                 </h3>
                 <p
                   style={HEAD_FONT}
-                  className="mt-4 text-sm font-normal leading-snug text-white/80"
+                  className="mt-3 text-sm font-normal leading-snug text-white/80 sm:mt-4"
                 >
                   Od úplných zákazů průjezdu, přes kyvadlovou dopravu, po menší
-                  zúžení. Klik na kartu → detail vpravo. Klik na obvod →
+                  zúžení. Klikni na kartu → otevře se detail. Klik na obvod →
                   filtruje jen na tvoje místo.
                 </p>
               </div>
               <div
                 style={HEAD_FONT}
-                className="mt-6 flex items-baseline gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-sky"
+                className="mt-5 flex items-baseline gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-sky sm:mt-6"
               >
                 <span className="inline-block h-2 w-2 rounded-full bg-sky" />
                 {visible.length} aktivních
@@ -233,7 +233,7 @@ export function HomeView() {
 
       {/* ──────────────  TOP 5 KARET — ODS billboard cards ────────────── */}
       <section>
-        <div className="mb-5 flex items-baseline justify-between gap-3">
+        <div className="mb-4 flex flex-col items-start gap-2 sm:mb-5 sm:flex-row sm:items-baseline sm:justify-between">
           <h2
             style={HEAD_FONT}
             className="text-[11px] font-bold uppercase tracking-[0.4em] text-ink/70"
@@ -251,16 +251,16 @@ export function HomeView() {
         </div>
 
         {top5.length === 0 ? (
-          <div className="rounded-3xl border-2 border-dashed border-ink/30 bg-white p-10 text-center">
+          <div className="rounded-3xl border-2 border-dashed border-ink/30 bg-white p-8 text-center sm:p-10">
             <p
               style={HEAD_FONT}
-              className="text-2xl font-bold uppercase text-ink/60"
+              className="text-xl font-bold uppercase text-ink/60 sm:text-2xl"
             >
               V tomto filtru nic. 🎉
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+          <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-12">
             {top5.map((c, idx) => (
               <BoardCard
                 key={c.id}
@@ -274,8 +274,8 @@ export function HomeView() {
       </section>
 
       {/* ──────────────  10 OBVODŮ — kandidátka grid ────────────── */}
-      <section className="border-t-2 border-ink/90 pt-8">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+      <section className="border-t-2 border-ink/90 pt-6 md:pt-10">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-4">
           <div>
             <div
               style={HEAD_FONT}
@@ -285,7 +285,7 @@ export function HomeView() {
             </div>
             <h2
               style={HEAD_FONT}
-              className="mt-3 text-4xl font-bold uppercase leading-[0.95] sm:text-5xl"
+              className="mt-2 text-3xl font-bold uppercase leading-[0.95] sm:mt-3 sm:text-4xl md:text-5xl"
             >
               Vyber, kde bydlíš.
             </h2>
@@ -298,7 +298,7 @@ export function HomeView() {
           </p>
         </div>
 
-        <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+        <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-7 sm:grid-cols-3 sm:gap-3 md:grid-cols-5">
           {obvody.map((a) => (
             <ObvodTile
               key={a.id}
@@ -316,8 +316,8 @@ export function HomeView() {
       </section>
 
       {/* ──────────────  CTA → /mapa ────────────── */}
-      <section className="ods-board rounded-3xl p-8 sm:p-12">
-        <div className="grid gap-8 lg:grid-cols-12">
+      <section className="ods-board rounded-3xl p-5 sm:p-8 md:p-12">
+        <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-8">
             <div
               style={HEAD_FONT}
@@ -327,13 +327,13 @@ export function HomeView() {
             </div>
             <h2
               style={HEAD_FONT}
-              className="mt-3 text-4xl font-bold uppercase leading-[0.95] text-white sm:text-5xl"
+              className="mt-2 text-3xl font-bold uppercase leading-[0.95] text-white sm:mt-3 sm:text-4xl md:text-5xl"
             >
               Chceš všech {visibleAll.length} na mapě?
             </h2>
             <p
               style={HEAD_FONT}
-              className="mt-5 max-w-xl text-base font-normal text-white/80"
+              className="mt-4 max-w-xl text-sm font-normal text-white/80 sm:mt-5 sm:text-base"
             >
               Velká mapa se všema modrými puntíky, čárami a obvody. Pro
               dispečery, řidiče autobusů a nás, co kontrolujeme každý detail.
@@ -346,7 +346,7 @@ export function HomeView() {
               }
               onClick={() => obvodParam && setArea(obvodParam)}
               style={HEAD_FONT}
-              className="mt-7 inline-flex items-center gap-3 rounded-full bg-white px-7 py-3 text-sm font-bold uppercase tracking-[0.25em] text-blue transition-colors hover:bg-sky hover:text-white"
+              className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-[0.25em] text-blue transition-colors hover:bg-sky hover:text-white sm:mt-7 sm:w-auto sm:px-7"
             >
               Otevři velkou mapu
               <span aria-hidden>→</span>
@@ -437,7 +437,7 @@ function BoardCard({
         className="group relative col-span-1 grid cursor-pointer grid-cols-1 overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[8px_8px_0_0_var(--ods-sky)] md:grid-cols-12 lg:col-span-12"
       >
         {/* mini-mapa = location image s ulicemi a polyline (pokud existuje) */}
-        <div className="relative h-[280px] overflow-hidden border-b-2 border-ink/90 md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
+        <div className="relative h-[180px] overflow-hidden border-b-2 border-ink/90 sm:h-[240px] md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
           {center ? (
             <MiniMap
               center={center}
@@ -451,7 +451,7 @@ function BoardCard({
           )}
           {/* top-left ribbon */}
           <span
-            className="ods-ribbon absolute left-4 top-4"
+            className="ods-ribbon absolute left-3 top-3 sm:left-4 sm:top-4"
             style={{ background: sevBadgeBg }}
           >
             {sevLabel}
@@ -476,47 +476,48 @@ function BoardCard({
         </div>
 
         {/* body — bílá s tmavým textem, rank "1." velký vlevo nahoře */}
-        <div className="relative flex flex-col justify-between p-7 sm:p-10 md:col-span-7">
+        <div className="relative flex flex-col justify-between p-5 sm:p-7 md:col-span-7 md:p-10">
           <div>
             <div
               style={HEAD_FONT}
               className={
-                "stat text-[140px] leading-[0.85] sm:text-[180px] " + rankColor
+                "stat text-[88px] leading-[0.82] sm:text-[120px] md:text-[160px] lg:text-[180px] " +
+                rankColor
               }
               aria-hidden
             >
               {rank}.
             </div>
-            <div className="mt-4 flex items-baseline justify-between gap-3">
+            <div className="mt-3 flex items-baseline justify-between gap-3 sm:mt-4">
               <span
                 style={HEAD_FONT}
-                className="text-[11px] font-bold uppercase tracking-[0.4em] text-ink/70"
+                className="text-[10px] font-bold uppercase tracking-[0.35em] text-ink/70 sm:text-[11px]"
               >
                 {c.oblast}
               </span>
               <span
                 style={HEAD_FONT}
-                className="text-[11px] font-bold uppercase tracking-[0.4em] text-blue"
+                className="text-[10px] font-bold uppercase tracking-[0.35em] text-blue sm:text-[11px]"
               >
                 {date}
               </span>
             </div>
             <div
               style={HEAD_FONT}
-              className="mt-3 text-[44px] font-bold uppercase leading-[0.9] text-ink sm:text-5xl lg:text-6xl"
+              className="mt-2 text-3xl font-bold uppercase leading-[0.9] text-ink sm:mt-3 sm:text-5xl lg:text-6xl"
             >
               {c.name}
             </div>
             <p
               style={HEAD_FONT}
-              className="mt-3 max-w-xl text-lg font-normal leading-snug text-ink/75"
+              className="mt-2 max-w-xl text-base font-normal leading-snug text-ink/75 sm:mt-3 sm:text-lg"
             >
               {c.akce}
             </p>
           </div>
           <div
             style={HEAD_FONT}
-            className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-blue px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.3em] text-white group-hover:bg-sky"
+            className="mt-6 inline-flex min-h-[44px] w-fit items-center gap-2 rounded-full bg-blue px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.3em] text-white group-hover:bg-sky sm:mt-8"
           >
             Otevři detail
             <span aria-hidden className="text-base">→</span>
@@ -531,7 +532,7 @@ function BoardCard({
       href={`/doprava/${c.id}`}
       className="group relative col-span-1 flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[6px_6px_0_0_var(--ods-sky)] lg:col-span-6"
     >
-      <div className="relative h-[180px] overflow-hidden border-b-2 border-ink/90">
+      <div className="relative h-[160px] overflow-hidden border-b-2 border-ink/90 sm:h-[180px]">
         {center ? (
           <MiniMap
             center={center}
@@ -566,15 +567,17 @@ function BoardCard({
           </div>
         )}
       </div>
-      <div className="relative flex flex-1 flex-col p-5">
+      <div className="relative flex flex-1 flex-col p-4 sm:p-5">
         <div
           style={HEAD_FONT}
-          className={"stat text-[88px] leading-[0.85] " + rankColor}
+          className={
+            "stat text-[64px] leading-[0.82] sm:text-[88px] " + rankColor
+          }
           aria-hidden
         >
           {rank}.
         </div>
-        <div className="mt-3 flex items-baseline justify-between gap-3">
+        <div className="mt-2 flex items-baseline justify-between gap-3 sm:mt-3">
           <span
             style={HEAD_FONT}
             className="text-[10px] font-bold uppercase tracking-[0.35em] text-ink/70"
@@ -590,19 +593,19 @@ function BoardCard({
         </div>
         <div
           style={HEAD_FONT}
-          className="mt-2 text-2xl font-bold uppercase leading-[0.95] text-ink sm:text-3xl"
+          className="mt-2 text-xl font-bold uppercase leading-[0.95] text-ink sm:text-2xl md:text-3xl"
         >
           {c.name}
         </div>
         <p
           style={HEAD_FONT}
-          className="mt-2 text-base font-normal leading-snug text-ink/75"
+          className="mt-2 text-sm font-normal leading-snug text-ink/75 sm:text-base"
         >
           {c.akce}
         </p>
         <div
           style={HEAD_FONT}
-          className="mt-auto pt-5 text-[11px] font-bold uppercase tracking-[0.3em] text-blue group-hover:text-sky"
+          className="mt-auto pt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-blue group-hover:text-sky sm:pt-5"
         >
           Otevři detail →
         </div>
@@ -688,7 +691,7 @@ function ObvodTile({
       </div>
       <div
         style={HEAD_FONT}
-        className="stat relative text-[72px] font-bold leading-none sm:text-[88px]"
+        className="stat relative text-[56px] font-bold leading-none sm:text-[72px] md:text-[88px]"
       >
         {num}
       </div>
