@@ -3,7 +3,7 @@ import type { Closure } from "@/lib/types";
 export type Severity = "major" | "medium" | "minor";
 
 // Hlavní průtahy městem — major i bez explicitní "uzavřená silnice" v textu.
-const HLAVNI_TAHY = new Set([
+export const HLAVNI_TAHY = new Set([
   "Americká", "Klatovská", "Klatovská třída", "Rokycanská", "Domažlická",
   "Karlovarská", "28. října", "Lochotínská", "Masarykova", "Folmavská",
   "Borská", "Tylova", "Jateční", "Mikulášská", "Na Roudné",

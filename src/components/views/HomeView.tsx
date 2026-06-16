@@ -10,7 +10,7 @@ import { useArea } from "@/components/AreaProvider";
 import { MiniMap } from "@/components/map/MiniMap";
 import { TimeFilterChips } from "@/components/TimeFilterChips";
 import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
-import { SEVERITY_RANK } from "@/lib/severity";
+import { HLAVNI_TAHY, SEVERITY_RANK } from "@/lib/severity";
 
 const SEVERITY_LABEL: Record<string, string> = {
   major: "Úplná uzavírka",
@@ -160,18 +160,30 @@ export function HomeView() {
     [visibleAll, obvodParam],
   );
 
-  const top5 = useMemo(
-    () =>
-      [...visible]
-        .sort(
-          (a, b) =>
-            SEVERITY_RANK[a.severity ?? "minor"] -
-              SEVERITY_RANK[b.severity ?? "minor"] ||
-            (a.od ?? "9999").localeCompare(b.od ?? "9999"),
-        )
-        .slice(0, 5),
-    [visible],
-  );
+  const top5 = useMemo(() => {
+    // Impact score: severity má větší váhu, hlavní průtah = bonus.
+    // Major + Americká < Major + Dobřanská (= Američanka jde dřív)
+    const score = (c: Closure) =>
+      SEVERITY_RANK[c.severity ?? "minor"] * 2 +
+      (HLAVNI_TAHY.has(c.name) ? 0 : 1);
+    return [...visible]
+      .sort((a, b) => {
+        const sa = score(a);
+        const sb = score(b);
+        if (sa !== sb) return sa - sb;
+        // tie-break: delší trvání = větší impact (Americká 6 týdnů > Lochotín 2 dny)
+        const aLen =
+          a.od && a.do
+            ? new Date(a.do).getTime() - new Date(a.od).getTime()
+            : 0;
+        const bLen =
+          b.od && b.do
+            ? new Date(b.do).getTime() - new Date(b.od).getTime()
+            : 0;
+        return bLen - aLen;
+      })
+      .slice(0, 5);
+  }, [visible]);
 
   const obvodCounts = useMemo(() => {
     const c: Record<string, number> = {};
@@ -237,8 +249,50 @@ export function HomeView() {
         )}
       </section>
 
-      {/* ──────────────  TOP 5 KARET — value vrcholí tady ────────────── */}
+      {/* ──────────────  10 OBVODŮ — picker nahoře, ať si Plzeňák hned vybere ────────────── */}
       <section>
+        <div className="mb-4 flex flex-col gap-2 sm:mb-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+          <h2
+            style={HEAD_FONT}
+            className="text-xl font-bold uppercase leading-[0.95] text-ink sm:text-2xl md:text-3xl"
+          >
+            Najděte svůj obvod
+          </h2>
+          <p
+            style={HEAD_FONT}
+            className="text-sm font-normal text-ink/70"
+          >
+            Klik → pětka jen z vašeho obvodu.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 md:grid-cols-5">
+          {obvody.map((a) => (
+            <ObvodTile
+              key={a.id}
+              areaId={a.id}
+              areaShort={a.short}
+              areaLabel={a.label}
+              count={obvodCounts[a.id] ?? 0}
+              active={a.id === obvodParam}
+              onClick={() =>
+                pushParams({ o: a.id === obvodParam ? null : a.id })
+              }
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* ──────────────  TOP 5 KARET ────────────── */}
+      <section className="border-t-2 border-ink/90 pt-6 md:pt-10">
+        <h2
+          style={HEAD_FONT}
+          className="mb-4 text-xs font-bold uppercase tracking-[0.4em] text-ink/70 sm:mb-5"
+        >
+          {focusedObvod
+            ? `Pětka v ${focusedObvod.short}`
+            : "Pětka v celé Plzni"}
+        </h2>
         {top5.length === 0 ? (
           <div className="rounded-3xl border-2 border-dashed border-ink/30 bg-white p-8 text-center sm:p-10">
             <p
@@ -266,48 +320,6 @@ export function HomeView() {
         >
           zdroj SITmP / JSDI ŘSD
         </p>
-      </section>
-
-      {/* ──────────────  10 OBVODŮ ────────────── */}
-      <section className="border-t-2 border-ink/90 pt-6 md:pt-10">
-        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-4">
-          <div>
-            <div
-              style={HEAD_FONT}
-              className="text-[11px] font-bold uppercase tracking-[0.5em] text-sky"
-            >
-              Bydlíte jinde?
-            </div>
-            <h2
-              style={HEAD_FONT}
-              className="mt-2 text-3xl font-bold uppercase leading-[0.95] sm:mt-3 sm:text-4xl md:text-5xl"
-            >
-              Najděte svůj obvod.
-            </h2>
-          </div>
-          <p
-            style={HEAD_FONT}
-            className="max-w-xs text-sm font-normal text-ink/70"
-          >
-            Klik → pětka jen z vašeho obvodu.
-          </p>
-        </div>
-
-        <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-7 sm:grid-cols-3 sm:gap-3 md:grid-cols-5">
-          {obvody.map((a) => (
-            <ObvodTile
-              key={a.id}
-              areaId={a.id}
-              areaShort={a.short}
-              areaLabel={a.label}
-              count={obvodCounts[a.id] ?? 0}
-              active={a.id === obvodParam}
-              onClick={() =>
-                pushParams({ o: a.id === obvodParam ? null : a.id })
-              }
-            />
-          ))}
-        </div>
       </section>
 
       {/* ──────────────  CTA → /mapa ────────────── */}
