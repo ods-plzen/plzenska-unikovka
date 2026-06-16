@@ -235,7 +235,8 @@ export function HomeView() {
             : visible.length < 5
               ? "uzavírky"
               : "uzavírek"}{" "}
-          {focusedObvod ? `v ${focusedObvod.short}` : "v Plzni"} dnes.
+          {focusedObvod ? `v ${focusedObvod.short}` : "v Plzni"}
+          {filter === "all" ? "" : filter === "now" ? " dnes" : ""}.
         </h1>
         <p
           style={HEAD_FONT}
@@ -347,19 +348,32 @@ export function HomeView() {
               Všech {visibleAll.length} uzavírek na jedné mapě. Pro každého,
               kdo si plánuje cestu na delší dobu.
             </p>
-            <Link
-              href={
-                obvodParam
-                  ? `/mapa?o=${encodeURIComponent(obvodParam)}`
-                  : "/mapa"
-              }
-              onClick={() => obvodParam && setArea(obvodParam)}
-              style={HEAD_FONT}
-              className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-[0.25em] text-blue transition-colors hover:bg-sky hover:text-white sm:mt-7 sm:w-auto sm:px-7"
-            >
-              Otevřít mapu
-              <span aria-hidden>→</span>
-            </Link>
+            <div className="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:items-center sm:gap-4">
+              <Link
+                href={
+                  obvodParam
+                    ? `/mapa?o=${encodeURIComponent(obvodParam)}`
+                    : "/mapa"
+                }
+                onClick={() => obvodParam && setArea(obvodParam)}
+                style={HEAD_FONT}
+                className="inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-[0.25em] text-blue transition-colors hover:bg-sky hover:text-white sm:w-auto sm:px-7"
+              >
+                Otevřít mapu
+                <span aria-hidden>→</span>
+              </Link>
+              <Link
+                href={
+                  obvodParam
+                    ? `/seznam?o=${encodeURIComponent(obvodParam)}`
+                    : "/seznam"
+                }
+                style={HEAD_FONT}
+                className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border-2 border-white/40 px-6 py-3 text-sm font-bold uppercase tracking-[0.25em] text-white transition-colors hover:border-white hover:bg-white/10 sm:w-auto sm:px-7"
+              >
+                A–Z seznam
+              </Link>
+            </div>
           </div>
           <div className="lg:col-span-4">
             <div
