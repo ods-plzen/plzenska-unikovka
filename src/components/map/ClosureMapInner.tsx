@@ -15,18 +15,19 @@ import type { Severity } from "@/lib/severity";
 
 const PLZEN_CENTER: [number, number] = [49.7475, 13.3776];
 
-const ODS_RED = "#c0392b";
-const ODS_BLUE = "#153d8a";
-const GRAY = "#6b7280";
+// ODS manuál: jen tmavá modrá + světlá modrá + neutrální šedá pro nezvýrazněné.
+const ODS_BLUE_DARK = "#153d8a";
+const ODS_BLUE_LIGHT = "#009fe3";
+const GRAY = "#94a3b8";
 
 const STYLE: Record<Severity, { radius: number; pathOptions: PathOptions }> = {
   major: {
     radius: 12,
-    pathOptions: { color: "#fff", weight: 3, fillColor: ODS_RED, fillOpacity: 1 },
+    pathOptions: { color: "#fff", weight: 3, fillColor: ODS_BLUE_DARK, fillOpacity: 1 },
   },
   medium: {
     radius: 7,
-    pathOptions: { color: "#fff", weight: 2, fillColor: ODS_BLUE, fillOpacity: 0.95 },
+    pathOptions: { color: "#fff", weight: 2, fillColor: ODS_BLUE_LIGHT, fillOpacity: 0.95 },
   },
   minor: {
     radius: 4,
@@ -79,13 +80,13 @@ export default function ClosureMapInner({
         url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
       />
       {/* Background: silnice s aktuálním omezením (z layer 11 JSDI sekce).
-          Renderují se PRVNÍ → leží pod markery. */}
+          Renderují se PRVNÍ → leží pod markery. ODS tmavá modrá. */}
       {restrictedRoads?.flatMap((r) =>
         r.ways.map((way, i) => (
           <Polyline
             key={`r-${r.messageId}-${i}`}
             positions={way}
-            pathOptions={{ color: ODS_RED, weight: 5, opacity: 0.55 }}
+            pathOptions={{ color: ODS_BLUE_DARK, weight: 5, opacity: 0.55 }}
           />
         )),
       )}

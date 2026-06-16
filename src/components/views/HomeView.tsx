@@ -15,13 +15,10 @@ import { SEVERITY_RANK } from "@/lib/severity";
 
 const SEVERITY_LABEL: Record<string, string> = {
   major: "Úplná uzavírka",
-  medium: "Omezení",
+  medium: "Omezení provozu",
   minor: "Drobné omezení",
 };
 
-const DAYS_CZ = [
-  "Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota",
-];
 const MONTHS_CZ = [
   "ledna", "února", "března", "dubna", "května", "června",
   "července", "srpna", "září", "října", "listopadu", "prosince",
@@ -43,16 +40,15 @@ function fmtDateRange(c: Closure): string {
   return c.termin;
 }
 
-function todayBlock(): { weekday: string; date: string } {
+function todayPretty(): string {
   const d = new Date();
-  return {
-    weekday: DAYS_CZ[d.getDay()],
-    date: `${d.getDate()}. ${MONTHS_CZ[d.getMonth()]} ${d.getFullYear()}`,
-  };
+  return `${d.getDate()}. ${MONTHS_CZ[d.getMonth()]} ${d.getFullYear()}`;
 }
 
 const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
-const SERIF_FONT = { fontFamily: "var(--font-newsreader), serif" } as const;
+
+const ODS_BLUE = "#153d8a";
+const ODS_SKY = "#009fe3";
 
 export function HomeView() {
   const router = useRouter();
@@ -62,7 +58,6 @@ export function HomeView() {
   const selectedId = params.get("sel") ?? null;
   const obvodParam = params.get("o");
   const selected = selectedId ? closureById(selectedId) : null;
-  const today = todayBlock();
   const { setArea } = useArea();
 
   function pushParams(next: { f?: TimeFilter; sel?: string | null; o?: string | null }) {
@@ -121,15 +116,14 @@ export function HomeView() {
     : null;
 
   return (
-    <div className="space-y-12 pb-10">
-      {/* ────────────────  MASTHEAD  ──────────────── */}
-      <div className="flex flex-wrap items-end justify-between gap-4 border-y-2 border-ink py-3">
+    <div className="space-y-10 pb-10">
+      {/* ──────────────  TOP STRIP — filter ────────────── */}
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-ink/90 pb-3">
         <div
           style={HEAD_FONT}
           className="text-[10px] font-semibold uppercase tracking-[0.4em] text-ink/70"
         >
-          {today.weekday} <span className="px-1.5">·</span> {today.date}
-          <span className="px-1.5">·</span> ROČNÍK 1
+          Plzeň · {todayPretty()}
         </div>
         <TimeFilterChips
           value={filter}
@@ -137,129 +131,137 @@ export function HomeView() {
         />
       </div>
 
-      {/* ────────────────  HERO  ──────────────── */}
-      <section className="relative grid gap-10 lg:grid-cols-12">
-        {/* watermark dekorace za hero textem */}
-        <div className="pointer-events-none absolute inset-0 -z-0 overflow-hidden">
-          <div
-            style={{
-              ...HEAD_FONT,
-              transform: "rotate(-6deg)",
-              color: "var(--ods-red)",
-              opacity: 0.04,
-            }}
-            className="absolute -left-10 top-0 select-none text-[280px] font-bold uppercase leading-none sm:text-[420px]"
-            aria-hidden
-          >
-            ÚNIKOVKA
-          </div>
-        </div>
-
-        <div className="reveal d1 relative lg:col-span-7">
-          {/* stamp postmark */}
-          <div
-            className="mb-5 inline-flex items-center gap-2 border-2 border-red px-3 py-1"
-            style={{ ...HEAD_FONT, transform: "rotate(-2deg)" }}
-            aria-hidden
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-red" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-red">
-              Aktivní · {today.date}
-            </span>
-            <span className="h-1.5 w-1.5 rounded-full bg-red" />
-          </div>
+      {/* ──────────────  HERO — ODS billboard pattern ────────────── */}
+      <section className="relative grid gap-6 lg:grid-cols-12">
+        <div
+          className="relative overflow-hidden rounded-3xl p-8 text-white sm:p-12 lg:col-span-7"
+          style={{
+            background: "var(--hero)",
+          }}
+        >
+          {/* ODS ribbon top-left */}
+          <span className="ods-ribbon absolute left-6 top-6 sm:left-8 sm:top-8">
+            Plzeňská únikovka · {todayPretty()}
+          </span>
 
           <h1
             style={HEAD_FONT}
-            className="text-[64px] font-bold uppercase leading-[0.88] text-ink sm:text-[88px] lg:text-[104px]"
+            className="mt-16 text-[56px] font-bold uppercase leading-[0.9] sm:text-[80px] lg:text-[96px]"
           >
             {focusedObvod ? <>{focusedObvod.short}:</> : <>5 míst,</>}
             <br />
-            která tě
+            která tě teď
             <br />
-            <span
-              style={SERIF_FONT}
-              className="italic font-normal text-red"
-            >
-              teď nepustí.
-            </span>
+            <span className="text-sky">nepustí.</span>
           </h1>
+
           <p
-            style={SERIF_FONT}
-            className="lead mt-7 max-w-md text-lg italic leading-snug text-ink/80"
+            style={HEAD_FONT}
+            className="mt-8 max-w-md text-base font-normal leading-snug text-white/85"
           >
             Pět největších uzavírek
             {focusedObvod ? ` v ${focusedObvod.short}` : " v Plzni"} teď. Auto,
             MHD, kolo — všechno cítí. Klikni a uvidíš proč a kudy jinudy.
           </p>
+
           {focusedObvod && (
             <button
               type="button"
               onClick={() => pushParams({ o: null })}
               style={HEAD_FONT}
-              className="mt-5 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.3em] text-ink/60 hover:text-red"
+              className="mt-6 inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] backdrop-blur hover:bg-white/30"
             >
               ← Zpět na celou Plzeň
             </button>
           )}
+
+          {/* ODS logo bottom-right */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/ods-logo.svg"
+            alt="ODS"
+            className="absolute bottom-6 right-6 h-10 w-auto sm:bottom-8 sm:right-8 sm:h-12"
+          />
         </div>
 
-        <div className="reveal d2 lg:col-span-5">
+        <div className="lg:col-span-5">
           {selected ? (
             <ClosurePanel
               c={selected}
               onClose={() => pushParams({ sel: null })}
             />
           ) : (
-            <div className="rounded-3xl border-2 border-ink bg-white p-7">
+            <div className="ods-board flex h-full flex-col justify-between rounded-3xl p-7">
+              <div>
+                <div
+                  style={HEAD_FONT}
+                  className="text-[10px] font-bold uppercase tracking-[0.4em] text-sky"
+                >
+                  Jak to číst
+                </div>
+                <h3
+                  style={HEAD_FONT}
+                  className="mt-2 text-3xl font-bold uppercase leading-tight"
+                >
+                  Karty
+                  <br />
+                  podle síly
+                  <br />
+                  zásahu.
+                </h3>
+                <p
+                  style={HEAD_FONT}
+                  className="mt-4 text-sm font-normal leading-snug text-white/80"
+                >
+                  Od úplných zákazů průjezdu, přes kyvadlovou dopravu, po menší
+                  zúžení. Klik na kartu → detail vpravo. Klik na obvod →
+                  filtruje jen na tvoje místo.
+                </p>
+              </div>
               <div
                 style={HEAD_FONT}
-                className="text-[10px] font-semibold uppercase tracking-[0.4em] text-sky"
+                className="mt-6 flex items-baseline gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-sky"
               >
-                Jak to číst
+                <span className="inline-block h-2 w-2 rounded-full bg-sky" />
+                {visible.length} aktivních
               </div>
-              <p
-                style={SERIF_FONT}
-                className="mt-3 text-lg italic leading-snug text-ink/80"
-              >
-                Karty níž jsou seřazené podle toho, jak moc tě uzavírka{" "}
-                <strong className="not-italic font-semibold text-ink">
-                  praští do dne
-                </strong>{" "}
-                — od úplných zákazů přes kyvadlovou dopravu po menší zúžení.
-              </p>
-              <p className="mt-4 text-sm text-muted">
-                Klik na kteroukoliv kartu → detail vpravo. Klik na svůj obvod
-                pod kartami → vidíš jen tvoje místo.
-              </p>
             </div>
           )}
         </div>
       </section>
 
-      {/* ────────────────  TOP 5  ──────────────── */}
-      <section className="reveal d3">
-        <div className="section-rule mb-5">
+      {/* ──────────────  TOP 5 KARET — ODS billboard cards ────────────── */}
+      <section>
+        <div className="mb-5 flex items-baseline justify-between gap-3">
           <h2
             style={HEAD_FONT}
-            className="text-[11px] font-semibold uppercase tracking-[0.4em] text-ink/70"
+            className="text-[11px] font-bold uppercase tracking-[0.4em] text-ink/70"
           >
             {focusedObvod
               ? `Top ${Math.min(top5.length, 5)} · ${focusedObvod.short}`
               : "Top 5 · celá Plzeň"}
           </h2>
+          <span
+            style={HEAD_FONT}
+            className="text-[10px] font-semibold uppercase tracking-[0.3em] text-ink/50"
+          >
+            zdroj SITmP / JSDI ŘSD
+          </span>
         </div>
 
         {top5.length === 0 ? (
-          <div className="rounded-3xl border-2 border-dashed border-ink/30 bg-white/40 p-10 text-center">
-            <p style={SERIF_FONT} className="text-xl italic text-muted">
-              V tomto filtru momentálně nic. 🎉
+          <div className="rounded-3xl border-2 border-dashed border-ink/30 bg-white p-10 text-center">
+            <p
+              style={HEAD_FONT}
+              className="text-2xl font-bold uppercase text-ink/60"
+            >
+              V tomto filtru nic. 🎉
             </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
             {top5.map((c, idx) => (
-              <RankCard
+              <BoardCard
                 key={c.id}
                 c={c}
                 rank={idx + 1}
@@ -274,33 +276,28 @@ export function HomeView() {
         )}
       </section>
 
-      {/* ────────────────  10 OBVODŮ  ──────────────── */}
-      <section className="reveal d4 border-t-2 border-ink pt-10">
+      {/* ──────────────  10 OBVODŮ — kandidátka grid ────────────── */}
+      <section className="border-t-2 border-ink/90 pt-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <div
               style={HEAD_FONT}
-              className="text-[11px] font-semibold uppercase tracking-[0.5em] text-red"
+              className="text-[11px] font-bold uppercase tracking-[0.5em] text-sky"
             >
               Tvůj obvod
             </div>
             <h2
               style={HEAD_FONT}
-              className="mt-3 text-4xl font-bold uppercase leading-[0.92] text-ink sm:text-5xl"
+              className="mt-3 text-4xl font-bold uppercase leading-[0.95] sm:text-5xl"
             >
-              Vyber, kde
-              <br />
-              <span style={SERIF_FONT} className="italic font-normal">
-                bydlíš.
-              </span>
+              Vyber, kde bydlíš.
             </h2>
           </div>
           <p
-            style={SERIF_FONT}
-            className="max-w-xs text-base italic text-ink/70"
+            style={HEAD_FONT}
+            className="max-w-xs text-sm font-normal text-ink/70"
           >
-            Klik na svůj obvod → uvidíš top 5 jen tady u tebe. Mapa zůstává
-            celá Plzeň.
+            Klik na obvod → top 5 jen tady u tebe. Mapa zůstává celá Plzeň.
           </p>
         </div>
 
@@ -321,28 +318,27 @@ export function HomeView() {
         </div>
       </section>
 
-      {/* ────────────────  CTA  ──────────────── */}
-      <section className="reveal d5 border-t-2 border-ink pt-10">
-        <div className="grid gap-6 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+      {/* ──────────────  CTA → /mapa ────────────── */}
+      <section className="ods-board rounded-3xl p-8 sm:p-12">
+        <div className="grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-8">
             <div
               style={HEAD_FONT}
-              className="text-[11px] font-semibold uppercase tracking-[0.5em] text-sky"
+              className="text-[11px] font-bold uppercase tracking-[0.5em] text-sky"
             >
               Pro otrlé
             </div>
             <h2
               style={HEAD_FONT}
-              className="mt-3 text-4xl font-bold uppercase leading-[0.92] text-ink sm:text-5xl"
+              className="mt-3 text-4xl font-bold uppercase leading-[0.95] text-white sm:text-5xl"
             >
-              Chceš{" "}
-              <span style={SERIF_FONT} className="italic font-normal text-red">
-                všech {visibleAll.length}
-              </span>{" "}
-              na mapě?
+              Chceš všech {visibleAll.length} na mapě?
             </h2>
-            <p style={SERIF_FONT} className="mt-4 max-w-md text-lg italic text-ink/70">
-              Velká mapa se všema červenýma puntíkama, čárama a obvody. Pro
+            <p
+              style={HEAD_FONT}
+              className="mt-5 max-w-xl text-base font-normal text-white/80"
+            >
+              Velká mapa se všema modrými puntíky, čárami a obvody. Pro
               dispečery, řidiče autobusů a nás, co kontrolujeme každý detail.
             </p>
             <Link
@@ -353,32 +349,30 @@ export function HomeView() {
               }
               onClick={() => obvodParam && setArea(obvodParam)}
               style={HEAD_FONT}
-              className="mt-6 inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-white transition-transform hover:-translate-y-0.5 hover:bg-red"
+              className="mt-7 inline-flex items-center gap-3 rounded-full bg-white px-7 py-3 text-sm font-bold uppercase tracking-[0.25em] text-blue transition-colors hover:bg-sky hover:text-white"
             >
-              Otevři velkou mapu →
+              Otevři velkou mapu
+              <span aria-hidden>→</span>
             </Link>
           </div>
-          <div
-            className="lg:col-span-5 rounded-3xl border-2 border-ink p-6"
-            style={{ background: "var(--hero)", color: "#fff" }}
-          >
+          <div className="lg:col-span-4">
             <div
               style={HEAD_FONT}
-              className="text-[10px] font-semibold uppercase tracking-[0.4em] text-sky"
+              className="text-[10px] font-bold uppercase tracking-[0.4em] text-sky"
             >
               Data tečou odkud
             </div>
-            <p
-              style={SERIF_FONT}
-              className="mt-3 text-lg italic leading-snug text-white/90"
+            <ul
+              style={HEAD_FONT}
+              className="mt-3 space-y-2 text-base font-normal text-white/85"
             >
-              SITmP <span className="not-italic">·</span> JSDI ŘSD{" "}
-              <span className="not-italic">·</span> SUPERDIO{" "}
-              <span className="not-italic">·</span> PMDP
-            </p>
-            <p className="mt-3 text-xs text-white/65">
-              Aktualizováno denně v 7:00 ráno. Data jen z veřejných a
-              oficiálních zdrojů.
+              <li>SITmP · agp.plzen.eu</li>
+              <li>JSDI ŘSD · státní dopravní info</li>
+              <li>SUPERDIO · městská evidence staveb</li>
+              <li>PMDP · MHD odklony a zastávky</li>
+            </ul>
+            <p className="mt-4 text-xs text-white/55">
+              Aktualizováno denně v 7:00 ráno.
             </p>
           </div>
         </div>
@@ -387,7 +381,7 @@ export function HomeView() {
   );
 }
 
-/* ──────────────  RankCard  ────────────── */
+/* ──────────────  BoardCard — ODS billboard style ────────────── */
 
 function getCenter(c: Closure): [number, number] | null {
   const pt = c.ways?.[0]?.[0];
@@ -395,12 +389,7 @@ function getCenter(c: Closure): [number, number] | null {
   return [pt[0], pt[1]];
 }
 
-const TAPE_STYLE: React.CSSProperties = {
-  background:
-    "repeating-linear-gradient(45deg, #c0392b 0 14px, #ffd400 14px 28px)",
-};
-
-function RankCard({
+function BoardCard({
   c,
   rank,
   variant,
@@ -414,17 +403,11 @@ function RankCard({
   selected: boolean;
 }) {
   const sev = c.severity ?? "minor";
-  const sevColor =
-    sev === "major" ? "text-red" : sev === "medium" ? "text-blue" : "text-muted";
   const sevLabel = SEVERITY_LABEL[sev];
   const date = fmtDateRange(c);
   const center = getCenter(c);
-
-  const baseShadow =
-    "shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[8px_8px_0_0_var(--ods-red)]";
-  const selShadow = selected
-    ? " shadow-[8px_8px_0_0_var(--ods-red)] bg-card"
-    : "";
+  const sevBadgeBg =
+    sev === "major" ? ODS_BLUE : sev === "medium" ? ODS_SKY : "#94a3b8";
 
   if (variant === "hero") {
     return (
@@ -432,67 +415,69 @@ function RankCard({
         type="button"
         onClick={onClick}
         className={
-          "group relative col-span-1 grid cursor-pointer grid-cols-1 overflow-hidden rounded-3xl border-2 border-ink bg-white text-left transition-all duration-150 md:grid-cols-12 lg:col-span-12 " +
-          baseShadow +
-          selShadow
+          "group relative col-span-1 grid cursor-pointer grid-cols-1 overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 md:grid-cols-12 lg:col-span-12 " +
+          (selected
+            ? "shadow-[8px_8px_0_0_var(--ods-sky)]"
+            : "shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[8px_8px_0_0_var(--ods-sky)]")
         }
       >
-        {/* obrázek: mini-mapa */}
-        <div className="relative h-[200px] overflow-hidden border-b-2 border-ink md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
+        {/* mini-mapa = location image (light_all with street names) */}
+        <div className="relative h-[260px] overflow-hidden border-b-2 border-ink/90 md:col-span-5 md:h-auto md:border-b-0 md:border-r-2">
           {center ? (
-            <MiniMap center={center} severity={sev} height={360} zoom={15} />
+            <MiniMap center={center} severity={sev} height={420} zoom={15} />
           ) : (
             <div className="h-full w-full bg-line" />
           )}
-          {/* construction tape pruh */}
-          <div
-            className="absolute bottom-0 left-0 right-0 h-2"
-            style={TAPE_STYLE}
-            aria-hidden
-          />
-          {/* obrovský rank watermark na mapě */}
+          {/* top-left ribbon */}
+          <span
+            className="ods-ribbon absolute left-4 top-4"
+            style={{ background: sevBadgeBg }}
+          >
+            {sevLabel}
+          </span>
+          {/* rank number watermark — white na blue map */}
           <div
             style={HEAD_FONT}
-            className="pointer-events-none absolute -bottom-12 -right-4 select-none text-[260px] font-bold leading-none text-white drop-shadow-[3px_3px_0_var(--ods-red)] sm:text-[320px]"
+            className="pointer-events-none absolute -bottom-10 -right-2 select-none text-[260px] font-bold leading-none text-white drop-shadow-[3px_3px_0_var(--ods-blue)] sm:text-[320px]"
             aria-hidden
           >
             {rank}
           </div>
         </div>
-        {/* tělo */}
-        <div className="relative p-7 sm:p-9 md:col-span-7">
-          <div className="flex items-start justify-between gap-3">
+
+        {/* body — bílá s tmavým textem */}
+        <div className="relative flex flex-col justify-between p-7 sm:p-10 md:col-span-7">
+          <div>
+            <div className="flex items-start justify-between gap-3">
+              <span
+                style={HEAD_FONT}
+                className="text-[11px] font-bold uppercase tracking-[0.4em] text-ink/70"
+              >
+                {c.oblast}
+              </span>
+              <span
+                style={HEAD_FONT}
+                className="text-[11px] font-bold uppercase tracking-[0.4em] text-blue"
+              >
+                {date}
+              </span>
+            </div>
             <div
               style={HEAD_FONT}
-              className={
-                "text-[10px] font-semibold uppercase tracking-[0.4em] " + sevColor
-              }
+              className="mt-5 text-[44px] font-bold uppercase leading-[0.9] text-ink sm:text-6xl lg:text-7xl"
             >
-              {sevLabel}
+              {c.name}
             </div>
-            <span className="ods-chip">{c.oblast}</span>
+            <p
+              style={HEAD_FONT}
+              className="mt-3 max-w-xl text-lg font-normal leading-snug text-ink/75"
+            >
+              {c.akce}
+            </p>
           </div>
           <div
             style={HEAD_FONT}
-            className="mt-4 text-[40px] font-bold uppercase leading-[0.92] text-ink sm:text-5xl lg:text-6xl"
-          >
-            {c.name}
-          </div>
-          <p
-            style={SERIF_FONT}
-            className="mt-3 max-w-xl text-lg italic leading-snug text-ink/75"
-          >
-            {c.akce}
-          </p>
-          <div
-            style={HEAD_FONT}
-            className="mt-6 flex flex-wrap items-baseline gap-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-ink/60"
-          >
-            <span>{date}</span>
-          </div>
-          <div
-            style={HEAD_FONT}
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-red px-5 py-2 text-[11px] font-bold uppercase tracking-[0.3em] text-white group-hover:bg-ink"
+            className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-blue px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.3em] text-white group-hover:bg-sky"
           >
             Otevři detail
             <span aria-hidden className="text-base">→</span>
@@ -507,71 +492,71 @@ function RankCard({
       type="button"
       onClick={onClick}
       className={
-        "group relative col-span-1 flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border-2 border-ink bg-white text-left transition-all duration-150 lg:col-span-6 " +
-        baseShadow +
-        selShadow
+        "group relative col-span-1 flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border-2 border-ink/90 bg-white text-left transition-all duration-150 lg:col-span-6 " +
+        (selected
+          ? "shadow-[6px_6px_0_0_var(--ods-sky)]"
+          : "shadow-[3px_3px_0_0_var(--ods-blue)] hover:shadow-[6px_6px_0_0_var(--ods-sky)]")
       }
     >
-      {/* obrázek mini-mapa */}
-      <div className="relative h-[150px] overflow-hidden border-b-2 border-ink">
+      <div className="relative h-[180px] overflow-hidden border-b-2 border-ink/90">
         {center ? (
-          <MiniMap center={center} severity={sev} height={150} zoom={14} />
+          <MiniMap center={center} severity={sev} height={180} zoom={15} />
         ) : (
           <div className="h-full w-full bg-line" />
         )}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-1.5"
-          style={TAPE_STYLE}
-          aria-hidden
-        />
-        {/* rank watermark */}
+        <span
+          className="ods-ribbon absolute left-3 top-3"
+          style={{ background: sevBadgeBg }}
+        >
+          {sevLabel}
+        </span>
         <div
           style={HEAD_FONT}
-          className="pointer-events-none absolute -bottom-6 right-2 select-none text-[140px] font-bold leading-none text-white drop-shadow-[2px_2px_0_var(--ods-red)]"
+          className="pointer-events-none absolute -bottom-6 right-2 select-none text-[140px] font-bold leading-none text-white drop-shadow-[2px_2px_0_var(--ods-blue)]"
           aria-hidden
         >
           {rank}
         </div>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div
+        <div className="flex items-baseline justify-between gap-3">
+          <span
             style={HEAD_FONT}
-            className={
-              "text-[10px] font-semibold uppercase tracking-[0.35em] " + sevColor
-            }
+            className="text-[10px] font-bold uppercase tracking-[0.35em] text-ink/70"
           >
-            {sevLabel}
-          </div>
-          <span className="ods-chip">{c.oblast}</span>
+            {c.oblast}
+          </span>
+          <span
+            style={HEAD_FONT}
+            className="text-[10px] font-bold uppercase tracking-[0.35em] text-blue"
+          >
+            {date}
+          </span>
         </div>
         <div
           style={HEAD_FONT}
-          className="mt-4 text-2xl font-bold uppercase leading-[0.95] text-ink sm:text-3xl"
+          className="mt-3 text-2xl font-bold uppercase leading-[0.95] text-ink sm:text-3xl"
         >
           {c.name}
         </div>
         <p
-          style={SERIF_FONT}
-          className="mt-2 text-base italic leading-snug text-ink/75"
+          style={HEAD_FONT}
+          className="mt-2 text-base font-normal leading-snug text-ink/75"
         >
           {c.akce}
         </p>
         <div
           style={HEAD_FONT}
-          className="mt-auto flex items-center justify-between gap-2 pt-5 text-[10px] font-semibold uppercase tracking-[0.25em] text-ink/60"
+          className="mt-auto pt-5 text-[11px] font-bold uppercase tracking-[0.3em] text-blue group-hover:text-sky"
         >
-          <span>{date}</span>
-          <span className="text-red group-hover:text-ink">
-            Klik →
-          </span>
+          Otevři detail →
         </div>
       </div>
     </button>
   );
 }
 
-/* ──────────────  ObvodTile  ────────────── */
+/* ──────────────  ObvodTile — kandidátka pattern (modré dlaždice) ────────────── */
 
 function ObvodTile({
   areaId,
@@ -589,28 +574,31 @@ function ObvodTile({
   onClick: () => void;
 }) {
   const num = areaShort.replace("Plzeň ", "");
-  const intensity =
+  // Modré tóny pouze: tmavá modrá / světlá modrá / bílá karta s černým textem
+  const tier =
     count === 0
-      ? "calm"
+      ? "empty"
       : count <= 3
-        ? "low"
+        ? "light"
         : count <= 6
-          ? "medium"
-          : "high";
+          ? "mid"
+          : "heavy";
   const styles: Record<string, string> = {
-    calm: "bg-white text-ink/55 border-ink/30",
-    low: "bg-white text-ink border-ink",
-    medium: "bg-amber/10 text-ink border-amber",
-    high: "bg-red/10 text-ink border-red",
+    empty: "bg-white text-ink/55 border-ink/30",
+    light: "bg-white text-ink border-ink",
+    mid: "bg-sky text-white border-ink",
+    heavy: "bg-blue text-white border-ink",
   };
   const dotStyles: Record<string, string> = {
-    calm: "bg-ink/20",
-    low: "bg-sky",
-    medium: "bg-amber",
-    high: "bg-red",
+    empty: "bg-ink/20",
+    light: "bg-sky",
+    mid: "bg-white",
+    heavy: "bg-white",
   };
   const localityLine = areaLabel.replace(/^Plzeň\s+\d+\s+—\s+/, "");
-  const activeRing = active ? " ring-4 ring-red ring-offset-2 ring-offset-paper" : "";
+  const activeRing = active
+    ? " ring-4 ring-sky ring-offset-2 ring-offset-paper"
+    : "";
 
   return (
     <button
@@ -618,15 +606,15 @@ function ObvodTile({
       onClick={onClick}
       aria-pressed={active}
       className={
-        "group relative flex aspect-square cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border-2 p-4 text-left transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_var(--ods-blue)] " +
-        styles[intensity] +
+        "group relative flex aspect-square cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border-2 p-4 text-left transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_var(--ods-sky)] " +
+        styles[tier] +
         activeRing
       }
     >
-      {/* obří watermark číslo pozadí */}
+      {/* big watermark číslo na pozadí */}
       <div
         style={HEAD_FONT}
-        className="pointer-events-none absolute -bottom-8 -right-4 select-none text-[180px] font-bold leading-none opacity-[0.08]"
+        className="pointer-events-none absolute -bottom-8 -right-4 select-none text-[180px] font-bold leading-none opacity-[0.12]"
         aria-hidden
       >
         {num}
@@ -634,38 +622,32 @@ function ObvodTile({
       <div className="relative flex items-start justify-between gap-2">
         <div
           style={HEAD_FONT}
-          className="text-[10px] font-semibold uppercase tracking-[0.3em] opacity-90"
+          className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-90"
         >
           Plzeň
         </div>
         <span
-          className={
-            "h-2 w-2 rounded-full " + dotStyles[intensity]
-          }
+          className={"h-2 w-2 rounded-full " + dotStyles[tier]}
           aria-hidden
         />
       </div>
       <div
         style={HEAD_FONT}
-        className="relative stat text-[72px] leading-none sm:text-[88px]"
+        className="stat relative text-[72px] font-bold leading-none sm:text-[88px]"
       >
         {num}
       </div>
-      <div className="relative text-[10px] uppercase tracking-[0.15em] leading-tight opacity-80">
+      <div
+        style={HEAD_FONT}
+        className="relative text-[10px] font-normal uppercase tracking-[0.15em] leading-tight opacity-80"
+      >
         {localityLine}
       </div>
       <div
         style={HEAD_FONT}
-        className="absolute right-3 top-3 rounded-full border border-current/30 bg-paper/60 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.15em]"
+        className="absolute right-3 top-3 rounded-full bg-paper/60 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-ink"
       >
         {count} {count === 1 ? "uzavírka" : count < 5 ? "uzavírky" : "uzavírek"}
-      </div>
-      {/* hover prompt */}
-      <div
-        style={HEAD_FONT}
-        className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-[0.2em] opacity-0 transition-opacity group-hover:opacity-100"
-      >
-        Klik →
       </div>
     </button>
   );
