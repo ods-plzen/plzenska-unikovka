@@ -7,6 +7,7 @@ import { PhaseTimeline } from "@/components/PhaseTimeline";
 import { StatusBadge } from "@/components/StatusBadge";
 import { WatchButton } from "@/components/WatchButton";
 import { MhdBlock } from "@/components/MhdBlock";
+import { humanizeJsdi } from "@/lib/jsdiHumanize";
 
 export function generateStaticParams() {
   return closures.map((c) => ({ id: c.id }));
@@ -135,20 +136,100 @@ export default async function Page({
           </section>
         )}
 
-        {!extra && c.popis && (
-          <section className="rounded-xl border border-line bg-card p-5 md:col-span-2">
-            <h2 className="head mb-3 text-lg font-semibold text-blue">
-              Co JSDI hlásí
-            </h2>
-            <p className="text-sm leading-relaxed text-ink whitespace-pre-line">
-              {c.popis}
-            </p>
-            <p className="mt-3 text-xs text-muted">
-              Zdroj: {c.zdroj || "JSDI"}
-              {c.subtyp ? ` · ${c.subtyp}` : ""}
-            </p>
-          </section>
-        )}
+        {!extra && c.popis && (() => {
+          const h = humanizeJsdi(c.popis);
+          return (
+            <section className="rounded-xl border border-line bg-card p-5 md:col-span-2">
+              <h2 className="head mb-4 text-lg font-semibold text-blue">
+                Co se tam děje
+              </h2>
+
+              {h.tags.length > 0 && (
+                <div className="mb-5 flex flex-wrap gap-2">
+                  {h.tags.map((t, i) => {
+                    const isClosure = /uzavírka/i.test(t);
+                    return (
+                      <span
+                        key={i}
+                        className={
+                          "head rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] " +
+                          (isClosure
+                            ? "bg-red text-white"
+                            : "bg-blue text-white")
+                        }
+                      >
+                        {t}
+                      </span>
+                    );
+                  })}
+                </div>
+              )}
+
+              <dl className="grid gap-4 sm:grid-cols-2">
+                {h.section && (
+                  <div>
+                    <dt className="head mb-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-muted">
+                      Úsek
+                    </dt>
+                    <dd className="text-base font-medium text-ink">
+                      {h.section}
+                    </dd>
+                  </div>
+                )}
+                {h.reason && (
+                  <div>
+                    <dt className="head mb-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-muted">
+                      Kvůli čemu
+                    </dt>
+                    <dd className="text-base font-medium text-ink">
+                      {h.reason}
+                    </dd>
+                  </div>
+                )}
+                {h.detour && (
+                  <div className="sm:col-span-2">
+                    <dt className="head mb-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-muted">
+                      Objížďka
+                    </dt>
+                    <dd className="text-base font-medium text-ink">
+                      {h.detour}
+                    </dd>
+                  </div>
+                )}
+                {h.issuer && (
+                  <div>
+                    <dt className="head mb-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-muted">
+                      Vydal
+                    </dt>
+                    <dd className="text-base font-medium text-ink">
+                      {h.issuer}
+                    </dd>
+                  </div>
+                )}
+              </dl>
+
+              {h.remainder && (
+                <p className="mt-5 border-t border-line pt-3 text-sm leading-relaxed text-ink/75">
+                  {h.remainder}
+                </p>
+              )}
+
+              <details className="mt-5 border-t border-line pt-3">
+                <summary className="head cursor-pointer text-[10px] font-semibold uppercase tracking-[0.3em] text-muted hover:text-blue">
+                  Surový text z JSDI
+                </summary>
+                <p className="mt-3 text-xs leading-relaxed text-muted whitespace-pre-line">
+                  {c.popis}
+                </p>
+              </details>
+
+              <p className="mt-4 text-xs text-muted">
+                Zdroj: {c.zdroj || "JSDI"}
+                {c.subtyp ? ` · ${c.subtyp}` : ""}
+              </p>
+            </section>
+          );
+        })()}
 
         {extra?.phases && (
           <section className="rounded-xl border border-line bg-card p-5">
