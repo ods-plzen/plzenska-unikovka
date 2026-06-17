@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <title>Plzeňská únikovka — ikona (U-turn silnice)</title>
   <rect width="240" height="240" rx="36" fill="#153D8A"/>
   <path d="M 70 200 L 70 120 A 50 50 0 0 1 170 120 L 170 200" stroke="#FFFFFF" stroke-width="48" fill="none" stroke-linecap="butt"/>
   <path d="M 70 232 L 33 198 L 107 198 Z" fill="#FFFFFF"/>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240">
+  <title>Plzeňská únikovka — horizontální logo</title>
+  <!-- Ikona -->
+  <g transform="translate(0,0)">
+    <rect width="240" height="240" rx="36" fill="#153D8A"/>
+    <path d="M 70 200 L 70 120 A 50 50 0 0 1 170 120 L 170 200" stroke="#FFFFFF" stroke-width="48" fill="none" stroke-linecap="butt"/>
+    <path d="M 70 232 L 33 198 L 107 198 Z" fill="#FFFFFF"/>
+    <path d="M 70 200 L 70 120 A 50 50 0 0 1 170 120 L 170 200" stroke="#153D8A" stroke-width="4" fill="none" stroke-dasharray="14 10" stroke-linecap="round"/>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(290,0)" font-family="Oswald, 'Arial Black', sans-serif" fill="#0B1320">
+    <text x="0" y="100" font-size="88" font-weight="800" letter-spacing="-1">PLZEŇSKÁ</text>
+    <text x="0" y="190" font-size="88" font-weight="800" letter-spacing="-1">ÚNIKOVKA</text>
+    <text x="2" y="225" font-size="22" font-weight="600" letter-spacing="5" fill="#5B6273">MAPA UZAVÍREK V PLZNI</text>
+  </g>
+</svg>
