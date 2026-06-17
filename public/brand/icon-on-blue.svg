@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
-  <title>Plzeňská únikovka — ikona na modrém pozadí</title>
-  <rect width="240" height="240" rx="36" fill="#153D8A"/>
-  <path d="M 97 160 L 97 80 A 40 40 0 0 1 177 80 L 177 160" stroke="#FFFFFF" stroke-width="42" fill="none" stroke-linecap="butt"/>
-  <path d="M 97 220 L 42 181 L 152 181 Z" fill="#FFFFFF"/>
-  <path d="M 97 160 L 97 80 A 40 40 0 0 1 177 80 L 177 160" stroke="#153D8A" stroke-width="3" fill="none" stroke-dasharray="14 10" stroke-linecap="round"/>
+  <title>Plzeňská únikovka — ikona na modrém pozadí (favicon, app icon)</title>
+  <rect width="240" height="240" rx="36" ry="36" fill="#153D8A"/>
+  <path d="M83.3,171.3v-80c0-22.1,17.9-40,40-40s40,17.9,40,40v80" fill="none" stroke="#FFFFFF" stroke-width="42"/>
+  <path d="M83.3,210.3l-55-39h110l-55,39Z" fill="#FFFFFF"/>
+  <path d="M83.3,171.3v-80c0-22.1,17.9-40,40-40s40,17.9,40,40v80" fill="none" stroke="#153D8A" stroke-width="3" stroke-dasharray="14 10" stroke-linecap="round"/>
 </svg>
