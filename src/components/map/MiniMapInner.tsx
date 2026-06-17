@@ -9,21 +9,26 @@ const SEVERITY_FILL: Record<Severity, string> = {
   minor: "#94a3b8", // neutrální šedá — drobné omezení
 };
 
+const DETOUR_GREEN = "#15803d"; // objízdná trasa — pozitivní zelená
+
 export default function MiniMapInner({
   center,
   ways,
+  detourWays,
   severity = "minor",
   height = 160,
   zoom = 15,
 }: {
   center: [number, number];
   ways?: [number, number][][]; // pokud má closure polyline geometrii, nakreslíme ji
+  detourWays?: [number, number][][]; // objížďka — kudy jet místo
   severity?: Severity;
   height?: number;
   zoom?: number;
 }) {
   const color = SEVERITY_FILL[severity];
   const polylines = (ways ?? []).filter((w) => w.length >= 2);
+  const detours = (detourWays ?? []).filter((w) => w.length >= 2);
   const hasPolyline = polylines.length > 0;
 
   return (
@@ -68,6 +73,19 @@ export default function MiniMapInner({
           />
         ))
       ) : null}
+
+      {detours.map((way, i) => (
+        <Polyline
+          key={`detour-${i}`}
+          positions={way}
+          pathOptions={{
+            color: DETOUR_GREEN,
+            weight: 5,
+            opacity: 0.85,
+            dashArray: "8 6",
+          }}
+        />
+      ))}
 
       <CircleMarker
         center={center}

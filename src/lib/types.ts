@@ -32,6 +32,10 @@ export interface Closure {
   // 4 = OSM + 300m radius (přibližný úsek)
   // 5 = pouze bod (státní silnice bez OSM jména)
   geomTier?: 1 | 2 | 3 | 4 | 5;
+  // Polyline objízdné trasy — kudy mají lidé jet místo uzavřeného úseku.
+  // Renderuje se dashed zelený overlay nad mapou. Plněno z PLAN_ENRICH /
+  // extras.json + OSM cache lookup.
+  detourWays?: [number, number][][];
 }
 
 export type Phase = [label: string, when: string, state: "done" | "now" | ""];

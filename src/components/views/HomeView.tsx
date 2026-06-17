@@ -352,6 +352,12 @@ function getWays(c: Closure): [number, number][][] | undefined {
     : undefined;
 }
 
+function getDetourWays(c: Closure): [number, number][][] | undefined {
+  if (!c.detourWays || c.detourWays.length === 0) return undefined;
+  const filtered = c.detourWays.filter((w) => w.length >= 2);
+  return filtered.length > 0 ? filtered : undefined;
+}
+
 function Row({
   c,
   rank,
@@ -369,6 +375,7 @@ function Row({
   const isVirtualOrPlanNoData = variant === "plan" && !c.od;
   const center = getCenter(c);
   const ways = getWays(c);
+  const detourWays = getDetourWays(c);
 
   return (
     <Link
@@ -397,6 +404,7 @@ function Row({
             <MiniMap
               center={center}
               ways={ways}
+              detourWays={detourWays}
               severity={sev}
               height={72}
               zoom={14}

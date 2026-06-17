@@ -1,18 +1,56 @@
 {
  "masarykova": {
-  "title": "Rekonstrukce Masarykovy třídy",
-  "sub": "1. etapa: úsek Rokycanská – Na Dlouhých · objízdné trasy platí od 29. 6.",
+  "title": "Rekonstrukce Masarykovy ulice",
+  "sub": "Úsek Rokycanská – Těšínská · od 29. 6. 2026 · 115 mil. Kč bez DPH",
   "phases": [
-   ["Příprava", "do 6/2026", "done"],
-   ["1. etapa", "léto 2026", "now"],
-   ["2. etapa", "podzim", ""],
-   ["Dokončení", "2027", ""]
+   ["Příprava (kácení stromů)", "do 6/2026", "done"],
+   ["1. etapa: Rokycanská – Těšínská", "od 29. 6. 2026", "now"],
+   ["2. etapa", "navazuje na 1.", ""],
+   ["Dokončení", "2027 (orientačně)", ""]
   ],
   "means": [
-   "<b>Řidiči:</b> úsek uzavřen, objížďka ulicí Na Dlouhých",
-   "<b>MHD:</b> zastávky se přesouvají, linky jedou odklonem",
-   "<b>Pěší a residenti:</b> přístup k domům zachován"
-  ]
+   "<b>Co se rekonstruuje:</b> vodovod a kanalizace, vozovka, chodníky a cyklostezky, světelná signalizace.",
+   "<b>Řidiči:</b> úsek úplně uzavřen, objížďka přes Rokycanskou → Jateční → Těšínskou.",
+   "<b>MHD:</b> linky 29, 30, N3 a N6 obousměrný odklon stejnou trasou — v uzavřeném úseku se nezastavuje.",
+   "<b>Pěší a rezidenti:</b> přístup k domům zachován.",
+   "<b>Stromy:</b> v úseku už šly v březnu 2026, na podzim přijdou nové."
+  ],
+  "objizdka": [
+   "<b>Auta:</b> obousměrný odklon přes Rokycanskou → Jateční → Těšínskou.",
+   "<b>Cyklisté:</b> po objízdné trase s auty (cyklostezka v rekonstruovaném úseku není průjezdná).",
+   "<b>Doprava do Doubravky z centra:</b> zachována přes Rokycanskou; od Jateční sjezd do obytné zóny."
+  ],
+  "mhd": [
+   "Linky 29, 30, N3 a N6 obousměrně přes Rokycanskou → Jateční → Těšínskou.",
+   "V uzavřeném úseku se autobusy nezastavují — žádná zastávka v úseku není."
+  ],
+  "mhdInfo": {
+   "summary": "Linky 29, 30, N3, N6 obousměrný odklon · žádné zastávky v úseku",
+   "reroutes": [
+    {
+     "lines": ["29", "30"],
+     "mode": "bus",
+     "via": "obousměrně přes Rokycanskou → Jateční → Těšínskou",
+     "note": "denní spoje"
+    },
+    {
+     "lines": ["N3", "N6"],
+     "mode": "night",
+     "via": "obousměrně přes Rokycanskou → Jateční → Těšínskou",
+     "note": "noční spoje"
+    }
+   ],
+   "notes": [
+    "V uzavřeném úseku se autobusy nezastavují — žádná zastávka tu není.",
+    "Spoje pojedou po objížďce přímo, bez vkládání zastávek."
+   ],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
+   "sourceLabel": "PMDP (15. 6. 2026)"
+  },
+  "source": {
+   "label": "plzen.eu — Centrum Doubravky čeká proměna",
+   "url": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/centrum-doubravky-ceka-promena-masarykova-ulice-bude-bezpecnejsi-i-privetivejsi/"
+  }
  },
  "americka": {
   "title": "Rekonstrukce Americké třídy",
