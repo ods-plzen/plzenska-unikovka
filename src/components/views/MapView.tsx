@@ -3,8 +3,7 @@
 import { useMemo } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { closures, closureById, restrictedRoads } from "@/lib/data";
-import { inArea, areaByeId } from "@/data/areas";
-import { useArea } from "@/components/AreaProvider";
+import { AREAS, inArea, areaByeId } from "@/data/areas";
 import { ClosureMap } from "@/components/map/ClosureMap";
 import { ClosurePanel } from "@/components/ClosurePanel";
 import { ClosureCard } from "@/components/ClosureCard";
@@ -12,21 +11,33 @@ import { TimeFilterChips } from "@/components/TimeFilterChips";
 import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
 import { SEVERITY_RANK } from "@/lib/severity";
 
+const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
+
 export function MapView() {
-  const { area } = useArea();
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
   const filter: TimeFilter = parseFilter(params.get("f"));
+  const obvodParam = params.get("o");
   const selectedId = params.get("sel") ?? null;
   const selected = selectedId ? closureById(selectedId) : null;
-  const areaLabel = areaByeId(area)?.short ?? "Celá Plzeň";
+  const areaLabel = obvodParam
+    ? (areaByeId(obvodParam)?.short ?? "Celá Plzeň")
+    : "Celá Plzeň";
 
-  function pushParams(next: { f?: TimeFilter; sel?: string | null }) {
+  function pushParams(next: {
+    f?: TimeFilter;
+    o?: string | null;
+    sel?: string | null;
+  }) {
     const sp = new URLSearchParams(params.toString());
     if (next.f !== undefined) {
       if (next.f === "now") sp.delete("f");
       else sp.set("f", next.f);
+    }
+    if (next.o !== undefined) {
+      if (next.o) sp.set("o", next.o);
+      else sp.delete("o");
     }
     if (next.sel !== undefined) {
       if (next.sel) sp.set("sel", next.sel);
@@ -38,17 +49,21 @@ export function MapView() {
 
   const visible = useMemo(() => {
     return closures.filter(
-      (c) => inArea(c.oblast, area) && isInFilter(c, filter),
+      (c) =>
+        (!obvodParam || inArea(c.oblast, obvodParam)) && isInFilter(c, filter),
     );
-  }, [area, filter]);
+  }, [obvodParam, filter]);
 
   const top5 = useMemo(() => {
     const ranked = [...visible].sort(
       (a, b) =>
-        SEVERITY_RANK[a.severity ?? "minor"] - SEVERITY_RANK[b.severity ?? "minor"],
+        SEVERITY_RANK[a.severity ?? "minor"] -
+        SEVERITY_RANK[b.severity ?? "minor"],
     );
     return ranked.slice(0, 5);
   }, [visible]);
+
+  const obvody = AREAS.filter((a) => a.id !== "all");
 
   return (
     <div className="space-y-4">
@@ -59,11 +74,33 @@ export function MapView() {
           </h1>
           <p className="text-sm text-muted">
             {areaLabel} · {visible.length}{" "}
-            {visible.length === 1 ? "uzavírka" : visible.length < 5 ? "uzavírky" : "uzavírek"}{" "}
+            {visible.length === 1
+              ? "uzavírka"
+              : visible.length < 5
+                ? "uzavírky"
+                : "uzavírek"}{" "}
             · zdroj SITmP / JSDI ŘSD
           </p>
         </div>
         <TimeFilterChips value={filter} onChange={(f) => pushParams({ f })} />
+      </div>
+
+      <div className="-mx-3 flex gap-1.5 overflow-x-auto px-3 pb-1 sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0">
+        <ChipBtn
+          label="Celá Plzeň"
+          active={!obvodParam}
+          onClick={() => pushParams({ o: null })}
+        />
+        {obvody.map((a) => (
+          <ChipBtn
+            key={a.id}
+            label={a.short.replace("Plzeň ", "P")}
+            active={a.id === obvodParam}
+            onClick={() =>
+              pushParams({ o: a.id === obvodParam ? null : a.id })
+            }
+          />
+        ))}
       </div>
 
       <div className="grid gap-4 md:grid-cols-[1fr_320px]">
@@ -102,5 +139,32 @@ export function MapView() {
         )}
       </section>
     </div>
+  );
+}
+
+function ChipBtn({
+  label,
+  active,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      style={HEAD_FONT}
+      aria-pressed={active}
+      className={
+        "min-h-[36px] shrink-0 border-2 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors sm:text-[11px] " +
+        (active
+          ? "border-ink bg-ink text-paper"
+          : "border-ink/25 bg-paper text-ink hover:border-ink")
+      }
+    >
+      {label}
+    </button>
   );
 }
