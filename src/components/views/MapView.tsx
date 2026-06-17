@@ -9,7 +9,8 @@ import { ClosurePanel } from "@/components/ClosurePanel";
 import { ClosureCard } from "@/components/ClosureCard";
 import { TimeFilterChips } from "@/components/TimeFilterChips";
 import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
-import { SEVERITY_RANK } from "@/lib/severity";
+import { HLAVNI_TAHY, SEVERITY_RANK } from "@/lib/severity";
+import type { Closure } from "@/lib/types";
 
 const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
 
@@ -55,12 +56,26 @@ export function MapView() {
   }, [obvodParam, filter]);
 
   const top5 = useMemo(() => {
-    const ranked = [...visible].sort(
-      (a, b) =>
-        SEVERITY_RANK[a.severity ?? "minor"] -
-        SEVERITY_RANK[b.severity ?? "minor"],
-    );
-    return ranked.slice(0, 5);
+    const impact = (c: Closure) =>
+      SEVERITY_RANK[c.severity ?? "minor"] * 2 +
+      (HLAVNI_TAHY.has(c.name) ? 0 : 1);
+    return [...visible]
+      .sort((a, b) => {
+        const sa = impact(a);
+        const sb = impact(b);
+        if (sa !== sb) return sa - sb;
+        // tie-break: delší trvání = větší dopad
+        const aLen =
+          a.od && a.do
+            ? new Date(a.do).getTime() - new Date(a.od).getTime()
+            : 0;
+        const bLen =
+          b.od && b.do
+            ? new Date(b.do).getTime() - new Date(b.od).getTime()
+            : 0;
+        return bLen - aLen;
+      })
+      .slice(0, 5);
   }, [visible]);
 
   const obvody = AREAS.filter((a) => a.id !== "all");
@@ -123,9 +138,15 @@ export function MapView() {
       </div>
 
       <section>
-        <h2 className="head mb-3 text-xs font-semibold uppercase tracking-wide text-muted">
-          Co ti zblokuje cestu
-        </h2>
+        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <h2 className="head text-xs font-semibold uppercase tracking-wide text-blue">
+            Co ti zablokuje cestu
+          </h2>
+          <p className="text-[11px] text-muted">
+            Top 5 podle dopadu — úplná uzavírka na hlavním tahu &gt; uzavírka
+            na vedlejší &gt; omezení. Při shodě vyhrává delší trvání.
+          </p>
+        </div>
         {top5.length === 0 ? (
           <p className="rounded-xl border border-dashed border-line bg-white p-6 text-center text-muted">
             V tomto filtru momentálně nic. 🎉
