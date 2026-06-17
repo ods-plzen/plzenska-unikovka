@@ -1,17 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="600" height="700">
   <title>Plzeňská únikovka — vertikální logo</title>
-  <!-- Ikona -->
-  <g transform="translate(180,0)">
-    <rect width="240" height="240" rx="36" fill="#153D8A"/>
-    <path d="M 70 200 L 70 120 A 50 50 0 0 1 170 120 L 170 200" stroke="#FFFFFF" stroke-width="48" fill="none" stroke-linecap="butt"/>
-    <path d="M 70 232 L 33 198 L 107 198 Z" fill="#FFFFFF"/>
-    <path d="M 70 200 L 70 120 A 50 50 0 0 1 170 120 L 170 200" stroke="#153D8A" stroke-width="4" fill="none" stroke-dasharray="14 10" stroke-linecap="round"/>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;800&amp;display=swap');
+    </style>
+  </defs>
+  <rect width="600" height="700" fill="#153D8A"/>
+  <!-- Ikona vycentrovaná nahoru -->
+  <g transform="translate(180,40)">
+    <path d="M 60 290 L 60 130 A 60 60 0 0 1 180 130 L 180 290" stroke="#FFFFFF" stroke-width="50" fill="none" stroke-linecap="butt"/>
+    <path d="M 60 330 L 10 290 L 110 290 Z" fill="#FFFFFF"/>
+    <path d="M 60 290 L 60 130 A 60 60 0 0 1 180 130 L 180 290" stroke="#153D8A" stroke-width="3" fill="none" stroke-dasharray="14 10" stroke-linecap="round"/>
   </g>
-  <!-- Wordmark pod ikonou -->
-  <g font-family="Oswald, 'Arial Black', sans-serif" fill="#0B1320" text-anchor="middle">
-    <text x="300" y="370" font-size="80" font-weight="800" letter-spacing="-1">PLZEŇSKÁ</text>
-    <text x="300" y="450" font-size="80" font-weight="800" letter-spacing="-1">ÚNIKOVKA</text>
-    <text x="300" y="500" font-size="22" font-weight="600" letter-spacing="6" fill="#5B6273">MAPA UZAVÍREK V PLZNI</text>
-    <text x="300" y="560" font-size="18" font-weight="700" letter-spacing="5" fill="#153D8A">PROVOZUJE ODS PLZEŇ-MĚSTO</text>
+  <!-- Wordmark + tagline -->
+  <g font-family="Oswald, 'Arial Black', sans-serif" text-anchor="middle">
+    <text x="300" y="490" font-size="90" font-weight="800" letter-spacing="-1" fill="#FFFFFF">PLZEŇSKÁ</text>
+    <text x="300" y="580" font-size="90" font-weight="800" letter-spacing="-1" fill="#FFFFFF">ÚNIKOVKA</text>
+    <text x="300" y="640" font-size="28" font-weight="600" letter-spacing="10" fill="#009FE3">VÍTE, KUDY VEN.</text>
   </g>
 </svg>
