@@ -12,13 +12,18 @@ const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
 const ASSETS: { file: string; label: string; description: string }[] = [
   {
     file: "icon-full.svg",
-    label: "Ikona plnobarevná",
-    description: "Default, sociální sítě, web",
+    label: "Ikona — silnice (glyph)",
+    description: "Bílá silnice na transparentu, pro headery a fotky",
+  },
+  {
+    file: "icon-on-blue.svg",
+    label: "Ikona na ODS modré",
+    description: "Favicon, app icon, sociální profil",
   },
   {
     file: "icon-reverse.svg",
     label: "Ikona reverse",
-    description: "Modrá silnice na bílém — pro tisk",
+    description: "Modrá silnice na bílém — tisk",
   },
   {
     file: "icon-mono-dark.svg",
@@ -33,12 +38,12 @@ const ASSETS: { file: string; label: string; description: string }[] = [
   {
     file: "logo-horizontal.svg",
     label: "Logo horizontální",
-    description: "Ikona + wordmark vedle sebe",
+    description: "Ikona + wordmark + tagline na modré",
   },
   {
     file: "logo-stacked.svg",
     label: "Logo vertikální",
-    description: "Ikona nad wordmarkem, plakát formát",
+    description: "Plakát / square formats",
   },
 ];
 
@@ -68,6 +73,12 @@ export default function Page() {
         >
           Media kit
         </h1>
+        <p
+          style={HEAD_FONT}
+          className="text-base font-semibold uppercase tracking-[0.3em] text-sky sm:text-lg"
+        >
+          Víte, kudy ven.
+        </p>
         <p className="max-w-2xl text-base text-ink/70 sm:text-lg">
           Pro ODS Plzeň-město členy a kandidáty. Vše, co potřebujete
           k tomu, abyste mohli stránku představit svým sousedům, voličům
