@@ -12,7 +12,7 @@ const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
 const ASSETS: { file: string; label: string; description: string }[] = [
   {
     file: "icon-full.svg",
-    label: "Ikona — silnice (glyph)",
+    label: "Ikona glyph",
     description: "Bílá silnice na transparentu, pro headery a fotky",
   },
   {
@@ -23,7 +23,7 @@ const ASSETS: { file: string; label: string; description: string }[] = [
   {
     file: "icon-reverse.svg",
     label: "Ikona reverse",
-    description: "Modrá silnice na bílém — tisk",
+    description: "Modrá silnice na bílém, pro tisk",
   },
   {
     file: "icon-mono-dark.svg",
@@ -38,12 +38,12 @@ const ASSETS: { file: string; label: string; description: string }[] = [
   {
     file: "logo-horizontal.svg",
     label: "Logo horizontální",
-    description: "Ikona + wordmark + tagline na modré",
+    description: "Ikona, wordmark a tagline na modré",
   },
   {
     file: "logo-stacked.svg",
     label: "Logo vertikální",
-    description: "Plakát / square formats",
+    description: "Plakát a square formats",
   },
 ];
 
