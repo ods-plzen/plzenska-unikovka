@@ -69,11 +69,12 @@
  },
  "americka": {
   "title": "Rekonstrukce Americké třídy",
-  "sub": "Rekonstrukce po etapách · 1. etapa probíhá, 2. etapa od 22. 6. 2026",
+  "sub": "440 m centrum · 3 etapy · do 11. 8. 2026 · 36 mil. Kč",
   "phases": [
    ["1. etapa — Goethova–Jungmannova (úplná uzavírka)", "od 11. 5. 2026", "now"],
    ["2. etapa — Goethova–V Šipce (úplná), V Šipce–Klatovská (jednosměr)", "od 22. 6. 2026", ""],
-   ["3. etapa — Anglické nábřeží–V Šipce + okružní křižovatka", "od 23. 7. 2026", ""]
+   ["3. etapa — Anglické nábřeží–V Šipce + okružní křižovatka", "od 23. 7. 2026", ""],
+   ["Dokončení", "11. 8. 2026", ""]
   ],
   "objizdka": [
    "<b>1. etapa:</b> osobní doprava od Klatovské průjezdná do ulic Škroupova a Jungmannova; okružní křižovatka zůstává průjezdná.",
@@ -84,17 +85,51 @@
    "1.–2. etapa: část MHD vedena přes Anglické nábřeží, Kopeckého a Smetanovy sady, část ulicemi Prokopova a U Trati.",
    "3. etapa: část MHD pojede ulicemi Mikulášská a U Trati."
   ],
+  "keyNumbers": [
+   {"value": "36", "unit": "mil. Kč", "label": "Rozpočet", "tone": "blue"},
+   {"value": "440", "unit": "m", "label": "Délka úseku"},
+   {"value": "3", "label": "Etapy"},
+   {"value": "3", "unit": "měs", "label": "Trvání", "tone": "alert"}
+  ],
+  "scope": [
+   {"icon": "🛣️", "label": "Vozovka"},
+   {"icon": "👞", "label": "Chodníky"},
+   {"icon": "🌳", "label": "Veř. prostor"},
+   {"icon": "♿", "label": "Bezbariér."}
+  ],
+  "detourSteps": ["centrum", "Anglické nábřeží", "Kopeckého", "Smetanovy sady", "Prokopova", "U Trati"],
   "source": {
    "label": "Magistrát města Plzně — aktuality",
    "url": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/rekonstrukce-americke-vstoupi-od-22-cervna-do-2-etapy-rozsiri-se-dopravni-opatreni/"
   }
  },
  "domazlicka": {
-  "title": "Oprava Domažlické ulice (ŘSD)",
-  "sub": "Oprava čtyřproudé silnice · během letních prázdnin 2026 · po etapách",
+  "title": "Oprava Domažlické ulice (ŘSD, I/26)",
+  "sub": "Úsek Tylova – mosty přes trať · 1. 7. – konec srpna 2026 · 24,56 mil. Kč",
+  "phases": [
+   ["Příprava", "do 6/2026", "done"],
+   ["1. etapa: protisměrný režim", "od 1. 7. 2026", ""],
+   ["Další etapy navazují", "léto 2026", ""],
+   ["Dokončení", "konec srpna 2026", ""]
+  ],
   "means": [
-   "<b>Řidiči:</b> částečná uzavírka — provoz sveden do protisměrného pruhu, práce po navazujících etapách.",
+   "<b>Řidiči:</b> částečná uzavírka — provoz sveden do protisměrného jízdního pásu, práce po navazujících etapách.",
+   "<b>Délka úseku:</b> přibližně 1,2 km (silnice I/26 od křižovatky s Tylovou po mosty přes trať na Domažlice).",
    "<b>MHD a chodci:</b> součástí jsou úpravy autobusových zastávek a chodníků."
+  ],
+  "keyNumbers": [
+   {"value": "24,56", "unit": "mil. Kč", "label": "S DPH", "tone": "blue"},
+   {"value": "~2", "unit": "měs", "label": "Trvání"},
+   {"value": "1,2", "unit": "km", "label": "Délka úseku"},
+   {"value": "½", "label": "Pásu uzavřeno", "tone": "alert"}
+  ],
+  "scope": [
+   {"icon": "🛣️", "label": "Vozovka"},
+   {"icon": "🧱", "label": "Zesílení"},
+   {"icon": "👞", "label": "Chodníky"},
+   {"icon": "🚌", "label": "Zastávky"},
+   {"icon": "🚧", "label": "Dělicí pás"},
+   {"icon": "💧", "label": "Odvodnění"}
   ],
   "source": {
    "label": "Magistrát města Plzně — aktuality",
@@ -103,7 +138,22 @@
  },
  "28-rijna": {
   "title": "Rekonstrukce ulice 28. října (Bílá Hora)",
-  "sub": "Úplná uzavírka silnice II/231 · 4. 5. – 20. 12. 2026 · ve dvou etapách",
+  "sub": "Silnice II/231 · 4. 5. – 20. 12. 2026 · ve dvou etapách · 130 mil. Kč",
+  "keyNumbers": [
+   {"value": "130", "unit": "mil. Kč", "label": "Cena celkem", "tone": "blue"},
+   {"value": "~7", "unit": "měs", "label": "Trvání"},
+   {"value": "2", "label": "Etapy"},
+   {"value": "1", "label": "Točna přesun.", "tone": "alert"}
+  ],
+  "scope": [
+   {"icon": "💧", "label": "Vodovod"},
+   {"icon": "🚿", "label": "Kanalizace"},
+   {"icon": "🛣️", "label": "Vozovka"},
+   {"icon": "🔥", "label": "Plynovod"},
+   {"icon": "🚌", "label": "Zálivy"},
+   {"icon": "🚦", "label": "Signalizace"}
+  ],
+  "detourSteps": ["centrum", "Jateční", "Chrástecká", "Mohylová", "Masarykova", "II/233", "Chrást → Dolany → Zruč"],
   "phases": [
    ["1. etapa — úsek po křižovatku Nad Řekou", "od 4. 5. 2026", "now"],
    ["2. etapa — Nad Řekou → Zručská cesta", "navazuje", ""],
