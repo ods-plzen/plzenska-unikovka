@@ -112,58 +112,119 @@ export function MapView() {
             onSelect={(id) => pushParams({ sel: id })}
           />
         </div>
-        <div className="md:sticky md:top-20 md:max-h-[620px] md:overflow-y-auto md:overscroll-contain md:pr-1">
+
+        {/* Desktop sticky panel — md+ only */}
+        <div className="hidden md:sticky md:top-20 md:block md:max-h-[620px] md:overflow-y-auto md:overscroll-contain md:pr-1">
           {selected ? (
             <ClosurePanel
               c={selected}
               onClose={() => pushParams({ sel: null })}
             />
           ) : (
-            <aside className="rounded-xl border-2 border-dashed border-ink/20 bg-paper p-6 text-sm leading-relaxed text-ink/65">
-              <div
-                style={HEAD_FONT}
-                className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/45"
-              >
-                Detail uzavírky
-              </div>
-              <p>
-                Klikni na barevný úsek nebo bod na mapě a tady se objeví
-                všechno k té uzavírce — termín, důvod, kudy jet, MHD odklony.
-              </p>
-              <p
-                style={HEAD_FONT}
-                className="mt-4 text-[10px] font-bold uppercase tracking-[0.25em] text-ink/55"
-              >
-                Legenda
-              </p>
-              <ul className="mt-2 space-y-1.5 text-xs">
-                <li className="flex items-center gap-2">
-                  <span
-                    className="inline-block h-2.5 w-2.5 rounded-full"
-                    style={{ background: "#c0392b" }}
-                  />
-                  úplná uzavírka
-                </li>
-                <li className="flex items-center gap-2">
-                  <span
-                    className="inline-block h-2.5 w-2.5 rounded-full"
-                    style={{ background: "#009fe3" }}
-                  />
-                  omezení provozu / plánováno
-                </li>
-                <li className="flex items-center gap-2">
-                  <span
-                    className="inline-block h-2.5 w-2.5 rounded-full"
-                    style={{ background: "#94a3b8" }}
-                  />
-                  drobné omezení
-                </li>
-              </ul>
-            </aside>
+            <EmptyPanel />
           )}
         </div>
+
+        {/* Mobile hint above map (only when nothing selected) */}
+        {!selected && (
+          <div className="md:hidden">
+            <Legend />
+          </div>
+        )}
       </div>
+
+      {/* Mobile bottom sheet */}
+      {selected && (
+        <div className="md:hidden">
+          <button
+            type="button"
+            aria-label="Zavřít detail"
+            onClick={() => pushParams({ sel: null })}
+            className="fixed inset-0 z-40 bg-ink/55 transition-opacity"
+          />
+          <div className="fixed inset-x-0 bottom-0 z-50 max-h-[88vh] overflow-y-auto overscroll-contain rounded-t-3xl border-t-4 border-ink bg-paper shadow-[0_-12px_40px_rgba(0,0,0,0.25)]">
+            <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b-2 border-ink/15 bg-paper px-4 pb-2 pt-3">
+              <div className="absolute left-1/2 top-1.5 h-1 w-10 -translate-x-1/2 rounded-full bg-ink/25" />
+              <span
+                style={HEAD_FONT}
+                className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/55"
+              >
+                Detail uzavírky
+              </span>
+              <button
+                type="button"
+                onClick={() => pushParams({ sel: null })}
+                aria-label="Zavřít"
+                className="rounded-full p-2 text-ink/70 hover:bg-line hover:text-ink"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="p-3">
+              <ClosurePanel
+                c={selected}
+                onClose={() => pushParams({ sel: null })}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
+  );
+}
+
+function EmptyPanel() {
+  return (
+    <aside className="rounded-xl border-2 border-dashed border-ink/20 bg-paper p-6 text-sm leading-relaxed text-ink/65">
+      <div
+        style={HEAD_FONT}
+        className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/45"
+      >
+        Detail uzavírky
+      </div>
+      <p>
+        Klikni na barevný úsek nebo bod na mapě a tady se objeví všechno
+        k té uzavírce — termín, důvod, kudy jet, MHD odklony.
+      </p>
+      <p
+        style={HEAD_FONT}
+        className="mt-4 text-[10px] font-bold uppercase tracking-[0.25em] text-ink/55"
+      >
+        Legenda
+      </p>
+      <Legend inline />
+    </aside>
+  );
+}
+
+function Legend({ inline = false }: { inline?: boolean }) {
+  const wrap = inline
+    ? "mt-2 space-y-1.5 text-xs"
+    : "flex flex-wrap gap-x-4 gap-y-1 rounded-xl border border-line bg-paper p-3 text-xs";
+  return (
+    <ul className={wrap}>
+      <li className="flex items-center gap-2">
+        <span
+          className="inline-block h-2.5 w-2.5 rounded-full"
+          style={{ background: "#c0392b" }}
+        />
+        úplná uzavírka
+      </li>
+      <li className="flex items-center gap-2">
+        <span
+          className="inline-block h-2.5 w-2.5 rounded-full"
+          style={{ background: "#009fe3" }}
+        />
+        omezení / plánováno
+      </li>
+      <li className="flex items-center gap-2">
+        <span
+          className="inline-block h-2.5 w-2.5 rounded-full"
+          style={{ background: "#94a3b8" }}
+        />
+        drobné omezení
+      </li>
+    </ul>
   );
 }
 
