@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
   <title>Plzeňská únikovka — ikona na modrém pozadí (favicon, app icon)</title>
   <rect width="240" height="240" rx="36" fill="#153D8A"/>
-  <path d="M 65 195 L 65 78 A 55 55 0 0 1 175 78 L 175 195" stroke="#FFFFFF" stroke-width="50" fill="none" stroke-linecap="butt"/>
-  <path d="M 65 225 L 15 195 L 115 195 Z" fill="#FFFFFF"/>
-  <path d="M 65 195 L 65 78 A 55 55 0 0 1 175 78 L 175 195" stroke="#153D8A" stroke-width="3" fill="none" stroke-dasharray="14 10" stroke-linecap="round"/>
+  <path d="M 88 164 L 88 92 A 32 32 0 0 1 152 92 L 152 164" stroke="#FFFFFF" stroke-width="36" fill="none" stroke-linecap="butt"/>
+  <path d="M 88 215 L 48 182 L 128 182 Z" fill="#FFFFFF"/>
+  <path d="M 88 164 L 88 92 A 32 32 0 0 1 152 92 L 152 164" stroke="#153D8A" stroke-width="3" fill="none" stroke-dasharray="12 8" stroke-linecap="round"/>
 </svg>

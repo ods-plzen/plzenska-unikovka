@@ -6,16 +6,16 @@
     </style>
   </defs>
   <rect width="1200" height="500" fill="#153D8A"/>
-  <!-- Ikona (glyph) — bílá silnice s U-turn šipkou, vycentrovaná -->
-  <g transform="translate(80,80)">
-    <path d="M 60 290 L 60 130 A 60 60 0 0 1 180 130 L 180 290" stroke="#FFFFFF" stroke-width="50" fill="none" stroke-linecap="butt"/>
-    <path d="M 60 330 L 10 290 L 110 290 Z" fill="#FFFFFF"/>
-    <path d="M 60 290 L 60 130 A 60 60 0 0 1 180 130 L 180 290" stroke="#153D8A" stroke-width="3" fill="none" stroke-dasharray="14 10" stroke-linecap="round"/>
+  <!-- Ikona vycentrovaná v levém čtverci 320×500 -->
+  <g transform="translate(40,130)">
+    <path d="M 88 164 L 88 92 A 32 32 0 0 1 152 92 L 152 164" stroke="#FFFFFF" stroke-width="36" fill="none" stroke-linecap="butt"/>
+    <path d="M 88 215 L 48 182 L 128 182 Z" fill="#FFFFFF"/>
+    <path d="M 88 164 L 88 92 A 32 32 0 0 1 152 92 L 152 164" stroke="#153D8A" stroke-width="3" fill="none" stroke-dasharray="12 8" stroke-linecap="round"/>
   </g>
   <!-- Wordmark + tagline -->
   <g font-family="Oswald, 'Arial Black', sans-serif">
-    <text x="400" y="180" font-size="130" font-weight="800" letter-spacing="-2" fill="#FFFFFF">PLZEŇSKÁ</text>
-    <text x="400" y="320" font-size="130" font-weight="800" letter-spacing="-2" fill="#FFFFFF">ÚNIKOVKA</text>
-    <text x="402" y="390" font-size="36" font-weight="600" letter-spacing="12" fill="#009FE3">VÍTE, KUDY VEN.</text>
+    <text x="320" y="200" font-size="130" font-weight="800" letter-spacing="-2" fill="#FFFFFF">PLZEŇSKÁ</text>
+    <text x="320" y="340" font-size="130" font-weight="800" letter-spacing="-2" fill="#FFFFFF">ÚNIKOVKA</text>
+    <text x="322" y="410" font-size="36" font-weight="600" letter-spacing="12" fill="#009FE3">VÍTE, KUDY VEN.</text>
   </g>
 </svg>
