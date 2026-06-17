@@ -50,6 +50,9 @@ export function Footer() {
           <Link href="/seznam" className="hover:text-sky">
             Seznam všech uzavírek
           </Link>
+          <Link href="/media-kit" className="hover:text-sky">
+            Media kit
+          </Link>
           <Link href="/ochrana-soukromi" className="hover:text-sky">
             Ochrana soukromí
           </Link>

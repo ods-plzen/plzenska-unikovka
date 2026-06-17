@@ -107,52 +107,70 @@ monogram" by vypadal po novu polished.
 
 ---
 
-## 4. Photography brief — fotograf
+## 4. Photography + illustration brief
 
 ### Story, kterou má foto vyprávět
 
-> Plzeňan jede ráno do práce. Cestou narazí na rozkopané křižovatky,
-> objízdné značky, autobus PMDP odkloněný přes jinou ulici. Někdy je v
-> autě, někdy na kole, někdy s kočárkem na chodníku. Web mu dává odpověď
-> v pravý čas.
+> Plzeňan má v telefonu nástroj, který mu šetří ráno čas. Ne strach
+> z rozkopaného města — jen praktický průvodce.
+
+**Tone of voice (revidovaný):** klidný, prakticky-řemeslný, ne dramatický.
+Žádné šedivé betony s oranžovými signalizacemi v popředí, žádné scény,
+které mají voliče vystrašit. **Pětileté dítě v garáži, ne dystopie.**
 
 ### Shot list — povinné záběry
 
-| # | Subject | Lokace | Co zachytit | Mood |
-|---|---|---|---|---|
-| 1 | Široký pohled na rozkopanou ulici | Masaryčka (Doubravka) | Stavba probíhá, šedivý beton, oranžové signalizace, lidé jdou přes provizorní lávku | Dokumentární, real |
-| 2 | Detail dopravní značky „uzavírka" | Americká | Cedulka „Objížďka 200 m" na sloupu, ostré ostření | Symbol |
-| 3 | Autobus PMDP na odklonění | Linka 29 nebo 30 | Bus jede objízdnou trasou, vidět číslo linky | Logistic |
-| 4 | Pohled z auta na rozkopanou křižovatku | Bílá Hora | Sedící řidič, ruka na volantu, výhled na signalizační lampičky | First-person |
-| 5 | Maminka s kočárkem překračující stavbu | Doubravka centrum | Provizorní přechod, oranžové páskování | Lidské |
-| 6 | Cyklista hledající alternativní trasu | Klatovská třída | Žlutá značka „Cyklotrasa", v pozadí stavba | Mladší demografie |
-| 7 | Detail signalizační kuželu | Cokoliv | Stavební kužel, deště, gradient | Texture asset |
-| 8 | Pohled shora na Plzeň (drone) | Doubravka nebo centrum | Sieť cest, kde jsou uzavírky vidět | Hero shot |
+| # | Typ | Co | Tone |
+|---|---|---|---|
+| 1 | **Hero — Hegner s telefonem** | Lukáš Hegner sedí na lavičce v Doubravce, drží mobil v ruce, na obrazovce vidět logo a mapa Plzeňské únikovky. Civilní oblek (košile bez kravaty), neformální. Záběr ze strany / mírně shora. | Klidný, „použiju to taky" |
+| 2 | **Drone — Plzeň shora** | Pohled na střechy a síť ulic Plzně z dronu. Doubravka nebo centrum (Americká). Ulice viditelné ze shora, ale bez stavebního ruchu v záběru. | Hero shot, geografický |
+| 3 | **Stylized „uzavřeno" značka** | Plochá illustrace dopravní značky (červený trojúhelník nebo stop sign), čistý vektor — žádný fotorealismus. Slouží jako klíčový grafický motiv. | Symbol, design asset |
+| 4 | **Stylized řidič / persona** | Plochá illustrace siluety řidiče v autě, vidět profil přes okýnko. Ve stylu Czech grafika 60. let nebo moderní piktogram. Vektor, ne fotka. | Univerzální, lidský |
+| 5 | **Telefon s mapou** | Detail telefonu, na obrazovce hero counter („36 / 4"), v pozadí rozostřená Plzeň. Light flat lay nebo držený v ruce. | Product hero |
+| 6 | **Pohled z auta** *(volitelný)* | Z místa řidiče: ruka na volantu, telefon v držáku s aplikací, výhled na klidnou ulici Plzně. Bez stresu, bez rozkopaného beton. | First-person |
 
-### Bonus — portréty pro detail uzavírek (volitelné)
+### Vyjmuto z původního briefu (záměrně)
 
-- Lukáš Hegner v Doubravce (u Masaryčky, neformální, ne portrét — civilní
-  záběr během procházky)
-- Občanské nálady — anonymní lidé čekající na MHD u zastávky („Bílá Hora",
-  „Doubravka")
-- Cíl: fotky, které sednou jako *content support*, ne *kampaňový mass shot*
+- ❌ Rozkopaná ulice se šedivým betonem
+- ❌ Maminka s kočárkem překračující staveniště
+- ❌ Oranžové páskování, signalizační kužele
+- ❌ Provizorní lávky, hluk, štěrk
+- ❌ Cyklista hledající trasu kolem stavby
+
+**Důvod:** nechceme strašit. Únikovka je servisní nástroj pro klidné
+plánování, ne katastrofický feed.
 
 ### Mood + styl
 
 - **Format:** 16:9 (web hero), 4:5 (IG portrait), 9:16 (IG story / Reels)
-- **Color grading:** přirozený, mírně desaturovaný; modrá nálada (chladný
-  daylight), nikoli teplý zlatý hour
-- **People:** civilní, ne kostýmovaní; anonymizováno (žádné rozpoznatelné
-  tváře pro launch — viz GDPR)
-- **No-go:** stock-photo vibes („happy family with car"), umělé úsměvy,
-  Photoshopovaný HDR, nadměrné bokeh
+- **Color grading:** přirozený, mírně teplý; ne příliš desaturovaný,
+  ne dramatický modrý cool
+- **People:** Hegner (s povolením), občanské siluety, nikdy obličeje
+  neznámých Plzeňáků bez souhlasu (GDPR)
+- **No-go:** stock-photo vibes, umělé úsměvy, dramatic HDR, „mokrá ulice
+  v noci s odrazy" film-noir vibe
+
+### Co fotografovat vs co illustrovat
+
+| Asset | Fotka | Illustrace |
+|---|---|---|
+| Hegner s telefonem | ✓ | |
+| Plzeň z dronu | ✓ | |
+| Telefon s app screen | ✓ | |
+| Pohled z auta | ✓ | |
+| Dopravní značka „uzavřeno" | | ✓ (čistý vektor) |
+| Stylizovaný řidič / persona | | ✓ (piktogram / silueta) |
+| Mapa Plzně schematicky | | ✓ (abstraktní) |
+| Ulice a směrové šipky | | ✓ |
 
 ### Práva + delivery
 
 - Plný copyright transfer na ODS Plzeň-město + sub-license pro Uhumdrum
-- Formáty: RAW + plnotučné 8K JPG + web-ready 1920px JPG
-- Naming convention: `plzen-doprava-{lokace}-{kategorie}-{poradi}.jpg`
-- Cca **20-30 finálních záběrů**, z nich 8-12 hero záběrů
+- Formáty fotek: RAW + 8K JPG + web-ready 1920px JPG
+- Formáty ilustrací: SVG (vektor) + 2× PNG (1024px, 2048px)
+- Naming convention: `plzen-{kategorie}-{poradi}.jpg` / `.svg`
+- Cca **6-8 hero fotek** (Hegner, telefon, drone) + **6-8 ilustrací**
+  (značky, persona, abstrakce)
 
 ---
 
