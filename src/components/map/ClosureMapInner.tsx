@@ -91,6 +91,21 @@ export default function ClosureMapInner({
           />
         )),
       )}
+      {/* Detour overlay — kudy jet místo uzavřeného úseku. Dashed zelená. */}
+      {closures.flatMap((c) =>
+        (c.detourWays ?? []).map((way, i) => (
+          <Polyline
+            key={`d-${c.id}-${i}`}
+            positions={way}
+            pathOptions={{
+              color: "#15803d",
+              weight: 4,
+              opacity: 0.75,
+              dashArray: "8 6",
+            }}
+          />
+        )),
+      )}
       {/* Major markers nahoře (renderují se poslední → leží navrch) */}
       {(["minor", "medium", "major"] as Severity[]).flatMap((sev) =>
         closures

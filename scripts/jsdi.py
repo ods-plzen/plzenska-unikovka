@@ -59,6 +59,25 @@ PLAN_OBLAST: dict[str, str] = {
     "náměstí republiky": "Plzeň 3",
 }
 
+# Konkrétní overrides pro plan items, kde známe víc, než plzen.eu tabulka
+# (start datum, konkrétní termin label, lepší popis). Klíč = slug z scraperu.
+PLAN_ENRICH: dict[str, dict] = {
+    "masarykova": {
+        "od": "2026-06-29",
+        "termin": "29. 6. 2026 – jaro 2027 (orientačně)",
+        "popis": (
+            "Rekonstrukce Masarykovy ulice v úseku Rokycanská – Těšínská. "
+            "Plné vyloučení dopravy. Vodovod, kanalizace, vozovka, chodníky, "
+            "cyklostezky a světelná signalizace. 115 milionů korun bez DPH. "
+            "MHD linky 29, 30, N3 a N6 obousměrný odklon přes Rokycanskou, "
+            "Jateční a Těšínskou."
+        ),
+        # Objízdná trasa — ulice, jejichž geometrii z OSM cache zařadíme
+        # jako detourWays overlay. Renderuje se dashed zeleně na mapě.
+        "_detourStreets": ["rokycanská", "jateční", "těšínská"],
+    },
+}
+
 # Pro GH Actions runner: služba má IPv6 record, ale routing často padá.
 _orig_getaddrinfo = socket.getaddrinfo
 def _ipv4_only(host, *args, **kwargs):
@@ -615,6 +634,33 @@ def build_plan_records(
         # Uložit URL pro klikatelný detail (mhdInfo.sourceUrl ho přečte)
         if row["url"]:
             rec["sourceUrl"] = row["url"]
+        # Aplikuj manuální override (známe víc než tabulka)
+        if s in PLAN_ENRICH:
+            enrich = PLAN_ENRICH[s]
+            for k, v in enrich.items():
+                if k.startswith("_"):
+                    continue  # interní klíče (_detourStreets) řešíme zvlášť
+                rec[k] = v
+            # Vyrobit detourWays z OSM cache pro objízdné ulice + clip kolem
+            # bodu uzavírky (jinak by se kreslila celá Rokycanská přes Plzeň).
+            detour_streets = enrich.get("_detourStreets") or []
+            if detour_streets and rec["ways"]:
+                # Centroid uzavírky pro clip
+                first_pt = rec["ways"][0][0] if rec["ways"][0] else None
+                if first_pt and len(first_pt) >= 2:
+                    center = (first_pt[0], first_pt[1])
+                    detour_raw: list = []
+                    for st in detour_streets:
+                        st_key = st.strip().lower()
+                        if st_key in osm_streets:
+                            detour_raw.extend(osm_streets[st_key])
+                    # Klip na 800m kolem centroidu
+                    if detour_raw:
+                        clipped = clip_paths_to_radius(
+                            center, detour_raw, max_dist_m=800
+                        )
+                        if clipped:
+                            rec["detourWays"] = clipped
         out.append(rec)
     return out
 

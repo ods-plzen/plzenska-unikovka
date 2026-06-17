@@ -224,6 +224,16 @@ function Legend({ inline = false }: { inline?: boolean }) {
         />
         drobné omezení
       </li>
+      <li className="flex items-center gap-2">
+        <span
+          className="inline-block h-0.5 w-5"
+          style={{
+            background:
+              "repeating-linear-gradient(90deg, #15803d 0 6px, transparent 6px 10px)",
+          }}
+        />
+        objížďka (kudy jet)
+      </li>
     </ul>
   );
 }
