@@ -50,7 +50,22 @@
   "source": {
    "label": "plzen.eu — Centrum Doubravky čeká proměna",
    "url": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/centrum-doubravky-ceka-promena-masarykova-ulice-bude-bezpecnejsi-i-privetivejsi/"
-  }
+  },
+  "keyNumbers": [
+   {"value": "115", "unit": "mil. Kč", "label": "Bez DPH", "tone": "blue"},
+   {"value": "~1", "unit": "rok", "label": "Trvání"},
+   {"value": "4", "label": "MHD linek", "tone": "alert"},
+   {"value": "0", "label": "Přesun. zastáv."}
+  ],
+  "scope": [
+   {"icon": "💧", "label": "Vodovod"},
+   {"icon": "🚿", "label": "Kanalizace"},
+   {"icon": "🛣️", "label": "Vozovka"},
+   {"icon": "👞", "label": "Chodníky"},
+   {"icon": "🚲", "label": "Cyklostezky"},
+   {"icon": "🚦", "label": "Signalizace"}
+  ],
+  "detourSteps": ["Doubravka", "Rokycanská", "Jateční", "Těšínská", "centrum"]
  },
  "americka": {
   "title": "Rekonstrukce Americké třídy",
