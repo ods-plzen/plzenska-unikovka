@@ -40,6 +40,18 @@ export interface Closure {
 
 export type Phase = [label: string, when: string, state: "done" | "now" | ""];
 
+export interface KeyNumber {
+  value: string;
+  unit?: string;
+  label: string;
+  tone?: "default" | "alert" | "blue";
+}
+
+export interface ScopeIcon {
+  icon: string;
+  label: string;
+}
+
 export interface ClosureExtra {
   title: string;
   sub: string;
@@ -50,6 +62,10 @@ export interface ClosureExtra {
   mhdInfo?: MhdInfo; // strukturovaná MHD data — preferováno
   parkovani?: string;
   source?: { label: string; url: string };
+  // Infografické komponenty pro detail page
+  keyNumbers?: KeyNumber[]; // hero stat row (cena, trvání, linky...)
+  scope?: ScopeIcon[]; // co se rekonstruuje (vodovod, kanál, vozovka...)
+  detourSteps?: string[]; // turn-by-turn chips (Doubravka → Rokycanská → ...)
 }
 
 export type MhdMode = "tram" | "bus" | "trolley" | "night";

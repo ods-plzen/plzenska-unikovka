@@ -7,6 +7,12 @@ import { PhaseTimeline } from "@/components/PhaseTimeline";
 import { StatusBadge } from "@/components/StatusBadge";
 import { WatchButton } from "@/components/WatchButton";
 import { MhdBlock } from "@/components/MhdBlock";
+import {
+  DetourSteps,
+  KeyNumbers,
+  MhdLineCards,
+  ScopeIconsRow,
+} from "@/components/InfoGraphics";
 import { humanizeJsdi } from "@/lib/jsdiHumanize";
 
 export function generateStaticParams() {
@@ -49,10 +55,19 @@ export default async function Page({
     ? `https://www.google.com/maps/search/?api=1&query=${mid[0]},${mid[1]}`
     : null;
 
+  // MhdLineCards je infografický redesign MhdBlock — preferujeme ho, pokud
+  // mhd.reroutes obsahuje konkrétní lines. Jinak fallback na MhdBlock (legacy).
+  const mhdHasLines = !!mhd?.reroutes?.some(
+    (r) => r.lines && r.lines.length > 0,
+  );
+
   return (
     <div className="space-y-6">
-      <Link href="/doprava" className="text-sm font-medium text-blue hover:underline">
-        ← Zpět na uzavírky
+      <Link
+        href="/seznam"
+        className="text-sm font-medium text-blue hover:underline"
+      >
+        ← Zpět na seznam
       </Link>
 
       <header className="flex flex-wrap items-start justify-between gap-3">
@@ -61,7 +76,9 @@ export default async function Page({
             <span className="ods-chip not-italic">{c.oblast}</span>
             <StatusBadge status={c.status} label={c.state} />
           </div>
-          <h1 className="head mt-2 text-3xl font-bold text-ink">{c.name}</h1>
+          <h1 className="head mt-2 text-3xl font-bold text-ink sm:text-4xl">
+            {c.name}
+          </h1>
           <p className="mt-1 text-muted">{extra?.title ?? c.akce}</p>
           {extra?.sub && <p className="mt-1 text-sm text-ink/80">{extra.sub}</p>}
           {c.approx && (
@@ -74,7 +91,13 @@ export default async function Page({
         <WatchButton id={c.id} />
       </header>
 
+      {extra?.keyNumbers && <KeyNumbers items={extra.keyNumbers} />}
+
       <ClosureMap closures={[c]} height={360} />
+
+      {extra?.scope && <ScopeIconsRow items={extra.scope} />}
+
+      {extra?.detourSteps && <DetourSteps steps={extra.detourSteps} />}
 
       <div className="grid gap-6 md:grid-cols-2">
         {extra?.means && (
@@ -93,7 +116,7 @@ export default async function Page({
           </section>
         )}
 
-        {extra?.objizdka && (
+        {extra?.objizdka && !extra?.detourSteps && (
           <section className="rounded-xl border border-line bg-card p-5">
             <h2 className="head mb-3 text-lg font-semibold text-blue">
               🔀 Objízdné trasy
@@ -109,7 +132,11 @@ export default async function Page({
           </section>
         )}
 
-        {mhd ? (
+        {mhdHasLines && mhd ? (
+          <section className="rounded-xl border border-line bg-card p-5 md:col-span-2">
+            <MhdLineCards info={mhd} />
+          </section>
+        ) : mhd ? (
           <MhdBlock info={mhd} />
         ) : extra?.mhd ? (
           <section className="rounded-xl border border-line bg-card p-5">
@@ -232,7 +259,7 @@ export default async function Page({
         })()}
 
         {extra?.phases && (
-          <section className="rounded-xl border border-line bg-card p-5">
+          <section className="rounded-xl border border-line bg-card p-5 md:col-span-2">
             <h2 className="head mb-3 text-lg font-semibold text-blue">
               Harmonogram
             </h2>
@@ -240,11 +267,11 @@ export default async function Page({
           </section>
         )}
 
-        <section className="rounded-xl border border-line bg-card p-5">
+        <section className="rounded-xl border border-line bg-card p-5 md:col-span-2">
           <h2 className="head mb-3 text-lg font-semibold text-blue">
             Základní info
           </h2>
-          <dl className="space-y-2 text-sm">
+          <dl className="grid gap-2 text-sm sm:grid-cols-2">
             <div className="flex justify-between gap-4">
               <dt className="text-muted">Stav</dt>
               <dd className="font-medium text-ink">{c.state}</dd>
