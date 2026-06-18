@@ -182,15 +182,34 @@ HLAVNI_TAHY = {
 }
 
 
-def classify_severity(name: str, akce: str, popis: str) -> str:
-    text = (akce + " " + popis).lower()
-    is_state = bool(re.search(r"\b(i|ii|iii)\s*/\s*\d+", text, re.I))
-    has_closure = bool(re.search(r"\buzavřen|\buzavírk", text))
-    on_hlavni = name in HLAVNI_TAHY
-    if has_closure and (is_state or on_hlavni):
+def classify_severity(name: str, akce: str, popis: str, subtyp: str = "") -> str:
+    """Klasifikace severity. PRIMÁRNÍ zdroj pravdy je JSDI subtyp (enum).
+    Texty `akce` + `popis` často obsahují slovo "uzavírka" v hlavičce
+    i pro pouhé částečné omezení — proto regex nad textem podřízeně.
+    """
+    sub = subtyp.lower().strip()
+    # MAJOR: jen skutečné úplné uzavírky podle JSDI enumu
+    if sub == "uzavřená silnice" or "úplná uzavírka" in sub:
         return "major"
-    if re.search(r"jednosměr|kyvadlov|protisměr|omezení|sveden|jeden\s+jízdní", text):
+    # MEDIUM: jakékoliv částečné omezení provozu
+    if sub in {
+        "kyvadlová doprava",
+        "jednosměrná uzavírka",
+        "zúžené pruhy",
+        "oprava povrchu",
+        "práce na silnici",
+    }:
         return "medium"
+    # Fallback: bez subtypu zkusíme text + hlavní tahy
+    if not sub:
+        text = (akce + " " + popis).lower()
+        is_state = bool(re.search(r"\b(i|ii|iii)\s*/\s*\d+", text, re.I))
+        if re.search(r"\buzavřen[áéí]\s+silnice", text) and (
+            is_state or name in HLAVNI_TAHY
+        ):
+            return "major"
+        if re.search(r"jednosměr|kyvadlov|protisměr|omezení|sveden", text):
+            return "medium"
     return "minor"
 
 
@@ -794,7 +813,7 @@ def main() -> int:
             "superdioId": a.get("Superdio_ID") or None,
             "od": ts_to_iso(a.get("Od")),
             "do": ts_to_iso(a.get("Do")),
-            "severity": classify_severity(street, akce, popis),
+            "severity": classify_severity(street, akce, popis, subtyp_field),
             "geomTier": geom_tier,
         }
         closures.append(rec)
