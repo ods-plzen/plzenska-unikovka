@@ -1,65 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { closures } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Media kit — Plzeňská únikovka",
+  title: "Press kit — Plzeňská únikovka",
   description:
-    "Vše, co potřebují ODS členové a kandidáti k představení Plzeňské únikovky — logo, talking points, hotové copy, brand pravidla.",
+    "Materiály pro novináře. Klíčová fakta, citace, tisková zpráva, kontakty, brand assety ke stažení.",
 };
 
 const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
 
 const ASSETS: { file: string; label: string; description: string }[] = [
-  {
-    file: "icon-full.svg",
-    label: "Ikona glyph",
-    description: "Bílá silnice na transparentu, pro headery a fotky",
-  },
-  {
-    file: "icon-on-blue.svg",
-    label: "Ikona na ODS modré",
-    description: "Favicon, app icon, sociální profil",
-  },
-  {
-    file: "icon-reverse.svg",
-    label: "Ikona reverse",
-    description: "Modrá silnice na bílém, pro tisk",
-  },
-  {
-    file: "icon-mono-dark.svg",
-    label: "Ikona mono dark",
-    description: "B&W na světlém pozadí",
-  },
-  {
-    file: "icon-mono-light.svg",
-    label: "Ikona mono light",
-    description: "B&W na tmavém pozadí",
-  },
-  {
-    file: "logo-horizontal.svg",
-    label: "Logo horizontální",
-    description: "Ikona, wordmark a tagline na modré",
-  },
-  {
-    file: "logo-stacked.svg",
-    label: "Logo vertikální",
-    description: "Plakát a square formats",
-  },
-];
-
-const COLORS: { name: string; hex: string; use: string }[] = [
-  { name: "ODS modrá tmavá", hex: "#153D8A", use: "Headlines, brand" },
-  { name: "ODS modrá světlá", hex: "#009FE3", use: "Action, accent" },
-  { name: "Alert červená", hex: "#C0392B", use: "Pouze úplné uzavírky" },
-  { name: "Detour zelená", hex: "#15803D", use: "Pouze objízdné trasy" },
-  { name: "Paper", hex: "#F7F4EC", use: "Pozadí" },
-  { name: "Ink", hex: "#0B1320", use: "Body text" },
+  { file: "logo-horizontal.svg", label: "Logo horizontální", description: "Pro hlavičky článků a online media" },
+  { file: "logo-stacked.svg", label: "Logo vertikální", description: "Pro printové formáty a square use" },
+  { file: "icon-on-blue.svg", label: "Ikona na modrém", description: "Sociální profil, favicon" },
+  { file: "icon-full.svg", label: "Ikona glyph", description: "Bílá silnice na transparentu" },
+  { file: "icon-reverse.svg", label: "Ikona reverse", description: "Modrá silnice na bílém, pro tisk" },
+  { file: "icon-mono-dark.svg", label: "Ikona mono dark", description: "Černobílá pro print B&W" },
 ];
 
 export default function Page() {
+  const activeCount = closures.filter(
+    (c) => c.status === "now" && c.od,
+  ).length;
+  const planCount = closures.filter((c) => c.status === "plan").length;
+
   return (
     <article className="mx-auto max-w-4xl space-y-12 pb-12 text-ink">
-      <header className="space-y-3 border-b-[3px] border-ink pb-6">
+      <header className="space-y-4 border-b-[3px] border-ink pb-6">
         <Link
           href="/"
           style={HEAD_FONT}
@@ -67,11 +35,17 @@ export default function Page() {
         >
           ← Zpět na úvod
         </Link>
+        <div
+          style={HEAD_FONT}
+          className="text-[11px] font-bold uppercase tracking-[0.3em] text-blue"
+        >
+          Press kit
+        </div>
         <h1
           style={HEAD_FONT}
           className="text-4xl font-bold uppercase leading-[0.95] sm:text-5xl md:text-6xl"
         >
-          Media kit
+          Plzeňská únikovka
         </h1>
         <p
           style={HEAD_FONT}
@@ -80,48 +54,88 @@ export default function Page() {
           Víte, kudy ven.
         </p>
         <p className="max-w-2xl text-base text-ink/70 sm:text-lg">
-          Pro ODS Plzeň-město členy a kandidáty. Vše, co potřebujete
-          k tomu, abyste mohli stránku představit svým sousedům, voličům
-          a kolegům.
+          Materiály pro novináře a redakce: tisková zpráva, klíčová fakta,
+          oficiální citace, kontakty pro média a brand assety ke stažení.
         </p>
         <p
           style={HEAD_FONT}
           className="text-[11px] font-semibold uppercase tracking-[0.3em] text-ink/55"
         >
-          Spuštěno 18. 6. 2026 · provozuje ODS Plzeň-město
+          Embargo zrušeno · spuštěno 18. 6. 2026
         </p>
       </header>
 
-      {/* ─── CO TO JE ─── */}
+      {/* ─── STRUČNĚ (BOILERPLATE) ─── */}
       <section className="space-y-4">
-        <h2
-          style={HEAD_FONT}
-          className="border-b-2 border-blue pb-2 text-2xl font-bold uppercase text-blue sm:text-3xl"
-        >
-          1. Co je Plzeňská únikovka
-        </h2>
-        <p className="text-base leading-relaxed sm:text-lg">
-          Jeden informační web. Mapa všech uzavírek, oprav a plánovaných
-          projektů v Plzni na jednom místě. Sbírá data z SITmP (městská
-          GIS služba), JSDI ŘSD (federální dopravní info), PMDP (MHD
-          odklony) a plzen.eu/doprava (velké projekty).
-        </p>
-        <p className="text-base leading-relaxed">
-          Není to oficiální stránka města. Není to politická kampaň. Je to
-          servisní nástroj, který provozuje ODS Plzeň-město, aby Plzeňákům
-          zjednodušil plánování každodenních cest.
+        <H2>1. Stručně</H2>
+        <Quoteable>
+          Plzeňská únikovka (plzenskaunikovka.cz) je veřejně dostupný
+          informační web, který poprvé spojuje na jednom místě data o všech
+          uzavírkách, opravách a plánovaných stavebních projektech v Plzni.
+          Stránka sbírá živá data ze čtyř oficiálních zdrojů (SITmP, JSDI
+          ŘSD, PMDP, plzen.eu) a denně je aktualizuje. Aplikaci spustilo
+          oblastní sdružení ODS Plzeň-město jako bezplatnou veřejnou službu
+          pro plzeňské řidiče, cestující MHD a obyvatele.
+        </Quoteable>
+        <p className="text-sm text-ink/55">
+          Tento odstavec lze použít beze změny v článku jako popis projektu.
         </p>
       </section>
 
-      {/* ─── LOGO + IKONA ─── */}
+      {/* ─── KLÍČOVÁ FAKTA ─── */}
       <section className="space-y-4">
-        <h2
-          style={HEAD_FONT}
-          className="border-b-2 border-blue pb-2 text-2xl font-bold uppercase text-blue sm:text-3xl"
-        >
-          2. Logo + ikona
-        </h2>
-        <p className="text-base">Stáhnout přímo, vše ve vektorovém SVG.</p>
+        <H2>2. Klíčová fakta</H2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Fact label="Datum spuštění" value="18. 6. 2026" />
+          <Fact label="Provozovatel" value="ODS Plzeň-město" />
+          <Fact label="Web" value="plzenskaunikovka.cz" />
+          <Fact label="Cena pro uživatele" value="Zdarma, bez registrace" />
+          <Fact
+            label="Aktuálně probíhajících uzavírek"
+            value={`${activeCount}`}
+            note="Živé číslo v okamžiku načtení stránky"
+          />
+          <Fact
+            label="Plánovaných velkých projektů"
+            value={`${planCount}`}
+            note="Mj. Masarykova, Domažlická, Sady Pětatřicátníků, Náměstí Republiky"
+          />
+          <Fact label="Datové zdroje" value="4 oficiální" note="SITmP, JSDI ŘSD, PMDP, plzen.eu/doprava" />
+          <Fact label="Aktualizace dat" value="Denně 7:00" />
+          <Fact label="Mobilní podpora" value="Plně responzivní" />
+          <Fact label="Cookies, tracking, registrace" value="Nic" />
+        </div>
+      </section>
+
+      {/* ─── CITACE ─── */}
+      <section className="space-y-4">
+        <H2>3. Oficiální citace</H2>
+        <Quoteable attribution="Lukáš Hegner, zastupitel města Plzně za ODS, kandidát Plzeň 4 Doubravka">
+          Plzeň má dnes 48 probíhajících uzavírek a další 4 velké projekty
+          v plánu. Než jsme dali dohromady únikovku, musel si Plzeňan
+          informace dohledat na čtyřech různých webech. To už není potřeba.
+          Mapa, harmonogram, objízdné trasy i MHD odklony jsou na jednom
+          místě.
+        </Quoteable>
+        <p className="text-sm text-ink/55">
+          Pro další citace (na konkrétní téma — Masarykova, Americká, Bílá
+          Hora, MHD) kontaktujte tiskové oddělení níže.
+        </p>
+      </section>
+
+      {/* ─── TISKOVÁ ZPRÁVA ─── */}
+      <section className="space-y-4">
+        <H2>4. Tisková zpráva</H2>
+        <PressRelease />
+      </section>
+
+      {/* ─── ASSETY KE STAŽENÍ ─── */}
+      <section className="space-y-4">
+        <H2>5. Materiály ke stažení</H2>
+        <p className="text-sm text-ink/70">
+          Všechny logové assety jsou vektorové SVG (lze libovolně zvětšit).
+          Pro print vyžadující CMYK nebo PDF kontaktujte tiskové oddělení.
+        </p>
         <ul className="grid gap-3 sm:grid-cols-2">
           {ASSETS.map((a) => (
             <li
@@ -154,244 +168,101 @@ export default function Page() {
             </li>
           ))}
         </ul>
-        <div className="rounded-xl border-2 border-blue/25 bg-blue/[0.04] p-4 text-sm">
-          <h3
-            style={HEAD_FONT}
-            className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-blue"
-          >
-            Pravidla použití
-          </h3>
-          <ul className="space-y-1 text-sm text-ink/80">
-            <li>• Nepřebarvujte logo mimo paletu níže.</li>
-            <li>• Nepřetvarjte (žádné stretching, rotace, perspektiva).</li>
-            <li>• Minimální velikost ikony: 32 × 32 px.</li>
-            <li>
-              • Volný prostor kolem loga: minimálně rovný výšce „P" ve
-              wordmarku.
-            </li>
-            <li>
-              • Atribuce: pokud je logo na cizí stránce, mělo by se
-              objevit i „Provozuje ODS Plzeň-město" nebo URL.
-            </li>
-          </ul>
+        <div className="rounded-xl border border-line bg-card p-4 text-sm text-ink/80">
+          <strong>Brand paleta:</strong> ODS modrá tmavá #153D8A, ODS modrá
+          světlá #009FE3, alert červená #C0392B (pouze úplné uzavírky),
+          paper #F7F4EC, ink #0B1320. Typografie:{" "}
+          <strong>Oswald Bold</strong> pro titulky.
         </div>
       </section>
 
-      {/* ─── BARVY ─── */}
+      {/* ─── KONTAKT PRO MÉDIA ─── */}
       <section className="space-y-4">
-        <h2
-          style={HEAD_FONT}
-          className="border-b-2 border-blue pb-2 text-2xl font-bold uppercase text-blue sm:text-3xl"
-        >
-          3. Brand barvy
-        </h2>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {COLORS.map((c) => (
-            <div
-              key={c.hex}
-              className="flex items-center gap-3 rounded-xl border-2 border-ink/15 bg-paper p-3"
-            >
-              <div
-                className="h-12 w-12 shrink-0 rounded-md border border-ink/15"
-                style={{ background: c.hex }}
-              />
-              <div className="min-w-0">
-                <div
-                  style={HEAD_FONT}
-                  className="text-sm font-bold uppercase tracking-tight"
-                >
-                  {c.name}
-                </div>
-                <div
-                  style={HEAD_FONT}
-                  className="text-[11px] font-semibold uppercase tracking-[0.15em] text-ink/55"
-                >
-                  {c.hex}
-                </div>
-                <div className="text-xs text-ink/55">{c.use}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="text-sm text-ink/70">
-          <strong>Typografie:</strong> Oswald Bold pro headlines (uppercase,
-          tracking minus), systémový sans-serif (Inter / Roboto / SF) pro body
-          text.
-        </p>
-      </section>
-
-      {/* ─── TALKING POINTS ─── */}
-      <section className="space-y-4">
-        <h2
-          style={HEAD_FONT}
-          className="border-b-2 border-blue pb-2 text-2xl font-bold uppercase text-blue sm:text-3xl"
-        >
-          4. Co říct
-        </h2>
-        <p className="text-base text-ink/75">
-          Tři odpovědi v různých délkách, podle situace.
-        </p>
-
-        <div className="space-y-4">
-          <Card label="A · 1-věta verze" sublabel="Twitter, kratší rozhovory">
-            Plzeňská únikovka je servisní web s mapou všech uzavírek a MHD
-            odklonů v Plzni. Provozuje ho ODS Plzeň-město.
-          </Card>
-
-          <Card label="B · Elevator pitch" sublabel="30 sek pro rozhovor">
-            Když jsem ráno chtěl vědět, kudy zítra pojedu do práce s tím,
-            jak se všude v Plzni opravuje, musel jsem projít čtyři weby —
-            plzen.eu, agp.plzen.eu, pmdp.cz a SUPERDIO. To dělá průměrný
-            Plzeňák? Nedělá.
-            <br />
-            <br />
-            Tak jsme dali dohromady jedno místo. plzenskaunikovka.cz. Mapa
-            všech uzavírek, plánované velké projekty (Masaryčka, Americká,
-            Bílá Hora), MHD odklony, objízdné trasy. Aktualizuje se denně
-            v 7 ráno.
-            <br />
-            <br />
-            Není to oficiální stránka města — proto je tam ODS atribuce.
-            Funguje to ale jako veřejná služba, kterou by stát měl dělat
-            sám.
-          </Card>
-        </div>
-      </section>
-
-      {/* ─── COPY TEMPLATES ─── */}
-      <section className="space-y-4">
-        <h2
-          style={HEAD_FONT}
-          className="border-b-2 border-blue pb-2 text-2xl font-bold uppercase text-blue sm:text-3xl"
-        >
-          5. Hotové copy templates
-        </h2>
-        <p className="text-base text-ink/75">
-          4 ready-to-post variants pro různé obvody.
-        </p>
-
-        <Card label="Template 1 · Krátký servisní" sublabel="universal">
-          Když jsem dnes ráno nevěděl, kudy pojedu kvůli {"{ULICE}"}, mrknul
-          jsem na novou stránku ODS Plzeň-město: plzenskaunikovka.cz
-          <br />
-          <br />
-          Mapa všech uzavírek v Plzni na jednom místě. Aktualizuje se denně.
-          <br />
-          <br />
-          #PlzeňDoprava #{"{TVUJ_OBVOD}"}
-        </Card>
-
-        <Card label="Template 2 · Doubravka" sublabel="Hegnerova kategorie">
-          Za 14 dní zavírá Masaryčka. 115 milionů korun, rok stavebního
-          ruchu, linky 29, 30, N3 a N6 odklon.
-          <br />
-          <br />
-          Tady všechno na jednom místě i s objízdnou trasou:
-          <br />
-          👉 plzenskaunikovka.cz/doprava/masarykova
-          <br />
-          <br />
-          #Doubravka #Masarykova #Plzeň
-        </Card>
-
-        <Card label="Template 3 · Slovany" sublabel="Chovancova kategorie">
-          Slovany potřebují přehled o tom, co se na obvodě rozkopává —
-          od Mikulášky po Klatovku. Není snadné si to udržet v hlavě.
-          <br />
-          <br />
-          Nová mapa: plzenskaunikovka.cz/?o=p3
-          <br />
-          <br />
-          #Slovany #Plzeň
-        </Card>
-
-        <Card label="Template 4 · Centrum (Plzeň 1)" sublabel="">
-          Americká, 28. října, Sady Pětatřicátníků — Plzeň 1 je tenhle
-          rok jeden velký stavební ruch. Mapa všeho najednou:
-          <br />
-          <br />
-          plzenskaunikovka.cz/?o=p1
-          <br />
-          <br />
-          #PlzeňCentrum #Plzeň
-        </Card>
-      </section>
-
-      {/* ─── DO A DON'T ─── */}
-      <section className="space-y-4">
-        <h2
-          style={HEAD_FONT}
-          className="border-b-2 border-blue pb-2 text-2xl font-bold uppercase text-blue sm:text-3xl"
-        >
-          6. Co dělat / nedělat
-        </h2>
+        <H2>6. Kontakt pro média</H2>
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-xl border-2 border-[#15803d]/30 bg-[#15803d]/[0.04] p-5">
-            <h3
-              style={HEAD_FONT}
-              className="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-[#15803d]"
-            >
-              ✓ Můžete
-            </h3>
-            <ul className="space-y-2 text-sm text-ink/80">
-              <li>Sdílet na svých osobních profilech (FB, IG, X, LinkedIn).</li>
-              <li>
-                Postit URL do plzeňských FB skupin (Doubravka, Slovany,
-                Plzeňáci) — s ohledem na pravidla skupiny.
-              </li>
-              <li>Posílat přátelům přes WhatsApp / Messenger.</li>
-              <li>Mluvit o tom na akcích a setkáních.</li>
-              <li>Propagovat na akcích ODS Plzeň-město.</li>
-            </ul>
-          </div>
-          <div className="rounded-xl border-2 border-[#c0392b]/30 bg-[#c0392b]/[0.04] p-5">
-            <h3
-              style={HEAD_FONT}
-              className="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-[#c0392b]"
-            >
-              ✗ Nedělejte
-            </h3>
-            <ul className="space-y-2 text-sm text-ink/80">
-              <li>
-                Neslibujte feature, které nemáme („funguje to s navigací"
-                = nefunguje).
-              </li>
-              <li>
-                Nemíchejte to s ODS programem — tahle stránka je service,
-                ne kampaň.
-              </li>
-              <li>
-                Nepoužívejte data jako útok na primátora — kritika
-                technické stránky OK, osobní ne.
-              </li>
-              <li>Nesdělujte čísla, která jste neviděli na webu.</li>
-            </ul>
-          </div>
+          <ContactCard
+            role="Tisková mluva ODS Plzeň-město"
+            name="Oblastní předsednictvo"
+            email="press@plzenskaunikovka.cz"
+            note="Citace, vyjádření, koordinace rozhovorů"
+          />
+          <ContactCard
+            role="Technické dotazy / data"
+            name="Uhumdrum s.r.o. (provozovatel platformy)"
+            email="info@plzenskaunikovka.cz"
+            note="Datové zdroje, technické aspekty, statistiky"
+          />
         </div>
+        <p className="text-sm text-ink/55">
+          Odpovídáme do 24 hodin v pracovní dny. Pro urgentní záležitosti
+          telefonický kontakt poskytneme po obdržení e-mailu.
+        </p>
       </section>
 
-      {/* ─── KONTAKT ─── */}
+      {/* ─── FAQ ─── */}
       <section className="space-y-4">
-        <h2
-          style={HEAD_FONT}
-          className="border-b-2 border-blue pb-2 text-2xl font-bold uppercase text-blue sm:text-3xl"
-        >
-          7. Kontakt
-        </h2>
+        <H2>7. Časté otázky</H2>
+        <Faq
+          q="Kdo Plzeňskou únikovku financuje a provozuje?"
+          a="Provozovatelem je oblastní sdružení ODS Plzeň-město. Technickou stránku platformy zajišťuje Uhumdrum s.r.o. jako zpracovatel dle smlouvy o zpracování osobních údajů. Web je pro uživatele zdarma, bez reklamy a bez cookies pro tracking."
+        />
+        <Faq
+          q="Odkud bere data? Jsou ověřená?"
+          a="Ze čtyř oficiálních zdrojů: SITmP (městská GIS služba agp.plzen.eu), JSDI ŘSD (federální systém dopravních informací), PMDP (městské dopravní podniky pro MHD odklony) a plzen.eu/doprava (oficiální tabulka plánovaných projektů města). Data se stahují denně v 7:00 ráno. Žádná data se nevymýšlí, vše je převzato a odkazované."
+        />
+        <Faq
+          q="Je to politická stránka?"
+          a="Ne, je to servisní informační nástroj. Stránka neobsahuje politické sliby, kampaňové výzvy ani volební obsah. Provozovatel (ODS Plzeň-město) je uveden v patičce a v tomto press kitu. Web sleduje uzavírky bez ohledu na to, kdo z koaličního nebo opozičního spektra je za projekt zodpovědný."
+        />
+        <Faq
+          q="Sleduje uživatele? Cookies, tracking?"
+          a="Ne. Aplikace nepoužívá analytické nástroje, reklamní cookies ani fingerprinting. Jediné, co se ukládá lokálně v prohlížeči, je volba sledovaných uzavírek (localStorage), která neopouští zařízení uživatele. Politika ochrany osobních údajů je dostupná na ods.cz/osobni-udaje."
+        />
+        <Faq
+          q="Kolik uzavírek aplikace pokrývá?"
+          a={`Aktuálně ${activeCount} probíhajících uzavírek a ${planCount} plánovaných velkých projektů. Live čísla jsou viditelná na úvodní stránce a aktualizují se denně. Pokrytí: veškerá data z JSDI a SITmP pro celé území města Plzeň + plánované velké projekty z plzen.eu.`}
+        />
+        <Faq
+          q="Kdo má autorská práva k mapovým podkladům?"
+          a="Mapové dlaždice: © OpenStreetMap přispěvatelé, © CARTO. Data o uzavírkách: oficiální zdroje (SITmP, JSDI ŘSD, PMDP, plzen.eu). Logo a brand Plzeňské únikovky: ODS Plzeň-město."
+        />
+      </section>
+
+      {/* ─── DOPLŇUJÍCÍ INFO ─── */}
+      <section className="space-y-4">
+        <H2>8. Doplňující materiály</H2>
         <ul className="space-y-2 text-sm">
           <li>
-            <strong>Technické dotazy / bugy:</strong>{" "}
-            <a
-              href="mailto:info@plzenskaunikovka.cz"
-              className="text-blue hover:underline"
-            >
-              info@plzenskaunikovka.cz
-            </a>{" "}
-            (provoz: Uhumdrum s.r.o.)
+            <strong>Live mapa všech uzavírek:</strong>{" "}
+            <Link href="/mapa" className="text-blue hover:underline">
+              plzenskaunikovka.cz/mapa
+            </Link>
           </li>
           <li>
-            <strong>Tisková mluva:</strong> přes ODS Plzeň-město oblastní
-            předsednictvo
+            <strong>Plný seznam uzavírek:</strong>{" "}
+            <Link href="/seznam" className="text-blue hover:underline">
+              plzenskaunikovka.cz/seznam
+            </Link>
+          </li>
+          <li>
+            <strong>Detail Masaryčky (hlavní téma launchu):</strong>{" "}
+            <Link
+              href="/doprava/masarykova"
+              className="text-blue hover:underline"
+            >
+              plzenskaunikovka.cz/doprava/masarykova
+            </Link>
+          </li>
+          <li>
+            <strong>Github repozitář (open code):</strong>{" "}
+            <a
+              href="https://github.com/fuckupic/plzen-prehledne"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue hover:underline"
+            >
+              github.com/fuckupic/plzen-prehledne ↗
+            </a>
           </li>
         </ul>
       </section>
@@ -399,36 +270,179 @@ export default function Page() {
   );
 }
 
-function Card({
+/* ─── Helpery ─── */
+
+function H2({ children }: { children: React.ReactNode }) {
+  return (
+    <h2
+      style={HEAD_FONT}
+      className="border-b-2 border-blue pb-2 text-2xl font-bold uppercase text-blue sm:text-3xl"
+    >
+      {children}
+    </h2>
+  );
+}
+
+function Fact({
   label,
-  sublabel,
-  children,
+  value,
+  note,
 }: {
   label: string;
-  sublabel?: string;
+  value: string;
+  note?: string;
+}) {
+  return (
+    <div className="rounded-xl border-2 border-ink/15 bg-paper p-4">
+      <div
+        style={HEAD_FONT}
+        className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/55"
+      >
+        {label}
+      </div>
+      <div
+        style={HEAD_FONT}
+        className="mt-1 text-xl font-bold uppercase leading-tight text-ink sm:text-2xl"
+      >
+        {value}
+      </div>
+      {note && <div className="mt-1 text-xs text-ink/55">{note}</div>}
+    </div>
+  );
+}
+
+function Quoteable({
+  children,
+  attribution,
+}: {
   children: React.ReactNode;
+  attribution?: string;
+}) {
+  return (
+    <blockquote className="rounded-xl border-l-4 border-blue bg-paper p-5">
+      <p className="text-base leading-relaxed text-ink sm:text-lg">
+        {children}
+      </p>
+      {attribution && (
+        <footer
+          style={HEAD_FONT}
+          className="mt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink/65"
+        >
+          — {attribution}
+        </footer>
+      )}
+    </blockquote>
+  );
+}
+
+function PressRelease() {
+  return (
+    <div className="rounded-xl border-2 border-ink/15 bg-paper p-5 sm:p-6">
+      <div
+        style={HEAD_FONT}
+        className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/55"
+      >
+        TISKOVÁ ZPRÁVA · 18. 6. 2026 · Plzeň
+      </div>
+      <h3
+        style={HEAD_FONT}
+        className="text-2xl font-bold uppercase leading-tight text-ink sm:text-3xl"
+      >
+        V Plzni vznikla mapa všech uzavírek. Plzeňská únikovka spojuje
+        čtyři oficiální zdroje na jednom místě.
+      </h3>
+      <div className="mt-4 space-y-3 text-sm leading-relaxed text-ink/85 sm:text-base">
+        <p>
+          <strong>Plzeň, 18. června 2026</strong> — Oblastní sdružení ODS
+          Plzeň-město dnes spouští webovou aplikaci plzenskaunikovka.cz,
+          která jako první v Plzni spojuje na jednom místě data o všech
+          uzavírkách, MHD odklonech a plánovaných stavebních projektech.
+          Aplikace je zdarma, nevyžaduje registraci a sbírá data ze čtyř
+          oficiálních zdrojů: městské GIS služby SITmP, federálního systému
+          JSDI ŘSD, Plzeňských městských dopravních podniků (PMDP) a
+          oficiální tabulky plánovaných projektů na plzen.eu.
+        </p>
+        <p>
+          Konkrétním podnětem byla rekonstrukce Masarykovy ulice v
+          Doubravce. „Před 14 dny jsem se na zastupitelstvu zeptal náměstka
+          Tolara, kam si Doubravčan klikne, aby zjistil, kudy 29. června
+          pojede ráno do práce. Odpověď byla &bdquo;plzen.eu lomeno doprava&ldquo;.
+          Tam ale byla tabulka devíti řádků, u Masarykovy prázdné políčko a
+          v detailu odkaz na článek z minulého roku," vysvětluje Lukáš
+          Hegner, zastupitel města Plzně.
+        </p>
+        <p>
+          Plzeňská únikovka řeší přesně tento problém. V okamžiku spuštění
+          obsahuje aktuální mapu všech probíhajících uzavírek v Plzni, čtyři
+          plánované velké projekty (Masarykova ulice, Domažlická, Sady
+          Pětatřicátníků a Náměstí Republiky) a kompletní detaily MHD
+          odklonů linek 29, 30, N3 a N6, které začínají od 29. června v
+          souvislosti s rekonstrukcí Masarykovy ulice.
+        </p>
+        <p>
+          Aplikace je open-source, kód je veřejně dostupný na GitHubu, a
+          provozována je jako veřejná služba bez reklamy, bez sběru osobních
+          údajů a bez cookies pro tracking.
+        </p>
+        <p className="text-xs text-ink/55">
+          <strong>O Plzeňské únikovce:</strong> Veřejně dostupný informační
+          web s mapou všech uzavírek, MHD odklonů a plánovaných stavebních
+          projektů v Plzni. Provozuje ODS Plzeň-město. Spuštěno 18. 6. 2026.
+          plzenskaunikovka.cz
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ContactCard({
+  role,
+  name,
+  email,
+  note,
+}: {
+  role: string;
+  name: string;
+  email: string;
+  note?: string;
 }) {
   return (
     <div className="rounded-xl border-2 border-ink/15 bg-paper p-5">
-      <div className="mb-3 flex flex-wrap items-baseline gap-2 border-b border-ink/10 pb-2">
-        <span
-          style={HEAD_FONT}
-          className="text-[11px] font-bold uppercase tracking-[0.25em] text-blue"
-        >
-          {label}
-        </span>
-        {sublabel && (
-          <span
-            style={HEAD_FONT}
-            className="text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/45"
-          >
-            · {sublabel}
-          </span>
-        )}
+      <div
+        style={HEAD_FONT}
+        className="text-[10px] font-bold uppercase tracking-[0.25em] text-blue"
+      >
+        {role}
       </div>
-      <p className="whitespace-pre-line text-sm leading-relaxed text-ink/85 sm:text-base">
-        {children}
-      </p>
+      <div
+        style={HEAD_FONT}
+        className="mt-2 text-base font-bold uppercase text-ink sm:text-lg"
+      >
+        {name}
+      </div>
+      <a
+        href={`mailto:${email}`}
+        className="mt-2 inline-block text-sm font-semibold text-blue hover:underline"
+      >
+        {email}
+      </a>
+      {note && (
+        <p className="mt-2 text-xs leading-relaxed text-ink/55">{note}</p>
+      )}
     </div>
+  );
+}
+
+function Faq({ q, a }: { q: string; a: string }) {
+  return (
+    <details className="rounded-xl border-2 border-ink/15 bg-paper p-4 sm:p-5">
+      <summary
+        style={HEAD_FONT}
+        className="cursor-pointer text-sm font-bold uppercase tracking-tight text-ink sm:text-base"
+      >
+        {q}
+      </summary>
+      <p className="mt-3 text-sm leading-relaxed text-ink/80">{a}</p>
+    </details>
   );
 }
