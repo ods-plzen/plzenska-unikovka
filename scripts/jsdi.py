@@ -805,13 +805,31 @@ def main() -> int:
     if skipped_geom:
         print(f"  ⚠ {skipped_geom} bez geometrie")
 
+    # SANITY GUARD: pokud JSDI vrátí 0 aktivních záznamů ale na disku máme
+    # alespoň 10 historických → API mělo flaky run. Neprep@isuj data prázdným
+    # výstupem. Stalo se 2× za týden (06-17 + 06-18 ráno).
+    jsdi_active = len(closures)
+    out_path = os.path.join(ROOT, "src", "data", "closures.json")
+    if jsdi_active == 0 and os.path.exists(out_path):
+        try:
+            with open(out_path, encoding="utf-8") as f:
+                prev = json.load(f)
+            prev_now = sum(1 for x in prev if x.get("status") == "now")
+            if prev_now >= 10:
+                print(
+                    f"  ✗ ABORT: JSDI vrátil 0 záznamů, ale disk má {prev_now}"
+                    f" aktivních. Asi flaky API. Nezapisuji."
+                )
+                return 0
+        except Exception as e:
+            print(f"  ⚠ kontrola disku selhala: {e}")
+
     print("· plzen.eu/doprava — plánované velké projekty")
     plan_records = build_plan_records(closures, osm_streets)
     if plan_records:
         print(f"  + {len(plan_records)} plánovaných (nepřekrývajících se s JSDI)")
         closures.extend(plan_records)
 
-    out_path = os.path.join(ROOT, "src", "data", "closures.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(closures, f, ensure_ascii=False, indent=1)
     print(f"· zapsáno {len(closures)} uzavírek do {out_path}")
