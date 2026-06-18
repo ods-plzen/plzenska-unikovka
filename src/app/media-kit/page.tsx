@@ -188,7 +188,7 @@ export default function Page() {
           />
           <ContactCard
             role="Technické dotazy / data"
-            name="Uhumdrum s.r.o. (provozovatel platformy)"
+            name="Provozní tým"
             email="info@plzenskaunikovka.cz"
             note="Datové zdroje, technické aspekty, statistiky"
           />
@@ -203,8 +203,8 @@ export default function Page() {
       <section className="space-y-4">
         <H2>7. Časté otázky</H2>
         <Faq
-          q="Kdo Plzeňskou únikovku financuje a provozuje?"
-          a="Provozovatelem je oblastní sdružení ODS Plzeň-město. Technickou stránku platformy zajišťuje Uhumdrum s.r.o. jako zpracovatel dle smlouvy o zpracování osobních údajů. Web je pro uživatele zdarma, bez reklamy a bez cookies pro tracking."
+          q="Kdo Plzeňskou únikovku provozuje?"
+          a="Provozovatelem je oblastní sdružení ODS Plzeň-město. Web je pro uživatele zdarma, bez reklamy a bez cookies pro tracking."
         />
         <Faq
           q="Odkud bere data? Jsou ověřená?"
