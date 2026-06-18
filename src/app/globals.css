@@ -201,3 +201,8 @@ h3,
 .leaflet-bottom {
   z-index: 0 !important;
 }
+
+/* Hide native scrollbar pro horizontální chip stripy (obvod) — vizuální čistota.
+   Scroll funguje dál, jen není vidět ošklivý šedý bar. */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }

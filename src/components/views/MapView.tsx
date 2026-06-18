@@ -74,7 +74,7 @@ export function MapView() {
         </p>
       </div>
 
-      <div className="-mx-3 flex gap-1.5 overflow-x-auto px-3 pb-1 sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0">
+      <div className="scrollbar-hide -mx-3 flex gap-1.5 overflow-x-auto px-3 pb-1 sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0">
         <ChipBtn
           label="Celá Plzeň"
           active={!obvodParam}
