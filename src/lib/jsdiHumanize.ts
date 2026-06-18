@@ -27,7 +27,16 @@ export interface JsdiHumanized {
 // `\b` v JS regexu je ASCII-only → nematchne "č/š/ž". Používáme zde
 // non-boundary patterns spoléhající na unikátnost frází.
 const TAG_PATTERNS: Array<{ re: RegExp; label: string }> = [
-  { re: /úplná\s+uzavírka/i, label: "Úplná uzavírka" },
+  // "Úplná uzavírka" jen pokud NENÍ následována "jízdního pásu" — to je
+  // jednosměrná uzavírka s provozem 1+1 v protisměru, ne celá silnice.
+  {
+    re: /úplná\s+uzavírka(?!\s+jízdního\s+pásu)/i,
+    label: "Úplná uzavírka",
+  },
+  {
+    re: /úplná\s+uzavírka\s+jízdního\s+pásu/i,
+    label: "Jednosměrná uzavírka",
+  },
   { re: /částečná\s+uzavírka/i, label: "Částečná uzavírka" },
   { re: /kyvadlová\s+doprava/i, label: "Kyvadlová doprava" },
   { re: /jednosměrn[áé]?\s+(?:uzavírka|provoz)/i, label: "Jednosměrně" },
@@ -97,17 +106,34 @@ function extractIssuer(text: string): string | null {
 }
 
 function extractDetour(text: string): string | null {
-  // "Objížďka - bez rozlišení: X" — zastav před "Vydal:" nebo "."
-  const m = text.match(/Objížďka(?:\s+-\s+bez\s+rozlišení)?:\s*(.+?)(?=,?\s*Vydal:|\.\s|$)/i);
+  // "Objížďka - bez rozlišení: X" / "Objížďka: X" / "Objížďka pro vozidla...: X"
+  // Zastav na další "Objížďka", "Vydal:", "Zdroj:", nebo konec.
+  const m = text.match(
+    /Objížďka[^:]*:\s*(.+?)(?=\s*Objížďka|,?\s*Vydal:|,?\s*Zdroj:|$)/i,
+  );
   if (!m) return null;
   let detour = m[1].trim();
-  // Zkratit "silnice X (ulice Y), Plzeň N, Plzeň, ulice Z" → "ulicí Y, Z"
   detour = detour
-    .replace(/silnice\s+[IVX\d/]+\s*\(ulice\s+([^)]+)\)/gi, "$1")
-    .replace(/,\s*Plzeň\s+\d+,?\s*Plzeň,?/gi, ",")
-    .replace(/,\s*Vydal:.*/i, "")
+    // "silnice X (ulice Y)" → jen "Y"
+    .replace(/silnice\s+[IVX\d/]+[a-z]?\s*\(ulice\s+([^)]+)\)/gi, "$1")
+    // Holé reference na silnice: "silnice II/180 (ulice Z)" už nepřípadly,
+    // ale "silnice III/18019a" mimo závorky → jen číslo
+    .replace(/silnice\s+([IVX]+\/\d+[a-z]?)/gi, "$1")
+    // Administrativní metadata: ", Plzeň 4, Plzeň", ", Plzeň - Kyšice",
+    // ", okr. Plzeň-město", ", okres ..."
+    .replace(/,\s*Plzeň\s+\d+(?:\s*,\s*Plzeň(?:\s*-\s*[^,]+)?)?/gi, "")
+    .replace(/,\s*okr(?:\.|es)?\s+[^,]+/gi, "")
+    // Generic noise: "(ulice X)" → "X"
+    .replace(/\(ulice\s+([^)]+)\)/gi, "$1")
+    // Truncated tail: ", okr" / ", Plzeň-" bez následujícího slova
+    .replace(/,\s*okr\.?\s*$/i, "")
+    .replace(/,\s*Plzeň\s*-?\s*$/i, "")
+    // Vydal:/Zdroj: zbyl-li
+    .replace(/,\s*(Vydal|Zdroj):.*/i, "")
+    // Duplikované čárky / mezery
+    .replace(/\s+/g, " ")
     .replace(/,\s*,/g, ",")
-    .replace(/^,\s*|\s*,$/g, "")
+    .replace(/^,\s*|\s*,\s*$/g, "")
     .trim();
   return detour || null;
 }
