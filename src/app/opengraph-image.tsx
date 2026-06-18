@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "fs/promises";
+import { join } from "path";
 import { closures } from "@/lib/data";
 
 export const alt =
@@ -10,12 +12,24 @@ const INK = "#0b1320";
 const BLUE = "#153d8a";
 const SKY = "#009fe3";
 const PAPER = "#f7f4ec";
+const ALERT = "#c0392b";
 
-export default function Image() {
+async function loadOswald(): Promise<ArrayBuffer> {
+  const path = join(process.cwd(), "src/app/_fonts/Oswald-Bold.ttf");
+  const data = await readFile(path);
+  // node Buffer → ArrayBuffer s předáním slice (kvůli typovým rozdílům)
+  return data.buffer.slice(
+    data.byteOffset,
+    data.byteOffset + data.byteLength,
+  ) as ArrayBuffer;
+}
+
+export default async function Image() {
   const activeCount = closures.filter(
     (c) => c.status === "now" && c.od,
   ).length;
   const planCount = closures.filter((c) => c.status === "plan").length;
+  const oswaldData = await loadOswald();
 
   return new ImageResponse(
     (
@@ -25,122 +39,197 @@ export default function Image() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          background: PAPER,
-          color: INK,
-          fontFamily: "sans-serif",
+          background: BLUE,
+          color: PAPER,
+          fontFamily: "Oswald",
         }}
       >
-        {/* ─── Top bar — ODS blue strip ─── */}
+        {/* ─── TOP STRIP ─── */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            background: BLUE,
-            color: PAPER,
-            padding: "20px 60px",
-            fontSize: 24,
-            fontWeight: 700,
-            letterSpacing: "0.25em",
+            justifyContent: "space-between",
+            padding: "20px 50px",
+            borderBottom: `2px solid rgba(247,244,236,0.15)`,
+            fontSize: 22,
+            letterSpacing: "0.3em",
             textTransform: "uppercase",
           }}
         >
-          <span>ODS</span>
-          <span style={{ margin: "0 18px", opacity: 0.45 }}>·</span>
-          <span style={{ color: SKY }}>plzenskaunikovka.cz</span>
-          <span style={{ marginLeft: "auto", opacity: 0.7, fontSize: 18 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <span style={{ fontWeight: 700 }}>ODS</span>
+            <span style={{ opacity: 0.5 }}>·</span>
+            <span style={{ color: SKY, fontWeight: 600 }}>
+              plzenskaunikovka.cz
+            </span>
+          </div>
+          <span style={{ opacity: 0.55, fontSize: 18 }}>
             Mapa uzavírek v Plzni
           </span>
         </div>
 
-        {/* ─── Hero counter ─── */}
+        {/* ─── HERO: ICON + WORDMARK ─── */}
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            padding: "60px 60px 30px",
-            flex: 1,
-            justifyContent: "center",
+            alignItems: "center",
+            padding: "30px 50px 20px",
+            gap: 40,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              fontSize: 280,
-              fontWeight: 900,
-              lineHeight: 0.85,
-              letterSpacing: "-0.03em",
-              alignItems: "baseline",
-              gap: 30,
-            }}
+          <svg
+            width="180"
+            height="220"
+            viewBox="0 0 240 240"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <span style={{ color: "#c0392b" }}>{activeCount}</span>
-            <span style={{ color: "#cfd6e0", fontWeight: 200 }}>/</span>
-            <span style={{ color: BLUE }}>{planCount}</span>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              marginTop: 24,
-              fontSize: 28,
-              fontWeight: 700,
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              color: "#5b6273",
-              gap: 80,
-            }}
-          >
-            <span>probíhá</span>
-            <span>plánuje se</span>
+            <path
+              d="M83.3,171.3v-80c0-22.1,17.9-40,40-40s40,17.9,40,40v80"
+              fill="none"
+              stroke="#FFFFFF"
+              strokeWidth="42"
+            />
+            <path d="M83.3,210.3l-55-39h110l-55,39Z" fill="#FFFFFF" />
+            <path
+              d="M83.3,171.3v-80c0-22.1,17.9-40,40-40s40,17.9,40,40v80"
+              fill="none"
+              stroke={BLUE}
+              strokeWidth="3"
+              strokeDasharray="14 10"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+            <div
+              style={{
+                display: "flex",
+                fontSize: 110,
+                fontWeight: 800,
+                lineHeight: 0.85,
+                letterSpacing: "-0.02em",
+                color: PAPER,
+              }}
+            >
+              PLZEŇSKÁ
+            </div>
+            <div
+              style={{
+                display: "flex",
+                marginTop: 6,
+                fontSize: 110,
+                fontWeight: 800,
+                lineHeight: 0.85,
+                letterSpacing: "-0.02em",
+                color: PAPER,
+              }}
+            >
+              ÚNIKOVKA
+            </div>
+            <div
+              style={{
+                display: "flex",
+                marginTop: 14,
+                fontSize: 28,
+                fontWeight: 600,
+                letterSpacing: "0.35em",
+                color: SKY,
+              }}
+            >
+              VÍTE, KUDY VEN.
+            </div>
           </div>
         </div>
 
-        {/* ─── Wordmark + footer ─── */}
+        {/* ─── COUNTER STRIP ─── */}
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            padding: "30px 60px 60px",
-            borderTop: `4px solid ${INK}`,
+            alignItems: "center",
+            padding: "20px 50px",
+            marginTop: "auto",
+            borderTop: `2px solid rgba(247,244,236,0.15)`,
+            gap: 50,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              fontSize: 84,
-              fontWeight: 900,
-              letterSpacing: "-0.02em",
-              textTransform: "uppercase",
-              color: INK,
-            }}
-          >
-            Plzeňská únikovka
-          </div>
-          <div
-            style={{
-              display: "flex",
-              marginTop: 14,
-              fontSize: 26,
-              color: "#5b6273",
-              justifyContent: "space-between",
-              alignItems: "baseline",
-            }}
-          >
-            <span>Mapa, plánované projekty, MHD odklony.</span>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
+            <span
+              style={{
+                fontSize: 90,
+                fontWeight: 800,
+                color: ALERT,
+                lineHeight: 0.9,
+              }}
+            >
+              {activeCount}
+            </span>
             <span
               style={{
                 fontSize: 18,
-                fontWeight: 700,
-                letterSpacing: "0.25em",
-                textTransform: "uppercase",
-                color: BLUE,
+                fontWeight: 600,
+                letterSpacing: "0.3em",
+                color: "rgba(247,244,236,0.75)",
               }}
             >
-              Provozuje ODS Plzeň-město
+              PROBÍHÁ TEĎ
             </span>
+          </div>
+          <div
+            style={{
+              fontSize: 90,
+              color: "rgba(247,244,236,0.2)",
+              fontWeight: 200,
+            }}
+          >
+            /
+          </div>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
+            <span
+              style={{
+                fontSize: 90,
+                fontWeight: 800,
+                color: SKY,
+                lineHeight: 0.9,
+              }}
+            >
+              {planCount}
+            </span>
+            <span
+              style={{
+                fontSize: 18,
+                fontWeight: 600,
+                letterSpacing: "0.3em",
+                color: "rgba(247,244,236,0.75)",
+              }}
+            >
+              PLÁNUJE SE
+            </span>
+          </div>
+          <div
+            style={{
+              marginLeft: "auto",
+              fontSize: 18,
+              fontWeight: 600,
+              letterSpacing: "0.3em",
+              color: "rgba(247,244,236,0.55)",
+            }}
+          >
+            PROVOZUJE ODS PLZEŇ-MĚSTO
           </div>
         </div>
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Oswald",
+          data: oswaldData,
+          weight: 700,
+          style: "normal",
+        },
+      ],
+    },
   );
 }
