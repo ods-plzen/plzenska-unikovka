@@ -19,6 +19,17 @@ export function Footer() {
               Zdroje dat: SITmP (agp.plzen.eu), JSDI ŘSD, SUPERDIO,
               Plzeňské městské dopravní podniky (PMDP). Aktualizováno denně.
             </p>
+            <p className="mt-3 max-w-sm text-xs leading-relaxed text-white/45">
+              Data přebíráme z oficiálních zdrojů a mohou se v jednotlivostech
+              lišit od reality v terénu. Našli jste chybu?{" "}
+              <a
+                href="mailto:info@plzenskaunikovka.cz?subject=Chyba%20v%20Plze%C5%88sk%C3%A9%20%C3%BAnikovce"
+                className="text-sky hover:underline"
+              >
+                Napište nám
+              </a>
+              , děkujeme.
+            </p>
           </div>
 
           <div>
