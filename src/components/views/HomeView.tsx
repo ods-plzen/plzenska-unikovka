@@ -66,6 +66,15 @@ function daysLeftIfSoon(c: Closure): number | null {
   return days <= 14 ? days : null;
 }
 
+// Akce duplikuje severity label, když je oboje "úplná uzavírka / uzavřená
+// silnice", "omezení provozu / omezení provozu" apod. Vrací true = vynech.
+function isAkceRedundant(akce: string, severity: string): boolean {
+  const a = akce.toLowerCase().trim();
+  if (severity === "major") return /uzav[řr]en[áéí]\s+silnice|úplná uzavírka/.test(a);
+  if (severity === "medium") return /omezení|jednosměrná|kyvadlová/.test(a);
+  return false;
+}
+
 function impactScore(c: Closure): number {
   return (
     SEVERITY_RANK[c.severity ?? "minor"] * 2 +
@@ -389,8 +398,16 @@ function Row({
               >
                 {sevLabel}
               </span>
-              {" · "}
-              <span className="text-ink/55">{c.akce.toLowerCase()}</span>
+              {/* Akce vynech, pokud je sémanticky duplicitní k sevLabel
+                  (např. major + "Uzavřená silnice" = řekneš dvakrát totéž). */}
+              {!isAkceRedundant(c.akce, sev) && (
+                <>
+                  {" · "}
+                  <span className="text-ink/55">
+                    {c.akce.toLowerCase()}
+                  </span>
+                </>
+              )}
             </>
           )}
         </div>
