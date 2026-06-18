@@ -14,10 +14,9 @@ const SKY = "#009fe3";
 const PAPER = "#f7f4ec";
 const ALERT = "#c0392b";
 
-async function loadOswald(): Promise<ArrayBuffer> {
-  const path = join(process.cwd(), "src/app/_fonts/Oswald-Bold.ttf");
+async function loadFont(fileName: string): Promise<ArrayBuffer> {
+  const path = join(process.cwd(), "src/app/_fonts", fileName);
   const data = await readFile(path);
-  // node Buffer → ArrayBuffer s předáním slice (kvůli typovým rozdílům)
   return data.buffer.slice(
     data.byteOffset,
     data.byteOffset + data.byteLength,
@@ -29,7 +28,10 @@ export default async function Image() {
     (c) => c.status === "now" && c.od,
   ).length;
   const planCount = closures.filter((c) => c.status === "plan").length;
-  const oswaldData = await loadOswald();
+  const [oswaldLatin, oswaldLatinExt] = await Promise.all([
+    loadFont("Oswald-Bold-Latin.woff"),
+    loadFont("Oswald-Bold-LatinExt.woff"),
+  ]);
 
   return new ImageResponse(
     (
@@ -225,7 +227,13 @@ export default async function Image() {
       fonts: [
         {
           name: "Oswald",
-          data: oswaldData,
+          data: oswaldLatin,
+          weight: 700,
+          style: "normal",
+        },
+        {
+          name: "Oswald",
+          data: oswaldLatinExt,
           weight: 700,
           style: "normal",
         },
