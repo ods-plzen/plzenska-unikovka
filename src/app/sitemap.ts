@@ -13,7 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   return [
     { url: `${SITE}/`, lastModified: today, changeFrequency: "daily", priority: 1 },
+    { url: `${SITE}/mapa`, lastModified: today, changeFrequency: "daily", priority: 0.8 },
+    { url: `${SITE}/seznam`, lastModified: today, changeFrequency: "daily", priority: 0.8 },
+    { url: `${SITE}/media-kit`, lastModified: today, changeFrequency: "monthly", priority: 0.4 },
     ...closureRoutes,
-    { url: `${SITE}/ochrana-soukromi`, lastModified: today, changeFrequency: "yearly", priority: 0.3 },
   ];
 }
