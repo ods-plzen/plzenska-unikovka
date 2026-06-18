@@ -253,17 +253,6 @@ export default function Page() {
               plzenskaunikovka.cz/doprava/masarykova
             </Link>
           </li>
-          <li>
-            <strong>Github repozitář (open code):</strong>{" "}
-            <a
-              href="https://github.com/fuckupic/plzen-prehledne"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue hover:underline"
-            >
-              github.com/fuckupic/plzen-prehledne ↗
-            </a>
-          </li>
         </ul>
       </section>
     </article>
@@ -367,9 +356,10 @@ function PressRelease() {
           Doubravce. „Před 14 dny jsem se na zastupitelstvu zeptal náměstka
           Tolara, kam si Doubravčan klikne, aby zjistil, kudy 29. června
           pojede ráno do práce. Odpověď byla &bdquo;plzen.eu lomeno doprava&ldquo;.
-          Tam ale byla tabulka devíti řádků, u Masarykovy prázdné políčko a
-          v detailu odkaz na článek z minulého roku," vysvětluje Lukáš
-          Hegner, zastupitel města Plzně.
+          U Masarykovy ulice jsem ale našel jen odkaz na článek z března,
+          kde stojí, že občané budou informováni včas. Žádná mapa, žádné
+          objízdné trasy, žádný harmonogram," vysvětluje Lukáš Hegner,
+          zastupitel města Plzně.
         </p>
         <p>
           Plzeňská únikovka řeší přesně tento problém. V okamžiku spuštění
@@ -380,9 +370,8 @@ function PressRelease() {
           souvislosti s rekonstrukcí Masarykovy ulice.
         </p>
         <p>
-          Aplikace je open-source, kód je veřejně dostupný na GitHubu, a
-          provozována je jako veřejná služba bez reklamy, bez sběru osobních
-          údajů a bez cookies pro tracking.
+          Aplikace je provozována jako veřejná služba bez reklamy, bez sběru
+          osobních údajů a bez cookies pro tracking.
         </p>
         <p className="text-xs text-ink/55">
           <strong>O Plzeňské únikovce:</strong> Veřejně dostupný informační

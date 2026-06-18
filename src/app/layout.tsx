@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Oswald, Libre_Franklin, Newsreader } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { AreaProvider } from "@/components/AreaProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -74,6 +75,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </AreaProvider>
+        <Analytics />
       </body>
     </html>
   );
