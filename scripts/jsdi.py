@@ -188,9 +188,18 @@ def classify_severity(name: str, akce: str, popis: str, subtyp: str = "") -> str
     i pro pouhé částečné omezení — proto regex nad textem podřízeně.
     """
     sub = subtyp.lower().strip()
-    # MAJOR: jen skutečné úplné uzavírky podle JSDI enumu
-    if sub == "uzavřená silnice" or "úplná uzavírka" in sub:
+    pop = popis.lower()
+    # Detekce jednosměrné uzavírky: JSDI někdy říká "úplná uzavírka jízdního
+    # pásu směr X" — to není celá silnice, jen jeden směr → MEDIUM.
+    one_way = bool(re.search(
+        r"jízdního\s+pásu|jízdní\s+pás\b|jednoho\s+směru|směru\s+plze[ňn]|směr\s+plze[ňn]",
+        pop,
+    ))
+    # MAJOR: jen skutečné úplné uzavírky podle JSDI enumu, ne jednosměrné
+    if (sub == "uzavřená silnice" or "úplná uzavírka" in sub) and not one_way:
         return "major"
+    if one_way:
+        return "medium"
     # MEDIUM: jakékoliv částečné omezení provozu
     if sub in {
         "kyvadlová doprava",
