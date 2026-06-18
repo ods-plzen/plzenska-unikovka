@@ -33,9 +33,14 @@ export function Footer() {
               ODS Plzeň-město
             </p>
             <p className="mt-3 text-xs leading-relaxed text-white/45">
-              <Link href="/ochrana-soukromi" className="hover:text-sky">
-                Ochrana soukromí
-              </Link>
+              <a
+                href="https://www.ods.cz/osobni-udaje"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-sky"
+              >
+                Ochrana osobních údajů ↗
+              </a>
             </p>
           </div>
         </div>
@@ -53,9 +58,14 @@ export function Footer() {
           <Link href="/media-kit" className="hover:text-sky">
             Media kit
           </Link>
-          <Link href="/ochrana-soukromi" className="hover:text-sky">
-            Ochrana soukromí
-          </Link>
+          <a
+            href="https://www.ods.cz/osobni-udaje"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky"
+          >
+            Ochrana osobních údajů ↗
+          </a>
         </nav>
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs text-white/45">
           <span>© {new Date().getFullYear()} Plzeňská únikovka</span>
