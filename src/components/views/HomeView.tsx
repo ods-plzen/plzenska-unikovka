@@ -2,10 +2,8 @@
 
 import { useMemo } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import type { Closure } from "@/lib/types";
 import { closures } from "@/lib/data";
-import { AREAS, inArea } from "@/data/areas";
 import { HLAVNI_TAHY, SEVERITY_RANK } from "@/lib/severity";
 import { MiniMap } from "@/components/map/MiniMap";
 
@@ -76,30 +74,15 @@ function impactScore(c: Closure): number {
 }
 
 export function HomeView() {
-  const router = useRouter();
-  const pathname = usePathname();
-  const params = useSearchParams();
-  const obvodParam = params.get("o");
-
-  function setObvod(o: string | null) {
-    const sp = new URLSearchParams(params.toString());
-    if (o) sp.set("o", o);
-    else sp.delete("o");
-    const q = sp.toString();
-    router.replace(q ? `${pathname}?${q}` : pathname, { scroll: false });
-  }
-
   const visible = useMemo(() => {
     const seen = new Set<string>();
-    return closures
-      .filter((c) => !obvodParam || inArea(c.oblast, obvodParam))
-      .filter((c) => {
-        const key = `${c.name}|${c.oblast}|${c.od ?? ""}|${c.do ?? ""}`;
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      });
-  }, [obvodParam]);
+    return closures.filter((c) => {
+      const key = `${c.name}|${c.oblast}|${c.od ?? ""}|${c.do ?? ""}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }, []);
 
   const nowList = useMemo(() => visible.filter(isActiveNow), [visible]);
   const planList = useMemo(
@@ -143,30 +126,8 @@ export function HomeView() {
     [planList],
   );
 
-  const obvody = AREAS.filter((a) => a.id !== "all");
-  const focusedObvod = obvodParam
-    ? AREAS.find((a) => a.id === obvodParam)
-    : null;
-
   return (
     <div className="space-y-7 pb-12 sm:space-y-9">
-      {/* ────────  OBVOD CHIPS  ──────── */}
-      <div className="scrollbar-hide -mx-3 flex gap-1.5 overflow-x-auto px-3 pb-1 sm:mx-0 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:px-0">
-        <ObvodChip
-          label="vše"
-          active={!obvodParam}
-          onClick={() => setObvod(null)}
-        />
-        {obvody.map((a) => (
-          <ObvodChip
-            key={a.id}
-            label={a.short.replace("Plzeň ", "P")}
-            active={a.id === obvodParam}
-            onClick={() => setObvod(a.id === obvodParam ? null : a.id)}
-          />
-        ))}
-      </div>
-
       {/* ────────  HERO COUNTER  ──────── */}
       <section className="border-y-[3px] border-ink py-5 sm:py-7">
         <div
@@ -196,9 +157,7 @@ export function HomeView() {
             </div>
           </div>
           <div className="self-start text-right text-[10px] font-bold uppercase tracking-[0.25em] text-ink/65 sm:text-[11px]">
-            <div className="text-blue">
-              {focusedObvod ? focusedObvod.short : "Plzeň"}
-            </div>
+            <div className="text-blue">Plzeň</div>
             <div className="mt-1 text-ink/45">{todayPretty()}</div>
           </div>
         </div>
@@ -224,7 +183,7 @@ export function HomeView() {
           ))}
           {nowList.length > topActive.length && (
             <Link
-              href={obvodParam ? `/seznam?o=${obvodParam}` : "/seznam"}
+              href="/seznam"
               style={HEAD_FONT}
               className="block py-3 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-blue hover:underline sm:text-[11px]"
             >
@@ -272,14 +231,14 @@ export function HomeView() {
       {/* ────────  FOOTER MODE LINKS  ──────── */}
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-none border-2 border-ink bg-ink/90">
         <Link
-          href={obvodParam ? `/mapa?o=${obvodParam}` : "/mapa"}
+          href="/mapa"
           style={HEAD_FONT}
           className="flex min-h-[64px] items-center justify-center bg-paper px-4 py-4 text-sm font-bold uppercase tracking-[0.3em] text-ink transition-colors hover:bg-blue hover:text-paper sm:text-base"
         >
           Mapa →
         </Link>
         <Link
-          href={obvodParam ? `/seznam?o=${obvodParam}` : "/seznam"}
+          href="/seznam"
           style={HEAD_FONT}
           className="flex min-h-[64px] items-center justify-center bg-paper px-4 py-4 text-sm font-bold uppercase tracking-[0.3em] text-ink transition-colors hover:bg-blue hover:text-paper sm:text-base"
         >
@@ -464,30 +423,3 @@ function Row({
   );
 }
 
-/* ────────  OBVOD CHIP  ──────── */
-function ObvodChip({
-  label,
-  active,
-  onClick,
-}: {
-  label: string;
-  active: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      style={HEAD_FONT}
-      aria-pressed={active}
-      className={
-        "min-h-[36px] shrink-0 border-2 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors sm:text-[11px] " +
-        (active
-          ? "border-ink bg-ink text-paper"
-          : "border-ink/25 bg-paper text-ink hover:border-ink")
-      }
-    >
-      {label}
-    </button>
-  );
-}

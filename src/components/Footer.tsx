@@ -56,7 +56,7 @@ export function Footer() {
             Seznam všech uzavírek
           </Link>
           <Link href="/media-kit" className="hover:text-sky">
-            Media kit
+            Press kit
           </Link>
           <a
             href="https://www.ods.cz/osobni-udaje"
