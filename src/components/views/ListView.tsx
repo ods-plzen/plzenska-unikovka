@@ -99,7 +99,11 @@ export function ListView() {
   const pathname = usePathname();
   const params = useSearchParams();
 
-  const filter: TimeFilter = parseFilter(params.get("f"));
+  // /seznam je A-Z list — default je "all" (ukáže i plánované), ne "now".
+  const rawFilter = params.get("f");
+  const filter: TimeFilter = rawFilter
+    ? parseFilter(rawFilter)
+    : "all";
   const obvodParam = params.get("o");
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState<SortBy>("status");
@@ -107,7 +111,7 @@ export function ListView() {
   function pushParams(next: { f?: TimeFilter; o?: string | null }) {
     const sp = new URLSearchParams(params.toString());
     if (next.f !== undefined) {
-      if (next.f === "now") sp.delete("f");
+      if (next.f === "all") sp.delete("f");
       else sp.set("f", next.f);
     }
     if (next.o !== undefined) {
