@@ -28,10 +28,7 @@ export default async function Image() {
     (c) => c.status === "now" && c.od,
   ).length;
   const planCount = closures.filter((c) => c.status === "plan").length;
-  const [oswaldLatin, oswaldLatinExt] = await Promise.all([
-    loadFont("Oswald-Bold-Latin.woff"),
-    loadFont("Oswald-Bold-LatinExt.woff"),
-  ]);
+  const oswald = await loadFont("Oswald-Bold.ttf");
 
   return new ImageResponse(
     (
@@ -227,13 +224,7 @@ export default async function Image() {
       fonts: [
         {
           name: "Oswald",
-          data: oswaldLatin,
-          weight: 700,
-          style: "normal",
-        },
-        {
-          name: "Oswald",
-          data: oswaldLatinExt,
+          data: oswald,
           weight: 700,
           style: "normal",
         },
