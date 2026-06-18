@@ -802,7 +802,7 @@ def main() -> int:
             is_point = True
         termin = format_termin(a.get("Od"), a.get("Do"))
 
-        popis = nazev[:500]
+        popis = nazev[:1500]
         rec: dict = {
             "id": cid,
             "name": street,
