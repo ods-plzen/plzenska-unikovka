@@ -5117,6 +5117,109 @@
   "geomTier": 4
  },
  {
+  "id": "krimicka",
+  "name": "Křimická",
+  "akce": "Pohyb vozidla údržby",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "19. 6. 2026 – 19. 6. 2026",
+  "ways": [
+   [
+    [
+     49.74634,
+     13.34178
+    ],
+    [
+     49.74634,
+     13.34154
+    ],
+    [
+     49.7463,
+     13.34108
+    ],
+    [
+     49.74626,
+     13.34075
+    ],
+    [
+     49.74625,
+     13.34062
+    ],
+    [
+     49.74624,
+     13.33998
+    ]
+   ],
+   [
+    [
+     49.74608,
+     13.34176
+    ],
+    [
+     49.74604,
+     13.34383
+    ],
+    [
+     49.74603,
+     13.34431
+    ],
+    [
+     49.74603,
+     13.34454
+    ],
+    [
+     49.74602,
+     13.34562
+    ],
+    [
+     49.7462,
+     13.34659
+    ]
+   ],
+   [
+    [
+     49.74619,
+     13.33727
+    ],
+    [
+     49.74615,
+     13.3393
+    ]
+   ],
+   [
+    [
+     49.74615,
+     13.3393
+    ],
+    [
+     49.7461,
+     13.3409
+    ],
+    [
+     49.74609,
+     13.34159
+    ],
+    [
+     49.74608,
+     13.34176
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice II/605H (ulice Křimická), Plzeň 3 - silnice II/605, Plzeň 5-Křimice, Plzeň, Platnost od 19.6.2026 06:45 do 19.6.2026 13:00, kosení travních porostů strojně, Vydal: SÚS Plzeňského kraje",
+  "typ": "Překážka na vozovce",
+  "subtyp": "pohyb vozidla údržby",
+  "zdroj": "JSDI",
+  "jsdiId": "a92a38e8-8362-41fd-bc0b-3b87dfea8dd9",
+  "superdioId": null,
+  "od": "2026-06-19",
+  "do": "2026-06-19",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
   "id": "domazlicka",
   "name": "Domažlická",
   "akce": "Oprava úseku Domažlické ulice",
