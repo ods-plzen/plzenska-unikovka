@@ -285,11 +285,11 @@ function Row({ c }: { c: Closure }) {
   const isVirtual = c.id.startsWith("__virtual-");
   const statusLabel = STATUS_LABEL[c.status] ?? c.state;
   const rowInner = (
-    <div className="flex items-start gap-3 p-3 sm:items-center sm:gap-4 sm:p-4">
+    <div className="flex items-start gap-3 p-4 sm:items-center sm:gap-5 sm:p-5">
       <span
         style={HEAD_FONT}
         className={
-          "shrink-0 rounded-full px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] " +
+          "shrink-0 rounded-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] sm:text-xs " +
           (STATUS_BG[c.status] ?? "bg-ink/10 text-ink")
         }
       >
@@ -299,28 +299,30 @@ function Row({ c }: { c: Closure }) {
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span
             style={HEAD_FONT}
-            className="text-base font-bold uppercase leading-tight text-ink sm:text-lg"
+            className="text-lg font-bold uppercase leading-tight text-ink sm:text-xl md:text-2xl"
           >
             {c.name}
           </span>
           <span
             style={HEAD_FONT}
-            className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/55"
+            className="text-xs font-bold uppercase tracking-[0.25em] text-ink/55 sm:text-[13px]"
           >
             {c.oblast}
           </span>
         </div>
-        <div className="mt-1 text-sm leading-snug text-ink/70">{c.akce}</div>
+        <div className="mt-1.5 text-base leading-snug text-ink/75 sm:text-[17px]">
+          {c.akce}
+        </div>
         <div
           style={HEAD_FONT}
-          className="mt-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-blue"
+          className="mt-1.5 text-sm font-semibold tabular-nums text-blue sm:text-base"
         >
           {fmtRange(c)}
         </div>
         {isVirtual && (
           <div
             style={HEAD_FONT}
-            className="mt-1.5 inline-block rounded-full bg-ink/5 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.2em] text-ink/55"
+            className="mt-2 inline-block rounded-full bg-ink/5 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-ink/55"
           >
             Editorial · zatím není v JSDI
           </div>
@@ -329,7 +331,7 @@ function Row({ c }: { c: Closure }) {
       {!isVirtual && (
         <span
           style={HEAD_FONT}
-          className="hidden shrink-0 text-[11px] font-bold uppercase tracking-[0.25em] text-blue sm:inline"
+          className="hidden shrink-0 text-base font-bold uppercase tracking-[0.25em] text-blue sm:inline"
           aria-hidden
         >
           →

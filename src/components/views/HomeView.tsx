@@ -387,7 +387,7 @@ function Row({
         >
           {c.name}
         </div>
-        <div className="mt-1 text-sm leading-snug text-ink/65 sm:text-[15px]">
+        <div className="mt-1.5 text-base leading-snug text-ink/75 sm:text-[17px]">
           {variant === "plan" ? (
             <span>{c.akce}</span>
           ) : (
@@ -416,15 +416,15 @@ function Row({
         style={HEAD_FONT}
         className="shrink-0 text-right"
       >
-        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue sm:text-[11px]">
+        <div className="text-xs font-bold uppercase tracking-[0.2em] text-blue sm:text-[13px]">
           {c.oblast}
         </div>
-        <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-ink/65 sm:text-[11px]">
+        <div className="mt-1.5 text-sm font-semibold tabular-nums text-ink/75 sm:text-base">
           {dateRange}
         </div>
         {variant === "now" && dLeft !== null && (
           <div
-            className="mt-1 text-[10px] font-bold uppercase tracking-[0.15em] sm:text-[11px]"
+            className="mt-1 text-xs font-bold uppercase tracking-[0.15em] sm:text-[13px]"
             style={{ color: ALERT_RED }}
           >
             {dLeft} {dLeft === 1 ? "den" : dLeft < 5 ? "dny" : "dní"} zbývá
