@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-06-18T09:12:52+00:00",
+ "snapshot": "2026-06-20T08:20:51+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -74,13 +74,13 @@
    "matchedClosure": null
   },
   {
-   "id": "celotydenni-provoz-linky-76-k-zoologicke-zahrade-od-27-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4277/celotydenni-provoz-linky-76-k-zoologicke-zahrade-od-27-6-2026/",
-   "title": "Celotýdenní provoz linky 76 k zoologické zahradě od 27. 6. 2026",
+   "id": "celotydenni-provoz-linky-76-k-zoologicke-zahrade-od-28-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4277/celotydenni-provoz-linky-76-k-zoologicke-zahrade-od-28-6-2026/",
+   "title": "Celotýdenní provoz linky 76 k zoologické zahradě od 28. 6. 2026",
    "lines": [
     "76"
    ],
-   "startDate": "2026-06-27",
+   "startDate": "2026-06-28",
    "endDate": null,
    "matchedClosure": null
   },
