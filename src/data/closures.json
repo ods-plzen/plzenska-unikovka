@@ -1,262 +1,66 @@
 [
  {
-  "id": "jatecni",
-  "name": "Jateční",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "23. 2. 2026 – 30. 6. 2026",
-  "ways": [
-   [
-    [
-     49.75614,
-     13.40383
-    ],
-    [
-     49.75568,
-     13.4034
-    ],
-    [
-     49.75559,
-     13.40331
-    ],
-    [
-     49.75542,
-     13.40321
-    ],
-    [
-     49.75537,
-     13.40318
-    ],
-    [
-     49.75522,
-     13.4031
-    ],
-    [
-     49.75452,
-     13.40291
-    ],
-    [
-     49.75427,
-     13.40286
-    ],
-    [
-     49.75353,
-     13.40269
-    ],
-    [
-     49.75304,
-     13.40258
-    ],
-    [
-     49.75281,
-     13.40253
-    ],
-    [
-     49.75263,
-     13.40249
-    ],
-    [
-     49.75261,
-     13.40248
-    ],
-    [
-     49.75214,
-     13.40237
-    ],
-    [
-     49.75208,
-     13.40236
-    ],
-    [
-     49.75189,
-     13.40231
-    ],
-    [
-     49.75173,
-     13.40227
-    ],
-    [
-     49.75141,
-     13.40219
-    ],
-    [
-     49.75075,
-     13.40205
-    ],
-    [
-     49.75067,
-     13.40205
-    ],
-    [
-     49.75061,
-     13.40207
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice II/233 (ulice Jateční), Plzeň 4, stavební práce, zúžené jízdní pruhy, Od 23.02.2026 08:00 Do 30.06.2026 23:59, bezpečnostní zábor při výstavbě cyklostezky a VO, označení pracovního místa - zúžení, částečná uzavírka vozovky, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "65341e6c-6d03-4464-86c6-9f27b1074d9e",
-  "superdioId": null,
-  "od": "2026-02-23",
-  "do": "2026-06-30",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "kostincova",
-  "name": "Kostincova",
+  "id": "na-okraji",
+  "name": "Na Okraji",
   "akce": "Uzavřená silnice",
   "state": "Probíhá",
   "status": "now",
   "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "2. 3. 2026 – 30. 6. 2026",
+  "oblast": "Plzeň 3",
+  "termin": "1. 12. 2025 – 31. 10. 2026",
   "ways": [
    [
     [
-     49.71593,
-     13.4027
+     49.74679,
+     13.34603
     ],
     [
-     49.71527,
-     13.40329
-    ],
-    [
-     49.71523,
-     13.40333
-    ],
-    [
-     49.71517,
-     13.40339
-    ],
-    [
-     49.71422,
-     13.40427
-    ],
-    [
-     49.71391,
-     13.40455
-    ],
-    [
-     49.71351,
-     13.40523
-    ],
-    [
-     49.71312,
-     13.40648
-    ],
-    [
-     49.71284,
-     13.40737
+     49.74679,
+     13.34633
     ]
    ],
    [
     [
-     49.71284,
-     13.40737
+     49.74679,
+     13.34575
     ],
     [
-     49.71243,
-     13.4078
+     49.74679,
+     13.34603
+    ]
+   ],
+   [
+    [
+     49.7468,
+     13.3454
     ],
     [
-     49.71196,
-     13.40868
+     49.74682,
+     13.3441
+    ]
+   ],
+   [
+    [
+     49.7468,
+     13.3454
+    ],
+    [
+     49.74679,
+     13.34575
     ]
    ]
   ],
   "point": false,
-  "popis": "ulice Kostincova, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 02.03.2026 00:00 Do 30.06.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "popis": "ulice Na Okraji, Plzeň 3, uzavřeno, stavební práce, Od 01.12.2025 00:00 Do 31.10.2026 23:59, zjednosměrnění provozu v úseku od ulice Křimická k ulici Touškovská \n, jednosměrná uzavírka, Vydal: ÚMO Plzeň 03",
   "typ": "Uzavírka a omezení",
   "subtyp": "uzavřená silnice",
   "zdroj": "JSDI",
-  "jsdiId": "f0fe51c6-ef6a-4455-a39a-bc3e33bf116c",
+  "jsdiId": "e652cffb-78c8-45d9-940f-4f7350b4b65f",
   "superdioId": null,
-  "od": "2026-03-02",
-  "do": "2026-06-30",
+  "od": "2025-12-01",
+  "do": "2026-10-31",
   "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "kostincova-2",
-  "name": "Kostincova",
-  "akce": "Jiné",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "2. 3. 2026 – 30. 6. 2026",
-  "ways": [
-   [
-    [
-     49.71593,
-     13.4027
-    ],
-    [
-     49.71527,
-     13.40329
-    ],
-    [
-     49.71523,
-     13.40333
-    ],
-    [
-     49.71517,
-     13.40339
-    ],
-    [
-     49.71422,
-     13.40427
-    ],
-    [
-     49.71391,
-     13.40455
-    ],
-    [
-     49.71351,
-     13.40523
-    ],
-    [
-     49.71312,
-     13.40648
-    ],
-    [
-     49.71284,
-     13.40737
-    ]
-   ],
-   [
-    [
-     49.71284,
-     13.40737
-    ],
-    [
-     49.71243,
-     13.4078
-    ],
-    [
-     49.71196,
-     13.40868
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Kostincova, Plzeň 2-Slovany, omezení, stavební práce, Od 02.03.2026 09:00 Do 30.06.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "jiné",
-  "zdroj": "JSDI",
-  "jsdiId": "f0fe51c6-ef6a-4455-a39a-bc3e33bf116c",
-  "superdioId": null,
-  "od": "2026-03-02",
-  "do": "2026-06-30",
-  "severity": "minor",
-  "geomTier": 4
+  "geomTier": 1
  },
  {
   "id": "28-rijna",
@@ -1187,67 +991,263 @@
   "geomTier": 5
  },
  {
-  "id": "na-okraji",
-  "name": "Na Okraji",
-  "akce": "Uzavřená silnice",
+  "id": "jatecni",
+  "name": "Jateční",
+  "akce": "Stavební práce",
   "state": "Probíhá",
   "status": "now",
   "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "1. 12. 2025 – 31. 10. 2026",
+  "oblast": "Plzeň 4",
+  "termin": "23. 2. 2026 – 30. 6. 2026",
   "ways": [
    [
     [
-     49.74679,
-     13.34603
+     49.75614,
+     13.40383
     ],
     [
-     49.74679,
-     13.34633
-    ]
-   ],
-   [
-    [
-     49.74679,
-     13.34575
+     49.75568,
+     13.4034
     ],
     [
-     49.74679,
-     13.34603
-    ]
-   ],
-   [
-    [
-     49.7468,
-     13.3454
+     49.75559,
+     13.40331
     ],
     [
-     49.74682,
-     13.3441
-    ]
-   ],
-   [
-    [
-     49.7468,
-     13.3454
+     49.75542,
+     13.40321
     ],
     [
-     49.74679,
-     13.34575
+     49.75537,
+     13.40318
+    ],
+    [
+     49.75522,
+     13.4031
+    ],
+    [
+     49.75452,
+     13.40291
+    ],
+    [
+     49.75427,
+     13.40286
+    ],
+    [
+     49.75353,
+     13.40269
+    ],
+    [
+     49.75304,
+     13.40258
+    ],
+    [
+     49.75281,
+     13.40253
+    ],
+    [
+     49.75263,
+     13.40249
+    ],
+    [
+     49.75261,
+     13.40248
+    ],
+    [
+     49.75214,
+     13.40237
+    ],
+    [
+     49.75208,
+     13.40236
+    ],
+    [
+     49.75189,
+     13.40231
+    ],
+    [
+     49.75173,
+     13.40227
+    ],
+    [
+     49.75141,
+     13.40219
+    ],
+    [
+     49.75075,
+     13.40205
+    ],
+    [
+     49.75067,
+     13.40205
+    ],
+    [
+     49.75061,
+     13.40207
     ]
    ]
   ],
   "point": false,
-  "popis": "ulice Na Okraji, Plzeň 3, uzavřeno, stavební práce, Od 01.12.2025 00:00 Do 31.10.2026 23:59, zjednosměrnění provozu v úseku od ulice Křimická k ulici Touškovská \n, jednosměrná uzavírka, Vydal: ÚMO Plzeň 03",
+  "popis": "silnice II/233 (ulice Jateční), Plzeň 4, stavební práce, zúžené jízdní pruhy, Od 23.02.2026 08:00 Do 30.06.2026 23:59, bezpečnostní zábor při výstavbě cyklostezky a VO, označení pracovního místa - zúžení, částečná uzavírka vozovky, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "65341e6c-6d03-4464-86c6-9f27b1074d9e",
+  "superdioId": null,
+  "od": "2026-02-23",
+  "do": "2026-06-30",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "kostincova",
+  "name": "Kostincova",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "2. 3. 2026 – 30. 6. 2026",
+  "ways": [
+   [
+    [
+     49.71593,
+     13.4027
+    ],
+    [
+     49.71527,
+     13.40329
+    ],
+    [
+     49.71523,
+     13.40333
+    ],
+    [
+     49.71517,
+     13.40339
+    ],
+    [
+     49.71422,
+     13.40427
+    ],
+    [
+     49.71391,
+     13.40455
+    ],
+    [
+     49.71351,
+     13.40523
+    ],
+    [
+     49.71312,
+     13.40648
+    ],
+    [
+     49.71284,
+     13.40737
+    ]
+   ],
+   [
+    [
+     49.71284,
+     13.40737
+    ],
+    [
+     49.71243,
+     13.4078
+    ],
+    [
+     49.71196,
+     13.40868
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Kostincova, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 02.03.2026 00:00 Do 30.06.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
   "typ": "Uzavírka a omezení",
   "subtyp": "uzavřená silnice",
   "zdroj": "JSDI",
-  "jsdiId": "e652cffb-78c8-45d9-940f-4f7350b4b65f",
+  "jsdiId": "f0fe51c6-ef6a-4455-a39a-bc3e33bf116c",
   "superdioId": null,
-  "od": "2025-12-01",
-  "do": "2026-10-31",
+  "od": "2026-03-02",
+  "do": "2026-06-30",
   "severity": "major",
-  "geomTier": 1
+  "geomTier": 4
+ },
+ {
+  "id": "kostincova-2",
+  "name": "Kostincova",
+  "akce": "Jiné",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "2. 3. 2026 – 30. 6. 2026",
+  "ways": [
+   [
+    [
+     49.71593,
+     13.4027
+    ],
+    [
+     49.71527,
+     13.40329
+    ],
+    [
+     49.71523,
+     13.40333
+    ],
+    [
+     49.71517,
+     13.40339
+    ],
+    [
+     49.71422,
+     13.40427
+    ],
+    [
+     49.71391,
+     13.40455
+    ],
+    [
+     49.71351,
+     13.40523
+    ],
+    [
+     49.71312,
+     13.40648
+    ],
+    [
+     49.71284,
+     13.40737
+    ]
+   ],
+   [
+    [
+     49.71284,
+     13.40737
+    ],
+    [
+     49.71243,
+     13.4078
+    ],
+    [
+     49.71196,
+     13.40868
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Kostincova, Plzeň 2-Slovany, omezení, stavební práce, Od 02.03.2026 09:00 Do 30.06.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "jiné",
+  "zdroj": "JSDI",
+  "jsdiId": "f0fe51c6-ef6a-4455-a39a-bc3e33bf116c",
+  "superdioId": null,
+  "od": "2026-03-02",
+  "do": "2026-06-30",
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "hluboka",
@@ -2248,6 +2248,285 @@
   "do": "2026-12-20",
   "severity": "minor",
   "geomTier": 1
+ },
+ {
+  "id": "klatovska-trida",
+  "name": "Klatovská třída",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "1. 1. 2026 – 30. 6. 2026",
+  "ways": [
+   [
+    [
+     49.74283,
+     13.37211
+    ],
+    [
+     49.74333,
+     13.37226
+    ],
+    [
+     49.74402,
+     13.37249
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, stavební práce, pravý jízdní pruh uzavřen, Od 01.01.2026 00:00 Do 30.06.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská) v Plzni,  – oprava objektu č. p. 289/19, které si vyžádají zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr do centra města (Bory-Lochotín) v rámci  akce „Rekonstrukce Klatovská 19 Plzeň“, , Objížďka - bez rozlišení: silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "86ab3138-d841-44b6-af0e-bf1f110bbf20",
+  "superdioId": null,
+  "od": "2026-01-01",
+  "do": "2026-06-30",
+  "severity": "minor",
+  "geomTier": 1
+ },
+ {
+  "id": "za-vodarnou",
+  "name": "Za Vodárnou",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "4. 5. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71975,
+     13.40424
+    ],
+    [
+     49.71971,
+     13.40414
+    ],
+    [
+     49.71942,
+     13.40341
+    ],
+    [
+     49.71939,
+     13.40333
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Za Vodárnou, mezi křižovatkami ulic Zelenohorská a Plzeňská cesta, Plzeň 2-Slovany, Plzeň, , Od 04.05.2026 00:00, Do 31.08.2026 23:59, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "6b4b0782-00dd-45d4-97c3-7a9e3b3d2bdb",
+  "superdioId": null,
+  "od": "2026-05-04",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 3
+ },
+ {
+  "id": "zamecnicka",
+  "name": "Zámečnická",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "20. 4. 2026 – 31. 7. 2026",
+  "ways": [
+   [
+    [
+     49.73926,
+     13.3695
+    ],
+    [
+     49.73926,
+     13.36944
+    ],
+    [
+     49.73928,
+     13.36897
+    ],
+    [
+     49.73928,
+     13.3689
+    ],
+    [
+     49.73919,
+     13.36696
+    ],
+    [
+     49.73918,
+     13.36676
+    ]
+   ],
+   [
+    [
+     49.73915,
+     13.3709
+    ],
+    [
+     49.73916,
+     13.37083
+    ],
+    [
+     49.73918,
+     13.37061
+    ]
+   ],
+   [
+    [
+     49.73926,
+     13.3695
+    ],
+    [
+     49.73925,
+     13.36956
+    ],
+    [
+     49.73918,
+     13.37061
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Zámečnická, Plzeň 3, uzavřeno, práce na inženýrských sítích, Od 20.04.2026 08:00 Do 31.07.2026 23:59, Zámečnická ulice v úseku od křižovatky s ulicí Hřímalého ke křižovatce s ulicí Mánesova , Vydal: ÚMO Plzeň 03",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "b2d8799f-3316-4267-9d46-2f3ea549bd10",
+  "superdioId": null,
+  "od": "2026-04-20",
+  "do": "2026-07-31",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "lochotinska",
+  "name": "Lochotínská",
+  "akce": "Zúžené pruhy",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "28. 4. 2026 – 30. 9. 2026",
+  "ways": [
+   [
+    [
+     49.75692,
+     13.3714
+    ],
+    [
+     49.75699,
+     13.37139
+    ],
+    [
+     49.75737,
+     13.3714
+    ],
+    [
+     49.75743,
+     13.37138
+    ],
+    [
+     49.7575,
+     13.37133
+    ],
+    [
+     49.75755,
+     13.37125
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "místní komunikace, ulice Lochotínská, Plzeň 1, zúžené jízdní pruhy, Od 28.04.2026 07:00 Do 30.09.2026 23:59, z důvodu vytvoření koridoru pro chodce v šířce min. 1,5 m\n, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "zúžené pruhy",
+  "zdroj": "JSDI",
+  "jsdiId": "76ea2ef1-0e74-4d44-b25f-af6682a1aeb5",
+  "superdioId": null,
+  "od": "2026-04-28",
+  "do": "2026-09-30",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "kvetna-4",
+  "name": "Květná",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "6. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.73261,
+     13.38715
+    ],
+    [
+     49.73252,
+     13.38724
+    ]
+   ],
+   [
+    [
+     49.73252,
+     13.38724
+    ],
+    [
+     49.73223,
+     13.38749
+    ],
+    [
+     49.73206,
+     13.38765
+    ],
+    [
+     49.73172,
+     13.38794
+    ],
+    [
+     49.73166,
+     13.38799
+    ],
+    [
+     49.73161,
+     13.38804
+    ],
+    [
+     49.73087,
+     13.38866
+    ],
+    [
+     49.73083,
+     13.3887
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "c89ea653-ff54-4d9b-a06b-92f4feb4df90",
+  "superdioId": null,
+  "od": "2026-05-06",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
  },
  {
   "id": "stikova",
@@ -4289,704 +4568,6 @@
   "do": "2026-07-03",
   "severity": "major",
   "geomTier": 5
- },
- {
-  "id": "klatovska-trida",
-  "name": "Klatovská třída",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "1. 1. 2026 – 30. 6. 2026",
-  "ways": [
-   [
-    [
-     49.74283,
-     13.37211
-    ],
-    [
-     49.74333,
-     13.37226
-    ],
-    [
-     49.74402,
-     13.37249
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, stavební práce, pravý jízdní pruh uzavřen, Od 01.01.2026 00:00 Do 30.06.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská) v Plzni,  – oprava objektu č. p. 289/19, které si vyžádají zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr do centra města (Bory-Lochotín) v rámci  akce „Rekonstrukce Klatovská 19 Plzeň“, , Objížďka - bez rozlišení: silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "86ab3138-d841-44b6-af0e-bf1f110bbf20",
-  "superdioId": null,
-  "od": "2026-01-01",
-  "do": "2026-06-30",
-  "severity": "minor",
-  "geomTier": 1
- },
- {
-  "id": "za-vodarnou",
-  "name": "Za Vodárnou",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "4. 5. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71975,
-     13.40424
-    ],
-    [
-     49.71971,
-     13.40414
-    ],
-    [
-     49.71942,
-     13.40341
-    ],
-    [
-     49.71939,
-     13.40333
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Za Vodárnou, mezi křižovatkami ulic Zelenohorská a Plzeňská cesta, Plzeň 2-Slovany, Plzeň, , Od 04.05.2026 00:00, Do 31.08.2026 23:59, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "6b4b0782-00dd-45d4-97c3-7a9e3b3d2bdb",
-  "superdioId": null,
-  "od": "2026-05-04",
-  "do": "2026-08-31",
-  "severity": "major",
-  "geomTier": 3
- },
- {
-  "id": "zamecnicka",
-  "name": "Zámečnická",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "20. 4. 2026 – 31. 7. 2026",
-  "ways": [
-   [
-    [
-     49.73926,
-     13.3695
-    ],
-    [
-     49.73926,
-     13.36944
-    ],
-    [
-     49.73928,
-     13.36897
-    ],
-    [
-     49.73928,
-     13.3689
-    ],
-    [
-     49.73919,
-     13.36696
-    ],
-    [
-     49.73918,
-     13.36676
-    ]
-   ],
-   [
-    [
-     49.73915,
-     13.3709
-    ],
-    [
-     49.73916,
-     13.37083
-    ],
-    [
-     49.73918,
-     13.37061
-    ]
-   ],
-   [
-    [
-     49.73926,
-     13.3695
-    ],
-    [
-     49.73925,
-     13.36956
-    ],
-    [
-     49.73918,
-     13.37061
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Zámečnická, Plzeň 3, uzavřeno, práce na inženýrských sítích, Od 20.04.2026 08:00 Do 31.07.2026 23:59, Zámečnická ulice v úseku od křižovatky s ulicí Hřímalého ke křižovatce s ulicí Mánesova , Vydal: ÚMO Plzeň 03",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "b2d8799f-3316-4267-9d46-2f3ea549bd10",
-  "superdioId": null,
-  "od": "2026-04-20",
-  "do": "2026-07-31",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "lochotinska",
-  "name": "Lochotínská",
-  "akce": "Zúžené pruhy",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "28. 4. 2026 – 30. 9. 2026",
-  "ways": [
-   [
-    [
-     49.75692,
-     13.3714
-    ],
-    [
-     49.75699,
-     13.37139
-    ],
-    [
-     49.75737,
-     13.3714
-    ],
-    [
-     49.75743,
-     13.37138
-    ],
-    [
-     49.7575,
-     13.37133
-    ],
-    [
-     49.75755,
-     13.37125
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "místní komunikace, ulice Lochotínská, Plzeň 1, zúžené jízdní pruhy, Od 28.04.2026 07:00 Do 30.09.2026 23:59, z důvodu vytvoření koridoru pro chodce v šířce min. 1,5 m\n, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "zúžené pruhy",
-  "zdroj": "JSDI",
-  "jsdiId": "76ea2ef1-0e74-4d44-b25f-af6682a1aeb5",
-  "superdioId": null,
-  "od": "2026-04-28",
-  "do": "2026-09-30",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "kvetna-4",
-  "name": "Květná",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "6. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.73261,
-     13.38715
-    ],
-    [
-     49.73252,
-     13.38724
-    ]
-   ],
-   [
-    [
-     49.73252,
-     13.38724
-    ],
-    [
-     49.73223,
-     13.38749
-    ],
-    [
-     49.73206,
-     13.38765
-    ],
-    [
-     49.73172,
-     13.38794
-    ],
-    [
-     49.73166,
-     13.38799
-    ],
-    [
-     49.73161,
-     13.38804
-    ],
-    [
-     49.73087,
-     13.38866
-    ],
-    [
-     49.73083,
-     13.3887
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "c89ea653-ff54-4d9b-a06b-92f4feb4df90",
-  "superdioId": null,
-  "od": "2026-05-06",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "alej-svobody",
-  "name": "alej Svobody",
-  "akce": "Kyvadlová doprava",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "20. 6. 2026 – 20. 6. 2026",
-  "ways": [
-   [
-    [
-     49.76632,
-     13.37321
-    ],
-    [
-     49.76636,
-     13.3731
-    ],
-    [
-     49.76637,
-     13.37308
-    ],
-    [
-     49.76638,
-     13.37306
-    ],
-    [
-     49.76642,
-     13.37294
-    ]
-   ],
-   [
-    [
-     49.76437,
-     13.37784
-    ],
-    [
-     49.7643,
-     13.37805
-    ],
-    [
-     49.76428,
-     13.3781
-    ],
-    [
-     49.76424,
-     13.37824
-    ],
-    [
-     49.76418,
-     13.37845
-    ]
-   ],
-   [
-    [
-     49.76642,
-     13.37294
-    ],
-    [
-     49.76648,
-     13.37276
-    ],
-    [
-     49.76679,
-     13.37196
-    ],
-    [
-     49.76688,
-     13.37172
-    ],
-    [
-     49.76695,
-     13.37151
-    ],
-    [
-     49.767,
-     13.3713
-    ],
-    [
-     49.76703,
-     13.37119
-    ]
-   ],
-   [
-    [
-     49.76634,
-     13.37286
-    ],
-    [
-     49.76629,
-     13.37298
-    ],
-    [
-     49.76628,
-     13.373
-    ],
-    [
-     49.76628,
-     13.37302
-    ],
-    [
-     49.76623,
-     13.37312
-    ]
-   ],
-   [
-    [
-     49.76652,
-     13.37118
-    ],
-    [
-     49.76678,
-     13.3714
-    ],
-    [
-     49.76687,
-     13.37146
-    ]
-   ],
-   [
-    [
-     49.76564,
-     13.37465
-    ],
-    [
-     49.76571,
-     13.37472
-    ]
-   ],
-   [
-    [
-     49.76428,
-     13.3784
-    ],
-    [
-     49.76437,
-     13.37811
-    ],
-    [
-     49.76445,
-     13.3779
-    ],
-    [
-     49.76492,
-     13.3767
-    ],
-    [
-     49.76571,
-     13.37472
-    ],
-    [
-     49.76624,
-     13.37343
-    ],
-    [
-     49.76626,
-     13.37339
-    ],
-    [
-     49.76632,
-     13.37321
-    ]
-   ],
-   [
-    [
-     49.76563,
-     13.37166
-    ],
-    [
-     49.76567,
-     13.37171
-    ],
-    [
-     49.76582,
-     13.37189
-    ],
-    [
-     49.76588,
-     13.37185
-    ],
-    [
-     49.766,
-     13.37186
-    ],
-    [
-     49.76612,
-     13.37196
-    ],
-    [
-     49.76622,
-     13.37196
-    ],
-    [
-     49.76629,
-     13.37194
-    ],
-    [
-     49.76635,
-     13.37187
-    ],
-    [
-     49.76639,
-     13.37181
-    ],
-    [
-     49.76641,
-     13.3717
-    ],
-    [
-     49.76647,
-     13.37142
-    ],
-    [
-     49.76652,
-     13.37118
-    ]
-   ],
-   [
-    [
-     49.76652,
-     13.37118
-    ],
-    [
-     49.76656,
-     13.37087
-    ]
-   ],
-   [
-    [
-     49.76476,
-     13.37656
-    ],
-    [
-     49.76465,
-     13.37647
-    ],
-    [
-     49.76453,
-     13.37641
-    ],
-    [
-     49.76443,
-     13.37637
-    ],
-    [
-     49.76394,
-     13.37624
-    ],
-    [
-     49.76384,
-     13.37622
-    ],
-    [
-     49.76365,
-     13.37618
-    ],
-    [
-     49.76344,
-     13.37614
-    ],
-    [
-     49.7633,
-     13.37612
-    ],
-    [
-     49.76319,
-     13.37612
-    ],
-    [
-     49.76303,
-     13.37613
-    ]
-   ],
-   [
-    [
-     49.76702,
-     13.37092
-    ],
-    [
-     49.76694,
-     13.37123
-    ],
-    [
-     49.76693,
-     13.37126
-    ],
-    [
-     49.76687,
-     13.37146
-    ],
-    [
-     49.7668,
-     13.37166
-    ],
-    [
-     49.76673,
-     13.37186
-    ],
-    [
-     49.76643,
-     13.37265
-    ],
-    [
-     49.76641,
-     13.37269
-    ],
-    [
-     49.76634,
-     13.37286
-    ]
-   ],
-   [
-    [
-     49.76452,
-     13.37745
-    ],
-    [
-     49.76437,
-     13.37784
-    ]
-   ],
-   [
-    [
-     49.76623,
-     13.37312
-    ],
-    [
-     49.76616,
-     13.3733
-    ],
-    [
-     49.76596,
-     13.37382
-    ],
-    [
-     49.76564,
-     13.37465
-    ],
-    [
-     49.76485,
-     13.37663
-    ],
-    [
-     49.76452,
-     13.37745
-    ]
-   ],
-   [
-    [
-     49.76339,
-     13.37479
-    ],
-    [
-     49.76319,
-     13.37421
-    ],
-    [
-     49.76302,
-     13.37372
-    ]
-   ],
-   [
-    [
-     49.76365,
-     13.37618
-    ],
-    [
-     49.76367,
-     13.37604
-    ],
-    [
-     49.76367,
-     13.37591
-    ],
-    [
-     49.76368,
-     13.37577
-    ],
-    [
-     49.76366,
-     13.37557
-    ],
-    [
-     49.76363,
-     13.37547
-    ],
-    [
-     49.76339,
-     13.37479
-    ]
-   ],
-   [
-    [
-     49.76492,
-     13.3767
-    ],
-    [
-     49.76485,
-     13.37663
-    ],
-    [
-     49.76476,
-     13.37656
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice alej Svobody, Plzeň 1, Plzeň, provoz převeden do protisměru, oprava povrchu vozovky, Od 20.06.2026 7:00 Do 20.06.2026 17:00, uzavírka dvou jízdních pruhů vozovky ve směru k FN Plzeň Lochotín, v úseku mezi odbočkou    k čerpací stanici OMV a odbočkou k objektu Lékařské fakulty; provoz bude převeden do dvou jízdních pruhů v protilehlé části komunikace ve směru od FN Plzeň do centra, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "kyvadlová doprava",
-  "zdroj": "JSDI",
-  "jsdiId": "e6c953ef-9779-4e7a-8f50-c79926ce6c02",
-  "superdioId": null,
-  "od": "2026-06-20",
-  "do": "2026-06-20",
-  "severity": "medium",
-  "geomTier": 4
  },
  {
   "id": "masarykova",
