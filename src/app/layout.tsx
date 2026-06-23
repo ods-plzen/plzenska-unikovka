@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { AreaProvider } from "@/components/AreaProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FeedbackWidget } from "@/components/FeedbackWidget";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -75,6 +76,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </AreaProvider>
+        <FeedbackWidget />
         <Analytics />
       </body>
     </html>
