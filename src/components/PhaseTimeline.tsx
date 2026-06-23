@@ -1,4 +1,5 @@
 import type { Phase } from "@/lib/types";
+import { resolvePhases } from "@/lib/resolvePhases";
 
 const DOT: Record<string, string> = {
   done: "var(--ods-green)",
@@ -7,9 +8,10 @@ const DOT: Record<string, string> = {
 };
 
 export function PhaseTimeline({ phases }: { phases: Phase[] }) {
+  const resolved = resolvePhases(phases);
   return (
     <ol className="relative ml-2 border-l-2 border-line">
-      {phases.map(([label, when, state], i) => (
+      {resolved.map(([label, when, state], i) => (
         <li key={i} className="relative pb-5 pl-5 last:pb-0">
           <span
             className="absolute -left-[7px] top-1 h-3 w-3 rounded-full ring-2 ring-white"
