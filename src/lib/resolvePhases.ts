@@ -29,32 +29,44 @@ function parseCzDate(s: string): Date | null {
   return null;
 }
 
-function parseRange(when: string): { start: Date | null; end: Date | null } {
+interface PhaseRange {
+  start: Date | null;
+  end: Date | null;
+  /** Milestone = jedno datum bez "od"/"do" prefixu (např. "Dokončení 11. 8. 2026").
+   *  Mezník, ne aktivní interval — nikdy state="now". */
+  milestone: boolean;
+}
+
+function parseRange(when: string): PhaseRange {
   const cleaned = when.replace(/\s+/g, " ").trim();
 
   const range = cleaned.match(
     /(\d{1,2}\.\s*\d{1,2}\.\s*\d{4})\s*[–-]\s*(\d{1,2}\.\s*\d{1,2}\.\s*\d{4})/,
   );
   if (range) {
-    return { start: parseCzDate(range[1]), end: parseCzDate(range[2]) };
+    return {
+      start: parseCzDate(range[1]),
+      end: parseCzDate(range[2]),
+      milestone: false,
+    };
   }
 
   const od = cleaned.match(/od\s+(.+)/i);
   if (od) {
-    return { start: parseCzDate(od[1]), end: null };
+    return { start: parseCzDate(od[1]), end: null, milestone: false };
   }
 
   const doMatch = cleaned.match(/do\s+(.+)/i);
   if (doMatch) {
-    return { start: null, end: parseCzDate(doMatch[1]) };
+    return { start: null, end: parseCzDate(doMatch[1]), milestone: false };
   }
 
   const single = parseCzDate(cleaned);
   if (single) {
-    return { start: null, end: single };
+    return { start: null, end: single, milestone: true };
   }
 
-  return { start: null, end: null };
+  return { start: null, end: null, milestone: false };
 }
 
 /**
@@ -79,6 +91,13 @@ export function resolvePhases(phases: Phase[], today: Date = new Date()): Phase[
     }
 
     let state: "done" | "now" | "" = "";
+
+    // Milestone = jen datum bez "od"/"do" → mezník (Dokončení, Otevření, atd.).
+    // Pokud je v minulosti = "done", jinak upcoming (NIKDY now).
+    if (range.milestone) {
+      if (end !== null && end < t) state = "done";
+      return [label, when, state] as Phase;
+    }
 
     if (end !== null && end < t) {
       state = "done";
