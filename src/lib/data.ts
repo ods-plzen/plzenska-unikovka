@@ -8,6 +8,7 @@ import closuresRaw from "@/data/closures.json";
 import extrasRaw from "@/data/extras.json";
 import pmdpRaw from "@/data/pmdp.json";
 import restrictedRoadsRaw from "@/data/restricted-roads.json";
+import { getSupabase } from "@/lib/supabase";
 
 // JSON přichází se širšími typy (string místo union, number[] místo n-tic),
 // proto převádíme přes unknown na naše doménové typy.
@@ -72,3 +73,57 @@ export const STATUS_LABEL: Record<string, string> = {
   plan: "Plánováno",
   done: "Hotovo",
 };
+
+// ─── Supabase live overlay ───────────────────────────────────────────────
+//
+// extras.json je build-time fallback (vždy commitnut do gitu, deploy ho má).
+// getExtra(id) zkusí nejdřív Supabase tabulku closure_extras (live editorial
+// updaty bez deploye), pokud selže nebo NULL → spadne na statický extras.json.
+
+export async function getExtra(id: string): Promise<ClosureExtra | undefined> {
+  const supabase = getSupabase();
+  if (!supabase) return extras[id];
+  try {
+    const { data, error } = await supabase
+      .from("closure_extras")
+      .select("payload")
+      .eq("id", id)
+      .maybeSingle();
+    if (error) {
+      console.warn("[supabase] getExtra fallback to static:", error.message);
+      return extras[id];
+    }
+    if (data?.payload) return data.payload as ClosureExtra;
+  } catch (e) {
+    console.warn("[supabase] getExtra threw, fallback:", e);
+  }
+  return extras[id];
+}
+
+export async function getMhdInfo(
+  closureId: string,
+): Promise<MhdInfo | undefined> {
+  const fromPmdp = pmdp?.perClosure?.[closureId];
+  const extra = await getExtra(closureId);
+  const fromExtras = extra?.mhdInfo;
+  if (!fromPmdp && !fromExtras) return undefined;
+  if (!fromPmdp) return fromExtras;
+  if (!fromExtras) return fromPmdp;
+  return {
+    summary: fromExtras.summary ?? fromPmdp.summary,
+    reroutes:
+      fromExtras.reroutes && fromExtras.reroutes.length > 0
+        ? fromExtras.reroutes
+        : fromPmdp.reroutes,
+    tempStops:
+      fromExtras.tempStops && fromExtras.tempStops.length > 0
+        ? fromExtras.tempStops
+        : fromPmdp.tempStops,
+    notes:
+      fromExtras.notes && fromExtras.notes.length > 0
+        ? fromExtras.notes
+        : fromPmdp.notes,
+    sourceUrl: fromExtras.sourceUrl ?? fromPmdp.sourceUrl,
+    sourceLabel: fromExtras.sourceLabel ?? fromPmdp.sourceLabel,
+  };
+}

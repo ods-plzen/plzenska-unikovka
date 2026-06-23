@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { closures, closureById, extraFor, mhdInfoFor } from "@/lib/data";
+import { closures, closureById, getExtra, getMhdInfo } from "@/lib/data";
 import { ClosureMap } from "@/components/map/ClosureMap";
 import { PhaseTimeline } from "@/components/PhaseTimeline";
 import { StatusBadge } from "@/components/StatusBadge";
@@ -18,6 +18,11 @@ import { humanizeJsdi } from "@/lib/jsdiHumanize";
 export function generateStaticParams() {
   return closures.map((c) => ({ id: c.id }));
 }
+
+// ISR — když někdo otevře detail a poslední build je starší než 60s,
+// Next.js re-renderuje na pozadí (next request dostane fresh). Tím
+// se Supabase edity (closure_extras) propagují bez deploye.
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
@@ -48,8 +53,10 @@ export default async function Page({
   const c = closureById(id);
   if (!c) notFound();
 
-  const extra = extraFor(c.id);
-  const mhd = mhdInfoFor(c.id);
+  const [extra, mhd] = await Promise.all([
+    getExtra(c.id),
+    getMhdInfo(c.id),
+  ]);
   const mid = midpoint(c);
   const navUrl = mid
     ? `https://www.google.com/maps/search/?api=1&query=${mid[0]},${mid[1]}`
