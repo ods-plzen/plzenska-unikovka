@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { closures, closureById, extraFor } from "@/lib/data";
+import { closures, closureById, getExtra } from "@/lib/data";
 
 export const alt = "Uzavírka — Plzeň přehledně";
 export const size = { width: 1200, height: 630 };
@@ -24,7 +24,7 @@ export default async function Image({
 }) {
   const { id } = await params;
   const c = closureById(id);
-  const extra = c ? extraFor(c.id) : undefined;
+  const extra = c ? await getExtra(c.id) : undefined;
   const st = c ? STATUS[c.status] ?? STATUS.now : STATUS.now;
 
   return new ImageResponse(
