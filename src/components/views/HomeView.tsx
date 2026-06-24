@@ -82,7 +82,11 @@ function impactScore(c: Closure): number {
   );
 }
 
-export function HomeView() {
+export function HomeView({
+  roadmapSlot,
+}: {
+  roadmapSlot?: React.ReactNode;
+}) {
   const visible = useMemo(() => {
     const seen = new Set<string>();
     return closures.filter((c) => {
@@ -236,6 +240,8 @@ export function HomeView() {
           ))}
         </Section>
       )}
+
+      {roadmapSlot}
 
       {/* ────────  FOOTER MODE LINKS  ──────── */}
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-none border-2 border-ink bg-ink/90">

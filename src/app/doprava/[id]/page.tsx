@@ -7,6 +7,7 @@ import { PhaseTimeline } from "@/components/PhaseTimeline";
 import { StatusBadge } from "@/components/StatusBadge";
 import { WatchButton } from "@/components/WatchButton";
 import { MhdBlock } from "@/components/MhdBlock";
+import { FeedbackInlineCta } from "@/components/FeedbackInlineCta";
 import {
   DetourSteps,
   KeyNumbers,
@@ -101,6 +102,8 @@ export default async function Page({
       {extra?.keyNumbers && <KeyNumbers items={extra.keyNumbers} />}
 
       <ClosureMap closures={[c]} height={360} />
+
+      <FeedbackInlineCta context={c.name} />
 
       {extra?.scope && <ScopeIconsRow items={extra.scope} />}
 
