@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-06-22T10:37:04+00:00",
+ "snapshot": "2026-06-24T08:21:10+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -94,17 +94,6 @@
     "202"
    ],
    "startDate": "2026-06-29",
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "obnoveni-zajizdeni-linky-51-do-sedlce-od-13-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4274/obnoveni-zajizdeni-linky-51-do-sedlce-od-13-6-2026/",
-   "title": "Obnovení zajíždění linky 51 do Sedlce od 13. 6. 2026",
-   "lines": [
-    "51"
-   ],
-   "startDate": "2026-06-13",
    "endDate": null,
    "matchedClosure": null
   },
