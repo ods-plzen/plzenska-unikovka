@@ -27,8 +27,19 @@ export function FeedbackWidget({ closureId }: { closureId?: string }) {
         setState({ kind: "closed" });
       }
     }
+    function onOpen() {
+      setState((s) =>
+        s.kind === "closed"
+          ? { kind: "open", message: "", email: "", notify: false, sending: false, error: null }
+          : s,
+      );
+    }
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener("plzu:open-feedback", onOpen);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("plzu:open-feedback", onOpen);
+    };
   }, [state.kind]);
 
   async function submit() {

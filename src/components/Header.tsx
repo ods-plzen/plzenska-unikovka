@@ -45,6 +45,14 @@ export function Header() {
           >
             Seznam
           </Link>
+          <Link
+            href="/roadmap"
+            className="ml-1 inline-flex items-center gap-1 rounded-full bg-sky/15 px-2.5 py-1 text-sky transition-colors hover:bg-sky/25 sm:ml-2 sm:px-3"
+          >
+            <span aria-hidden>✦</span>
+            <span className="hidden xs:inline sm:inline">Hlasování</span>
+            <span className="xs:hidden sm:hidden">Roadmap</span>
+          </Link>
         </nav>
       </div>
     </header>
