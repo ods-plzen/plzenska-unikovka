@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Oswald, Libre_Franklin, Newsreader } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { Suspense } from "react";
 import { AreaProvider } from "@/components/AreaProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FeedbackWidget } from "@/components/FeedbackWidget";
+import { AnnouncementBar } from "@/components/AnnouncementBar";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -70,6 +72,9 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <AreaProvider>
+          <Suspense fallback={null}>
+            <AnnouncementBar />
+          </Suspense>
           <Header />
           <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
             {children}

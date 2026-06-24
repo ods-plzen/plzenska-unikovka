@@ -69,6 +69,9 @@ export function Footer() {
           <Link href="/roadmap" className="hover:text-sky">
             Roadmap
           </Link>
+          <Link href="/zmeny" className="hover:text-sky">
+            Co jsme změnili
+          </Link>
           <Link href="/media-kit" className="hover:text-sky">
             Press kit
           </Link>
