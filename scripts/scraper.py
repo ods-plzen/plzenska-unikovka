@@ -6,7 +6,12 @@ Spouští se z GitHub Action (cron). Závislosti: jen stdlib.
 """
 import json, re, html, urllib.request, urllib.parse, math, os, time, sys
 
-UA = {'User-Agent': 'PlzenPrehledne/1.0 (+https://plzen-prehledne.vercel.app)'}
+UA = {
+    'User-Agent': (
+        'PlzenskaUnikovka/2.0 '
+        '(+https://plzenskaunikovka.cz/zdroje-a-licence; info@plzenskaunikovka.cz)'
+    ),
+}
 OVERPASS = "https://overpass-api.de/api/interpreter"
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 

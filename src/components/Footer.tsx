@@ -72,6 +72,9 @@ export function Footer() {
           <Link href="/zmeny" className="hover:text-sky">
             Co jsme změnili
           </Link>
+          <Link href="/zdroje-a-licence" className="hover:text-sky">
+            Zdroje a licence
+          </Link>
           <Link href="/media-kit" className="hover:text-sky">
             Press kit
           </Link>

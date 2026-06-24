@@ -24,9 +24,11 @@ import urllib.request
 from typing import Iterable
 
 UA = {
+    # Identifikujeme se jako bot v "compatible" formátu (vzor Googlebot).
+    # PMDP server tak pozná, kdo požadavek dělá a má kontakt v případě potíží.
     "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+        "Mozilla/5.0 (compatible; PlzenskaUnikovka/2.0; "
+        "+https://plzenskaunikovka.cz/zdroje-a-licence; info@plzenskaunikovka.cz)"
     ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "cs-CZ,cs;q=0.9,en;q=0.5",
