@@ -23,6 +23,9 @@ import urllib.error
 import urllib.request
 from typing import Iterable
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _robots import assert_allowed  # noqa: E402
+
 UA = {
     # Identifikujeme se jako bot v "compatible" formátu (vzor Googlebot).
     # PMDP server tak pozná, kdo požadavek dělá a má kontakt v případě potíží.
@@ -54,6 +57,7 @@ def ascii_lower(s: str) -> str:
 
 
 def get(url: str, retries: int = 3) -> str:
+    assert_allowed(url, UA["User-Agent"])
     req = urllib.request.Request(url, headers=UA)
     last_exc: Exception | None = None
     for attempt in range(retries):

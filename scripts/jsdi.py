@@ -26,6 +26,9 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _robots import assert_allowed  # noqa: E402
+
 UA = {
     "User-Agent": (
         "PlzenskaUnikovka/2.0 "
@@ -101,6 +104,7 @@ def slug(s: str) -> str:
 
 
 def get(url: str, retries: int = 3) -> dict:
+    assert_allowed(url, UA["User-Agent"])
     req = urllib.request.Request(url, headers=UA)
     last_exc: Exception | None = None
     for attempt in range(retries):
@@ -299,6 +303,7 @@ def fetch_plzen_streets() -> dict[str, list[list[list[float]]]]:
         'out geom;'
     )
     try:
+        assert_allowed(OVERPASS, UA["User-Agent"])
         body = urllib.parse.urlencode({"data": q}).encode()
         req = urllib.request.Request(
             OVERPASS, data=body, headers={**UA, "Accept": "application/json"}, method="POST"
@@ -567,6 +572,7 @@ def fetch_plzen_doprava_table() -> list[dict]:
     Pozn.: plzen.eu redirectne na www → https, urllib follow defaultně OK
     pro http→https sub-domain redirecty (na non-www path) v Pythonu 3.13.
     """
+    assert_allowed(PLZEN_DOPRAVA_URL, UA["User-Agent"])
     req = urllib.request.Request(
         PLZEN_DOPRAVA_URL,
         headers={

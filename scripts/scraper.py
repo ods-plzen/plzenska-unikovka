@@ -6,6 +6,9 @@ Spouští se z GitHub Action (cron). Závislosti: jen stdlib.
 """
 import json, re, html, urllib.request, urllib.parse, math, os, time, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _robots import assert_allowed  # noqa: E402
+
 UA = {
     'User-Agent': (
         'PlzenskaUnikovka/2.0 '
@@ -16,9 +19,11 @@ OVERPASS = "https://overpass-api.de/api/interpreter"
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 
 def get(url):
+    assert_allowed(url, UA['User-Agent'])
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read().decode('utf-8','ignore')
 
 def overpass(qstr, tries=3):
+    assert_allowed(OVERPASS, UA['User-Agent'])
     for i in range(tries):
         try:
             data=urllib.parse.urlencode({'data':qstr}).encode()
