@@ -63,854 +63,6 @@
   "geomTier": 1
  },
  {
-  "id": "28-rijna",
-  "name": "28. října",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "4. 5. 2026 – 20. 12. 2026",
-  "ways": [
-   [
-    [
-     49.7772,
-     13.41008
-    ],
-    [
-     49.77748,
-     13.41004
-    ],
-    [
-     49.77867,
-     13.40991
-    ]
-   ],
-   [
-    [
-     49.77702,
-     13.41006
-    ],
-    [
-     49.7772,
-     13.41008
-    ]
-   ],
-   [
-    [
-     49.77594,
-     13.40935
-    ],
-    [
-     49.77629,
-     13.40962
-    ],
-    [
-     49.77662,
-     13.40986
-    ],
-    [
-     49.7768,
-     13.40998
-    ],
-    [
-     49.77691,
-     13.41003
-    ],
-    [
-     49.77702,
-     13.41006
-    ]
-   ],
-   [
-    [
-     49.77265,
-     13.40746
-    ],
-    [
-     49.77273,
-     13.40768
-    ],
-    [
-     49.77281,
-     13.4079
-    ]
-   ],
-   [
-    [
-     49.77281,
-     13.4079
-    ],
-    [
-     49.77291,
-     13.40805
-    ],
-    [
-     49.77296,
-     13.40811
-    ],
-    [
-     49.77301,
-     13.40815
-    ],
-    [
-     49.7731,
-     13.40821
-    ],
-    [
-     49.7734,
-     13.40833
-    ],
-    [
-     49.77391,
-     13.40853
-    ],
-    [
-     49.77433,
-     13.40868
-    ],
-    [
-     49.77482,
-     13.40887
-    ],
-    [
-     49.7756,
-     13.40916
-    ],
-    [
-     49.77567,
-     13.40919
-    ],
-    [
-     49.77576,
-     13.40923
-    ]
-   ],
-   [
-    [
-     49.77576,
-     13.40923
-    ],
-    [
-     49.77584,
-     13.40928
-    ],
-    [
-     49.77594,
-     13.40935
-    ]
-   ],
-   [
-    [
-     49.77247,
-     13.40696
-    ],
-    [
-     49.77259,
-     13.40727
-    ],
-    [
-     49.77265,
-     13.40746
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice II/231 (ulice 28. října), Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 ul. 28. října, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "803fce84-8a99-409f-b19e-5a8cac46260d",
-  "superdioId": null,
-  "od": "2026-05-04",
-  "do": "2026-12-20",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "na-roudne",
-  "name": "Na Roudné",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "4. 5. 2026 – 20. 12. 2026",
-  "ways": [
-   [
-    [
-     49.7687,
-     13.40209
-    ],
-    [
-     49.76879,
-     13.40225
-    ],
-    [
-     49.76898,
-     13.40262
-    ],
-    [
-     49.76927,
-     13.40321
-    ],
-    [
-     49.76943,
-     13.40356
-    ],
-    [
-     49.76947,
-     13.40367
-    ],
-    [
-     49.76952,
-     13.4038
-    ],
-    [
-     49.76955,
-     13.40391
-    ],
-    [
-     49.76959,
-     13.40405
-    ],
-    [
-     49.76963,
-     13.40421
-    ],
-    [
-     49.76979,
-     13.40489
-    ],
-    [
-     49.76983,
-     13.40507
-    ],
-    [
-     49.76987,
-     13.40526
-    ],
-    [
-     49.76989,
-     13.40544
-    ],
-    [
-     49.7699,
-     13.40552
-    ],
-    [
-     49.76991,
-     13.40561
-    ],
-    [
-     49.7699,
-     13.40575
-    ],
-    [
-     49.76989,
-     13.40589
-    ],
-    [
-     49.76983,
-     13.40619
-    ],
-    [
-     49.7698,
-     13.40634
-    ],
-    [
-     49.76979,
-     13.40648
-    ],
-    [
-     49.76979,
-     13.40658
-    ],
-    [
-     49.7698,
-     13.40666
-    ],
-    [
-     49.76983,
-     13.40677
-    ]
-   ],
-   [
-    [
-     49.76851,
-     13.40189
-    ],
-    [
-     49.7685,
-     13.40193
-    ],
-    [
-     49.7685,
-     13.40197
-    ],
-    [
-     49.7685,
-     13.402
-    ],
-    [
-     49.76851,
-     13.40204
-    ],
-    [
-     49.76852,
-     13.40207
-    ],
-    [
-     49.76854,
-     13.4021
-    ],
-    [
-     49.76856,
-     13.40212
-    ],
-    [
-     49.76859,
-     13.40214
-    ],
-    [
-     49.76861,
-     13.40214
-    ],
-    [
-     49.76864,
-     13.40214
-    ],
-    [
-     49.76866,
-     13.40213
-    ],
-    [
-     49.76868,
-     13.40211
-    ],
-    [
-     49.7687,
-     13.40209
-    ]
-   ],
-   [
-    [
-     49.76871,
-     13.40186
-    ],
-    [
-     49.76869,
-     13.40183
-    ],
-    [
-     49.76867,
-     13.40181
-    ],
-    [
-     49.76865,
-     13.4018
-    ],
-    [
-     49.76863,
-     13.40179
-    ]
-   ],
-   [
-    [
-     49.7687,
-     13.40209
-    ],
-    [
-     49.76871,
-     13.40206
-    ],
-    [
-     49.76872,
-     13.40203
-    ],
-    [
-     49.76873,
-     13.40199
-    ],
-    [
-     49.76873,
-     13.40196
-    ],
-    [
-     49.76873,
-     13.40192
-    ],
-    [
-     49.76872,
-     13.40189
-    ],
-    [
-     49.76871,
-     13.40186
-    ]
-   ],
-   [
-    [
-     49.76863,
-     13.40179
-    ],
-    [
-     49.76861,
-     13.40179
-    ],
-    [
-     49.76858,
-     13.4018
-    ],
-    [
-     49.76857,
-     13.40181
-    ],
-    [
-     49.76855,
-     13.40182
-    ],
-    [
-     49.76853,
-     13.40185
-    ],
-    [
-     49.76851,
-     13.40189
-    ]
-   ],
-   [
-    [
-     49.7685,
-     13.40175
-    ],
-    [
-     49.76851,
-     13.40179
-    ],
-    [
-     49.76852,
-     13.40183
-    ],
-    [
-     49.76851,
-     13.40189
-    ]
-   ],
-   [
-    [
-     49.76863,
-     13.40179
-    ],
-    [
-     49.7686,
-     13.40177
-    ],
-    [
-     49.76858,
-     13.40175
-    ],
-    [
-     49.76857,
-     13.40172
-    ],
-    [
-     49.76855,
-     13.40169
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice II/231 (ulice Na Roudné) - ulice 28. října, Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 28. října, Úplná uzavírka, průjezd pro autobusy řízen SSZ, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "6e2d2c44-0894-41c3-af8e-12658df8dec5",
-  "superdioId": null,
-  "od": "2026-05-04",
-  "do": "2026-12-20",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "i-27",
-  "name": "I/27",
-  "akce": "Oprava povrchu",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "12. 5. 2026 – 28. 6. 2026",
-  "ways": [
-   [
-    [
-     49.71913,
-     13.36021
-    ]
-   ]
-  ],
-  "point": true,
-  "popis": "silnice I/27, Plzeň 3 - Plzeň 6-Litice, oprava povrchu vozovky, zúžená vozovka na jeden jízdní pruh, Od 12.05.2026 08:00 Do 28.06.2026 23:59, akce „I/27 oprava vozovky od D5 k MÚK Výsluní (směr Plzeň); II. Etapa - v úseku cca v km 134,340 – 137,690, provoz sveden do pravého jízdního pásu, režim 1+1); provoz MÚK Výsluní km 135,550 a MÚK Litice sever km 136, 770 ve směru na Klatovy bude zachován, ve směru na Plzeň bude omezen",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "oprava povrchu",
-  "zdroj": "JSDI",
-  "jsdiId": "b1dae918-9534-4772-84d9-13108a7d0abd",
-  "superdioId": null,
-  "od": "2026-05-12",
-  "do": "2026-06-28",
-  "severity": "medium",
-  "geomTier": 5
- },
- {
-  "id": "i-27-2",
-  "name": "I/27",
-  "akce": "Kyvadlová doprava",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 6",
-  "termin": "12. 5. 2026 – 28. 6. 2026",
-  "ways": [
-   [
-    [
-     49.6819,
-     13.36452
-    ],
-    [
-     49.68146,
-     13.36419
-    ],
-    [
-     49.68104,
-     13.36384
-    ],
-    [
-     49.68067,
-     13.36352
-    ],
-    [
-     49.68028,
-     13.36316
-    ],
-    [
-     49.67979,
-     13.3627
-    ],
-    [
-     49.67936,
-     13.36227
-    ],
-    [
-     49.6786,
-     13.3615
-    ],
-    [
-     49.67304,
-     13.35586
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/27, Plzeň 6-Litice - Plzeň 3, provoz převeden do protisměru, oprava povrchu vozovky, Od 12.05.2026 08:00 Do 28.06.2026 23:59, akce „I/27 oprava vozovky od D5 k MÚK Výsluní (směr Plzeň); II. Etapa - v úseku cca v km 134,340 – 137,690, provoz sveden do pravého jízdního pásu, režim 1+1; provoz MÚK Výsluní km 135,550 a MÚK Litice sever km 136, 770 ve směru na Klatovy bude zachován, ve směru na Plzeň bude omezen",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "kyvadlová doprava",
-  "zdroj": "JSDI",
-  "jsdiId": "ea0eaba9-1df0-4165-9a86-9cdd183dd8f1",
-  "superdioId": null,
-  "od": "2026-05-12",
-  "do": "2026-06-28",
-  "severity": "medium",
-  "geomTier": 2
- },
- {
-  "id": "i-27-3",
-  "name": "I/27",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 6",
-  "termin": "13. 5. 2026 – 28. 6. 2026",
-  "ways": [
-   [
-    [
-     49.70836,
-     13.36286
-    ]
-   ]
-  ],
-  "point": true,
-  "popis": "silnice I/27, Plzeň 6-Litice, v katastru obce Plzeň, uzavřeno, Od 13.05.2026 00:00 Do 28.06.2026 23:59, sjezd a nájezd uzavřen z důvodu prací na silnici I/27, objízdná trasa vyznačena po silnici I/27 a ul. Klatovské.",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "ab7ce410-938b-46cd-82bc-f5dca3e70d0a",
-  "superdioId": null,
-  "od": "2026-05-13",
-  "do": "2026-06-28",
-  "severity": "major",
-  "geomTier": 5
- },
- {
-  "id": "jatecni",
-  "name": "Jateční",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "23. 2. 2026 – 30. 6. 2026",
-  "ways": [
-   [
-    [
-     49.75614,
-     13.40383
-    ],
-    [
-     49.75568,
-     13.4034
-    ],
-    [
-     49.75559,
-     13.40331
-    ],
-    [
-     49.75542,
-     13.40321
-    ],
-    [
-     49.75537,
-     13.40318
-    ],
-    [
-     49.75522,
-     13.4031
-    ],
-    [
-     49.75452,
-     13.40291
-    ],
-    [
-     49.75427,
-     13.40286
-    ],
-    [
-     49.75353,
-     13.40269
-    ],
-    [
-     49.75304,
-     13.40258
-    ],
-    [
-     49.75281,
-     13.40253
-    ],
-    [
-     49.75263,
-     13.40249
-    ],
-    [
-     49.75261,
-     13.40248
-    ],
-    [
-     49.75214,
-     13.40237
-    ],
-    [
-     49.75208,
-     13.40236
-    ],
-    [
-     49.75189,
-     13.40231
-    ],
-    [
-     49.75173,
-     13.40227
-    ],
-    [
-     49.75141,
-     13.40219
-    ],
-    [
-     49.75075,
-     13.40205
-    ],
-    [
-     49.75067,
-     13.40205
-    ],
-    [
-     49.75061,
-     13.40207
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice II/233 (ulice Jateční), Plzeň 4, stavební práce, zúžené jízdní pruhy, Od 23.02.2026 08:00 Do 30.06.2026 23:59, bezpečnostní zábor při výstavbě cyklostezky a VO, označení pracovního místa - zúžení, částečná uzavírka vozovky, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "65341e6c-6d03-4464-86c6-9f27b1074d9e",
-  "superdioId": null,
-  "od": "2026-02-23",
-  "do": "2026-06-30",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "kostincova",
-  "name": "Kostincova",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "2. 3. 2026 – 30. 6. 2026",
-  "ways": [
-   [
-    [
-     49.71593,
-     13.4027
-    ],
-    [
-     49.71527,
-     13.40329
-    ],
-    [
-     49.71523,
-     13.40333
-    ],
-    [
-     49.71517,
-     13.40339
-    ],
-    [
-     49.71422,
-     13.40427
-    ],
-    [
-     49.71391,
-     13.40455
-    ],
-    [
-     49.71351,
-     13.40523
-    ],
-    [
-     49.71312,
-     13.40648
-    ],
-    [
-     49.71284,
-     13.40737
-    ]
-   ],
-   [
-    [
-     49.71284,
-     13.40737
-    ],
-    [
-     49.71243,
-     13.4078
-    ],
-    [
-     49.71196,
-     13.40868
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Kostincova, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 02.03.2026 00:00 Do 30.06.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "f0fe51c6-ef6a-4455-a39a-bc3e33bf116c",
-  "superdioId": null,
-  "od": "2026-03-02",
-  "do": "2026-06-30",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "kostincova-2",
-  "name": "Kostincova",
-  "akce": "Jiné",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "2. 3. 2026 – 30. 6. 2026",
-  "ways": [
-   [
-    [
-     49.71593,
-     13.4027
-    ],
-    [
-     49.71527,
-     13.40329
-    ],
-    [
-     49.71523,
-     13.40333
-    ],
-    [
-     49.71517,
-     13.40339
-    ],
-    [
-     49.71422,
-     13.40427
-    ],
-    [
-     49.71391,
-     13.40455
-    ],
-    [
-     49.71351,
-     13.40523
-    ],
-    [
-     49.71312,
-     13.40648
-    ],
-    [
-     49.71284,
-     13.40737
-    ]
-   ],
-   [
-    [
-     49.71284,
-     13.40737
-    ],
-    [
-     49.71243,
-     13.4078
-    ],
-    [
-     49.71196,
-     13.40868
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Kostincova, Plzeň 2-Slovany, omezení, stavební práce, Od 02.03.2026 09:00 Do 30.06.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "jiné",
-  "zdroj": "JSDI",
-  "jsdiId": "f0fe51c6-ef6a-4455-a39a-bc3e33bf116c",
-  "superdioId": null,
-  "od": "2026-03-02",
-  "do": "2026-06-30",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
   "id": "hluboka",
   "name": "Hluboká",
   "akce": "Uzavřená silnice",
@@ -1810,6 +962,854 @@
   "geomTier": 4
  },
  {
+  "id": "jatecni",
+  "name": "Jateční",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 4",
+  "termin": "23. 2. 2026 – 30. 6. 2026",
+  "ways": [
+   [
+    [
+     49.75614,
+     13.40383
+    ],
+    [
+     49.75568,
+     13.4034
+    ],
+    [
+     49.75559,
+     13.40331
+    ],
+    [
+     49.75542,
+     13.40321
+    ],
+    [
+     49.75537,
+     13.40318
+    ],
+    [
+     49.75522,
+     13.4031
+    ],
+    [
+     49.75452,
+     13.40291
+    ],
+    [
+     49.75427,
+     13.40286
+    ],
+    [
+     49.75353,
+     13.40269
+    ],
+    [
+     49.75304,
+     13.40258
+    ],
+    [
+     49.75281,
+     13.40253
+    ],
+    [
+     49.75263,
+     13.40249
+    ],
+    [
+     49.75261,
+     13.40248
+    ],
+    [
+     49.75214,
+     13.40237
+    ],
+    [
+     49.75208,
+     13.40236
+    ],
+    [
+     49.75189,
+     13.40231
+    ],
+    [
+     49.75173,
+     13.40227
+    ],
+    [
+     49.75141,
+     13.40219
+    ],
+    [
+     49.75075,
+     13.40205
+    ],
+    [
+     49.75067,
+     13.40205
+    ],
+    [
+     49.75061,
+     13.40207
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice II/233 (ulice Jateční), Plzeň 4, stavební práce, zúžené jízdní pruhy, Od 23.02.2026 08:00 Do 30.06.2026 23:59, bezpečnostní zábor při výstavbě cyklostezky a VO, označení pracovního místa - zúžení, částečná uzavírka vozovky, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "65341e6c-6d03-4464-86c6-9f27b1074d9e",
+  "superdioId": null,
+  "od": "2026-02-23",
+  "do": "2026-06-30",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "kostincova",
+  "name": "Kostincova",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "2. 3. 2026 – 30. 6. 2026",
+  "ways": [
+   [
+    [
+     49.71593,
+     13.4027
+    ],
+    [
+     49.71527,
+     13.40329
+    ],
+    [
+     49.71523,
+     13.40333
+    ],
+    [
+     49.71517,
+     13.40339
+    ],
+    [
+     49.71422,
+     13.40427
+    ],
+    [
+     49.71391,
+     13.40455
+    ],
+    [
+     49.71351,
+     13.40523
+    ],
+    [
+     49.71312,
+     13.40648
+    ],
+    [
+     49.71284,
+     13.40737
+    ]
+   ],
+   [
+    [
+     49.71284,
+     13.40737
+    ],
+    [
+     49.71243,
+     13.4078
+    ],
+    [
+     49.71196,
+     13.40868
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Kostincova, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 02.03.2026 00:00 Do 30.06.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "f0fe51c6-ef6a-4455-a39a-bc3e33bf116c",
+  "superdioId": null,
+  "od": "2026-03-02",
+  "do": "2026-06-30",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kostincova-2",
+  "name": "Kostincova",
+  "akce": "Jiné",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "2. 3. 2026 – 30. 6. 2026",
+  "ways": [
+   [
+    [
+     49.71593,
+     13.4027
+    ],
+    [
+     49.71527,
+     13.40329
+    ],
+    [
+     49.71523,
+     13.40333
+    ],
+    [
+     49.71517,
+     13.40339
+    ],
+    [
+     49.71422,
+     13.40427
+    ],
+    [
+     49.71391,
+     13.40455
+    ],
+    [
+     49.71351,
+     13.40523
+    ],
+    [
+     49.71312,
+     13.40648
+    ],
+    [
+     49.71284,
+     13.40737
+    ]
+   ],
+   [
+    [
+     49.71284,
+     13.40737
+    ],
+    [
+     49.71243,
+     13.4078
+    ],
+    [
+     49.71196,
+     13.40868
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Kostincova, Plzeň 2-Slovany, omezení, stavební práce, Od 02.03.2026 09:00 Do 30.06.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "jiné",
+  "zdroj": "JSDI",
+  "jsdiId": "f0fe51c6-ef6a-4455-a39a-bc3e33bf116c",
+  "superdioId": null,
+  "od": "2026-03-02",
+  "do": "2026-06-30",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "28-rijna",
+  "name": "28. října",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "4. 5. 2026 – 20. 12. 2026",
+  "ways": [
+   [
+    [
+     49.7772,
+     13.41008
+    ],
+    [
+     49.77748,
+     13.41004
+    ],
+    [
+     49.77867,
+     13.40991
+    ]
+   ],
+   [
+    [
+     49.77702,
+     13.41006
+    ],
+    [
+     49.7772,
+     13.41008
+    ]
+   ],
+   [
+    [
+     49.77594,
+     13.40935
+    ],
+    [
+     49.77629,
+     13.40962
+    ],
+    [
+     49.77662,
+     13.40986
+    ],
+    [
+     49.7768,
+     13.40998
+    ],
+    [
+     49.77691,
+     13.41003
+    ],
+    [
+     49.77702,
+     13.41006
+    ]
+   ],
+   [
+    [
+     49.77265,
+     13.40746
+    ],
+    [
+     49.77273,
+     13.40768
+    ],
+    [
+     49.77281,
+     13.4079
+    ]
+   ],
+   [
+    [
+     49.77281,
+     13.4079
+    ],
+    [
+     49.77291,
+     13.40805
+    ],
+    [
+     49.77296,
+     13.40811
+    ],
+    [
+     49.77301,
+     13.40815
+    ],
+    [
+     49.7731,
+     13.40821
+    ],
+    [
+     49.7734,
+     13.40833
+    ],
+    [
+     49.77391,
+     13.40853
+    ],
+    [
+     49.77433,
+     13.40868
+    ],
+    [
+     49.77482,
+     13.40887
+    ],
+    [
+     49.7756,
+     13.40916
+    ],
+    [
+     49.77567,
+     13.40919
+    ],
+    [
+     49.77576,
+     13.40923
+    ]
+   ],
+   [
+    [
+     49.77576,
+     13.40923
+    ],
+    [
+     49.77584,
+     13.40928
+    ],
+    [
+     49.77594,
+     13.40935
+    ]
+   ],
+   [
+    [
+     49.77247,
+     13.40696
+    ],
+    [
+     49.77259,
+     13.40727
+    ],
+    [
+     49.77265,
+     13.40746
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice II/231 (ulice 28. října), Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 ul. 28. října, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "803fce84-8a99-409f-b19e-5a8cac46260d",
+  "superdioId": null,
+  "od": "2026-05-04",
+  "do": "2026-12-20",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "na-roudne",
+  "name": "Na Roudné",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "4. 5. 2026 – 20. 12. 2026",
+  "ways": [
+   [
+    [
+     49.7687,
+     13.40209
+    ],
+    [
+     49.76879,
+     13.40225
+    ],
+    [
+     49.76898,
+     13.40262
+    ],
+    [
+     49.76927,
+     13.40321
+    ],
+    [
+     49.76943,
+     13.40356
+    ],
+    [
+     49.76947,
+     13.40367
+    ],
+    [
+     49.76952,
+     13.4038
+    ],
+    [
+     49.76955,
+     13.40391
+    ],
+    [
+     49.76959,
+     13.40405
+    ],
+    [
+     49.76963,
+     13.40421
+    ],
+    [
+     49.76979,
+     13.40489
+    ],
+    [
+     49.76983,
+     13.40507
+    ],
+    [
+     49.76987,
+     13.40526
+    ],
+    [
+     49.76989,
+     13.40544
+    ],
+    [
+     49.7699,
+     13.40552
+    ],
+    [
+     49.76991,
+     13.40561
+    ],
+    [
+     49.7699,
+     13.40575
+    ],
+    [
+     49.76989,
+     13.40589
+    ],
+    [
+     49.76983,
+     13.40619
+    ],
+    [
+     49.7698,
+     13.40634
+    ],
+    [
+     49.76979,
+     13.40648
+    ],
+    [
+     49.76979,
+     13.40658
+    ],
+    [
+     49.7698,
+     13.40666
+    ],
+    [
+     49.76983,
+     13.40677
+    ]
+   ],
+   [
+    [
+     49.76851,
+     13.40189
+    ],
+    [
+     49.7685,
+     13.40193
+    ],
+    [
+     49.7685,
+     13.40197
+    ],
+    [
+     49.7685,
+     13.402
+    ],
+    [
+     49.76851,
+     13.40204
+    ],
+    [
+     49.76852,
+     13.40207
+    ],
+    [
+     49.76854,
+     13.4021
+    ],
+    [
+     49.76856,
+     13.40212
+    ],
+    [
+     49.76859,
+     13.40214
+    ],
+    [
+     49.76861,
+     13.40214
+    ],
+    [
+     49.76864,
+     13.40214
+    ],
+    [
+     49.76866,
+     13.40213
+    ],
+    [
+     49.76868,
+     13.40211
+    ],
+    [
+     49.7687,
+     13.40209
+    ]
+   ],
+   [
+    [
+     49.76871,
+     13.40186
+    ],
+    [
+     49.76869,
+     13.40183
+    ],
+    [
+     49.76867,
+     13.40181
+    ],
+    [
+     49.76865,
+     13.4018
+    ],
+    [
+     49.76863,
+     13.40179
+    ]
+   ],
+   [
+    [
+     49.7687,
+     13.40209
+    ],
+    [
+     49.76871,
+     13.40206
+    ],
+    [
+     49.76872,
+     13.40203
+    ],
+    [
+     49.76873,
+     13.40199
+    ],
+    [
+     49.76873,
+     13.40196
+    ],
+    [
+     49.76873,
+     13.40192
+    ],
+    [
+     49.76872,
+     13.40189
+    ],
+    [
+     49.76871,
+     13.40186
+    ]
+   ],
+   [
+    [
+     49.76863,
+     13.40179
+    ],
+    [
+     49.76861,
+     13.40179
+    ],
+    [
+     49.76858,
+     13.4018
+    ],
+    [
+     49.76857,
+     13.40181
+    ],
+    [
+     49.76855,
+     13.40182
+    ],
+    [
+     49.76853,
+     13.40185
+    ],
+    [
+     49.76851,
+     13.40189
+    ]
+   ],
+   [
+    [
+     49.7685,
+     13.40175
+    ],
+    [
+     49.76851,
+     13.40179
+    ],
+    [
+     49.76852,
+     13.40183
+    ],
+    [
+     49.76851,
+     13.40189
+    ]
+   ],
+   [
+    [
+     49.76863,
+     13.40179
+    ],
+    [
+     49.7686,
+     13.40177
+    ],
+    [
+     49.76858,
+     13.40175
+    ],
+    [
+     49.76857,
+     13.40172
+    ],
+    [
+     49.76855,
+     13.40169
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice II/231 (ulice Na Roudné) - ulice 28. října, Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 28. října, Úplná uzavírka, průjezd pro autobusy řízen SSZ, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "6e2d2c44-0894-41c3-af8e-12658df8dec5",
+  "superdioId": null,
+  "od": "2026-05-04",
+  "do": "2026-12-20",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "i-27",
+  "name": "I/27",
+  "akce": "Oprava povrchu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "12. 5. 2026 – 28. 6. 2026",
+  "ways": [
+   [
+    [
+     49.71913,
+     13.36021
+    ]
+   ]
+  ],
+  "point": true,
+  "popis": "silnice I/27, Plzeň 3 - Plzeň 6-Litice, oprava povrchu vozovky, zúžená vozovka na jeden jízdní pruh, Od 12.05.2026 08:00 Do 28.06.2026 23:59, akce „I/27 oprava vozovky od D5 k MÚK Výsluní (směr Plzeň); II. Etapa - v úseku cca v km 134,340 – 137,690, provoz sveden do pravého jízdního pásu, režim 1+1); provoz MÚK Výsluní km 135,550 a MÚK Litice sever km 136, 770 ve směru na Klatovy bude zachován, ve směru na Plzeň bude omezen",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "oprava povrchu",
+  "zdroj": "JSDI",
+  "jsdiId": "b1dae918-9534-4772-84d9-13108a7d0abd",
+  "superdioId": null,
+  "od": "2026-05-12",
+  "do": "2026-06-28",
+  "severity": "medium",
+  "geomTier": 5
+ },
+ {
+  "id": "i-27-2",
+  "name": "I/27",
+  "akce": "Kyvadlová doprava",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 6",
+  "termin": "12. 5. 2026 – 28. 6. 2026",
+  "ways": [
+   [
+    [
+     49.6819,
+     13.36452
+    ],
+    [
+     49.68146,
+     13.36419
+    ],
+    [
+     49.68104,
+     13.36384
+    ],
+    [
+     49.68067,
+     13.36352
+    ],
+    [
+     49.68028,
+     13.36316
+    ],
+    [
+     49.67979,
+     13.3627
+    ],
+    [
+     49.67936,
+     13.36227
+    ],
+    [
+     49.6786,
+     13.3615
+    ],
+    [
+     49.67304,
+     13.35586
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/27, Plzeň 6-Litice - Plzeň 3, provoz převeden do protisměru, oprava povrchu vozovky, Od 12.05.2026 08:00 Do 28.06.2026 23:59, akce „I/27 oprava vozovky od D5 k MÚK Výsluní (směr Plzeň); II. Etapa - v úseku cca v km 134,340 – 137,690, provoz sveden do pravého jízdního pásu, režim 1+1; provoz MÚK Výsluní km 135,550 a MÚK Litice sever km 136, 770 ve směru na Klatovy bude zachován, ve směru na Plzeň bude omezen",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "kyvadlová doprava",
+  "zdroj": "JSDI",
+  "jsdiId": "ea0eaba9-1df0-4165-9a86-9cdd183dd8f1",
+  "superdioId": null,
+  "od": "2026-05-12",
+  "do": "2026-06-28",
+  "severity": "medium",
+  "geomTier": 2
+ },
+ {
+  "id": "i-27-3",
+  "name": "I/27",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 6",
+  "termin": "13. 5. 2026 – 28. 6. 2026",
+  "ways": [
+   [
+    [
+     49.70836,
+     13.36286
+    ]
+   ]
+  ],
+  "point": true,
+  "popis": "silnice I/27, Plzeň 6-Litice, v katastru obce Plzeň, uzavřeno, Od 13.05.2026 00:00 Do 28.06.2026 23:59, sjezd a nájezd uzavřen z důvodu prací na silnici I/27, objízdná trasa vyznačena po silnici I/27 a ul. Klatovské.",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "ab7ce410-938b-46cd-82bc-f5dca3e70d0a",
+  "superdioId": null,
+  "od": "2026-05-13",
+  "do": "2026-06-28",
+  "severity": "major",
+  "geomTier": 5
+ },
+ {
   "id": "klatovska-trida",
   "name": "Klatovská třída",
   "akce": "Stavební práce",
@@ -2230,577 +2230,6 @@
   "do": "2026-08-09",
   "severity": "minor",
   "geomTier": 2
- },
- {
-  "id": "kalikova",
-  "name": "Kalikova",
-  "akce": "Pohyb vozidla údržby",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "23. 6. 2026 – 23. 6. 2026",
-  "ways": [
-   [
-    [
-     49.74868,
-     13.36965
-    ],
-    [
-     49.74876,
-     13.36796
-    ]
-   ],
-   [
-    [
-     49.74868,
-     13.36965
-    ],
-    [
-     49.74876,
-     13.36796
-    ]
-   ],
-   [
-    [
-     49.74868,
-     13.36965
-    ],
-    [
-     49.74876,
-     13.36796
-    ]
-   ],
-   [
-    [
-     49.74876,
-     13.36796
-    ],
-    [
-     49.74877,
-     13.36754
-    ],
-    [
-     49.74877,
-     13.36734
-    ],
-    [
-     49.74877,
-     13.36721
-    ],
-    [
-     49.74876,
-     13.36702
-    ],
-    [
-     49.74874,
-     13.3668
-    ],
-    [
-     49.7487,
-     13.36646
-    ],
-    [
-     49.74864,
-     13.36614
-    ]
-   ],
-   [
-    [
-     49.74876,
-     13.36796
-    ],
-    [
-     49.74877,
-     13.36754
-    ],
-    [
-     49.74877,
-     13.36734
-    ],
-    [
-     49.74877,
-     13.36721
-    ],
-    [
-     49.74876,
-     13.36702
-    ],
-    [
-     49.74874,
-     13.3668
-    ],
-    [
-     49.7487,
-     13.36646
-    ],
-    [
-     49.74864,
-     13.36614
-    ]
-   ],
-   [
-    [
-     49.74876,
-     13.36796
-    ],
-    [
-     49.74877,
-     13.36754
-    ],
-    [
-     49.74877,
-     13.36734
-    ],
-    [
-     49.74877,
-     13.36721
-    ],
-    [
-     49.74876,
-     13.36702
-    ],
-    [
-     49.74874,
-     13.3668
-    ],
-    [
-     49.7487,
-     13.36646
-    ],
-    [
-     49.74864,
-     13.36614
-    ]
-   ],
-   [
-    [
-     49.74853,
-     13.36569
-    ],
-    [
-     49.74851,
-     13.36562
-    ],
-    [
-     49.74825,
-     13.36476
-    ],
-    [
-     49.74803,
-     13.36404
-    ]
-   ],
-   [
-    [
-     49.74837,
-     13.36588
-    ],
-    [
-     49.74842,
-     13.36611
-    ]
-   ],
-   [
-    [
-     49.74837,
-     13.36588
-    ],
-    [
-     49.74842,
-     13.36611
-    ]
-   ],
-   [
-    [
-     49.74842,
-     13.36611
-    ],
-    [
-     49.74849,
-     13.36644
-    ],
-    [
-     49.74854,
-     13.36666
-    ],
-    [
-     49.74857,
-     13.36697
-    ],
-    [
-     49.74859,
-     13.36718
-    ],
-    [
-     49.7486,
-     13.3674
-    ],
-    [
-     49.7485,
-     13.36962
-    ]
-   ],
-   [
-    [
-     49.74842,
-     13.36611
-    ],
-    [
-     49.74849,
-     13.36644
-    ],
-    [
-     49.74854,
-     13.36666
-    ],
-    [
-     49.74857,
-     13.36697
-    ],
-    [
-     49.74859,
-     13.36718
-    ],
-    [
-     49.7486,
-     13.3674
-    ],
-    [
-     49.7485,
-     13.36962
-    ]
-   ],
-   [
-    [
-     49.74864,
-     13.36614
-    ],
-    [
-     49.74859,
-     13.36591
-    ]
-   ],
-   [
-    [
-     49.74864,
-     13.36614
-    ],
-    [
-     49.74859,
-     13.36591
-    ]
-   ],
-   [
-    [
-     49.74789,
-     13.36426
-    ],
-    [
-     49.7483,
-     13.36567
-    ]
-   ],
-   [
-    [
-     49.74789,
-     13.36426
-    ],
-    [
-     49.7483,
-     13.36567
-    ]
-   ],
-   [
-    [
-     49.7483,
-     13.36567
-    ],
-    [
-     49.74837,
-     13.36588
-    ]
-   ],
-   [
-    [
-     49.7483,
-     13.36567
-    ],
-    [
-     49.74837,
-     13.36588
-    ]
-   ],
-   [
-    [
-     49.74859,
-     13.36591
-    ],
-    [
-     49.74853,
-     13.36569
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice III/18050 (ulice Kalikova), Plzeň 3 - silnice III/18053, Plzeň 7-Radčice, Plzeň, Platnost od 23.6.2026 07:00 do 23.6.2026 13:00, kosení travních porostů strojně, Vydal: SÚS Plzeňského kraje",
-  "typ": "Překážka na vozovce",
-  "subtyp": "pohyb vozidla údržby",
-  "zdroj": "JSDI",
-  "jsdiId": "66d46334-d5aa-472e-89d2-06602facd012",
-  "superdioId": null,
-  "od": "2026-06-23",
-  "do": "2026-06-23",
-  "severity": "minor",
-  "geomTier": 2
- },
- {
-  "id": "prvomajova",
-  "name": "Prvomájová",
-  "akce": "Pohyb vozidla údržby",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 5",
-  "termin": "23. 6. 2026 – 23. 6. 2026",
-  "ways": [
-   [
-    [
-     49.75657,
-     13.30483
-    ],
-    [
-     49.75646,
-     13.30475
-    ],
-    [
-     49.75644,
-     13.30474
-    ],
-    [
-     49.75498,
-     13.30369
-    ],
-    [
-     49.7549,
-     13.30364
-    ],
-    [
-     49.75479,
-     13.30356
-    ],
-    [
-     49.75469,
-     13.30349
-    ]
-   ],
-   [
-    [
-     49.75767,
-     13.3058
-    ],
-    [
-     49.75739,
-     13.30554
-    ],
-    [
-     49.75684,
-     13.30505
-    ],
-    [
-     49.75676,
-     13.30498
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice III/18053 (ulice Prvomájová), Plzeň 5-Křimice - silnice III/18050 (ulice Mlýnská), Plzeň 9-Malesice, Plzeň, Platnost od 23.6.2026 07:00 do 23.6.2026 13:00, kosení travních porostů strojně, Vydal: SÚS Plzeňského kraje",
-  "typ": "Překážka na vozovce",
-  "subtyp": "pohyb vozidla údržby",
-  "zdroj": "JSDI",
-  "jsdiId": "f45bd19e-643f-4b37-b47d-a56188390a8c",
-  "superdioId": null,
-  "od": "2026-06-23",
-  "do": "2026-06-23",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "zabela",
-  "name": "Zábělá",
-  "akce": "Pohyb vozidla údržby",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "23. 6. 2026 – 23. 6. 2026",
-  "ways": [
-   [
-    [
-     49.77094,
-     13.45304
-    ],
-    [
-     49.771,
-     13.45316
-    ],
-    [
-     49.77105,
-     13.45326
-    ],
-    [
-     49.77142,
-     13.45392
-    ]
-   ],
-   [
-    [
-     49.77083,
-     13.45282
-    ],
-    [
-     49.77094,
-     13.45304
-    ]
-   ],
-   [
-    [
-     49.76875,
-     13.45044
-    ],
-    [
-     49.76939,
-     13.45036
-    ],
-    [
-     49.76953,
-     13.45035
-    ],
-    [
-     49.76968,
-     13.45045
-    ],
-    [
-     49.77002,
-     13.45092
-    ],
-    [
-     49.77009,
-     13.45104
-    ],
-    [
-     49.77046,
-     13.45161
-    ],
-    [
-     49.77066,
-     13.45204
-    ],
-    [
-     49.77075,
-     13.45244
-    ],
-    [
-     49.77083,
-     13.45282
-    ]
-   ],
-   [
-    [
-     49.77142,
-     13.45392
-    ],
-    [
-     49.77133,
-     13.45408
-    ],
-    [
-     49.77105,
-     13.45449
-    ],
-    [
-     49.77101,
-     13.45457
-    ],
-    [
-     49.77086,
-     13.45524
-    ],
-    [
-     49.77072,
-     13.45582
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice II/233 (ulice Zábělá), Plzeň 4, Plzeň, Platnost od 23.6.2026 07:00 do 23.6.2026 11:00, údržba mostu, Vydal: SÚS Plzeňského kraje",
-  "typ": "Překážka na vozovce",
-  "subtyp": "pohyb vozidla údržby",
-  "zdroj": "JSDI",
-  "jsdiId": "87ad1938-9b7d-4993-8541-aa4210122d34",
-  "superdioId": null,
-  "od": "2026-06-23",
-  "do": "2026-06-23",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "iii-18050",
-  "name": "III/18050",
-  "akce": "Pohyb vozidla údržby",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 7",
-  "termin": "23. 6. 2026 – 23. 6. 2026",
-  "ways": [
-   [
-    [
-     49.76625,
-     13.31521
-    ]
-   ]
-  ],
-  "point": true,
-  "popis": "silnice III/18050, Plzeň 7-Radčice, v katastru obce Plzeň - v katastru obce Město Touškov, okr. Plzeň-sever, Platnost od 23.6.2026 08:00 do 23.6.2026 13:00, zálivka výsadby, Vydal: SÚS Plzeňského kraje",
-  "typ": "Překážka na vozovce",
-  "subtyp": "pohyb vozidla údržby",
-  "zdroj": "JSDI",
-  "jsdiId": "2ad44884-4bef-4466-90fb-72fc152ee083",
-  "superdioId": null,
-  "od": "2026-06-23",
-  "do": "2026-06-23",
-  "severity": "minor",
-  "geomTier": 5
- },
- {
-  "id": "iii-18053",
-  "name": "III/18053",
-  "akce": "Pohyb vozidla údržby",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 5",
-  "termin": "23. 6. 2026 – 23. 6. 2026",
-  "ways": [
-   [
-    [
-     49.76134,
-     13.31028
-    ]
-   ]
-  ],
-  "point": true,
-  "popis": "silnice III/18053, Plzeň 5-Křimice - Plzeň 7-Radčice, v katastru obce Plzeň, Platnost od 23.6.2026 08:00 do 23.6.2026 13:00, zálivka výsadby, Vydal: SÚS Plzeňského kraje",
-  "typ": "Překážka na vozovce",
-  "subtyp": "pohyb vozidla údržby",
-  "zdroj": "JSDI",
-  "jsdiId": "018f0bf3-9ddb-4b17-b742-4ac891cede1a",
-  "superdioId": null,
-  "od": "2026-06-23",
-  "do": "2026-06-23",
-  "severity": "minor",
-  "geomTier": 5
  },
  {
   "id": "dobranska",
