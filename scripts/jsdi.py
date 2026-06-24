@@ -27,7 +27,10 @@ import urllib.parse
 import urllib.request
 
 UA = {
-    "User-Agent": "PlzenskaUnikovka/1.0 (+https://plzenskaunikovka.cz)",
+    "User-Agent": (
+        "PlzenskaUnikovka/2.0 "
+        "(+https://plzenskaunikovka.cz/zdroje-a-licence; info@plzenskaunikovka.cz)"
+    ),
     "Accept": "application/json",
 }
 ROOT = os.path.join(os.path.dirname(__file__), "..")
