@@ -1,7 +1,34 @@
 {
- "snapshot": "2026-06-24T08:21:10+00:00",
+ "snapshot": "2026-06-26T08:29:28+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
+  {
+   "id": "zahajeni-provozu-historicke-linky-h-od-27-6-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4282/zahajeni-provozu-historicke-linky-h-od-27-6-2026/",
+   "title": "Zahájení provozu historické linky H od 27. 6. 2026",
+   "lines": [
+    "27",
+    "6",
+    "202"
+   ],
+   "startDate": "2026-06-27",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "provoz-linek-mhd-5-a-6-7-2026-statni-svatky",
+   "url": "https://www.pmdp.cz/systransport/63/6/4281/provoz-linek-mhd-5-a-6-7-2026-statni-svatky/",
+   "title": "Provoz linek MHD 5. a 6. 7. 2026 - státní svátky",
+   "lines": [
+    "5",
+    "6",
+    "7",
+    "202"
+   ],
+   "startDate": null,
+   "endDate": null,
+   "matchedClosure": null
+  },
   {
    "id": "zajisteni-odvozu-divaku-z-kulturni-akce-noc-s-operou-25-27-6-2026",
    "url": "https://www.pmdp.cz/systransport/63/6/4275/zajisteni-odvozu-divaku-z-kulturni-akce-noc-s-operou-25-27-6-2026/",
