@@ -38,20 +38,24 @@ export async function POST(request: Request) {
   const ipHash = hashIp(request.headers);
   const ua = userAgent(request.headers);
 
-  const { error } = await supabase.from("feedback").insert({
-    message,
-    email,
-    notify: Boolean(body.notify) && Boolean(email),
-    closure_id: body.closureId ?? null,
-    page_url: body.pageUrl ?? null,
-    user_agent: ua,
-    ip_hash: ipHash,
+  const { data, error } = await supabase.rpc("send_feedback", {
+    p_message: message,
+    p_email: email,
+    p_notify: Boolean(body.notify) && Boolean(email),
+    p_closure_id: body.closureId ?? null,
+    p_page_url: body.pageUrl ?? null,
+    p_user_agent: ua,
+    p_ip_hash: ipHash,
   });
 
   if (error) {
-    console.error("[feedback] insert failed:", error.message);
+    console.error("[feedback] rpc failed:", error.message);
     return NextResponse.json({ error: "db_error" }, { status: 500 });
   }
 
+  const result = (data ?? {}) as { ok?: boolean; error?: string };
+  if (result.ok === false) {
+    return NextResponse.json({ error: result.error ?? "rpc_error" }, { status: 422 });
+  }
   return NextResponse.json({ ok: true });
 }

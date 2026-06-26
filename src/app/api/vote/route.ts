@@ -29,20 +29,24 @@ export async function POST(request: Request) {
   const ipHash = hashIp(request.headers);
   const ua = userAgent(request.headers);
 
-  const { error } = await supabase.from("feature_votes_log").insert({
-    feature_id: featureId,
-    ip_hash: ipHash,
-    user_agent: ua,
+  // RPC obchází Supabase RLS — security definer funkce běží jako owner.
+  const { data, error } = await supabase.rpc("vote_for_feature", {
+    p_feature_id: featureId,
+    p_ip_hash: ipHash,
+    p_user_agent: ua,
   });
 
-  // unique (feature_id, ip_hash) → 23505 = už hlasoval, vrátíme 200 idempotentně
   if (error) {
-    if (error.code === "23505") {
-      return NextResponse.json({ ok: true, alreadyVoted: true });
-    }
-    console.error("[vote] insert failed:", error.message);
+    console.error("[vote] rpc failed:", error.message);
     return NextResponse.json({ error: "db_error" }, { status: 500 });
   }
 
-  return NextResponse.json({ ok: true });
+  const result = (data ?? {}) as { ok?: boolean; alreadyVoted?: boolean; error?: string };
+  if (result.ok === false) {
+    return NextResponse.json({ error: result.error ?? "rpc_error" }, { status: 422 });
+  }
+  return NextResponse.json({
+    ok: true,
+    alreadyVoted: Boolean(result.alreadyVoted),
+  });
 }

@@ -40,17 +40,21 @@ export async function POST(request: Request) {
 
   const ipHash = hashIp(request.headers);
 
-  const { error } = await supabase.from("feature_suggestions").insert({
-    title,
-    description,
-    email,
-    ip_hash: ipHash,
+  const { data, error } = await supabase.rpc("suggest_feature", {
+    p_title: title,
+    p_description: description,
+    p_email: email,
+    p_ip_hash: ipHash,
   });
 
   if (error) {
-    console.error("[suggest-feature] insert failed:", error.message);
+    console.error("[suggest-feature] rpc failed:", error.message);
     return NextResponse.json({ error: "db_error" }, { status: 500 });
   }
 
+  const result = (data ?? {}) as { ok?: boolean; error?: string };
+  if (result.ok === false) {
+    return NextResponse.json({ error: result.error ?? "rpc_error" }, { status: 422 });
+  }
   return NextResponse.json({ ok: true });
 }
