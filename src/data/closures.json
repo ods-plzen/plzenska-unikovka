@@ -1,5 +1,106 @@
 [
  {
+  "id": "dobranska",
+  "name": "Dobřanská",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "21. 7. 2025 – 20. 12. 2026",
+  "ways": [
+   [
+    [
+     49.70341,
+     13.32854
+    ],
+    [
+     49.70334,
+     13.3285
+    ]
+   ],
+   [
+    [
+     49.70334,
+     13.3285
+    ],
+    [
+     49.70219,
+     13.32782
+    ]
+   ],
+   [
+    [
+     49.70823,
+     13.33143
+    ],
+    [
+     49.70777,
+     13.33116
+    ]
+   ],
+   [
+    [
+     49.70341,
+     13.32854
+    ],
+    [
+     49.70418,
+     13.329
+    ],
+    [
+     49.70443,
+     13.32915
+    ]
+   ],
+   [
+    [
+     49.70736,
+     13.3309
+    ],
+    [
+     49.70607,
+     13.33013
+    ]
+   ],
+   [
+    [
+     49.70777,
+     13.33116
+    ],
+    [
+     49.70736,
+     13.3309
+    ]
+   ],
+   [
+    [
+     49.70443,
+     13.32915
+    ],
+    [
+     49.70546,
+     13.32977
+    ],
+    [
+     49.70607,
+     13.33013
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 21.07.2025 00:01 Do 20.12.2026 23:59, částečná uzavírka v úseku od kruhového objezdu až za křižovatku s ulicí U Čertovy díry z důvodu akce \"Dešťová kanalizace a komunikace\", Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "cdb2a780-4d40-4216-936a-dcf3ee24ee8b",
+  "superdioId": null,
+  "od": "2025-07-21",
+  "do": "2026-12-20",
+  "severity": "minor",
+  "geomTier": 1
+ },
+ {
   "id": "na-okraji",
   "name": "Na Okraji",
   "akce": "Uzavřená silnice",
@@ -1810,103 +1911,39 @@
   "geomTier": 4
  },
  {
-  "id": "dobranska",
-  "name": "Dobřanská",
+  "id": "klatovska-trida",
+  "name": "Klatovská třída",
   "akce": "Stavební práce",
   "state": "Probíhá",
   "status": "now",
   "color": "#c0392b",
   "oblast": "Plzeň 3",
-  "termin": "21. 7. 2025 – 20. 12. 2026",
+  "termin": "1. 1. 2026 – 30. 6. 2026",
   "ways": [
    [
     [
-     49.70341,
-     13.32854
+     49.74283,
+     13.37211
     ],
     [
-     49.70334,
-     13.3285
-    ]
-   ],
-   [
-    [
-     49.70334,
-     13.3285
+     49.74333,
+     13.37226
     ],
     [
-     49.70219,
-     13.32782
-    ]
-   ],
-   [
-    [
-     49.70823,
-     13.33143
-    ],
-    [
-     49.70777,
-     13.33116
-    ]
-   ],
-   [
-    [
-     49.70341,
-     13.32854
-    ],
-    [
-     49.70418,
-     13.329
-    ],
-    [
-     49.70443,
-     13.32915
-    ]
-   ],
-   [
-    [
-     49.70736,
-     13.3309
-    ],
-    [
-     49.70607,
-     13.33013
-    ]
-   ],
-   [
-    [
-     49.70777,
-     13.33116
-    ],
-    [
-     49.70736,
-     13.3309
-    ]
-   ],
-   [
-    [
-     49.70443,
-     13.32915
-    ],
-    [
-     49.70546,
-     13.32977
-    ],
-    [
-     49.70607,
-     13.33013
+     49.74402,
+     13.37249
     ]
    ]
   ],
   "point": false,
-  "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 21.07.2025 00:01 Do 20.12.2026 23:59, částečná uzavírka v úseku od kruhového objezdu až za křižovatku s ulicí U Čertovy díry z důvodu akce \"Dešťová kanalizace a komunikace\", Vydal: Magistrát města Plzně",
+  "popis": "silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, stavební práce, pravý jízdní pruh uzavřen, Od 01.01.2026 00:00 Do 30.06.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská) v Plzni,  – oprava objektu č. p. 289/19, které si vyžádají zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr do centra města (Bory-Lochotín) v rámci  akce „Rekonstrukce Klatovská 19 Plzeň“, , Objížďka - bez rozlišení: silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, Vydal: Krajský úřad Plzeňského kraje",
   "typ": "Uzavírka a omezení",
   "subtyp": "stavební práce",
   "zdroj": "JSDI",
-  "jsdiId": "cdb2a780-4d40-4216-936a-dcf3ee24ee8b",
+  "jsdiId": "86ab3138-d841-44b6-af0e-bf1f110bbf20",
   "superdioId": null,
-  "od": "2025-07-21",
-  "do": "2026-12-20",
+  "od": "2026-01-01",
+  "do": "2026-06-30",
   "severity": "minor",
   "geomTier": 1
  },
@@ -2222,7 +2259,7 @@
   "geomTier": 4
  },
  {
-  "id": "klatovska-trida",
+  "id": "klatovska-trida-2",
   "name": "Klatovská třída",
   "akce": "Stavební práce",
   "state": "Probíhá",
@@ -2259,7 +2296,7 @@
   "geomTier": 2
  },
  {
-  "id": "klatovska-trida-2",
+  "id": "klatovska-trida-3",
   "name": "Klatovská třída",
   "akce": "Stavební práce",
   "state": "Probíhá",
@@ -2296,94 +2333,185 @@
   "geomTier": 2
  },
  {
-  "id": "mlynska",
-  "name": "Mlýnská",
+  "id": "radcicka",
+  "name": "Radčická",
   "akce": "Pohyb vozidla údržby",
   "state": "Probíhá",
   "status": "now",
   "color": "#c0392b",
-  "oblast": "Plzeň 9",
-  "termin": "25. 6. 2026 – 25. 6. 2026",
+  "oblast": "Plzeň 1",
+  "termin": "26. 6. 2026 – 26. 6. 2026",
   "ways": [
    [
     [
-     49.77058,
-     13.297
+     49.74989,
+     13.36608
     ],
     [
-     49.77065,
-     13.29679
+     49.74992,
+     13.36606
     ],
     [
-     49.7707,
-     13.29661
+     49.74995,
+     13.36601
     ],
     [
-     49.77075,
-     13.29633
+     49.74997,
+     13.36593
     ],
     [
-     49.77077,
-     13.29614
+     49.75003,
+     13.36541
     ],
     [
-     49.77076,
-     13.29533
+     49.75004,
+     13.36531
     ],
     [
-     49.77089,
-     13.29413
+     49.75007,
+     13.36516
+    ]
+   ],
+   [
+    [
+     49.74989,
+     13.36608
+    ],
+    [
+     49.74992,
+     13.36619
+    ],
+    [
+     49.74994,
+     13.36624
+    ],
+    [
+     49.74994,
+     13.36631
+    ],
+    [
+     49.74993,
+     13.36638
+    ],
+    [
+     49.7499,
+     13.36644
+    ],
+    [
+     49.74977,
+     13.36663
+    ],
+    [
+     49.74936,
+     13.36726
+    ],
+    [
+     49.74922,
+     13.36748
+    ]
+   ],
+   [
+    [
+     49.75007,
+     13.36477
+    ],
+    [
+     49.75012,
+     13.36438
+    ]
+   ],
+   [
+    [
+     49.75007,
+     13.36477
+    ],
+    [
+     49.75007,
+     13.36516
+    ]
+   ],
+   [
+    [
+     49.74922,
+     13.36748
+    ],
+    [
+     49.74917,
+     13.36755
+    ],
+    [
+     49.74914,
+     13.36764
+    ],
+    [
+     49.74912,
+     13.36776
+    ],
+    [
+     49.74914,
+     13.36787
+    ],
+    [
+     49.74915,
+     13.3679
+    ],
+    [
+     49.74916,
+     13.36798
+    ],
+    [
+     49.74923,
+     13.36812
+    ]
+   ],
+   [
+    [
+     49.75265,
+     13.36291
+    ],
+    [
+     49.75264,
+     13.36257
+    ],
+    [
+     49.75256,
+     13.36213
+    ]
+   ],
+   [
+    [
+     49.75012,
+     13.36438
+    ],
+    [
+     49.75016,
+     13.36415
+    ],
+    [
+     49.75029,
+     13.36387
+    ],
+    [
+     49.75045,
+     13.36354
+    ],
+    [
+     49.75182,
+     13.3609
     ]
    ]
   ],
   "point": false,
-  "popis": "silnice III/18050 (ulice Mlýnská), Plzeň 9-Malesice, Plzeň, Platnost od 25.6.2026 06:45 do 25.6.2026 13:00, kosení travních porostů strojně, Vydal: SÚS Plzeňského kraje",
+  "popis": "silnice III/18050 (ulice Radčická), Plzeň 1 - Plzeň 3, Plzeň, Platnost od 26.6.2026 06:30 do 26.6.2026 10:30, silniční zdi - čištění, Vydal: SÚS Plzeňského kraje",
   "typ": "Překážka na vozovce",
   "subtyp": "pohyb vozidla údržby",
   "zdroj": "JSDI",
-  "jsdiId": "36088135-9778-46a1-8d0d-e20f6432b4c8",
+  "jsdiId": "58d6f30e-e8df-4caa-b8e9-e441d1156971",
   "superdioId": null,
-  "od": "2026-06-25",
-  "do": "2026-06-25",
+  "od": "2026-06-26",
+  "do": "2026-06-26",
   "severity": "minor",
   "geomTier": 4
- },
- {
-  "id": "klatovska-trida-3",
-  "name": "Klatovská třída",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "1. 1. 2026 – 30. 6. 2026",
-  "ways": [
-   [
-    [
-     49.74283,
-     13.37211
-    ],
-    [
-     49.74333,
-     13.37226
-    ],
-    [
-     49.74402,
-     13.37249
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, stavební práce, pravý jízdní pruh uzavřen, Od 01.01.2026 00:00 Do 30.06.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská) v Plzni,  – oprava objektu č. p. 289/19, které si vyžádají zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr do centra města (Bory-Lochotín) v rámci  akce „Rekonstrukce Klatovská 19 Plzeň“, , Objížďka - bez rozlišení: silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "86ab3138-d841-44b6-af0e-bf1f110bbf20",
-  "superdioId": null,
-  "od": "2026-01-01",
-  "do": "2026-06-30",
-  "severity": "minor",
-  "geomTier": 1
  },
  {
   "id": "stikova",
