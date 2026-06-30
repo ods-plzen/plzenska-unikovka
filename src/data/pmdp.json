@@ -1,7 +1,21 @@
 {
- "snapshot": "2026-06-28T08:21:06+00:00",
+ "snapshot": "2026-06-30T08:29:24+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
+  {
+   "id": "odklon-tramvaji-ze-sadu-petatricatniku-dne-11-7-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4283/odklon-tramvaji-ze-sadu-petatricatniku-dne-11-7-2026/",
+   "title": "Odklon tramvají ze sadů Pětatřicátníků dne 11. 7. 2026",
+   "lines": [
+    "11",
+    "7",
+    "202",
+    "6"
+   ],
+   "startDate": null,
+   "endDate": null,
+   "matchedClosure": null
+  },
   {
    "id": "zahajeni-provozu-historicke-linky-h-od-27-6-2026",
    "url": "https://www.pmdp.cz/systransport/63/6/4282/zahajeni-provozu-historicke-linky-h-od-27-6-2026/",
@@ -23,20 +37,6 @@
     "5",
     "6",
     "7",
-    "202"
-   ],
-   "startDate": null,
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "zajisteni-odvozu-divaku-z-kulturni-akce-noc-s-operou-25-27-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4275/zajisteni-odvozu-divaku-z-kulturni-akce-noc-s-operou-25-27-6-2026/",
-   "title": "Zajištění odvozu diváků z kulturní akce Noc s operou 25. - 27. 6. 2026",
-   "lines": [
-    "25",
-    "27",
-    "6",
     "202"
    ],
    "startDate": null,
@@ -125,32 +125,6 @@
    "matchedClosure": null
   },
   {
-   "id": "vyluka-kosutka-dne-28-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4273/vyluka-kosutka-dne-28-6-2026/",
-   "title": "Výluka Košutka dne 28. 6. 2026",
-   "lines": [
-    "28",
-    "6",
-    "202"
-   ],
-   "startDate": null,
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "vyluka-bolevec-kosutka-dne-27-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4272/vyluka-bolevec-kosutka-dne-27-6-2026/",
-   "title": "Výluka Bolevec, Košutka dne 27. 6. 2026",
-   "lines": [
-    "27",
-    "6",
-    "202"
-   ],
-   "startDate": null,
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
    "id": "zahajeni-provozu-linky-76-k-zoologicke-zahrade-od-13-6-2026",
    "url": "https://www.pmdp.cz/systransport/63/6/4271/zahajeni-provozu-linky-76-k-zoologicke-zahrade-od-13-6-2026/",
    "title": "Zahájení provozu linky 76 k zoologické zahradě od 13. 6. 2026",
@@ -158,29 +132,6 @@
     "76"
    ],
    "startDate": "2026-06-13",
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "odklon-a-zmeny-zastavek-linky-11-na-ustrednim-hrbitove-od-6-6-2026-do-26-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4270/odklon-a-zmeny-zastavek-linky-11-na-ustrednim-hrbitove-od-6-6-2026-do-26-6-2026/",
-   "title": "Odklon a změny zastávek linky 11 na Ústředním hřbitově od 6. 6. 2026 do 26. 6. 2026",
-   "lines": [
-    "11"
-   ],
-   "startDate": "2026-06-06",
-   "endDate": "2026-06-26",
-   "matchedClosure": null
-  },
-  {
-   "id": "docasne-omezeni-spoju-do-letkova-na-lince-12-a-zmeny-na-lince-19-od-1-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4267/docasne-omezeni-spoju-do-letkova-na-lince-12-a-zmeny-na-lince-19-od-1-6-2026/",
-   "title": "Dočasné omezení spojů do Letkova na lince 12 a změny na lince 19 od 1. 6. 2026",
-   "lines": [
-    "12",
-    "19"
-   ],
-   "startDate": "2026-06-01",
    "endDate": null,
    "matchedClosure": null
   },
@@ -335,20 +286,6 @@
    "matchedClosure": null
   },
   {
-   "id": "prelozeni-zastavek-malesice-pro-linky-11-35-37-n5-od-7-4-2026-do-26-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4243/prelozeni-zastavek-malesice-pro-linky-11-35-37-n5-od-7-4-2026-do-26-6-2026/",
-   "title": "Přeložení zastávek \"Malesice\" pro linky 11, 35, 37, N5 od 7. 4. 2026 do 26. 6. 2026",
-   "lines": [
-    "11",
-    "35",
-    "37",
-    "N5"
-   ],
-   "startDate": "2026-04-07",
-   "endDate": "2026-06-26",
-   "matchedClosure": null
-  },
-  {
    "id": "prelozeni-zastavek-letna-oba-smery-od-16-3-2026-do-ukonceni-praci-vystavba-lavky",
    "url": "https://www.pmdp.cz/systransport/63/6/4234/prelozeni-zastavek-letna-oba-smery-od-16-3-2026-do-ukonceni-praci-vystavba-lavky/",
    "title": "Přeložení zastávek \"Letná\" (oba směry) od 16. 3. 2026 do ukončení prací - výstavba lávky",
@@ -376,26 +313,6 @@
   }
  ],
  "perClosure": {
-  "masarykova": {
-   "reroutes": [
-    {
-     "lines": [
-      "29",
-      "30",
-      "N3",
-      "N6"
-     ],
-     "via": "Rokycanská, Jateční Těšínská"
-    }
-   ],
-   "tempStops": [],
-   "notes": [],
-   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
-   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
-   "sourceUrlsAll": [
-    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
-   ]
-  },
   "americka": {
    "reroutes": [
     {
@@ -494,6 +411,26 @@
    "sourceUrlsAll": [
     "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
     "https://www.pmdp.cz/systransport/63/6/4259/uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu/"
+   ]
+  },
+  "masarykova": {
+   "reroutes": [
+    {
+     "lines": [
+      "29",
+      "30",
+      "N3",
+      "N6"
+     ],
+     "via": "Rokycanská, Jateční Těšínská"
+    }
+   ],
+   "tempStops": [],
+   "notes": [],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
+   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
+   "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
    ]
   }
  }
