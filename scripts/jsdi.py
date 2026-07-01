@@ -608,6 +608,28 @@ def fetch_plzen_doprava_table() -> list[dict]:
     return items
 
 
+def _promote_plan_if_started(rec: dict) -> None:
+    """Plánovaný záznam, jehož začátek (od) už nastal, překlopí na „probíhá“;
+    pokud už skončil (do v minulosti), na „hotovo“. Volá se až po PLAN_ENRICH,
+    takže od/do jsou finální. Bez tohohle uvízne uzavírka navždy jako
+    „Plánováno“, i když už reálně začala (viz Masarykova, od 29. 6. 2026) —
+    status je uložené pole, frontend ho nepřepočítává podle data.
+    """
+    if rec.get("status") != "plan":
+        return
+    today = dt.date.today()
+    try:
+        do_iso = rec.get("do")
+        if do_iso and dt.date.fromisoformat(do_iso) < today:
+            rec["status"], rec["state"], rec["color"] = "done", "Hotovo", "#1f8a5b"
+            return
+        od_iso = rec.get("od")
+        if od_iso and dt.date.fromisoformat(od_iso) <= today:
+            rec["status"], rec["state"], rec["color"] = "now", "Probíhá", "#c0392b"
+    except (ValueError, TypeError):
+        pass
+
+
 def build_plan_records(
     existing: list[dict],
     osm_streets: dict[str, list[list[list[float]]]],
@@ -698,6 +720,9 @@ def build_plan_records(
                         )
                         if clipped:
                             rec["detourWays"] = clipped
+        # Když plánovaná akce už reálně začala (od ≤ dnes), není „Plánováno“,
+        # ale „Probíhá“ — jinak by uvízla jako plan navždy.
+        _promote_plan_if_started(rec)
         out.append(rec)
     return out
 
