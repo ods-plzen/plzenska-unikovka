@@ -44,7 +44,7 @@ jobs:
         # Deploy jde PŘÍMO přes token, GitHub integrace je odpojená (jinak by
         # Vercel gate blokoval commity od bota). ORG/PROJECT ID nejsou tajné.
         # npm global install (ne npx) kvůli spolehlivosti + timeout ať nikdy nevisí.
-        timeout-minutes: 10
+        timeout-minutes: 12
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: team_jP6cPirsUM5gWYGhVfyeyms0
@@ -54,4 +54,9 @@ jobs:
             echo "⚠ VERCEL_TOKEN chybí — deploy přeskočen."; exit 0
           fi
           npm install --global vercel@latest
-          vercel deploy --prod --yes --token="$VERCEL_TOKEN"
+          # Prebuilt vzor: build proběhne na runneru, deploy jen nahraje hotový
+          # output → jde rovnou do Ready. `vercel deploy --prod` (remote build)
+          # v CI vytvoří deployment, ale build se nespustí a příkaz visí (UNKNOWN).
+          vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+          vercel build --prod --token="$VERCEL_TOKEN"
+          vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
