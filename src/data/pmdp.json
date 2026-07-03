@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-07-01T17:48:41+00:00",
+ "snapshot": "2026-07-03T08:08:34+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -313,6 +313,26 @@
   }
  ],
  "perClosure": {
+  "masarykova": {
+   "reroutes": [
+    {
+     "lines": [
+      "29",
+      "30",
+      "N3",
+      "N6"
+     ],
+     "via": "Rokycanská, Jateční Těšínská"
+    }
+   ],
+   "tempStops": [],
+   "notes": [],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
+   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
+   "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
+   ]
+  },
   "americka": {
    "reroutes": [
     {
@@ -411,26 +431,6 @@
    "sourceUrlsAll": [
     "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
     "https://www.pmdp.cz/systransport/63/6/4259/uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu/"
-   ]
-  },
-  "masarykova": {
-   "reroutes": [
-    {
-     "lines": [
-      "29",
-      "30",
-      "N3",
-      "N6"
-     ],
-     "via": "Rokycanská, Jateční Těšínská"
-    }
-   ],
-   "tempStops": [],
-   "notes": [],
-   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
-   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
-   "sourceUrlsAll": [
-    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
    ]
   }
  }
