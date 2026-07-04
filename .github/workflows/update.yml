@@ -29,9 +29,13 @@ jobs:
         continue-on-error: true
 
       - name: Commitni změny dat
+        # POZOR: autor commitu MUSÍ být člen Vercel týmu (tady@uhumdrum.com),
+        # jinak Vercel deployment zablokuje se stavem BLOCKED / TEAM_ACCESS_REQUIRED
+        # ("Git author ... must have access to the team") a `vercel deploy` visí
+        # až do 12min timeoutu. Bot e-mail = blok. Neměnit na noreply bota.
         run: |
-          git config user.name "plzen-prehledne-bot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name "Tadeáš Kapic"
+          git config user.email "tady@uhumdrum.com"
           git add src/data/closures.json src/data/pmdp.json
           if git diff --cached --quiet; then
             echo "Bez změn."
