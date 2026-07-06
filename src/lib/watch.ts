@@ -39,3 +39,8 @@ export function subscribeWatch(cb: () => void) {
 export function isWatched(id: string) {
   return read().includes(id);
 }
+
+// Celý seznam hlídaných id — pro sync push odběru na server.
+export function watchedList(): string[] {
+  return read();
+}

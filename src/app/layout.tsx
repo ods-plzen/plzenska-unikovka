@@ -8,6 +8,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
+import { PwaSetup } from "@/components/PwaSetup";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -82,6 +83,7 @@ export default function RootLayout({
           <Footer />
         </AreaProvider>
         <FeedbackWidget />
+        <PwaSetup />
         <Analytics />
       </body>
     </html>

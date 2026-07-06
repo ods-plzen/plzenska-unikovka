@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { subscribeWatch, isWatched, toggleWatch } from "@/lib/watch";
+import { syncPush } from "@/lib/push";
 
 export function WatchButton({
   id,
@@ -19,7 +20,13 @@ export function WatchButton({
   return (
     <button
       type="button"
-      onClick={() => toggleWatch(id)}
+      onClick={() => {
+        const turningOn = !isWatched(id);
+        toggleWatch(id);
+        // Zapnutí hlídání = user gesture → smíme požádat o notifikace.
+        // Vypnutí jen tiše synchronizuje seznam na server.
+        void syncPush(turningOn).catch(() => {});
+      }}
       aria-pressed={watched}
       className={`inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-medium transition-colors ${
         watched
