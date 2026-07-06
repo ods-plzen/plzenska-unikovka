@@ -13,7 +13,7 @@ import { EmailSignup } from "@/components/EmailSignup";
 const DONE_KEY = "pu-email-done";
 const DISMISS_KEY = "pu-email-popup-dismissed";
 const DISMISS_DAYS = 30;
-const DELAY_MS = 15_000;
+const DELAY_MS = 8_000;
 
 export function EmailPopup() {
   const pathname = usePathname();

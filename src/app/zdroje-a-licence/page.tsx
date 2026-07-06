@@ -136,6 +136,17 @@ export default function ZdrojeALicencePage() {
             anonymně sčítá zobrazení stránek.
           </li>
           <li>
+            <strong className="text-ink">
+              Místní úložiště jen pro vaše pohodlí.
+            </strong>{" "}
+            Prohlížeč si u vás lokálně pamatuje čistě funkční věci: které
+            uzavírky hlídáte, vybraný obvod, pro co jste hlasovali na roadmapě
+            a že jste zavřeli lištu nebo nabídku e-mailů (ať vám je nenabízíme
+            pořád dokola). Nic z toho se neposílá na server a nejde z toho
+            nikoho identifikovat. E-mail ukládáme, jen když nám ho sami dáte a
+            potvrdíte ho.
+          </li>
+          <li>
             <strong className="text-ink">Žádné prolamování přístupů.</strong>{" "}
             Vše bereme z veřejných HTTP endpointů, žádné login, žádné API klíče
             třetích stran.
