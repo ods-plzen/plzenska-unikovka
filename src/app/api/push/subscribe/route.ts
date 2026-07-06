@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
+import { getSupabase } from "@/lib/supabase";
 
 export const runtime = "nodejs";
+
+// Zápis přes security-definer RPC (pattern vote_for_feature) — anon klíč
+// stačí, tabulka samotná je za RLS bez policies.
 
 interface SubscribeBody {
   subscription?: {
@@ -38,20 +41,17 @@ export async function POST(request: Request) {
         .slice(0, 100)
     : [];
 
-  const admin = getSupabaseAdmin();
-  if (!admin) {
+  const supabase = getSupabase();
+  if (!supabase) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
 
-  const { error } = await admin.from("push_subscriptions").upsert(
-    {
-      endpoint,
-      keys: { p256dh, auth },
-      watched,
-      updated_at: new Date().toISOString(),
-    },
-    { onConflict: "endpoint" },
-  );
+  const { error } = await supabase.rpc("push_upsert_subscription", {
+    p_endpoint: endpoint,
+    p_p256dh: p256dh,
+    p_auth: auth,
+    p_watched: watched,
+  });
   if (error) {
     return NextResponse.json({ error: "db" }, { status: 500 });
   }
@@ -70,10 +70,10 @@ export async function DELETE(request: Request) {
   if (!endpoint.startsWith("https://")) {
     return NextResponse.json({ error: "endpoint" }, { status: 422 });
   }
-  const admin = getSupabaseAdmin();
-  if (!admin) {
+  const supabase = getSupabase();
+  if (!supabase) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
-  await admin.from("push_subscriptions").delete().eq("endpoint", endpoint);
+  await supabase.rpc("push_delete_subscription", { p_endpoint: endpoint });
   return NextResponse.json({ ok: true });
 }

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import webpush from "web-push";
 import { closures } from "@/lib/data";
-import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
+import { getSupabase } from "@/lib/supabase";
 
 export const runtime = "nodejs";
 // Cron běží nad čerstvým buildem (data commit z GH Actions = nový deploy).
@@ -10,10 +10,13 @@ export const dynamic = "force-dynamic";
 /*
  * Denní notifikační cron (viz vercel.json).
  *
+ * Data přes security-definer RPC (push_cron_*) — secret se ověřuje v DB
+ * proti push_config, takže anon klíč stačí a service_role není potřeba.
+ *
  * Události:
- *  1. "start"  — hlídaná uzavírka začíná zítra (od = zítřek) → připomínka.
- *  2. "seen"   — nová uzavírka na ulici, kterou uživatel hlídá (match přes
- *                name jiné hlídané uzavírky) → upozornění.
+ *  1. "start" — hlídaná uzavírka začíná zítra (od = zítřek) → připomínka.
+ *  2. "new"   — nová uzavírka na ulici, kterou uživatel hlídá (match přes
+ *               name jiné hlídané uzavírky) → upozornění.
  *
  * ⚠️ PRÁVNÍ MANTINEL: obsah notifikací je VÝHRADNĚ dopravní. Žádná politická
  * sdělení, žádné výzvy k volbám — TTPA čl. 18 vyžaduje pro politickou reklamu
@@ -37,7 +40,6 @@ interface Notice {
 }
 
 function pragueToday(): Date {
-  // Cron běží v UTC; "dnes" počítáme v Praze.
   const now = new Date();
   const praha = new Date(
     now.toLocaleString("en-US", { timeZone: "Europe/Prague" }),
@@ -53,10 +55,10 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
-  const admin = getSupabaseAdmin();
+  const supabase = getSupabase();
   const publicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? "";
   const privateKey = process.env.VAPID_PRIVATE_KEY ?? "";
-  if (!admin || !publicKey || !privateKey) {
+  if (!supabase || !publicKey || !privateKey) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
   webpush.setVapidDetails(
@@ -65,10 +67,31 @@ export async function GET(request: Request) {
     privateKey,
   );
 
+  // ── Stav z DB (RPC se secretem) ─────────────────────────────────────────
+  const [subsRes, eventsRes] = await Promise.all([
+    supabase.rpc("push_cron_subs", { p_secret: secret }),
+    supabase.rpc("push_cron_events", { p_secret: secret }),
+  ]);
+  if (subsRes.error || eventsRes.error) {
+    return NextResponse.json({ error: "db" }, { status: 500 });
+  }
+  const subs = (subsRes.data ?? []) as SubRow[];
+  const knownEvents = new Set((eventsRes.data ?? []) as string[]);
+
   const today = pragueToday();
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
   const tomorrowIso = tomorrow.toISOString().slice(0, 10);
+
+  const nameById = new Map(closures.map((c) => [c.id, c.name]));
+  function watchedStreets(sub: SubRow): Set<string> {
+    const names = new Set<string>();
+    for (const id of sub.watched) {
+      const n = nameById.get(id);
+      if (n) names.add(n);
+    }
+    return names;
+  }
 
   // ── Kandidátské události ────────────────────────────────────────────────
   const candidates: Notice[] = [];
@@ -84,35 +107,7 @@ export async function GET(request: Request) {
       });
     }
   }
-  // "Nové" uzavírky = ty, které cron ještě neviděl (seen klíč chybí).
-  const seenKeys = closures.map((c) => `seen:${c.id}`);
-  const { data: seenRows } = await admin
-    .from("push_events")
-    .select("key")
-    .in("key", seenKeys);
-  const seen = new Set((seenRows ?? []).map((r: { key: string }) => r.key));
-  const newClosures = closures.filter((c) => !seen.has(`seen:${c.id}`));
-
-  // ── Odběratelé ──────────────────────────────────────────────────────────
-  const { data: subsData, error: subsErr } = await admin
-    .from("push_subscriptions")
-    .select("endpoint, keys, watched");
-  if (subsErr) {
-    return NextResponse.json({ error: "db" }, { status: 500 });
-  }
-  const subs = (subsData ?? []) as SubRow[];
-
-  const nameById = new Map(closures.map((c) => [c.id, c.name]));
-  function watchedStreets(sub: SubRow): Set<string> {
-    const names = new Set<string>();
-    for (const id of sub.watched) {
-      const n = nameById.get(id);
-      if (n) names.add(n);
-    }
-    return names;
-  }
-
-  // Nová uzavírka na hlídané ulici → notice jen pokud ji někdo hlídá jménem.
+  const newClosures = closures.filter((c) => !knownEvents.has(`seen:${c.id}`));
   for (const c of newClosures) {
     const anyWatcher = subs.some(
       (s) => !s.watched.includes(c.id) && watchedStreets(s).has(c.name),
@@ -129,15 +124,7 @@ export async function GET(request: Request) {
     }
   }
 
-  // ── Dedup přes push_events ──────────────────────────────────────────────
-  const eventKeys = candidates.map((n) => n.eventKey);
-  const { data: sentRows } = eventKeys.length
-    ? await admin.from("push_events").select("key").in("key", eventKeys)
-    : { data: [] };
-  const alreadySent = new Set(
-    (sentRows ?? []).map((r: { key: string }) => r.key),
-  );
-  const toSend = candidates.filter((n) => !alreadySent.has(n.eventKey));
+  const toSend = candidates.filter((n) => !knownEvents.has(n.eventKey));
 
   // ── Odeslání ────────────────────────────────────────────────────────────
   let delivered = 0;
@@ -166,19 +153,17 @@ export async function GET(request: Request) {
     }
   }
 
-  // ── Úklid + zápis stavu ─────────────────────────────────────────────────
-  if (dead.length) {
-    await admin.from("push_subscriptions").delete().in("endpoint", dead);
-  }
-  const stamp = new Date().toISOString();
-  const newEventRows = [
-    ...toSend.map((n) => ({ key: n.eventKey, sent_at: stamp })),
-    ...newClosures.map((c) => ({ key: `seen:${c.id}`, sent_at: stamp })),
+  // ── Zápis stavu + úklid mrtvých odběrů (jedno RPC) ──────────────────────
+  const newEventKeys = [
+    ...toSend.map((n) => n.eventKey),
+    ...newClosures.map((c) => `seen:${c.id}`),
   ];
-  if (newEventRows.length) {
-    await admin
-      .from("push_events")
-      .upsert(newEventRows, { onConflict: "key" });
+  if (newEventKeys.length || dead.length) {
+    await supabase.rpc("push_cron_commit", {
+      p_secret: secret,
+      p_event_keys: newEventKeys,
+      p_dead_endpoints: dead,
+    });
   }
 
   return NextResponse.json({
