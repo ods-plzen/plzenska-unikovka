@@ -29,10 +29,23 @@ export async function sendEmail(
   return res.ok;
 }
 
+// Barvy = design systém webu (globals.css): blue-deep hlavička, sky akcent.
 const BLUE = "#153d8a";
+const BLUE_DEEP = "#0e2a63";
+const SKY = "#009fe3";
+const INK = "#1a2332";
+const MUTED = "#5a6478";
+const LINE = "#e2e6f1";
 const SITE = "https://plzenskaunikovka.cz";
+const HEAD_FONT =
+  "'Arial Narrow','Helvetica Neue',Helvetica,Arial,sans-serif";
+const BODY_FONT = "-apple-system,'Segoe UI',Roboto,Arial,sans-serif";
 
-/** Jednoduchá branded šablona — inline styly (e-mailoví klienti). */
+/**
+ * Branded šablona — replika hlavičky webu (tmavě modrý pruh, U-turn logo,
+ * wordmark). Inline styly a tabulkový header kvůli e-mailovým klientům;
+ * wordmark je text, takže hlavička drží brand i s vypnutými obrázky.
+ */
 export function renderEmail(opts: {
   heading: string;
   bodyText: string;
@@ -42,21 +55,35 @@ export function renderEmail(opts: {
   unsubUrl?: string;
 }): string {
   const cta = opts.ctaUrl
-    ? `<p style="margin:24px 0"><a href="${opts.ctaUrl}" style="background:${BLUE};color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:6px;font-weight:bold;display:inline-block">${opts.ctaLabel ?? "Otevřít"}</a></p>`
+    ? `<p style="margin:26px 0 4px"><a href="${opts.ctaUrl}" style="background:${BLUE};color:#ffffff;text-decoration:none;padding:13px 28px;border-radius:8px;font-weight:bold;font-size:15px;display:inline-block">${opts.ctaLabel ?? "Otevřít"} →</a></p>`
     : "";
   const unsub = opts.unsubUrl
-    ? `<p style="margin-top:32px;font-size:12px;color:#8b968f">Tato upozornění chodí, protože jste si na plzenskaunikovka.cz nastavili hlídání uzavírek. <a href="${opts.unsubUrl}" style="color:#8b968f">Odhlásit odběr</a> jedním klikem.</p>`
+    ? `<p style="margin:14px 0 0;font-size:12px;line-height:1.5;color:${MUTED}">Tenhle e-mail chodí, protože jste si na plzenskaunikovka.cz nastavili hlídání uzavírek. Kdykoli se <a href="${opts.unsubUrl}" style="color:${MUTED}">odhlásíte jedním klikem</a>.</p>`
     : "";
-  return `<!doctype html><html lang="cs"><body style="margin:0;padding:0;background:#f4f6fb;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+  return `<!doctype html><html lang="cs"><body style="margin:0;padding:0;background:#f2f5fb;font-family:${BODY_FONT}">
 <div style="max-width:560px;margin:0 auto;padding:24px 16px">
-  <p style="font-size:13px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;color:${BLUE};margin:0 0 16px">Plzeňská únikovka</p>
-  <div style="background:#ffffff;border-radius:10px;padding:24px;border:1px solid #e3e7f0">
-    <h1 style="font-size:20px;color:#0b1320;margin:0 0 12px">${opts.heading}</h1>
-    <p style="font-size:15px;line-height:1.55;color:#33423d;margin:0">${opts.bodyText}</p>
+  <!-- hlavička jako na webu -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${BLUE_DEEP};border-radius:12px 12px 0 0">
+    <tr>
+      <td style="padding:14px 20px">
+        <a href="${SITE}" style="text-decoration:none">
+          <img src="${SITE}/brand/email-icon.png" width="30" height="30" alt="" style="vertical-align:middle;border-radius:6px">
+          <span style="font-family:${HEAD_FONT};font-size:17px;font-weight:bold;letter-spacing:.06em;text-transform:uppercase;color:#ffffff;vertical-align:middle;padding-left:10px">Plzeňská únikovka</span>
+        </a>
+      </td>
+    </tr>
+  </table>
+  <div style="height:4px;background:${SKY};background:linear-gradient(90deg,${BLUE} 0%,${SKY} 100%)"></div>
+  <!-- obsah -->
+  <div style="background:#ffffff;border:1px solid ${LINE};border-top:0;border-radius:0 0 12px 12px;padding:28px 24px">
+    <h1 style="font-family:${HEAD_FONT};font-size:23px;line-height:1.25;color:${BLUE_DEEP};margin:0 0 12px">${opts.heading}</h1>
+    <p style="font-size:15px;line-height:1.6;color:${INK};margin:0">${opts.bodyText}</p>
     ${opts.bodyHtml ?? ""}
     ${cta}
   </div>
-  <p style="font-size:12px;color:#8b968f;margin-top:16px">Data: SITmP / JSDI ŘSD · aktualizace denně · <a href="${SITE}" style="color:#8b968f">${SITE.replace("https://", "")}</a></p>
+  <!-- patička -->
+  <p style="margin:18px 0 0;font-size:13px;line-height:1.5;color:${MUTED}">Šťastnou cestu bez objížděk přeje<br><a href="${SITE}" style="color:${BLUE};font-weight:bold;text-decoration:none">Plzeňská únikovka</a> · živá mapa uzavírek</p>
+  <p style="margin:10px 0 0;font-size:12px;color:${MUTED}">Data: SITmP a JSDI ŘSD, aktualizujeme každé ráno.</p>
   ${unsub}
 </div>
 </body></html>`;
