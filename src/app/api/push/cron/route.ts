@@ -189,7 +189,7 @@ export async function GET(request: Request) {
           notice.title,
           renderEmail({
             heading: notice.title,
-            bodyText: notice.body,
+            bodyText: `Hlídáte si tuhle ulici a zítra to vypukne. ${notice.body}`,
             ctaUrl: `https://plzenskaunikovka.cz${notice.url}`,
             ctaLabel: "Detail uzavírky a objížďky",
             unsubUrl: `https://plzenskaunikovka.cz/api/email/unsubscribe?token=${sub.token}`,
@@ -208,21 +208,22 @@ export async function GET(request: Request) {
             ? `${newClosures.length} nové uzavírky v Plzni`
             : `${newClosures.length} nových uzavírek v Plzni`;
       const listHtml =
-        `<ul style="margin:16px 0 0;padding-left:18px">` +
+        `<div style="margin-top:18px">` +
         newClosures
           .map(
             (c) =>
-              `<li style="margin-bottom:10px;font-size:15px;line-height:1.5"><a href="https://plzenskaunikovka.cz/doprava/${c.id}" style="color:#153d8a;font-weight:bold">${c.name}</a> (${c.oblast})<br><span style="color:#33423d">${c.akce}. ${c.termin}</span></li>`,
+              `<div style="border-left:3px solid #009fe3;padding:2px 0 2px 12px;margin-bottom:14px"><a href="https://plzenskaunikovka.cz/doprava/${c.id}" style="color:#153d8a;font-weight:bold;font-size:15px">${c.name}</a> <span style="color:#5a6478;font-size:13px">(${c.oblast})</span><br><span style="color:#1a2332;font-size:14px;line-height:1.5">${c.akce}. ${c.termin}</span></div>`,
           )
           .join("") +
-        `</ul>`;
+        `</div>`;
       for (const sub of emailSubs) {
         const ok = await sendEmail(
           sub.email,
           plural,
           renderEmail({
             heading: plural,
-            bodyText: "V datech města se objevily nové dopravní akce:",
+            bodyText:
+              "Dnes ráno přibylo v mapách města tohle. Ať vás to cestou nepřekvapí:",
             bodyHtml: listHtml,
             ctaUrl: "https://plzenskaunikovka.cz/mapa",
             ctaLabel: "Zobrazit na mapě",

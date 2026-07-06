@@ -59,9 +59,9 @@ export async function POST(request: Request) {
       email,
       "Potvrďte hlídání uzavírek — Plzeňská únikovka",
       renderEmail({
-        heading: "Ještě jedno kliknutí",
+        heading: "Ještě jedno kliknutí a hlídáme",
         bodyText:
-          "Nastavili jste si e-mailová upozornění na plzenskaunikovka.cz: každá nová uzavírka v Plzni + připomínka den před startem uzavírky na hlídané ulici. Kliknutím potvrdíte, že je to váš e-mail — bez potvrzení nic posílat nebudeme.",
+          "Někdo, nejspíš vy, zadal tenhle e-mail na plzenskaunikovka.cz. Co od nás bude chodit: každá nová uzavírka v Plzni a den předem připomínka, že začíná ta, kterou si hlídáte. Žádný spam, žádná politika, jen doprava. Klikněte, ať víme, že jste to opravdu vy. Bez potvrzení neposíláme nic.",
         ctaUrl: confirmUrl,
         ctaLabel: "Potvrdit hlídání",
       }),
