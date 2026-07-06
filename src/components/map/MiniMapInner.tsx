@@ -2,6 +2,7 @@
 
 import { MapContainer, TileLayer, CircleMarker, Polyline } from "react-leaflet";
 import type { Severity } from "@/lib/severity";
+import { DetourPath } from "@/components/map/DetourPath";
 
 const SEVERITY_FILL: Record<Severity, string> = {
   major: "#c0392b", // alert červená — úplná uzavírka (dopravní stop)
@@ -75,15 +76,11 @@ export default function MiniMapInner({
       ) : null}
 
       {detours.map((way, i) => (
-        <Polyline
+        <DetourPath
           key={`detour-${i}`}
-          positions={way}
-          pathOptions={{
-            color: DETOUR_GREEN,
-            weight: 5,
-            opacity: 0.85,
-            dashArray: "8 6",
-          }}
+          route={way}
+          arrows={height >= 220 ? 4 : 2}
+          endpoints={height >= 220}
         />
       ))}
 

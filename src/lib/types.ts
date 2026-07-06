@@ -32,13 +32,22 @@ export interface Closure {
   // 4 = OSM + 300m radius (přibližný úsek)
   // 5 = pouze bod (státní silnice bez OSM jména)
   geomTier?: 1 | 2 | 3 | 4 | 5;
-  // Polyline objízdné trasy — kudy mají lidé jet místo uzavřeného úseku.
-  // Renderuje se dashed zelený overlay nad mapou. Plněno z PLAN_ENRICH /
-  // extras.json + OSM cache lookup.
+  // Objízdné trasy — souvislé route geometrie (jedna položka = jedna větev).
+  // Plní se v data.ts z extras.detours (kurátorované OSRM trasy po
+  // silnicích); fragmenty ulic ze scraperu se ignorují.
   detourWays?: [number, number][][];
 }
 
 export type Phase = [label: string, when: string, state: "done" | "now" | ""];
+
+// Jedna větev objízdné trasy: souvislá geometrie po silnicích (OSRM) +
+// itinerář pro panel. Směr route (A→B) odpovídá pořadí steps.
+export interface DetourBranch {
+  label?: string;
+  steps?: string[];
+  km?: number;
+  route: [number, number][];
+}
 
 export interface KeyNumber {
   value: string;
@@ -65,7 +74,7 @@ export interface ClosureExtra {
   // Infografické komponenty pro detail page
   keyNumbers?: KeyNumber[]; // hero stat row (cena, trvání, linky...)
   scope?: ScopeIcon[]; // co se rekonstruuje (vodovod, kanál, vozovka...)
-  detourSteps?: string[]; // turn-by-turn chips (Doubravka → Rokycanská → ...)
+  detours?: DetourBranch[]; // kurátorované objízdné trasy (mapa + itinerář)
 }
 
 export type MhdMode = "tram" | "bus" | "trolley" | "night";

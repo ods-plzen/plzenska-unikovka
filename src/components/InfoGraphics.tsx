@@ -1,4 +1,5 @@
 import type {
+  DetourBranch,
   KeyNumber,
   MhdInfo,
   MhdReroute,
@@ -85,43 +86,79 @@ export function ScopeIconsRow({ items }: { items: ScopeIcon[] }) {
   );
 }
 
-/* ─── DETOUR STEPS — turn-by-turn chips ─── */
+/* ─── DETOUR ITINERARY — svislý itinerář objízdné trasy (jako navigace) ─── */
 
-export function DetourSteps({ steps }: { steps: string[] }) {
-  if (steps.length < 2) return null;
+const DETOUR_GREEN = "#15803d";
+
+export function DetourItinerary({ detours }: { detours: DetourBranch[] }) {
+  const branches = detours.filter((d) => (d.steps?.length ?? 0) >= 2);
+  if (branches.length === 0) return null;
   return (
     <section className="rounded-2xl border-2 border-ink/15 bg-paper p-4 sm:p-5">
       <h3
         style={HEAD_FONT}
-        className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/55 sm:text-[11px]"
+        className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/55 sm:text-[11px]"
       >
         Objížďka — kudy jet
       </h3>
-      <div className="flex flex-wrap items-center gap-2">
-        {steps.map((s, i) => {
-          const isEndpoint = i === 0 || i === steps.length - 1;
+      <div
+        className={
+          branches.length > 1 ? "grid gap-6 sm:grid-cols-2" : "grid gap-6"
+        }
+      >
+        {branches.map((d, bi) => {
+          const steps = d.steps!;
           return (
-            <span key={i} className="flex items-center gap-2">
-              <span
-                style={HEAD_FONT}
-                className={
-                  "rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.15em] sm:text-sm " +
-                  (isEndpoint
-                    ? "bg-ink/85 text-paper"
-                    : "border-2 border-[#15803d] text-[#15803d]")
-                }
-              >
-                {s}
-              </span>
-              {i < steps.length - 1 && (
-                <span className="text-base font-bold text-[#15803d] sm:text-lg">
-                  →
-                </span>
+            <div key={bi}>
+              {d.label && (
+                <p
+                  style={HEAD_FONT}
+                  className="mb-3 text-xs font-bold uppercase tracking-[0.15em] text-[#15803d]"
+                >
+                  {d.label}
+                </p>
               )}
-            </span>
+              <ol className="m-0 list-none p-0">
+                {steps.map((s, i) => {
+                  const isEnd = i === 0 || i === steps.length - 1;
+                  return (
+                    <li key={i} className="relative pb-4 pl-10 last:pb-0">
+                      {i < steps.length - 1 && (
+                        <span
+                          aria-hidden
+                          className="absolute bottom-[-2px] left-[11px] top-5 w-[3px] rounded bg-[#15803d]"
+                        />
+                      )}
+                      <span
+                        className={
+                          "absolute left-0 top-0 flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold " +
+                          (isEnd
+                            ? "bg-ink/85 text-paper"
+                            : "border-2 border-[#15803d] bg-paper text-[#15803d]")
+                        }
+                      >
+                        {i === 0 ? "A" : i === steps.length - 1 ? "B" : i}
+                      </span>
+                      <span className="text-sm font-semibold leading-6 text-ink">
+                        {s}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ol>
+              {typeof d.km === "number" && (
+                <p className="mt-3 inline-block rounded-lg bg-[#15803d]/10 px-3 py-1.5 text-xs font-bold text-[#15803d]">
+                  ≈ {String(d.km).replace(".", ",")} km
+                </p>
+              )}
+            </div>
           );
         })}
       </div>
+      <p className="mt-4 text-xs leading-relaxed text-ink/55">
+        Trasa A → B odpovídá zelené čáře na mapě (šipky = směr jízdy).
+        Orientační vedení — na místě se řiďte přechodným dopravním značením.
+      </p>
     </section>
   );
 }
