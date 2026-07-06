@@ -11,7 +11,7 @@ import { EmailWatch } from "@/components/EmailWatch";
 import { MhdBlock } from "@/components/MhdBlock";
 import { FeedbackInlineCta } from "@/components/FeedbackInlineCta";
 import {
-  DetourSteps,
+  DetourItinerary,
   KeyNumbers,
   MhdLineCards,
   ScopeIconsRow,
@@ -117,7 +117,9 @@ export default async function Page({
 
       {extra?.scope && <ScopeIconsRow items={extra.scope} />}
 
-      {extra?.detourSteps && <DetourSteps steps={extra.detourSteps} />}
+      {extra?.detours?.length ? (
+        <DetourItinerary detours={extra.detours} />
+      ) : null}
 
       <div className="grid gap-6 md:grid-cols-2">
         {extra?.means && (
@@ -136,7 +138,7 @@ export default async function Page({
           </section>
         )}
 
-        {extra?.objizdka && !extra?.detourSteps && (
+        {extra?.objizdka && !extra?.detours?.length && (
           <section className="rounded-xl border border-line bg-card p-5">
             <h2 className="head mb-3 text-lg font-semibold text-blue">
               🔀 Objízdné trasy

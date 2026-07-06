@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import type { LatLngBoundsExpression, PathOptions } from "leaflet";
 import type { Closure, RestrictedRoad } from "@/lib/types";
 import type { Severity } from "@/lib/severity";
+import { DetourPath } from "@/components/map/DetourPath";
 
 const PLZEN_CENTER: [number, number] = [49.7475, 13.3776];
 
@@ -91,21 +92,16 @@ export default function ClosureMapInner({
           />
         )),
       )}
-      {/* Detour overlay — kudy jet místo uzavřeného úseku. Dashed zelená. */}
-      {closures.flatMap((c) =>
-        (c.detourWays ?? []).map((way, i) => (
-          <Polyline
-            key={`d-${c.id}-${i}`}
-            positions={way}
-            pathOptions={{
-              color: "#15803d",
-              weight: 4,
-              opacity: 0.75,
-              dashArray: "8 6",
-            }}
-          />
-        )),
-      )}
+      {/* Objízdné trasy — souvislá zelená se šipkami po směru jízdy.
+          Na přehledové mapě jen pro vybranou uzavírku (jinak šum),
+          na detailu (jediná closure) vždy. */}
+      {closures
+        .filter((c) => closures.length === 1 || c.id === selectedId)
+        .flatMap((c) =>
+          (c.detourWays ?? []).map((way, i) => (
+            <DetourPath key={`d-${c.id}-${i}`} route={way} />
+          )),
+        )}
       {/* Major markers nahoře (renderují se poslední → leží navrch) */}
       {(["minor", "medium", "major"] as Severity[]).flatMap((sev) =>
         closures

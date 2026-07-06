@@ -12,8 +12,18 @@ import { getSupabase } from "@/lib/supabase";
 
 // JSON přichází se širšími typy (string místo union, number[] místo n-tic),
 // proto převádíme přes unknown na naše doménové typy.
-export const closures = closuresRaw as unknown as Closure[];
 export const extras = extrasRaw as unknown as Record<string, ClosureExtra>;
+
+// Objízdné trasy: jediný zdroj pravdy jsou kurátorované souvislé trasy
+// z extras.detours (OSRM po silnicích). Fragmenty detourWays ze scraperu
+// (celé ulice oříznuté radiusem) se zahazují — nespojité kusy na mapě
+// jsou horší než nic.
+export const closures: Closure[] = (closuresRaw as unknown as Closure[]).map(
+  (c) => {
+    const routes = (extras[c.id]?.detours ?? []).map((d) => d.route);
+    return { ...c, detourWays: routes.length > 0 ? routes : undefined };
+  },
+);
 
 interface PmdpSnapshot {
   snapshot: string;
