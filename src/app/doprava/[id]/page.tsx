@@ -7,6 +7,7 @@ import { PhaseTimeline } from "@/components/PhaseTimeline";
 import { StatusBadge } from "@/components/StatusBadge";
 import { WatchButton } from "@/components/WatchButton";
 import { ShareButton } from "@/components/ShareButton";
+import { EmailWatch } from "@/components/EmailWatch";
 import { MhdBlock } from "@/components/MhdBlock";
 import { FeedbackInlineCta } from "@/components/FeedbackInlineCta";
 import {
@@ -109,6 +110,8 @@ export default async function Page({
       {extra?.keyNumbers && <KeyNumbers items={extra.keyNumbers} />}
 
       <ClosureMap closures={[c]} height={360} />
+
+      <EmailWatch id={c.id} />
 
       <FeedbackInlineCta context={c.name} />
 

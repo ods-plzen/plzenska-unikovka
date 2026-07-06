@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import webpush from "web-push";
 import { closures } from "@/lib/data";
 import { getSupabase } from "@/lib/supabase";
+import { emailEnabled, sendEmail, renderEmail } from "@/lib/email";
 
 export const runtime = "nodejs";
 // Cron běží nad čerstvým buildem (data commit z GH Actions = nový deploy).
@@ -68,15 +69,21 @@ export async function GET(request: Request) {
   );
 
   // ── Stav z DB (RPC se secretem) ─────────────────────────────────────────
-  const [subsRes, eventsRes] = await Promise.all([
+  const [subsRes, eventsRes, emailRes] = await Promise.all([
     supabase.rpc("push_cron_subs", { p_secret: secret }),
     supabase.rpc("push_cron_events", { p_secret: secret }),
+    supabase.rpc("email_cron_subs", { p_secret: secret }),
   ]);
   if (subsRes.error || eventsRes.error) {
     return NextResponse.json({ error: "db" }, { status: 500 });
   }
   const subs = (subsRes.data ?? []) as SubRow[];
   const knownEvents = new Set((eventsRes.data ?? []) as string[]);
+  const emailSubs = (emailRes.data ?? []) as {
+    email: string;
+    watched: string[];
+    token: string;
+  }[];
 
   const today = pragueToday();
   const tomorrow = new Date(today);
@@ -153,6 +160,40 @@ export async function GET(request: Request) {
     }
   }
 
+  // ── E-mailový kanál (stejné události, stejný matching) ──────────────────
+  let deliveredEmail = 0;
+  if (emailEnabled() && emailSubs.length) {
+    function emailWatchedStreets(watched: string[]): Set<string> {
+      const names = new Set<string>();
+      for (const id of watched) {
+        const n = nameById.get(id);
+        if (n) names.add(n);
+      }
+      return names;
+    }
+    for (const notice of toSend) {
+      const audience = emailSubs.filter(
+        (s) =>
+          s.watched.includes(notice.closureId) ||
+          emailWatchedStreets(s.watched).has(notice.streetName),
+      );
+      for (const sub of audience) {
+        const ok = await sendEmail(
+          sub.email,
+          notice.title,
+          renderEmail({
+            heading: notice.title,
+            bodyText: notice.body,
+            ctaUrl: `https://plzenskaunikovka.cz${notice.url}`,
+            ctaLabel: "Detail uzavírky a objížďky",
+            unsubUrl: `https://plzenskaunikovka.cz/api/email/unsubscribe?token=${sub.token}`,
+          }),
+        );
+        if (ok) deliveredEmail++;
+      }
+    }
+  }
+
   // ── Zápis stavu + úklid mrtvých odběrů (jedno RPC) ──────────────────────
   const newEventKeys = [
     ...toSend.map((n) => n.eventKey),
@@ -170,6 +211,7 @@ export async function GET(request: Request) {
     ok: true,
     events: toSend.length,
     delivered,
+    deliveredEmail,
     prunedSubscriptions: dead.length,
     newClosuresMarked: newClosures.length,
   });
