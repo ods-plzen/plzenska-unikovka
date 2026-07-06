@@ -52,8 +52,8 @@ export function EmailWatch({ id }: { id: string }) {
         ✉️ Hlídat e-mailem (bez instalace)
       </p>
       <p className="mt-1 text-xs text-muted">
-        Den před začátkem uzavírky a při nové uzavírce na téhle ulici vám
-        přijde e-mail.
+        Přijde vám e-mail o každé nové uzavírce v Plzni a připomínka den
+        předtím, než začne uzavírka na hlídané ulici.
       </p>
       <div className="mt-3 flex gap-2">
         <input

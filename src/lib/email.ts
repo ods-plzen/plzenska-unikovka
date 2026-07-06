@@ -36,6 +36,7 @@ const SITE = "https://plzenskaunikovka.cz";
 export function renderEmail(opts: {
   heading: string;
   bodyText: string;
+  bodyHtml?: string; // volitelný blok pod bodyText (např. seznam uzavírek)
   ctaUrl?: string;
   ctaLabel?: string;
   unsubUrl?: string;
@@ -52,6 +53,7 @@ export function renderEmail(opts: {
   <div style="background:#ffffff;border-radius:10px;padding:24px;border:1px solid #e3e7f0">
     <h1 style="font-size:20px;color:#0b1320;margin:0 0 12px">${opts.heading}</h1>
     <p style="font-size:15px;line-height:1.55;color:#33423d;margin:0">${opts.bodyText}</p>
+    ${opts.bodyHtml ?? ""}
     ${cta}
   </div>
   <p style="font-size:12px;color:#8b968f;margin-top:16px">Data: SITmP / JSDI ŘSD · aktualizace denně · <a href="${SITE}" style="color:#8b968f">${SITE.replace("https://", "")}</a></p>

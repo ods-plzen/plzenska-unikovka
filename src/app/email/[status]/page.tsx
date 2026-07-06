@@ -10,7 +10,7 @@ const CONTENT: Record<
   potvrzeno: {
     emoji: "✅",
     title: "Hlídání potvrzeno",
-    text: "Od teď vám pošleme e-mail den před začátkem hlídané uzavírky a když se na sledované ulici objeví nová. Nic jiného — žádný spam, žádná politika. Odhlásit se můžete jedním klikem v patičce každé zprávy.",
+    text: "Od teď vám pošleme e-mail o každé nové uzavírce v Plzni a připomínku den před začátkem uzavírky na hlídané ulici. Nic jiného — žádný spam, žádná politika. Odhlásit se můžete jedním klikem v patičce každé zprávy.",
   },
   odhlaseno: {
     emoji: "👋",
