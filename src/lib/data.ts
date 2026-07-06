@@ -103,7 +103,12 @@ export async function getExtra(id: string): Promise<ClosureExtra | undefined> {
       console.warn("[supabase] getExtra fallback to static:", error.message);
       return extras[id];
     }
-    if (data?.payload) return data.payload as ClosureExtra;
+    // DB payload je editorial override — merguje se NAD statický základ,
+    // aby novější statická pole (např. detours) nezmizela, když je starší
+    // DB řádek nemá.
+    if (data?.payload) {
+      return { ...extras[id], ...(data.payload as ClosureExtra) };
+    }
   } catch (e) {
     console.warn("[supabase] getExtra threw, fallback:", e);
   }
