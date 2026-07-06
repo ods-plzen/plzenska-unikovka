@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { closures, closureById, restrictedRoads } from "@/lib/data";
 import { ClosureMap } from "@/components/map/ClosureMap";
@@ -39,6 +39,26 @@ export function MapView() {
     return closures.filter((c) => isInFilter(c, filter));
   }, [filter]);
 
+  // Hledání ulice — klientský filtr přes všechny uzavírky (name + akce).
+  // Výběr výsledku = existující sel mechanismus (zvýraznění + panel).
+  const [query, setQuery] = useState("");
+  const hits = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (q.length < 2) return [];
+    return closures
+      .filter(
+        (c) =>
+          c.name.toLowerCase().includes(q) ||
+          (c.akce ?? "").toLowerCase().includes(q),
+      )
+      .slice(0, 6);
+  }, [query]);
+
+  function pickHit(id: string) {
+    setQuery("");
+    pushParams({ sel: id });
+  }
+
   return (
     <div className="space-y-4">
       <div className="space-y-1">
@@ -57,6 +77,40 @@ export function MapView() {
               : "uzavírek"}{" "}
           · zdroj SITmP / JSDI ŘSD
         </p>
+      </div>
+
+      <div className="relative">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Najdi ulici… (Americká, Masarykova, Na Roudné)"
+          aria-label="Hledat ulici v uzavírkách"
+          className="w-full rounded-md border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-sky focus:outline-none"
+        />
+        {hits.length > 0 && (
+          <ul className="absolute inset-x-0 top-full z-[1000] mt-1 overflow-hidden rounded-md border border-line bg-white shadow-lg">
+            {hits.map((h) => (
+              <li key={h.id}>
+                <button
+                  type="button"
+                  onClick={() => pickHit(h.id)}
+                  className="flex w-full items-baseline justify-between gap-3 px-3 py-2 text-left text-sm hover:bg-paper"
+                >
+                  <span className="font-medium text-ink">{h.name}</span>
+                  <span className="shrink-0 text-xs text-muted">
+                    {h.oblast}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+        {query.trim().length >= 2 && hits.length === 0 && (
+          <div className="absolute inset-x-0 top-full z-[1000] mt-1 rounded-md border border-line bg-white px-3 py-2 text-sm text-muted shadow-lg">
+            Nic nenalezeno — na téhle ulici nejspíš nic neprobíhá. 👍
+          </div>
+        )}
       </div>
 
       <div className="flex items-baseline justify-between gap-3 border-t-2 border-ink/15 pt-3">

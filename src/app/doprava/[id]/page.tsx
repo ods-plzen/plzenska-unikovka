@@ -6,6 +6,7 @@ import { ClosureMap } from "@/components/map/ClosureMap";
 import { PhaseTimeline } from "@/components/PhaseTimeline";
 import { StatusBadge } from "@/components/StatusBadge";
 import { WatchButton } from "@/components/WatchButton";
+import { ShareButton } from "@/components/ShareButton";
 import { MhdBlock } from "@/components/MhdBlock";
 import { FeedbackInlineCta } from "@/components/FeedbackInlineCta";
 import {
@@ -96,7 +97,13 @@ export default async function Page({
             </p>
           )}
         </div>
-        <WatchButton id={c.id} />
+        <div className="flex flex-wrap items-center gap-2">
+          <WatchButton id={c.id} />
+          <ShareButton
+            title={`${c.name} — uzavírka (${c.oblast})`}
+            text={c.akce}
+          />
+        </div>
       </header>
 
       {extra?.keyNumbers && <KeyNumbers items={extra.keyNumbers} />}
