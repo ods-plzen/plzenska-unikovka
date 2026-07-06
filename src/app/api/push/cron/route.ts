@@ -160,18 +160,24 @@ export async function GET(request: Request) {
     }
   }
 
-  // ── E-mailový kanál (stejné události, stejný matching) ──────────────────
+  // ── E-mailový kanál ──────────────────────────────────────────────────────
+  // 1) „Zítra začíná" — jen odběratelům, kteří danou uzavírku/ulici hlídají.
+  // 2) Digest VŠECH nových uzavírek — všem potvrzeným odběratelům (jeden
+  //    společný e-mail se seznamem; dedup zajišťuje seen: marking).
   let deliveredEmail = 0;
   if (emailEnabled() && emailSubs.length) {
-    function emailWatchedStreets(watched: string[]): Set<string> {
+    const emailWatchedStreets = (watched: string[]): Set<string> => {
       const names = new Set<string>();
       for (const id of watched) {
         const n = nameById.get(id);
         if (n) names.add(n);
       }
       return names;
-    }
+    };
+
+    // 1) připomínky startu (watched-only)
     for (const notice of toSend) {
+      if (!notice.eventKey.startsWith("start:")) continue;
       const audience = emailSubs.filter(
         (s) =>
           s.watched.includes(notice.closureId) ||
@@ -186,6 +192,40 @@ export async function GET(request: Request) {
             bodyText: notice.body,
             ctaUrl: `https://plzenskaunikovka.cz${notice.url}`,
             ctaLabel: "Detail uzavírky a objížďky",
+            unsubUrl: `https://plzenskaunikovka.cz/api/email/unsubscribe?token=${sub.token}`,
+          }),
+        );
+        if (ok) deliveredEmail++;
+      }
+    }
+
+    // 2) digest nových uzavírek (všem)
+    if (newClosures.length) {
+      const plural =
+        newClosures.length === 1
+          ? "Nová uzavírka v Plzni"
+          : newClosures.length < 5
+            ? `${newClosures.length} nové uzavírky v Plzni`
+            : `${newClosures.length} nových uzavírek v Plzni`;
+      const listHtml =
+        `<ul style="margin:16px 0 0;padding-left:18px">` +
+        newClosures
+          .map(
+            (c) =>
+              `<li style="margin-bottom:10px;font-size:15px;line-height:1.5"><a href="https://plzenskaunikovka.cz/doprava/${c.id}" style="color:#153d8a;font-weight:bold">${c.name}</a> (${c.oblast})<br><span style="color:#33423d">${c.akce}. ${c.termin}</span></li>`,
+          )
+          .join("") +
+        `</ul>`;
+      for (const sub of emailSubs) {
+        const ok = await sendEmail(
+          sub.email,
+          plural,
+          renderEmail({
+            heading: plural,
+            bodyText: "V datech města se objevily nové dopravní akce:",
+            bodyHtml: listHtml,
+            ctaUrl: "https://plzenskaunikovka.cz/mapa",
+            ctaLabel: "Zobrazit na mapě",
             unsubUrl: `https://plzenskaunikovka.cz/api/email/unsubscribe?token=${sub.token}`,
           }),
         );
