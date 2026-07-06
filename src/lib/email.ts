@@ -60,19 +60,15 @@ export function renderEmail(opts: {
   const unsub = opts.unsubUrl
     ? `<p style="margin:14px 0 0;font-size:12px;line-height:1.5;color:${MUTED}">Tenhle e-mail chodí, protože jste si na plzenskaunikovka.cz nastavili hlídání uzavírek. Kdykoli se <a href="${opts.unsubUrl}" style="color:${MUTED}">odhlásíte jedním klikem</a>.</p>`
     : "";
-  return `<!doctype html><html lang="cs"><body style="margin:0;padding:0;background:#f2f5fb;font-family:${BODY_FONT}">
+  return `<!doctype html><html lang="cs"><head>
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+</head><body style="margin:0;padding:0;background:#f2f5fb;font-family:${BODY_FONT}">
 <div style="max-width:560px;margin:0 auto;padding:24px 16px">
-  <!-- hlavička jako na webu -->
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${BLUE_DEEP};border-radius:12px 12px 0 0">
-    <tr>
-      <td style="padding:14px 20px">
-        <a href="${SITE}" style="text-decoration:none">
-          <img src="${SITE}/brand/email-icon.png" width="30" height="30" alt="" style="vertical-align:middle;border-radius:6px">
-          <span style="font-family:${HEAD_FONT};font-size:17px;font-weight:bold;letter-spacing:.06em;text-transform:uppercase;color:#ffffff;vertical-align:middle;padding-left:10px">Plzeňská únikovka</span>
-        </a>
-      </td>
-    </tr>
-  </table>
+  <!-- hlavička jako na webu — celý pruh je PNG, takže ho dark mode nepřebarví -->
+  <a href="${SITE}" style="text-decoration:none">
+    <img src="${SITE}/brand/email-header.png" width="560" alt="Plzeňská únikovka" style="width:100%;max-width:560px;height:auto;display:block;border-radius:12px 12px 0 0">
+  </a>
   <div style="height:4px;background:${SKY};background:linear-gradient(90deg,${BLUE} 0%,${SKY} 100%)"></div>
   <!-- obsah -->
   <div style="background:#ffffff;border:1px solid ${LINE};border-top:0;border-radius:0 0 12px 12px;padding:28px 24px">
