@@ -26,14 +26,12 @@ export async function POST(request: Request) {
   if (!EMAIL_RE.test(email) || email.length > 254) {
     return NextResponse.json({ error: "email" }, { status: 422 });
   }
+  // Prázdné watched je OK — odběr jen celoměstského digestu (footer formulář).
   const watched = Array.isArray(body.watched)
     ? body.watched
         .filter((w) => typeof w === "string" && w.length > 0 && w.length <= 80)
         .slice(0, 100)
     : [];
-  if (watched.length === 0) {
-    return NextResponse.json({ error: "watched" }, { status: 422 });
-  }
 
   const supabase = getSupabase();
   if (!supabase || !emailEnabled()) {

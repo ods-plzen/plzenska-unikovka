@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EmailSignup } from "@/components/EmailSignup";
 
 export function Footer() {
   return (
@@ -53,6 +54,15 @@ export function Footer() {
                 Ochrana osobních údajů ↗
               </a>
             </p>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-white/10 pt-8">
+          <div className="head text-base font-bold uppercase tracking-tight">
+            Nová uzavírka? Dáme vědět e-mailem
+          </div>
+          <div className="mt-3">
+            <EmailSignup />
           </div>
         </div>
 
