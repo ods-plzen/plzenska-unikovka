@@ -25,6 +25,11 @@ export function EmailSignup() {
         body: JSON.stringify({ email: email.trim(), watched: watchedList() }),
       });
       setState(res.ok ? "done" : "error");
+      if (res.ok) {
+        try {
+          localStorage.setItem("pu-email-done", "1"); // popup už nenabízet
+        } catch {}
+      }
     } catch {
       setState("error");
     }

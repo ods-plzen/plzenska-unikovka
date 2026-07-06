@@ -206,3 +206,15 @@ h3,
    Scroll funguje dál, jen není vidět ošklivý šedý bar. */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* e-mail popup (EmailPopup.tsx) */
+@keyframes pu-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

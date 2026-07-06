@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { PwaSetup } from "@/components/PwaSetup";
+import { EmailPopup } from "@/components/EmailPopup";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -83,6 +84,9 @@ export default function RootLayout({
           <Footer />
         </AreaProvider>
         <FeedbackWidget />
+        <Suspense fallback={null}>
+          <EmailPopup />
+        </Suspense>
         <PwaSetup />
         <Analytics />
       </body>
