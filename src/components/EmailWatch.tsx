@@ -26,6 +26,11 @@ export function EmailWatch({ id }: { id: string }) {
         body: JSON.stringify({ email: email.trim(), watched }),
       });
       setState(res.ok ? "done" : "error");
+      if (res.ok) {
+        try {
+          localStorage.setItem("pu-email-done", "1"); // popup už nenabízet
+        } catch {}
+      }
     } catch {
       setState("error");
     }
