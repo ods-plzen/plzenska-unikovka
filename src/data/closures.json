@@ -1,535 +1,270 @@
 [
  {
-  "id": "na-okraji",
-  "name": "Na Okraji",
+  "id": "dobranska",
+  "name": "Dobřanská",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "21. 7. 2025 – 20. 12. 2026",
+  "ways": [
+   [
+    [
+     49.70341,
+     13.32854
+    ],
+    [
+     49.70334,
+     13.3285
+    ]
+   ],
+   [
+    [
+     49.70334,
+     13.3285
+    ],
+    [
+     49.70219,
+     13.32782
+    ]
+   ],
+   [
+    [
+     49.70823,
+     13.33143
+    ],
+    [
+     49.70777,
+     13.33116
+    ]
+   ],
+   [
+    [
+     49.70341,
+     13.32854
+    ],
+    [
+     49.70418,
+     13.329
+    ],
+    [
+     49.70443,
+     13.32915
+    ]
+   ],
+   [
+    [
+     49.70736,
+     13.3309
+    ],
+    [
+     49.70607,
+     13.33013
+    ]
+   ],
+   [
+    [
+     49.70777,
+     13.33116
+    ],
+    [
+     49.70736,
+     13.3309
+    ]
+   ],
+   [
+    [
+     49.70443,
+     13.32915
+    ],
+    [
+     49.70546,
+     13.32977
+    ],
+    [
+     49.70607,
+     13.33013
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 21.07.2025 00:01 Do 20.12.2026 23:59, částečná uzavírka v úseku od kruhového objezdu až za křižovatku s ulicí U Čertovy díry z důvodu akce \"Dešťová kanalizace a komunikace\", Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "cdb2a780-4d40-4216-936a-dcf3ee24ee8b",
+  "superdioId": null,
+  "od": "2025-07-21",
+  "do": "2026-12-20",
+  "severity": "minor",
+  "geomTier": 1
+ },
+ {
+  "id": "za-vodarnou",
+  "name": "Za Vodárnou",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "4. 5. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71975,
+     13.40424
+    ],
+    [
+     49.71971,
+     13.40414
+    ],
+    [
+     49.71942,
+     13.40341
+    ],
+    [
+     49.71939,
+     13.40333
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Za Vodárnou, mezi křižovatkami ulic Zelenohorská a Plzeňská cesta, Plzeň 2-Slovany, Plzeň, , Od 04.05.2026 00:00, Do 31.08.2026 23:59, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "6b4b0782-00dd-45d4-97c3-7a9e3b3d2bdb",
+  "superdioId": null,
+  "od": "2026-05-04",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 3
+ },
+ {
+  "id": "zamecnicka",
+  "name": "Zámečnická",
   "akce": "Uzavřená silnice",
   "state": "Probíhá",
   "status": "now",
   "color": "#c0392b",
   "oblast": "Plzeň 3",
-  "termin": "1. 12. 2025 – 31. 10. 2026",
+  "termin": "20. 4. 2026 – 31. 7. 2026",
   "ways": [
    [
     [
-     49.74679,
-     13.34603
+     49.73926,
+     13.3695
     ],
     [
-     49.74679,
-     13.34633
+     49.73926,
+     13.36944
+    ],
+    [
+     49.73928,
+     13.36897
+    ],
+    [
+     49.73928,
+     13.3689
+    ],
+    [
+     49.73919,
+     13.36696
+    ],
+    [
+     49.73918,
+     13.36676
     ]
    ],
    [
     [
-     49.74679,
-     13.34575
+     49.73915,
+     13.3709
     ],
     [
-     49.74679,
-     13.34603
+     49.73916,
+     13.37083
+    ],
+    [
+     49.73918,
+     13.37061
     ]
    ],
    [
     [
-     49.7468,
-     13.3454
+     49.73926,
+     13.3695
     ],
     [
-     49.74682,
-     13.3441
-    ]
-   ],
-   [
-    [
-     49.7468,
-     13.3454
+     49.73925,
+     13.36956
     ],
     [
-     49.74679,
-     13.34575
+     49.73918,
+     13.37061
     ]
    ]
   ],
   "point": false,
-  "popis": "ulice Na Okraji, Plzeň 3, uzavřeno, stavební práce, Od 01.12.2025 00:00 Do 31.10.2026 23:59, zjednosměrnění provozu v úseku od ulice Křimická k ulici Touškovská \n, jednosměrná uzavírka, Vydal: ÚMO Plzeň 03",
+  "popis": "ulice Zámečnická, Plzeň 3, uzavřeno, práce na inženýrských sítích, Od 20.04.2026 08:00 Do 31.07.2026 23:59, Zámečnická ulice v úseku od křižovatky s ulicí Hřímalého ke křižovatce s ulicí Mánesova , Vydal: ÚMO Plzeň 03",
   "typ": "Uzavírka a omezení",
   "subtyp": "uzavřená silnice",
   "zdroj": "JSDI",
-  "jsdiId": "e652cffb-78c8-45d9-940f-4f7350b4b65f",
+  "jsdiId": "b2d8799f-3316-4267-9d46-2f3ea549bd10",
   "superdioId": null,
-  "od": "2025-12-01",
-  "do": "2026-10-31",
-  "severity": "major",
-  "geomTier": 1
- },
- {
-  "id": "28-rijna",
-  "name": "28. října",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "4. 5. 2026 – 20. 12. 2026",
-  "ways": [
-   [
-    [
-     49.7772,
-     13.41008
-    ],
-    [
-     49.77748,
-     13.41004
-    ],
-    [
-     49.77867,
-     13.40991
-    ]
-   ],
-   [
-    [
-     49.77702,
-     13.41006
-    ],
-    [
-     49.7772,
-     13.41008
-    ]
-   ],
-   [
-    [
-     49.77594,
-     13.40935
-    ],
-    [
-     49.77629,
-     13.40962
-    ],
-    [
-     49.77662,
-     13.40986
-    ],
-    [
-     49.7768,
-     13.40998
-    ],
-    [
-     49.77691,
-     13.41003
-    ],
-    [
-     49.77702,
-     13.41006
-    ]
-   ],
-   [
-    [
-     49.77265,
-     13.40746
-    ],
-    [
-     49.77273,
-     13.40768
-    ],
-    [
-     49.77281,
-     13.4079
-    ]
-   ],
-   [
-    [
-     49.77281,
-     13.4079
-    ],
-    [
-     49.77291,
-     13.40805
-    ],
-    [
-     49.77296,
-     13.40811
-    ],
-    [
-     49.77301,
-     13.40815
-    ],
-    [
-     49.7731,
-     13.40821
-    ],
-    [
-     49.7734,
-     13.40833
-    ],
-    [
-     49.77391,
-     13.40853
-    ],
-    [
-     49.77433,
-     13.40868
-    ],
-    [
-     49.77482,
-     13.40887
-    ],
-    [
-     49.7756,
-     13.40916
-    ],
-    [
-     49.77567,
-     13.40919
-    ],
-    [
-     49.77576,
-     13.40923
-    ]
-   ],
-   [
-    [
-     49.77576,
-     13.40923
-    ],
-    [
-     49.77584,
-     13.40928
-    ],
-    [
-     49.77594,
-     13.40935
-    ]
-   ],
-   [
-    [
-     49.77247,
-     13.40696
-    ],
-    [
-     49.77259,
-     13.40727
-    ],
-    [
-     49.77265,
-     13.40746
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice II/231 (ulice 28. října), Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 ul. 28. října, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "803fce84-8a99-409f-b19e-5a8cac46260d",
-  "superdioId": null,
-  "od": "2026-05-04",
-  "do": "2026-12-20",
+  "od": "2026-04-20",
+  "do": "2026-07-31",
   "severity": "major",
   "geomTier": 4
  },
  {
-  "id": "na-roudne",
-  "name": "Na Roudné",
-  "akce": "Uzavřená silnice",
+  "id": "lochotinska",
+  "name": "Lochotínská",
+  "akce": "Zúžené pruhy",
   "state": "Probíhá",
   "status": "now",
   "color": "#c0392b",
   "oblast": "Plzeň 1",
-  "termin": "4. 5. 2026 – 20. 12. 2026",
+  "termin": "28. 4. 2026 – 30. 9. 2026",
   "ways": [
    [
     [
-     49.7687,
-     13.40209
+     49.75692,
+     13.3714
     ],
     [
-     49.76879,
-     13.40225
+     49.75699,
+     13.37139
     ],
     [
-     49.76898,
-     13.40262
+     49.75737,
+     13.3714
     ],
     [
-     49.76927,
-     13.40321
+     49.75743,
+     13.37138
     ],
     [
-     49.76943,
-     13.40356
+     49.7575,
+     13.37133
     ],
     [
-     49.76947,
-     13.40367
-    ],
-    [
-     49.76952,
-     13.4038
-    ],
-    [
-     49.76955,
-     13.40391
-    ],
-    [
-     49.76959,
-     13.40405
-    ],
-    [
-     49.76963,
-     13.40421
-    ],
-    [
-     49.76979,
-     13.40489
-    ],
-    [
-     49.76983,
-     13.40507
-    ],
-    [
-     49.76987,
-     13.40526
-    ],
-    [
-     49.76989,
-     13.40544
-    ],
-    [
-     49.7699,
-     13.40552
-    ],
-    [
-     49.76991,
-     13.40561
-    ],
-    [
-     49.7699,
-     13.40575
-    ],
-    [
-     49.76989,
-     13.40589
-    ],
-    [
-     49.76983,
-     13.40619
-    ],
-    [
-     49.7698,
-     13.40634
-    ],
-    [
-     49.76979,
-     13.40648
-    ],
-    [
-     49.76979,
-     13.40658
-    ],
-    [
-     49.7698,
-     13.40666
-    ],
-    [
-     49.76983,
-     13.40677
-    ]
-   ],
-   [
-    [
-     49.76851,
-     13.40189
-    ],
-    [
-     49.7685,
-     13.40193
-    ],
-    [
-     49.7685,
-     13.40197
-    ],
-    [
-     49.7685,
-     13.402
-    ],
-    [
-     49.76851,
-     13.40204
-    ],
-    [
-     49.76852,
-     13.40207
-    ],
-    [
-     49.76854,
-     13.4021
-    ],
-    [
-     49.76856,
-     13.40212
-    ],
-    [
-     49.76859,
-     13.40214
-    ],
-    [
-     49.76861,
-     13.40214
-    ],
-    [
-     49.76864,
-     13.40214
-    ],
-    [
-     49.76866,
-     13.40213
-    ],
-    [
-     49.76868,
-     13.40211
-    ],
-    [
-     49.7687,
-     13.40209
-    ]
-   ],
-   [
-    [
-     49.76871,
-     13.40186
-    ],
-    [
-     49.76869,
-     13.40183
-    ],
-    [
-     49.76867,
-     13.40181
-    ],
-    [
-     49.76865,
-     13.4018
-    ],
-    [
-     49.76863,
-     13.40179
-    ]
-   ],
-   [
-    [
-     49.7687,
-     13.40209
-    ],
-    [
-     49.76871,
-     13.40206
-    ],
-    [
-     49.76872,
-     13.40203
-    ],
-    [
-     49.76873,
-     13.40199
-    ],
-    [
-     49.76873,
-     13.40196
-    ],
-    [
-     49.76873,
-     13.40192
-    ],
-    [
-     49.76872,
-     13.40189
-    ],
-    [
-     49.76871,
-     13.40186
-    ]
-   ],
-   [
-    [
-     49.76863,
-     13.40179
-    ],
-    [
-     49.76861,
-     13.40179
-    ],
-    [
-     49.76858,
-     13.4018
-    ],
-    [
-     49.76857,
-     13.40181
-    ],
-    [
-     49.76855,
-     13.40182
-    ],
-    [
-     49.76853,
-     13.40185
-    ],
-    [
-     49.76851,
-     13.40189
-    ]
-   ],
-   [
-    [
-     49.7685,
-     13.40175
-    ],
-    [
-     49.76851,
-     13.40179
-    ],
-    [
-     49.76852,
-     13.40183
-    ],
-    [
-     49.76851,
-     13.40189
-    ]
-   ],
-   [
-    [
-     49.76863,
-     13.40179
-    ],
-    [
-     49.7686,
-     13.40177
-    ],
-    [
-     49.76858,
-     13.40175
-    ],
-    [
-     49.76857,
-     13.40172
-    ],
-    [
-     49.76855,
-     13.40169
+     49.75755,
+     13.37125
     ]
    ]
   ],
   "point": false,
-  "popis": "silnice II/231 (ulice Na Roudné) - ulice 28. října, Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 28. října, Úplná uzavírka, průjezd pro autobusy řízen SSZ, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
+  "popis": "místní komunikace, ulice Lochotínská, Plzeň 1, zúžené jízdní pruhy, Od 28.04.2026 07:00 Do 30.09.2026 23:59, z důvodu vytvoření koridoru pro chodce v šířce min. 1,5 m\n, Vydal: ÚMO Plzeň 01",
   "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
+  "subtyp": "zúžené pruhy",
   "zdroj": "JSDI",
-  "jsdiId": "6e2d2c44-0894-41c3-af8e-12658df8dec5",
+  "jsdiId": "76ea2ef1-0e74-4d44-b25f-af6682a1aeb5",
   "superdioId": null,
-  "od": "2026-05-04",
-  "do": "2026-12-20",
-  "severity": "major",
+  "od": "2026-04-28",
+  "do": "2026-09-30",
+  "severity": "medium",
   "geomTier": 4
  },
  {
@@ -540,360 +275,7 @@
   "status": "now",
   "color": "#c0392b",
   "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.72765,
-     13.39067
-    ],
-    [
-     49.72753,
-     13.39067
-    ],
-    [
-     49.72695,
-     13.39062
-    ]
-   ],
-   [
-    [
-     49.72765,
-     13.39067
-    ],
-    [
-     49.72778,
-     13.39065
-    ],
-    [
-     49.7281,
-     13.39057
-    ],
-    [
-     49.72828,
-     13.39046
-    ],
-    [
-     49.72854,
-     13.39036
-    ],
-    [
-     49.72878,
-     13.39031
-    ],
-    [
-     49.72881,
-     13.3903
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ],
-   [
-    [
-     49.73223,
-     13.38749
-    ],
-    [
-     49.73206,
-     13.38765
-    ],
-    [
-     49.73172,
-     13.38794
-    ],
-    [
-     49.73166,
-     13.38799
-    ],
-    [
-     49.73161,
-     13.38804
-    ],
-    [
-     49.73087,
-     13.38866
-    ],
-    [
-     49.73083,
-     13.3887
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Květná, ulice Motýlí, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "9a3510d9-c544-45c2-8713-a12f5c7c64c2",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "motyli",
-  "name": "Motýlí",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.73088,
-     13.38741
-    ],
-    [
-     49.73045,
-     13.38761
-    ],
-    [
-     49.73024,
-     13.38776
-    ],
-    [
-     49.73008,
-     13.38788
-    ],
-    [
-     49.72997,
-     13.38805
-    ],
-    [
-     49.72988,
-     13.3884
-    ],
-    [
-     49.72987,
-     13.38937
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72987,
-     13.38961
-    ],
-    [
-     49.72985,
-     13.39138
-    ],
-    [
-     49.72987,
-     13.39149
-    ],
-    [
-     49.73001,
-     13.39191
-    ]
-   ],
-   [
-    [
-     49.73139,
-     13.38666
-    ],
-    [
-     49.73133,
-     13.38664
-    ],
-    [
-     49.73108,
-     13.38658
-    ],
-    [
-     49.73099,
-     13.38653
-    ],
-    [
-     49.73088,
-     13.3865
-    ],
-    [
-     49.7304,
-     13.38644
-    ]
-   ],
-   [
-    [
-     49.73038,
-     13.39288
-    ],
-    [
-     49.73042,
-     13.39297
-    ],
-    [
-     49.73073,
-     13.3938
-    ]
-   ],
-   [
-    [
-     49.73001,
-     13.39191
-    ],
-    [
-     49.73035,
-     13.39279
-    ],
-    [
-     49.73038,
-     13.39288
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Motýlí, ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "8e3bf467-1990-41f4-ab5b-b1ee564c49d1",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "kastanova",
-  "name": "Kaštanová",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.72805,
-     13.39383
-    ],
-    [
-     49.72804,
-     13.39375
-    ],
-    [
-     49.72793,
-     13.39227
-    ],
-    [
-     49.72793,
-     13.39215
-    ],
-    [
-     49.72794,
-     13.39203
-    ],
-    [
-     49.72796,
-     13.39194
-    ],
-    [
-     49.72798,
-     13.39185
-    ],
-    [
-     49.72803,
-     13.39171
-    ],
-    [
-     49.72808,
-     13.3916
-    ],
-    [
-     49.72878,
-     13.39052
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ],
-   [
-    [
-     49.72762,
-     13.3918
-    ],
-    [
-     49.72761,
-     13.39191
-    ],
-    [
-     49.72761,
-     13.39196
-    ],
-    [
-     49.7276,
-     13.39217
-    ],
-    [
-     49.72765,
-     13.39293
-    ],
-    [
-     49.72766,
-     13.39301
-    ]
-   ],
-   [
-    [
-     49.72796,
-     13.39194
-    ],
-    [
-     49.72792,
-     13.39193
-    ],
-    [
-     49.72787,
-     13.39193
-    ],
-    [
-     49.72786,
-     13.39193
-    ],
-    [
-     49.72761,
-     13.39196
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Kaštanová, ulice Květná, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "4d3e8964-13f7-4d08-94dd-1ad93a0d8ee0",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "kvetna-2",
-  "name": "Květná",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "termin": "6. 5. 2026 – 18. 12. 2026",
   "ways": [
    [
     [
@@ -949,120 +331,16 @@
    ]
   ],
   "point": false,
-  "popis": "ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "popis": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
   "typ": "Uzavírka a omezení",
   "subtyp": "uzavřená silnice",
   "zdroj": "JSDI",
-  "jsdiId": "cc5cc0e4-dbc3-4b97-b484-81fdadfeba32",
+  "jsdiId": "c89ea653-ff54-4d9b-a06b-92f4feb4df90",
   "superdioId": null,
-  "od": "2026-05-28",
+  "od": "2026-05-06",
   "do": "2026-12-18",
   "severity": "major",
   "geomTier": 4
- },
- {
-  "id": "kvetna-3",
-  "name": "Květná",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.73261,
-     13.38715
-    ],
-    [
-     49.73252,
-     13.38724
-    ]
-   ],
-   [
-    [
-     49.73252,
-     13.38724
-    ],
-    [
-     49.73223,
-     13.38749
-    ],
-    [
-     49.73206,
-     13.38765
-    ],
-    [
-     49.73172,
-     13.38794
-    ],
-    [
-     49.73166,
-     13.38799
-    ],
-    [
-     49.73161,
-     13.38804
-    ],
-    [
-     49.73087,
-     13.38866
-    ],
-    [
-     49.73083,
-     13.3887
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Květná, ulice Liliová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "1b89863d-5966-429e-bc01-12e2617b675a",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "i-26",
-  "name": "I/26",
-  "akce": "Oprava povrchu",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "4. 7. 2026 – 30. 11. 2026",
-  "ways": [
-   [
-    [
-     49.7467,
-     13.4355
-    ]
-   ]
-  ],
-  "point": true,
-  "popis": "V obci Plzeň 4(okres Plzeň-město) ulice: Nákupní,  silnice: místní komunikace, , Od 04.07.2026 00:00, Do 30.11.2026 23:59, uzavírka místních komunikací ve dvou etapách- Rokycanská, Vyhlídková, Nákupní v návaznosti na opravu povrchu silnice I/26 Rokycanská, I ETAPA s platností od 6.6.2026 do 3.7.2026, II. ETAPA s platností od 4.7.2026 do 30.11.2026, uzavřen pravý odbočovací pruh v úseku před silnicí I/26, Vydal: ÚMO Plzeň 04",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "oprava povrchu",
-  "zdroj": "JSDI",
-  "jsdiId": "2d28d10a-af92-47d6-8040-52e891c93c0c",
-  "superdioId": null,
-  "od": "2026-07-04",
-  "do": "2026-11-30",
-  "severity": "medium",
-  "geomTier": 5
  },
  {
   "id": "stikova",
@@ -1801,6 +1079,1008 @@
   "geomTier": 5
  },
  {
+  "id": "kvetna-2",
+  "name": "Květná",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.72765,
+     13.39067
+    ],
+    [
+     49.72753,
+     13.39067
+    ],
+    [
+     49.72695,
+     13.39062
+    ]
+   ],
+   [
+    [
+     49.72765,
+     13.39067
+    ],
+    [
+     49.72778,
+     13.39065
+    ],
+    [
+     49.7281,
+     13.39057
+    ],
+    [
+     49.72828,
+     13.39046
+    ],
+    [
+     49.72854,
+     13.39036
+    ],
+    [
+     49.72878,
+     13.39031
+    ],
+    [
+     49.72881,
+     13.3903
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ],
+   [
+    [
+     49.73223,
+     13.38749
+    ],
+    [
+     49.73206,
+     13.38765
+    ],
+    [
+     49.73172,
+     13.38794
+    ],
+    [
+     49.73166,
+     13.38799
+    ],
+    [
+     49.73161,
+     13.38804
+    ],
+    [
+     49.73087,
+     13.38866
+    ],
+    [
+     49.73083,
+     13.3887
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Květná, ulice Motýlí, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "9a3510d9-c544-45c2-8713-a12f5c7c64c2",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "motyli",
+  "name": "Motýlí",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.73088,
+     13.38741
+    ],
+    [
+     49.73045,
+     13.38761
+    ],
+    [
+     49.73024,
+     13.38776
+    ],
+    [
+     49.73008,
+     13.38788
+    ],
+    [
+     49.72997,
+     13.38805
+    ],
+    [
+     49.72988,
+     13.3884
+    ],
+    [
+     49.72987,
+     13.38937
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72987,
+     13.38961
+    ],
+    [
+     49.72985,
+     13.39138
+    ],
+    [
+     49.72987,
+     13.39149
+    ],
+    [
+     49.73001,
+     13.39191
+    ]
+   ],
+   [
+    [
+     49.73139,
+     13.38666
+    ],
+    [
+     49.73133,
+     13.38664
+    ],
+    [
+     49.73108,
+     13.38658
+    ],
+    [
+     49.73099,
+     13.38653
+    ],
+    [
+     49.73088,
+     13.3865
+    ],
+    [
+     49.7304,
+     13.38644
+    ]
+   ],
+   [
+    [
+     49.73038,
+     13.39288
+    ],
+    [
+     49.73042,
+     13.39297
+    ],
+    [
+     49.73073,
+     13.3938
+    ]
+   ],
+   [
+    [
+     49.73001,
+     13.39191
+    ],
+    [
+     49.73035,
+     13.39279
+    ],
+    [
+     49.73038,
+     13.39288
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Motýlí, ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "8e3bf467-1990-41f4-ab5b-b1ee564c49d1",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kastanova",
+  "name": "Kaštanová",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.72805,
+     13.39383
+    ],
+    [
+     49.72804,
+     13.39375
+    ],
+    [
+     49.72793,
+     13.39227
+    ],
+    [
+     49.72793,
+     13.39215
+    ],
+    [
+     49.72794,
+     13.39203
+    ],
+    [
+     49.72796,
+     13.39194
+    ],
+    [
+     49.72798,
+     13.39185
+    ],
+    [
+     49.72803,
+     13.39171
+    ],
+    [
+     49.72808,
+     13.3916
+    ],
+    [
+     49.72878,
+     13.39052
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ],
+   [
+    [
+     49.72762,
+     13.3918
+    ],
+    [
+     49.72761,
+     13.39191
+    ],
+    [
+     49.72761,
+     13.39196
+    ],
+    [
+     49.7276,
+     13.39217
+    ],
+    [
+     49.72765,
+     13.39293
+    ],
+    [
+     49.72766,
+     13.39301
+    ]
+   ],
+   [
+    [
+     49.72796,
+     13.39194
+    ],
+    [
+     49.72792,
+     13.39193
+    ],
+    [
+     49.72787,
+     13.39193
+    ],
+    [
+     49.72786,
+     13.39193
+    ],
+    [
+     49.72761,
+     13.39196
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Kaštanová, ulice Květná, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "4d3e8964-13f7-4d08-94dd-1ad93a0d8ee0",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kvetna-3",
+  "name": "Květná",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.73261,
+     13.38715
+    ],
+    [
+     49.73252,
+     13.38724
+    ]
+   ],
+   [
+    [
+     49.73252,
+     13.38724
+    ],
+    [
+     49.73223,
+     13.38749
+    ],
+    [
+     49.73206,
+     13.38765
+    ],
+    [
+     49.73172,
+     13.38794
+    ],
+    [
+     49.73166,
+     13.38799
+    ],
+    [
+     49.73161,
+     13.38804
+    ],
+    [
+     49.73087,
+     13.38866
+    ],
+    [
+     49.73083,
+     13.3887
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "cc5cc0e4-dbc3-4b97-b484-81fdadfeba32",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kvetna-4",
+  "name": "Květná",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.73261,
+     13.38715
+    ],
+    [
+     49.73252,
+     13.38724
+    ]
+   ],
+   [
+    [
+     49.73252,
+     13.38724
+    ],
+    [
+     49.73223,
+     13.38749
+    ],
+    [
+     49.73206,
+     13.38765
+    ],
+    [
+     49.73172,
+     13.38794
+    ],
+    [
+     49.73166,
+     13.38799
+    ],
+    [
+     49.73161,
+     13.38804
+    ],
+    [
+     49.73087,
+     13.38866
+    ],
+    [
+     49.73083,
+     13.3887
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Květná, ulice Liliová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "1b89863d-5966-429e-bc01-12e2617b675a",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "i-26",
+  "name": "I/26",
+  "akce": "Oprava povrchu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 4",
+  "termin": "4. 7. 2026 – 30. 11. 2026",
+  "ways": [
+   [
+    [
+     49.7467,
+     13.4355
+    ]
+   ]
+  ],
+  "point": true,
+  "popis": "V obci Plzeň 4(okres Plzeň-město) ulice: Nákupní,  silnice: místní komunikace, , Od 04.07.2026 00:00, Do 30.11.2026 23:59, uzavírka místních komunikací ve dvou etapách- Rokycanská, Vyhlídková, Nákupní v návaznosti na opravu povrchu silnice I/26 Rokycanská, I ETAPA s platností od 6.6.2026 do 3.7.2026, II. ETAPA s platností od 4.7.2026 do 30.11.2026, uzavřen pravý odbočovací pruh v úseku před silnicí I/26, Vydal: ÚMO Plzeň 04",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "oprava povrchu",
+  "zdroj": "JSDI",
+  "jsdiId": "2d28d10a-af92-47d6-8040-52e891c93c0c",
+  "superdioId": null,
+  "od": "2026-07-04",
+  "do": "2026-11-30",
+  "severity": "medium",
+  "geomTier": 5
+ },
+ {
+  "id": "28-rijna",
+  "name": "28. října",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "4. 5. 2026 – 20. 12. 2026",
+  "ways": [
+   [
+    [
+     49.7772,
+     13.41008
+    ],
+    [
+     49.77748,
+     13.41004
+    ],
+    [
+     49.77867,
+     13.40991
+    ]
+   ],
+   [
+    [
+     49.77702,
+     13.41006
+    ],
+    [
+     49.7772,
+     13.41008
+    ]
+   ],
+   [
+    [
+     49.77594,
+     13.40935
+    ],
+    [
+     49.77629,
+     13.40962
+    ],
+    [
+     49.77662,
+     13.40986
+    ],
+    [
+     49.7768,
+     13.40998
+    ],
+    [
+     49.77691,
+     13.41003
+    ],
+    [
+     49.77702,
+     13.41006
+    ]
+   ],
+   [
+    [
+     49.77265,
+     13.40746
+    ],
+    [
+     49.77273,
+     13.40768
+    ],
+    [
+     49.77281,
+     13.4079
+    ]
+   ],
+   [
+    [
+     49.77281,
+     13.4079
+    ],
+    [
+     49.77291,
+     13.40805
+    ],
+    [
+     49.77296,
+     13.40811
+    ],
+    [
+     49.77301,
+     13.40815
+    ],
+    [
+     49.7731,
+     13.40821
+    ],
+    [
+     49.7734,
+     13.40833
+    ],
+    [
+     49.77391,
+     13.40853
+    ],
+    [
+     49.77433,
+     13.40868
+    ],
+    [
+     49.77482,
+     13.40887
+    ],
+    [
+     49.7756,
+     13.40916
+    ],
+    [
+     49.77567,
+     13.40919
+    ],
+    [
+     49.77576,
+     13.40923
+    ]
+   ],
+   [
+    [
+     49.77576,
+     13.40923
+    ],
+    [
+     49.77584,
+     13.40928
+    ],
+    [
+     49.77594,
+     13.40935
+    ]
+   ],
+   [
+    [
+     49.77247,
+     13.40696
+    ],
+    [
+     49.77259,
+     13.40727
+    ],
+    [
+     49.77265,
+     13.40746
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice II/231 (ulice 28. října), Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 ul. 28. října, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "803fce84-8a99-409f-b19e-5a8cac46260d",
+  "superdioId": null,
+  "od": "2026-05-04",
+  "do": "2026-12-20",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "na-roudne",
+  "name": "Na Roudné",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "4. 5. 2026 – 20. 12. 2026",
+  "ways": [
+   [
+    [
+     49.7687,
+     13.40209
+    ],
+    [
+     49.76879,
+     13.40225
+    ],
+    [
+     49.76898,
+     13.40262
+    ],
+    [
+     49.76927,
+     13.40321
+    ],
+    [
+     49.76943,
+     13.40356
+    ],
+    [
+     49.76947,
+     13.40367
+    ],
+    [
+     49.76952,
+     13.4038
+    ],
+    [
+     49.76955,
+     13.40391
+    ],
+    [
+     49.76959,
+     13.40405
+    ],
+    [
+     49.76963,
+     13.40421
+    ],
+    [
+     49.76979,
+     13.40489
+    ],
+    [
+     49.76983,
+     13.40507
+    ],
+    [
+     49.76987,
+     13.40526
+    ],
+    [
+     49.76989,
+     13.40544
+    ],
+    [
+     49.7699,
+     13.40552
+    ],
+    [
+     49.76991,
+     13.40561
+    ],
+    [
+     49.7699,
+     13.40575
+    ],
+    [
+     49.76989,
+     13.40589
+    ],
+    [
+     49.76983,
+     13.40619
+    ],
+    [
+     49.7698,
+     13.40634
+    ],
+    [
+     49.76979,
+     13.40648
+    ],
+    [
+     49.76979,
+     13.40658
+    ],
+    [
+     49.7698,
+     13.40666
+    ],
+    [
+     49.76983,
+     13.40677
+    ]
+   ],
+   [
+    [
+     49.76851,
+     13.40189
+    ],
+    [
+     49.7685,
+     13.40193
+    ],
+    [
+     49.7685,
+     13.40197
+    ],
+    [
+     49.7685,
+     13.402
+    ],
+    [
+     49.76851,
+     13.40204
+    ],
+    [
+     49.76852,
+     13.40207
+    ],
+    [
+     49.76854,
+     13.4021
+    ],
+    [
+     49.76856,
+     13.40212
+    ],
+    [
+     49.76859,
+     13.40214
+    ],
+    [
+     49.76861,
+     13.40214
+    ],
+    [
+     49.76864,
+     13.40214
+    ],
+    [
+     49.76866,
+     13.40213
+    ],
+    [
+     49.76868,
+     13.40211
+    ],
+    [
+     49.7687,
+     13.40209
+    ]
+   ],
+   [
+    [
+     49.76871,
+     13.40186
+    ],
+    [
+     49.76869,
+     13.40183
+    ],
+    [
+     49.76867,
+     13.40181
+    ],
+    [
+     49.76865,
+     13.4018
+    ],
+    [
+     49.76863,
+     13.40179
+    ]
+   ],
+   [
+    [
+     49.7687,
+     13.40209
+    ],
+    [
+     49.76871,
+     13.40206
+    ],
+    [
+     49.76872,
+     13.40203
+    ],
+    [
+     49.76873,
+     13.40199
+    ],
+    [
+     49.76873,
+     13.40196
+    ],
+    [
+     49.76873,
+     13.40192
+    ],
+    [
+     49.76872,
+     13.40189
+    ],
+    [
+     49.76871,
+     13.40186
+    ]
+   ],
+   [
+    [
+     49.76863,
+     13.40179
+    ],
+    [
+     49.76861,
+     13.40179
+    ],
+    [
+     49.76858,
+     13.4018
+    ],
+    [
+     49.76857,
+     13.40181
+    ],
+    [
+     49.76855,
+     13.40182
+    ],
+    [
+     49.76853,
+     13.40185
+    ],
+    [
+     49.76851,
+     13.40189
+    ]
+   ],
+   [
+    [
+     49.7685,
+     13.40175
+    ],
+    [
+     49.76851,
+     13.40179
+    ],
+    [
+     49.76852,
+     13.40183
+    ],
+    [
+     49.76851,
+     13.40189
+    ]
+   ],
+   [
+    [
+     49.76863,
+     13.40179
+    ],
+    [
+     49.7686,
+     13.40177
+    ],
+    [
+     49.76858,
+     13.40175
+    ],
+    [
+     49.76857,
+     13.40172
+    ],
+    [
+     49.76855,
+     13.40169
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice II/231 (ulice Na Roudné) - ulice 28. října, Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 28. října, Úplná uzavírka, průjezd pro autobusy řízen SSZ, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "6e2d2c44-0894-41c3-af8e-12658df8dec5",
+  "superdioId": null,
+  "od": "2026-05-04",
+  "do": "2026-12-20",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
   "id": "americka",
   "name": "Americká",
   "akce": "Uzavřená silnice",
@@ -2254,347 +2534,67 @@
   "geomTier": 4
  },
  {
-  "id": "dobranska",
-  "name": "Dobřanská",
-  "akce": "Stavební práce",
+  "id": "na-okraji",
+  "name": "Na Okraji",
+  "akce": "Uzavřená silnice",
   "state": "Probíhá",
   "status": "now",
   "color": "#c0392b",
   "oblast": "Plzeň 3",
-  "termin": "21. 7. 2025 – 20. 12. 2026",
+  "termin": "1. 12. 2025 – 31. 10. 2026",
   "ways": [
    [
     [
-     49.70341,
-     13.32854
+     49.74679,
+     13.34603
     ],
     [
-     49.70334,
-     13.3285
+     49.74679,
+     13.34633
     ]
    ],
    [
     [
-     49.70334,
-     13.3285
+     49.74679,
+     13.34575
     ],
     [
-     49.70219,
-     13.32782
+     49.74679,
+     13.34603
     ]
    ],
    [
     [
-     49.70823,
-     13.33143
+     49.7468,
+     13.3454
     ],
     [
-     49.70777,
-     13.33116
+     49.74682,
+     13.3441
     ]
    ],
    [
     [
-     49.70341,
-     13.32854
+     49.7468,
+     13.3454
     ],
     [
-     49.70418,
-     13.329
-    ],
-    [
-     49.70443,
-     13.32915
-    ]
-   ],
-   [
-    [
-     49.70736,
-     13.3309
-    ],
-    [
-     49.70607,
-     13.33013
-    ]
-   ],
-   [
-    [
-     49.70777,
-     13.33116
-    ],
-    [
-     49.70736,
-     13.3309
-    ]
-   ],
-   [
-    [
-     49.70443,
-     13.32915
-    ],
-    [
-     49.70546,
-     13.32977
-    ],
-    [
-     49.70607,
-     13.33013
+     49.74679,
+     13.34575
     ]
    ]
   ],
   "point": false,
-  "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 21.07.2025 00:01 Do 20.12.2026 23:59, částečná uzavírka v úseku od kruhového objezdu až za křižovatku s ulicí U Čertovy díry z důvodu akce \"Dešťová kanalizace a komunikace\", Vydal: Magistrát města Plzně",
+  "popis": "ulice Na Okraji, Plzeň 3, uzavřeno, stavební práce, Od 01.12.2025 00:00 Do 31.10.2026 23:59, zjednosměrnění provozu v úseku od ulice Křimická k ulici Touškovská \n, jednosměrná uzavírka, Vydal: ÚMO Plzeň 03",
   "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
+  "subtyp": "uzavřená silnice",
   "zdroj": "JSDI",
-  "jsdiId": "cdb2a780-4d40-4216-936a-dcf3ee24ee8b",
+  "jsdiId": "e652cffb-78c8-45d9-940f-4f7350b4b65f",
   "superdioId": null,
-  "od": "2025-07-21",
-  "do": "2026-12-20",
-  "severity": "minor",
+  "od": "2025-12-01",
+  "do": "2026-10-31",
+  "severity": "major",
   "geomTier": 1
- },
- {
-  "id": "za-vodarnou",
-  "name": "Za Vodárnou",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "4. 5. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71975,
-     13.40424
-    ],
-    [
-     49.71971,
-     13.40414
-    ],
-    [
-     49.71942,
-     13.40341
-    ],
-    [
-     49.71939,
-     13.40333
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Za Vodárnou, mezi křižovatkami ulic Zelenohorská a Plzeňská cesta, Plzeň 2-Slovany, Plzeň, , Od 04.05.2026 00:00, Do 31.08.2026 23:59, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "6b4b0782-00dd-45d4-97c3-7a9e3b3d2bdb",
-  "superdioId": null,
-  "od": "2026-05-04",
-  "do": "2026-08-31",
-  "severity": "major",
-  "geomTier": 3
- },
- {
-  "id": "zamecnicka",
-  "name": "Zámečnická",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "20. 4. 2026 – 31. 7. 2026",
-  "ways": [
-   [
-    [
-     49.73926,
-     13.3695
-    ],
-    [
-     49.73926,
-     13.36944
-    ],
-    [
-     49.73928,
-     13.36897
-    ],
-    [
-     49.73928,
-     13.3689
-    ],
-    [
-     49.73919,
-     13.36696
-    ],
-    [
-     49.73918,
-     13.36676
-    ]
-   ],
-   [
-    [
-     49.73915,
-     13.3709
-    ],
-    [
-     49.73916,
-     13.37083
-    ],
-    [
-     49.73918,
-     13.37061
-    ]
-   ],
-   [
-    [
-     49.73926,
-     13.3695
-    ],
-    [
-     49.73925,
-     13.36956
-    ],
-    [
-     49.73918,
-     13.37061
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Zámečnická, Plzeň 3, uzavřeno, práce na inženýrských sítích, Od 20.04.2026 08:00 Do 31.07.2026 23:59, Zámečnická ulice v úseku od křižovatky s ulicí Hřímalého ke křižovatce s ulicí Mánesova , Vydal: ÚMO Plzeň 03",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "b2d8799f-3316-4267-9d46-2f3ea549bd10",
-  "superdioId": null,
-  "od": "2026-04-20",
-  "do": "2026-07-31",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "lochotinska",
-  "name": "Lochotínská",
-  "akce": "Zúžené pruhy",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "28. 4. 2026 – 30. 9. 2026",
-  "ways": [
-   [
-    [
-     49.75692,
-     13.3714
-    ],
-    [
-     49.75699,
-     13.37139
-    ],
-    [
-     49.75737,
-     13.3714
-    ],
-    [
-     49.75743,
-     13.37138
-    ],
-    [
-     49.7575,
-     13.37133
-    ],
-    [
-     49.75755,
-     13.37125
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "místní komunikace, ulice Lochotínská, Plzeň 1, zúžené jízdní pruhy, Od 28.04.2026 07:00 Do 30.09.2026 23:59, z důvodu vytvoření koridoru pro chodce v šířce min. 1,5 m\n, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "zúžené pruhy",
-  "zdroj": "JSDI",
-  "jsdiId": "76ea2ef1-0e74-4d44-b25f-af6682a1aeb5",
-  "superdioId": null,
-  "od": "2026-04-28",
-  "do": "2026-09-30",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "kvetna-4",
-  "name": "Květná",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "6. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.73261,
-     13.38715
-    ],
-    [
-     49.73252,
-     13.38724
-    ]
-   ],
-   [
-    [
-     49.73252,
-     13.38724
-    ],
-    [
-     49.73223,
-     13.38749
-    ],
-    [
-     49.73206,
-     13.38765
-    ],
-    [
-     49.73172,
-     13.38794
-    ],
-    [
-     49.73166,
-     13.38799
-    ],
-    [
-     49.73161,
-     13.38804
-    ],
-    [
-     49.73087,
-     13.38866
-    ],
-    [
-     49.73083,
-     13.3887
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "c89ea653-ff54-4d9b-a06b-92f4feb4df90",
-  "superdioId": null,
-  "od": "2026-05-06",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
  },
  {
   "id": "domazlicka",
@@ -2757,6 +2757,55 @@
   "do": "2026-07-26",
   "severity": "medium",
   "geomTier": 2
+ },
+ {
+  "id": "pod-kostelem",
+  "name": "Pod Kostelem",
+  "akce": "Uzavírka jízdního pruhu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.75738,
+     13.38072
+    ],
+    [
+     49.75757,
+     13.38099
+    ],
+    [
+     49.75772,
+     13.38119
+    ],
+    [
+     49.75787,
+     13.38137
+    ],
+    [
+     49.75802,
+     13.38158
+    ],
+    [
+     49.75829,
+     13.38191
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Pod Kostelem, Plzeň 1, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 07.07.2026 00:00 Do 31.08.2026 23:59, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavírka jízdního pruhu",
+  "zdroj": "JSDI",
+  "jsdiId": "37c0006d-b24a-4e44-9bb7-7a7d549306ac",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-08-31",
+  "severity": "minor",
+  "geomTier": 4
  },
  {
   "id": "klatovska-trida-3",
@@ -3271,6 +3320,386 @@
   "od": "2026-06-06",
   "do": "2026-07-17",
   "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-roudne-2",
+  "name": "Na Roudné",
+  "akce": "Uzavírka jízdního pruhu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.75844,
+     13.38282
+    ],
+    [
+     49.75843,
+     13.38282
+    ],
+    [
+     49.75841,
+     13.38282
+    ],
+    [
+     49.75839,
+     13.38284
+    ],
+    [
+     49.75838,
+     13.38286
+    ],
+    [
+     49.75837,
+     13.38288
+    ],
+    [
+     49.75837,
+     13.38291
+    ],
+    [
+     49.75837,
+     13.38294
+    ],
+    [
+     49.75838,
+     13.38296
+    ],
+    [
+     49.7584,
+     13.38298
+    ],
+    [
+     49.75841,
+     13.383
+    ],
+    [
+     49.75843,
+     13.383
+    ],
+    [
+     49.75845,
+     13.38299
+    ],
+    [
+     49.75847,
+     13.38298
+    ],
+    [
+     49.75848,
+     13.38295
+    ],
+    [
+     49.75849,
+     13.38293
+    ],
+    [
+     49.75849,
+     13.3829
+    ],
+    [
+     49.75848,
+     13.38288
+    ],
+    [
+     49.75847,
+     13.38285
+    ],
+    [
+     49.75846,
+     13.38283
+    ],
+    [
+     49.75844,
+     13.38282
+    ]
+   ],
+   [
+    [
+     49.75848,
+     13.38295
+    ],
+    [
+     49.75852,
+     13.38297
+    ],
+    [
+     49.75858,
+     13.38297
+    ],
+    [
+     49.75868,
+     13.38292
+    ],
+    [
+     49.75877,
+     13.38289
+    ],
+    [
+     49.7589,
+     13.3828
+    ],
+    [
+     49.75899,
+     13.38273
+    ],
+    [
+     49.75903,
+     13.3827
+    ],
+    [
+     49.75916,
+     13.3826
+    ],
+    [
+     49.75924,
+     13.38247
+    ],
+    [
+     49.75927,
+     13.38231
+    ],
+    [
+     49.75929,
+     13.38206
+    ]
+   ],
+   [
+    [
+     49.758,
+     13.38275
+    ],
+    [
+     49.75813,
+     13.38286
+    ],
+    [
+     49.75824,
+     13.38292
+    ],
+    [
+     49.75832,
+     13.38294
+    ],
+    [
+     49.75837,
+     13.38294
+    ]
+   ],
+   [
+    [
+     49.76008,
+     13.38448
+    ],
+    [
+     49.75962,
+     13.38312
+    ],
+    [
+     49.75954,
+     13.38295
+    ],
+    [
+     49.75951,
+     13.38292
+    ],
+    [
+     49.75949,
+     13.38289
+    ],
+    [
+     49.75945,
+     13.38287
+    ],
+    [
+     49.75943,
+     13.38287
+    ],
+    [
+     49.75939,
+     13.38286
+    ],
+    [
+     49.75934,
+     13.38288
+    ],
+    [
+     49.75889,
+     13.38312
+    ],
+    [
+     49.75886,
+     13.38313
+    ],
+    [
+     49.75874,
+     13.38319
+    ],
+    [
+     49.75865,
+     13.38321
+    ],
+    [
+     49.75844,
+     13.38326
+    ],
+    [
+     49.7582,
+     13.38321
+    ],
+    [
+     49.75793,
+     13.38301
+    ],
+    [
+     49.75789,
+     13.38294
+    ],
+    [
+     49.7577,
+     13.38271
+    ],
+    [
+     49.75752,
+     13.38246
+    ],
+    [
+     49.75713,
+     13.38195
+    ],
+    [
+     49.75673,
+     13.38149
+    ],
+    [
+     49.75636,
+     13.38102
+    ],
+    [
+     49.75616,
+     13.38077
+    ],
+    [
+     49.75614,
+     13.38075
+    ],
+    [
+     49.75548,
+     13.38019
+    ],
+    [
+     49.75531,
+     13.38006
+    ],
+    [
+     49.75475,
+     13.37985
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Roudné, Plzeň 1, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 07.07.2026 00:11 Do 31.08.2026 23:59, částečná uzavírka vozovky, v úseku od objektu Na Roudné č. 75 ke křižovatce s ulicí Malická, ve směru do centra, průjezd na vozovce zachován v šířce min. 2,75m , Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavírka jízdního pruhu",
+  "zdroj": "JSDI",
+  "jsdiId": "5e88f15c-842d-489a-a298-2f15003fa401",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-08-31",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "malicka",
+  "name": "Malická",
+  "akce": "Uzavírka jízdního pruhu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.7542,
+     13.37702
+    ],
+    [
+     49.75422,
+     13.37717
+    ],
+    [
+     49.75423,
+     13.37723
+    ],
+    [
+     49.75426,
+     13.3776
+    ],
+    [
+     49.75427,
+     13.37765
+    ],
+    [
+     49.75432,
+     13.37828
+    ],
+    [
+     49.75433,
+     13.3784
+    ],
+    [
+     49.75439,
+     13.37902
+    ]
+   ],
+   [
+    [
+     49.75447,
+     13.37986
+    ],
+    [
+     49.75448,
+     13.37998
+    ],
+    [
+     49.75462,
+     13.38129
+    ],
+    [
+     49.75463,
+     13.38133
+    ]
+   ],
+   [
+    [
+     49.75439,
+     13.37902
+    ],
+    [
+     49.75446,
+     13.37973
+    ],
+    [
+     49.75447,
+     13.37986
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Malická, Plzeň 1, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 07.07.2026 00:11 Do 31.08.2026 23:59, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavírka jízdního pruhu",
+  "zdroj": "JSDI",
+  "jsdiId": "6ee541d0-a43b-408e-a5f2-c22757d6ab90",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-08-31",
+  "severity": "minor",
   "geomTier": 4
  },
  {
@@ -4118,6 +4547,1666 @@
   "do": "2026-11-30",
   "severity": "major",
   "geomTier": 5
+ },
+ {
+  "id": "na-roudne-3",
+  "name": "Na Roudné",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.76784,
+     13.40063
+    ],
+    [
+     49.76788,
+     13.40064
+    ],
+    [
+     49.76791,
+     13.40066
+    ],
+    [
+     49.76794,
+     13.40068
+    ],
+    [
+     49.76796,
+     13.4007
+    ],
+    [
+     49.76798,
+     13.40073
+    ],
+    [
+     49.768,
+     13.40076
+    ],
+    [
+     49.76803,
+     13.4008
+    ],
+    [
+     49.76809,
+     13.40091
+    ],
+    [
+     49.76813,
+     13.40098
+    ],
+    [
+     49.76825,
+     13.40121
+    ],
+    [
+     49.76833,
+     13.40137
+    ],
+    [
+     49.76841,
+     13.40152
+    ],
+    [
+     49.76847,
+     13.40166
+    ],
+    [
+     49.76848,
+     13.4017
+    ],
+    [
+     49.7685,
+     13.40175
+    ]
+   ],
+   [
+    [
+     49.7687,
+     13.40209
+    ],
+    [
+     49.76879,
+     13.40225
+    ],
+    [
+     49.76898,
+     13.40262
+    ],
+    [
+     49.76927,
+     13.40321
+    ],
+    [
+     49.76943,
+     13.40356
+    ]
+   ],
+   [
+    [
+     49.76751,
+     13.39983
+    ],
+    [
+     49.7674,
+     13.39964
+    ],
+    [
+     49.76698,
+     13.39894
+    ],
+    [
+     49.76669,
+     13.39844
+    ],
+    [
+     49.76627,
+     13.39775
+    ],
+    [
+     49.76621,
+     13.39767
+    ],
+    [
+     49.76612,
+     13.39757
+    ],
+    [
+     49.76586,
+     13.39727
+    ],
+    [
+     49.76571,
+     13.39705
+    ],
+    [
+     49.76547,
+     13.39658
+    ]
+   ],
+   [
+    [
+     49.76851,
+     13.40189
+    ],
+    [
+     49.7685,
+     13.40193
+    ],
+    [
+     49.7685,
+     13.40197
+    ],
+    [
+     49.7685,
+     13.402
+    ],
+    [
+     49.76851,
+     13.40204
+    ],
+    [
+     49.76852,
+     13.40207
+    ],
+    [
+     49.76854,
+     13.4021
+    ],
+    [
+     49.76856,
+     13.40212
+    ],
+    [
+     49.76859,
+     13.40214
+    ],
+    [
+     49.76861,
+     13.40214
+    ],
+    [
+     49.76864,
+     13.40214
+    ],
+    [
+     49.76866,
+     13.40213
+    ],
+    [
+     49.76868,
+     13.40211
+    ],
+    [
+     49.7687,
+     13.40209
+    ]
+   ],
+   [
+    [
+     49.76772,
+     13.40047
+    ],
+    [
+     49.76772,
+     13.4005
+    ],
+    [
+     49.76773,
+     13.40054
+    ],
+    [
+     49.76774,
+     13.40057
+    ],
+    [
+     49.76776,
+     13.40059
+    ],
+    [
+     49.76778,
+     13.40061
+    ],
+    [
+     49.7678,
+     13.40062
+    ],
+    [
+     49.76782,
+     13.40063
+    ],
+    [
+     49.76784,
+     13.40063
+    ]
+   ],
+   [
+    [
+     49.76855,
+     13.40169
+    ],
+    [
+     49.76854,
+     13.40165
+    ],
+    [
+     49.76852,
+     13.4016
+    ],
+    [
+     49.76846,
+     13.40146
+    ],
+    [
+     49.76838,
+     13.40132
+    ],
+    [
+     49.7683,
+     13.40116
+    ],
+    [
+     49.76818,
+     13.40092
+    ],
+    [
+     49.76814,
+     13.40085
+    ],
+    [
+     49.76807,
+     13.40072
+    ],
+    [
+     49.76805,
+     13.40069
+    ],
+    [
+     49.76802,
+     13.40065
+    ],
+    [
+     49.76801,
+     13.40062
+    ],
+    [
+     49.76799,
+     13.40058
+    ],
+    [
+     49.76798,
+     13.40054
+    ],
+    [
+     49.76797,
+     13.4005
+    ],
+    [
+     49.76797,
+     13.40045
+    ]
+   ],
+   [
+    [
+     49.76871,
+     13.40186
+    ],
+    [
+     49.76869,
+     13.40183
+    ],
+    [
+     49.76867,
+     13.40181
+    ],
+    [
+     49.76865,
+     13.4018
+    ],
+    [
+     49.76863,
+     13.40179
+    ]
+   ],
+   [
+    [
+     49.7687,
+     13.40209
+    ],
+    [
+     49.76871,
+     13.40206
+    ],
+    [
+     49.76872,
+     13.40203
+    ],
+    [
+     49.76873,
+     13.40199
+    ],
+    [
+     49.76873,
+     13.40196
+    ],
+    [
+     49.76873,
+     13.40192
+    ],
+    [
+     49.76872,
+     13.40189
+    ],
+    [
+     49.76871,
+     13.40186
+    ]
+   ],
+   [
+    [
+     49.76863,
+     13.40179
+    ],
+    [
+     49.76861,
+     13.40179
+    ],
+    [
+     49.76858,
+     13.4018
+    ],
+    [
+     49.76857,
+     13.40181
+    ],
+    [
+     49.76855,
+     13.40182
+    ],
+    [
+     49.76853,
+     13.40185
+    ],
+    [
+     49.76851,
+     13.40189
+    ]
+   ],
+   [
+    [
+     49.76796,
+     13.40038
+    ],
+    [
+     49.76796,
+     13.40035
+    ],
+    [
+     49.76794,
+     13.40032
+    ],
+    [
+     49.76793,
+     13.40029
+    ],
+    [
+     49.76791,
+     13.40027
+    ]
+   ],
+   [
+    [
+     49.76783,
+     13.40024
+    ],
+    [
+     49.7678,
+     13.40025
+    ],
+    [
+     49.76778,
+     13.40026
+    ],
+    [
+     49.76776,
+     13.40028
+    ],
+    [
+     49.76775,
+     13.4003
+    ],
+    [
+     49.76773,
+     13.40033
+    ],
+    [
+     49.76772,
+     13.40036
+    ],
+    [
+     49.76772,
+     13.4004
+    ]
+   ],
+   [
+    [
+     49.76784,
+     13.40063
+    ],
+    [
+     49.76786,
+     13.40063
+    ],
+    [
+     49.76788,
+     13.40062
+    ],
+    [
+     49.7679,
+     13.40061
+    ],
+    [
+     49.76792,
+     13.40059
+    ],
+    [
+     49.76793,
+     13.40057
+    ],
+    [
+     49.76795,
+     13.40055
+    ],
+    [
+     49.76796,
+     13.40052
+    ],
+    [
+     49.76797,
+     13.40048
+    ],
+    [
+     49.76797,
+     13.40045
+    ]
+   ],
+   [
+    [
+     49.76772,
+     13.4004
+    ],
+    [
+     49.76771,
+     13.40043
+    ],
+    [
+     49.76772,
+     13.40047
+    ]
+   ],
+   [
+    [
+     49.76751,
+     13.39983
+    ],
+    [
+     49.76756,
+     13.39996
+    ],
+    [
+     49.76765,
+     13.40014
+    ],
+    [
+     49.76766,
+     13.40017
+    ],
+    [
+     49.76768,
+     13.4002
+    ],
+    [
+     49.7677,
+     13.40025
+    ],
+    [
+     49.7677,
+     13.40029
+    ],
+    [
+     49.76771,
+     13.40033
+    ],
+    [
+     49.76771,
+     13.40036
+    ],
+    [
+     49.76772,
+     13.4004
+    ]
+   ],
+   [
+    [
+     49.76791,
+     13.40027
+    ],
+    [
+     49.76789,
+     13.40025
+    ],
+    [
+     49.76787,
+     13.40024
+    ],
+    [
+     49.76785,
+     13.40024
+    ]
+   ],
+   [
+    [
+     49.76785,
+     13.40024
+    ],
+    [
+     49.76783,
+     13.40024
+    ]
+   ],
+   [
+    [
+     49.76783,
+     13.40024
+    ],
+    [
+     49.76781,
+     13.40023
+    ],
+    [
+     49.76779,
+     13.40021
+    ],
+    [
+     49.76776,
+     13.40017
+    ],
+    [
+     49.76771,
+     13.4001
+    ],
+    [
+     49.76769,
+     13.40007
+    ],
+    [
+     49.76761,
+     13.39996
+    ],
+    [
+     49.76759,
+     13.39993
+    ],
+    [
+     49.76751,
+     13.39983
+    ]
+   ],
+   [
+    [
+     49.76797,
+     13.40045
+    ],
+    [
+     49.76797,
+     13.40041
+    ],
+    [
+     49.76796,
+     13.40038
+    ]
+   ],
+   [
+    [
+     49.7685,
+     13.40175
+    ],
+    [
+     49.76851,
+     13.40179
+    ],
+    [
+     49.76852,
+     13.40183
+    ],
+    [
+     49.76851,
+     13.40189
+    ]
+   ],
+   [
+    [
+     49.76863,
+     13.40179
+    ],
+    [
+     49.7686,
+     13.40177
+    ],
+    [
+     49.76858,
+     13.40175
+    ],
+    [
+     49.76857,
+     13.40172
+    ],
+    [
+     49.76855,
+     13.40169
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Roudné, Plzeň 1, uzavřeno, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, provoz cyklistů a chodců po smíšené stezce nebude omezen\n, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "5fe504cd-c819-4635-9b33-a0cc54dd5791",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "lipova",
+  "name": "Lipová",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.75575,
+     13.37946
+    ],
+    [
+     49.75557,
+     13.38006
+    ],
+    [
+     49.75552,
+     13.38013
+    ],
+    [
+     49.75548,
+     13.38019
+    ]
+   ],
+   [
+    [
+     49.75494,
+     13.38141
+    ],
+    [
+     49.75499,
+     13.38139
+    ],
+    [
+     49.75509,
+     13.38111
+    ],
+    [
+     49.75544,
+     13.38029
+    ],
+    [
+     49.75548,
+     13.38019
+    ]
+   ],
+   [
+    [
+     49.75544,
+     13.37854
+    ],
+    [
+     49.75546,
+     13.37865
+    ],
+    [
+     49.75552,
+     13.37913
+    ],
+    [
+     49.75572,
+     13.37912
+    ],
+    [
+     49.75575,
+     13.3793
+    ],
+    [
+     49.75575,
+     13.37946
+    ]
+   ],
+   [
+    [
+     49.75544,
+     13.37854
+    ],
+    [
+     49.75537,
+     13.37824
+    ],
+    [
+     49.75531,
+     13.37768
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Lipová, Plzeň 1, uzavřeno, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "8c39b094-d78d-4f9e-8199-749aba8f5f7c",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "malicka-2",
+  "name": "Malická",
+  "akce": "Jiné",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.7542,
+     13.37702
+    ],
+    [
+     49.75422,
+     13.37717
+    ],
+    [
+     49.75423,
+     13.37723
+    ],
+    [
+     49.75426,
+     13.3776
+    ],
+    [
+     49.75427,
+     13.37765
+    ],
+    [
+     49.75432,
+     13.37828
+    ],
+    [
+     49.75433,
+     13.3784
+    ],
+    [
+     49.75439,
+     13.37902
+    ]
+   ],
+   [
+    [
+     49.75447,
+     13.37986
+    ],
+    [
+     49.75448,
+     13.37998
+    ],
+    [
+     49.75462,
+     13.38129
+    ],
+    [
+     49.75463,
+     13.38133
+    ]
+   ],
+   [
+    [
+     49.75439,
+     13.37902
+    ],
+    [
+     49.75446,
+     13.37973
+    ],
+    [
+     49.75447,
+     13.37986
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Malická, Plzeň 1, omezení, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "jiné",
+  "zdroj": "JSDI",
+  "jsdiId": "6ee541d0-a43b-408e-a5f2-c22757d6ab90",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-08-31",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "na-roudne-4",
+  "name": "Na Roudné",
+  "akce": "Jiné",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.75844,
+     13.38282
+    ],
+    [
+     49.75843,
+     13.38282
+    ],
+    [
+     49.75841,
+     13.38282
+    ],
+    [
+     49.75839,
+     13.38284
+    ],
+    [
+     49.75838,
+     13.38286
+    ],
+    [
+     49.75837,
+     13.38288
+    ],
+    [
+     49.75837,
+     13.38291
+    ],
+    [
+     49.75837,
+     13.38294
+    ],
+    [
+     49.75838,
+     13.38296
+    ],
+    [
+     49.7584,
+     13.38298
+    ],
+    [
+     49.75841,
+     13.383
+    ],
+    [
+     49.75843,
+     13.383
+    ],
+    [
+     49.75845,
+     13.38299
+    ],
+    [
+     49.75847,
+     13.38298
+    ],
+    [
+     49.75848,
+     13.38295
+    ],
+    [
+     49.75849,
+     13.38293
+    ],
+    [
+     49.75849,
+     13.3829
+    ],
+    [
+     49.75848,
+     13.38288
+    ],
+    [
+     49.75847,
+     13.38285
+    ],
+    [
+     49.75846,
+     13.38283
+    ],
+    [
+     49.75844,
+     13.38282
+    ]
+   ],
+   [
+    [
+     49.75848,
+     13.38295
+    ],
+    [
+     49.75852,
+     13.38297
+    ],
+    [
+     49.75858,
+     13.38297
+    ],
+    [
+     49.75868,
+     13.38292
+    ],
+    [
+     49.75877,
+     13.38289
+    ],
+    [
+     49.7589,
+     13.3828
+    ],
+    [
+     49.75899,
+     13.38273
+    ],
+    [
+     49.75903,
+     13.3827
+    ],
+    [
+     49.75916,
+     13.3826
+    ],
+    [
+     49.75924,
+     13.38247
+    ],
+    [
+     49.75927,
+     13.38231
+    ],
+    [
+     49.75929,
+     13.38206
+    ]
+   ],
+   [
+    [
+     49.758,
+     13.38275
+    ],
+    [
+     49.75813,
+     13.38286
+    ],
+    [
+     49.75824,
+     13.38292
+    ],
+    [
+     49.75832,
+     13.38294
+    ],
+    [
+     49.75837,
+     13.38294
+    ]
+   ],
+   [
+    [
+     49.76008,
+     13.38448
+    ],
+    [
+     49.75962,
+     13.38312
+    ],
+    [
+     49.75954,
+     13.38295
+    ],
+    [
+     49.75951,
+     13.38292
+    ],
+    [
+     49.75949,
+     13.38289
+    ],
+    [
+     49.75945,
+     13.38287
+    ],
+    [
+     49.75943,
+     13.38287
+    ],
+    [
+     49.75939,
+     13.38286
+    ],
+    [
+     49.75934,
+     13.38288
+    ],
+    [
+     49.75889,
+     13.38312
+    ],
+    [
+     49.75886,
+     13.38313
+    ],
+    [
+     49.75874,
+     13.38319
+    ],
+    [
+     49.75865,
+     13.38321
+    ],
+    [
+     49.75844,
+     13.38326
+    ],
+    [
+     49.7582,
+     13.38321
+    ],
+    [
+     49.75793,
+     13.38301
+    ],
+    [
+     49.75789,
+     13.38294
+    ],
+    [
+     49.7577,
+     13.38271
+    ],
+    [
+     49.75752,
+     13.38246
+    ],
+    [
+     49.75713,
+     13.38195
+    ],
+    [
+     49.75673,
+     13.38149
+    ],
+    [
+     49.75636,
+     13.38102
+    ],
+    [
+     49.75616,
+     13.38077
+    ],
+    [
+     49.75614,
+     13.38075
+    ],
+    [
+     49.75548,
+     13.38019
+    ],
+    [
+     49.75531,
+     13.38006
+    ],
+    [
+     49.75475,
+     13.37985
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Roudné, Plzeň 1, omezení, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, částečná uzavírka vozovky, v úseku od objektu Na Roudné č. 75 ke křižovatce s ulicí Malická, ve směru do centra, průjezd na vozovce zachován v šířce min. 2,75m , Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "jiné",
+  "zdroj": "JSDI",
+  "jsdiId": "5e88f15c-842d-489a-a298-2f15003fa401",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-08-31",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "pod-kostelem-2",
+  "name": "Pod Kostelem",
+  "akce": "Jiné",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.75738,
+     13.38072
+    ],
+    [
+     49.75757,
+     13.38099
+    ],
+    [
+     49.75772,
+     13.38119
+    ],
+    [
+     49.75787,
+     13.38137
+    ],
+    [
+     49.75802,
+     13.38158
+    ],
+    [
+     49.75829,
+     13.38191
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Pod Kostelem, Plzeň 1, omezení, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "jiné",
+  "zdroj": "JSDI",
+  "jsdiId": "37c0006d-b24a-4e44-9bb7-7a7d549306ac",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-08-31",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "lidicka",
+  "name": "Lidická",
+  "akce": "Uzavírka jízdního pruhu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "7. 7. 2026 – 17. 7. 2026",
+  "ways": [
+   [
+    [
+     49.76128,
+     13.36819
+    ],
+    [
+     49.76181,
+     13.36869
+    ],
+    [
+     49.76186,
+     13.36874
+    ],
+    [
+     49.76204,
+     13.36891
+    ],
+    [
+     49.76225,
+     13.36911
+    ],
+    [
+     49.76237,
+     13.36923
+    ],
+    [
+     49.76371,
+     13.37048
+    ]
+   ],
+   [
+    [
+     49.76395,
+     13.37118
+    ],
+    [
+     49.7638,
+     13.37104
+    ],
+    [
+     49.76376,
+     13.37099
+    ],
+    [
+     49.76373,
+     13.37093
+    ],
+    [
+     49.76371,
+     13.37086
+    ],
+    [
+     49.7637,
+     13.37076
+    ],
+    [
+     49.7637,
+     13.37061
+    ]
+   ],
+   [
+    [
+     49.76063,
+     13.36981
+    ],
+    [
+     49.76082,
+     13.37001
+    ],
+    [
+     49.76092,
+     13.37011
+    ],
+    [
+     49.76103,
+     13.3702
+    ],
+    [
+     49.76115,
+     13.37029
+    ],
+    [
+     49.76126,
+     13.37037
+    ],
+    [
+     49.7614,
+     13.37045
+    ],
+    [
+     49.7615,
+     13.37051
+    ],
+    [
+     49.76161,
+     13.37056
+    ],
+    [
+     49.76174,
+     13.37062
+    ],
+    [
+     49.76179,
+     13.37064
+    ]
+   ],
+   [
+    [
+     49.76621,
+     13.37274
+    ],
+    [
+     49.76577,
+     13.37237
+    ]
+   ],
+   [
+    [
+     49.76577,
+     13.37237
+    ],
+    [
+     49.76544,
+     13.37209
+    ],
+    [
+     49.76531,
+     13.372
+    ],
+    [
+     49.76508,
+     13.37183
+    ],
+    [
+     49.76485,
+     13.37168
+    ],
+    [
+     49.76463,
+     13.37154
+    ],
+    [
+     49.7644,
+     13.37141
+    ],
+    [
+     49.76395,
+     13.37118
+    ],
+    [
+     49.76363,
+     13.37105
+    ],
+    [
+     49.76331,
+     13.37092
+    ]
+   ],
+   [
+    [
+     49.76331,
+     13.37092
+    ],
+    [
+     49.76257,
+     13.37064
+    ],
+    [
+     49.76203,
+     13.37042
+    ]
+   ],
+   [
+    [
+     49.76179,
+     13.37064
+    ],
+    [
+     49.76251,
+     13.37092
+    ],
+    [
+     49.76327,
+     13.37121
+    ],
+    [
+     49.76358,
+     13.37133
+    ],
+    [
+     49.76388,
+     13.37146
+    ],
+    [
+     49.76435,
+     13.37168
+    ],
+    [
+     49.76457,
+     13.37181
+    ],
+    [
+     49.76479,
+     13.37195
+    ],
+    [
+     49.76502,
+     13.37211
+    ],
+    [
+     49.76522,
+     13.37225
+    ],
+    [
+     49.76566,
+     13.37258
+    ],
+    [
+     49.76609,
+     13.37299
+    ]
+   ],
+   [
+    [
+     49.76498,
+     13.37223
+    ],
+    [
+     49.76495,
+     13.37232
+    ],
+    [
+     49.76492,
+     13.37254
+    ],
+    [
+     49.76491,
+     13.37263
+    ],
+    [
+     49.76488,
+     13.37282
+    ],
+    [
+     49.76485,
+     13.37304
+    ],
+    [
+     49.76482,
+     13.37329
+    ],
+    [
+     49.76479,
+     13.37355
+    ],
+    [
+     49.76477,
+     13.37367
+    ],
+    [
+     49.76468,
+     13.37428
+    ]
+   ],
+   [
+    [
+     49.76203,
+     13.37042
+    ],
+    [
+     49.7619,
+     13.37037
+    ],
+    [
+     49.76184,
+     13.37034
+    ],
+    [
+     49.76174,
+     13.3703
+    ],
+    [
+     49.76159,
+     13.37023
+    ],
+    [
+     49.76144,
+     13.37015
+    ],
+    [
+     49.76131,
+     13.37007
+    ],
+    [
+     49.76111,
+     13.36992
+    ],
+    [
+     49.76093,
+     13.36975
+    ],
+    [
+     49.76077,
+     13.36957
+    ]
+   ],
+   [
+    [
+     49.7637,
+     13.37061
+    ],
+    [
+     49.76365,
+     13.37076
+    ],
+    [
+     49.7636,
+     13.37084
+    ],
+    [
+     49.76355,
+     13.37089
+    ],
+    [
+     49.76351,
+     13.3709
+    ],
+    [
+     49.76347,
+     13.3709
+    ],
+    [
+     49.76331,
+     13.37092
+    ]
+   ],
+   [
+    [
+     49.76371,
+     13.37048
+    ],
+    [
+     49.7637,
+     13.37061
+    ]
+   ],
+   [
+    [
+     49.76083,
+     13.36984
+    ],
+    [
+     49.76101,
+     13.37002
+    ],
+    [
+     49.76129,
+     13.37023
+    ],
+    [
+     49.76154,
+     13.37037
+    ],
+    [
+     49.76178,
+     13.37049
+    ],
+    [
+     49.76181,
+     13.3705
+    ],
+    [
+     49.76212,
+     13.37062
+    ],
+    [
+     49.76314,
+     13.371
+    ],
+    [
+     49.76387,
+     13.3713
+    ],
+    [
+     49.76402,
+     13.37137
+    ],
+    [
+     49.76432,
+     13.37153
+    ],
+    [
+     49.76472,
+     13.37175
+    ],
+    [
+     49.76498,
+     13.37192
+    ],
+    [
+     49.76528,
+     13.37213
+    ],
+    [
+     49.76542,
+     13.37224
+    ],
+    [
+     49.76551,
+     13.37231
+    ],
+    [
+     49.76573,
+     13.3725
+    ],
+    [
+     49.76598,
+     13.37272
+    ]
+   ],
+   [
+    [
+     49.76502,
+     13.37211
+    ],
+    [
+     49.76498,
+     13.37223
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/27 (ulice Lidická), Plzeň 1, práce na silnici, pravý jízdní pruh uzavřen, Od 07.07.2026 08:00 Do 17.07.2026 17:00, z důvodu opravy povrchu vozovky silnice I/27 v rámci reklamace; I. etapa - uzavírka pravého jízdního pruhu jízdního pásu ve směru do centra v úseku od křižovatky silnice I/27 Lidická a místní komunikace ul. Vlastina v délce cca 300 m , Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavírka jízdního pruhu",
+  "zdroj": "JSDI",
+  "jsdiId": "238d590a-d60b-47c7-a031-3aa4c462bb2d",
+  "superdioId": null,
+  "od": "2026-07-07",
+  "do": "2026-07-17",
+  "severity": "medium",
+  "geomTier": 4
  },
  {
   "id": "masarykova",
