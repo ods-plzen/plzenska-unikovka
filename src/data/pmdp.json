@@ -1,7 +1,58 @@
 {
- "snapshot": "2026-07-06T08:59:24+00:00",
+ "snapshot": "2026-07-10T08:22:01+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
+  {
+   "id": "vyluka-sady-petatricatniku-dne-25-7-2026-od-6-30-do-cca-18-30",
+   "url": "https://www.pmdp.cz/systransport/63/6/4285/vyluka-sady-petatricatniku-dne-25-7-2026-od-6-30-do-cca-18-30/",
+   "title": "Výluka sady Pětatřicátníků dne 25. 7. 2026 od 6:30 do cca 18:30",
+   "lines": [
+    "25",
+    "7",
+    "202",
+    "6",
+    "30",
+    "18"
+   ],
+   "startDate": null,
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach",
+   "url": "https://www.pmdp.cz/systransport/63/6/4286/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach/",
+   "title": "Uzavírka Americké ulice a okružní křižovatky u mrakodrapu od 20. 7. 2026 - změny na trolejbusových linkách",
+   "lines": [
+    "20",
+    "7",
+    "202",
+    "6"
+   ],
+   "startDate": "2026-07-20",
+   "endDate": null,
+   "matchedClosure": "americka",
+   "detail": {
+    "summary": "Od 20. 7. 2026 bude současná uzavírka Americké ulice rozšířena o uzavírku okružní křižovatky u mrakodrapu.",
+    "lineGroups": [],
+    "stopsAffected": [],
+    "notes": [
+     "Od 20. 7. 2026 bude současná uzavírka Americké ulice rozšířena o uzavírku okružní křižovatky u mrakodrapu.",
+     "Zrušené zastávky linky 10: Tylova (v Tylově ulici); U Práce; Mrakodrap; Prokopova",
+     "zastávky: Pařížská; Muzeum; Smetanovy sady; Divadlo J. K. Tyla; CAN Husova; Kalikova."
+    ]
+   }
+  },
+  {
+   "id": "preruseni-provozu-linky-36-od-13-do-17-7-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4284/preruseni-provozu-linky-36-od-13-do-17-7-2026/",
+   "title": "Přerušení provozu linky 36 od 13. do 17. 7. 2026",
+   "lines": [
+    "36"
+   ],
+   "startDate": null,
+   "endDate": "2026-07-17",
+   "matchedClosure": null
+  },
   {
    "id": "odklon-tramvaji-ze-sadu-petatricatniku-dne-11-7-2026",
    "url": "https://www.pmdp.cz/systransport/63/6/4283/odklon-tramvaji-ze-sadu-petatricatniku-dne-11-7-2026/",
@@ -26,35 +77,6 @@
     "202"
    ],
    "startDate": "2026-06-27",
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "provoz-linek-mhd-5-a-6-7-2026-statni-svatky",
-   "url": "https://www.pmdp.cz/systransport/63/6/4281/provoz-linek-mhd-5-a-6-7-2026-statni-svatky/",
-   "title": "Provoz linek MHD 5. a 6. 7. 2026 - státní svátky",
-   "lines": [
-    "5",
-    "6",
-    "7",
-    "202"
-   ],
-   "startDate": null,
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "preruseni-linky-76-k-zoologicke-zahrade-21-a-27-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4280/preruseni-linky-76-k-zoologicke-zahrade-21-a-27-6-2026/",
-   "title": "Přerušení linky 76 k zoologické zahradě 21. a 27. 6. 2026",
-   "lines": [
-    "76",
-    "21",
-    "27",
-    "6",
-    "202"
-   ],
-   "startDate": null,
    "endDate": null,
    "matchedClosure": null
   },
@@ -121,17 +143,6 @@
     "202"
    ],
    "startDate": "2026-06-29",
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "zahajeni-provozu-linky-76-k-zoologicke-zahrade-od-13-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4271/zahajeni-provozu-linky-76-k-zoologicke-zahrade-od-13-6-2026/",
-   "title": "Zahájení provozu linky 76 k zoologické zahradě od 13. 6. 2026",
-   "lines": [
-    "76"
-   ],
-   "startDate": "2026-06-13",
    "endDate": null,
    "matchedClosure": null
   },
@@ -313,26 +324,6 @@
   }
  ],
  "perClosure": {
-  "masarykova": {
-   "reroutes": [
-    {
-     "lines": [
-      "29",
-      "30",
-      "N3",
-      "N6"
-     ],
-     "via": "Rokycanská, Jateční Těšínská"
-    }
-   ],
-   "tempStops": [],
-   "notes": [],
-   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
-   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
-   "sourceUrlsAll": [
-    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
-   ]
-  },
   "americka": {
    "reroutes": [
     {
@@ -423,14 +414,36 @@
     }
    ],
    "notes": [
-    "Od 11. 5. 2026 bude zahájena rekonstrukce Americké ulice, respektive její přestavba na sdílenou zónu.",
-    "Zrušené zastávky linky 10: Tylova (v Tylově ulici); U Práce; Mrakodrap; Prokopova"
+    "Od 20. 7. 2026 bude současná uzavírka Americké ulice rozšířena o uzavírku okružní křižovatky u mrakodrapu.",
+    "Zrušené zastávky linky 10: Tylova (v Tylově ulici); U Práce; Mrakodrap; Prokopova",
+    "Od 11. 5. 2026 bude zahájena rekonstrukce Americké ulice, respektive její přestavba na sdílenou zónu."
    ],
-   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
-   "sourceLabel": "PMDP — Uzavírka Americké ulice od 11. 5. 2026 - změny linek 20, 27, 34, N1 - N6, N11, N",
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4286/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach/",
+   "sourceLabel": "PMDP — Uzavírka Americké ulice a okružní křižovatky u mrakodrapu od 20. 7. 2026 - změny",
    "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4286/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach/",
     "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
     "https://www.pmdp.cz/systransport/63/6/4259/uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu/"
+   ]
+  },
+  "masarykova": {
+   "reroutes": [
+    {
+     "lines": [
+      "29",
+      "30",
+      "N3",
+      "N6"
+     ],
+     "via": "Rokycanská, Jateční Těšínská"
+    }
+   ],
+   "tempStops": [],
+   "notes": [],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
+   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
+   "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
    ]
   }
  }
