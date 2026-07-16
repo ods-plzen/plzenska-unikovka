@@ -1,7 +1,18 @@
 {
- "snapshot": "2026-07-13T08:16:08+00:00",
+ "snapshot": "2026-07-16T07:22:04+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
+  {
+   "id": "prelozeni-zastavky-linky-51-stary-plzenec-sedlec-od-27-7-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4287/prelozeni-zastavky-linky-51-stary-plzenec-sedlec-od-27-7-2026/",
+   "title": "Přeložení zastávky linky 51 Starý Plzenec, Sedlec od 27. 7. 2026",
+   "lines": [
+    "51"
+   ],
+   "startDate": "2026-07-27",
+   "endDate": null,
+   "matchedClosure": null
+  },
   {
    "id": "vyluka-sady-petatricatniku-dne-25-7-2026-od-6-30-do-cca-18-30",
    "url": "https://www.pmdp.cz/systransport/63/6/4285/vyluka-sady-petatricatniku-dne-25-7-2026-od-6-30-do-cca-18-30/",
@@ -324,26 +335,6 @@
   }
  ],
  "perClosure": {
-  "masarykova": {
-   "reroutes": [
-    {
-     "lines": [
-      "29",
-      "30",
-      "N3",
-      "N6"
-     ],
-     "via": "Rokycanská, Jateční Těšínská"
-    }
-   ],
-   "tempStops": [],
-   "notes": [],
-   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
-   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
-   "sourceUrlsAll": [
-    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
-   ]
-  },
   "americka": {
    "reroutes": [
     {
@@ -444,6 +435,26 @@
     "https://www.pmdp.cz/systransport/63/6/4286/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach/",
     "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
     "https://www.pmdp.cz/systransport/63/6/4259/uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu/"
+   ]
+  },
+  "masarykova": {
+   "reroutes": [
+    {
+     "lines": [
+      "29",
+      "30",
+      "N3",
+      "N6"
+     ],
+     "via": "Rokycanská, Jateční Těšínská"
+    }
+   ],
+   "tempStops": [],
+   "notes": [],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
+   "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
+   "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
    ]
   }
  }
