@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-07-16T07:22:04+00:00",
+ "snapshot": "2026-07-17T07:15:37+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -30,6 +30,18 @@
    "matchedClosure": null
   },
   {
+   "id": "prelozeni-zastavek-linek-22-a-51-v-koterove-od-21-7-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4288/prelozeni-zastavek-linek-22-a-51-v-koterove-od-21-7-2026/",
+   "title": "Přeložení zastávek linek 22 a 51 v Koterově od 21. 7. 2026",
+   "lines": [
+    "22",
+    "51"
+   ],
+   "startDate": "2026-07-21",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
    "id": "uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach",
    "url": "https://www.pmdp.cz/systransport/63/6/4286/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach/",
    "title": "Uzavírka Americké ulice a okružní křižovatky u mrakodrapu od 20. 7. 2026 - změny na trolejbusových linkách",
@@ -52,31 +64,6 @@
      "zastávky: Pařížská; Muzeum; Smetanovy sady; Divadlo J. K. Tyla; CAN Husova; Kalikova."
     ]
    }
-  },
-  {
-   "id": "preruseni-provozu-linky-36-od-13-do-17-7-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4284/preruseni-provozu-linky-36-od-13-do-17-7-2026/",
-   "title": "Přerušení provozu linky 36 od 13. do 17. 7. 2026",
-   "lines": [
-    "36"
-   ],
-   "startDate": null,
-   "endDate": "2026-07-17",
-   "matchedClosure": null
-  },
-  {
-   "id": "odklon-tramvaji-ze-sadu-petatricatniku-dne-11-7-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4283/odklon-tramvaji-ze-sadu-petatricatniku-dne-11-7-2026/",
-   "title": "Odklon tramvají ze sadů Pětatřicátníků dne 11. 7. 2026",
-   "lines": [
-    "11",
-    "7",
-    "202",
-    "6"
-   ],
-   "startDate": null,
-   "endDate": null,
-   "matchedClosure": null
   },
   {
    "id": "zahajeni-provozu-historicke-linky-h-od-27-6-2026",
