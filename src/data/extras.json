@@ -444,8 +444,6 @@
       "<b>3. etapa (od 23. 7.):</b> úplná uzavírka okružní křižovatky Americká – Goethova – Prokopova."
     ],
     "mhd": [
-      "<b>Od 20. 7. do 9. 8.:</b> uzavřený kruhový objezd u Mrakodrapu. Trolejbusy 12, 13, 14, 15 a 17 jsou odkloněny přes <b>Ukrajinskou ulici</b>. (<a href=\"https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/\" target=\"_blank\" rel=\"noopener\">PMDP – Změny v dopravě</a>)",
-      "<b>Přesunutá zastávka:</b> zastávka <b>Pařížská</b> je dočasně přeložena do Ukrajinské ulice. V centru se po dobu uzavírky nezastavuje na zastávkách Mrakodrap, U Práce a Tylova.",
       "1.–2. etapa: část MHD vedena přes Anglické nábřeží, Kopeckého a Smetanovy sady, část ulicemi Prokopova a U Trati.",
       "3. etapa: část MHD pojede ulicemi Mikulášská a U Trati."
     ],
@@ -827,6 +825,11 @@
           ]
         ]
       }
+    ],
+    "means": [
+      "<b>Aktuálně (20. 7.–9. 8.):</b> uzavřený kruhový objezd u Mrakodrapu. Trolejbusy 12, 13, 14, 15 a 17 jedou objížďkou přes <b>Ukrajinskou ulici</b>.",
+      "<b>Přesunutá zastávka:</b> zastávka <b>Pařížská</b> je dočasně přeložena do <b>Ukrajinské ulice</b>. V centru se po dobu uzavírky nezastavuje na zastávkách Mrakodrap, U Práce a Tylova.",
+      "<b>Řidiči:</b> objezd u Mrakodrapu se objíždí po nábřeží a ulicí U Trati; v centru počítejte se zdržením. (<a href=\"https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/\" target=\"_blank\" rel=\"noopener\">PMDP – Změny v dopravě</a>)"
     ]
   },
   "domazlicka": {
