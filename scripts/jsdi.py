@@ -82,6 +82,22 @@ PLAN_ENRICH: dict[str, dict] = {
         # jako detourWays overlay. Renderuje se dashed zeleně na mapě.
         "_detourStreets": ["rokycanská", "jateční", "těšínská"],
     },
+    # Americká: JSDI/geokód ořízl uzavírku na špatný úsek (spadlo to k Tylově
+    # a Klatovské, ~300 m západně od skutečné Americké). Ručně pinujeme osu
+    # ulice mezi V Šipce a Anglickým nábřežím (z OSM, 2026-07-21).
+    "americka": {
+        "geomTier": 1,
+        "ways": [
+            [
+                [49.74339, 13.3796], [49.74339, 13.3798], [49.74339, 13.38],
+                [49.74339, 13.3808], [49.74339, 13.381], [49.74339, 13.3811],
+                [49.74339, 13.3828], [49.74339, 13.383], [49.74339, 13.384],
+                [49.7434, 13.3842], [49.74346, 13.3846], [49.74358, 13.385],
+                [49.74372, 13.3854], [49.74388, 13.3858], [49.74392, 13.3859],
+                [49.74393, 13.386], [49.744, 13.3862],
+            ]
+        ],
+    },
 }
 
 # Pro GH Actions runner: služba má IPv6 record, ale routing často padá.
