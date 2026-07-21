@@ -4593,35 +4593,6 @@
   "geomTier": 5
  },
  {
-  "id": "iii-18032",
-  "name": "III/18032",
-  "akce": "Pohyb vozidla údržby",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 6",
-  "termin": "20. 7. 2026 – 20. 7. 2026",
-  "ways": [
-   [
-    [
-     49.68411,
-     13.35273
-    ]
-   ]
-  ],
-  "point": true,
-  "popis": "silnice III/18032e - silnice III/18032a, Plzeň 6-Litice, v katastru obce Plzeň, Platnost od 20.7.2026 07:00 do 20.7.2026 13:00, zálivka výsadby, Vydal: SÚS Plzeňského kraje",
-  "typ": "Překážka na vozovce",
-  "subtyp": "pohyb vozidla údržby",
-  "zdroj": "JSDI",
-  "jsdiId": "bc6a41f0-9ab0-44c9-8905-41b7b384bfea",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-07-20",
-  "severity": "minor",
-  "geomTier": 5
- },
- {
   "id": "tylova",
   "name": "Tylova",
   "akce": "Oprava povrchu",
@@ -4757,6 +4728,846 @@
   "superdioId": null,
   "od": "2026-07-20",
   "do": "2026-08-10",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "nade-vsi",
+  "name": "Nade Vsí",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71556,
+     13.42771
+    ],
+    [
+     49.71569,
+     13.428
+    ],
+    [
+     49.71598,
+     13.42864
+    ],
+    [
+     49.71601,
+     13.42875
+    ],
+    [
+     49.71601,
+     13.42888
+    ],
+    [
+     49.71599,
+     13.42898
+    ],
+    [
+     49.71559,
+     13.42943
+    ],
+    [
+     49.71556,
+     13.42946
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Nade Vsí, Plzeň 2-Slovany, Plzeň, , Od 20.07.2026 00:00, Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "f81810ce-ad85-4d9f-9f5c-b68a18432f10",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "ke-kolesovce",
+  "name": "Ke Kolešovce",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71593,
+     13.43021
+    ],
+    [
+     49.71589,
+     13.43013
+    ],
+    [
+     49.71586,
+     13.43007
+    ],
+    [
+     49.71556,
+     13.42946
+    ],
+    [
+     49.71535,
+     13.42904
+    ],
+    [
+     49.71533,
+     13.42899
+    ],
+    [
+     49.71514,
+     13.42855
+    ]
+   ],
+   [
+    [
+     49.71514,
+     13.42855
+    ],
+    [
+     49.71498,
+     13.4282
+    ],
+    [
+     49.71454,
+     13.42727
+    ]
+   ],
+   [
+    [
+     49.71454,
+     13.42727
+    ],
+    [
+     49.71443,
+     13.42707
+    ],
+    [
+     49.7144,
+     13.42703
+    ],
+    [
+     49.71437,
+     13.42701
+    ],
+    [
+     49.71433,
+     13.42699
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Ke Kolešovce, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "a977d467-a678-44ab-a4ea-1edc0bd81307",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "ke-kolesovce-2",
+  "name": "Ke Kolešovce",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71593,
+     13.43021
+    ],
+    [
+     49.71589,
+     13.43013
+    ],
+    [
+     49.71586,
+     13.43007
+    ],
+    [
+     49.71556,
+     13.42946
+    ],
+    [
+     49.71535,
+     13.42904
+    ],
+    [
+     49.71533,
+     13.42899
+    ],
+    [
+     49.71514,
+     13.42855
+    ]
+   ],
+   [
+    [
+     49.71514,
+     13.42855
+    ],
+    [
+     49.71498,
+     13.4282
+    ],
+    [
+     49.71454,
+     13.42727
+    ]
+   ],
+   [
+    [
+     49.71454,
+     13.42727
+    ],
+    [
+     49.71443,
+     13.42707
+    ],
+    [
+     49.7144,
+     13.42703
+    ],
+    [
+     49.71437,
+     13.42701
+    ],
+    [
+     49.71433,
+     13.42699
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Ke Kolešovce, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "6e902b37-89d2-41b8-8a46-67eba6b5f57c",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "pod-kopcem",
+  "name": "Pod Kopcem",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71578,
+     13.43025
+    ],
+    [
+     49.71594,
+     13.43114
+    ],
+    [
+     49.71601,
+     13.4315
+    ],
+    [
+     49.71604,
+     13.43168
+    ],
+    [
+     49.71607,
+     13.43178
+    ],
+    [
+     49.71628,
+     13.43239
+    ],
+    [
+     49.71702,
+     13.43442
+    ],
+    [
+     49.71715,
+     13.43495
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Pod Kopcem, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "c5168ae5-eef3-4507-8a83-f3d1101435bf",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "pod-kopcem-2",
+  "name": "Pod Kopcem",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71578,
+     13.43025
+    ],
+    [
+     49.71594,
+     13.43114
+    ],
+    [
+     49.71601,
+     13.4315
+    ],
+    [
+     49.71604,
+     13.43168
+    ],
+    [
+     49.71607,
+     13.43178
+    ],
+    [
+     49.71628,
+     13.43239
+    ],
+    [
+     49.71702,
+     13.43442
+    ],
+    [
+     49.71715,
+     13.43495
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Pod Kopcem, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "42625511-9342-4e1c-9e46-2dc47f91ce6b",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-hradcanech",
+  "name": "Na Hradčanech",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 13. 9. 2026",
+  "ways": [
+   [
+    [
+     49.7141,
+     13.42773
+    ],
+    [
+     49.71394,
+     13.42818
+    ],
+    [
+     49.7139,
+     13.42826
+    ]
+   ],
+   [
+    [
+     49.71356,
+     13.42941
+    ],
+    [
+     49.71356,
+     13.42957
+    ],
+    [
+     49.71358,
+     13.42978
+    ],
+    [
+     49.71362,
+     13.42997
+    ],
+    [
+     49.71366,
+     13.43017
+    ],
+    [
+     49.71367,
+     13.43025
+    ],
+    [
+     49.71369,
+     13.43034
+    ],
+    [
+     49.71384,
+     13.4312
+    ],
+    [
+     49.71389,
+     13.43153
+    ],
+    [
+     49.71394,
+     13.43172
+    ],
+    [
+     49.71399,
+     13.4319
+    ],
+    [
+     49.71408,
+     13.43215
+    ],
+    [
+     49.71417,
+     13.43236
+    ],
+    [
+     49.71422,
+     13.43246
+    ],
+    [
+     49.71464,
+     13.43334
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71379,
+     13.4285
+    ],
+    [
+     49.71378,
+     13.42854
+    ],
+    [
+     49.71375,
+     13.42862
+    ],
+    [
+     49.71361,
+     13.42906
+    ],
+    [
+     49.71359,
+     13.42916
+    ],
+    [
+     49.71357,
+     13.42927
+    ],
+    [
+     49.71356,
+     13.42941
+    ]
+   ],
+   [
+    [
+     49.7139,
+     13.42826
+    ],
+    [
+     49.71388,
+     13.4283
+    ],
+    [
+     49.71385,
+     13.42838
+    ],
+    [
+     49.71381,
+     13.42844
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice III/18020 (ulice Na Hradčanech), Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, kyvadlový provoz jedním jízdním pruhem, Od 20.07.2026 08:00 Do 13.09.2026 23:59, Bezvýkopová oprava kanalizačních přípojek v rámci reklamace, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "a0c2699f-ee64-4d61-ba07-3ebf1e84696c",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-09-13",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-hradcanech-2",
+  "name": "Na Hradčanech",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71433,
+     13.42699
+    ],
+    [
+     49.71432,
+     13.42707
+    ],
+    [
+     49.7143,
+     13.42716
+    ],
+    [
+     49.71429,
+     13.42721
+    ],
+    [
+     49.71427,
+     13.42728
+    ],
+    [
+     49.71424,
+     13.42737
+    ],
+    [
+     49.7141,
+     13.42773
+    ],
+    [
+     49.71394,
+     13.42818
+    ],
+    [
+     49.7139,
+     13.42826
+    ]
+   ],
+   [
+    [
+     49.71356,
+     13.42941
+    ],
+    [
+     49.71356,
+     13.42957
+    ],
+    [
+     49.71358,
+     13.42978
+    ],
+    [
+     49.71362,
+     13.42997
+    ],
+    [
+     49.71366,
+     13.43017
+    ],
+    [
+     49.71367,
+     13.43025
+    ],
+    [
+     49.71369,
+     13.43034
+    ],
+    [
+     49.71384,
+     13.4312
+    ],
+    [
+     49.71389,
+     13.43153
+    ],
+    [
+     49.71394,
+     13.43172
+    ],
+    [
+     49.71399,
+     13.4319
+    ],
+    [
+     49.71408,
+     13.43215
+    ],
+    [
+     49.71417,
+     13.43236
+    ],
+    [
+     49.71422,
+     13.43246
+    ],
+    [
+     49.71464,
+     13.43334
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71379,
+     13.4285
+    ],
+    [
+     49.71378,
+     13.42854
+    ],
+    [
+     49.71375,
+     13.42862
+    ],
+    [
+     49.71361,
+     13.42906
+    ],
+    [
+     49.71359,
+     13.42916
+    ],
+    [
+     49.71357,
+     13.42927
+    ],
+    [
+     49.71356,
+     13.42941
+    ]
+   ],
+   [
+    [
+     49.7139,
+     13.42826
+    ],
+    [
+     49.71388,
+     13.4283
+    ],
+    [
+     49.71385,
+     13.42838
+    ],
+    [
+     49.71381,
+     13.42844
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Hradčanech, mezi křižovatkami ulic U Včelníku a Čedičová, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "a3d9da41-9a90-4abd-9772-56a7b2ba06fa",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-nivach",
+  "name": "Na Nivách",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71501,
+     13.43106
+    ],
+    [
+     49.71472,
+     13.43043
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71387,
+     13.42851
+    ],
+    [
+     49.7139,
+     13.42858
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hradčanech, Plzeň 2-Slovany, Plzeň, uzavřeno, práce na inženýrských sítích, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, termín bude upřesněn zhotovitelem dle probíhajících prací, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "e5a37ef9-f997-47c7-824b-3af6d7149910",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "na-nivach-2",
+  "name": "Na Nivách",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71501,
+     13.43106
+    ],
+    [
+     49.71472,
+     13.43043
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71387,
+     13.42851
+    ],
+    [
+     49.7139,
+     13.42858
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hačkách, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "38035a17-ad3f-4cbf-8fb8-f42e62fb88a9",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-nivach-3",
+  "name": "Na Nivách",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71501,
+     13.43106
+    ],
+    [
+     49.71472,
+     13.43043
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71387,
+     13.42851
+    ],
+    [
+     49.7139,
+     13.42858
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hačkách, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "847dce9c-eb88-4ef9-ad38-b59f301d5226",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
   "severity": "medium",
   "geomTier": 4
  },
@@ -6465,6 +7276,35 @@
   "do": "2026-11-30",
   "severity": "medium",
   "geomTier": 4
+ },
+ {
+  "id": "i-27",
+  "name": "I/27",
+  "akce": "Uzavírka jízdního pruhu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 6",
+  "termin": "21. 7. 2026 – 21. 7. 2026",
+  "ways": [
+   [
+    [
+     49.68327,
+     13.36558
+    ]
+   ]
+  ],
+  "point": true,
+  "popis": "silnice I/27, Plzeň 6-Litice, v katastru obce Plzeň, práce na silnici, zúžení vozovky na jeden jízdní pruh, Od 21.07.2026 07:50 Do 21.07.2026 15:00, obnova VDZ",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavírka jízdního pruhu",
+  "zdroj": "JSDI",
+  "jsdiId": "9bb6e711-0e47-4fe6-9547-76fd014e94c7",
+  "superdioId": null,
+  "od": "2026-07-21",
+  "do": "2026-07-21",
+  "severity": "minor",
+  "geomTier": 5
  },
  {
   "id": "masarykova",
