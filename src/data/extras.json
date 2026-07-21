@@ -415,17 +415,17 @@
   },
   "americka": {
     "title": "Rekonstrukce Americké třídy",
-    "sub": "440 m centrum · 3 etapy · do 11. 8. 2026 · 36 mil. Kč",
+    "sub": "440 m centrum · 3 etapy · do 11. 8. 2026 · 36 mil. Kč · aktuálně objezd u Mrakodrapu uzavřen (20. 7.–9. 8.)",
     "phases": [
       [
         "1. etapa — Goethova–Jungmannova (úplná uzavírka)",
         "od 11. 5. 2026",
-        "now"
+        "done"
       ],
       [
         "2. etapa — Goethova–V Šipce (úplná), V Šipce–Klatovská (jednosměr)",
         "od 22. 6. 2026",
-        ""
+        "now"
       ],
       [
         "3. etapa — Anglické nábřeží–V Šipce + okružní křižovatka",
@@ -444,6 +444,8 @@
       "<b>3. etapa (od 23. 7.):</b> úplná uzavírka okružní křižovatky Americká – Goethova – Prokopova."
     ],
     "mhd": [
+      "<b>Od 20. 7. do 9. 8.:</b> uzavřený kruhový objezd u Mrakodrapu. Trolejbusy 12, 13, 14, 15 a 17 jsou odkloněny přes <b>Ukrajinskou ulici</b>. (<a href=\"https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/\" target=\"_blank\" rel=\"noopener\">PMDP – Změny v dopravě</a>)",
+      "<b>Přesunutá zastávka:</b> zastávka <b>Pařížská</b> je dočasně přeložena do Ukrajinské ulice. V centru se po dobu uzavírky nezastavuje na zastávkách Mrakodrap, U Práce a Tylova.",
       "1.–2. etapa: část MHD vedena přes Anglické nábřeží, Kopeckého a Smetanovy sady, část ulicemi Prokopova a U Trati.",
       "3. etapa: část MHD pojede ulicemi Mikulášská a U Trati."
     ],
