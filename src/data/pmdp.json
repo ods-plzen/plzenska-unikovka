@@ -1,7 +1,38 @@
 {
- "snapshot": "2026-07-19T07:26:26+00:00",
+ "snapshot": "2026-07-23T07:32:10+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
+  {
+   "id": "omezeni-obratiste-kosutka-3-cca-14-8-2026-linka-4",
+   "url": "https://www.pmdp.cz/systransport/63/6/4289/omezeni-obratiste-kosutka-3-cca-14-8-2026-linka-4/",
+   "title": "Omezení obratiště Košutka 3. - cca 14. 8. 2026 - linka 4",
+   "lines": [
+    "3",
+    "14",
+    "8",
+    "202",
+    "6",
+    "4"
+   ],
+   "startDate": null,
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "prelozeni-zastavek-linky-12-nadrazi-skvrnany-u-drahy-a-skoda-iii-brana-od-27-7-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4291/prelozeni-zastavek-linky-12-nadrazi-skvrnany-u-drahy-a-skoda-iii-brana-od-27-7-2026/",
+   "title": "Přeložení zastávek linky 12 \"Nádraží Skvrňany; U Dráhy a Škoda III. brána\" od 27. 7. 2026",
+   "lines": [
+    "12",
+    "27",
+    "7",
+    "202",
+    "6"
+   ],
+   "startDate": "2026-07-27",
+   "endDate": null,
+   "matchedClosure": null
+  },
   {
    "id": "prelozeni-zastavky-linky-51-stary-plzenec-sedlec-od-27-7-2026",
    "url": "https://www.pmdp.cz/systransport/63/6/4287/prelozeni-zastavky-linky-51-stary-plzenec-sedlec-od-27-7-2026/",
@@ -42,6 +73,30 @@
    "matchedClosure": null
   },
   {
+   "id": "uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-lince-h",
+   "url": "https://www.pmdp.cz/systransport/63/6/4290/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-lince-h/",
+   "title": "Uzavírka Americké ulice a okružní křižovatky u mrakodrapu od 20. 7. 2026 - změny na lince H",
+   "lines": [
+    "20",
+    "7",
+    "202",
+    "6"
+   ],
+   "startDate": "2026-07-20",
+   "endDate": null,
+   "matchedClosure": "americka",
+   "detail": {
+    "summary": "Z tohoto důvodu dochází od 20. 7. 2026 do 9. 8. 2026 k následujícím změnám i na lince H:",
+    "lineGroups": [],
+    "stopsAffected": [],
+    "notes": [
+     "Z tohoto důvodu dochází od 20. 7. 2026 do 9. 8. 2026 k následujícím změnám i na lince H:",
+     "Šumavská, U Prazdroje, Ukrajinská, Mikulášská, U Trati, Doudlevecká, Presslova, Černická, Cukrovarská, Doudlevecká, U Trati, Borská, U Letiště, Folmavská, U Panasoniku.",
+     "Pařížská (náhradní zastávka v Ukrajinské ulici u vjezdu do Lidlu)"
+    ]
+   }
+  },
+  {
    "id": "uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach",
    "url": "https://www.pmdp.cz/systransport/63/6/4286/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach/",
    "title": "Uzavírka Americké ulice a okružní křižovatky u mrakodrapu od 20. 7. 2026 - změny na trolejbusových linkách",
@@ -64,19 +119,6 @@
      "zastávky: Pařížská; Muzeum; Smetanovy sady; Divadlo J. K. Tyla; CAN Husova; Kalikova."
     ]
    }
-  },
-  {
-   "id": "zahajeni-provozu-historicke-linky-h-od-27-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4282/zahajeni-provozu-historicke-linky-h-od-27-6-2026/",
-   "title": "Zahájení provozu historické linky H od 27. 6. 2026",
-   "lines": [
-    "27",
-    "6",
-    "202"
-   ],
-   "startDate": "2026-06-27",
-   "endDate": null,
-   "matchedClosure": null
   },
   {
    "id": "zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026",
@@ -209,68 +251,6 @@
    }
   },
   {
-   "id": "uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu",
-   "url": "https://www.pmdp.cz/systransport/63/6/4259/uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu/",
-   "title": "Uzavírka Americké ulice od 11. 5. 2026 - změny v trolejbusovém provozu",
-   "lines": [
-    "11",
-    "5",
-    "202",
-    "6"
-   ],
-   "startDate": "2026-05-11",
-   "endDate": null,
-   "matchedClosure": "americka",
-   "detail": {
-    "summary": "Od 11. 5. 2026 bude zahájena rekonstrukce Americké ulice, respektive její přestavba na sdílenou zónu.",
-    "lineGroups": [
-     {
-      "lines": [
-       "10"
-      ],
-      "via": "Belánku a ukončena v zastávce CAN Husova"
-     },
-     {
-      "lines": [
-       "11"
-      ],
-      "via": "Smetanovy sady a Husovu ulici"
-     },
-     {
-      "lines": [
-       "12"
-      ],
-      "via": "ulici U Trati"
-     },
-     {
-      "lines": [
-       "15",
-       "17"
-      ],
-      "via": "ulici U Trati"
-     },
-     {
-      "lines": [
-       "16"
-      ],
-      "via": "Smetanovy sady a Husovu ulici"
-     },
-     {
-      "lines": [
-       "N7"
-      ],
-      "via": "Smetanovy sady a Husovu ulici a ukončena v zastávce \"Muzeum\""
-     }
-    ],
-    "stopsAffected": [],
-    "notes": [
-     "Od 11. 5. 2026 bude zahájena rekonstrukce Americké ulice, respektive její přestavba na sdílenou zónu.",
-     "Zrušené zastávky linky 10: Tylova (v Tylově ulici); U Práce; Mrakodrap; Prokopova",
-     "Zrušené zastávky linky 11: CAN Tylova (směr Ústřední hřbitov); Tylova; U Práce; Mrakodrap"
-    ]
-   }
-  },
-  {
    "id": "prelozeni-zastavek-linek-20-58-u-kondru-od-7-5-2026",
    "url": "https://www.pmdp.cz/systransport/63/6/4256/prelozeni-zastavek-linek-20-58-u-kondru-od-7-5-2026/",
    "title": "Přeložení zastávek linek 20, 58 U Kondrů od 7. 5. 2026",
@@ -350,43 +330,6 @@
       "N6"
      ],
      "via": "Anglické nábřeží, do Kopeckého sadů a Smetanových sadů"
-    },
-    {
-     "lines": [
-      "10"
-     ],
-     "via": "Belánku a ukončena v zastávce CAN Husova"
-    },
-    {
-     "lines": [
-      "11"
-     ],
-     "via": "Smetanovy sady a Husovu ulici"
-    },
-    {
-     "lines": [
-      "12"
-     ],
-     "via": "ulici U Trati"
-    },
-    {
-     "lines": [
-      "15",
-      "17"
-     ],
-     "via": "ulici U Trati"
-    },
-    {
-     "lines": [
-      "16"
-     ],
-     "via": "Smetanovy sady a Husovu ulici"
-    },
-    {
-     "lines": [
-      "N7"
-     ],
-     "via": "Smetanovy sady a Husovu ulici a ukončena v zastávce \"Muzeum\""
     }
    ],
    "tempStops": [
@@ -412,16 +355,16 @@
     }
    ],
    "notes": [
-    "Od 20. 7. 2026 bude současná uzavírka Americké ulice rozšířena o uzavírku okružní křižovatky u mrakodrapu.",
-    "Zrušené zastávky linky 10: Tylova (v Tylově ulici); U Práce; Mrakodrap; Prokopova",
-    "Od 11. 5. 2026 bude zahájena rekonstrukce Americké ulice, respektive její přestavba na sdílenou zónu."
+    "Z tohoto důvodu dochází od 20. 7. 2026 do 9. 8. 2026 k následujícím změnám i na lince H:",
+    "Šumavská, U Prazdroje, Ukrajinská, Mikulášská, U Trati, Doudlevecká, Presslova, Černická, Cukrovarská, Doudlevecká, U Trati, Borská, U Letiště, Folmavská, U Panasoniku.",
+    "Od 20. 7. 2026 bude současná uzavírka Americké ulice rozšířena o uzavírku okružní křižovatky u mrakodrapu."
    ],
-   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4286/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach/",
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4290/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-lince-h/",
    "sourceLabel": "PMDP — Uzavírka Americké ulice a okružní křižovatky u mrakodrapu od 20. 7. 2026 - změny",
    "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4290/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-lince-h/",
     "https://www.pmdp.cz/systransport/63/6/4286/uzavirka-americke-ulice-a-okruzni-krizovatky-u-mrakodrapu-od-20-7-2026-zmeny-na-trolejbusovych-linkach/",
-    "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/",
-    "https://www.pmdp.cz/systransport/63/6/4259/uzavirka-americke-ulice-od-11-5-2026-zmeny-v-trolejbusovem-provozu/"
+    "https://www.pmdp.cz/systransport/63/6/4260/uzavirka-americke-ulice-od-11-5-2026-zmeny-linek-20-27-34-n1-n6-n11-n12/"
    ]
   },
   "masarykova": {
