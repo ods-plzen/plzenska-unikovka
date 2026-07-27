@@ -56,7 +56,7 @@ export function SkoreMesta() {
           href="/proc-existuje"
           className="text-sky underline-offset-2 hover:underline"
         >
-          Městská aplikace: slíbena 3×, dodána 0× →
+          Městská aplikace: slíbena 2×, dodána 0× →
         </Link>
       </div>
     </div>

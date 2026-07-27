@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Proč tenhle web existuje",
   description:
-    "Jednotnou městskou aplikaci slíbila plzeňská koalice třikrát. Nevznikla. Tak jsme ji postavili sami.",
+    "Jednotnou městskou aplikaci slíbili Plzeňanům dvakrát ve volebních programech. Nevznikla. Tak jsme ji postavili sami.",
 };
 
 export default function Page() {
@@ -15,8 +15,9 @@ export default function Page() {
       </h1>
 
       <p className="mt-6 text-lg leading-relaxed text-ink">
-        Jednotnou městskou aplikaci slíbila plzeňská koalice{" "}
-        <b>třikrát</b>:
+        Jednotnou městskou aplikaci slíbili Plzeňanům{" "}
+        <b>dvakrát ve volebních programech</b> — a mezitím ještě jednou na
+        webu města:
       </p>
 
       <ol className="mt-4 space-y-3 text-ink">
@@ -33,7 +34,7 @@ export default function Page() {
           </a>
         </li>
         <li className="rounded-xl border border-line bg-card p-4">
-          <b>Březen 2023</b> — vedení města: jednotná aplikace v konceptu
+          <b>Mezitím, březen 2023</b> — vedení města: jednotná aplikace v konceptu
           „úřad jako e-shop".{" "}
           <a
             className="text-blue underline underline-offset-2"
