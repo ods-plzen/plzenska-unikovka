@@ -44,6 +44,14 @@ export function Footer() {
             <p className="mt-3 text-sm font-semibold leading-relaxed text-white">
               ODS Plzeň-město
             </p>
+            <p className="mt-2 text-sm leading-relaxed text-white/65">
+              <Link href="/proc-existuje" className="text-sky hover:underline">
+                Proč tenhle web existuje →
+              </Link>{" "}
+              <span className="text-white/45">
+                (spoiler: město ho slíbilo třikrát)
+              </span>
+            </p>
             <p className="mt-3 text-xs leading-relaxed text-white/45">
               <a
                 href="https://www.ods.cz/osobni-udaje"
