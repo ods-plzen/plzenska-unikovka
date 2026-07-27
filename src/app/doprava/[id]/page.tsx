@@ -11,6 +11,7 @@ import { EmailWatch } from "@/components/EmailWatch";
 import { MhdBlock } from "@/components/MhdBlock";
 import { FeedbackInlineCta } from "@/components/FeedbackInlineCta";
 import { NapisteUradu } from "@/components/NapisteUradu";
+import { OficialniObjizdka } from "@/components/OficialniObjizdka";
 import {
   DetourItinerary,
   KeyNumbers,
@@ -123,6 +124,11 @@ export default async function Page({
       {extra?.detours?.length ? (
         <DetourItinerary detours={extra.detours} />
       ) : null}
+
+      <OficialniObjizdka
+        popis={c.popis}
+        hasCurated={Boolean(extra?.detours?.length || extra?.objizdka?.length)}
+      />
 
       <div className="grid gap-6 md:grid-cols-2">
         {extra?.means && (
