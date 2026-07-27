@@ -128,6 +128,7 @@ export default async function Page({
       <OficialniObjizdka
         popis={c.popis}
         hasCurated={Boolean(extra?.detours?.length || extra?.objizdka?.length)}
+        auto={Boolean(c.detourAuto)}
       />
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -330,7 +331,17 @@ export default async function Page({
                 rel="noopener noreferrer"
                 className="rounded-md bg-blue px-3 py-1.5 text-sm font-medium text-white hover:bg-blue/90"
               >
-                Navigovat v Mapách
+                Otevřít v Google Maps
+              </a>
+            )}
+            {mid && (
+              <a
+                href={`https://mapy.cz/fnc/v1/showmap?mapset=traffic&center=${mid[1]},${mid[0]}&zoom=16&marker=true`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-blue px-3 py-1.5 text-sm font-medium text-white hover:bg-blue/90"
+              >
+                Otevřít v Mapy.cz
               </a>
             )}
             <a

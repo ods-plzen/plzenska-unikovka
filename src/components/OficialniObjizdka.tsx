@@ -24,9 +24,11 @@ function extractDetourText(popis?: string): string | null {
 export function OficialniObjizdka({
   popis,
   hasCurated,
+  auto,
 }: {
   popis?: string;
   hasCurated: boolean;
+  auto?: boolean;
 }) {
   const official = extractDetourText(popis);
 
@@ -39,6 +41,8 @@ export function OficialniObjizdka({
         <p className="text-sm leading-relaxed text-ink">{official}</p>
         <p className="mt-2 text-xs text-ink/50">
           Doslovné znění z oficiálních dopravních dat (JSDI/SITmP).
+          {auto &&
+            " Trasu jsme z textu orientačně zakreslili do mapy (zelená přerušovaná čára) — na místě platí přechodné dopravní značení."}
         </p>
       </section>
     );
