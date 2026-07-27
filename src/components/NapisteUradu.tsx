@@ -72,7 +72,7 @@ export function NapisteUradu({
 
   if (state === "done") {
     return (
-      <section className="rounded-xl border-2 border-[#1e8449]/40 bg-card p-5">
+      <section id="napiste-mestu" className="rounded-xl border-2 border-[#1e8449]/40 bg-card p-5">
         <h2 className="head mb-2 text-lg font-semibold text-[#1e8449]">
           ✅ Odesláno na podatelnu města
         </h2>
@@ -87,7 +87,7 @@ export function NapisteUradu({
   }
 
   return (
-    <section className="rounded-xl border-2 border-[#c0392b]/30 bg-card p-5">
+    <section id="napiste-mestu" className="rounded-xl border-2 border-[#c0392b]/30 bg-card p-5">
       <h2 className="head mb-2 text-lg font-semibold text-[#c0392b]">
         Štve vás to? Pošlete to městu. Hned teď, odsud.
       </h2>
