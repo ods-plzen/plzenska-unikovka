@@ -10,6 +10,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { EmailWatch } from "@/components/EmailWatch";
 import { MhdBlock } from "@/components/MhdBlock";
 import { FeedbackInlineCta } from "@/components/FeedbackInlineCta";
+import { NapisteUradu } from "@/components/NapisteUradu";
 import {
   DetourItinerary,
   KeyNumbers,
@@ -112,6 +113,8 @@ export default async function Page({
       <ClosureMap closures={[c]} height={360} />
 
       <EmailWatch id={c.id} />
+
+      <NapisteUradu closureName={c.name} termin={c.termin} />
 
       <FeedbackInlineCta context={c.name} />
 

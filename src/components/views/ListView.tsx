@@ -6,6 +6,7 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { closures, extras } from "@/lib/data";
 import { AREAS, inArea } from "@/data/areas";
 import { TimeFilterChips } from "@/components/TimeFilterChips";
+import { SkoreMesta } from "@/components/SkoreMesta";
 import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
 import type { Closure } from "@/lib/types";
 
@@ -179,6 +180,8 @@ export function ListView() {
         </div>
         <TimeFilterChips value={filter} onChange={(f) => pushParams({ f })} />
       </div>
+
+      <SkoreMesta />
 
       <header className="space-y-3">
         <h1
