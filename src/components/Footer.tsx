@@ -49,7 +49,7 @@ export function Footer() {
                 Proč tenhle web existuje →
               </Link>{" "}
               <span className="text-white/45">
-                (spoiler: město ho slíbilo třikrát)
+                (spoiler: slíbili ho dvakrát, dodali nulakrát)
               </span>
             </p>
             <p className="mt-3 text-xs leading-relaxed text-white/45">
