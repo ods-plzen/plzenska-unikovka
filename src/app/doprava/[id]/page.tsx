@@ -114,7 +114,7 @@ export default async function Page({
 
       <EmailWatch id={c.id} />
 
-      <NapisteUradu closureName={c.name} termin={c.termin} />
+      <NapisteUradu closureId={c.id} closureName={c.name} termin={c.termin} />
 
       <FeedbackInlineCta context={c.name} />
 
