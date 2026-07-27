@@ -36,6 +36,7 @@ export interface Closure {
   // Plní se v data.ts z extras.detours (kurátorované OSRM trasy po
   // silnicích); fragmenty ulic ze scraperu se ignorují.
   detourWays?: [number, number][][];
+  detourAuto?: boolean; // trasa zakreslená automaticky z úředního textu (orientační)
 }
 
 export type Phase = [label: string, when: string, state: "done" | "now" | ""];

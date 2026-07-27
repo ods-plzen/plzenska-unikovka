@@ -25,6 +25,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import hashlib
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _robots import assert_allowed  # noqa: E402
@@ -133,6 +134,142 @@ def get(url: str, retries: int = 3) -> dict:
                 import time
                 time.sleep(2 ** attempt)
     raise last_exc if last_exc else RuntimeError("fetch failed")
+
+
+
+# ── Automatický zákres objízdné trasy z úředního textu (OSRM) ──────────────
+# Zdroj publikuje text objížďky jen u zlomku uzavírek. Když existuje, zkusíme
+# z něj vytáhnout názvy ulic (match proti OSM cache), provést body ulic
+# routerem OSRM a uložit orientační polyline do detourWays (+ detourAuto=True,
+# frontend to označí jako orientační). Fail-safe: jakákoli chyba → beze změny.
+_OSRM_CACHE_PATH = os.path.join(ROOT, "scripts", "cache", "osrm-detours.json")
+_osrm_cache: dict | None = None
+
+
+def _al(sx: str) -> str:
+    return (sx or "").lower().translate(_TR)
+
+
+def _dm(a, b) -> float:
+    dy = (a[0] - b[0]) * 111320.0
+    dx = (a[1] - b[1]) * 71500.0
+    return (dx * dx + dy * dy) ** 0.5
+
+
+def _load_osrm_cache() -> dict:
+    global _osrm_cache
+    if _osrm_cache is None:
+        try:
+            with open(_OSRM_CACHE_PATH, encoding="utf-8") as fh:
+                _osrm_cache = json.load(fh)
+        except Exception:
+            _osrm_cache = {}
+    return _osrm_cache
+
+
+def _save_osrm_cache() -> None:
+    try:
+        os.makedirs(os.path.dirname(_OSRM_CACHE_PATH), exist_ok=True)
+        with open(_OSRM_CACHE_PATH, "w", encoding="utf-8") as fh:
+            json.dump(_osrm_cache, fh)
+    except Exception:
+        pass
+
+
+def _detour_streets_from_text(nazev: str, osm_streets: dict, exclude: str):
+    m = re.search(r"obj[íi][zž]", nazev or "", re.I)
+    if not m:
+        return None, []
+    text = _al(nazev[m.start():])
+    hits = []
+    for key in osm_streets:
+        k = _al(key)
+        if len(k) < 4 or k == _al(exclude):
+            continue
+        pm = re.search(r"(?<![a-z0-9])" + re.escape(k) + r"(?![a-z0-9])", text)
+        if pm:
+            hits.append((pm.start(), key))
+    hits.sort()
+    ordered = []
+    for pos, key in hits:
+        shadowed = False
+        for pos2, key2 in hits:
+            if key2 == key:
+                continue
+            if pos >= pos2 and pos < pos2 + len(_al(key2)) and len(_al(key2)) > len(_al(key)):
+                shadowed = True
+                break
+        if not shadowed and key not in ordered:
+            ordered.append(key)
+    return nazev[m.start():], ordered
+
+
+def _street_anchor(paths, center):
+    best, bd = None, 1e18
+    for path in paths:
+        for pt in path:
+            d = _dm(pt, center)
+            if d < bd:
+                bd, best = d, (pt[0], pt[1])
+    return best
+
+
+def _osrm_route(points):
+    coords = ";".join(f"{p[1]},{p[0]}" for p in points)
+    url = (
+        "https://router.project-osrm.org/route/v1/driving/"
+        + coords
+        + "?overview=full&geometries=geojson&steps=false"
+    )
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        d = json.loads(r.read())
+    if d.get("code") != "Ok" or not d.get("routes"):
+        return None
+    route = d["routes"][0]
+    line = route["geometry"]["coordinates"]  # [lon, lat]
+    km = round(route["distance"] / 1000.0, 1)
+    way = [[round(lat, 5), round(lon, 5)] for lon, lat in line]
+    out = [way[0]]
+    for ptx in way[1:]:
+        if _dm(out[-1], ptx) >= 15:
+            out.append(ptx)
+    if out[-1] != way[-1]:
+        out.append(way[-1])
+    return out, km
+
+
+def auto_detour(rec: dict, nazev: str, center, osm_streets: dict) -> None:
+    try:
+        text, streets = _detour_streets_from_text(nazev, osm_streets, rec.get("name", ""))
+        if not text or len(streets) < 2:
+            return
+        cache = _load_osrm_cache()
+        key = rec["id"] + "|" + hashlib.md5(text.encode("utf-8")).hexdigest()[:10]
+        if key in cache:
+            val = cache[key]
+            if val:
+                rec["detourWays"] = [val["way"]]
+                rec["detourAuto"] = True
+            return
+        anchors = []
+        for st in streets[:6]:
+            a = _street_anchor(osm_streets.get(st) or [], center)
+            if a:
+                anchors.append(a)
+        cache[key] = None
+        if len(anchors) >= 2:
+            res = _osrm_route(anchors)
+            if res:
+                way, km = res
+                if 0.2 <= km <= 25:
+                    rec["detourWays"] = [way]
+                    rec["detourAuto"] = True
+                    cache[key] = {"way": way, "km": km}
+        _save_osrm_cache()
+        time.sleep(1)  # etiketa k veřejnému OSRM serveru
+    except Exception:
+        pass
 
 
 # -------------- parsing Nazev --------------
@@ -875,6 +1012,14 @@ def main() -> int:
             "severity": classify_severity(street, akce, popis, subtyp_field),
             "geomTier": geom_tier,
         }
+        # Manuální override platí i pro JSDI záznamy (např. oprava geometrie
+        # Americké) — jinak by denní běh ruční korekce přepsal.
+        if cid in PLAN_ENRICH:
+            for k_o, v_o in PLAN_ENRICH[cid].items():
+                if not k_o.startswith("_"):
+                    rec[k_o] = v_o
+        if not rec.get("detourWays"):
+            auto_detour(rec, nazev, (y, x), osm_streets)
         closures.append(rec)
 
     print(f"  → {len(closures)} uzavírek v Plzni (JSDI / SITmP)")

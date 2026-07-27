@@ -90,6 +90,44 @@ export function ScopeIconsRow({ items }: { items: ScopeIcon[] }) {
 
 const DETOUR_GREEN = "#15803d";
 
+
+/* deep-linky do navigací — route je [lat, lon][] */
+function sampleRoute(route: [number, number][], max = 6): [number, number][] {
+  if (route.length <= 2) return [];
+  const step = (route.length - 1) / (max + 1);
+  const pts: [number, number][] = [];
+  for (let i = 1; i <= max; i++) {
+    const idx = Math.round(i * step);
+    if (idx > 0 && idx < route.length - 1) pts.push(route[idx]);
+  }
+  return pts;
+}
+function gmapsDirUrl(route: [number, number][]): string {
+  const o = route[0];
+  const d = route[route.length - 1];
+  const wp = sampleRoute(route)
+    .map((p) => `${p[0]},${p[1]}`)
+    .join("|");
+  return (
+    `https://www.google.com/maps/dir/?api=1&origin=${o[0]},${o[1]}` +
+    `&destination=${d[0]},${d[1]}&travelmode=driving` +
+    (wp ? `&waypoints=${encodeURIComponent(wp)}` : "")
+  );
+}
+function mapyRouteUrl(route: [number, number][]): string {
+  // Mapy.cz fnc API bere souřadnice jako lon,lat
+  const o = route[0];
+  const d = route[route.length - 1];
+  const wp = sampleRoute(route, 4)
+    .map((p) => `${p[1]},${p[0]}`)
+    .join(";");
+  return (
+    `https://mapy.cz/fnc/v1/route?mapset=traffic&start=${o[1]},${o[0]}` +
+    `&end=${d[1]},${d[0]}&routeType=car` +
+    (wp ? `&waypoints=${wp}` : "")
+  );
+}
+
 export function DetourItinerary({ detours }: { detours: DetourBranch[] }) {
   const branches = detours.filter((d) => (d.steps?.length ?? 0) >= 2);
   if (branches.length === 0) return null;
@@ -149,6 +187,26 @@ export function DetourItinerary({ detours }: { detours: DetourBranch[] }) {
               {typeof d.km === "number" && (
                 <p className="mt-3 inline-block rounded-lg bg-[#15803d]/10 px-3 py-1.5 text-xs font-bold text-[#15803d]">
                   ≈ {String(d.km).replace(".", ",")} km
+                </p>
+              )}
+              {d.route.length >= 2 && (
+                <p className="mt-3 flex flex-wrap gap-2">
+                  <a
+                    href={gmapsDirUrl(d.route)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg border border-ink/20 bg-white px-3 py-1.5 text-xs font-bold text-ink hover:border-blue hover:text-blue"
+                  >
+                    Projet v Google Maps ↗
+                  </a>
+                  <a
+                    href={mapyRouteUrl(d.route)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg border border-ink/20 bg-white px-3 py-1.5 text-xs font-bold text-ink hover:border-blue hover:text-blue"
+                  >
+                    Projet v Mapy.cz ↗
+                  </a>
                 </p>
               )}
             </div>
