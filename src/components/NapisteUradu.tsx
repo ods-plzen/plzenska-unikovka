@@ -89,7 +89,7 @@ export function NapisteUradu({
   return (
     <section id="napiste-mestu" className="rounded-xl border-2 border-[#c0392b]/30 bg-card p-5">
       <h2 className="head mb-2 text-lg font-semibold text-[#c0392b]">
-        Štve vás to? Pošlete to městu. Hned teď, odsud.
+        Štve vás to? Napište Tolarovi. Hned teď, odsud.
       </h2>
       <p className="text-sm leading-relaxed text-ink/80">
         Doprava v Plzni patří do gesce náměstka primátora Aleše Tolara (STAN).
@@ -149,7 +149,7 @@ export function NapisteUradu({
           >
             {state === "sending"
               ? "Odesílám…"
-              : "✉️ Odeslat na podatelnu města"}
+              : "✉️ Napsat Tolarovi — přes podatelnu města"}
           </button>
           <a
             href={mailtoFallback}
