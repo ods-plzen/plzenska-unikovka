@@ -16,6 +16,7 @@ export async function sendEmail(
   to: string,
   subject: string,
   html: string,
+  replyTo?: string,
 ): Promise<boolean> {
   if (!API_KEY) return false;
   const res = await fetch("https://api.resend.com/emails", {
@@ -24,7 +25,13 @@ export async function sendEmail(
       Authorization: `Bearer ${API_KEY}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ from: FROM, to: [to], subject, html }),
+    body: JSON.stringify({
+      from: FROM,
+      to: [to],
+      subject,
+      html,
+      ...(replyTo ? { reply_to: [replyTo] } : {}),
+    }),
   });
   return res.ok;
 }
