@@ -34,8 +34,8 @@ jobs:
         # ("Git author ... must have access to the team") a `vercel deploy` visí
         # až do 12min timeoutu. Bot e-mail = blok. Neměnit na noreply bota.
         run: |
-          git config user.name "Tadeáš Kapic"
-          git config user.email "tady@uhumdrum.com"
+          git config user.name "ODS Plzeň"
+          git config user.email "noreply@plzenskaunikovka.cz"
           git add src/data/closures.json src/data/pmdp.json
           if git diff --cached --quiet; then
             echo "Bez změn."
