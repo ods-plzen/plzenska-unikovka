@@ -67,12 +67,6 @@ export function OficialniObjizdka({
         <b>žádná objízdná trasa uvedena není</b>. Kudy se má jezdit, si musíte
         domyslet sami.
       </p>
-      <a
-        href="#napiste-mestu"
-        className="mt-3 inline-block rounded-lg border-2 border-[#c0392b] px-4 py-2 text-sm font-bold text-[#c0392b] hover:bg-[#c0392b] hover:text-white"
-      >
-        ↓ Napište si o ni Tolarovi
-      </a>
     </section>
   );
 }
