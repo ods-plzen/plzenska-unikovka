@@ -8,6 +8,7 @@ import closuresRaw from "@/data/closures.json";
 import extrasRaw from "@/data/extras.json";
 import pmdpRaw from "@/data/pmdp.json";
 import restrictedRoadsRaw from "@/data/restricted-roads.json";
+import metaRaw from "@/data/meta.json";
 import { getSupabase } from "@/lib/supabase";
 
 // JSON přichází se širšími typy (string místo union, number[] místo n-tic),
@@ -32,6 +33,11 @@ interface PmdpSnapshot {
 }
 
 export const pmdp = pmdpRaw as unknown as PmdpSnapshot;
+
+// Kdy naposledy proběhl úspěšný scrape (razítko zapisuje scripts/jsdi.py).
+// Fallback na PMDP snapshot, kdyby meta.json chybělo ve starém checkoutu.
+export const dataGenerated: string =
+  (metaRaw as { generated?: string }).generated ?? pmdp.snapshot;
 export const restrictedRoads =
   restrictedRoadsRaw as unknown as RestrictedRoadsSnapshot;
 

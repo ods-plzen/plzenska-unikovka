@@ -1,7 +1,24 @@
 import Link from "next/link";
 import { EmailSignup } from "@/components/EmailSignup";
+import { dataGenerated } from "@/lib/data";
+
+const GITHUB_URL = "https://github.com/ods-plzen/plzenska-unikovka";
+
+function fmtStamp(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  return new Intl.DateTimeFormat("cs-CZ", {
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone: "Europe/Prague",
+  }).format(d);
+}
 
 export function Footer() {
+  const stamp = fmtStamp(dataGenerated);
   return (
     <footer className="mt-16 bg-blue-deep text-white">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -18,7 +35,26 @@ export function Footer() {
             </p>
             <p className="mt-3 max-w-sm text-xs leading-relaxed text-white/45">
               Zdroje dat: SITmP (agp.plzen.eu), JSDI ŘSD, SUPERDIO,
-              Plzeňské městské dopravní podniky (PMDP). Aktualizováno denně.
+              Plzeňské městské dopravní podniky (PMDP).
+              {stamp ? ` Data aktualizována ${stamp}.` : " Aktualizováno denně."}
+            </p>
+            <p className="mt-3 max-w-sm text-xs leading-relaxed text-white/45">
+              Otevřený kód pod licencí MIT:{" "}
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky hover:underline"
+              >
+                zdrojový kód na GitHubu ↗
+              </a>
+              {" · "}
+              <a
+                href="/api/data"
+                className="text-sky hover:underline"
+              >
+                otevřená data (JSON)
+              </a>
             </p>
             <p className="mt-3 max-w-sm text-xs leading-relaxed text-white/45">
               Data přebíráme z oficiálních zdrojů a mohou se v jednotlivostech
@@ -96,6 +132,14 @@ export function Footer() {
           <Link href="/media-kit" className="hover:text-sky">
             Press kit
           </Link>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky"
+          >
+            GitHub ↗
+          </a>
           <a
             href="https://www.ods.cz/osobni-udaje"
             target="_blank"

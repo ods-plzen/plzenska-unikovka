@@ -1057,6 +1057,16 @@ def main() -> int:
         json.dump(closures, f, ensure_ascii=False, indent=1)
     print(f"· zapsáno {len(closures)} uzavírek do {out_path}")
 
+    # Razítko čerstvosti pro web ("Data aktualizována: …") a /api/data.
+    # Zapisuje se JEN při úspěšném scrape, takže datum nikdy nelže.
+    meta_path = os.path.join(ROOT, "src", "data", "meta.json")
+    meta = {
+        "generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        "closures": len(closures),
+    }
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=1)
+
     return 0
 
 

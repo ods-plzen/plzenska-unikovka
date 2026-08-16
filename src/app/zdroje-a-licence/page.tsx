@@ -90,6 +90,53 @@ export default function ZdrojeALicencePage() {
           style={HEAD_FONT}
           className="text-2xl font-bold uppercase leading-tight"
         >
+          Pro vývojáře
+        </h2>
+        <ul className="mt-4 space-y-3 text-base text-ink/80">
+          <li>
+            <strong className="text-ink">Zdrojový kód.</strong> Celá aplikace
+            včetně scraperů je na GitHubu pod licencí MIT:{" "}
+            <a
+              href="https://github.com/ods-plzen/plzenska-unikovka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-blue underline underline-offset-2"
+            >
+              github.com/ods-plzen/plzenska-unikovka ↗
+            </a>
+            . Smíte ji používat, upravovat i postavit na ní vlastní službu.
+          </li>
+          <li>
+            <strong className="text-ink">Otevřená data.</strong> Stejná data,
+            na kterých běží web, dostanete jako JSON na{" "}
+            <a
+              href="/api/data"
+              className="font-semibold text-blue underline underline-offset-2"
+            >
+              /api/data
+            </a>{" "}
+            (CORS povolen, obsahuje razítko <code>generated</code>). Mění se 1×
+            denně, ranním cronem. Data podléhají podmínkám původních zdrojů
+            výše, licence MIT se týká kódu.
+          </li>
+          <li>
+            <strong className="text-ink">Chyba v datech?</strong> Napište na{" "}
+            <a
+              href="mailto:info@plzenskaunikovka.cz"
+              className="font-semibold text-blue underline underline-offset-2"
+            >
+              info@plzenskaunikovka.cz
+            </a>
+            .
+          </li>
+        </ul>
+      </section>
+
+      <section className="mt-10 rounded-2xl border-2 border-ink/15 bg-paper p-6 sm:p-8">
+        <h2
+          style={HEAD_FONT}
+          className="text-2xl font-bold uppercase leading-tight"
+        >
           Jak respektujeme zdrojové servery
         </h2>
         <ul className="mt-4 space-y-3 text-base text-ink/80">
