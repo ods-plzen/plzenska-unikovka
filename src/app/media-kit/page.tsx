@@ -358,7 +358,7 @@ function PressRelease() {
           pojede ráno do práce. Odpověď byla &bdquo;plzen.eu lomeno doprava&ldquo;.
           U Masarykovy ulice jsem ale našel jen odkaz na článek z března,
           kde stojí, že občané budou informováni včas. Žádná mapa, žádné
-          objízdné trasy, žádný harmonogram," vysvětluje Lukáš Hegner,
+          objízdné trasy, žádný harmonogram,&ldquo; vysvětluje Lukáš Hegner,
           zastupitel města Plzně.
         </p>
         <p>

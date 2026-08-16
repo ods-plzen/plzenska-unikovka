@@ -26,10 +26,6 @@ const STATUS_BG: Record<string, string> = {
 
 const STATUS_RANK: Record<string, number> = { now: 0, plan: 1, done: 2 };
 
-const MONTHS_CZ = [
-  "ledna", "února", "března", "dubna", "května", "června",
-  "července", "srpna", "září", "října", "listopadu", "prosince",
-];
 
 function fmtCzDate(iso?: string): string | null {
   if (!iso) return null;

@@ -88,7 +88,6 @@ export function ScopeIconsRow({ items }: { items: ScopeIcon[] }) {
 
 /* ─── DETOUR ITINERARY — svislý itinerář objízdné trasy (jako navigace) ─── */
 
-const DETOUR_GREEN = "#15803d";
 
 
 /* deep-linky do navigací — route je [lat, lon][] */
