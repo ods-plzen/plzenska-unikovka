@@ -18,6 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Plná historie: zrcadlo pushuje do veřejného repa a mělký klon
+          # neunese fast-forward ověření (chybí mezikommity → 'fetch first').
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
