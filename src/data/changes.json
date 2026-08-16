@@ -1,16 +1,9 @@
 {
- "updated": "2026-08-16T18:40:45+00:00",
+ "updated": "2026-08-16T19:09:40+00:00",
  "days": [
   {
    "date": "2026-08-16",
-   "added": [
-    {
-     "id": "americka",
-     "name": "Americká",
-     "oblast": "Plzeň 3",
-     "termin": "11. 5. 2026 – 9. 8. 2026"
-    }
-   ],
+   "added": [],
    "removed": [],
    "changed": [],
    "warnings": []
