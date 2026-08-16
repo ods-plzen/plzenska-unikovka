@@ -56,6 +56,21 @@ jobs:
             git push
           fi
 
+      - name: Zrcadlo na veřejný repozitář (ods-plzen/plzenska-unikovka)
+        # Veřejné repo musí být identické s produkcí — video na něj posílá
+        # vývojáře. Bez MIRROR_TOKEN (PAT účtu ods-plzen s právem push) se
+        # krok tiše přeskočí, cron tím nikdy nespadne.
+        env:
+          MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
+        run: |
+          if [ -z "$MIRROR_TOKEN" ]; then
+            echo "MIRROR_TOKEN chybí — zrcadlení přeskočeno."; exit 0
+          fi
+          # actions/checkout persistuje extraheader s GITHUB_TOKENem, který by
+          # přebil credentials v URL (push by šel jako github-actions[bot] → 403).
+          git -c "http.https://github.com/.extraheader=" \
+            push "https://x-access-token:${MIRROR_TOKEN}@github.com/ods-plzen/plzenska-unikovka.git" HEAD:main
+
       - name: Deploy na Vercel (produkce)
         # Deploy jde PŘÍMO přes token, GitHub integrace je odpojená (jinak by
         # Vercel gate blokoval commity od bota). ORG/PROJECT ID nejsou tajné.
@@ -75,19 +90,9 @@ jobs:
           # v CI vytvoří deployment, ale build se nespustí a příkaz visí (UNKNOWN).
           vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
           vercel build --prod --token="$VERCEL_TOKEN"
-          vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+          # Upload občas spadne na "Upload aborted" (flake runneru) — jeden retry.
+          vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN" || {
+            echo "⚠ deploy selhal, zkouším podruhé za 30 s…"; sleep 30
+            vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+          }
 
-      - name: Zrcadlo na veřejný repozitář (ods-plzen/plzenska-unikovka)
-        # Veřejné repo musí být identické s produkcí — video na něj posílá
-        # vývojáře. Bez MIRROR_TOKEN (PAT účtu ods-plzen s právem push) se
-        # krok tiše přeskočí, cron tím nikdy nespadne.
-        env:
-          MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
-        run: |
-          if [ -z "$MIRROR_TOKEN" ]; then
-            echo "MIRROR_TOKEN chybí — zrcadlení přeskočeno."; exit 0
-          fi
-          # actions/checkout persistuje extraheader s GITHUB_TOKENem, který by
-          # přebil credentials v URL (push by šel jako github-actions[bot] → 403).
-          git -c "http.https://github.com/.extraheader=" \
-            push "https://x-access-token:${MIRROR_TOKEN}@github.com/ods-plzen/plzenska-unikovka.git" HEAD:main
