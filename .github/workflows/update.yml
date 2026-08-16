@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+# Dva souběžné běhy (cron + watchdog dispatch) závodí o git push — řadit za sebe.
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest

@@ -41,3 +41,7 @@ yarn-error.log*
 next-env.d.ts
 .omc/
 supabase/.temp/
+
+# lokální provozní soubory
+scripts/watchdog.log
+scripts/__pycache__/
