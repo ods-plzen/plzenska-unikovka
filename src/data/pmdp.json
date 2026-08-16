@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-08-13T06:15:05+00:00",
+ "snapshot": "2026-08-16T19:09:39+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -25,7 +25,15 @@
    ],
    "startDate": "2026-08-10",
    "endDate": null,
-   "matchedClosure": null
+   "matchedClosure": "americka",
+   "detail": {
+    "summary": "S platností od nočního provozu z 9. na 10. 8. 2026 dojde k obnovení provozu linek MHD Americkou ulicí. Z tohoto důvodu dojde ke změnám linek 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 27, 33, 34, 40, N1 – N7, N11, N12, H.",
+    "lineGroups": [],
+    "stopsAffected": [],
+    "notes": [
+     "S platností od nočního provozu z 9. na 10. 8. 2026 dojde k obnovení provozu linek MHD Americkou ulicí. Z tohoto důvodu dojde ke změnám linek 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 27, 33, 34, 40, N1 – N7, N11, N12, H."
+    ]
+   }
   },
   {
    "id": "omezeni-obratiste-kosutka-3-cca-14-8-2026-linka-4",
@@ -202,6 +210,18 @@
   }
  ],
  "perClosure": {
+  "americka": {
+   "reroutes": [],
+   "tempStops": [],
+   "notes": [
+    "S platností od nočního provozu z 9. na 10. 8. 2026 dojde k obnovení provozu linek MHD Americkou ulicí. Z tohoto důvodu dojde ke změnám linek 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 27, 33, 34, 40, N1 – N7, N11, N12, H."
+   ],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/",
+   "sourceLabel": "PMDP — Otevření Americké ulice od 10. 8. 2026",
+   "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/"
+   ]
+  },
   "masarykova": {
    "reroutes": [
     {
