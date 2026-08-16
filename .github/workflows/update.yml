@@ -94,9 +94,17 @@ jobs:
           # v CI vytvoří deployment, ale build se nespustí a příkaz visí (UNKNOWN).
           vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
           vercel build --prod --token="$VERCEL_TOKEN"
-          # Upload občas spadne na "Upload aborted" (flake runneru) — jeden retry.
-          vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN" || {
+          # Upload občas spadne na flake runneru — jeden retry. Ale NIKDY
+          # neretryovat kvótu (api-upload-free, reset za 24 h): druhý pokus
+          # by ji jen dál vyčerpával.
+          out=$(vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN" 2>&1) && rc=0 || rc=$?
+          echo "$out"
+          if [ "$rc" -ne 0 ]; then
+            if echo "$out" | grep -q "api-upload-free\|Too many requests"; then
+              echo "⚠ Vercel upload kvóta vyčerpaná — deploy dnes přeskočen, data i zrcadlo jsou v pořádku."
+              exit 0
+            fi
             echo "⚠ deploy selhal, zkouším podruhé za 30 s…"; sleep 30
             vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
-          }
+          fi
 
