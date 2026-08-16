@@ -23,7 +23,7 @@ export default function Page() {
       <ol className="mt-4 space-y-3 text-ink">
         <li className="rounded-xl border border-line bg-card p-4">
           <b>2022</b> — volební program STAN: „jedna velká a přehledná
-          aplikace… dynamické informace o dopravních omezeních".{" "}
+          aplikace… dynamické informace o dopravních omezeních&ldquo;.{" "}
           <a
             className="text-blue underline underline-offset-2"
             href="https://web.archive.org/web/20221004131811/https://www.stanplzen.cz/program/"
@@ -35,7 +35,7 @@ export default function Page() {
         </li>
         <li className="rounded-xl border border-line bg-card p-4">
           <b>Mezitím, březen 2023</b> — vedení města: jednotná aplikace v konceptu
-          „úřad jako e-shop".{" "}
+          „úřad jako e-shop&ldquo;.{" "}
           <a
             className="text-blue underline underline-offset-2"
             href="https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/vedeni-plzne-predstavilo-hlavni-temata-a-projekty-do-roku-2026/"

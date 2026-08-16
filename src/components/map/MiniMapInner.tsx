@@ -10,7 +10,6 @@ const SEVERITY_FILL: Record<Severity, string> = {
   minor: "#94a3b8", // neutrální šedá — drobné omezení
 };
 
-const DETOUR_GREEN = "#15803d"; // objízdná trasa — pozitivní zelená
 
 export default function MiniMapInner({
   center,

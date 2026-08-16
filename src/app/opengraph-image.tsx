@@ -8,7 +8,6 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const INK = "#0b1320";
 const BLUE = "#153d8a";
 const SKY = "#009fe3";
 const PAPER = "#f7f4ec";

@@ -18,7 +18,6 @@ const PLZEN_CENTER: [number, number] = [49.7475, 13.3776];
 
 // Dopravní semafor: alert červená (stop) → modrá (pozor) → šedá (drobné).
 const ALERT_RED = "#c0392b";
-const ODS_BLUE_DARK = "#153d8a";
 const ODS_BLUE_LIGHT = "#009fe3";
 const GRAY = "#94a3b8";
 
