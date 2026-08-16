@@ -101,6 +101,78 @@ PLAN_ENRICH: dict[str, dict] = {
     },
 }
 
+# Zmizení záznamu ze zdroje ≠ smazat z webu. Uzavírku podržíme jako Hotovo,
+# ať detailová URL žije a lidi vidí, že skončila. Po N dnech se tiše upustí.
+RETIRE_KEEP_DAYS = 30
+
+# Trvale držené ukončené akce — kauzy s vlastní stránkou, na kterou se odkazuje
+# z kampaně. Nikdy se neprořezávají. Obsah ručně ověřený proti tisku/městu.
+PINNED_DONE: list[dict] = [
+    {
+        "id": "americka",
+        "name": "Americká",
+        "akce": "Rekonstrukce Americké — dokončeno",
+        "state": "Hotovo",
+        "status": "done",
+        "color": "#7f8c8d",
+        "oblast": "Plzeň 3",
+        "termin": "11. 5. 2026 – 9. 8. 2026",
+        "ways": PLAN_ENRICH["americka"]["ways"],
+        "point": False,
+        "popis": (
+            "Rekonstrukce Americké třídy v úseku V Šipce – Anglické nábřeží, "
+            "tři etapy od 11. 5. 2026. MHD i provoz bez omezení od 9. 8. 2026, "
+            "stavební dokončení do 11. 8. 2026. Zhotovitel ROBSTAV, 35,8 mil. Kč "
+            "vč. DPH. Zdroj: plzen.eu, regionplzen.cz (ověřeno 16. 8. 2026)."
+        ),
+        "typ": "Uzavírka a omezení",
+        "subtyp": "rekonstrukce dokončena",
+        "zdroj": "plzen.eu",
+        "jsdiId": None,
+        "superdioId": None,
+        "od": "2026-05-11",
+        "do": "2026-08-09",
+        "severity": "major",
+        "geomTier": 1,
+        "pinned": True,
+    },
+]
+
+
+def retire_missing(closures: list[dict], out_path: str) -> list[dict]:
+    """Záznamy, které zmizely ze zdroje, podrž RETIRE_KEEP_DAYS dní jako Hotovo.
+
+    Zdroje (JSDI) záznam po konci prací prostě stáhnou — bez tohohle by
+    uzavírka zmizela z webu ze dne na den i s detailovou stránkou.
+    """
+    try:
+        with open(out_path, encoding="utf-8") as f:
+            prev = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return closures
+    today = dt.date.today()
+    new_ids = {c["id"] for c in closures}
+    kept: list[dict] = []
+    for p_rec in prev:
+        pid = p_rec.get("id")
+        if not pid or pid in new_ids or p_rec.get("pinned"):
+            continue
+        retired = p_rec.get("retired")
+        if not retired:
+            kept.append({**p_rec, "status": "done", "state": "Hotovo",
+                         "color": "#7f8c8d", "retired": today.isoformat()})
+            continue
+        try:
+            age = (today - dt.date.fromisoformat(retired)).days
+        except ValueError:
+            continue
+        if age <= RETIRE_KEEP_DAYS:
+            kept.append(p_rec)
+    if kept:
+        print(f"  ◦ {len(kept)} ukončených podrženo jako Hotovo (retirement)")
+    return closures + kept
+
+
 # Pro GH Actions runner: služba má IPv6 record, ale routing často padá.
 _orig_getaddrinfo = socket.getaddrinfo
 def _ipv4_only(host, *args, **kwargs):
@@ -1052,6 +1124,13 @@ def main() -> int:
     if plan_records:
         print(f"  + {len(plan_records)} plánovaných (nepřekrývajících se s JSDI)")
         closures.extend(plan_records)
+
+    closures = retire_missing(closures, out_path)
+    existing_ids = {c["id"] for c in closures}
+    for pin in PINNED_DONE:
+        if pin["id"] not in existing_ids:
+            closures.append(pin)
+            print(f"  ◦ pinned done: {pin['id']}")
 
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(closures, f, ensure_ascii=False, indent=1)
