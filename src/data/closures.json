@@ -10641,5 +10641,99 @@
   "severity": "major",
   "geomTier": 4,
   "sourceUrl": "https://plzen.eu/o-meste/aktuality/aktuality-z-mesta/v-plzni-zacala-revitalizace-zapadni-casti-namesti-republiky/"
+ },
+ {
+  "id": "americka",
+  "name": "Americká",
+  "akce": "Rekonstrukce Americké — dokončeno",
+  "state": "Hotovo",
+  "status": "done",
+  "color": "#7f8c8d",
+  "oblast": "Plzeň 3",
+  "termin": "11. 5. 2026 – 9. 8. 2026",
+  "ways": [
+   [
+    [
+     49.74339,
+     13.3796
+    ],
+    [
+     49.74339,
+     13.3798
+    ],
+    [
+     49.74339,
+     13.38
+    ],
+    [
+     49.74339,
+     13.3808
+    ],
+    [
+     49.74339,
+     13.381
+    ],
+    [
+     49.74339,
+     13.3811
+    ],
+    [
+     49.74339,
+     13.3828
+    ],
+    [
+     49.74339,
+     13.383
+    ],
+    [
+     49.74339,
+     13.384
+    ],
+    [
+     49.7434,
+     13.3842
+    ],
+    [
+     49.74346,
+     13.3846
+    ],
+    [
+     49.74358,
+     13.385
+    ],
+    [
+     49.74372,
+     13.3854
+    ],
+    [
+     49.74388,
+     13.3858
+    ],
+    [
+     49.74392,
+     13.3859
+    ],
+    [
+     49.74393,
+     13.386
+    ],
+    [
+     49.744,
+     13.3862
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "Rekonstrukce Americké třídy v úseku V Šipce – Anglické nábřeží, tři etapy od 11. 5. 2026. MHD i provoz bez omezení od 9. 8. 2026, stavební dokončení do 11. 8. 2026. Zhotovitel ROBSTAV, 35,8 mil. Kč vč. DPH. Zdroj: plzen.eu, regionplzen.cz (ověřeno 16. 8. 2026).",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "rekonstrukce dokončena",
+  "zdroj": "plzen.eu",
+  "jsdiId": null,
+  "superdioId": null,
+  "od": "2026-05-11",
+  "do": "2026-08-09",
+  "severity": "major",
+  "geomTier": 1,
+  "pinned": true
  }
 ]
