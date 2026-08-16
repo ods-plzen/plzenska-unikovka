@@ -87,4 +87,7 @@ jobs:
           if [ -z "$MIRROR_TOKEN" ]; then
             echo "MIRROR_TOKEN chybí — zrcadlení přeskočeno."; exit 0
           fi
-          git push "https://x-access-token:${MIRROR_TOKEN}@github.com/ods-plzen/plzenska-unikovka.git" HEAD:main
+          # actions/checkout persistuje extraheader s GITHUB_TOKENem, který by
+          # přebil credentials v URL (push by šel jako github-actions[bot] → 403).
+          git -c "http.https://github.com/.extraheader=" \
+            push "https://x-access-token:${MIRROR_TOKEN}@github.com/ods-plzen/plzenska-unikovka.git" HEAD:main
