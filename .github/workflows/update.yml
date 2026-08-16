@@ -33,6 +33,13 @@ jobs:
         run: python scripts/pmdp.py
         continue-on-error: true
 
+      - name: Diff report — co přibylo, zmizelo, změnilo se
+        # Porovná HEAD (včera) s pracovním stromem (dnes), zapíše
+        # src/data/changes.json a pošle NTFY souhrn štábu.
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python scripts/diffreport.py
+
       - name: Commitni změny dat
         # POZOR: autor commitu MUSÍ být člen Vercel týmu (tady@uhumdrum.com),
         # jinak Vercel deployment zablokuje se stavem BLOCKED / TEAM_ACCESS_REQUIRED
@@ -41,7 +48,7 @@ jobs:
         run: |
           git config user.name "Tadeáš Kapic"
           git config user.email "tady@uhumdrum.com"
-          git add src/data/closures.json src/data/pmdp.json src/data/meta.json
+          git add src/data/closures.json src/data/pmdp.json src/data/meta.json src/data/changes.json
           if git diff --cached --quiet; then
             echo "Bez změn."
           else
