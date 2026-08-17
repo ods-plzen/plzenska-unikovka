@@ -1,6 +1,251 @@
 {
- "updated": "2026-08-16T19:33:15+00:00",
+ "updated": "2026-08-17T05:38:38+00:00",
  "days": [
+  {
+   "date": "2026-08-17",
+   "added": [
+    {
+     "id": "klatovska-trida-2",
+     "name": "Klatovská třída",
+     "oblast": "Plzeň 3",
+     "termin": "17. 8. 2026 – 21. 8. 2026"
+    },
+    {
+     "id": "pod-chalupami",
+     "name": "Pod Chalupami",
+     "oblast": "Plzeň 2",
+     "termin": "17. 8. 2026 – 31. 8. 2026"
+    },
+    {
+     "id": "rokycanska-4",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "17. 8. 2026 – 11. 9. 2026"
+    },
+    {
+     "id": "rokycanska-5",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "17. 8. 2026 – 11. 9. 2026"
+    },
+    {
+     "id": "k-fortovne",
+     "name": "K Fořtovně",
+     "oblast": "Plzeň 4",
+     "termin": "17. 8. 2026 – 17. 8. 2026"
+    }
+   ],
+   "removed": [],
+   "changed": [
+    {
+     "id": "kvetna",
+     "name": "Květná",
+     "oblast": "Plzeň 2",
+     "termin": "6. 5. 2026 – 18. 12. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "28. 5. 2026 – 18. 12. 2026",
+       "na": "6. 5. 2026 – 18. 12. 2026"
+      },
+      "od": {
+       "z": "2026-05-28",
+       "na": "2026-05-06"
+      },
+      "popis": {
+       "z": "ulice Květná, ulice Motýlí, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "na-roudne",
+     "name": "Na Roudné",
+     "oblast": "Plzeň 1",
+     "termin": "7. 7. 2026 – 31. 8. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "4. 5. 2026 – 20. 12. 2026",
+       "na": "7. 7. 2026 – 31. 8. 2026"
+      },
+      "od": {
+       "z": "2026-05-04",
+       "na": "2026-07-07"
+      },
+      "do": {
+       "z": "2026-12-20",
+       "na": "2026-08-31"
+      },
+      "popis": {
+       "z": "silnice II/231 (ulice Na Roudné) - ulice 28. října, Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 28. října, Úplná uzavírka, průjezd pro autobusy řízen SSZ, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně",
+       "na": "ulice Na Roudné, Plzeň 1, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 07.07.2026 00:11 Do 31.08.2026 23:59, částečná uzavírka vozovky, v úseku od objektu Na Roudné č. 75 ke křižovatce s ulicí Malická, ve směru do centra, průjezd na vozovce zachován v šířce min. 2,75m , Vydal: ÚMO Plzeň 01"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "na-roudne-2",
+     "name": "Na Roudné",
+     "oblast": "Plzeň 1",
+     "termin": "7. 7. 2026 – 31. 8. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "ulice Na Roudné, Plzeň 1, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 07.07.2026 00:11 Do 31.08.2026 23:59, částečná uzavírka vozovky, v úseku od objektu Na Roudné č. 75 ke křižovatce s ulicí Malická, ve směru do centra, průjezd na vozovce zachován v šířce min. 2,75m , Vydal: ÚMO Plzeň 01",
+       "na": "ulice Na Roudné, Plzeň 1, uzavřeno, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, provoz cyklistů a chodců po smíšené stezce nebude omezen\n, Vydal: ÚMO Plzeň 01"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "na-roudne-3",
+     "name": "Na Roudné",
+     "oblast": "Plzeň 1",
+     "termin": "7. 7. 2026 – 31. 8. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "ulice Na Roudné, Plzeň 1, uzavřeno, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, provoz cyklistů a chodců po smíšené stezce nebude omezen\n, Vydal: ÚMO Plzeň 01",
+       "na": "ulice Na Roudné, Plzeň 1, omezení, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, částečná uzavírka vozovky, v úseku od objektu Na Roudné č. 75 ke křižovatce s ulicí Malická, ve směru do centra, průjezd na vozovce zachován v šířce min. 2,75m , Vydal: ÚMO Plzeň 01"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "na-roudne-4",
+     "name": "Na Roudné",
+     "oblast": "Plzeň 1",
+     "termin": "4. 5. 2026 – 20. 12. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "7. 7. 2026 – 31. 8. 2026",
+       "na": "4. 5. 2026 – 20. 12. 2026"
+      },
+      "od": {
+       "z": "2026-07-07",
+       "na": "2026-05-04"
+      },
+      "do": {
+       "z": "2026-08-31",
+       "na": "2026-12-20"
+      },
+      "popis": {
+       "z": "ulice Na Roudné, Plzeň 1, omezení, stavební práce, Od 07.07.2026 00:00 Do 31.08.2026 23:59, částečná uzavírka vozovky, v úseku od objektu Na Roudné č. 75 ke křižovatce s ulicí Malická, ve směru do centra, průjezd na vozovce zachován v šířce min. 2,75m , Vydal: ÚMO Plzeň 01",
+       "na": "silnice II/231 (ulice Na Roudné) - ulice 28. října, Plzeň 1, Plzeň, uzavřeno, stavební práce, Od 04.05.2026 10:00 Do 20.12.2026 23:59, Úplná uzavírka silnice II/231 28. října, Úplná uzavírka, průjezd pro autobusy řízen SSZ, Objížďka - bez rozlišení: silnice II/231 (ulice Na Roudné), Plzeň 1, Plzeň, ulice Uhelná, Chrást, Zruč-Senec, část obce Senec, okr. Plzeň-sever  Objízdná trasa je platná pro I. i II. etapu, Vydal: Magistrát města Plzně"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     },
+     "prodlouzeno": true
+    },
+    {
+     "id": "kvetna-2",
+     "name": "Květná",
+     "oblast": "Plzeň 2",
+     "termin": "28. 5. 2026 – 18. 12. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Květná, ulice Motýlí, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "kvetna-3",
+     "name": "Květná",
+     "oblast": "Plzeň 2",
+     "termin": "28. 5. 2026 – 18. 12. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "ulice Květná, ulice Liliová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      }
+     }
+    },
+    {
+     "id": "kvetna-4",
+     "name": "Květná",
+     "oblast": "Plzeň 2",
+     "termin": "28. 5. 2026 – 18. 12. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "6. 5. 2026 – 18. 12. 2026",
+       "na": "28. 5. 2026 – 18. 12. 2026"
+      },
+      "od": {
+       "z": "2026-05-06",
+       "na": "2026-05-28"
+      },
+      "popis": {
+       "z": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Květná, ulice Liliová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      }
+     }
+    },
+    {
+     "id": "plzenska-cesta",
+     "name": "Plzeňská cesta",
+     "oblast": "Plzeň 2",
+     "termin": "3. 8. 2026 – 16. 8. 2026",
+     "zmeny": {
+      "status": {
+       "z": "now",
+       "na": "done"
+      }
+     },
+     "hotovo": true
+    },
+    {
+     "id": "na-rychte",
+     "name": "Na Rychtě",
+     "oblast": "Plzeň 2",
+     "termin": "3. 8. 2026 – 16. 8. 2026",
+     "zmeny": {
+      "status": {
+       "z": "now",
+       "na": "done"
+      }
+     },
+     "hotovo": true
+    },
+    {
+     "id": "podebradova",
+     "name": "Poděbradova",
+     "oblast": "Plzeň 3",
+     "termin": "15. 6. 2026 – 16. 8. 2026",
+     "zmeny": {
+      "status": {
+       "z": "now",
+       "na": "done"
+      }
+     },
+     "hotovo": true
+    }
+   ],
+   "warnings": [
+    {
+     "id": "na-roudne",
+     "name": "Na Roudné",
+     "note": "kurátorovaná objížďka: úřední záznam se změnil, zkontrolovat zákres"
+    }
+   ]
+  },
   {
    "date": "2026-08-16",
    "added": [],
