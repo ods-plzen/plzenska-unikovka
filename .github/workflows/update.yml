@@ -61,19 +61,28 @@ jobs:
           fi
 
       - name: Zrcadlo na veřejný repozitář (ods-plzen/plzenska-unikovka)
-        # Veřejné repo musí být identické s produkcí — video na něj posílá
-        # vývojáře. Bez MIRROR_TOKEN (PAT účtu ods-plzen s právem push) se
-        # krok tiše přeskočí, cron tím nikdy nespadne.
+        # Veřejné repo nesdílí commity s produkcí. Zrcadlo vytvoří SNAPSHOT
+        # commit (strom HEAD, rodič = špička veřejného main) autorovaný účtem
+        # ods-plzen — na veřejném repu se tak nikdy neukáže osobní účet.
+        # Produkce si drží vlastní autorství kvůli Vercel gate (viz Deploy).
+        # Bez MIRROR_TOKEN se krok tiše přeskočí.
         env:
           MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
           if [ -z "$MIRROR_TOKEN" ]; then
             echo "MIRROR_TOKEN chybí — zrcadlení přeskočeno."; exit 0
           fi
-          # actions/checkout persistuje extraheader s GITHUB_TOKENem, který by
-          # přebil credentials v URL (push by šel jako github-actions[bot] → 403).
-          git -c "http.https://github.com/.extraheader=" \
-            push "https://x-access-token:${MIRROR_TOKEN}@github.com/ods-plzen/plzenska-unikovka.git" HEAD:main
+          MURL="https://x-access-token:${MIRROR_TOKEN}@github.com/ods-plzen/plzenska-unikovka.git"
+          git -c "http.https://github.com/.extraheader=" fetch "$MURL" main
+          PUB=$(git rev-parse FETCH_HEAD)
+          if [ "$(git rev-parse 'HEAD^{tree}')" = "$(git rev-parse "$PUB^{tree}")" ]; then
+            echo "Strom beze změn — zrcadlení není potřeba."; exit 0
+          fi
+          export GIT_AUTHOR_NAME="ODS Plzeň" GIT_AUTHOR_EMAIL="ods-plzen@users.noreply.github.com"
+          export GIT_COMMITTER_NAME="ODS Plzeň" GIT_COMMITTER_EMAIL="ods-plzen@users.noreply.github.com"
+          MSG="$(git log -1 --format=%s)"
+          NEW=$(git commit-tree 'HEAD^{tree}' -p "$PUB" -m "$MSG")
+          git -c "http.https://github.com/.extraheader=" push "$MURL" "$NEW:refs/heads/main"
 
       - name: Deploy na Vercel (produkce)
         # Deploy jde PŘÍMO přes token, GitHub integrace je odpojená (jinak by
