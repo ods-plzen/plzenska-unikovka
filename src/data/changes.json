@@ -1,6 +1,77 @@
 {
- "updated": "2026-08-18T05:27:28+00:00",
+ "updated": "2026-08-19T05:33:23+00:00",
  "days": [
+  {
+   "date": "2026-08-19",
+   "added": [
+    {
+     "id": "zikmunda-wintra",
+     "name": "Zikmunda Wintra",
+     "oblast": "Plzeň 3",
+     "termin": "19. 8. 2026 – 19. 8. 2026"
+    }
+   ],
+   "removed": [],
+   "changed": [
+    {
+     "id": "domazlicka-2",
+     "name": "Domažlická",
+     "oblast": "Plzeň 3",
+     "termin": "27. 7. 2026 – 27. 8. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "silnice I/26 (ulice Domažlická), Plzeň 3, provoz převeden do protisměru, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "ulice Na Pile - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, uzavřeno, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, uzavírka silnice I/26, ul. Domažlická v Plzni, v úseku od křižovatky s ul. Tylova a Vejprnická za most ev.č. 26-018..1 a 26-018..2 přes železniční trať, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Objížďka - bez rozlišení: místní komunikace - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, veden režim 1+1, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "klatovska-trida",
+     "name": "Klatovská třída",
+     "oblast": "Plzeň 3",
+     "termin": "19. 8. 2026 – 19. 8. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "17. 8. 2026 – 21. 8. 2026",
+       "na": "19. 8. 2026 – 19. 8. 2026"
+      },
+      "od": {
+       "z": "2026-08-17",
+       "na": "2026-08-19"
+      },
+      "do": {
+       "z": "2026-08-21",
+       "na": "2026-08-19"
+      },
+      "popis": {
+       "z": "silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, stavební práce, pravý jízdní pruh uzavřen, Od 17.08.2026 00:00 Do 21.08.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská) v Plzni, za účelem manipulačního záboru (staveniště), stáni techniky pro nakládání suti a vykládání nového stavebního materiálu, oprava objektu č. p. 84, zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr z centra města (Lochotín-Bory), v rámci akce „Klatovská 84, Plzeň – stavební úpravy stávajícího objektu“,, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/27 (ulice Klatovská třída), Plzeň 3, Plzeň, stavební práce, pravý jízdní pruh uzavřen, Od 19.08.2026 07:00 Do 19.08.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská) v Plzni, za účelem manipulačního záboru (staveniště), stáni techniky pro nakládání suti a vykládání nového stavebního materiálu, oprava objektu č. p. 84, zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr z centra města (Lochotín-Bory), v rámci akce „Klatovská 84, Plzeň – stavební úpravy stávajícího objektu“,, Vydal: Krajský úřad Plzeňského kraje"
+      }
+     }
+    },
+    {
+     "id": "domazlicka-3",
+     "name": "Domažlická",
+     "oblast": "Plzeň 3",
+     "termin": "27. 7. 2026 – 27. 8. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "ulice Na Pile - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, uzavřeno, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, uzavírka silnice I/26, ul. Domažlická v Plzni, v úseku od křižovatky s ul. Tylova a Vejprnická za most ev.č. 26-018..1 a 26-018..2 přes železniční trať, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Objížďka - bez rozlišení: místní komunikace - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, veden režim 1+1, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Domažlická), Plzeň 3, provoz převeden do protisměru, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    }
+   ],
+   "warnings": []
+  },
   {
    "date": "2026-08-18",
    "added": [],
