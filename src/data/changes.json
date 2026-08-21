@@ -1,6 +1,128 @@
 {
- "updated": "2026-08-20T05:28:42+00:00",
+ "updated": "2026-08-21T05:35:41+00:00",
  "days": [
+  {
+   "date": "2026-08-21",
+   "added": [
+    {
+     "id": "kopernikova",
+     "name": "Koperníkova",
+     "oblast": "Plzeň 3",
+     "termin": "20. 8. 2026 – 4. 9. 2026"
+    },
+    {
+     "id": "vejprnicka",
+     "name": "Vejprnická",
+     "oblast": "Plzeň 3",
+     "termin": "21. 8. 2026 – 26. 8. 2026"
+    }
+   ],
+   "removed": [],
+   "changed": [
+    {
+     "id": "domazlicka",
+     "name": "Domažlická",
+     "oblast": "Plzeň 3",
+     "termin": "27. 7. 2026 – 27. 8. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "ulice Na Pile - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, uzavřeno, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, uzavírka silnice I/26, ul. Domažlická v Plzni, v úseku od křižovatky s ul. Tylova a Vejprnická za most ev.č. 26-018..1 a 26-018..2 přes železniční trať, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Objížďka - bez rozlišení: místní komunikace - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, veden režim 1+1, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Domažlická), Plzeň 3, provoz převeden do protisměru, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "rokycanska",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "17. 8. 2026 – 11. 9. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "17. 7. 2026 – 30. 11. 2026",
+       "na": "17. 8. 2026 – 11. 9. 2026"
+      },
+      "od": {
+       "z": "2026-07-17",
+       "na": "2026-08-17"
+      },
+      "do": {
+       "z": "2026-11-30",
+       "na": "2026-09-11"
+      },
+      "popis": {
+       "z": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň - Kyšice, okr. Plzeň-město, provoz převeden do protisměru, stavební práce, Od 17.07.2026 07:00 Do 30.11.2026 23:59, úplná uzavírka jízdního pásu silnice I/26 směr Plzeň - Praha, ul. Rokycanská v Plzni, za účelem provádění stavebních prací v rámci akce „I/26.2 Kyšice – Plzeň, Hřbitovní“; provoz ve směru na Prahu je veden v protisměru, provoz 1+1, Objížďka - směr z centra Plzně k OC Rokycanská: místní komunikace, Objížďka - směr z OC Rokycanská na Prahu: přes: silnice III/18016 (ulice Vesnická), silnice III/18017a (ulice Náves) (Kyšice), silnice II/180 (ulice Letkovská), Objížďka - pro vozidla do 3,5 t z Červeného Hrádku k OC Rokycanská: silnice III/18019a (ulice K Fořtovně) - místní komunikace, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Rokycanská), Plzeň 4, odbočovací pruh uzavřen, Od 17.08.2026 07:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "domazlicka-2",
+     "name": "Domažlická",
+     "oblast": "Plzeň 3",
+     "termin": "27. 7. 2026 – 27. 8. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "silnice I/26 (ulice Domažlická), Plzeň 3, provoz převeden do protisměru, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "ulice Na Pile - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, uzavřeno, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, uzavírka silnice I/26, ul. Domažlická v Plzni, v úseku od křižovatky s ul. Tylova a Vejprnická za most ev.č. 26-018..1 a 26-018..2 přes železniční trať, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Objížďka - bez rozlišení: místní komunikace - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, veden režim 1+1, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "rokycanska-2",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "17. 7. 2026 – 30. 11. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "17. 8. 2026 – 11. 9. 2026",
+       "na": "17. 7. 2026 – 30. 11. 2026"
+      },
+      "od": {
+       "z": "2026-08-17",
+       "na": "2026-07-17"
+      },
+      "do": {
+       "z": "2026-09-11",
+       "na": "2026-11-30"
+      },
+      "popis": {
+       "z": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, odbočovací pruh uzavřen, Od 17.08.2026 00:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň - Kyšice, okr. Plzeň-město, provoz převeden do protisměru, stavební práce, Od 17.07.2026 07:00 Do 30.11.2026 23:59, úplná uzavírka jízdního pásu silnice I/26 směr Plzeň - Praha, ul. Rokycanská v Plzni, za účelem provádění stavebních prací v rámci akce „I/26.2 Kyšice – Plzeň, Hřbitovní“; provoz ve směru na Prahu je veden v protisměru, provoz 1+1, Objížďka - směr z centra Plzně k OC Rokycanská: místní komunikace, Objížďka - směr z OC Rokycanská na Prahu: přes: silnice III/18016 (ulice Vesnická), silnice III/18017a (ulice Náves) (Kyšice), silnice II/180 (ulice Letkovská), Objížďka - pro vozidla do 3,5 t z Červeného Hrádku k OC Rokycanská: silnice III/18019a (ulice K Fořtovně) - místní komunikace, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     },
+     "prodlouzeno": true
+    },
+    {
+     "id": "rokycanska-3",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "17. 8. 2026 – 11. 9. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "silnice I/26 (ulice Rokycanská), Plzeň 4, odbočovací pruh uzavřen, Od 17.08.2026 07:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, odbočovací pruh uzavřen, Od 17.08.2026 00:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje"
+      }
+     }
+    }
+   ],
+   "warnings": []
+  },
   {
    "date": "2026-08-20",
    "added": [
