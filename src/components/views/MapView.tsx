@@ -7,6 +7,7 @@ import { ClosureMap } from "@/components/map/ClosureMap";
 import { ClosurePanel } from "@/components/ClosurePanel";
 import { TimeFilterChips } from "@/components/TimeFilterChips";
 import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
+import { matchesQuery } from "@/lib/searchText";
 
 const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
 
@@ -39,18 +40,24 @@ export function MapView() {
     return closures.filter((c) => isInFilter(c, filter));
   }, [filter]);
 
+  // Počet pro hlavičku sjednocený se seznamem: JSDI hlásí jednu uzavírku
+  // i jako několik záznamů (různé typy akce), na mapě je vykreslujeme všechny,
+  // ale napočítat je vícekrát by mátlo (mapa 60 vs. seznam 44).
+  const pocet = useMemo(() => {
+    const klice = new Set(
+      visible.map((c) => `${c.name}|${c.oblast}|${c.od ?? ""}|${c.do ?? ""}`),
+    );
+    return klice.size;
+  }, [visible]);
+
   // Hledání ulice — klientský filtr přes všechny uzavírky (name + akce).
   // Výběr výsledku = existující sel mechanismus (zvýraznění + panel).
   const [query, setQuery] = useState("");
   const hits = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = query.trim();
     if (q.length < 2) return [];
     return closures
-      .filter(
-        (c) =>
-          c.name.toLowerCase().includes(q) ||
-          (c.akce ?? "").toLowerCase().includes(q),
-      )
+      .filter((c) => matchesQuery(c.name, q) || matchesQuery(c.akce ?? "", q))
       .slice(0, 6);
   }, [query]);
 
@@ -69,12 +76,8 @@ export function MapView() {
           Velká mapa
         </h1>
         <p className="text-sm text-muted">
-          Celá Plzeň · {visible.length}{" "}
-          {visible.length === 1
-            ? "uzavírka"
-            : visible.length < 5
-              ? "uzavírky"
-              : "uzavírek"}{" "}
+          Celá Plzeň · {pocet}{" "}
+          {pocet === 1 ? "uzavírka" : pocet < 5 ? "uzavírky" : "uzavírek"}{" "}
           · zdroj SITmP / JSDI ŘSD
         </p>
       </div>

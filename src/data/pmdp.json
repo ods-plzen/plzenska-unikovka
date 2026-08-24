@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-08-22T05:24:59+00:00",
+ "snapshot": "2026-08-24T05:36:34+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -258,6 +258,18 @@
   }
  ],
  "perClosure": {
+  "americka": {
+   "reroutes": [],
+   "tempStops": [],
+   "notes": [
+    "S platností od nočního provozu z 9. na 10. 8. 2026 dojde k obnovení provozu linek MHD Americkou ulicí. Z tohoto důvodu dojde ke změnám linek 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 27, 33, 34, 40, N1 – N7, N11, N12, H."
+   ],
+   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/",
+   "sourceLabel": "PMDP — Otevření Americké ulice od 10. 8. 2026",
+   "sourceUrlsAll": [
+    "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/"
+   ]
+  },
   "masarykova": {
    "reroutes": [
     {
@@ -276,18 +288,6 @@
    "sourceLabel": "PMDP — Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 20",
    "sourceUrlsAll": [
     "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/"
-   ]
-  },
-  "americka": {
-   "reroutes": [],
-   "tempStops": [],
-   "notes": [
-    "S platností od nočního provozu z 9. na 10. 8. 2026 dojde k obnovení provozu linek MHD Americkou ulicí. Z tohoto důvodu dojde ke změnám linek 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 27, 33, 34, 40, N1 – N7, N11, N12, H."
-   ],
-   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/",
-   "sourceLabel": "PMDP — Otevření Americké ulice od 10. 8. 2026",
-   "sourceUrlsAll": [
-    "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/"
    ]
   }
  }

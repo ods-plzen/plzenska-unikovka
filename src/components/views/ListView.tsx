@@ -8,6 +8,7 @@ import { AREAS, inArea } from "@/data/areas";
 import { TimeFilterChips } from "@/components/TimeFilterChips";
 import { SkoreMesta } from "@/components/SkoreMesta";
 import { isInFilter, parseFilter, type TimeFilter } from "@/lib/timeFilter";
+import { matchesQuery } from "@/lib/searchText";
 import type { Closure } from "@/lib/types";
 
 const HEAD_FONT = { fontFamily: "var(--font-oswald), sans-serif" } as const;
@@ -131,11 +132,10 @@ export function ListView() {
       .filter((c) => !obvodParam || inArea(c.oblast, obvodParam))
       .filter((c) => {
         if (!search.trim()) return true;
-        const q = search.trim().toLowerCase();
         return (
-          c.name.toLowerCase().includes(q) ||
-          (c.akce ?? "").toLowerCase().includes(q) ||
-          (c.popis ?? "").toLowerCase().includes(q)
+          matchesQuery(c.name, search) ||
+          matchesQuery(c.akce ?? "", search) ||
+          matchesQuery(c.popis ?? "", search)
         );
       })
       .filter((c) => {
