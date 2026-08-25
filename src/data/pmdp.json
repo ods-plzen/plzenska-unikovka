@@ -1,17 +1,28 @@
 {
- "snapshot": "2026-08-24T05:36:34+00:00",
+ "snapshot": "2026-08-25T05:30:06+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
-   "id": "posileni-provozu-linek-33-40-a-prodlouzeni-k-hlavnimu-nadrazi-do-1-9-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4299/posileni-provozu-linek-33-40-a-prodlouzeni-k-hlavnimu-nadrazi-do-1-9-2026/",
-   "title": "Posílení provozu linek 33, 40 a prodloužení k Hlavnímu nádraží do 1. 9. 2026",
+   "id": "nova-linka-49-hlavni-nadrazi-areal-fn-od-1-9-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4300/nova-linka-49-hlavni-nadrazi-areal-fn-od-1-9-2026/",
+   "title": "Nová linka 49 Hlavní nádraží - Areál FN od 1. 9. 2026",
+   "lines": [
+    "49"
+   ],
+   "startDate": "2026-09-01",
+   "endDate": null,
+   "matchedClosure": null
+  },
+  {
+   "id": "posileni-provozu-linek-33-40-a-prodlouzeni-k-hlavnimu-nadrazi-od-1-9-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4299/posileni-provozu-linek-33-40-a-prodlouzeni-k-hlavnimu-nadrazi-od-1-9-2026/",
+   "title": "Posílení provozu linek 33, 40 a prodloužení k Hlavnímu nádraží od 1. 9. 2026",
    "lines": [
     "33",
     "40"
    ],
-   "startDate": null,
-   "endDate": "2026-09-01",
+   "startDate": "2026-09-01",
+   "endDate": null,
    "matchedClosure": null
   },
   {
@@ -25,77 +36,6 @@
     "6"
    ],
    "startDate": "2026-09-01",
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "omezeni-linky-41-na-vinicich-dne-23-8-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4297/omezeni-linky-41-na-vinicich-dne-23-8-2026/",
-   "title": "Omezení linky 41 na Vinicích dne 23. 8. 2026",
-   "lines": [
-    "41"
-   ],
-   "startDate": null,
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "omezeni-linky-51-ve-starem-plzenci-dne-20-8-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4296/omezeni-linky-51-ve-starem-plzenci-dne-20-8-2026/",
-   "title": "Omezení linky 51 ve Starém Plzenci dne 20. 8. 2026",
-   "lines": [
-    "51"
-   ],
-   "startDate": null,
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "obnoveni-provozu-linky-76-v-pracovnich-dnech-od-18-8-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4295/obnoveni-provozu-linky-76-v-pracovnich-dnech-od-18-8-2026/",
-   "title": "Obnovení provozu linky 76 v pracovních dnech od 18. 8. 2026",
-   "lines": [
-    "76"
-   ],
-   "startDate": "2026-08-18",
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "otevreni-americke-ulice-od-10-8-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/",
-   "title": "Otevření Americké ulice od 10. 8. 2026",
-   "lines": [
-    "10",
-    "8",
-    "202",
-    "6"
-   ],
-   "startDate": "2026-08-10",
-   "endDate": null,
-   "matchedClosure": "americka",
-   "detail": {
-    "summary": "S platností od nočního provozu z 9. na 10. 8. 2026 dojde k obnovení provozu linek MHD Americkou ulicí. Z tohoto důvodu dojde ke změnám linek 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 27, 33, 34, 40, N1 – N7, N11, N12, H.",
-    "lineGroups": [],
-    "stopsAffected": [],
-    "notes": [
-     "S platností od nočního provozu z 9. na 10. 8. 2026 dojde k obnovení provozu linek MHD Americkou ulicí. Z tohoto důvodu dojde ke změnám linek 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 27, 33, 34, 40, N1 – N7, N11, N12, H."
-    ]
-   }
-  },
-  {
-   "id": "omezeni-obratiste-kosutka-3-cca-14-8-2026-linka-4",
-   "url": "https://www.pmdp.cz/systransport/63/6/4289/omezeni-obratiste-kosutka-3-cca-14-8-2026-linka-4/",
-   "title": "Omezení obratiště Košutka 3. - cca 14. 8. 2026 - linka 4",
-   "lines": [
-    "3",
-    "14",
-    "8",
-    "202",
-    "6",
-    "4"
-   ],
-   "startDate": null,
    "endDate": null,
    "matchedClosure": null
   },
@@ -258,18 +198,6 @@
   }
  ],
  "perClosure": {
-  "americka": {
-   "reroutes": [],
-   "tempStops": [],
-   "notes": [
-    "S platností od nočního provozu z 9. na 10. 8. 2026 dojde k obnovení provozu linek MHD Americkou ulicí. Z tohoto důvodu dojde ke změnám linek 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 27, 33, 34, 40, N1 – N7, N11, N12, H."
-   ],
-   "sourceUrl": "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/",
-   "sourceLabel": "PMDP — Otevření Americké ulice od 10. 8. 2026",
-   "sourceUrlsAll": [
-    "https://www.pmdp.cz/systransport/63/6/4293/otevreni-americke-ulice-od-10-8-2026/"
-   ]
-  },
   "masarykova": {
    "reroutes": [
     {
