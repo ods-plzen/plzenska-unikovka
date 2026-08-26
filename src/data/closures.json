@@ -1,2810 +1,5 @@
 [
  {
-  "id": "kvetna",
-  "name": "Květná",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.72765,
-     13.39067
-    ],
-    [
-     49.72753,
-     13.39067
-    ],
-    [
-     49.72695,
-     13.39062
-    ]
-   ],
-   [
-    [
-     49.72765,
-     13.39067
-    ],
-    [
-     49.72778,
-     13.39065
-    ],
-    [
-     49.7281,
-     13.39057
-    ],
-    [
-     49.72828,
-     13.39046
-    ],
-    [
-     49.72854,
-     13.39036
-    ],
-    [
-     49.72878,
-     13.39031
-    ],
-    [
-     49.72881,
-     13.3903
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ],
-   [
-    [
-     49.73223,
-     13.38749
-    ],
-    [
-     49.73206,
-     13.38765
-    ],
-    [
-     49.73172,
-     13.38794
-    ],
-    [
-     49.73166,
-     13.38799
-    ],
-    [
-     49.73161,
-     13.38804
-    ],
-    [
-     49.73087,
-     13.38866
-    ],
-    [
-     49.73083,
-     13.3887
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Květná, ulice Motýlí, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "9a3510d9-c544-45c2-8713-a12f5c7c64c2",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "motyli",
-  "name": "Motýlí",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.73088,
-     13.38741
-    ],
-    [
-     49.73045,
-     13.38761
-    ],
-    [
-     49.73024,
-     13.38776
-    ],
-    [
-     49.73008,
-     13.38788
-    ],
-    [
-     49.72997,
-     13.38805
-    ],
-    [
-     49.72988,
-     13.3884
-    ],
-    [
-     49.72987,
-     13.38937
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72987,
-     13.38961
-    ],
-    [
-     49.72985,
-     13.39138
-    ],
-    [
-     49.72987,
-     13.39149
-    ],
-    [
-     49.73001,
-     13.39191
-    ]
-   ],
-   [
-    [
-     49.73139,
-     13.38666
-    ],
-    [
-     49.73133,
-     13.38664
-    ],
-    [
-     49.73108,
-     13.38658
-    ],
-    [
-     49.73099,
-     13.38653
-    ],
-    [
-     49.73088,
-     13.3865
-    ],
-    [
-     49.7304,
-     13.38644
-    ]
-   ],
-   [
-    [
-     49.73038,
-     13.39288
-    ],
-    [
-     49.73042,
-     13.39297
-    ],
-    [
-     49.73073,
-     13.3938
-    ]
-   ],
-   [
-    [
-     49.73001,
-     13.39191
-    ],
-    [
-     49.73035,
-     13.39279
-    ],
-    [
-     49.73038,
-     13.39288
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Motýlí, ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "8e3bf467-1990-41f4-ab5b-b1ee564c49d1",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "kastanova",
-  "name": "Kaštanová",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.72805,
-     13.39383
-    ],
-    [
-     49.72804,
-     13.39375
-    ],
-    [
-     49.72793,
-     13.39227
-    ],
-    [
-     49.72793,
-     13.39215
-    ],
-    [
-     49.72794,
-     13.39203
-    ],
-    [
-     49.72796,
-     13.39194
-    ],
-    [
-     49.72798,
-     13.39185
-    ],
-    [
-     49.72803,
-     13.39171
-    ],
-    [
-     49.72808,
-     13.3916
-    ],
-    [
-     49.72878,
-     13.39052
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ],
-   [
-    [
-     49.72762,
-     13.3918
-    ],
-    [
-     49.72761,
-     13.39191
-    ],
-    [
-     49.72761,
-     13.39196
-    ],
-    [
-     49.7276,
-     13.39217
-    ],
-    [
-     49.72765,
-     13.39293
-    ],
-    [
-     49.72766,
-     13.39301
-    ]
-   ],
-   [
-    [
-     49.72796,
-     13.39194
-    ],
-    [
-     49.72792,
-     13.39193
-    ],
-    [
-     49.72787,
-     13.39193
-    ],
-    [
-     49.72786,
-     13.39193
-    ],
-    [
-     49.72761,
-     13.39196
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Kaštanová, ulice Květná, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "4d3e8964-13f7-4d08-94dd-1ad93a0d8ee0",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "kvetna-2",
-  "name": "Květná",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.73261,
-     13.38715
-    ],
-    [
-     49.73252,
-     13.38724
-    ]
-   ],
-   [
-    [
-     49.73252,
-     13.38724
-    ],
-    [
-     49.73223,
-     13.38749
-    ],
-    [
-     49.73206,
-     13.38765
-    ],
-    [
-     49.73172,
-     13.38794
-    ],
-    [
-     49.73166,
-     13.38799
-    ],
-    [
-     49.73161,
-     13.38804
-    ],
-    [
-     49.73087,
-     13.38866
-    ],
-    [
-     49.73083,
-     13.3887
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "cc5cc0e4-dbc3-4b97-b484-81fdadfeba32",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "kvetna-3",
-  "name": "Květná",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "28. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.73261,
-     13.38715
-    ],
-    [
-     49.73252,
-     13.38724
-    ]
-   ],
-   [
-    [
-     49.73252,
-     13.38724
-    ],
-    [
-     49.73223,
-     13.38749
-    ],
-    [
-     49.73206,
-     13.38765
-    ],
-    [
-     49.73172,
-     13.38794
-    ],
-    [
-     49.73166,
-     13.38799
-    ],
-    [
-     49.73161,
-     13.38804
-    ],
-    [
-     49.73087,
-     13.38866
-    ],
-    [
-     49.73083,
-     13.3887
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Květná, ulice Liliová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "1b89863d-5966-429e-bc01-12e2617b675a",
-  "superdioId": null,
-  "od": "2026-05-28",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "i-26",
-  "name": "I/26",
-  "akce": "Oprava povrchu",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "4. 7. 2026 – 30. 11. 2026",
-  "ways": [
-   [
-    [
-     49.7467,
-     13.4355
-    ]
-   ]
-  ],
-  "point": true,
-  "popis": "V obci Plzeň 4(okres Plzeň-město) ulice: Nákupní,  silnice: místní komunikace, , Od 04.07.2026 00:00, Do 30.11.2026 23:59, uzavírka místních komunikací ve dvou etapách- Rokycanská, Vyhlídková, Nákupní v návaznosti na opravu povrchu silnice I/26 Rokycanská, I ETAPA s platností od 6.6.2026 do 3.7.2026, II. ETAPA s platností od 4.7.2026 do 30.11.2026, uzavřen pravý odbočovací pruh v úseku před silnicí I/26, Vydal: ÚMO Plzeň 04",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "oprava povrchu",
-  "zdroj": "JSDI",
-  "jsdiId": "2d28d10a-af92-47d6-8040-52e891c93c0c",
-  "superdioId": null,
-  "od": "2026-07-04",
-  "do": "2026-11-30",
-  "severity": "medium",
-  "geomTier": 5
- },
- {
-  "id": "nade-vsi",
-  "name": "Nade Vsí",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71556,
-     13.42771
-    ],
-    [
-     49.71569,
-     13.428
-    ],
-    [
-     49.71598,
-     13.42864
-    ],
-    [
-     49.71601,
-     13.42875
-    ],
-    [
-     49.71601,
-     13.42888
-    ],
-    [
-     49.71599,
-     13.42898
-    ],
-    [
-     49.71559,
-     13.42943
-    ],
-    [
-     49.71556,
-     13.42946
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Nade Vsí, Plzeň 2-Slovany, Plzeň, , Od 20.07.2026 00:00, Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "f81810ce-ad85-4d9f-9f5c-b68a18432f10",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "ke-kolesovce",
-  "name": "Ke Kolešovce",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71593,
-     13.43021
-    ],
-    [
-     49.71589,
-     13.43013
-    ],
-    [
-     49.71586,
-     13.43007
-    ],
-    [
-     49.71556,
-     13.42946
-    ],
-    [
-     49.71535,
-     13.42904
-    ],
-    [
-     49.71533,
-     13.42899
-    ],
-    [
-     49.71514,
-     13.42855
-    ]
-   ],
-   [
-    [
-     49.71514,
-     13.42855
-    ],
-    [
-     49.71498,
-     13.4282
-    ],
-    [
-     49.71454,
-     13.42727
-    ]
-   ],
-   [
-    [
-     49.71454,
-     13.42727
-    ],
-    [
-     49.71443,
-     13.42707
-    ],
-    [
-     49.7144,
-     13.42703
-    ],
-    [
-     49.71437,
-     13.42701
-    ],
-    [
-     49.71433,
-     13.42699
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Ke Kolešovce, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "a977d467-a678-44ab-a4ea-1edc0bd81307",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "ke-kolesovce-2",
-  "name": "Ke Kolešovce",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71593,
-     13.43021
-    ],
-    [
-     49.71589,
-     13.43013
-    ],
-    [
-     49.71586,
-     13.43007
-    ],
-    [
-     49.71556,
-     13.42946
-    ],
-    [
-     49.71535,
-     13.42904
-    ],
-    [
-     49.71533,
-     13.42899
-    ],
-    [
-     49.71514,
-     13.42855
-    ]
-   ],
-   [
-    [
-     49.71514,
-     13.42855
-    ],
-    [
-     49.71498,
-     13.4282
-    ],
-    [
-     49.71454,
-     13.42727
-    ]
-   ],
-   [
-    [
-     49.71454,
-     13.42727
-    ],
-    [
-     49.71443,
-     13.42707
-    ],
-    [
-     49.7144,
-     13.42703
-    ],
-    [
-     49.71437,
-     13.42701
-    ],
-    [
-     49.71433,
-     13.42699
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Ke Kolešovce, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "6e902b37-89d2-41b8-8a46-67eba6b5f57c",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "pod-kopcem",
-  "name": "Pod Kopcem",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71578,
-     13.43025
-    ],
-    [
-     49.71594,
-     13.43114
-    ],
-    [
-     49.71601,
-     13.4315
-    ],
-    [
-     49.71604,
-     13.43168
-    ],
-    [
-     49.71607,
-     13.43178
-    ],
-    [
-     49.71628,
-     13.43239
-    ],
-    [
-     49.71702,
-     13.43442
-    ],
-    [
-     49.71715,
-     13.43495
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Pod Kopcem, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "c5168ae5-eef3-4507-8a83-f3d1101435bf",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "pod-kopcem-2",
-  "name": "Pod Kopcem",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71578,
-     13.43025
-    ],
-    [
-     49.71594,
-     13.43114
-    ],
-    [
-     49.71601,
-     13.4315
-    ],
-    [
-     49.71604,
-     13.43168
-    ],
-    [
-     49.71607,
-     13.43178
-    ],
-    [
-     49.71628,
-     13.43239
-    ],
-    [
-     49.71702,
-     13.43442
-    ],
-    [
-     49.71715,
-     13.43495
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Pod Kopcem, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "42625511-9342-4e1c-9e46-2dc47f91ce6b",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "na-hradcanech",
-  "name": "Na Hradčanech",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 13. 9. 2026",
-  "ways": [
-   [
-    [
-     49.7141,
-     13.42773
-    ],
-    [
-     49.71394,
-     13.42818
-    ],
-    [
-     49.7139,
-     13.42826
-    ]
-   ],
-   [
-    [
-     49.71356,
-     13.42941
-    ],
-    [
-     49.71356,
-     13.42957
-    ],
-    [
-     49.71358,
-     13.42978
-    ],
-    [
-     49.71362,
-     13.42997
-    ],
-    [
-     49.71366,
-     13.43017
-    ],
-    [
-     49.71367,
-     13.43025
-    ],
-    [
-     49.71369,
-     13.43034
-    ],
-    [
-     49.71384,
-     13.4312
-    ],
-    [
-     49.71389,
-     13.43153
-    ],
-    [
-     49.71394,
-     13.43172
-    ],
-    [
-     49.71399,
-     13.4319
-    ],
-    [
-     49.71408,
-     13.43215
-    ],
-    [
-     49.71417,
-     13.43236
-    ],
-    [
-     49.71422,
-     13.43246
-    ],
-    [
-     49.71464,
-     13.43334
-    ]
-   ],
-   [
-    [
-     49.71381,
-     13.42844
-    ],
-    [
-     49.71379,
-     13.4285
-    ],
-    [
-     49.71378,
-     13.42854
-    ],
-    [
-     49.71375,
-     13.42862
-    ],
-    [
-     49.71361,
-     13.42906
-    ],
-    [
-     49.71359,
-     13.42916
-    ],
-    [
-     49.71357,
-     13.42927
-    ],
-    [
-     49.71356,
-     13.42941
-    ]
-   ],
-   [
-    [
-     49.7139,
-     13.42826
-    ],
-    [
-     49.71388,
-     13.4283
-    ],
-    [
-     49.71385,
-     13.42838
-    ],
-    [
-     49.71381,
-     13.42844
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice III/18020 (ulice Na Hradčanech), Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, kyvadlový provoz jedním jízdním pruhem, Od 20.07.2026 08:00 Do 13.09.2026 23:59, Bezvýkopová oprava kanalizačních přípojek v rámci reklamace, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "a0c2699f-ee64-4d61-ba07-3ebf1e84696c",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-09-13",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "na-hradcanech-2",
-  "name": "Na Hradčanech",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71433,
-     13.42699
-    ],
-    [
-     49.71432,
-     13.42707
-    ],
-    [
-     49.7143,
-     13.42716
-    ],
-    [
-     49.71429,
-     13.42721
-    ],
-    [
-     49.71427,
-     13.42728
-    ],
-    [
-     49.71424,
-     13.42737
-    ],
-    [
-     49.7141,
-     13.42773
-    ],
-    [
-     49.71394,
-     13.42818
-    ],
-    [
-     49.7139,
-     13.42826
-    ]
-   ],
-   [
-    [
-     49.71356,
-     13.42941
-    ],
-    [
-     49.71356,
-     13.42957
-    ],
-    [
-     49.71358,
-     13.42978
-    ],
-    [
-     49.71362,
-     13.42997
-    ],
-    [
-     49.71366,
-     13.43017
-    ],
-    [
-     49.71367,
-     13.43025
-    ],
-    [
-     49.71369,
-     13.43034
-    ],
-    [
-     49.71384,
-     13.4312
-    ],
-    [
-     49.71389,
-     13.43153
-    ],
-    [
-     49.71394,
-     13.43172
-    ],
-    [
-     49.71399,
-     13.4319
-    ],
-    [
-     49.71408,
-     13.43215
-    ],
-    [
-     49.71417,
-     13.43236
-    ],
-    [
-     49.71422,
-     13.43246
-    ],
-    [
-     49.71464,
-     13.43334
-    ]
-   ],
-   [
-    [
-     49.71381,
-     13.42844
-    ],
-    [
-     49.71379,
-     13.4285
-    ],
-    [
-     49.71378,
-     13.42854
-    ],
-    [
-     49.71375,
-     13.42862
-    ],
-    [
-     49.71361,
-     13.42906
-    ],
-    [
-     49.71359,
-     13.42916
-    ],
-    [
-     49.71357,
-     13.42927
-    ],
-    [
-     49.71356,
-     13.42941
-    ]
-   ],
-   [
-    [
-     49.7139,
-     13.42826
-    ],
-    [
-     49.71388,
-     13.4283
-    ],
-    [
-     49.71385,
-     13.42838
-    ],
-    [
-     49.71381,
-     13.42844
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Na Hradčanech, mezi křižovatkami ulic U Včelníku a Čedičová, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "a3d9da41-9a90-4abd-9772-56a7b2ba06fa",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "na-nivach",
-  "name": "Na Nivách",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71501,
-     13.43106
-    ],
-    [
-     49.71472,
-     13.43043
-    ],
-    [
-     49.71427,
-     13.4294
-    ]
-   ],
-   [
-    [
-     49.71381,
-     13.42844
-    ],
-    [
-     49.71387,
-     13.42851
-    ],
-    [
-     49.7139,
-     13.42858
-    ],
-    [
-     49.71427,
-     13.4294
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hradčanech, Plzeň 2-Slovany, Plzeň, uzavřeno, práce na inženýrských sítích, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, termín bude upřesněn zhotovitelem dle probíhajících prací, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "e5a37ef9-f997-47c7-824b-3af6d7149910",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "na-nivach-2",
-  "name": "Na Nivách",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71501,
-     13.43106
-    ],
-    [
-     49.71472,
-     13.43043
-    ],
-    [
-     49.71427,
-     13.4294
-    ]
-   ],
-   [
-    [
-     49.71381,
-     13.42844
-    ],
-    [
-     49.71387,
-     13.42851
-    ],
-    [
-     49.7139,
-     13.42858
-    ],
-    [
-     49.71427,
-     13.4294
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hačkách, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "38035a17-ad3f-4cbf-8fb8-f42e62fb88a9",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "na-nivach-3",
-  "name": "Na Nivách",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "20. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71501,
-     13.43106
-    ],
-    [
-     49.71472,
-     13.43043
-    ],
-    [
-     49.71427,
-     13.4294
-    ]
-   ],
-   [
-    [
-     49.71381,
-     13.42844
-    ],
-    [
-     49.71387,
-     13.42851
-    ],
-    [
-     49.7139,
-     13.42858
-    ],
-    [
-     49.71427,
-     13.4294
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hačkách, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "847dce9c-eb88-4ef9-ad38-b59f301d5226",
-  "superdioId": null,
-  "od": "2026-07-20",
-  "do": "2026-08-31",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "domazlicka",
-  "name": "Domažlická",
-  "akce": "Kyvadlová doprava",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "27. 7. 2026 – 27. 8. 2026",
-  "ways": [
-   [
-    [
-     49.74206,
-     13.34427
-    ],
-    [
-     49.74235,
-     13.34559
-    ],
-    [
-     49.74241,
-     13.34583
-    ]
-   ],
-   [
-    [
-     49.74288,
-     13.34791
-    ],
-    [
-     49.74304,
-     13.34857
-    ]
-   ],
-   [
-    [
-     49.74248,
-     13.34578
-    ],
-    [
-     49.74242,
-     13.34555
-    ],
-    [
-     49.74222,
-     13.34479
-    ],
-    [
-     49.74206,
-     13.34427
-    ]
-   ],
-   [
-    [
-     49.74309,
-     13.34836
-    ],
-    [
-     49.74294,
-     13.34771
-    ]
-   ],
-   [
-    [
-     49.74206,
-     13.34427
-    ],
-    [
-     49.74201,
-     13.34409
-    ],
-    [
-     49.74195,
-     13.34387
-    ],
-    [
-     49.74189,
-     13.3437
-    ],
-    [
-     49.74181,
-     13.34345
-    ],
-    [
-     49.74172,
-     13.34322
-    ],
-    [
-     49.74163,
-     13.34301
-    ],
-    [
-     49.74154,
-     13.34279
-    ]
-   ],
-   [
-    [
-     49.74196,
-     13.34619
-    ],
-    [
-     49.74191,
-     13.34606
-    ],
-    [
-     49.74151,
-     13.34494
-    ],
-    [
-     49.74145,
-     13.34478
-    ],
-    [
-     49.7414,
-     13.34464
-    ],
-    [
-     49.74109,
-     13.34381
-    ]
-   ],
-   [
-    [
-     49.74351,
-     13.35005
-    ],
-    [
-     49.74344,
-     13.34982
-    ],
-    [
-     49.74338,
-     13.34958
-    ],
-    [
-     49.74309,
-     13.34836
-    ]
-   ],
-   [
-    [
-     49.74304,
-     13.34857
-    ],
-    [
-     49.74308,
-     13.34876
-    ]
-   ],
-   [
-    [
-     49.74308,
-     13.34876
-    ],
-    [
-     49.74328,
-     13.34963
-    ],
-    [
-     49.74333,
-     13.34981
-    ],
-    [
-     49.74342,
-     13.35012
-    ]
-   ],
-   [
-    [
-     49.74241,
-     13.34583
-    ],
-    [
-     49.74245,
-     13.34605
-    ],
-    [
-     49.74259,
-     13.34662
-    ],
-    [
-     49.74268,
-     13.34698
-    ],
-    [
-     49.74279,
-     13.34748
-    ],
-    [
-     49.74288,
-     13.34791
-    ]
-   ],
-   [
-    [
-     49.74294,
-     13.34771
-    ],
-    [
-     49.74278,
-     13.34701
-    ],
-    [
-     49.74268,
-     13.34659
-    ],
-    [
-     49.74253,
-     13.34603
-    ],
-    [
-     49.74248,
-     13.34578
-    ]
-   ],
-   [
-    [
-     49.74239,
-     13.34794
-    ],
-    [
-     49.74233,
-     13.3478
-    ],
-    [
-     49.74223,
-     13.34752
-    ],
-    [
-     49.74218,
-     13.34736
-    ],
-    [
-     49.74217,
-     13.34733
-    ],
-    [
-     49.74217,
-     13.3473
-    ],
-    [
-     49.74218,
-     13.34726
-    ],
-    [
-     49.74223,
-     13.34705
-    ],
-    [
-     49.74223,
-     13.34703
-    ],
-    [
-     49.74223,
-     13.34699
-    ],
-    [
-     49.74223,
-     13.34695
-    ],
-    [
-     49.74223,
-     13.34693
-    ]
-   ],
-   [
-    [
-     49.74233,
-     13.34799
-    ],
-    [
-     49.74239,
-     13.34794
-    ],
-    [
-     49.74249,
-     13.34784
-    ],
-    [
-     49.7425,
-     13.34784
-    ],
-    [
-     49.74252,
-     13.34783
-    ],
-    [
-     49.74254,
-     13.34783
-    ],
-    [
-     49.74255,
-     13.34785
-    ],
-    [
-     49.74273,
-     13.34837
-    ]
-   ],
-   [
-    [
-     49.74223,
-     13.34693
-    ],
-    [
-     49.74222,
-     13.34691
-    ],
-    [
-     49.742,
-     13.3463
-    ],
-    [
-     49.74196,
-     13.34619
-    ]
-   ],
-   [
-    [
-     49.74273,
-     13.34837
-    ],
-    [
-     49.74274,
-     13.3484
-    ],
-    [
-     49.74275,
-     13.34844
-    ],
-    [
-     49.74274,
-     13.34849
-    ],
-    [
-     49.74266,
-     13.34877
-    ],
-    [
-     49.74261,
-     13.34892
-    ]
-   ],
-   [
-    [
-     49.74255,
-     13.34866
-    ],
-    [
-     49.74266,
-     13.34877
-    ]
-   ],
-   [
-    [
-     49.74154,
-     13.34279
-    ],
-    [
-     49.74144,
-     13.34259
-    ],
-    [
-     49.74131,
-     13.34233
-    ],
-    [
-     49.7412,
-     13.34214
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/26 (ulice Domažlická), Plzeň 3, provoz převeden do protisměru, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "kyvadlová doprava",
-  "zdroj": "JSDI",
-  "jsdiId": "176d7998-aae3-4448-90c6-4e78c07e0f23",
-  "superdioId": null,
-  "od": "2026-07-27",
-  "do": "2026-08-27",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "rokycanska",
-  "name": "Rokycanská",
-  "akce": "Uzavírka jízdního pruhu",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "17. 8. 2026 – 11. 9. 2026",
-  "ways": [
-   [
-    [
-     49.74685,
-     13.43077
-    ],
-    [
-     49.74685,
-     13.43051
-    ]
-   ],
-   [
-    [
-     49.74713,
-     13.42641
-    ],
-    [
-     49.74718,
-     13.42559
-    ],
-    [
-     49.7472,
-     13.42539
-    ]
-   ],
-   [
-    [
-     49.74731,
-     13.42134
-    ],
-    [
-     49.74722,
-     13.42258
-    ]
-   ],
-   [
-    [
-     49.7469,
-     13.42966
-    ],
-    [
-     49.74693,
-     13.4293
-    ],
-    [
-     49.74696,
-     13.42876
-    ]
-   ],
-   [
-    [
-     49.74692,
-     13.42689
-    ],
-    [
-     49.74682,
-     13.42809
-    ]
-   ],
-   [
-    [
-     49.747,
-     13.42816
-    ],
-    [
-     49.74713,
-     13.42641
-    ]
-   ],
-   [
-    [
-     49.74739,
-     13.4226
-    ],
-    [
-     49.74751,
-     13.42089
-    ]
-   ],
-   [
-    [
-     49.74727,
-     13.42437
-    ],
-    [
-     49.74728,
-     13.42418
-    ],
-    [
-     49.74738,
-     13.42283
-    ]
-   ],
-   [
-    [
-     49.74679,
-     13.42866
-    ],
-    [
-     49.74677,
-     13.42915
-    ],
-    [
-     49.74675,
-     13.42964
-    ],
-    [
-     49.74674,
-     13.43063
-    ]
-   ],
-   [
-    [
-     49.74703,
-     13.42537
-    ],
-    [
-     49.74702,
-     13.42557
-    ],
-    [
-     49.74696,
-     13.42642
-    ],
-    [
-     49.74692,
-     13.42689
-    ]
-   ],
-   [
-    [
-     49.74711,
-     13.42422
-    ],
-    [
-     49.74703,
-     13.42537
-    ]
-   ],
-   [
-    [
-     49.74722,
-     13.42258
-    ],
-    [
-     49.74721,
-     13.42281
-    ],
-    [
-     49.74711,
-     13.42422
-    ]
-   ],
-   [
-    [
-     49.7472,
-     13.42539
-    ],
-    [
-     49.74727,
-     13.42437
-    ]
-   ],
-   [
-    [
-     49.74696,
-     13.42876
-    ],
-    [
-     49.74697,
-     13.42869
-    ],
-    [
-     49.74698,
-     13.42857
-    ],
-    [
-     49.74698,
-     13.42845
-    ]
-   ],
-   [
-    [
-     49.74685,
-     13.43051
-    ],
-    [
-     49.74687,
-     13.43021
-    ],
-    [
-     49.74689,
-     13.4299
-    ],
-    [
-     49.7469,
-     13.42966
-    ]
-   ],
-   [
-    [
-     49.74682,
-     13.42809
-    ],
-    [
-     49.74682,
-     13.42813
-    ],
-    [
-     49.7468,
-     13.42843
-    ]
-   ],
-   [
-    [
-     49.7468,
-     13.42843
-    ],
-    [
-     49.74679,
-     13.42866
-    ]
-   ],
-   [
-    [
-     49.74738,
-     13.42283
-    ],
-    [
-     49.74739,
-     13.4226
-    ]
-   ],
-   [
-    [
-     49.74698,
-     13.42845
-    ],
-    [
-     49.747,
-     13.42816
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, odbočovací pruh uzavřen, Od 17.08.2026 07:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavírka jízdního pruhu",
-  "zdroj": "JSDI",
-  "jsdiId": "c613cdfa-ae5c-4911-929f-7a1e6ba8f704",
-  "superdioId": null,
-  "od": "2026-08-17",
-  "do": "2026-09-11",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "za-vodarnou",
-  "name": "Za Vodárnou",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "4. 5. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71975,
-     13.40424
-    ],
-    [
-     49.71971,
-     13.40414
-    ],
-    [
-     49.71942,
-     13.40341
-    ],
-    [
-     49.71939,
-     13.40333
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Za Vodárnou, mezi křižovatkami ulic Zelenohorská a Plzeňská cesta, Plzeň 2-Slovany, Plzeň, , Od 04.05.2026 00:00, Do 31.08.2026 23:59, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "6b4b0782-00dd-45d4-97c3-7a9e3b3d2bdb",
-  "superdioId": null,
-  "od": "2026-05-04",
-  "do": "2026-08-31",
-  "severity": "major",
-  "geomTier": 3
- },
- {
-  "id": "lochotinska",
-  "name": "Lochotínská",
-  "akce": "Zúžené pruhy",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "28. 4. 2026 – 30. 9. 2026",
-  "ways": [
-   [
-    [
-     49.75692,
-     13.3714
-    ],
-    [
-     49.75699,
-     13.37139
-    ],
-    [
-     49.75737,
-     13.3714
-    ],
-    [
-     49.75743,
-     13.37138
-    ],
-    [
-     49.7575,
-     13.37133
-    ],
-    [
-     49.75755,
-     13.37125
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "místní komunikace, ulice Lochotínská, Plzeň 1, zúžené jízdní pruhy, Od 28.04.2026 07:00 Do 30.09.2026 23:59, z důvodu vytvoření koridoru pro chodce v šířce min. 1,5 m\n, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "zúžené pruhy",
-  "zdroj": "JSDI",
-  "jsdiId": "76ea2ef1-0e74-4d44-b25f-af6682a1aeb5",
-  "superdioId": null,
-  "od": "2026-04-28",
-  "do": "2026-09-30",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "kvetna-4",
-  "name": "Květná",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "6. 5. 2026 – 18. 12. 2026",
-  "ways": [
-   [
-    [
-     49.73261,
-     13.38715
-    ],
-    [
-     49.73252,
-     13.38724
-    ]
-   ],
-   [
-    [
-     49.73252,
-     13.38724
-    ],
-    [
-     49.73223,
-     13.38749
-    ],
-    [
-     49.73206,
-     13.38765
-    ],
-    [
-     49.73172,
-     13.38794
-    ],
-    [
-     49.73166,
-     13.38799
-    ],
-    [
-     49.73161,
-     13.38804
-    ],
-    [
-     49.73087,
-     13.38866
-    ],
-    [
-     49.73083,
-     13.3887
-    ],
-    [
-     49.72987,
-     13.38948
-    ],
-    [
-     49.72894,
-     13.39026
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "c89ea653-ff54-4d9b-a06b-92f4feb4df90",
-  "superdioId": null,
-  "od": "2026-05-06",
-  "do": "2026-12-18",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "belohorska",
-  "name": "Bělohorská",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "3. 8. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.7536,
-     13.38169
-    ],
-    [
-     49.75305,
-     13.3819
-    ],
-    [
-     49.75292,
-     13.38194
-    ],
-    [
-     49.7529,
-     13.38195
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Bělohorská, mezi křižovatkami ulic Luční a Plánská, Plzeň 1, Plzeň, , Od 03.08.2026 00:00, Do 31.08.2026 23:59, místní komunikace III. třídy č. C 0810 Bělohorská, v Plzni \n- úplná uzavírka vozovky, v úseku před objektem Bělohorská č. 418/4 \n- úplná uzavírka chodníku, který je součástí této místní komunikace, v úseku od ulice Luční až k objektu    Bělohorská č. 414/6 \n- po dobu výkopových prací budou odstraněny dopravní sloupky před objektem Luční č.67/12 \n, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "fe7f13e7-f24b-4bbb-a1f9-982281fd4ddd",
-  "superdioId": null,
-  "od": "2026-08-03",
-  "do": "2026-08-31",
-  "severity": "major",
-  "geomTier": 3
- },
- {
-  "id": "dobranska",
-  "name": "Dobřanská",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "3. 8. 2026 – 31. 12. 2026",
-  "ways": [
-   [
-    [
-     49.72325,
-     13.35589
-    ],
-    [
-     49.72326,
-     13.3559
-    ],
-    [
-     49.72333,
-     13.35606
-    ],
-    [
-     49.72348,
-     13.35632
-    ],
-    [
-     49.72365,
-     13.35661
-    ]
-   ],
-   [
-    [
-     49.72232,
-     13.35366
-    ],
-    [
-     49.72237,
-     13.3537
-    ],
-    [
-     49.72243,
-     13.35372
-    ],
-    [
-     49.72248,
-     13.35374
-    ],
-    [
-     49.72261,
-     13.35377
-    ],
-    [
-     49.72279,
-     13.3538
-    ],
-    [
-     49.72295,
-     13.35382
-    ]
-   ],
-   [
-    [
-     49.72232,
-     13.35366
-    ],
-    [
-     49.72227,
-     13.35361
-    ],
-    [
-     49.72224,
-     13.35354
-    ],
-    [
-     49.7222,
-     13.35347
-    ],
-    [
-     49.72218,
-     13.35339
-    ],
-    [
-     49.72216,
-     13.35331
-    ],
-    [
-     49.72216,
-     13.35322
-    ],
-    [
-     49.72216,
-     13.35264
-    ],
-    [
-     49.72215,
-     13.35173
-    ],
-    [
-     49.722,
-     13.35029
-    ],
-    [
-     49.72194,
-     13.35007
-    ],
-    [
-     49.7219,
-     13.34988
-    ]
-   ],
-   [
-    [
-     49.72405,
-     13.35731
-    ],
-    [
-     49.72424,
-     13.35762
-    ]
-   ],
-   [
-    [
-     49.72365,
-     13.35661
-    ],
-    [
-     49.72397,
-     13.35718
-    ]
-   ],
-   [
-    [
-     49.72301,
-     13.3554
-    ],
-    [
-     49.72282,
-     13.35513
-    ]
-   ],
-   [
-    [
-     49.72269,
-     13.3567
-    ],
-    [
-     49.72277,
-     13.35667
-    ],
-    [
-     49.72287,
-     13.35663
-    ],
-    [
-     49.72292,
-     13.3566
-    ],
-    [
-     49.72296,
-     13.35655
-    ],
-    [
-     49.72301,
-     13.35644
-    ],
-    [
-     49.72306,
-     13.35629
-    ],
-    [
-     49.72312,
-     13.35613
-    ],
-    [
-     49.72314,
-     13.35604
-    ],
-    [
-     49.72314,
-     13.35599
-    ],
-    [
-     49.72313,
-     13.35593
-    ],
-    [
-     49.72306,
-     13.35578
-    ],
-    [
-     49.72291,
-     13.35544
-    ],
-    [
-     49.72282,
-     13.35513
-    ],
-    [
-     49.72273,
-     13.35487
-    ],
-    [
-     49.72264,
-     13.35464
-    ],
-    [
-     49.72235,
-     13.3539
-    ],
-    [
-     49.72232,
-     13.35366
-    ]
-   ],
-   [
-    [
-     49.72315,
-     13.35563
-    ],
-    [
-     49.72325,
-     13.35589
-    ]
-   ],
-   [
-    [
-     49.72295,
-     13.35382
-    ],
-    [
-     49.72295,
-     13.35439
-    ],
-    [
-     49.72296,
-     13.35459
-    ],
-    [
-     49.72297,
-     13.35477
-    ]
-   ],
-   [
-    [
-     49.72297,
-     13.35477
-    ],
-    [
-     49.72298,
-     13.35489
-    ],
-    [
-     49.723,
-     13.35504
-    ],
-    [
-     49.72304,
-     13.35523
-    ],
-    [
-     49.72308,
-     13.35539
-    ],
-    [
-     49.72315,
-     13.35563
-    ]
-   ],
-   [
-    [
-     49.724,
-     13.35743
-    ],
-    [
-     49.72401,
-     13.3574
-    ],
-    [
-     49.72402,
-     13.35738
-    ],
-    [
-     49.72405,
-     13.35731
-    ]
-   ],
-   [
-    [
-     49.72401,
-     13.3574
-    ],
-    [
-     49.72451,
-     13.3583
-    ]
-   ],
-   [
-    [
-     49.72397,
-     13.35718
-    ],
-    [
-     49.72405,
-     13.35731
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžené jízdní pruhy, Od 03.08.2026 7:00 Do 31.12.2026 23:59, \"Stavební úpravy křižovatky Dobřanská x Univerzitní\", Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "9ff785c7-ff83-4120-a329-51b3c3f99c14",
-  "superdioId": null,
-  "od": "2026-08-03",
-  "do": "2026-12-31",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "unesovska",
-  "name": "Úněšovská",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "3. 8. 2026 – 30. 8. 2026",
-  "ways": [
-   [
-    [
-     49.77668,
-     13.35166
-    ],
-    [
-     49.77677,
-     13.35199
-    ],
-    [
-     49.777,
-     13.35292
-    ],
-    [
-     49.77717,
-     13.35391
-    ],
-    [
-     49.77724,
-     13.35435
-    ],
-    [
-     49.7773,
-     13.35466
-    ]
-   ],
-   [
-    [
-     49.77623,
-     13.34959
-    ],
-    [
-     49.77633,
-     13.35006
-    ],
-    [
-     49.77646,
-     13.35065
-    ],
-    [
-     49.77668,
-     13.35166
-    ]
-   ],
-   [
-    [
-     49.7761,
-     13.34903
-    ],
-    [
-     49.77623,
-     13.34959
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Úněšovská, Plzeň 1, práce na inženýrských sítích, kyvadlový provoz jedním jízdním pruhem, Od 03.08.2026 08:00 Do 30.08.2026 23:59,  umožněn průjezd vozidel MHD a IZS; provoz řízen kyvadlově světelným signalizačním zařízením.\n, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "44010e41-7a6b-4132-aea6-2d5beade666e",
-  "superdioId": null,
-  "od": "2026-08-03",
-  "do": "2026-08-30",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "klatovska-trida",
-  "name": "Klatovská třída",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "1. 7. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.74283,
-     13.37211
-    ],
-    [
-     49.74333,
-     13.37226
-    ],
-    [
-     49.74402,
-     13.37249
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/27 (ulice Klatovská třída), Plzeň 3, stavební práce, pravý jízdní pruh uzavřen, Od 01.07.2026 00:00 Do 31.08.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská), za účelem manipulačního záboru, stáni techniky pro nakládání suti a vykládání nového stavebního materiálu, v rámci provedení stavebních prací – oprava objektu č. p. 289/19, které si vyžádají zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr do centra města (Bory-Lochotín)., Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "a0630f3d-d35f-49dc-8355-c34d3e3fe69f",
-  "superdioId": null,
-  "od": "2026-07-01",
-  "do": "2026-08-31",
-  "severity": "minor",
-  "geomTier": 2
- },
- {
-  "id": "heldova",
-  "name": "Heldova",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "19. 8. 2026 – 30. 9. 2026",
-  "ways": [
-   [
-    [
-     49.73799,
-     13.38071
-    ],
-    [
-     49.738,
-     13.38065
-    ],
-    [
-     49.73808,
-     13.3796
-    ],
-    [
-     49.73808,
-     13.3795
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Heldova, Plzeň 3, Plzeň, uzavřeno, Od 19.08.2026 08:00 Do 30.09.2026 23:59, úplná uzavírka pouze po dobu výkopu přípojky, poté bude komunikace průjezdná a místo \nvýkopu bude pod přejezdovým plechem  Důvod: Pokládka horkovodní přípojky k BD Doudlevecká ",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "4ac07a5e-cc81-425b-8234-32d2475d1d38",
-  "superdioId": null,
-  "od": "2026-08-19",
-  "do": "2026-09-30",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "dobranska-2",
-  "name": "Dobřanská",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "21. 7. 2025 – 20. 12. 2026",
-  "ways": [
-   [
-    [
-     49.70341,
-     13.32854
-    ],
-    [
-     49.70334,
-     13.3285
-    ]
-   ],
-   [
-    [
-     49.70334,
-     13.3285
-    ],
-    [
-     49.70219,
-     13.32782
-    ]
-   ],
-   [
-    [
-     49.70823,
-     13.33143
-    ],
-    [
-     49.70777,
-     13.33116
-    ]
-   ],
-   [
-    [
-     49.70341,
-     13.32854
-    ],
-    [
-     49.70418,
-     13.329
-    ],
-    [
-     49.70443,
-     13.32915
-    ]
-   ],
-   [
-    [
-     49.70736,
-     13.3309
-    ],
-    [
-     49.70607,
-     13.33013
-    ]
-   ],
-   [
-    [
-     49.70777,
-     13.33116
-    ],
-    [
-     49.70736,
-     13.3309
-    ]
-   ],
-   [
-    [
-     49.70443,
-     13.32915
-    ],
-    [
-     49.70546,
-     13.32977
-    ],
-    [
-     49.70607,
-     13.33013
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 21.07.2025 00:01 Do 20.12.2026 23:59, částečná uzavírka v úseku od kruhového objezdu až za křižovatku s ulicí U Čertovy díry z důvodu akce \"Dešťová kanalizace a komunikace\", Vydal: Magistrát města Plzně",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "cdb2a780-4d40-4216-936a-dcf3ee24ee8b",
-  "superdioId": null,
-  "od": "2025-07-21",
-  "do": "2026-12-20",
-  "severity": "minor",
-  "geomTier": 1
- },
- {
   "id": "na-okraji",
   "name": "Na Okraji",
   "akce": "Uzavřená silnice",
@@ -3847,2143 +1042,7 @@
   "geomTier": 4
  },
  {
-  "id": "brojova",
-  "name": "Brojova",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "14. 7. 2026 – 31. 10. 2026",
-  "ways": [
-   [
-    [
-     49.73037,
-     13.40723
-    ],
-    [
-     49.73036,
-     13.40722
-    ],
-    [
-     49.73034,
-     13.4072
-    ],
-    [
-     49.73031,
-     13.40717
-    ],
-    [
-     49.73025,
-     13.40711
-    ],
-    [
-     49.7302,
-     13.40705
-    ],
-    [
-     49.72984,
-     13.40673
-    ],
-    [
-     49.72964,
-     13.40653
-    ],
-    [
-     49.72937,
-     13.40628
-    ],
-    [
-     49.7292,
-     13.40609
-    ],
-    [
-     49.72914,
-     13.40602
-    ],
-    [
-     49.72901,
-     13.40588
-    ],
-    [
-     49.72897,
-     13.40583
-    ],
-    [
-     49.72867,
-     13.40545
-    ],
-    [
-     49.72827,
-     13.40484
-    ]
-   ],
-   [
-    [
-     49.73036,
-     13.40487
-    ],
-    [
-     49.73025,
-     13.405
-    ],
-    [
-     49.72983,
-     13.40613
-    ],
-    [
-     49.72981,
-     13.40614
-    ],
-    [
-     49.72976,
-     13.40622
-    ]
-   ],
-   [
-    [
-     49.72746,
-     13.40395
-    ],
-    [
-     49.72756,
-     13.40417
-    ],
-    [
-     49.72761,
-     13.40428
-    ],
-    [
-     49.7278,
-     13.40465
-    ],
-    [
-     49.7278,
-     13.40467
-    ],
-    [
-     49.72781,
-     13.40469
-    ],
-    [
-     49.7278,
-     13.40471
-    ],
-    [
-     49.7278,
-     13.40473
-    ],
-    [
-     49.72779,
-     13.40474
-    ],
-    [
-     49.72767,
-     13.40489
-    ]
-   ],
-   [
-    [
-     49.72827,
-     13.40484
-    ],
-    [
-     49.72789,
-     13.40414
-    ],
-    [
-     49.72762,
-     13.40351
-    ]
-   ],
-   [
-    [
-     49.72971,
-     13.40636
-    ],
-    [
-     49.72967,
-     13.40645
-    ],
-    [
-     49.72964,
-     13.40653
-    ]
-   ],
-   [
-    [
-     49.72976,
-     13.40622
-    ],
-    [
-     49.72971,
-     13.40636
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Brojova, Plzeň 2-Slovany, stavební práce, Od 14.07.2026 07:00 Do 31.10.2026 23:59, práce převážně ve vnitrobloku, v případě potřeby, úplná uzavírka místní komunikace, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "27cc5261-02db-4821-ad10-70a774acf384",
-  "superdioId": null,
-  "od": "2026-07-14",
-  "do": "2026-10-31",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "spojovaci",
-  "name": "Spojovací",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "14. 7. 2026 – 31. 10. 2026",
-  "ways": [
-   [
-    [
-     49.72962,
-     13.40203
-    ],
-    [
-     49.72965,
-     13.40221
-    ],
-    [
-     49.72971,
-     13.40234
-    ]
-   ],
-   [
-    [
-     49.73084,
-     13.40463
-    ],
-    [
-     49.73062,
-     13.40444
-    ],
-    [
-     49.7306,
-     13.40443
-    ],
-    [
-     49.73057,
-     13.40442
-    ],
-    [
-     49.73054,
-     13.40443
-    ],
-    [
-     49.73051,
-     13.40446
-    ],
-    [
-     49.73049,
-     13.4045
-    ]
-   ],
-   [
-    [
-     49.72971,
-     13.40234
-    ],
-    [
-     49.72981,
-     13.40248
-    ],
-    [
-     49.72997,
-     13.40262
-    ],
-    [
-     49.73004,
-     13.40268
-    ],
-    [
-     49.73013,
-     13.4028
-    ],
-    [
-     49.73022,
-     13.40293
-    ],
-    [
-     49.73024,
-     13.40297
-    ],
-    [
-     49.73052,
-     13.40367
-    ],
-    [
-     49.73064,
-     13.40394
-    ],
-    [
-     49.73067,
-     13.40403
-    ],
-    [
-     49.73071,
-     13.40417
-    ],
-    [
-     49.73075,
-     13.4043
-    ],
-    [
-     49.73078,
-     13.40436
-    ],
-    [
-     49.73082,
-     13.40439
-    ],
-    [
-     49.73083,
-     13.40444
-    ],
-    [
-     49.73083,
-     13.40449
-    ],
-    [
-     49.73083,
-     13.40458
-    ],
-    [
-     49.73084,
-     13.40463
-    ]
-   ],
-   [
-    [
-     49.73084,
-     13.40463
-    ],
-    [
-     49.7309,
-     13.4047
-    ],
-    [
-     49.73094,
-     13.40474
-    ],
-    [
-     49.731,
-     13.40481
-    ]
-   ],
-   [
-    [
-     49.73039,
-     13.40477
-    ],
-    [
-     49.73036,
-     13.40487
-    ]
-   ],
-   [
-    [
-     49.73045,
-     13.40463
-    ],
-    [
-     49.73039,
-     13.40477
-    ]
-   ],
-   [
-    [
-     49.73049,
-     13.4045
-    ],
-    [
-     49.73045,
-     13.40463
-    ]
-   ],
-   [
-    [
-     49.731,
-     13.40481
-    ],
-    [
-     49.73105,
-     13.40487
-    ],
-    [
-     49.73111,
-     13.40492
-    ],
-    [
-     49.73113,
-     13.40495
-    ],
-    [
-     49.73114,
-     13.40496
-    ],
-    [
-     49.73115,
-     13.40497
-    ]
-   ],
-   [
-    [
-     49.72956,
-     13.40181
-    ],
-    [
-     49.72959,
-     13.40194
-    ],
-    [
-     49.72962,
-     13.40203
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Spojovací, Plzeň 2-Slovany, Plzeň, stavební práce, Od 14.07.2026 07:00 Do 31.10.2026 23:59, práce převážně ve vnitrobloku, v případě potřeby, úplná uzavírka místní komunikace, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "a6960e39-f165-44ee-8f16-2d00f03e1593",
-  "superdioId": null,
-  "od": "2026-07-14",
-  "do": "2026-10-31",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "domazlicka-2",
-  "name": "Domažlická",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "27. 7. 2026 – 27. 8. 2026",
-  "ways": [
-   [
-    [
-     49.74206,
-     13.34427
-    ],
-    [
-     49.74235,
-     13.34559
-    ],
-    [
-     49.74241,
-     13.34583
-    ]
-   ],
-   [
-    [
-     49.74288,
-     13.34791
-    ],
-    [
-     49.74304,
-     13.34857
-    ]
-   ],
-   [
-    [
-     49.74248,
-     13.34578
-    ],
-    [
-     49.74242,
-     13.34555
-    ],
-    [
-     49.74222,
-     13.34479
-    ],
-    [
-     49.74206,
-     13.34427
-    ]
-   ],
-   [
-    [
-     49.74309,
-     13.34836
-    ],
-    [
-     49.74294,
-     13.34771
-    ]
-   ],
-   [
-    [
-     49.74206,
-     13.34427
-    ],
-    [
-     49.74201,
-     13.34409
-    ],
-    [
-     49.74195,
-     13.34387
-    ],
-    [
-     49.74189,
-     13.3437
-    ],
-    [
-     49.74181,
-     13.34345
-    ],
-    [
-     49.74172,
-     13.34322
-    ],
-    [
-     49.74163,
-     13.34301
-    ],
-    [
-     49.74154,
-     13.34279
-    ]
-   ],
-   [
-    [
-     49.74196,
-     13.34619
-    ],
-    [
-     49.74191,
-     13.34606
-    ],
-    [
-     49.74151,
-     13.34494
-    ],
-    [
-     49.74145,
-     13.34478
-    ],
-    [
-     49.7414,
-     13.34464
-    ],
-    [
-     49.74109,
-     13.34381
-    ]
-   ],
-   [
-    [
-     49.74344,
-     13.34982
-    ],
-    [
-     49.74338,
-     13.34958
-    ],
-    [
-     49.74309,
-     13.34836
-    ]
-   ],
-   [
-    [
-     49.74304,
-     13.34857
-    ],
-    [
-     49.74308,
-     13.34876
-    ]
-   ],
-   [
-    [
-     49.74308,
-     13.34876
-    ],
-    [
-     49.74328,
-     13.34963
-    ],
-    [
-     49.74333,
-     13.34981
-    ],
-    [
-     49.74342,
-     13.35012
-    ]
-   ],
-   [
-    [
-     49.74241,
-     13.34583
-    ],
-    [
-     49.74245,
-     13.34605
-    ],
-    [
-     49.74259,
-     13.34662
-    ],
-    [
-     49.74268,
-     13.34698
-    ],
-    [
-     49.74279,
-     13.34748
-    ],
-    [
-     49.74288,
-     13.34791
-    ]
-   ],
-   [
-    [
-     49.74294,
-     13.34771
-    ],
-    [
-     49.74278,
-     13.34701
-    ],
-    [
-     49.74268,
-     13.34659
-    ],
-    [
-     49.74253,
-     13.34603
-    ],
-    [
-     49.74248,
-     13.34578
-    ]
-   ],
-   [
-    [
-     49.74239,
-     13.34794
-    ],
-    [
-     49.74233,
-     13.3478
-    ],
-    [
-     49.74223,
-     13.34752
-    ],
-    [
-     49.74218,
-     13.34736
-    ],
-    [
-     49.74217,
-     13.34733
-    ],
-    [
-     49.74217,
-     13.3473
-    ],
-    [
-     49.74218,
-     13.34726
-    ],
-    [
-     49.74223,
-     13.34705
-    ],
-    [
-     49.74223,
-     13.34703
-    ],
-    [
-     49.74223,
-     13.34699
-    ],
-    [
-     49.74223,
-     13.34695
-    ],
-    [
-     49.74223,
-     13.34693
-    ]
-   ],
-   [
-    [
-     49.74233,
-     13.34799
-    ],
-    [
-     49.74239,
-     13.34794
-    ],
-    [
-     49.74249,
-     13.34784
-    ],
-    [
-     49.7425,
-     13.34784
-    ],
-    [
-     49.74252,
-     13.34783
-    ],
-    [
-     49.74254,
-     13.34783
-    ],
-    [
-     49.74255,
-     13.34785
-    ],
-    [
-     49.74273,
-     13.34837
-    ]
-   ],
-   [
-    [
-     49.74223,
-     13.34693
-    ],
-    [
-     49.74222,
-     13.34691
-    ],
-    [
-     49.742,
-     13.3463
-    ],
-    [
-     49.74196,
-     13.34619
-    ]
-   ],
-   [
-    [
-     49.74273,
-     13.34837
-    ],
-    [
-     49.74274,
-     13.3484
-    ],
-    [
-     49.74275,
-     13.34844
-    ],
-    [
-     49.74274,
-     13.34849
-    ],
-    [
-     49.74266,
-     13.34877
-    ],
-    [
-     49.74261,
-     13.34892
-    ]
-   ],
-   [
-    [
-     49.74255,
-     13.34866
-    ],
-    [
-     49.74266,
-     13.34877
-    ]
-   ],
-   [
-    [
-     49.74154,
-     13.34279
-    ],
-    [
-     49.74144,
-     13.34259
-    ],
-    [
-     49.74131,
-     13.34233
-    ],
-    [
-     49.7412,
-     13.34214
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Na Pile - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, uzavřeno, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, uzavírka silnice I/26, ul. Domažlická v Plzni, v úseku od křižovatky s ul. Tylova a Vejprnická za most ev.č. 26-018..1 a 26-018..2 přes železniční trať, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Objížďka - bez rozlišení: místní komunikace - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, veden režim 1+1, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "176d7998-aae3-4448-90c6-4e78c07e0f23",
-  "superdioId": null,
-  "od": "2026-07-27",
-  "do": "2026-08-27",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "rokycanska-2",
-  "name": "Rokycanská",
-  "akce": "Kyvadlová doprava",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "17. 7. 2026 – 30. 11. 2026",
-  "ways": [
-   [
-    [
-     49.7468,
-     13.43544
-    ],
-    [
-     49.74683,
-     13.43185
-    ]
-   ],
-   [
-    [
-     49.74683,
-     13.43185
-    ],
-    [
-     49.74684,
-     13.43112
-    ]
-   ],
-   [
-    [
-     49.74671,
-     13.43353
-    ],
-    [
-     49.7467,
-     13.4345
-    ]
-   ],
-   [
-    [
-     49.74666,
-     13.43751
-    ],
-    [
-     49.74662,
-     13.44053
-    ]
-   ],
-   [
-    [
-     49.74671,
-     13.44103
-    ],
-    [
-     49.74675,
-     13.43764
-    ]
-   ],
-   [
-    [
-     49.7467,
-     13.4345
-    ],
-    [
-     49.74669,
-     13.43515
-    ],
-    [
-     49.74668,
-     13.43545
-    ]
-   ],
-   [
-    [
-     49.74678,
-     13.43675
-    ],
-    [
-     49.74679,
-     13.4363
-    ],
-    [
-     49.7468,
-     13.4357
-    ],
-    [
-     49.7468,
-     13.43544
-    ]
-   ],
-   [
-    [
-     49.74674,
-     13.43063
-    ],
-    [
-     49.74671,
-     13.43342
-    ]
-   ],
-   [
-    [
-     49.74671,
-     13.43342
-    ],
-    [
-     49.74671,
-     13.43353
-    ]
-   ],
-   [
-    [
-     49.74668,
-     13.43545
-    ],
-    [
-     49.74666,
-     13.43751
-    ]
-   ],
-   [
-    [
-     49.74675,
-     13.43764
-    ],
-    [
-     49.74678,
-     13.43675
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň - Kyšice, okr. Plzeň-město, provoz převeden do protisměru, stavební práce, Od 17.07.2026 07:00 Do 30.11.2026 23:59, úplná uzavírka jízdního pásu silnice I/26 směr Plzeň - Praha, ul. Rokycanská v Plzni, za účelem provádění stavebních prací v rámci akce „I/26.2 Kyšice – Plzeň, Hřbitovní“; provoz ve směru na Prahu je veden v protisměru, provoz 1+1, Objížďka - směr z centra Plzně k OC Rokycanská: místní komunikace, Objížďka - směr z OC Rokycanská na Prahu: přes: silnice III/18016 (ulice Vesnická), silnice III/18017a (ulice Náves) (Kyšice), silnice II/180 (ulice Letkovská), Objížďka - pro vozidla do 3,5 t z Červeného Hrádku k OC Rokycanská: silnice III/18019a (ulice K Fořtovně) - místní komunikace, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "kyvadlová doprava",
-  "zdroj": "JSDI",
-  "jsdiId": "e2e317d5-ed15-460e-b3de-2eebc69d5c14",
-  "superdioId": null,
-  "od": "2026-07-17",
-  "do": "2026-11-30",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "rokycanska-3",
-  "name": "Rokycanská",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "17. 8. 2026 – 11. 9. 2026",
-  "ways": [
-   [
-    [
-     49.74685,
-     13.43077
-    ],
-    [
-     49.74685,
-     13.43051
-    ]
-   ],
-   [
-    [
-     49.74713,
-     13.42641
-    ],
-    [
-     49.74718,
-     13.42559
-    ],
-    [
-     49.7472,
-     13.42539
-    ]
-   ],
-   [
-    [
-     49.74731,
-     13.42134
-    ],
-    [
-     49.74722,
-     13.42258
-    ]
-   ],
-   [
-    [
-     49.7469,
-     13.42966
-    ],
-    [
-     49.74693,
-     13.4293
-    ],
-    [
-     49.74696,
-     13.42876
-    ]
-   ],
-   [
-    [
-     49.74692,
-     13.42689
-    ],
-    [
-     49.74682,
-     13.42809
-    ]
-   ],
-   [
-    [
-     49.747,
-     13.42816
-    ],
-    [
-     49.74713,
-     13.42641
-    ]
-   ],
-   [
-    [
-     49.74739,
-     13.4226
-    ],
-    [
-     49.74751,
-     13.42089
-    ]
-   ],
-   [
-    [
-     49.74727,
-     13.42437
-    ],
-    [
-     49.74728,
-     13.42418
-    ],
-    [
-     49.74738,
-     13.42283
-    ]
-   ],
-   [
-    [
-     49.74679,
-     13.42866
-    ],
-    [
-     49.74677,
-     13.42915
-    ],
-    [
-     49.74675,
-     13.42964
-    ],
-    [
-     49.74674,
-     13.43063
-    ]
-   ],
-   [
-    [
-     49.74703,
-     13.42537
-    ],
-    [
-     49.74702,
-     13.42557
-    ],
-    [
-     49.74696,
-     13.42642
-    ],
-    [
-     49.74692,
-     13.42689
-    ]
-   ],
-   [
-    [
-     49.74711,
-     13.42422
-    ],
-    [
-     49.74703,
-     13.42537
-    ]
-   ],
-   [
-    [
-     49.74722,
-     13.42258
-    ],
-    [
-     49.74721,
-     13.42281
-    ],
-    [
-     49.74711,
-     13.42422
-    ]
-   ],
-   [
-    [
-     49.7472,
-     13.42539
-    ],
-    [
-     49.74727,
-     13.42437
-    ]
-   ],
-   [
-    [
-     49.74696,
-     13.42876
-    ],
-    [
-     49.74697,
-     13.42869
-    ],
-    [
-     49.74698,
-     13.42857
-    ],
-    [
-     49.74698,
-     13.42845
-    ]
-   ],
-   [
-    [
-     49.74685,
-     13.43051
-    ],
-    [
-     49.74687,
-     13.43021
-    ],
-    [
-     49.74689,
-     13.4299
-    ],
-    [
-     49.7469,
-     13.42966
-    ]
-   ],
-   [
-    [
-     49.74682,
-     13.42809
-    ],
-    [
-     49.74682,
-     13.42813
-    ],
-    [
-     49.7468,
-     13.42843
-    ]
-   ],
-   [
-    [
-     49.7468,
-     13.42843
-    ],
-    [
-     49.74679,
-     13.42866
-    ]
-   ],
-   [
-    [
-     49.74738,
-     13.42283
-    ],
-    [
-     49.74739,
-     13.4226
-    ]
-   ],
-   [
-    [
-     49.74698,
-     13.42845
-    ],
-    [
-     49.747,
-     13.42816
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, odbočovací pruh uzavřen, Od 17.08.2026 00:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "c613cdfa-ae5c-4911-929f-7a1e6ba8f704",
-  "superdioId": null,
-  "od": "2026-08-17",
-  "do": "2026-09-11",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "pod-chalupami",
-  "name": "Pod Chalupami",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 2",
-  "termin": "24. 8. 2026 – 27. 8. 2026",
-  "ways": [
-   [
-    [
-     49.71393,
-     13.4247
-    ],
-    [
-     49.71386,
-     13.42482
-    ],
-    [
-     49.7138,
-     13.4249
-    ],
-    [
-     49.71306,
-     13.42592
-    ],
-    [
-     49.71286,
-     13.42621
-    ],
-    [
-     49.71269,
-     13.42654
-    ],
-    [
-     49.71261,
-     13.42676
-    ],
-    [
-     49.71254,
-     13.42704
-    ],
-    [
-     49.71247,
-     13.4274
-    ],
-    [
-     49.71243,
-     13.4276
-    ],
-    [
-     49.71241,
-     13.42782
-    ],
-    [
-     49.71242,
-     13.42801
-    ],
-    [
-     49.71244,
-     13.4282
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Pod Chalupami, ulice U Mlýna, Plzeň 2-Slovany, uzavřeno, práce na inženýrských sítích, Od 24.08.2026 7:00 Do 27.08.2026 23:59, práce na inženýrských sítí - oprava kanalizace, Vydal: ÚMO Plzeň 02 Slovany",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "c9d89eb2-649e-4455-87af-79f505ab1216",
-  "superdioId": null,
-  "od": "2026-08-24",
-  "do": "2026-08-27",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "uzavirka",
-  "name": "Uzavírka",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "24. 8. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.74593,
-     13.34925
-    ],
-    [
-     49.74608,
-     13.34946
-    ]
-   ],
-   [
-    [
-     49.74566,
-     13.34861
-    ],
-    [
-     49.74573,
-     13.3489
-    ],
-    [
-     49.74578,
-     13.34901
-    ],
-    [
-     49.74593,
-     13.34925
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "místní komunikace, Plzeň 3, Plzeň, uzavřeno, stavební práce, Od 24.08.2026 14:18 Do 31.08.2026 23:59",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "5d045759-e954-4e6a-8b17-41ee240e5659",
-  "superdioId": null,
-  "od": "2026-08-24",
-  "do": "2026-08-31",
-  "severity": "major",
-  "geomTier": 2
- },
- {
-  "id": "resslova",
-  "name": "Resslova",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "24. 8. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.7411,
-     13.37721
-    ],
-    [
-     49.74121,
-     13.37724
-    ],
-    [
-     49.74189,
-     13.37737
-    ]
-   ],
-   [
-    [
-     49.74189,
-     13.37737
-    ],
-    [
-     49.74323,
-     13.37768
-    ]
-   ],
-   [
-    [
-     49.74323,
-     13.37768
-    ],
-    [
-     49.74325,
-     13.37768
-    ],
-    [
-     49.74327,
-     13.37768
-    ],
-    [
-     49.74337,
-     13.37771
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Resslova, Plzeň 3, Plzeň, uzavřeno, Od 24.08.2026 14:22 Do 31.08.2026 15:00",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "2e18ec4c-d754-426d-a080-0fe909cbe9fa",
-  "superdioId": null,
-  "od": "2026-08-24",
-  "do": "2026-08-31",
-  "severity": "major",
-  "geomTier": 4
- },
- {
-  "id": "stikova",
-  "name": "Štiková",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "16. 3. 2026 – 30. 9. 2026",
-  "ways": [
-   [
-    [
-     49.77848,
-     13.38196
-    ],
-    [
-     49.77816,
-     13.38324
-    ],
-    [
-     49.77814,
-     13.3833
-    ],
-    [
-     49.77812,
-     13.38341
-    ],
-    [
-     49.77785,
-     13.3845
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Štiková, Plzeň 1, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 07:00 Do 30.09.2026 23:59, rekonstrukce plynovodu, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "6af47e03-150f-4bad-9aa7-a7ecec11362d",
-  "superdioId": null,
-  "od": "2026-03-16",
-  "do": "2026-09-30",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "kaprova",
-  "name": "Kaprová",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "16. 3. 2026 – 30. 9. 2026",
-  "ways": [
-   [
-    [
-     49.77762,
-     13.38136
-    ],
-    [
-     49.77729,
-     13.38273
-    ],
-    [
-     49.77727,
-     13.38281
-    ],
-    [
-     49.77725,
-     13.38291
-    ],
-    [
-     49.77689,
-     13.38438
-    ],
-    [
-     49.77694,
-     13.3844
-    ],
-    [
-     49.77698,
-     13.38442
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice Kaprová, Plzeň 1, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 07:00 Do 30.09.2026 23:59, rekonstrukce plynovodu, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "d52d1c13-b174-4c05-a6e8-79f882810f41",
-  "superdioId": null,
-  "od": "2026-03-16",
-  "do": "2026-09-30",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "k-prokopavce",
-  "name": "K Prokopávce",
-  "akce": "Práce na silnici",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 1",
-  "termin": "16. 3. 2026 – 30. 9. 2026",
-  "ways": [
-   [
-    [
-     49.77634,
-     13.38226
-    ],
-    [
-     49.77639,
-     13.38229
-    ],
-    [
-     49.77658,
-     13.3824
-    ],
-    [
-     49.77665,
-     13.38243
-    ],
-    [
-     49.77672,
-     13.38248
-    ],
-    [
-     49.77722,
-     13.38277
-    ],
-    [
-     49.77727,
-     13.38281
-    ],
-    [
-     49.77732,
-     13.38284
-    ],
-    [
-     49.7781,
-     13.38328
-    ],
-    [
-     49.77814,
-     13.3833
-    ],
-    [
-     49.77888,
-     13.38373
-    ],
-    [
-     49.7792,
-     13.38391
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "ulice K Prokopávce, Plzeň 1, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 07:00 Do 30.09.2026 23:59, rekonstrukce plynovodu\n\n, Vydal: ÚMO Plzeň 01",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "práce na silnici",
-  "zdroj": "JSDI",
-  "jsdiId": "67e787bf-98c8-4207-9bbc-e1bc3246ea21",
-  "superdioId": null,
-  "od": "2026-03-16",
-  "do": "2026-09-30",
-  "severity": "medium",
-  "geomTier": 4
- },
- {
-  "id": "rokycanska-4",
-  "name": "Rokycanská",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "16. 3. 2026 – 1. 9. 2026",
-  "ways": [
-   [
-    [
-     49.7482,
-     13.40596
-    ],
-    [
-     49.7481,
-     13.40776
-    ]
-   ],
-   [
-    [
-     49.74742,
-     13.40916
-    ],
-    [
-     49.74767,
-     13.4092
-    ],
-    [
-     49.74764,
-     13.40993
-    ],
-    [
-     49.74763,
-     13.41
-    ]
-   ],
-   [
-    [
-     49.74774,
-     13.41492
-    ],
-    [
-     49.7477,
-     13.41568
-    ],
-    [
-     49.74762,
-     13.41695
-    ]
-   ],
-   [
-    [
-     49.748,
-     13.41341
-    ],
-    [
-     49.74802,
-     13.41315
-    ],
-    [
-     49.74814,
-     13.41085
-    ],
-    [
-     49.74815,
-     13.41069
-    ]
-   ],
-   [
-    [
-     49.74815,
-     13.41069
-    ],
-    [
-     49.74816,
-     13.41041
-    ],
-    [
-     49.74822,
-     13.40934
-    ]
-   ],
-   [
-    [
-     49.74791,
-     13.41506
-    ],
-    [
-     49.74791,
-     13.41497
-    ],
-    [
-     49.74798,
-     13.41374
-    ],
-    [
-     49.74798,
-     13.41368
-    ]
-   ],
-   [
-    [
-     49.74786,
-     13.41203
-    ],
-    [
-     49.74781,
-     13.41296
-    ],
-    [
-     49.74781,
-     13.41301
-    ],
-    [
-     49.74781,
-     13.41335
-    ]
-   ],
-   [
-    [
-     49.74822,
-     13.40934
-    ],
-    [
-     49.74825,
-     13.40878
-    ],
-    [
-     49.74825,
-     13.40872
-    ],
-    [
-     49.74826,
-     13.40851
-    ]
-   ],
-   [
-    [
-     49.7481,
-     13.40776
-    ],
-    [
-     49.74808,
-     13.40824
-    ],
-    [
-     49.74807,
-     13.40849
-    ]
-   ],
-   [
-    [
-     49.74826,
-     13.40851
-    ],
-    [
-     49.74839,
-     13.40599
-    ]
-   ],
-   [
-    [
-     49.74807,
-     13.40849
-    ],
-    [
-     49.74806,
-     13.4087
-    ],
-    [
-     49.74797,
-     13.41038
-    ],
-    [
-     49.74794,
-     13.41083
-    ],
-    [
-     49.74794,
-     13.41094
-    ],
-    [
-     49.74792,
-     13.41137
-    ]
-   ],
-   [
-    [
-     49.74714,
-     13.41227
-    ],
-    [
-     49.74718,
-     13.41172
-    ],
-    [
-     49.74721,
-     13.41115
-    ],
-    [
-     49.74723,
-     13.41104
-    ],
-    [
-     49.74724,
-     13.41092
-    ],
-    [
-     49.74728,
-     13.41009
-    ],
-    [
-     49.74729,
-     13.40997
-    ]
-   ],
-   [
-    [
-     49.74782,
-     13.41648
-    ],
-    [
-     49.74791,
-     13.41506
-    ]
-   ],
-   [
-    [
-     49.74792,
-     13.41137
-    ],
-    [
-     49.74788,
-     13.41184
-    ],
-    [
-     49.74786,
-     13.41203
-    ]
-   ],
-   [
-    [
-     49.74781,
-     13.41335
-    ],
-    [
-     49.7478,
-     13.41365
-    ],
-    [
-     49.74779,
-     13.41397
-    ],
-    [
-     49.74778,
-     13.41434
-    ],
-    [
-     49.74776,
-     13.41456
-    ],
-    [
-     49.74774,
-     13.41492
-    ]
-   ],
-   [
-    [
-     49.74798,
-     13.41368
-    ],
-    [
-     49.748,
-     13.41341
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 08:00 Do 01.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni v úseku mezi ulicemi Revoluční a Dlouhá v obou směrech jízdy za účelem provádění stavebních prací a v rámci akce „Plzeň – Lávka Rokycanská“, uzavřen pravý jízdní pruh, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "804309cb-50a6-41d8-a64a-aaa317505a68",
-  "superdioId": null,
-  "od": "2026-03-16",
-  "do": "2026-09-01",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "rokycanska-5",
-  "name": "Rokycanská",
-  "akce": "Stavební práce",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 4",
-  "termin": "16. 3. 2026 – 1. 9. 2026",
-  "ways": [
-   [
-    [
-     49.7482,
-     13.40596
-    ],
-    [
-     49.7481,
-     13.40776
-    ]
-   ],
-   [
-    [
-     49.74825,
-     13.40498
-    ],
-    [
-     49.7482,
-     13.40596
-    ]
-   ],
-   [
-    [
-     49.74839,
-     13.40599
-    ],
-    [
-     49.74844,
-     13.40501
-    ]
-   ],
-   [
-    [
-     49.74844,
-     13.40501
-    ],
-    [
-     49.74847,
-     13.40442
-    ]
-   ],
-   [
-    [
-     49.74742,
-     13.40916
-    ],
-    [
-     49.74767,
-     13.4092
-    ],
-    [
-     49.74764,
-     13.40993
-    ],
-    [
-     49.74763,
-     13.41
-    ]
-   ],
-   [
-    [
-     49.74832,
-     13.40362
-    ],
-    [
-     49.74826,
-     13.40486
-    ],
-    [
-     49.74825,
-     13.40498
-    ]
-   ],
-   [
-    [
-     49.74802,
-     13.41315
-    ],
-    [
-     49.74814,
-     13.41085
-    ],
-    [
-     49.74815,
-     13.41069
-    ]
-   ],
-   [
-    [
-     49.74815,
-     13.41069
-    ],
-    [
-     49.74816,
-     13.41041
-    ],
-    [
-     49.74822,
-     13.40934
-    ]
-   ],
-   [
-    [
-     49.74786,
-     13.41203
-    ],
-    [
-     49.74781,
-     13.41296
-    ]
-   ],
-   [
-    [
-     49.74822,
-     13.40934
-    ],
-    [
-     49.74825,
-     13.40878
-    ],
-    [
-     49.74825,
-     13.40872
-    ],
-    [
-     49.74826,
-     13.40851
-    ]
-   ],
-   [
-    [
-     49.7481,
-     13.40776
-    ],
-    [
-     49.74808,
-     13.40824
-    ],
-    [
-     49.74807,
-     13.40849
-    ]
-   ],
-   [
-    [
-     49.74826,
-     13.40851
-    ],
-    [
-     49.74839,
-     13.40599
-    ]
-   ],
-   [
-    [
-     49.74807,
-     13.40849
-    ],
-    [
-     49.74806,
-     13.4087
-    ],
-    [
-     49.74797,
-     13.41038
-    ],
-    [
-     49.74794,
-     13.41083
-    ],
-    [
-     49.74794,
-     13.41094
-    ],
-    [
-     49.74792,
-     13.41137
-    ]
-   ],
-   [
-    [
-     49.74714,
-     13.41227
-    ],
-    [
-     49.74718,
-     13.41172
-    ],
-    [
-     49.74721,
-     13.41115
-    ],
-    [
-     49.74723,
-     13.41104
-    ],
-    [
-     49.74724,
-     13.41092
-    ],
-    [
-     49.74728,
-     13.41009
-    ],
-    [
-     49.74729,
-     13.40997
-    ]
-   ],
-   [
-    [
-     49.74792,
-     13.41137
-    ],
-    [
-     49.74788,
-     13.41184
-    ],
-    [
-     49.74786,
-     13.41203
-    ]
-   ]
-  ],
-  "point": false,
-  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 08:00 Do 01.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni v úseku mezi ulicemi Revoluční a Dlouhá v obou směrech jízdy za účelem provádění stavebních prací a v rámci akce „Plzeň – Lávka Rokycanská“, uzavřen pravý jízdní pruh, Vydal: Krajský úřad Plzeňského kraje",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "stavební práce",
-  "zdroj": "JSDI",
-  "jsdiId": "5bad50b2-2b5f-4e07-89f2-d184652b87be",
-  "superdioId": null,
-  "od": "2026-03-16",
-  "do": "2026-09-01",
-  "severity": "minor",
-  "geomTier": 4
- },
- {
-  "id": "uzavirka-2",
-  "name": "Uzavírka",
-  "akce": "Uzavřená silnice",
-  "state": "Probíhá",
-  "status": "now",
-  "color": "#c0392b",
-  "oblast": "Plzeň 3",
-  "termin": "7. 4. 2026 – 31. 8. 2026",
-  "ways": [
-   [
-    [
-     49.74814,
-     13.377
-    ]
-   ]
-  ],
-  "point": true,
-  "popis": "místní komunikace náměstí Republiky, Plzeň 3, uzavřeno, práce na inženýrských sítích, Od 07.04.2026 08:00 Do 31.08.2026 23:59, západní strana\n- úplná uzavírka vozovky v úseku od křižovatky ulic Solní, Dominikánská ke křižovatce ulic Prešovská, Bedřicha Smetany, Vydal: ÚMO Plzeň 03",
-  "typ": "Uzavírka a omezení",
-  "subtyp": "uzavřená silnice",
-  "zdroj": "JSDI",
-  "jsdiId": "30710f69-e1ee-4923-9f97-67cae42982d1",
-  "superdioId": null,
-  "od": "2026-04-07",
-  "do": "2026-08-31",
-  "severity": "major",
-  "geomTier": 5
- },
- {
-  "id": "domazlicka-3",
+  "id": "domazlicka",
   "name": "Domažlická",
   "akce": "Oprava povrchu",
   "state": "Probíhá",
@@ -6374,7 +1433,7 @@
   "geomTier": 4
  },
  {
-  "id": "brojova-2",
+  "id": "brojova",
   "name": "Brojova",
   "akce": "Uzavřená silnice",
   "state": "Probíhá",
@@ -7793,7 +2852,7 @@
   "geomTier": 4
  },
  {
-  "id": "i-26-2",
+  "id": "i-26",
   "name": "I/26",
   "akce": "Uzavřená silnice",
   "state": "Probíhá",
@@ -7822,7 +2881,7 @@
   "geomTier": 5
  },
  {
-  "id": "i-26-3",
+  "id": "i-26-2",
   "name": "I/26",
   "akce": "Uzavřená silnice",
   "state": "Probíhá",
@@ -9278,14 +4337,4516 @@
   "geomTier": 4
  },
  {
-  "id": "kopernikova",
-  "name": "Koperníkova",
-  "akce": "Práce na silnici",
+  "id": "klatovska-trida",
+  "name": "Klatovská třída",
+  "akce": "Stavební práce",
   "state": "Probíhá",
   "status": "now",
   "color": "#c0392b",
   "oblast": "Plzeň 3",
-  "termin": "20. 8. 2026 – 4. 9. 2026",
+  "termin": "1. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.74283,
+     13.37211
+    ],
+    [
+     49.74333,
+     13.37226
+    ],
+    [
+     49.74402,
+     13.37249
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/27 (ulice Klatovská třída), Plzeň 3, stavební práce, pravý jízdní pruh uzavřen, Od 01.07.2026 00:00 Do 31.08.2026 23:59, částečná uzavírka silnice I/27 (ul. Klatovská), za účelem manipulačního záboru, stáni techniky pro nakládání suti a vykládání nového stavebního materiálu, v rámci provedení stavebních prací – oprava objektu č. p. 289/19, které si vyžádají zábor přilehlého pravého jízdního pruhu silnice I/27 (ul. Klatovská), směr do centra města (Bory-Lochotín)., Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "a0630f3d-d35f-49dc-8355-c34d3e3fe69f",
+  "superdioId": null,
+  "od": "2026-07-01",
+  "do": "2026-08-31",
+  "severity": "minor",
+  "geomTier": 2
+ },
+ {
+  "id": "heldova",
+  "name": "Heldova",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "19. 8. 2026 – 30. 9. 2026",
+  "ways": [
+   [
+    [
+     49.73799,
+     13.38071
+    ],
+    [
+     49.738,
+     13.38065
+    ],
+    [
+     49.73808,
+     13.3796
+    ],
+    [
+     49.73808,
+     13.3795
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Heldova, Plzeň 3, Plzeň, uzavřeno, Od 19.08.2026 08:00 Do 30.09.2026 23:59, úplná uzavírka pouze po dobu výkopu přípojky, poté bude komunikace průjezdná a místo \nvýkopu bude pod přejezdovým plechem  Důvod: Pokládka horkovodní přípojky k BD Doudlevecká ",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "4ac07a5e-cc81-425b-8234-32d2475d1d38",
+  "superdioId": null,
+  "od": "2026-08-19",
+  "do": "2026-09-30",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "stikova",
+  "name": "Štiková",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "16. 3. 2026 – 30. 9. 2026",
+  "ways": [
+   [
+    [
+     49.77848,
+     13.38196
+    ],
+    [
+     49.77816,
+     13.38324
+    ],
+    [
+     49.77814,
+     13.3833
+    ],
+    [
+     49.77812,
+     13.38341
+    ],
+    [
+     49.77785,
+     13.3845
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Štiková, Plzeň 1, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 07:00 Do 30.09.2026 23:59, rekonstrukce plynovodu, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "6af47e03-150f-4bad-9aa7-a7ecec11362d",
+  "superdioId": null,
+  "od": "2026-03-16",
+  "do": "2026-09-30",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "kaprova",
+  "name": "Kaprová",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "16. 3. 2026 – 30. 9. 2026",
+  "ways": [
+   [
+    [
+     49.77762,
+     13.38136
+    ],
+    [
+     49.77729,
+     13.38273
+    ],
+    [
+     49.77727,
+     13.38281
+    ],
+    [
+     49.77725,
+     13.38291
+    ],
+    [
+     49.77689,
+     13.38438
+    ],
+    [
+     49.77694,
+     13.3844
+    ],
+    [
+     49.77698,
+     13.38442
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Kaprová, Plzeň 1, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 07:00 Do 30.09.2026 23:59, rekonstrukce plynovodu, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "d52d1c13-b174-4c05-a6e8-79f882810f41",
+  "superdioId": null,
+  "od": "2026-03-16",
+  "do": "2026-09-30",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "k-prokopavce",
+  "name": "K Prokopávce",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "16. 3. 2026 – 30. 9. 2026",
+  "ways": [
+   [
+    [
+     49.77634,
+     13.38226
+    ],
+    [
+     49.77639,
+     13.38229
+    ],
+    [
+     49.77658,
+     13.3824
+    ],
+    [
+     49.77665,
+     13.38243
+    ],
+    [
+     49.77672,
+     13.38248
+    ],
+    [
+     49.77722,
+     13.38277
+    ],
+    [
+     49.77727,
+     13.38281
+    ],
+    [
+     49.77732,
+     13.38284
+    ],
+    [
+     49.7781,
+     13.38328
+    ],
+    [
+     49.77814,
+     13.3833
+    ],
+    [
+     49.77888,
+     13.38373
+    ],
+    [
+     49.7792,
+     13.38391
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice K Prokopávce, Plzeň 1, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 07:00 Do 30.09.2026 23:59, rekonstrukce plynovodu\n\n, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "67e787bf-98c8-4207-9bbc-e1bc3246ea21",
+  "superdioId": null,
+  "od": "2026-03-16",
+  "do": "2026-09-30",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "rokycanska",
+  "name": "Rokycanská",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 4",
+  "termin": "16. 3. 2026 – 1. 9. 2026",
+  "ways": [
+   [
+    [
+     49.7482,
+     13.40596
+    ],
+    [
+     49.7481,
+     13.40776
+    ]
+   ],
+   [
+    [
+     49.74742,
+     13.40916
+    ],
+    [
+     49.74767,
+     13.4092
+    ],
+    [
+     49.74764,
+     13.40993
+    ],
+    [
+     49.74763,
+     13.41
+    ]
+   ],
+   [
+    [
+     49.74774,
+     13.41492
+    ],
+    [
+     49.7477,
+     13.41568
+    ],
+    [
+     49.74762,
+     13.41695
+    ]
+   ],
+   [
+    [
+     49.748,
+     13.41341
+    ],
+    [
+     49.74802,
+     13.41315
+    ],
+    [
+     49.74814,
+     13.41085
+    ],
+    [
+     49.74815,
+     13.41069
+    ]
+   ],
+   [
+    [
+     49.74815,
+     13.41069
+    ],
+    [
+     49.74816,
+     13.41041
+    ],
+    [
+     49.74822,
+     13.40934
+    ]
+   ],
+   [
+    [
+     49.74791,
+     13.41506
+    ],
+    [
+     49.74791,
+     13.41497
+    ],
+    [
+     49.74798,
+     13.41374
+    ],
+    [
+     49.74798,
+     13.41368
+    ]
+   ],
+   [
+    [
+     49.74786,
+     13.41203
+    ],
+    [
+     49.74781,
+     13.41296
+    ],
+    [
+     49.74781,
+     13.41301
+    ],
+    [
+     49.74781,
+     13.41335
+    ]
+   ],
+   [
+    [
+     49.74822,
+     13.40934
+    ],
+    [
+     49.74825,
+     13.40878
+    ],
+    [
+     49.74825,
+     13.40872
+    ],
+    [
+     49.74826,
+     13.40851
+    ]
+   ],
+   [
+    [
+     49.7481,
+     13.40776
+    ],
+    [
+     49.74808,
+     13.40824
+    ],
+    [
+     49.74807,
+     13.40849
+    ]
+   ],
+   [
+    [
+     49.74826,
+     13.40851
+    ],
+    [
+     49.74839,
+     13.40599
+    ]
+   ],
+   [
+    [
+     49.74807,
+     13.40849
+    ],
+    [
+     49.74806,
+     13.4087
+    ],
+    [
+     49.74797,
+     13.41038
+    ],
+    [
+     49.74794,
+     13.41083
+    ],
+    [
+     49.74794,
+     13.41094
+    ],
+    [
+     49.74792,
+     13.41137
+    ]
+   ],
+   [
+    [
+     49.74714,
+     13.41227
+    ],
+    [
+     49.74718,
+     13.41172
+    ],
+    [
+     49.74721,
+     13.41115
+    ],
+    [
+     49.74723,
+     13.41104
+    ],
+    [
+     49.74724,
+     13.41092
+    ],
+    [
+     49.74728,
+     13.41009
+    ],
+    [
+     49.74729,
+     13.40997
+    ]
+   ],
+   [
+    [
+     49.74782,
+     13.41648
+    ],
+    [
+     49.74791,
+     13.41506
+    ]
+   ],
+   [
+    [
+     49.74792,
+     13.41137
+    ],
+    [
+     49.74788,
+     13.41184
+    ],
+    [
+     49.74786,
+     13.41203
+    ]
+   ],
+   [
+    [
+     49.74781,
+     13.41335
+    ],
+    [
+     49.7478,
+     13.41365
+    ],
+    [
+     49.74779,
+     13.41397
+    ],
+    [
+     49.74778,
+     13.41434
+    ],
+    [
+     49.74776,
+     13.41456
+    ],
+    [
+     49.74774,
+     13.41492
+    ]
+   ],
+   [
+    [
+     49.74798,
+     13.41368
+    ],
+    [
+     49.748,
+     13.41341
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 08:00 Do 01.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni v úseku mezi ulicemi Revoluční a Dlouhá v obou směrech jízdy za účelem provádění stavebních prací a v rámci akce „Plzeň – Lávka Rokycanská“, uzavřen pravý jízdní pruh, Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "804309cb-50a6-41d8-a64a-aaa317505a68",
+  "superdioId": null,
+  "od": "2026-03-16",
+  "do": "2026-09-01",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "rokycanska-2",
+  "name": "Rokycanská",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 4",
+  "termin": "16. 3. 2026 – 1. 9. 2026",
+  "ways": [
+   [
+    [
+     49.7482,
+     13.40596
+    ],
+    [
+     49.7481,
+     13.40776
+    ]
+   ],
+   [
+    [
+     49.74825,
+     13.40498
+    ],
+    [
+     49.7482,
+     13.40596
+    ]
+   ],
+   [
+    [
+     49.74839,
+     13.40599
+    ],
+    [
+     49.74844,
+     13.40501
+    ]
+   ],
+   [
+    [
+     49.74844,
+     13.40501
+    ],
+    [
+     49.74847,
+     13.40442
+    ]
+   ],
+   [
+    [
+     49.74742,
+     13.40916
+    ],
+    [
+     49.74767,
+     13.4092
+    ],
+    [
+     49.74764,
+     13.40993
+    ],
+    [
+     49.74763,
+     13.41
+    ]
+   ],
+   [
+    [
+     49.74832,
+     13.40362
+    ],
+    [
+     49.74826,
+     13.40486
+    ],
+    [
+     49.74825,
+     13.40498
+    ]
+   ],
+   [
+    [
+     49.74802,
+     13.41315
+    ],
+    [
+     49.74814,
+     13.41085
+    ],
+    [
+     49.74815,
+     13.41069
+    ]
+   ],
+   [
+    [
+     49.74815,
+     13.41069
+    ],
+    [
+     49.74816,
+     13.41041
+    ],
+    [
+     49.74822,
+     13.40934
+    ]
+   ],
+   [
+    [
+     49.74786,
+     13.41203
+    ],
+    [
+     49.74781,
+     13.41296
+    ]
+   ],
+   [
+    [
+     49.74822,
+     13.40934
+    ],
+    [
+     49.74825,
+     13.40878
+    ],
+    [
+     49.74825,
+     13.40872
+    ],
+    [
+     49.74826,
+     13.40851
+    ]
+   ],
+   [
+    [
+     49.7481,
+     13.40776
+    ],
+    [
+     49.74808,
+     13.40824
+    ],
+    [
+     49.74807,
+     13.40849
+    ]
+   ],
+   [
+    [
+     49.74826,
+     13.40851
+    ],
+    [
+     49.74839,
+     13.40599
+    ]
+   ],
+   [
+    [
+     49.74807,
+     13.40849
+    ],
+    [
+     49.74806,
+     13.4087
+    ],
+    [
+     49.74797,
+     13.41038
+    ],
+    [
+     49.74794,
+     13.41083
+    ],
+    [
+     49.74794,
+     13.41094
+    ],
+    [
+     49.74792,
+     13.41137
+    ]
+   ],
+   [
+    [
+     49.74714,
+     13.41227
+    ],
+    [
+     49.74718,
+     13.41172
+    ],
+    [
+     49.74721,
+     13.41115
+    ],
+    [
+     49.74723,
+     13.41104
+    ],
+    [
+     49.74724,
+     13.41092
+    ],
+    [
+     49.74728,
+     13.41009
+    ],
+    [
+     49.74729,
+     13.40997
+    ]
+   ],
+   [
+    [
+     49.74792,
+     13.41137
+    ],
+    [
+     49.74788,
+     13.41184
+    ],
+    [
+     49.74786,
+     13.41203
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 16.03.2026 08:00 Do 01.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni v úseku mezi ulicemi Revoluční a Dlouhá v obou směrech jízdy za účelem provádění stavebních prací a v rámci akce „Plzeň – Lávka Rokycanská“, uzavřen pravý jízdní pruh, Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "5bad50b2-2b5f-4e07-89f2-d184652b87be",
+  "superdioId": null,
+  "od": "2026-03-16",
+  "do": "2026-09-01",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "uzavirka",
+  "name": "Uzavírka",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "7. 4. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.74814,
+     13.377
+    ]
+   ]
+  ],
+  "point": true,
+  "popis": "místní komunikace náměstí Republiky, Plzeň 3, uzavřeno, práce na inženýrských sítích, Od 07.04.2026 08:00 Do 31.08.2026 23:59, západní strana\n- úplná uzavírka vozovky v úseku od křižovatky ulic Solní, Dominikánská ke křižovatce ulic Prešovská, Bedřicha Smetany, Vydal: ÚMO Plzeň 03",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "30710f69-e1ee-4923-9f97-67cae42982d1",
+  "superdioId": null,
+  "od": "2026-04-07",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 5
+ },
+ {
+  "id": "brojova-2",
+  "name": "Brojova",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "14. 7. 2026 – 31. 10. 2026",
+  "ways": [
+   [
+    [
+     49.73037,
+     13.40723
+    ],
+    [
+     49.73036,
+     13.40722
+    ],
+    [
+     49.73034,
+     13.4072
+    ],
+    [
+     49.73031,
+     13.40717
+    ],
+    [
+     49.73025,
+     13.40711
+    ],
+    [
+     49.7302,
+     13.40705
+    ],
+    [
+     49.72984,
+     13.40673
+    ],
+    [
+     49.72964,
+     13.40653
+    ],
+    [
+     49.72937,
+     13.40628
+    ],
+    [
+     49.7292,
+     13.40609
+    ],
+    [
+     49.72914,
+     13.40602
+    ],
+    [
+     49.72901,
+     13.40588
+    ],
+    [
+     49.72897,
+     13.40583
+    ],
+    [
+     49.72867,
+     13.40545
+    ],
+    [
+     49.72827,
+     13.40484
+    ]
+   ],
+   [
+    [
+     49.73036,
+     13.40487
+    ],
+    [
+     49.73025,
+     13.405
+    ],
+    [
+     49.72983,
+     13.40613
+    ],
+    [
+     49.72981,
+     13.40614
+    ],
+    [
+     49.72976,
+     13.40622
+    ]
+   ],
+   [
+    [
+     49.72746,
+     13.40395
+    ],
+    [
+     49.72756,
+     13.40417
+    ],
+    [
+     49.72761,
+     13.40428
+    ],
+    [
+     49.7278,
+     13.40465
+    ],
+    [
+     49.7278,
+     13.40467
+    ],
+    [
+     49.72781,
+     13.40469
+    ],
+    [
+     49.7278,
+     13.40471
+    ],
+    [
+     49.7278,
+     13.40473
+    ],
+    [
+     49.72779,
+     13.40474
+    ],
+    [
+     49.72767,
+     13.40489
+    ]
+   ],
+   [
+    [
+     49.72827,
+     13.40484
+    ],
+    [
+     49.72789,
+     13.40414
+    ],
+    [
+     49.72762,
+     13.40351
+    ]
+   ],
+   [
+    [
+     49.72971,
+     13.40636
+    ],
+    [
+     49.72967,
+     13.40645
+    ],
+    [
+     49.72964,
+     13.40653
+    ]
+   ],
+   [
+    [
+     49.72976,
+     13.40622
+    ],
+    [
+     49.72971,
+     13.40636
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Brojova, Plzeň 2-Slovany, stavební práce, Od 14.07.2026 07:00 Do 31.10.2026 23:59, práce převážně ve vnitrobloku, v případě potřeby, úplná uzavírka místní komunikace, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "27cc5261-02db-4821-ad10-70a774acf384",
+  "superdioId": null,
+  "od": "2026-07-14",
+  "do": "2026-10-31",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "spojovaci",
+  "name": "Spojovací",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "14. 7. 2026 – 31. 10. 2026",
+  "ways": [
+   [
+    [
+     49.72962,
+     13.40203
+    ],
+    [
+     49.72965,
+     13.40221
+    ],
+    [
+     49.72971,
+     13.40234
+    ]
+   ],
+   [
+    [
+     49.73084,
+     13.40463
+    ],
+    [
+     49.73062,
+     13.40444
+    ],
+    [
+     49.7306,
+     13.40443
+    ],
+    [
+     49.73057,
+     13.40442
+    ],
+    [
+     49.73054,
+     13.40443
+    ],
+    [
+     49.73051,
+     13.40446
+    ],
+    [
+     49.73049,
+     13.4045
+    ]
+   ],
+   [
+    [
+     49.72971,
+     13.40234
+    ],
+    [
+     49.72981,
+     13.40248
+    ],
+    [
+     49.72997,
+     13.40262
+    ],
+    [
+     49.73004,
+     13.40268
+    ],
+    [
+     49.73013,
+     13.4028
+    ],
+    [
+     49.73022,
+     13.40293
+    ],
+    [
+     49.73024,
+     13.40297
+    ],
+    [
+     49.73052,
+     13.40367
+    ],
+    [
+     49.73064,
+     13.40394
+    ],
+    [
+     49.73067,
+     13.40403
+    ],
+    [
+     49.73071,
+     13.40417
+    ],
+    [
+     49.73075,
+     13.4043
+    ],
+    [
+     49.73078,
+     13.40436
+    ],
+    [
+     49.73082,
+     13.40439
+    ],
+    [
+     49.73083,
+     13.40444
+    ],
+    [
+     49.73083,
+     13.40449
+    ],
+    [
+     49.73083,
+     13.40458
+    ],
+    [
+     49.73084,
+     13.40463
+    ]
+   ],
+   [
+    [
+     49.73084,
+     13.40463
+    ],
+    [
+     49.7309,
+     13.4047
+    ],
+    [
+     49.73094,
+     13.40474
+    ],
+    [
+     49.731,
+     13.40481
+    ]
+   ],
+   [
+    [
+     49.73039,
+     13.40477
+    ],
+    [
+     49.73036,
+     13.40487
+    ]
+   ],
+   [
+    [
+     49.73045,
+     13.40463
+    ],
+    [
+     49.73039,
+     13.40477
+    ]
+   ],
+   [
+    [
+     49.73049,
+     13.4045
+    ],
+    [
+     49.73045,
+     13.40463
+    ]
+   ],
+   [
+    [
+     49.731,
+     13.40481
+    ],
+    [
+     49.73105,
+     13.40487
+    ],
+    [
+     49.73111,
+     13.40492
+    ],
+    [
+     49.73113,
+     13.40495
+    ],
+    [
+     49.73114,
+     13.40496
+    ],
+    [
+     49.73115,
+     13.40497
+    ]
+   ],
+   [
+    [
+     49.72956,
+     13.40181
+    ],
+    [
+     49.72959,
+     13.40194
+    ],
+    [
+     49.72962,
+     13.40203
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Spojovací, Plzeň 2-Slovany, Plzeň, stavební práce, Od 14.07.2026 07:00 Do 31.10.2026 23:59, práce převážně ve vnitrobloku, v případě potřeby, úplná uzavírka místní komunikace, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "a6960e39-f165-44ee-8f16-2d00f03e1593",
+  "superdioId": null,
+  "od": "2026-07-14",
+  "do": "2026-10-31",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "domazlicka-2",
+  "name": "Domažlická",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "27. 7. 2026 – 27. 8. 2026",
+  "ways": [
+   [
+    [
+     49.74206,
+     13.34427
+    ],
+    [
+     49.74235,
+     13.34559
+    ],
+    [
+     49.74241,
+     13.34583
+    ]
+   ],
+   [
+    [
+     49.74288,
+     13.34791
+    ],
+    [
+     49.74304,
+     13.34857
+    ]
+   ],
+   [
+    [
+     49.74248,
+     13.34578
+    ],
+    [
+     49.74242,
+     13.34555
+    ],
+    [
+     49.74222,
+     13.34479
+    ],
+    [
+     49.74206,
+     13.34427
+    ]
+   ],
+   [
+    [
+     49.74309,
+     13.34836
+    ],
+    [
+     49.74294,
+     13.34771
+    ]
+   ],
+   [
+    [
+     49.74206,
+     13.34427
+    ],
+    [
+     49.74201,
+     13.34409
+    ],
+    [
+     49.74195,
+     13.34387
+    ],
+    [
+     49.74189,
+     13.3437
+    ],
+    [
+     49.74181,
+     13.34345
+    ],
+    [
+     49.74172,
+     13.34322
+    ],
+    [
+     49.74163,
+     13.34301
+    ],
+    [
+     49.74154,
+     13.34279
+    ]
+   ],
+   [
+    [
+     49.74196,
+     13.34619
+    ],
+    [
+     49.74191,
+     13.34606
+    ],
+    [
+     49.74151,
+     13.34494
+    ],
+    [
+     49.74145,
+     13.34478
+    ],
+    [
+     49.7414,
+     13.34464
+    ],
+    [
+     49.74109,
+     13.34381
+    ]
+   ],
+   [
+    [
+     49.74344,
+     13.34982
+    ],
+    [
+     49.74338,
+     13.34958
+    ],
+    [
+     49.74309,
+     13.34836
+    ]
+   ],
+   [
+    [
+     49.74304,
+     13.34857
+    ],
+    [
+     49.74308,
+     13.34876
+    ]
+   ],
+   [
+    [
+     49.74308,
+     13.34876
+    ],
+    [
+     49.74328,
+     13.34963
+    ],
+    [
+     49.74333,
+     13.34981
+    ],
+    [
+     49.74342,
+     13.35012
+    ]
+   ],
+   [
+    [
+     49.74241,
+     13.34583
+    ],
+    [
+     49.74245,
+     13.34605
+    ],
+    [
+     49.74259,
+     13.34662
+    ],
+    [
+     49.74268,
+     13.34698
+    ],
+    [
+     49.74279,
+     13.34748
+    ],
+    [
+     49.74288,
+     13.34791
+    ]
+   ],
+   [
+    [
+     49.74294,
+     13.34771
+    ],
+    [
+     49.74278,
+     13.34701
+    ],
+    [
+     49.74268,
+     13.34659
+    ],
+    [
+     49.74253,
+     13.34603
+    ],
+    [
+     49.74248,
+     13.34578
+    ]
+   ],
+   [
+    [
+     49.74239,
+     13.34794
+    ],
+    [
+     49.74233,
+     13.3478
+    ],
+    [
+     49.74223,
+     13.34752
+    ],
+    [
+     49.74218,
+     13.34736
+    ],
+    [
+     49.74217,
+     13.34733
+    ],
+    [
+     49.74217,
+     13.3473
+    ],
+    [
+     49.74218,
+     13.34726
+    ],
+    [
+     49.74223,
+     13.34705
+    ],
+    [
+     49.74223,
+     13.34703
+    ],
+    [
+     49.74223,
+     13.34699
+    ],
+    [
+     49.74223,
+     13.34695
+    ],
+    [
+     49.74223,
+     13.34693
+    ]
+   ],
+   [
+    [
+     49.74233,
+     13.34799
+    ],
+    [
+     49.74239,
+     13.34794
+    ],
+    [
+     49.74249,
+     13.34784
+    ],
+    [
+     49.7425,
+     13.34784
+    ],
+    [
+     49.74252,
+     13.34783
+    ],
+    [
+     49.74254,
+     13.34783
+    ],
+    [
+     49.74255,
+     13.34785
+    ],
+    [
+     49.74273,
+     13.34837
+    ]
+   ],
+   [
+    [
+     49.74223,
+     13.34693
+    ],
+    [
+     49.74222,
+     13.34691
+    ],
+    [
+     49.742,
+     13.3463
+    ],
+    [
+     49.74196,
+     13.34619
+    ]
+   ],
+   [
+    [
+     49.74273,
+     13.34837
+    ],
+    [
+     49.74274,
+     13.3484
+    ],
+    [
+     49.74275,
+     13.34844
+    ],
+    [
+     49.74274,
+     13.34849
+    ],
+    [
+     49.74266,
+     13.34877
+    ],
+    [
+     49.74261,
+     13.34892
+    ]
+   ],
+   [
+    [
+     49.74255,
+     13.34866
+    ],
+    [
+     49.74266,
+     13.34877
+    ]
+   ],
+   [
+    [
+     49.74154,
+     13.34279
+    ],
+    [
+     49.74144,
+     13.34259
+    ],
+    [
+     49.74131,
+     13.34233
+    ],
+    [
+     49.7412,
+     13.34214
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Pile - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, uzavřeno, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, uzavírka silnice I/26, ul. Domažlická v Plzni, v úseku od křižovatky s ul. Tylova a Vejprnická za most ev.č. 26-018..1 a 26-018..2 přes železniční trať, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Objížďka - bez rozlišení: místní komunikace - silnice I/26 (ulice Domažlická), Plzeň 3, Plzeň, veden režim 1+1, Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "176d7998-aae3-4448-90c6-4e78c07e0f23",
+  "superdioId": null,
+  "od": "2026-07-27",
+  "do": "2026-08-27",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "rokycanska-3",
+  "name": "Rokycanská",
+  "akce": "Kyvadlová doprava",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 4",
+  "termin": "17. 7. 2026 – 30. 11. 2026",
+  "ways": [
+   [
+    [
+     49.7468,
+     13.43544
+    ],
+    [
+     49.74683,
+     13.43185
+    ]
+   ],
+   [
+    [
+     49.74683,
+     13.43185
+    ],
+    [
+     49.74684,
+     13.43112
+    ]
+   ],
+   [
+    [
+     49.74671,
+     13.43353
+    ],
+    [
+     49.7467,
+     13.4345
+    ]
+   ],
+   [
+    [
+     49.74666,
+     13.43751
+    ],
+    [
+     49.74662,
+     13.44053
+    ]
+   ],
+   [
+    [
+     49.74671,
+     13.44103
+    ],
+    [
+     49.74675,
+     13.43764
+    ]
+   ],
+   [
+    [
+     49.7467,
+     13.4345
+    ],
+    [
+     49.74669,
+     13.43515
+    ],
+    [
+     49.74668,
+     13.43545
+    ]
+   ],
+   [
+    [
+     49.74678,
+     13.43675
+    ],
+    [
+     49.74679,
+     13.4363
+    ],
+    [
+     49.7468,
+     13.4357
+    ],
+    [
+     49.7468,
+     13.43544
+    ]
+   ],
+   [
+    [
+     49.74674,
+     13.43063
+    ],
+    [
+     49.74671,
+     13.43342
+    ]
+   ],
+   [
+    [
+     49.74671,
+     13.43342
+    ],
+    [
+     49.74671,
+     13.43353
+    ]
+   ],
+   [
+    [
+     49.74668,
+     13.43545
+    ],
+    [
+     49.74666,
+     13.43751
+    ]
+   ],
+   [
+    [
+     49.74675,
+     13.43764
+    ],
+    [
+     49.74678,
+     13.43675
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň - Kyšice, okr. Plzeň-město, provoz převeden do protisměru, stavební práce, Od 17.07.2026 07:00 Do 30.11.2026 23:59, úplná uzavírka jízdního pásu silnice I/26 směr Plzeň - Praha, ul. Rokycanská v Plzni, za účelem provádění stavebních prací v rámci akce „I/26.2 Kyšice – Plzeň, Hřbitovní“; provoz ve směru na Prahu je veden v protisměru, provoz 1+1, Objížďka - směr z centra Plzně k OC Rokycanská: místní komunikace, Objížďka - směr z OC Rokycanská na Prahu: přes: silnice III/18016 (ulice Vesnická), silnice III/18017a (ulice Náves) (Kyšice), silnice II/180 (ulice Letkovská), Objížďka - pro vozidla do 3,5 t z Červeného Hrádku k OC Rokycanská: silnice III/18019a (ulice K Fořtovně) - místní komunikace, Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "kyvadlová doprava",
+  "zdroj": "JSDI",
+  "jsdiId": "e2e317d5-ed15-460e-b3de-2eebc69d5c14",
+  "superdioId": null,
+  "od": "2026-07-17",
+  "do": "2026-11-30",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "rokycanska-4",
+  "name": "Rokycanská",
+  "akce": "Uzavírka jízdního pruhu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 4",
+  "termin": "17. 8. 2026 – 11. 9. 2026",
+  "ways": [
+   [
+    [
+     49.74685,
+     13.43077
+    ],
+    [
+     49.74685,
+     13.43051
+    ]
+   ],
+   [
+    [
+     49.74713,
+     13.42641
+    ],
+    [
+     49.74718,
+     13.42559
+    ],
+    [
+     49.7472,
+     13.42539
+    ]
+   ],
+   [
+    [
+     49.74731,
+     13.42134
+    ],
+    [
+     49.74722,
+     13.42258
+    ]
+   ],
+   [
+    [
+     49.7469,
+     13.42966
+    ],
+    [
+     49.74693,
+     13.4293
+    ],
+    [
+     49.74696,
+     13.42876
+    ]
+   ],
+   [
+    [
+     49.74692,
+     13.42689
+    ],
+    [
+     49.74682,
+     13.42809
+    ]
+   ],
+   [
+    [
+     49.747,
+     13.42816
+    ],
+    [
+     49.74713,
+     13.42641
+    ]
+   ],
+   [
+    [
+     49.74739,
+     13.4226
+    ],
+    [
+     49.74751,
+     13.42089
+    ]
+   ],
+   [
+    [
+     49.74727,
+     13.42437
+    ],
+    [
+     49.74728,
+     13.42418
+    ],
+    [
+     49.74738,
+     13.42283
+    ]
+   ],
+   [
+    [
+     49.74679,
+     13.42866
+    ],
+    [
+     49.74677,
+     13.42915
+    ],
+    [
+     49.74675,
+     13.42964
+    ],
+    [
+     49.74674,
+     13.43063
+    ]
+   ],
+   [
+    [
+     49.74703,
+     13.42537
+    ],
+    [
+     49.74702,
+     13.42557
+    ],
+    [
+     49.74696,
+     13.42642
+    ],
+    [
+     49.74692,
+     13.42689
+    ]
+   ],
+   [
+    [
+     49.74711,
+     13.42422
+    ],
+    [
+     49.74703,
+     13.42537
+    ]
+   ],
+   [
+    [
+     49.74722,
+     13.42258
+    ],
+    [
+     49.74721,
+     13.42281
+    ],
+    [
+     49.74711,
+     13.42422
+    ]
+   ],
+   [
+    [
+     49.7472,
+     13.42539
+    ],
+    [
+     49.74727,
+     13.42437
+    ]
+   ],
+   [
+    [
+     49.74696,
+     13.42876
+    ],
+    [
+     49.74697,
+     13.42869
+    ],
+    [
+     49.74698,
+     13.42857
+    ],
+    [
+     49.74698,
+     13.42845
+    ]
+   ],
+   [
+    [
+     49.74685,
+     13.43051
+    ],
+    [
+     49.74687,
+     13.43021
+    ],
+    [
+     49.74689,
+     13.4299
+    ],
+    [
+     49.7469,
+     13.42966
+    ]
+   ],
+   [
+    [
+     49.74682,
+     13.42809
+    ],
+    [
+     49.74682,
+     13.42813
+    ],
+    [
+     49.7468,
+     13.42843
+    ]
+   ],
+   [
+    [
+     49.7468,
+     13.42843
+    ],
+    [
+     49.74679,
+     13.42866
+    ]
+   ],
+   [
+    [
+     49.74738,
+     13.42283
+    ],
+    [
+     49.74739,
+     13.4226
+    ]
+   ],
+   [
+    [
+     49.74698,
+     13.42845
+    ],
+    [
+     49.747,
+     13.42816
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, odbočovací pruh uzavřen, Od 17.08.2026 07:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavírka jízdního pruhu",
+  "zdroj": "JSDI",
+  "jsdiId": "c613cdfa-ae5c-4911-929f-7a1e6ba8f704",
+  "superdioId": null,
+  "od": "2026-08-17",
+  "do": "2026-09-11",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "dobranska",
+  "name": "Dobřanská",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "21. 7. 2025 – 20. 12. 2026",
+  "ways": [
+   [
+    [
+     49.70341,
+     13.32854
+    ],
+    [
+     49.70334,
+     13.3285
+    ]
+   ],
+   [
+    [
+     49.70334,
+     13.3285
+    ],
+    [
+     49.70219,
+     13.32782
+    ]
+   ],
+   [
+    [
+     49.70823,
+     13.33143
+    ],
+    [
+     49.70777,
+     13.33116
+    ]
+   ],
+   [
+    [
+     49.70341,
+     13.32854
+    ],
+    [
+     49.70418,
+     13.329
+    ],
+    [
+     49.70443,
+     13.32915
+    ]
+   ],
+   [
+    [
+     49.70736,
+     13.3309
+    ],
+    [
+     49.70607,
+     13.33013
+    ]
+   ],
+   [
+    [
+     49.70777,
+     13.33116
+    ],
+    [
+     49.70736,
+     13.3309
+    ]
+   ],
+   [
+    [
+     49.70443,
+     13.32915
+    ],
+    [
+     49.70546,
+     13.32977
+    ],
+    [
+     49.70607,
+     13.33013
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 21.07.2025 00:01 Do 20.12.2026 23:59, částečná uzavírka v úseku od kruhového objezdu až za křižovatku s ulicí U Čertovy díry z důvodu akce \"Dešťová kanalizace a komunikace\", Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "cdb2a780-4d40-4216-936a-dcf3ee24ee8b",
+  "superdioId": null,
+  "od": "2025-07-21",
+  "do": "2026-12-20",
+  "severity": "minor",
+  "geomTier": 1
+ },
+ {
+  "id": "za-vodarnou",
+  "name": "Za Vodárnou",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "4. 5. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71975,
+     13.40424
+    ],
+    [
+     49.71971,
+     13.40414
+    ],
+    [
+     49.71942,
+     13.40341
+    ],
+    [
+     49.71939,
+     13.40333
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Za Vodárnou, mezi křižovatkami ulic Zelenohorská a Plzeňská cesta, Plzeň 2-Slovany, Plzeň, , Od 04.05.2026 00:00, Do 31.08.2026 23:59, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, na místní komunikaci III. třídy C3827 Za Vodárnou, v Plzni\n- úplná uzavírka vozovky, v úseku od křižovatky s ulicí Zelenohorská až k objektu Za Vodárnou číslo orientační 10\n, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "6b4b0782-00dd-45d4-97c3-7a9e3b3d2bdb",
+  "superdioId": null,
+  "od": "2026-05-04",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 3
+ },
+ {
+  "id": "lochotinska",
+  "name": "Lochotínská",
+  "akce": "Zúžené pruhy",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "28. 4. 2026 – 30. 9. 2026",
+  "ways": [
+   [
+    [
+     49.75692,
+     13.3714
+    ],
+    [
+     49.75699,
+     13.37139
+    ],
+    [
+     49.75737,
+     13.3714
+    ],
+    [
+     49.75743,
+     13.37138
+    ],
+    [
+     49.7575,
+     13.37133
+    ],
+    [
+     49.75755,
+     13.37125
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "místní komunikace, ulice Lochotínská, Plzeň 1, zúžené jízdní pruhy, Od 28.04.2026 07:00 Do 30.09.2026 23:59, z důvodu vytvoření koridoru pro chodce v šířce min. 1,5 m\n, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "zúžené pruhy",
+  "zdroj": "JSDI",
+  "jsdiId": "76ea2ef1-0e74-4d44-b25f-af6682a1aeb5",
+  "superdioId": null,
+  "od": "2026-04-28",
+  "do": "2026-09-30",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "kvetna",
+  "name": "Květná",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "6. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.73261,
+     13.38715
+    ],
+    [
+     49.73252,
+     13.38724
+    ]
+   ],
+   [
+    [
+     49.73252,
+     13.38724
+    ],
+    [
+     49.73223,
+     13.38749
+    ],
+    [
+     49.73206,
+     13.38765
+    ],
+    [
+     49.73172,
+     13.38794
+    ],
+    [
+     49.73166,
+     13.38799
+    ],
+    [
+     49.73161,
+     13.38804
+    ],
+    [
+     49.73087,
+     13.38866
+    ],
+    [
+     49.73083,
+     13.3887
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "c89ea653-ff54-4d9b-a06b-92f4feb4df90",
+  "superdioId": null,
+  "od": "2026-05-06",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kvetna-2",
+  "name": "Květná",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.72765,
+     13.39067
+    ],
+    [
+     49.72753,
+     13.39067
+    ],
+    [
+     49.72695,
+     13.39062
+    ]
+   ],
+   [
+    [
+     49.72765,
+     13.39067
+    ],
+    [
+     49.72778,
+     13.39065
+    ],
+    [
+     49.7281,
+     13.39057
+    ],
+    [
+     49.72828,
+     13.39046
+    ],
+    [
+     49.72854,
+     13.39036
+    ],
+    [
+     49.72878,
+     13.39031
+    ],
+    [
+     49.72881,
+     13.3903
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ],
+   [
+    [
+     49.73223,
+     13.38749
+    ],
+    [
+     49.73206,
+     13.38765
+    ],
+    [
+     49.73172,
+     13.38794
+    ],
+    [
+     49.73166,
+     13.38799
+    ],
+    [
+     49.73161,
+     13.38804
+    ],
+    [
+     49.73087,
+     13.38866
+    ],
+    [
+     49.73083,
+     13.3887
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Květná, ulice Motýlí, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "9a3510d9-c544-45c2-8713-a12f5c7c64c2",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "motyli",
+  "name": "Motýlí",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.73088,
+     13.38741
+    ],
+    [
+     49.73045,
+     13.38761
+    ],
+    [
+     49.73024,
+     13.38776
+    ],
+    [
+     49.73008,
+     13.38788
+    ],
+    [
+     49.72997,
+     13.38805
+    ],
+    [
+     49.72988,
+     13.3884
+    ],
+    [
+     49.72987,
+     13.38937
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72987,
+     13.38961
+    ],
+    [
+     49.72985,
+     13.39138
+    ],
+    [
+     49.72987,
+     13.39149
+    ],
+    [
+     49.73001,
+     13.39191
+    ]
+   ],
+   [
+    [
+     49.73139,
+     13.38666
+    ],
+    [
+     49.73133,
+     13.38664
+    ],
+    [
+     49.73108,
+     13.38658
+    ],
+    [
+     49.73099,
+     13.38653
+    ],
+    [
+     49.73088,
+     13.3865
+    ],
+    [
+     49.7304,
+     13.38644
+    ]
+   ],
+   [
+    [
+     49.73038,
+     13.39288
+    ],
+    [
+     49.73042,
+     13.39297
+    ],
+    [
+     49.73073,
+     13.3938
+    ]
+   ],
+   [
+    [
+     49.73001,
+     13.39191
+    ],
+    [
+     49.73035,
+     13.39279
+    ],
+    [
+     49.73038,
+     13.39288
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Motýlí, ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "8e3bf467-1990-41f4-ab5b-b1ee564c49d1",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kastanova",
+  "name": "Kaštanová",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.72805,
+     13.39383
+    ],
+    [
+     49.72804,
+     13.39375
+    ],
+    [
+     49.72793,
+     13.39227
+    ],
+    [
+     49.72793,
+     13.39215
+    ],
+    [
+     49.72794,
+     13.39203
+    ],
+    [
+     49.72796,
+     13.39194
+    ],
+    [
+     49.72798,
+     13.39185
+    ],
+    [
+     49.72803,
+     13.39171
+    ],
+    [
+     49.72808,
+     13.3916
+    ],
+    [
+     49.72878,
+     13.39052
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ],
+   [
+    [
+     49.72762,
+     13.3918
+    ],
+    [
+     49.72761,
+     13.39191
+    ],
+    [
+     49.72761,
+     13.39196
+    ],
+    [
+     49.7276,
+     13.39217
+    ],
+    [
+     49.72765,
+     13.39293
+    ],
+    [
+     49.72766,
+     13.39301
+    ]
+   ],
+   [
+    [
+     49.72796,
+     13.39194
+    ],
+    [
+     49.72792,
+     13.39193
+    ],
+    [
+     49.72787,
+     13.39193
+    ],
+    [
+     49.72786,
+     13.39193
+    ],
+    [
+     49.72761,
+     13.39196
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Kaštanová, ulice Květná, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "4d3e8964-13f7-4d08-94dd-1ad93a0d8ee0",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kvetna-3",
+  "name": "Květná",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.73261,
+     13.38715
+    ],
+    [
+     49.73252,
+     13.38724
+    ]
+   ],
+   [
+    [
+     49.73252,
+     13.38724
+    ],
+    [
+     49.73223,
+     13.38749
+    ],
+    [
+     49.73206,
+     13.38765
+    ],
+    [
+     49.73172,
+     13.38794
+    ],
+    [
+     49.73166,
+     13.38799
+    ],
+    [
+     49.73161,
+     13.38804
+    ],
+    [
+     49.73087,
+     13.38866
+    ],
+    [
+     49.73083,
+     13.3887
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "cc5cc0e4-dbc3-4b97-b484-81fdadfeba32",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kvetna-4",
+  "name": "Květná",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "28. 5. 2026 – 18. 12. 2026",
+  "ways": [
+   [
+    [
+     49.73261,
+     13.38715
+    ],
+    [
+     49.73252,
+     13.38724
+    ]
+   ],
+   [
+    [
+     49.73252,
+     13.38724
+    ],
+    [
+     49.73223,
+     13.38749
+    ],
+    [
+     49.73206,
+     13.38765
+    ],
+    [
+     49.73172,
+     13.38794
+    ],
+    [
+     49.73166,
+     13.38799
+    ],
+    [
+     49.73161,
+     13.38804
+    ],
+    [
+     49.73087,
+     13.38866
+    ],
+    [
+     49.73083,
+     13.3887
+    ],
+    [
+     49.72987,
+     13.38948
+    ],
+    [
+     49.72894,
+     13.39026
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Květná, ulice Liliová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "1b89863d-5966-429e-bc01-12e2617b675a",
+  "superdioId": null,
+  "od": "2026-05-28",
+  "do": "2026-12-18",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "i-26-3",
+  "name": "I/26",
+  "akce": "Oprava povrchu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 4",
+  "termin": "4. 7. 2026 – 30. 11. 2026",
+  "ways": [
+   [
+    [
+     49.7467,
+     13.4355
+    ]
+   ]
+  ],
+  "point": true,
+  "popis": "V obci Plzeň 4(okres Plzeň-město) ulice: Nákupní,  silnice: místní komunikace, , Od 04.07.2026 00:00, Do 30.11.2026 23:59, uzavírka místních komunikací ve dvou etapách- Rokycanská, Vyhlídková, Nákupní v návaznosti na opravu povrchu silnice I/26 Rokycanská, I ETAPA s platností od 6.6.2026 do 3.7.2026, II. ETAPA s platností od 4.7.2026 do 30.11.2026, uzavřen pravý odbočovací pruh v úseku před silnicí I/26, Vydal: ÚMO Plzeň 04",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "oprava povrchu",
+  "zdroj": "JSDI",
+  "jsdiId": "2d28d10a-af92-47d6-8040-52e891c93c0c",
+  "superdioId": null,
+  "od": "2026-07-04",
+  "do": "2026-11-30",
+  "severity": "medium",
+  "geomTier": 5
+ },
+ {
+  "id": "nade-vsi",
+  "name": "Nade Vsí",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71556,
+     13.42771
+    ],
+    [
+     49.71569,
+     13.428
+    ],
+    [
+     49.71598,
+     13.42864
+    ],
+    [
+     49.71601,
+     13.42875
+    ],
+    [
+     49.71601,
+     13.42888
+    ],
+    [
+     49.71599,
+     13.42898
+    ],
+    [
+     49.71559,
+     13.42943
+    ],
+    [
+     49.71556,
+     13.42946
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Nade Vsí, Plzeň 2-Slovany, Plzeň, , Od 20.07.2026 00:00, Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "f81810ce-ad85-4d9f-9f5c-b68a18432f10",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "ke-kolesovce",
+  "name": "Ke Kolešovce",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71593,
+     13.43021
+    ],
+    [
+     49.71589,
+     13.43013
+    ],
+    [
+     49.71586,
+     13.43007
+    ],
+    [
+     49.71556,
+     13.42946
+    ],
+    [
+     49.71535,
+     13.42904
+    ],
+    [
+     49.71533,
+     13.42899
+    ],
+    [
+     49.71514,
+     13.42855
+    ]
+   ],
+   [
+    [
+     49.71514,
+     13.42855
+    ],
+    [
+     49.71498,
+     13.4282
+    ],
+    [
+     49.71454,
+     13.42727
+    ]
+   ],
+   [
+    [
+     49.71454,
+     13.42727
+    ],
+    [
+     49.71443,
+     13.42707
+    ],
+    [
+     49.7144,
+     13.42703
+    ],
+    [
+     49.71437,
+     13.42701
+    ],
+    [
+     49.71433,
+     13.42699
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Ke Kolešovce, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "a977d467-a678-44ab-a4ea-1edc0bd81307",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "ke-kolesovce-2",
+  "name": "Ke Kolešovce",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71593,
+     13.43021
+    ],
+    [
+     49.71589,
+     13.43013
+    ],
+    [
+     49.71586,
+     13.43007
+    ],
+    [
+     49.71556,
+     13.42946
+    ],
+    [
+     49.71535,
+     13.42904
+    ],
+    [
+     49.71533,
+     13.42899
+    ],
+    [
+     49.71514,
+     13.42855
+    ]
+   ],
+   [
+    [
+     49.71514,
+     13.42855
+    ],
+    [
+     49.71498,
+     13.4282
+    ],
+    [
+     49.71454,
+     13.42727
+    ]
+   ],
+   [
+    [
+     49.71454,
+     13.42727
+    ],
+    [
+     49.71443,
+     13.42707
+    ],
+    [
+     49.7144,
+     13.42703
+    ],
+    [
+     49.71437,
+     13.42701
+    ],
+    [
+     49.71433,
+     13.42699
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Ke Kolešovce, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "6e902b37-89d2-41b8-8a46-67eba6b5f57c",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "pod-kopcem",
+  "name": "Pod Kopcem",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71578,
+     13.43025
+    ],
+    [
+     49.71594,
+     13.43114
+    ],
+    [
+     49.71601,
+     13.4315
+    ],
+    [
+     49.71604,
+     13.43168
+    ],
+    [
+     49.71607,
+     13.43178
+    ],
+    [
+     49.71628,
+     13.43239
+    ],
+    [
+     49.71702,
+     13.43442
+    ],
+    [
+     49.71715,
+     13.43495
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Pod Kopcem, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "c5168ae5-eef3-4507-8a83-f3d1101435bf",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "pod-kopcem-2",
+  "name": "Pod Kopcem",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71578,
+     13.43025
+    ],
+    [
+     49.71594,
+     13.43114
+    ],
+    [
+     49.71601,
+     13.4315
+    ],
+    [
+     49.71604,
+     13.43168
+    ],
+    [
+     49.71607,
+     13.43178
+    ],
+    [
+     49.71628,
+     13.43239
+    ],
+    [
+     49.71702,
+     13.43442
+    ],
+    [
+     49.71715,
+     13.43495
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Pod Kopcem, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "42625511-9342-4e1c-9e46-2dc47f91ce6b",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-hradcanech",
+  "name": "Na Hradčanech",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 13. 9. 2026",
+  "ways": [
+   [
+    [
+     49.7141,
+     13.42773
+    ],
+    [
+     49.71394,
+     13.42818
+    ],
+    [
+     49.7139,
+     13.42826
+    ]
+   ],
+   [
+    [
+     49.71356,
+     13.42941
+    ],
+    [
+     49.71356,
+     13.42957
+    ],
+    [
+     49.71358,
+     13.42978
+    ],
+    [
+     49.71362,
+     13.42997
+    ],
+    [
+     49.71366,
+     13.43017
+    ],
+    [
+     49.71367,
+     13.43025
+    ],
+    [
+     49.71369,
+     13.43034
+    ],
+    [
+     49.71384,
+     13.4312
+    ],
+    [
+     49.71389,
+     13.43153
+    ],
+    [
+     49.71394,
+     13.43172
+    ],
+    [
+     49.71399,
+     13.4319
+    ],
+    [
+     49.71408,
+     13.43215
+    ],
+    [
+     49.71417,
+     13.43236
+    ],
+    [
+     49.71422,
+     13.43246
+    ],
+    [
+     49.71464,
+     13.43334
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71379,
+     13.4285
+    ],
+    [
+     49.71378,
+     13.42854
+    ],
+    [
+     49.71375,
+     13.42862
+    ],
+    [
+     49.71361,
+     13.42906
+    ],
+    [
+     49.71359,
+     13.42916
+    ],
+    [
+     49.71357,
+     13.42927
+    ],
+    [
+     49.71356,
+     13.42941
+    ]
+   ],
+   [
+    [
+     49.7139,
+     13.42826
+    ],
+    [
+     49.71388,
+     13.4283
+    ],
+    [
+     49.71385,
+     13.42838
+    ],
+    [
+     49.71381,
+     13.42844
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice III/18020 (ulice Na Hradčanech), Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, kyvadlový provoz jedním jízdním pruhem, Od 20.07.2026 08:00 Do 13.09.2026 23:59, Bezvýkopová oprava kanalizačních přípojek v rámci reklamace, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "a0c2699f-ee64-4d61-ba07-3ebf1e84696c",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-09-13",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-hradcanech-2",
+  "name": "Na Hradčanech",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71433,
+     13.42699
+    ],
+    [
+     49.71432,
+     13.42707
+    ],
+    [
+     49.7143,
+     13.42716
+    ],
+    [
+     49.71429,
+     13.42721
+    ],
+    [
+     49.71427,
+     13.42728
+    ],
+    [
+     49.71424,
+     13.42737
+    ],
+    [
+     49.7141,
+     13.42773
+    ],
+    [
+     49.71394,
+     13.42818
+    ],
+    [
+     49.7139,
+     13.42826
+    ]
+   ],
+   [
+    [
+     49.71356,
+     13.42941
+    ],
+    [
+     49.71356,
+     13.42957
+    ],
+    [
+     49.71358,
+     13.42978
+    ],
+    [
+     49.71362,
+     13.42997
+    ],
+    [
+     49.71366,
+     13.43017
+    ],
+    [
+     49.71367,
+     13.43025
+    ],
+    [
+     49.71369,
+     13.43034
+    ],
+    [
+     49.71384,
+     13.4312
+    ],
+    [
+     49.71389,
+     13.43153
+    ],
+    [
+     49.71394,
+     13.43172
+    ],
+    [
+     49.71399,
+     13.4319
+    ],
+    [
+     49.71408,
+     13.43215
+    ],
+    [
+     49.71417,
+     13.43236
+    ],
+    [
+     49.71422,
+     13.43246
+    ],
+    [
+     49.71464,
+     13.43334
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71379,
+     13.4285
+    ],
+    [
+     49.71378,
+     13.42854
+    ],
+    [
+     49.71375,
+     13.42862
+    ],
+    [
+     49.71361,
+     13.42906
+    ],
+    [
+     49.71359,
+     13.42916
+    ],
+    [
+     49.71357,
+     13.42927
+    ],
+    [
+     49.71356,
+     13.42941
+    ]
+   ],
+   [
+    [
+     49.7139,
+     13.42826
+    ],
+    [
+     49.71388,
+     13.4283
+    ],
+    [
+     49.71385,
+     13.42838
+    ],
+    [
+     49.71381,
+     13.42844
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Hradčanech, mezi křižovatkami ulic U Včelníku a Čedičová, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "a3d9da41-9a90-4abd-9772-56a7b2ba06fa",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-nivach",
+  "name": "Na Nivách",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71501,
+     13.43106
+    ],
+    [
+     49.71472,
+     13.43043
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71387,
+     13.42851
+    ],
+    [
+     49.7139,
+     13.42858
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hradčanech, Plzeň 2-Slovany, Plzeň, uzavřeno, práce na inženýrských sítích, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, termín bude upřesněn zhotovitelem dle probíhajících prací, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "e5a37ef9-f997-47c7-824b-3af6d7149910",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "na-nivach-2",
+  "name": "Na Nivách",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71501,
+     13.43106
+    ],
+    [
+     49.71472,
+     13.43043
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71387,
+     13.42851
+    ],
+    [
+     49.7139,
+     13.42858
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hačkách, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "38035a17-ad3f-4cbf-8fb8-f42e62fb88a9",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "na-nivach-3",
+  "name": "Na Nivách",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "20. 7. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71501,
+     13.43106
+    ],
+    [
+     49.71472,
+     13.43043
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ],
+   [
+    [
+     49.71381,
+     13.42844
+    ],
+    [
+     49.71387,
+     13.42851
+    ],
+    [
+     49.7139,
+     13.42858
+    ],
+    [
+     49.71427,
+     13.4294
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Nivách, mezi křižovatkami ulic Čedičová a Na Hačkách, Plzeň 2-Slovany, Plzeň, práce na inženýrských sítích, zúžená vozovka na jeden jízdní pruh, Od 20.07.2026 08:00 Do 31.08.2026 23:59, oprava přípojek, Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "práce na silnici",
+  "zdroj": "JSDI",
+  "jsdiId": "847dce9c-eb88-4ef9-ad38-b59f301d5226",
+  "superdioId": null,
+  "od": "2026-07-20",
+  "do": "2026-08-31",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "domazlicka-3",
+  "name": "Domažlická",
+  "akce": "Kyvadlová doprava",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "27. 7. 2026 – 27. 8. 2026",
+  "ways": [
+   [
+    [
+     49.74206,
+     13.34427
+    ],
+    [
+     49.74235,
+     13.34559
+    ],
+    [
+     49.74241,
+     13.34583
+    ]
+   ],
+   [
+    [
+     49.74288,
+     13.34791
+    ],
+    [
+     49.74304,
+     13.34857
+    ]
+   ],
+   [
+    [
+     49.74248,
+     13.34578
+    ],
+    [
+     49.74242,
+     13.34555
+    ],
+    [
+     49.74222,
+     13.34479
+    ],
+    [
+     49.74206,
+     13.34427
+    ]
+   ],
+   [
+    [
+     49.74309,
+     13.34836
+    ],
+    [
+     49.74294,
+     13.34771
+    ]
+   ],
+   [
+    [
+     49.74206,
+     13.34427
+    ],
+    [
+     49.74201,
+     13.34409
+    ],
+    [
+     49.74195,
+     13.34387
+    ],
+    [
+     49.74189,
+     13.3437
+    ],
+    [
+     49.74181,
+     13.34345
+    ],
+    [
+     49.74172,
+     13.34322
+    ],
+    [
+     49.74163,
+     13.34301
+    ],
+    [
+     49.74154,
+     13.34279
+    ]
+   ],
+   [
+    [
+     49.74196,
+     13.34619
+    ],
+    [
+     49.74191,
+     13.34606
+    ],
+    [
+     49.74151,
+     13.34494
+    ],
+    [
+     49.74145,
+     13.34478
+    ],
+    [
+     49.7414,
+     13.34464
+    ],
+    [
+     49.74109,
+     13.34381
+    ]
+   ],
+   [
+    [
+     49.74351,
+     13.35005
+    ],
+    [
+     49.74344,
+     13.34982
+    ],
+    [
+     49.74338,
+     13.34958
+    ],
+    [
+     49.74309,
+     13.34836
+    ]
+   ],
+   [
+    [
+     49.74304,
+     13.34857
+    ],
+    [
+     49.74308,
+     13.34876
+    ]
+   ],
+   [
+    [
+     49.74308,
+     13.34876
+    ],
+    [
+     49.74328,
+     13.34963
+    ],
+    [
+     49.74333,
+     13.34981
+    ],
+    [
+     49.74342,
+     13.35012
+    ]
+   ],
+   [
+    [
+     49.74241,
+     13.34583
+    ],
+    [
+     49.74245,
+     13.34605
+    ],
+    [
+     49.74259,
+     13.34662
+    ],
+    [
+     49.74268,
+     13.34698
+    ],
+    [
+     49.74279,
+     13.34748
+    ],
+    [
+     49.74288,
+     13.34791
+    ]
+   ],
+   [
+    [
+     49.74294,
+     13.34771
+    ],
+    [
+     49.74278,
+     13.34701
+    ],
+    [
+     49.74268,
+     13.34659
+    ],
+    [
+     49.74253,
+     13.34603
+    ],
+    [
+     49.74248,
+     13.34578
+    ]
+   ],
+   [
+    [
+     49.74239,
+     13.34794
+    ],
+    [
+     49.74233,
+     13.3478
+    ],
+    [
+     49.74223,
+     13.34752
+    ],
+    [
+     49.74218,
+     13.34736
+    ],
+    [
+     49.74217,
+     13.34733
+    ],
+    [
+     49.74217,
+     13.3473
+    ],
+    [
+     49.74218,
+     13.34726
+    ],
+    [
+     49.74223,
+     13.34705
+    ],
+    [
+     49.74223,
+     13.34703
+    ],
+    [
+     49.74223,
+     13.34699
+    ],
+    [
+     49.74223,
+     13.34695
+    ],
+    [
+     49.74223,
+     13.34693
+    ]
+   ],
+   [
+    [
+     49.74233,
+     13.34799
+    ],
+    [
+     49.74239,
+     13.34794
+    ],
+    [
+     49.74249,
+     13.34784
+    ],
+    [
+     49.7425,
+     13.34784
+    ],
+    [
+     49.74252,
+     13.34783
+    ],
+    [
+     49.74254,
+     13.34783
+    ],
+    [
+     49.74255,
+     13.34785
+    ],
+    [
+     49.74273,
+     13.34837
+    ]
+   ],
+   [
+    [
+     49.74223,
+     13.34693
+    ],
+    [
+     49.74222,
+     13.34691
+    ],
+    [
+     49.742,
+     13.3463
+    ],
+    [
+     49.74196,
+     13.34619
+    ]
+   ],
+   [
+    [
+     49.74273,
+     13.34837
+    ],
+    [
+     49.74274,
+     13.3484
+    ],
+    [
+     49.74275,
+     13.34844
+    ],
+    [
+     49.74274,
+     13.34849
+    ],
+    [
+     49.74266,
+     13.34877
+    ],
+    [
+     49.74261,
+     13.34892
+    ]
+   ],
+   [
+    [
+     49.74255,
+     13.34866
+    ],
+    [
+     49.74266,
+     13.34877
+    ]
+   ],
+   [
+    [
+     49.74154,
+     13.34279
+    ],
+    [
+     49.74144,
+     13.34259
+    ],
+    [
+     49.74131,
+     13.34233
+    ],
+    [
+     49.7412,
+     13.34214
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/26 (ulice Domažlická), Plzeň 3, provoz převeden do protisměru, stavební práce, Od 27.07.2026 00:00 Do 27.08.2026 23:59, za účelem provádění stavebních prací v rámci akce „I/26 Plzeň, ul. Domažlická – oprava povrchu“, úplná uzavírka jízdního pásu ve směru do centra, provoz převeden do protisměrného jízdního pásu, kde bude veden v režimu 1+1, Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "kyvadlová doprava",
+  "zdroj": "JSDI",
+  "jsdiId": "176d7998-aae3-4448-90c6-4e78c07e0f23",
+  "superdioId": null,
+  "od": "2026-07-27",
+  "do": "2026-08-27",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "rokycanska-5",
+  "name": "Rokycanská",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 4",
+  "termin": "17. 8. 2026 – 11. 9. 2026",
+  "ways": [
+   [
+    [
+     49.74685,
+     13.43077
+    ],
+    [
+     49.74685,
+     13.43051
+    ]
+   ],
+   [
+    [
+     49.74713,
+     13.42641
+    ],
+    [
+     49.74718,
+     13.42559
+    ],
+    [
+     49.7472,
+     13.42539
+    ]
+   ],
+   [
+    [
+     49.74731,
+     13.42134
+    ],
+    [
+     49.74722,
+     13.42258
+    ]
+   ],
+   [
+    [
+     49.7469,
+     13.42966
+    ],
+    [
+     49.74693,
+     13.4293
+    ],
+    [
+     49.74696,
+     13.42876
+    ]
+   ],
+   [
+    [
+     49.74692,
+     13.42689
+    ],
+    [
+     49.74682,
+     13.42809
+    ]
+   ],
+   [
+    [
+     49.747,
+     13.42816
+    ],
+    [
+     49.74713,
+     13.42641
+    ]
+   ],
+   [
+    [
+     49.74739,
+     13.4226
+    ],
+    [
+     49.74751,
+     13.42089
+    ]
+   ],
+   [
+    [
+     49.74727,
+     13.42437
+    ],
+    [
+     49.74728,
+     13.42418
+    ],
+    [
+     49.74738,
+     13.42283
+    ]
+   ],
+   [
+    [
+     49.74679,
+     13.42866
+    ],
+    [
+     49.74677,
+     13.42915
+    ],
+    [
+     49.74675,
+     13.42964
+    ],
+    [
+     49.74674,
+     13.43063
+    ]
+   ],
+   [
+    [
+     49.74703,
+     13.42537
+    ],
+    [
+     49.74702,
+     13.42557
+    ],
+    [
+     49.74696,
+     13.42642
+    ],
+    [
+     49.74692,
+     13.42689
+    ]
+   ],
+   [
+    [
+     49.74711,
+     13.42422
+    ],
+    [
+     49.74703,
+     13.42537
+    ]
+   ],
+   [
+    [
+     49.74722,
+     13.42258
+    ],
+    [
+     49.74721,
+     13.42281
+    ],
+    [
+     49.74711,
+     13.42422
+    ]
+   ],
+   [
+    [
+     49.7472,
+     13.42539
+    ],
+    [
+     49.74727,
+     13.42437
+    ]
+   ],
+   [
+    [
+     49.74696,
+     13.42876
+    ],
+    [
+     49.74697,
+     13.42869
+    ],
+    [
+     49.74698,
+     13.42857
+    ],
+    [
+     49.74698,
+     13.42845
+    ]
+   ],
+   [
+    [
+     49.74685,
+     13.43051
+    ],
+    [
+     49.74687,
+     13.43021
+    ],
+    [
+     49.74689,
+     13.4299
+    ],
+    [
+     49.7469,
+     13.42966
+    ]
+   ],
+   [
+    [
+     49.74682,
+     13.42809
+    ],
+    [
+     49.74682,
+     13.42813
+    ],
+    [
+     49.7468,
+     13.42843
+    ]
+   ],
+   [
+    [
+     49.7468,
+     13.42843
+    ],
+    [
+     49.74679,
+     13.42866
+    ]
+   ],
+   [
+    [
+     49.74738,
+     13.42283
+    ],
+    [
+     49.74739,
+     13.4226
+    ]
+   ],
+   [
+    [
+     49.74698,
+     13.42845
+    ],
+    [
+     49.747,
+     13.42816
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, odbočovací pruh uzavřen, Od 17.08.2026 00:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "c613cdfa-ae5c-4911-929f-7a1e6ba8f704",
+  "superdioId": null,
+  "od": "2026-08-17",
+  "do": "2026-09-11",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "pod-chalupami",
+  "name": "Pod Chalupami",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "24. 8. 2026 – 27. 8. 2026",
+  "ways": [
+   [
+    [
+     49.71393,
+     13.4247
+    ],
+    [
+     49.71386,
+     13.42482
+    ],
+    [
+     49.7138,
+     13.4249
+    ],
+    [
+     49.71306,
+     13.42592
+    ],
+    [
+     49.71286,
+     13.42621
+    ],
+    [
+     49.71269,
+     13.42654
+    ],
+    [
+     49.71261,
+     13.42676
+    ],
+    [
+     49.71254,
+     13.42704
+    ],
+    [
+     49.71247,
+     13.4274
+    ],
+    [
+     49.71243,
+     13.4276
+    ],
+    [
+     49.71241,
+     13.42782
+    ],
+    [
+     49.71242,
+     13.42801
+    ],
+    [
+     49.71244,
+     13.4282
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Pod Chalupami, ulice U Mlýna, Plzeň 2-Slovany, uzavřeno, práce na inženýrských sítích, Od 24.08.2026 7:00 Do 27.08.2026 23:59, práce na inženýrských sítí - oprava kanalizace, Vydal: ÚMO Plzeň 02 Slovany",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "c9d89eb2-649e-4455-87af-79f505ab1216",
+  "superdioId": null,
+  "od": "2026-08-24",
+  "do": "2026-08-27",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "uzavirka-2",
+  "name": "Uzavírka",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "24. 8. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.74593,
+     13.34925
+    ],
+    [
+     49.74608,
+     13.34946
+    ]
+   ],
+   [
+    [
+     49.74566,
+     13.34861
+    ],
+    [
+     49.74573,
+     13.3489
+    ],
+    [
+     49.74578,
+     13.34901
+    ],
+    [
+     49.74593,
+     13.34925
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "místní komunikace, Plzeň 3, Plzeň, uzavřeno, stavební práce, Od 24.08.2026 14:18 Do 31.08.2026 23:59",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "5d045759-e954-4e6a-8b17-41ee240e5659",
+  "superdioId": null,
+  "od": "2026-08-24",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 2
+ },
+ {
+  "id": "resslova",
+  "name": "Resslova",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "24. 8. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.7411,
+     13.37721
+    ],
+    [
+     49.74121,
+     13.37724
+    ],
+    [
+     49.74189,
+     13.37737
+    ]
+   ],
+   [
+    [
+     49.74189,
+     13.37737
+    ],
+    [
+     49.74323,
+     13.37768
+    ]
+   ],
+   [
+    [
+     49.74323,
+     13.37768
+    ],
+    [
+     49.74325,
+     13.37768
+    ],
+    [
+     49.74327,
+     13.37768
+    ],
+    [
+     49.74337,
+     13.37771
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Resslova, Plzeň 3, Plzeň, uzavřeno, Od 24.08.2026 14:22 Do 31.08.2026 15:00",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "2e18ec4c-d754-426d-a080-0fe909cbe9fa",
+  "superdioId": null,
+  "od": "2026-08-24",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "kopernikova",
+  "name": "Koperníkova",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "20. 8. 2026 – 30. 8. 2026",
   "ways": [
    [
     [
@@ -9333,32 +8894,6 @@
    ],
    [
     [
-     49.74077,
-     13.36699
-    ],
-    [
-     49.74088,
-     13.36701
-    ],
-    [
-     49.74119,
-     13.36706
-    ],
-    [
-     49.74133,
-     13.36708
-    ],
-    [
-     49.74138,
-     13.36709
-    ]
-   ],
-   [
-    [
-     49.74138,
-     13.36709
-    ],
-    [
      49.74143,
      13.3671
     ],
@@ -9391,14 +8926,453 @@
    ]
   ],
   "point": false,
-  "popis": "ulice Koperníkova, mezi křižovatkami ulic Plachého a Tylova, Plzeň 3, Plzeň, práce na silnici, Od 20.08.2026 08:00 Do 04.09.2026 23:59,  částečná uzavírka vozovky, v úseku od objektu Koperníkova č. 768/13 k objektu Koperníkova \nč. 496/9, vpravo ve směru k ulici Tylova - provoz v úseku od křižovatky s ulicí Plachého ke křižovatce s ulicí Tylova bude zjednosměrněn \nve směru k ulici Tylova, vozidlům MHD bude průjezd umožněn v obou směrech  - práce budou prováděny mimo dopravní špičku, po skončení prací bude přechodné \ndopravní značení vždy odstraněno, ",
+  "popis": "ulice Koperníkova, Plzeň 3, uzavřeno, oprava povrchu vozovky, Od 20.08.2026 00:00 Do 30.08.2026 23:59, provoz v úseku od křižovatky s ulicí Plachého ke křižovatce s ulicí Tylova bude zjednosměrněn ve směru k ulici Tylova, vozidlům MHD bude průjezd umožněn v obou směrech, Vydal: ÚMO Plzeň 03",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "0658d58b-fe03-491c-8539-9e2e617ab8ae",
+  "superdioId": null,
+  "od": "2026-08-20",
+  "do": "2026-08-30",
+  "severity": "major",
+  "geomTier": 4
+ },
+ {
+  "id": "belohorska",
+  "name": "Bělohorská",
+  "akce": "Uzavřená silnice",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "3. 8. 2026 – 31. 8. 2026",
+  "ways": [
+   [
+    [
+     49.7536,
+     13.38169
+    ],
+    [
+     49.75305,
+     13.3819
+    ],
+    [
+     49.75292,
+     13.38194
+    ],
+    [
+     49.7529,
+     13.38195
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Bělohorská, mezi křižovatkami ulic Luční a Plánská, Plzeň 1, Plzeň, , Od 03.08.2026 00:00, Do 31.08.2026 23:59, místní komunikace III. třídy č. C 0810 Bělohorská, v Plzni \n- úplná uzavírka vozovky, v úseku před objektem Bělohorská č. 418/4 \n- úplná uzavírka chodníku, který je součástí této místní komunikace, v úseku od ulice Luční až k objektu    Bělohorská č. 414/6 \n- po dobu výkopových prací budou odstraněny dopravní sloupky před objektem Luční č.67/12 \n, Vydal: ÚMO Plzeň 01",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "uzavřená silnice",
+  "zdroj": "JSDI",
+  "jsdiId": "fe7f13e7-f24b-4bbb-a1f9-982281fd4ddd",
+  "superdioId": null,
+  "od": "2026-08-03",
+  "do": "2026-08-31",
+  "severity": "major",
+  "geomTier": 3
+ },
+ {
+  "id": "dobranska-2",
+  "name": "Dobřanská",
+  "akce": "Stavební práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 3",
+  "termin": "3. 8. 2026 – 31. 12. 2026",
+  "ways": [
+   [
+    [
+     49.72325,
+     13.35589
+    ],
+    [
+     49.72326,
+     13.3559
+    ],
+    [
+     49.72333,
+     13.35606
+    ],
+    [
+     49.72348,
+     13.35632
+    ],
+    [
+     49.72365,
+     13.35661
+    ]
+   ],
+   [
+    [
+     49.72232,
+     13.35366
+    ],
+    [
+     49.72237,
+     13.3537
+    ],
+    [
+     49.72243,
+     13.35372
+    ],
+    [
+     49.72248,
+     13.35374
+    ],
+    [
+     49.72261,
+     13.35377
+    ],
+    [
+     49.72279,
+     13.3538
+    ],
+    [
+     49.72295,
+     13.35382
+    ]
+   ],
+   [
+    [
+     49.72232,
+     13.35366
+    ],
+    [
+     49.72227,
+     13.35361
+    ],
+    [
+     49.72224,
+     13.35354
+    ],
+    [
+     49.7222,
+     13.35347
+    ],
+    [
+     49.72218,
+     13.35339
+    ],
+    [
+     49.72216,
+     13.35331
+    ],
+    [
+     49.72216,
+     13.35322
+    ],
+    [
+     49.72216,
+     13.35264
+    ],
+    [
+     49.72215,
+     13.35173
+    ],
+    [
+     49.722,
+     13.35029
+    ],
+    [
+     49.72194,
+     13.35007
+    ],
+    [
+     49.7219,
+     13.34988
+    ]
+   ],
+   [
+    [
+     49.72405,
+     13.35731
+    ],
+    [
+     49.72424,
+     13.35762
+    ]
+   ],
+   [
+    [
+     49.72365,
+     13.35661
+    ],
+    [
+     49.72397,
+     13.35718
+    ]
+   ],
+   [
+    [
+     49.72301,
+     13.3554
+    ],
+    [
+     49.72282,
+     13.35513
+    ]
+   ],
+   [
+    [
+     49.72269,
+     13.3567
+    ],
+    [
+     49.72277,
+     13.35667
+    ],
+    [
+     49.72287,
+     13.35663
+    ],
+    [
+     49.72292,
+     13.3566
+    ],
+    [
+     49.72296,
+     13.35655
+    ],
+    [
+     49.72301,
+     13.35644
+    ],
+    [
+     49.72306,
+     13.35629
+    ],
+    [
+     49.72312,
+     13.35613
+    ],
+    [
+     49.72314,
+     13.35604
+    ],
+    [
+     49.72314,
+     13.35599
+    ],
+    [
+     49.72313,
+     13.35593
+    ],
+    [
+     49.72306,
+     13.35578
+    ],
+    [
+     49.72291,
+     13.35544
+    ],
+    [
+     49.72282,
+     13.35513
+    ],
+    [
+     49.72273,
+     13.35487
+    ],
+    [
+     49.72264,
+     13.35464
+    ],
+    [
+     49.72235,
+     13.3539
+    ],
+    [
+     49.72232,
+     13.35366
+    ]
+   ],
+   [
+    [
+     49.72315,
+     13.35563
+    ],
+    [
+     49.72325,
+     13.35589
+    ]
+   ],
+   [
+    [
+     49.72295,
+     13.35382
+    ],
+    [
+     49.72295,
+     13.35439
+    ],
+    [
+     49.72296,
+     13.35459
+    ],
+    [
+     49.72297,
+     13.35477
+    ]
+   ],
+   [
+    [
+     49.72297,
+     13.35477
+    ],
+    [
+     49.72298,
+     13.35489
+    ],
+    [
+     49.723,
+     13.35504
+    ],
+    [
+     49.72304,
+     13.35523
+    ],
+    [
+     49.72308,
+     13.35539
+    ],
+    [
+     49.72315,
+     13.35563
+    ]
+   ],
+   [
+    [
+     49.724,
+     13.35743
+    ],
+    [
+     49.72401,
+     13.3574
+    ],
+    [
+     49.72402,
+     13.35738
+    ],
+    [
+     49.72405,
+     13.35731
+    ]
+   ],
+   [
+    [
+     49.72401,
+     13.3574
+    ],
+    [
+     49.72451,
+     13.3583
+    ]
+   ],
+   [
+    [
+     49.72397,
+     13.35718
+    ],
+    [
+     49.72405,
+     13.35731
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "silnice III/18043 (ulice Dobřanská), Plzeň 3, Plzeň, stavební práce, zúžené jízdní pruhy, Od 03.08.2026 7:00 Do 31.12.2026 23:59, \"Stavební úpravy křižovatky Dobřanská x Univerzitní\", Vydal: Magistrát města Plzně",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "stavební práce",
+  "zdroj": "JSDI",
+  "jsdiId": "9ff785c7-ff83-4120-a329-51b3c3f99c14",
+  "superdioId": null,
+  "od": "2026-08-03",
+  "do": "2026-12-31",
+  "severity": "minor",
+  "geomTier": 4
+ },
+ {
+  "id": "unesovska",
+  "name": "Úněšovská",
+  "akce": "Práce na silnici",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "3. 8. 2026 – 30. 8. 2026",
+  "ways": [
+   [
+    [
+     49.77668,
+     13.35166
+    ],
+    [
+     49.77677,
+     13.35199
+    ],
+    [
+     49.777,
+     13.35292
+    ],
+    [
+     49.77717,
+     13.35391
+    ],
+    [
+     49.77724,
+     13.35435
+    ],
+    [
+     49.7773,
+     13.35466
+    ]
+   ],
+   [
+    [
+     49.77623,
+     13.34959
+    ],
+    [
+     49.77633,
+     13.35006
+    ],
+    [
+     49.77646,
+     13.35065
+    ],
+    [
+     49.77668,
+     13.35166
+    ]
+   ],
+   [
+    [
+     49.7761,
+     13.34903
+    ],
+    [
+     49.77623,
+     13.34959
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Úněšovská, Plzeň 1, práce na inženýrských sítích, kyvadlový provoz jedním jízdním pruhem, Od 03.08.2026 08:00 Do 30.08.2026 23:59,  umožněn průjezd vozidel MHD a IZS; provoz řízen kyvadlově světelným signalizačním zařízením.\n, Vydal: ÚMO Plzeň 01",
   "typ": "Uzavírka a omezení",
   "subtyp": "práce na silnici",
   "zdroj": "JSDI",
-  "jsdiId": "4411a601-2a3d-464c-a638-a20157cfa49f",
+  "jsdiId": "44010e41-7a6b-4132-aea6-2d5beade666e",
   "superdioId": null,
-  "od": "2026-08-20",
-  "do": "2026-09-04",
+  "od": "2026-08-03",
+  "do": "2026-08-30",
   "severity": "medium",
   "geomTier": 4
  },
@@ -9836,6 +9810,86 @@
   "do": "2026-08-26",
   "severity": "medium",
   "geomTier": 4
+ },
+ {
+  "id": "na-pricce-ulice-na-spojce",
+  "name": "Na Příčce - ulice Na Spojce",
+  "akce": "Oprava povrchu",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 2",
+  "termin": "26. 8. 2026 – 26. 8. 2026",
+  "ways": [
+   [
+    [
+     49.73463,
+     13.41353
+    ],
+    [
+     49.73347,
+     13.41295
+    ],
+    [
+     49.73341,
+     13.41293
+    ]
+   ],
+   [
+    [
+     49.7345,
+     13.41463
+    ],
+    [
+     49.73387,
+     13.41429
+    ],
+    [
+     49.73316,
+     13.41391
+    ]
+   ]
+  ],
+  "point": false,
+  "popis": "ulice Na Příčce - ulice Na Spojce, Plzeň 2-Slovany, Plzeň, Platnost od 26.8.2026 07:30 do 26.8.2026 13:30, vysprávky výtl.asf.sm.za hork, Vydal: SÚS Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "oprava povrchu",
+  "zdroj": "JSDI",
+  "jsdiId": "ea6f425f-dec5-42fe-86c8-238111f371d2",
+  "superdioId": null,
+  "od": "2026-08-26",
+  "do": "2026-08-26",
+  "severity": "medium",
+  "geomTier": 4
+ },
+ {
+  "id": "iii-1805",
+  "name": "III/1805",
+  "akce": "Údržbové práce",
+  "state": "Probíhá",
+  "status": "now",
+  "color": "#c0392b",
+  "oblast": "Plzeň 1",
+  "termin": "26. 8. 2026 – 26. 8. 2026",
+  "ways": [
+   [
+    [
+     49.79226,
+     13.36235
+    ]
+   ]
+  ],
+  "point": true,
+  "popis": "silnice III/1805, Plzeň 1, v katastru obce Plzeň, Platnost od 26.8.2026 07:17 do 26.8.2026 11:30, Krajnice nezp.-opravy, zřízení, Vydal: SÚS Plzeňského kraje",
+  "typ": "Uzavírka a omezení",
+  "subtyp": "údržbové práce",
+  "zdroj": "JSDI",
+  "jsdiId": "e197d686-addd-42d1-bf84-bd3b7cd53857",
+  "superdioId": null,
+  "od": "2026-08-26",
+  "do": "2026-08-26",
+  "severity": "minor",
+  "geomTier": 5
  },
  {
   "id": "u-darebaka",
