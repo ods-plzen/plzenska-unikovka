@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-08-25T05:30:06+00:00",
+ "snapshot": "2026-08-27T16:05:48+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -40,18 +40,19 @@
    "matchedClosure": null
   },
   {
-   "id": "prelozeni-zastavek-linky-12-nadrazi-skvrnany-u-drahy-a-skoda-iii-brana-od-27-7-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4291/prelozeni-zastavek-linky-12-nadrazi-skvrnany-u-drahy-a-skoda-iii-brana-od-27-7-2026/",
-   "title": "Přeložení zastávek linky 12 \"Nádraží Skvrňany; U Dráhy a Škoda III. brána\" od 27. 7. 2026",
+   "id": "prelozeni-zastavek-linky-12-nadrazi-skvrnany-u-drahy-a-skoda-iii-brana-od-27-7-2026-do-27-8-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4291/prelozeni-zastavek-linky-12-nadrazi-skvrnany-u-drahy-a-skoda-iii-brana-od-27-7-2026-do-27-8-2026/",
+   "title": "Přeložení zastávek linky 12 \"Nádraží Skvrňany; U Dráhy a Škoda III. brána\" od 27. 7. 2026 do 27. 8. 2026",
    "lines": [
     "12",
     "27",
     "7",
     "202",
-    "6"
+    "6",
+    "8"
    ],
    "startDate": "2026-07-27",
-   "endDate": null,
+   "endDate": "2026-08-27",
    "matchedClosure": null
   },
   {
@@ -66,15 +67,15 @@
    "matchedClosure": null
   },
   {
-   "id": "prelozeni-zastavek-linek-22-a-51-v-koterove-od-21-7-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4288/prelozeni-zastavek-linek-22-a-51-v-koterove-od-21-7-2026/",
-   "title": "Přeložení zastávek linek 22 a 51 v Koterově od 21. 7. 2026",
+   "id": "prelozeni-zastavek-linek-22-a-51-v-koterove-od-21-7-2026-do-28-8-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4288/prelozeni-zastavek-linek-22-a-51-v-koterove-od-21-7-2026-do-28-8-2026/",
+   "title": "Přeložení zastávek linek 22 a 51 v Koterově od 21. 7. 2026 do 28. 8. 2026",
    "lines": [
     "22",
     "51"
    ],
    "startDate": "2026-07-21",
-   "endDate": null,
+   "endDate": "2026-08-28",
    "matchedClosure": null
   },
   {
