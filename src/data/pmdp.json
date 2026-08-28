@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-08-27T16:05:48+00:00",
+ "snapshot": "2026-08-28T17:09:33+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -40,19 +40,18 @@
    "matchedClosure": null
   },
   {
-   "id": "prelozeni-zastavek-linky-12-nadrazi-skvrnany-u-drahy-a-skoda-iii-brana-od-27-7-2026-do-27-8-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4291/prelozeni-zastavek-linky-12-nadrazi-skvrnany-u-drahy-a-skoda-iii-brana-od-27-7-2026-do-27-8-2026/",
-   "title": "Přeložení zastávek linky 12 \"Nádraží Skvrňany; U Dráhy a Škoda III. brána\" od 27. 7. 2026 do 27. 8. 2026",
+   "id": "prelozeni-zastavky-tylova-smer-bory-pro-linky-15-16-17-18-n7-od-1-9-2026",
+   "url": "https://www.pmdp.cz/systransport/63/6/4302/prelozeni-zastavky-tylova-smer-bory-pro-linky-15-16-17-18-n7-od-1-9-2026/",
+   "title": "Přeložení zastávky \"Tylova\" (směr Bory) pro linky 15, 16, 17, 18, N7 od 1. 9. 2026",
    "lines": [
-    "12",
-    "27",
-    "7",
-    "202",
-    "6",
-    "8"
+    "15",
+    "16",
+    "17",
+    "18",
+    "N7"
    ],
-   "startDate": "2026-07-27",
-   "endDate": "2026-08-27",
+   "startDate": "2026-09-01",
+   "endDate": null,
    "matchedClosure": null
   },
   {
