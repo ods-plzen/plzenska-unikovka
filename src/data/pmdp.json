@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-08-28T17:09:33+00:00",
+ "snapshot": "2026-08-31T11:21:36+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -66,18 +66,6 @@
    "matchedClosure": null
   },
   {
-   "id": "prelozeni-zastavek-linek-22-a-51-v-koterove-od-21-7-2026-do-28-8-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4288/prelozeni-zastavek-linek-22-a-51-v-koterove-od-21-7-2026-do-28-8-2026/",
-   "title": "Přeložení zastávek linek 22 a 51 v Koterově od 21. 7. 2026 do 28. 8. 2026",
-   "lines": [
-    "22",
-    "51"
-   ],
-   "startDate": "2026-07-21",
-   "endDate": "2026-08-28",
-   "matchedClosure": null
-  },
-  {
    "id": "zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026",
    "url": "https://www.pmdp.cz/systransport/63/6/4279/zahajeni-rekonstrukce-masarykovy-ulice-odklon-linek-29-30-n3-n6-od-29-6-2026/",
    "title": "Zahájení rekonstrukce Masarykovy ulice, odklon linek 29, 30, N3, N6 od 29. 6. 2026",
@@ -129,21 +117,6 @@
    ],
    "startDate": "2026-06-29",
    "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "provoz-historicke-linky-h-od-27-6-2026-do-30-8-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4290/provoz-historicke-linky-h-od-27-6-2026-do-30-8-2026/",
-   "title": "Provoz historické linky H od 27. 6. 2026 do 30. 8. 2026",
-   "lines": [
-    "27",
-    "6",
-    "202",
-    "30",
-    "8"
-   ],
-   "startDate": "2026-06-27",
-   "endDate": "2026-08-30",
    "matchedClosure": null
   },
   {
