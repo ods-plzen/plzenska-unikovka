@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-08-31T11:21:36+00:00",
+ "snapshot": "2026-09-02T09:18:11+00:00",
  "source": "https://www.pmdp.cz/cz/informace-o-preprave/zmeny-v-doprave/",
  "entries": [
   {
@@ -103,19 +103,6 @@
     "76"
    ],
    "startDate": "2026-06-28",
-   "endDate": null,
-   "matchedClosure": null
-  },
-  {
-   "id": "zahajeni-prazdninoveho-provozu-od-29-6-2026",
-   "url": "https://www.pmdp.cz/systransport/63/6/4276/zahajeni-prazdninoveho-provozu-od-29-6-2026/",
-   "title": "Zahájení prázdninového provozu od 29. 6. 2026",
-   "lines": [
-    "29",
-    "6",
-    "202"
-   ],
-   "startDate": "2026-06-29",
    "endDate": null,
    "matchedClosure": null
   },
