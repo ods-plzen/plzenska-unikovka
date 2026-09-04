@@ -1,6 +1,378 @@
 {
- "updated": "2026-09-03T09:27:46+00:00",
+ "updated": "2026-09-04T09:20:12+00:00",
  "days": [
+  {
+   "date": "2026-09-04",
+   "added": [
+    {
+     "id": "chebska",
+     "name": "Chebská",
+     "oblast": "Plzeň 5",
+     "termin": "4. 9. 2026 – 4. 9. 2026"
+    }
+   ],
+   "removed": [],
+   "changed": [
+    {
+     "id": "kvetna",
+     "name": "Květná",
+     "oblast": "Plzeň 2",
+     "termin": "28. 5. 2026 – 18. 12. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "6. 5. 2026 – 18. 12. 2026",
+       "na": "28. 5. 2026 – 18. 12. 2026"
+      },
+      "od": {
+       "z": "2026-05-06",
+       "na": "2026-05-28"
+      },
+      "popis": {
+       "z": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Květná, ulice Motýlí, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "kvetna-2",
+     "name": "Květná",
+     "oblast": "Plzeň 2",
+     "termin": "28. 5. 2026 – 18. 12. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "ulice Květná, ulice Motýlí, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "kvetna-3",
+     "name": "Květná",
+     "oblast": "Plzeň 2",
+     "termin": "28. 5. 2026 – 18. 12. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "ulice Květná, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 28.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Květná, ulice Liliová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      }
+     }
+    },
+    {
+     "id": "i-26",
+     "name": "I/26",
+     "oblast": "Plzeň 4",
+     "termin": "4. 7. 2026 – 30. 11. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "6. 6. 2026 – 30. 11. 2026",
+       "na": "4. 7. 2026 – 30. 11. 2026"
+      },
+      "od": {
+       "z": "2026-06-06",
+       "na": "2026-07-04"
+      },
+      "popis": {
+       "z": "silnice I/26, Plzeň 4, v katastru obce Plzeň, výjezd z dálnice uzavřen, Od 06.06.2026 03:00 Do 30.11.2026 23:59",
+       "na": "V obci Plzeň 4(okres Plzeň-město) ulice: Nákupní,  silnice: místní komunikace, , Od 04.07.2026 00:00, Do 30.11.2026 23:59, uzavírka místních komunikací ve dvou etapách- Rokycanská, Vyhlídková, Nákupní v návaznosti na opravu povrchu silnice I/26 Rokycanská, I ETAPA s platností od 6.6.2026 do 3.7.2026, II. ETAPA s platností od 4.7.2026 do 30.11.2026, uzavřen pravý odbočovací pruh v úseku před silnicí I/26, Vydal: ÚMO Plzeň 04"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "rokycanska",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "17. 8. 2026 – 11. 9. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "2. 9. 2026 – 12. 12. 2026",
+       "na": "17. 8. 2026 – 11. 9. 2026"
+      },
+      "od": {
+       "z": "2026-09-02",
+       "na": "2026-08-17"
+      },
+      "do": {
+       "z": "2026-12-12",
+       "na": "2026-09-11"
+      },
+      "popis": {
+       "z": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 02.09.2026 00:00 Do 12.12.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v obou směrech jízdy za účelem provádění stavebních prací a v rámci akce „Plzeň – Lávka Rokycanská“, uzavřen levý jízdní pruh, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Rokycanská), Plzeň 4, odbočovací pruh uzavřen, Od 17.08.2026 07:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "kvetna-4",
+     "name": "Květná",
+     "oblast": "Plzeň 2",
+     "termin": "6. 5. 2026 – 18. 12. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "28. 5. 2026 – 18. 12. 2026",
+       "na": "6. 5. 2026 – 18. 12. 2026"
+      },
+      "od": {
+       "z": "2026-05-28",
+       "na": "2026-05-06"
+      },
+      "popis": {
+       "z": "ulice Květná, ulice Liliová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 28.05.2026 07:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Květná, mezi křižovatkami ulic Liliová a Jetelová, Plzeň 2-Slovany, Plzeň, uzavřeno, stavební práce, Od 06.05.2026 00:00 Do 18.12.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      }
+     }
+    },
+    {
+     "id": "brojova",
+     "name": "Brojova",
+     "oblast": "Plzeň 2",
+     "termin": "14. 7. 2026 – 31. 10. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "13. 7. 2026 – 31. 10. 2026",
+       "na": "14. 7. 2026 – 31. 10. 2026"
+      },
+      "od": {
+       "z": "2026-07-13",
+       "na": "2026-07-14"
+      },
+      "popis": {
+       "z": "ulice Brojova, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 13.07.2026 00:02 Do 31.10.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Brojova, Plzeň 2-Slovany, stavební práce, Od 14.07.2026 07:00 Do 31.10.2026 23:59, práce převážně ve vnitrobloku, v případě potřeby, úplná uzavírka místní komunikace, Vydal: ÚMO Plzeň 02 Slovany"
+      }
+     }
+    },
+    {
+     "id": "rokycanska-2",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "17. 7. 2026 – 30. 11. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "2. 9. 2026 – 12. 12. 2026",
+       "na": "17. 7. 2026 – 30. 11. 2026"
+      },
+      "od": {
+       "z": "2026-09-02",
+       "na": "2026-07-17"
+      },
+      "do": {
+       "z": "2026-12-12",
+       "na": "2026-11-30"
+      },
+      "popis": {
+       "z": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 02.09.2026 00:00 Do 12.12.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v obou směrech jízdy za účelem provádění stavebních prací a v rámci akce „Plzeň – Lávka Rokycanská“, uzavřen levý jízdní pruh, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň - Kyšice, okr. Plzeň-město, provoz převeden do protisměru, stavební práce, Od 17.07.2026 07:00 Do 30.11.2026 23:59, úplná uzavírka jízdního pásu silnice I/26 směr Plzeň - Praha, ul. Rokycanská v Plzni, za účelem provádění stavebních prací v rámci akce „I/26.2 Kyšice – Plzeň, Hřbitovní“; provoz ve směru na Prahu je veden v protisměru, provoz 1+1, Objížďka - směr z centra Plzně k OC Rokycanská: místní komunikace, Objížďka - směr z OC Rokycanská na Prahu: přes: silnice III/18016 (ulice Vesnická), silnice III/18017a (ulice Náves) (Kyšice), silnice II/180 (ulice Letkovská), Objížďka - pro vozidla do 3,5 t z Červeného Hrádku k OC Rokycanská: silnice III/18019a (ulice K Fořtovně) - místní komunikace, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "rokycanska-3",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "17. 8. 2026 – 11. 9. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "17. 7. 2026 – 30. 11. 2026",
+       "na": "17. 8. 2026 – 11. 9. 2026"
+      },
+      "od": {
+       "z": "2026-07-17",
+       "na": "2026-08-17"
+      },
+      "do": {
+       "z": "2026-11-30",
+       "na": "2026-09-11"
+      },
+      "popis": {
+       "z": "silnice I/26 (ulice Rokycanská), Plzeň 4, Plzeň - Kyšice, okr. Plzeň-město, provoz převeden do protisměru, stavební práce, Od 17.07.2026 07:00 Do 30.11.2026 23:59, úplná uzavírka jízdního pásu silnice I/26 směr Plzeň - Praha, ul. Rokycanská v Plzni, za účelem provádění stavebních prací v rámci akce „I/26.2 Kyšice – Plzeň, Hřbitovní“; provoz ve směru na Prahu je veden v protisměru, provoz 1+1, Objížďka - směr z centra Plzně k OC Rokycanská: místní komunikace, Objížďka - směr z OC Rokycanská na Prahu: přes: silnice III/18016 (ulice Vesnická), silnice III/18017a (ulice Náves) (Kyšice), silnice II/180 (ulice Letkovská), Objížďka - pro vozidla do 3,5 t z Červeného Hrádku k OC Rokycanská: silnice III/18019a (ulice K Fořtovně) - místní komunikace, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, odbočovací pruh uzavřen, Od 17.08.2026 00:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "brojova-2",
+     "name": "Brojova",
+     "oblast": "Plzeň 2",
+     "termin": "13. 7. 2026 – 31. 10. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "14. 7. 2026 – 31. 10. 2026",
+       "na": "13. 7. 2026 – 31. 10. 2026"
+      },
+      "od": {
+       "z": "2026-07-14",
+       "na": "2026-07-13"
+      },
+      "popis": {
+       "z": "ulice Brojova, Plzeň 2-Slovany, stavební práce, Od 14.07.2026 07:00 Do 31.10.2026 23:59, práce převážně ve vnitrobloku, v případě potřeby, úplná uzavírka místní komunikace, Vydal: ÚMO Plzeň 02 Slovany",
+       "na": "ulice Brojova, Plzeň 2-Slovany, uzavřeno, stavební práce, Od 13.07.2026 00:02 Do 31.10.2026 23:59, Vydal: ÚMO Plzeň 02 Slovany"
+      }
+     }
+    },
+    {
+     "id": "i-26-2",
+     "name": "I/26",
+     "oblast": "Plzeň 4",
+     "termin": "6. 6. 2026 – 30. 11. 2026",
+     "zmeny": {
+      "popis": {
+       "z": "silnice I/26, Plzeň 4, v katastru obce Plzeň, vjezd na dálnici uzavřen, Od 06.06.2026 03:00 Do 30.11.2026 23:59",
+       "na": "silnice I/26, Plzeň 4, v katastru obce Plzeň, výjezd z dálnice uzavřen, Od 06.06.2026 03:00 Do 30.11.2026 23:59"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "i-26-3",
+     "name": "I/26",
+     "oblast": "Plzeň 4",
+     "termin": "6. 6. 2026 – 30. 11. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "4. 7. 2026 – 30. 11. 2026",
+       "na": "6. 6. 2026 – 30. 11. 2026"
+      },
+      "od": {
+       "z": "2026-07-04",
+       "na": "2026-06-06"
+      },
+      "popis": {
+       "z": "V obci Plzeň 4(okres Plzeň-město) ulice: Nákupní,  silnice: místní komunikace, , Od 04.07.2026 00:00, Do 30.11.2026 23:59, uzavírka místních komunikací ve dvou etapách- Rokycanská, Vyhlídková, Nákupní v návaznosti na opravu povrchu silnice I/26 Rokycanská, I ETAPA s platností od 6.6.2026 do 3.7.2026, II. ETAPA s platností od 4.7.2026 do 30.11.2026, uzavřen pravý odbočovací pruh v úseku před silnicí I/26, Vydal: ÚMO Plzeň 04",
+       "na": "silnice I/26, Plzeň 4, v katastru obce Plzeň, vjezd na dálnici uzavřen, Od 06.06.2026 03:00 Do 30.11.2026 23:59"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     }
+    },
+    {
+     "id": "rokycanska-4",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "2. 9. 2026 – 12. 12. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "17. 8. 2026 – 11. 9. 2026",
+       "na": "2. 9. 2026 – 12. 12. 2026"
+      },
+      "od": {
+       "z": "2026-08-17",
+       "na": "2026-09-02"
+      },
+      "do": {
+       "z": "2026-09-11",
+       "na": "2026-12-12"
+      },
+      "popis": {
+       "z": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, odbočovací pruh uzavřen, Od 17.08.2026 00:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 02.09.2026 00:00 Do 12.12.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v obou směrech jízdy za účelem provádění stavebních prací a v rámci akce „Plzeň – Lávka Rokycanská“, uzavřen levý jízdní pruh, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     },
+     "prodlouzeno": true
+    },
+    {
+     "id": "rokycanska-5",
+     "name": "Rokycanská",
+     "oblast": "Plzeň 4",
+     "termin": "2. 9. 2026 – 12. 12. 2026",
+     "zmeny": {
+      "termin": {
+       "z": "17. 8. 2026 – 11. 9. 2026",
+       "na": "2. 9. 2026 – 12. 12. 2026"
+      },
+      "od": {
+       "z": "2026-08-17",
+       "na": "2026-09-02"
+      },
+      "do": {
+       "z": "2026-09-11",
+       "na": "2026-12-12"
+      },
+      "popis": {
+       "z": "silnice I/26 (ulice Rokycanská), Plzeň 4, odbočovací pruh uzavřen, Od 17.08.2026 07:00 Do 11.09.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v Plzni za účelem vyblokování odbočovacího pruhu pro směr vlevo před křižovatkou s ul. Vavřínová ve směru do centra v souvislosti s prováděním stavebních prací v rámci akce „Výstavba opěrné zdi, LIDL, Rokycanská ul., Plzeň“, Vydal: Krajský úřad Plzeňského kraje",
+       "na": "silnice I/26 (ulice Rokycanská), Plzeň 4, stavební práce, zúžená vozovka na jeden jízdní pruh, Od 02.09.2026 00:00 Do 12.12.2026 23:59, částečná uzavírka silnice I/26, ul. Rokycanská v obou směrech jízdy za účelem provádění stavebních prací a v rámci akce „Plzeň – Lávka Rokycanská“, uzavřen levý jízdní pruh, Vydal: Krajský úřad Plzeňského kraje"
+      },
+      "geometrie": {
+       "z": "",
+       "na": "změněn zákres úseku"
+      }
+     },
+     "prodlouzeno": true
+    },
+    {
+     "id": "v-radcicich",
+     "name": "V Radčicích",
+     "oblast": "Plzeň 7",
+     "termin": "1. 9. 2026 – 30. 9. 2026",
+     "zmeny": {
+      "status": {
+       "z": "now",
+       "na": "done"
+      }
+     },
+     "hotovo": true
+    },
+    {
+     "id": "susicka",
+     "name": "Sušická",
+     "oblast": "Plzeň 2",
+     "termin": "3. 9. 2026 – 3. 9. 2026",
+     "zmeny": {
+      "status": {
+       "z": "now",
+       "na": "done"
+      }
+     },
+     "hotovo": true
+    },
+    {
+     "id": "jatecni",
+     "name": "Jateční",
+     "oblast": "Plzeň 4",
+     "termin": "3. 9. 2026 – 3. 9. 2026",
+     "zmeny": {
+      "status": {
+       "z": "now",
+       "na": "done"
+      }
+     },
+     "hotovo": true
+    }
+   ],
+   "warnings": []
+  },
   {
    "date": "2026-09-03",
    "added": [
